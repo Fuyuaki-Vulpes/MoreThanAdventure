@@ -20,6 +20,35 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven {
+        // Shadows_of_Fire's Maven
+        url "https://maven.shadowsoffire.dev/releases"
+    }
+
+    maven { url = 'https://maven.minecraftforge.net/' }
+
+    maven {
+        url "https://cursemaven.com"
+    }
+
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
+
+    maven { url 'https://maven.wispforest.io/releases' }
+    maven { url 'https://maven.su5ed.dev/releases' }
+    maven { url 'https://maven.fabricmc.net' }
+    maven { url 'https://maven.shedaniel.me/' }
+
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+
 }
 
 base {
@@ -98,6 +127,18 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
 
+
+    implementation "dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}"
+    implementation "dev.shadowsoffire:ApothicAttributes:${minecraft_version}-${attributesLibVersion}"
+    implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablenderVersion}"
+
+    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
+    runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
+
+    implementation "io.wispforest:accessories-neoforge:${accessoriesVersion}"
+
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
@@ -137,7 +178,15 @@ tasks.withType(ProcessResources).configureEach {
             mod_license            : mod_license,
             mod_version            : mod_version,
             mod_authors            : mod_authors,
-            mod_description        : mod_description
+            mod_description        : mod_description,
+            placeboVersion         : placeboVersion,
+            attributesLibVersion   : attributesLibVersion,
+            terrablenderVersion    : terrablenderVersion,
+            emi_version            : emi_version,
+            accessoriesVersion     : accessoriesVersion,
+            geckolib_version       : geckolib_version
+
+
     ]
     inputs.properties replaceProperties
 
@@ -156,6 +205,7 @@ publishing {
     repositories {
         maven {
             url "file://${project.projectDir}/repo"
+
         }
     }
 }
