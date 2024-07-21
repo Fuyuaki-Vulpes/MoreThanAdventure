@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure;
+package com.fuyuvulpes.morethanadventure.core;
 
 import java.util.List;
 import java.util.Set;
@@ -23,9 +23,9 @@ public class  Config
             .comment("Whether to log the dirt block on common setup")
             .define("logDirtBlock", true);
 
-    private static final ModConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    private static final ModConfigSpec.IntValue SPRINKLER_RANGE = BUILDER
+            .comment("Range of effect of the Sprinkler")
+            .defineInRange("sprinkler_range", 12, 0, 32);
 
     public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
             .comment("What you want the introduction message to be for the magic number")
@@ -39,7 +39,7 @@ public class  Config
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static boolean logDirtBlock;
-    public static int magicNumber;
+    public static int sprinklerRange;
     public static String magicNumberIntroduction;
     public static Set<Item> items;
 
@@ -52,7 +52,7 @@ public class  Config
     static void onLoad(final ModConfigEvent event)
     {
         logDirtBlock = LOG_DIRT_BLOCK.get();
-        magicNumber = MAGIC_NUMBER.get();
+        sprinklerRange = SPRINKLER_RANGE.get();
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
 
         // convert the list of strings into a set of items

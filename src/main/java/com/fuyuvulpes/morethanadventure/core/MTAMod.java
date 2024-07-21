@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure;
+package com.fuyuvulpes.morethanadventure.core;
 
 import org.slf4j.Logger;
 
