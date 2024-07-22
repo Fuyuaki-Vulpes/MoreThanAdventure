@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "com.fuyuvulpes.morethanadventure.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "yoamod.refmap.json",
+  "mixins": [
+    "FarmBlockMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+
+}
