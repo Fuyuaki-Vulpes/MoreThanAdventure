@@ -19,7 +19,7 @@ public class FarmBlockMixin extends Block {
         super(properties);
     }
     //Replace the Blocks.OBSIDIAN with SPRINKLER!!
-    @Inject(method= "Lnet/minecraft/world/level/block/FarmBlock;isNearWater(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z", at=@At(value="TAIL"))
+    @Inject(method= "isNearWater(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z", at=@At(value="TAIL"), cancellable = true)
     private static void isNearWater(LevelReader pLevel, BlockPos pPos, CallbackInfoReturnable<Boolean> cir){
         for (BlockPos blockpos : BlockPos.betweenClosed(pPos.offset(-range, 0, -range), pPos.offset(range, 2, range))) {
             BlockState blockState = pLevel.getBlockState(blockpos);

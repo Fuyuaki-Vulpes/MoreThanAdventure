@@ -1,5 +1,9 @@
 package com.fuyuvulpes.morethanadventure.core;
 
+import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
+import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -14,7 +18,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.api.distmarker.Dist;
@@ -95,15 +98,7 @@ public class MTAMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
 
-        if (Config.logDirtBlock)
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
     // Add the example block item to the building blocks tab
@@ -131,6 +126,19 @@ public class MTAMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+    }
+
+
+    @EventBusSubscriber(modid = MODID,bus = EventBusSubscriber.Bus.MOD)
+    public static class ModEvents{
+        @SubscribeEvent
+        public static void registerCapabilitiesEvent(RegisterCapabilitiesEvent event){
+            for (Block block : BuiltInRegistries.BLOCK) {
+                if (block.getClass() == Sprinkler.class) {
+                    event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, blockState, blockEntity, context) -> new SprinkerWrapper(level,pos), block);
+                }
+            }
         }
     }
 }
