@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure.core.registries;
+package com.fuyuvulpes.morethanadventure.core.registry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
