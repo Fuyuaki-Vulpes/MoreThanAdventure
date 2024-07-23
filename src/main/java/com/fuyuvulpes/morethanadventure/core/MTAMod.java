@@ -50,6 +50,9 @@ public class MTAMod
         MtaBlockEntities.register(modEventBus);
         MtaBlocks.register(modEventBus);
         MtaItems.register(modEventBus);
+        MtaEffects.register(modEventBus);
+        MtaFeatures.register(modEventBus);
+        MtaParticles.register(modEventBus);
 
 
         MtaTabs.register(modEventBus);

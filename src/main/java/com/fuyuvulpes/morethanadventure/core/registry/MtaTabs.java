@@ -21,6 +21,29 @@ public class MtaTabs {
             .icon(Items.POTATO::getDefaultInstance)
             .displayItems((parameters, output) -> {
                 output.accept(MtaBlocks.SPRINKLER.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(MtaItems.ONION);
+                output.accept(MtaItems.SHRIMP);
+                output.accept(MtaItems.RED_PEPPER);
+                output.accept(MtaItems.CHILI_PEPPER);
+                output.accept(MtaItems.TOMATO);
+                output.accept(MtaItems.RICE);
+                output.accept(MtaItems.RICE_BALL);
+                output.accept(MtaItems.COCONUT);
+                output.accept(MtaItems.COCONUT_MILK);
+                output.accept(MtaItems.COCONUT_SLICE);
+                output.accept(MtaItems.SPICE_MIX);
+                output.accept(MtaItems.SWEET_BEEF_CURRY);
+                output.accept(MtaItems.SWEET_PORK_CURRY);
+                output.accept(MtaItems.SWEET_CHICKEN_CURRY);
+                output.accept(MtaItems.SWEET_SHRIMP_CURRY);
+                output.accept(MtaItems.MILD_BEEF_CURRY);
+                output.accept(MtaItems.MILD_PORK_CURRY);
+                output.accept(MtaItems.MILD_CHICKEN_CURRY);
+                output.accept(MtaItems.MILD_SHRIMP_CURRY);
+                output.accept(MtaItems.SPICY_BEEF_CURRY);
+                output.accept(MtaItems.SPICY_PORK_CURRY);
+                output.accept(MtaItems.SPICY_CHICKEN_CURRY);
+                output.accept(MtaItems.SPICY_SHRIMP_CURRY);
             }).build());
 
 
