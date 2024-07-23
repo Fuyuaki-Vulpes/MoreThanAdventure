@@ -25,7 +25,7 @@ public class  Config
 
     private static final ModConfigSpec.IntValue SPRINKLER_RANGE = BUILDER
             .comment("Range of effect of the Sprinkler")
-            .defineInRange("sprinkler_range", 12, 0, 32);
+            .defineInRange("sprinkler_range", 8, 1, 16);
 
     public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
             .comment("What you want the introduction message to be for the magic number")
@@ -51,6 +51,7 @@ public class  Config
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
+
         logDirtBlock = LOG_DIRT_BLOCK.get();
         sprinklerRange = SPRINKLER_RANGE.get();
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();

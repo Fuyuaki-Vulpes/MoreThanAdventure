@@ -1,6 +1,7 @@
 package com.fuyuvulpes.morethanadventure.datagen;
 
 import com.fuyuvulpes.morethanadventure.datagen.generators.*;
+import com.fuyuvulpes.morethanadventure.datagen.generators.lang.EN_US_LangProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -47,7 +48,8 @@ public class DataGen {
                 new GenWorld(packOutput, lookupProvider));
 
 
-
+        generator.addProvider(event.includeClient(),
+                new EN_US_LangProvider(packOutput));
 
     }
 
