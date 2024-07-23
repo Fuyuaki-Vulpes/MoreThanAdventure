@@ -4,7 +4,6 @@ import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
 import com.fuyuvulpes.morethanadventure.game.client.model.entity.SprinklerRenderer;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
-import net.minecraft.world.item.*;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
@@ -13,8 +12,6 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -27,8 +24,6 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MTAMod.MODID)
@@ -68,7 +63,7 @@ public class MTAMod
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, MTAServerConfig.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

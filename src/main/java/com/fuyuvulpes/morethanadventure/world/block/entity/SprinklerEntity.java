@@ -1,8 +1,7 @@
 package com.fuyuvulpes.morethanadventure.world.block.entity;
 
-import com.fuyuvulpes.morethanadventure.core.Config;
+import com.fuyuvulpes.morethanadventure.core.MTAServerConfig;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaBlockEntities;
-import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -11,16 +10,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.Tags;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
@@ -57,7 +53,7 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
 
     public static void particleTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
         for (int k = 0; k < 50; k += 5) {
-            float cRange = (float) (Config.sprinklerRange * k) / 25;
+            float cRange = (float) (MTAServerConfig.sprinklerRange * k) / 25;
             float xRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             float zRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             level.addParticle(ParticleTypes.FALLING_WATER, blockPos.getCenter().x + xRange,
@@ -68,7 +64,7 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
     }
 
     public static void growthTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
-        int range = Config.sprinklerRange;
+        int range = MTAServerConfig.sprinklerRange;
         if (level.random.nextFloat() < 0.005) {
             for (BlockPos pos : BlockPos.betweenClosed(blockPos.east(range).above(2).south(range), blockPos.west(range).below().north(range))) {
                 BlockState state = level.getBlockState(pos);

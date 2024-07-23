@@ -1,6 +1,6 @@
 package com.fuyuvulpes.morethanadventure.mixin;
 
-import com.fuyuvulpes.morethanadventure.core.Config;
+import com.fuyuvulpes.morethanadventure.core.MTAServerConfig;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FarmBlock.class)
 public class FarmBlockMixin extends Block {
-    private static final int range = Config.sprinklerRange > 1 ? Config.sprinklerRange : 8;
+    private static final int range = MTAServerConfig.sprinklerRange > 1 ? MTAServerConfig.sprinklerRange : 8;
     public FarmBlockMixin(Properties properties) {
         super(properties);
     }
