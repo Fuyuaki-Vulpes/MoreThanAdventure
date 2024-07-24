@@ -30,6 +30,7 @@ public class MtaTabs {
                 //FOOD
                 output.accept(MtaItems.ONION);
                 output.accept(MtaItems.SHRIMP);
+                output.accept(MtaItems.COOKED_SHRIMP);
                 output.accept(MtaItems.RED_PEPPER);
                 output.accept(MtaItems.CHILI_PEPPER);
                 output.accept(MtaItems.TOMATO);

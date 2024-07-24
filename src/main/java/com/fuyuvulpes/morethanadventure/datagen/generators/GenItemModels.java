@@ -40,6 +40,7 @@ public class GenItemModels extends ItemModelProvider {
   /*
         simpleItem(MtaItems.ONION);
         simpleItem(MtaItems.SHRIMP);
+        simpleItem(MtaItems.COOKED_SHRIMP);
         simpleItem(MtaItems.TOMATO);
         simpleItem(MtaItems.RED_PEPPER);
         simpleItem(MtaItems.CHILI_PEPPER);
