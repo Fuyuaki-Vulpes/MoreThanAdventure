@@ -1,29 +1,30 @@
 package com.fuyuvulpes.morethanadventure.world.entity;
 
-import com.fuyuvulpes.morethanadventure.world.entity.goals.ChasingMeleeGoal;
 import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
-import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomFlyingGoal;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.FlyingAnimal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
@@ -32,6 +33,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.Tags;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -42,8 +44,9 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
+import java.util.Objects;
 
-public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal {
+public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
     private static final EntityDataAccessor<Boolean> DATA_IS_BLOWING = SynchedEntityData.defineId(YukiOnna.class, EntityDataSerializers.BOOLEAN);
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.yukionna.idle");
     protected static final RawAnimation CHASE = RawAnimation.begin().thenLoop("animation.yukionna.chase");
@@ -56,6 +59,18 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
         super(pEntityType, pLevel);
         this.xpReward = 5;
         this.moveControl = new FlyingMoveControl(this, 20, true);
+
+        this.setPathfindingMalus(PathType.DANGER_FIRE, -1.0F);
+    }
+
+
+    @Override
+    protected PathNavigation createNavigation(Level pLevel) {
+        FlyingPathNavigation flyingpathnavigation = new FlyingPathNavigation(this, pLevel);
+        flyingpathnavigation.setCanOpenDoors(false);
+        flyingpathnavigation.setCanFloat(true);
+        flyingpathnavigation.setCanPassDoors(true);
+        return flyingpathnavigation;
     }
 
     @Override
@@ -73,17 +88,13 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
     }
 
     @Override
-    protected float getFlyingSpeed() {
-        return 1.0F;
-    }
-
-    @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(3, new YukiOnna.FreezingBlowGoal(this));
-        this.goalSelector.addGoal(2, new ChasingMeleeGoal(this, 1.5f, true));
+        this.goalSelector.addGoal(1, new YukiOnna.FreezingBlowGoal(this));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.5f, true));
+        this.goalSelector.addGoal(4, new WaterAvoidingRandomFlyingGoal(this,1.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 16.0F));
-        this.goalSelector.addGoal(6, new WaterAvoidingRandomFlyingGoal(this,0.5F));
+
 
 
         this.addTargetGoals();
@@ -103,11 +114,12 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 18.0F)
-                .add(Attributes.FOLLOW_RANGE, 22.0)
+                .add(Attributes.FOLLOW_RANGE, 12.0)
                 .add(ALObjects.Attributes.ARMOR_SHRED, 1.0F)
                 .add(ALObjects.Attributes.COLD_DAMAGE, 2.0F)
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
-                .add(Attributes.FLYING_SPEED, 0.5)
+                .add(Attributes.FLYING_SPEED, 0.4F)
+                .add(Attributes.MOVEMENT_SPEED, 0.1F)
                 ;
     }
 
@@ -118,7 +130,7 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
 
     @Override
     public boolean doHurtTarget(Entity pEntity) {
-        pEntity.setTicksFrozen(pEntity.getTicksFrozen() + 20);
+        pEntity.setTicksFrozen(pEntity.getTicksFrozen() + 100);
 
         return super.doHurtTarget(pEntity);
     }
@@ -130,6 +142,8 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
         }
         super.tick();
     }
+
+
 
     @Override
     public boolean isFreezing() {
@@ -203,7 +217,7 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
                 new AnimationController<>(this, 10, (state) -> {
                     if (state.getAnimatable().isBlowing()) {
                         return state.setAndContinue(BLOW);
-                    } else if (state.getAnimatable().getTarget() != null && state.getAnimatable().isChasing()) {
+                    } else if (state.getAnimatable().isAggressive()) {
                         return state.setAndContinue(CHASE);
                     } else return state.setAndContinue(IDLE);
                 })
@@ -222,11 +236,11 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
                 ;
     }
 
-    protected static class FreezingBlowGoal extends Goal {
+    protected class FreezingBlowGoal extends Goal {
 
         private YukiOnna mob;
         private long lastCanUseCheck;
-        private static final long COOLDOWN_BETWEEN_CAN_USE_CHECKS = 200L;
+        private static final long COOLDOWN = 460L;
         private int ticksUntilDamage;
 
 
@@ -238,7 +252,7 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
         @Override
         public boolean canUse() {
             long i = this.mob.level().getGameTime();
-            if (i - this.lastCanUseCheck < 200L) {
+            if (i - this.lastCanUseCheck < COOLDOWN) {
                 return false;
             } else {
                 this.lastCanUseCheck = i;
@@ -249,7 +263,7 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
                     return false;
                 } else {
 
-                    return this.mob.distanceTo(livingentity) < 16 && this.mob.distanceTo(livingentity) > 5;
+                    return this.mob.distanceTo(livingentity) < 32 && this.mob.distanceTo(livingentity) > 4;
 
                 }
             }
@@ -259,7 +273,6 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
         public void start() {
             this.mob.setAggressive(true);
             this.ticksUntilDamage = 40;
-            this.mob.getNavigation().stop();
             this.mob.setBlowing(true);
         }
 
@@ -270,7 +283,6 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
                 this.mob.setTarget(null);
             }
             this.mob.setBlowing(false);
-            this.mob.setAggressive(false);
 
         }
 
@@ -278,26 +290,44 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
         public void tick() {
             LivingEntity livingentity = this.mob.getTarget();
             if (livingentity != null) {
+                this.ticksUntilDamage--;
                 Level level = this.mob.level();
                 this.mob.getLookControl().setLookAt(livingentity, 30.0F, 30.0F);
                 if (this.ticksUntilDamage > 0){
-                    this.ticksUntilDamage--;
+                    for (int a = 1; a <= 10; a++) {
+                        Vec3 distb = this.mob.getEyePosition().lerp(livingentity.getEyePosition(), (double) a / 10);
 
-                    Vec3 dist = this.mob.getEyePosition().subtract(livingentity.getEyePosition());
-                    for (int a = 1; a <= (20 - ticksUntilDamage); a++){
-                        Vec3 distb = dist.multiply((double) 1 /a, (double) 1 /a, (double) 1 /a);
-                        level.addParticle(ParticleTypes.SNOWFLAKE,true,distb.x,distb.y,distb.z,0,0,0);
+                        createParticles(this.mob.level(),distb.x,distb.y,distb.z);
                     }
                 }
                 else {
-                    livingentity.hurt(this.mob.damageSources().freeze(),10.0F);
+                    livingentity.hurt(new DamageSource(this.mob.damageSources().freeze().typeHolder(), this.mob),6.0F);
                     level.playSound(null,livingentity.blockPosition(),SoundEvents.GLASS_BREAK,SoundSource.HOSTILE,0.6F,2.0F);
                     level.playSound(null,livingentity.blockPosition(),SoundEvents.PLAYER_HURT_FREEZE,SoundSource.HOSTILE);
+                    livingentity.setTicksFrozen(500);
                     stop();
                 }
 
             }
 
+
+
+        }
+
+        @Override
+        public boolean canContinueToUse() {
+            LivingEntity livingentity = this.mob.getTarget();
+            if (livingentity == null) {
+                return false;
+            } else if (!livingentity.isAlive()) {
+                return false;
+            } else if (this.ticksUntilDamage < -1) {
+                return false;
+            } else {
+                return !this.mob.isWithinRestriction(livingentity.blockPosition())
+                        ? false
+                        : !(livingentity instanceof Player) || !livingentity.isSpectator() && !((Player)livingentity).isCreative();
+            }
         }
 
         @Override
@@ -307,4 +337,12 @@ public class YukiOnna extends ChasingMonster implements GeoEntity, FlyingAnimal 
 
 
     }
+
+    private void createParticles(Level level,double pX, double pY, double pZ) {
+        if (!level.isClientSide()){
+            ((ServerLevel)level).sendParticles(ParticleTypes.SNOWFLAKE,pX,pY,pZ,0,0.0D,0.0D,0.0D,0.0D);
+        }
+    }
+
+
 }
