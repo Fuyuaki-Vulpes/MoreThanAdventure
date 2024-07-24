@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure.game.client.model.entity;
+package com.fuyuvulpes.morethanadventure.game.client.renderer.block;
 
 import com.fuyuvulpes.morethanadventure.game.client.model.block.SprinklerModel;
 import com.fuyuvulpes.morethanadventure.world.block.entity.SprinklerEntity;

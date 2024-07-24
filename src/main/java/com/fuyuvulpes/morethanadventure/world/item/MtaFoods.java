@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure.world.items;
+package com.fuyuvulpes.morethanadventure.world.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

@@ -37,6 +37,7 @@ public class GenItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+  /*
         simpleItem(MtaItems.ONION);
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.TOMATO);
@@ -60,6 +61,9 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.SPICY_PORK_CURRY);
         simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
         simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
+*/
+        //SPAWN EGGS
+        simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

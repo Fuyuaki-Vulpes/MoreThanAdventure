@@ -2,11 +2,22 @@ package com.fuyuvulpes.morethanadventure.core;
 
 import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
-import com.fuyuvulpes.morethanadventure.game.client.model.entity.SprinklerRenderer;
+import com.fuyuvulpes.morethanadventure.game.client.model.entity.YukiOnnaModel;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
+import com.fuyuvulpes.morethanadventure.world.entity.YukiOnna;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -71,6 +82,22 @@ public class MTAMod
 
     }
 
+    public static void setupRenderTypes(){
+        RenderType transparentRenderType = RenderType.cutoutMipped();
+        RenderType cutoutRenderType = RenderType.cutout();
+        RenderType translucentRenderType = RenderType.translucent();
+/*
+        setRenderType(YoaBlocks.BLISSWOOD_LEAVES.get(), transparentRenderType);
+        setRenderType(YoaBlocks.BLISSWOOD_DOOR.get(), cutoutRenderType);
+        setRenderType(YoaBlocks.BLISSWOOD_SAPLING.get(), cutoutRenderType);
+        setRenderType(YoaBlocks.BLISSWOOD_TRAPDOOR.get(), cutoutRenderType);
+  */
+    }
+    public static void setRenderType(Block block, RenderType renderType){
+        ItemBlockRenderTypes.setRenderLayer(block, renderType);
+    }
+
+
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
        // if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
@@ -86,10 +113,24 @@ public class MTAMod
     @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+            event.enqueueWork(() -> {
+                setupRenderTypes();
+            });
+        }
+
+
 
         @SubscribeEvent
         public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(MtaBlockEntities.SPRINKLER.get(), context -> new SprinklerRenderer());
+            event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
+
+        }
+
+        public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 
         }
     }
@@ -108,7 +149,26 @@ public class MTAMod
             }
         }
 
+        @SubscribeEvent
+        public static void entityAttributes(EntityAttributeCreationEvent event){
+            event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
+        }
 
 
+
+        @SubscribeEvent
+        public static void spawnPlacements(RegisterSpawnPlacementsEvent event){
+            event.register(MtaEntityTypes.YUKI_ONNA.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    YukiOnna::canSpawn,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+
+        }
+
+        @SubscribeEvent
+        private static void registerScreens(RegisterMenuScreensEvent event) {
+        }
     }
+
 }

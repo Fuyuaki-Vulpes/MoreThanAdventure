@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#c:is_snowy",
+  "spawners": {
+    "type": "morethanadventure:yuki_onna",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 1
+  }
+
+}

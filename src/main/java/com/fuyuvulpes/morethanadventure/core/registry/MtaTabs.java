@@ -18,9 +18,16 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = TABS.register("mtatab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.morethanadventure")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(Items.POTATO::getDefaultInstance)
+            .icon(Items.DIAMOND::getDefaultInstance)
             .displayItems((parameters, output) -> {
+                //BLOCKS
                 output.accept(MtaBlocks.SPRINKLER.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+
+                //TOOLS
+
+
+
+                //FOOD
                 output.accept(MtaItems.ONION);
                 output.accept(MtaItems.SHRIMP);
                 output.accept(MtaItems.RED_PEPPER);
@@ -44,6 +51,11 @@ public class MtaTabs {
                 output.accept(MtaItems.SPICY_PORK_CURRY);
                 output.accept(MtaItems.SPICY_CHICKEN_CURRY);
                 output.accept(MtaItems.SPICY_SHRIMP_CURRY);
+
+
+                //SPAWNS
+
+                output.accept(MtaItems.YUKI_ONNA_SPAWN_EGG);
             }).build());
 
 
