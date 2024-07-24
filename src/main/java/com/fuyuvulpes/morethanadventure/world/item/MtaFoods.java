@@ -15,7 +15,7 @@ public class MtaFoods {
             .build();
     public static final FoodProperties COOKED_SHRIMP = new FoodProperties.Builder()
             .nutrition(5)
-            .saturationModifier(0.6F)
+            .saturationModifier(1.6F)
             .build();
     public static final FoodProperties TOMATO = new FoodProperties.Builder()
             .nutrition(3)
