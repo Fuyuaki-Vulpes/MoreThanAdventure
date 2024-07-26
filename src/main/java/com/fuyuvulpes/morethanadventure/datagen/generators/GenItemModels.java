@@ -37,7 +37,11 @@ public class GenItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-  /*
+        simpleItem(MtaItems.CLEAR_QUARTZ);
+        simpleItem(MtaItems.NETHERITE_FRACTURE);
+
+        //FOODS
+        /*
         simpleItem(MtaItems.ONION);
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.COOKED_SHRIMP);

@@ -1,9 +1,11 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
+import com.fuyuvulpes.morethanadventure.core.registry.MtaItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,6 +20,7 @@ public class GenItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        this.tag(Tags.Items.GEMS_QUARTZ).add(MtaItems.CLEAR_QUARTZ.get());
+        //this.tag(Tags.Items.ORES_NETHERITE_SCRAP)
     }
 }

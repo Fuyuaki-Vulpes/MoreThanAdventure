@@ -18,10 +18,17 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = TABS.register("mtatab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.morethanadventure")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(Items.DIAMOND::getDefaultInstance)
+            .icon(MtaItems.NETHERITE_FRACTURE.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
                 //BLOCKS
-                output.accept(MtaBlocks.SPRINKLER.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(MtaBlocks.SPRINKLER.get());
+                //ITEMS
+                output.accept(MtaItems.CLEAR_QUARTZ);
+                output.accept(MtaItems.NETHERITE_FRACTURE);
+
+
+
+
 
                 //TOOLS
 
