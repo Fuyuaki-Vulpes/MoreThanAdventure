@@ -25,6 +25,18 @@ public class MtaTabs {
                 //ITEMS
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.AGATE);
+                output.accept(MtaItems.ALEXANDRITE);
+                output.accept(MtaItems.AQUAMARINE);
+                output.accept(MtaItems.CELESTITE);
+                output.accept(MtaItems.GARNET);
+                output.accept(MtaItems.MOONSTONE);
+                output.accept(MtaItems.ARMAMENT_UPGRADE);
+                output.accept(MtaItems.LOYALTY_UPGRADE);
+                output.accept(MtaItems.AQUATIC_UPGRADE);
+                output.accept(MtaItems.ANGELIC_UPGRADE);
+                output.accept(MtaItems.BERSERK_UPGRADE);
+                output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
 
 
 
