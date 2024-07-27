@@ -231,7 +231,7 @@ public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
 
     public static boolean canSpawn(EntityType<YukiOnna> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
         return checkMonsterSpawnRules(pType,pLevel,pSpawnType,pPos,pRandom)
-                && pLevel.canSeeSky(pPos)
+                && pLevel.canSeeSky(pPos.above().above())
                 && pLevel.getBiome(pPos).is(Tags.Biomes.IS_SNOWY)
                 ;
     }

@@ -14,7 +14,7 @@ import software.bernie.geckolib.model.data.EntityModelData;
 public class YukiOnnaModel extends DefaultedEntityGeoModel<YukiOnna> {
 
     public YukiOnnaModel() {
-        super(ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "yuki_onna"));
+        super(ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "yuki_onna"),true);
     }
 
     @Override
@@ -22,18 +22,5 @@ public class YukiOnnaModel extends DefaultedEntityGeoModel<YukiOnna> {
         return RenderType.entityCutout(getTextureResource(animatable));
     }
 
-    @Override
-    public void setCustomAnimations(YukiOnna animatable, long instanceId, AnimationState<YukiOnna> animationState) {
-
-        GeoBone head = getAnimationProcessor().getBone("head");
-        if (head == null) return;
-        if (head.getChildBones().isEmpty()) return;
-        GeoBone headRotation = head.getChildBones().getFirst();
-        if (headRotation == null) return;
-
-        EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
-        headRotation.setRotX(entityData.headPitch() * Mth.DEG_TO_RAD);
-        headRotation.setRotY(entityData.netHeadYaw() * Mth.DEG_TO_RAD);
-    }
 
 }

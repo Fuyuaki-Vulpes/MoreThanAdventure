@@ -69,6 +69,7 @@ public class GenItemModels extends ItemModelProvider {
 */
         //SPAWN EGGS
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
+        simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {
@@ -77,10 +78,6 @@ public class GenItemModels extends ItemModelProvider {
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder spawnEggItem(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/template_spawn_egg"));
-    }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),

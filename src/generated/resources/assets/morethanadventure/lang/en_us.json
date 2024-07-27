@@ -1,5 +1,6 @@
 {
   "block.morethanadventure.sprinkler": "Sprinkler",
+  "entity.morethanadventure.fallen_samurai": "Fallen Samurai",
   "entity.morethanadventure.yuki_onna": "Yuki Onna",
   "item.morethanadventure.agate": "Agate",
   "item.morethanadventure.alexandrite": "Alexandrite",
@@ -15,6 +16,7 @@
   "item.morethanadventure.coconut_milk": "Coconut Milk",
   "item.morethanadventure.coconut_slice": "Coconut Slice",
   "item.morethanadventure.cooked_shrimp": "Cooked Shrimp",
+  "item.morethanadventure.fallen_samurai_spawn_egg": "Falleb Samurai Spawn Egg",
   "item.morethanadventure.featherweight_upgrade": "Featherweight_Upgrade",
   "item.morethanadventure.garnet": "Garnet",
   "item.morethanadventure.loyalty_upgrade": "Loyalty_Upgrade",
@@ -38,5 +40,6 @@
   "item.morethanadventure.sweet_pork_curry": "Sweet Pork Curry",
   "item.morethanadventure.sweet_shrimp_curry": "Sweet Shrimp Curry",
   "item.morethanadventure.tomato": "Tomato",
+  "item.morethanadventure.yuki_onna_spawn_egg": "Spawn Egg",
   "itemGroup.morethanadventure": "More Than Adventure"
 }

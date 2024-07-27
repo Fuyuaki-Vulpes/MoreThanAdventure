@@ -4,8 +4,10 @@ import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
 import com.fuyuvulpes.morethanadventure.game.client.model.entity.YukiOnnaModel;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
+import com.fuyuvulpes.morethanadventure.world.entity.FallenSamurai;
 import com.fuyuvulpes.morethanadventure.world.entity.YukiOnna;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -127,6 +129,7 @@ public class MTAMod
         public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
             event.registerBlockEntityRenderer(MtaBlockEntities.SPRINKLER.get(), context -> new SprinklerRenderer());
             event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamuraiRenderer::new);
 
         }
 
@@ -152,6 +155,7 @@ public class MTAMod
         @SubscribeEvent
         public static void entityAttributes(EntityAttributeCreationEvent event){
             event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
+            event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
         }
 
 
@@ -162,6 +166,11 @@ public class MTAMod
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     YukiOnna::canSpawn,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.FALLEN_SAMURAI.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    FallenSamurai::checkMonsterSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
 
         }

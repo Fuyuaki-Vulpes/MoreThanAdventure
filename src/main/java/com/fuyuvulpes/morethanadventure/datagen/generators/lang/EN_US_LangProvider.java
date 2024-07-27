@@ -62,8 +62,15 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SPICY_CHICKEN_CURRY.get(),"Spicy Chicken Curry");
         add(MtaItems.SPICY_SHRIMP_CURRY.get(),"Spicy Shrimp Curry");
 
+        //SPAWN EGGS
+
+        add(MtaItems.YUKI_ONNA_SPAWN_EGG.get(),"Yuki Onna Spawn Egg");
+        add(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get(),"Fallen Samurai Spawn Egg");
+
+
         //ENTITIES
         add(MtaEntityTypes.YUKI_ONNA.get(),"Yuki Onna");
+        add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
 
         //OTHER
         add("itemGroup.morethanadventure","More Than Adventure");
