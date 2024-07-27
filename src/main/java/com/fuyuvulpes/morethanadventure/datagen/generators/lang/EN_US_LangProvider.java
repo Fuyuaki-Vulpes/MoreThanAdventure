@@ -37,6 +37,32 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.BERSERK_UPGRADE.get(),"Berserk_Upgrade");
         add(MtaItems.FEATHERWEIGHT_UPGRADE.get(),"Featherweight_Upgrade");
 
+        //ARMOR
+        add(MtaItems.GREAT_SENTINELS_HELMET.get(), "Great Sentinel's Helmet");
+        add(MtaItems.GREAT_SENTINELS_CHESTPLATE.get(), "Great Sentinel's Chestplate");
+        add(MtaItems.GREAT_SENTINELS_LEGGINGS.get(), "Great Sentinel's Leggings");
+        add(MtaItems.GREAT_SENTINELS_BOOTS.get(), "Great Sentinel's Boots");
+        add(MtaItems.HOLY_KNIGHTS_HELMET.get(), "Holy Knight's Helmet");
+        add(MtaItems.HOLY_KNIGHTS_CHESTPLATE.get(), "Holy Knight's Chestplate");
+        add(MtaItems.HOLY_KNIGHTS_LEGGINGS.get(), "Holy Knight's Leggings");
+        add(MtaItems.HOLY_KNIGHTS_BOOTS.get(), "Holy Knight's Boots");
+        add(MtaItems.MYSTIC_MERMAIDS_HELMET.get(), "Mystic Mermaid's Helmet");
+        add(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get(), "Mystic Mermaid's Chestplate");
+        add(MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get(), "Mystic Mermaid's Leggings");
+        add(MtaItems.MYSTIC_MERMAIDS_BOOTS.get(), "Mystic Mermaid's Boots");
+        add(MtaItems.TEMPLE_ANGELS_HELMET.get(), "Temple Angel's Helmet");
+        add(MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(), "Temple Angel's Chestplate");
+        add(MtaItems.TEMPLE_ANGELS_LEGGINGS.get(), "Temple Angel's Leggings");
+        add(MtaItems.TEMPLE_ANGELS_BOOTS.get(), "Temple Angel's Boots");
+        add(MtaItems.WRATHFUL_BERSERKERS_HELMET.get(), "Wrathful Berserker's Helmet");
+        add(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get(), "Wrathful Berserker's Chestplate");
+        add(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get(), "Wrathful Berserker's Leggings");
+        add(MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(), "Wrathful Berserker's Boots");
+        add(MtaItems.SHADOW_ROGUES_HELMET.get(), "Shadow Rogue's Helmet");
+        add(MtaItems.SHADOW_ROGUES_CHESTPLATE.get(), "Shadow Rogue's Chestplate");
+        add(MtaItems.SHADOW_ROGUES_LEGGINGS.get(), "Shadow Rogue's Leggings");
+        add(MtaItems.SHADOW_ROGUES_BOOTS.get(), "Shadow Rogue's Boots");
+
         //FOODS
         add(MtaItems.ONION.get(),"Onion");
         add(MtaItems.SHRIMP.get(),"Shrimp");

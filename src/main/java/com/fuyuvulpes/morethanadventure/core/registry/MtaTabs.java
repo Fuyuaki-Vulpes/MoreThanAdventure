@@ -39,7 +39,32 @@ public class MtaTabs {
                 output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
 
 
+                //ARMOR
 
+                output.accept(MtaItems.GREAT_SENTINELS_HELMET);
+                output.accept(MtaItems.GREAT_SENTINELS_CHESTPLATE);
+                output.accept(MtaItems.GREAT_SENTINELS_LEGGINGS);
+                output.accept(MtaItems.GREAT_SENTINELS_BOOTS);
+                output.accept(MtaItems.HOLY_KNIGHTS_HELMET);
+                output.accept(MtaItems.HOLY_KNIGHTS_CHESTPLATE);
+                output.accept(MtaItems.HOLY_KNIGHTS_LEGGINGS);
+                output.accept(MtaItems.HOLY_KNIGHTS_BOOTS);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_HELMET);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_BOOTS);
+                output.accept(MtaItems.TEMPLE_ANGELS_HELMET);
+                output.accept(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
+                output.accept(MtaItems.TEMPLE_ANGELS_LEGGINGS);
+                output.accept(MtaItems.TEMPLE_ANGELS_BOOTS);
+                output.accept(MtaItems.WRATHFUL_BERSERKERS_HELMET);
+                output.accept(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
+                output.accept(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
+                output.accept(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
+                output.accept(MtaItems.SHADOW_ROGUES_HELMET);
+                output.accept(MtaItems.SHADOW_ROGUES_CHESTPLATE);
+                output.accept(MtaItems.SHADOW_ROGUES_LEGGINGS);
+                output.accept(MtaItems.SHADOW_ROGUES_BOOTS);
 
 
                 //TOOLS

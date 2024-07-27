@@ -2,7 +2,6 @@ package com.fuyuvulpes.morethanadventure.core;
 
 import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
-import com.fuyuvulpes.morethanadventure.game.client.model.entity.YukiOnnaModel;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
@@ -61,6 +60,7 @@ public class MTAMod
         MtaEffects.register(modEventBus);
         MtaFeatures.register(modEventBus);
         MtaParticles.register(modEventBus);
+        MtaArmorMats.register(modEventBus);
 
 
         MtaTabs.register(modEventBus);

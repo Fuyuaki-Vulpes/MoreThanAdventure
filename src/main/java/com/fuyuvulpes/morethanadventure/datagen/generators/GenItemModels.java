@@ -39,6 +39,50 @@ public class GenItemModels extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(MtaItems.CLEAR_QUARTZ);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
+        //simpleItem(MtaItems.AGATE);
+        //simpleItem(MtaItems.ALEXANDRITE);
+        //simpleItem(MtaItems.AQUAMARINE);
+        //simpleItem(MtaItems.CELESTITE);
+        //simpleItem(MtaItems.GARNET);
+        //simpleItem(MtaItems.MOONSTONE);
+        //simpleItem(MtaItems.ARMAMENT_UPGRADE);
+        //simpleItem(MtaItems.LOYALTY_UPGRADE);
+        //simpleItem(MtaItems.AQUATIC_UPGRADE);
+        //simpleItem(MtaItems.ANGELIC_UPGRADE);
+        //simpleItem(MtaItems.BERSERK_UPGRADE);
+        //simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
+
+        //ARMOR
+
+        //simpleItem(MtaItems.GREAT_SENTINELS_HELMET);
+        //simpleItem(MtaItems.GREAT_SENTINELS_CHESTPLATE);
+        //simpleItem(MtaItems.GREAT_SENTINELS_LEGGINGS);
+        //simpleItem(MtaItems.GREAT_SENTINELS_BOOTS);
+
+        //simpleItem(MtaItems.HOLY_KNIGHTS_HELMET);
+        //simpleItem(MtaItems.HOLY_KNIGHTS_CHESTPLATE);
+        //simpleItem(MtaItems.HOLY_KNIGHTS_LEGGINGS);
+        //simpleItem(MtaItems.HOLY_KNIGHTS_BOOTS);
+
+        //simpleItem(MtaItems.MYSTIC_MERMAIDS_HELMET);
+        //simpleItem(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
+        //simpleItem(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
+        //simpleItem(MtaItems.MYSTIC_MERMAIDS_BOOTS);
+
+        //simpleItem(MtaItems.TEMPLE_ANGELS_HELMET);
+        //simpleItem(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
+        //simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
+        //simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
+
+        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
+        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
+        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
+        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
+
+        //simpleItem(MtaItems.SHADOW_ROGUES_HELMET);
+        //simpleItem(MtaItems.SHADOW_ROGUES_CHESTPLATE);
+        //simpleItem(MtaItems.SHADOW_ROGUES_LEGGINGS);
+        //simpleItem(MtaItems.SHADOW_ROGUES_BOOTS);
 
         //FOODS
         /*
