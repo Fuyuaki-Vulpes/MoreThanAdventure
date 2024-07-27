@@ -102,6 +102,7 @@ public class MtaTabs {
 
                 output.accept(MtaItems.YUKI_ONNA_SPAWN_EGG);
                 output.accept(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
+                output.accept(MtaItems.BUTTERFLY_SPAWN_EGG);
             }).build());
 
 

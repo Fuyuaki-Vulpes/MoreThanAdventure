@@ -90,7 +90,7 @@ public class Sprinkler extends BaseEntityBlock {
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         super.tick(pState, pLevel, pPos, pRandom);
         BlockState state = pLevel.getBlockState(pPos);
-        if (state.getValue(ON) && pLevel.random.nextBoolean()){
+        if (state.getValue(ON) && pLevel.random.nextFloat() > 0.6F && (pLevel.getBlockState(pPos.below()).is(Blocks.WATER) || pLevel.getBlockState(pPos.below()).is(Blocks.WATER_CAULDRON))){
             pLevel.addParticle(ParticleTypes.DRIPPING_WATER, pPos.getX(), pPos.above().getY(), pPos.getZ(), 0.0, 0.0, 0.0);
         }
 

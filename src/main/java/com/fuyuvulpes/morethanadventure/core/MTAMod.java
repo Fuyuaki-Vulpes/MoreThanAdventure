@@ -3,9 +3,11 @@ package com.fuyuvulpes.morethanadventure.core;
 import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.ButterflyRender;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
+import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.fuyuvulpes.morethanadventure.world.entity.FallenSamurai;
 import com.fuyuvulpes.morethanadventure.world.entity.YukiOnna;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -130,6 +132,7 @@ public class MTAMod
             event.registerBlockEntityRenderer(MtaBlockEntities.SPRINKLER.get(), context -> new SprinklerRenderer());
             event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
             event.registerEntityRenderer(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamuraiRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.BUTTERFLY.get(), ButterflyRender::new);
 
         }
 
@@ -156,6 +159,7 @@ public class MTAMod
         public static void entityAttributes(EntityAttributeCreationEvent event){
             event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
             event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
+            event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         }
 
 
@@ -171,6 +175,11 @@ public class MTAMod
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     FallenSamurai::checkMonsterSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.BUTTERFLY.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING,
+                    Butterfly::checkAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
 
         }

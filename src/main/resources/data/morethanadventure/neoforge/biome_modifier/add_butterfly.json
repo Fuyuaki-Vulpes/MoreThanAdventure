@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_butterfly",
+  "spawners": {
+    "type": "morethanadventure:butterfly",
+    "weight": 30,
+    "minCount": 1,
+    "maxCount": 6
+  }
+
+}

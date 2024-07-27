@@ -1,5 +1,6 @@
 package com.fuyuvulpes.morethanadventure.core.registry;
 
+import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.fuyuvulpes.morethanadventure.world.entity.FallenSamurai;
 import com.fuyuvulpes.morethanadventure.world.entity.YukiOnna;
 import net.minecraft.core.registries.Registries;
@@ -26,7 +27,12 @@ public class MtaEntityTypes {
     public static final DeferredHolder<EntityType<?>,EntityType<YukiOnna>> YUKI_ONNA = ENTITY.register("yuki_onna",
             () -> EntityType.Builder.<YukiOnna>of(YukiOnna::new, MobCategory.MONSTER)
                     .sized(0.8f,1.9F)
-                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"fallen_samurai").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"yuki_onna").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Butterfly>> BUTTERFLY = ENTITY.register("butterfly",
+            () -> EntityType.Builder.<Butterfly>of(Butterfly::new, MobCategory.AMBIENT)
+                    .sized(0.3f,0.3F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"butterfly").toString()));
 
 
     public static void register(IEventBus eventBus){

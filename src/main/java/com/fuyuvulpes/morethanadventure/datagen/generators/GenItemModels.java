@@ -85,35 +85,36 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.SHADOW_ROGUES_BOOTS);
 
         //FOODS
-        /*
+
         simpleItem(MtaItems.ONION);
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.COOKED_SHRIMP);
         simpleItem(MtaItems.TOMATO);
         simpleItem(MtaItems.RED_PEPPER);
         simpleItem(MtaItems.CHILI_PEPPER);
-        simpleItem(MtaItems.RICE);
-        simpleItem(MtaItems.RICE_BALL);
-        simpleItem(MtaItems.COCONUT);
-        simpleItem(MtaItems.COCONUT_MILK);
-        simpleItem(MtaItems.COCONUT_SLICE);
-        simpleItem(MtaItems.SPICE_MIX);
-        simpleItem(MtaItems.SWEET_BEEF_CURRY);
-        simpleItem(MtaItems.SWEET_PORK_CURRY);
-        simpleItem(MtaItems.SWEET_CHICKEN_CURRY);
-        simpleItem(MtaItems.SWEET_SHRIMP_CURRY);
-        simpleItem(MtaItems.MILD_BEEF_CURRY);
-        simpleItem(MtaItems.MILD_PORK_CURRY);
-        simpleItem(MtaItems.MILD_CHICKEN_CURRY);
-        simpleItem(MtaItems.MILD_SHRIMP_CURRY);
-        simpleItem(MtaItems.SPICY_BEEF_CURRY);
-        simpleItem(MtaItems.SPICY_PORK_CURRY);
-        simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
-        simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
-*/
+    //    simpleItem(MtaItems.RICE);
+    //    simpleItem(MtaItems.RICE_BALL);
+    //    simpleItem(MtaItems.COCONUT);
+    //    simpleItem(MtaItems.COCONUT_MILK);
+    //    simpleItem(MtaItems.COCONUT_SLICE);
+    //    simpleItem(MtaItems.SPICE_MIX);
+    //    simpleItem(MtaItems.SWEET_BEEF_CURRY);
+    //    simpleItem(MtaItems.SWEET_PORK_CURRY);
+    //    simpleItem(MtaItems.SWEET_CHICKEN_CURRY);
+    //    simpleItem(MtaItems.SWEET_SHRIMP_CURRY);
+    //    simpleItem(MtaItems.MILD_BEEF_CURRY);
+    //    simpleItem(MtaItems.MILD_PORK_CURRY);
+    //    simpleItem(MtaItems.MILD_CHICKEN_CURRY);
+    //    simpleItem(MtaItems.MILD_SHRIMP_CURRY);
+    //    simpleItem(MtaItems.SPICY_BEEF_CURRY);
+    //    simpleItem(MtaItems.SPICY_PORK_CURRY);
+    //    simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
+    //    simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
+
         //SPAWN EGGS
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
         simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
+        simpleItem(MtaItems.BUTTERFLY_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {
