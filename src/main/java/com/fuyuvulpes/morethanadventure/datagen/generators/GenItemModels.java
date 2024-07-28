@@ -75,7 +75,7 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
         //simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
-        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
+        simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
         //simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
         //simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
 
