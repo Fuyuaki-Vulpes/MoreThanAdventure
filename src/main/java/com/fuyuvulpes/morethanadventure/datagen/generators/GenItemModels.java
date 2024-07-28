@@ -37,14 +37,18 @@ public class GenItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(MtaItems.BIG_BOWL);
+
         simpleItem(MtaItems.CLEAR_QUARTZ);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
+
         //simpleItem(MtaItems.AGATE);
         //simpleItem(MtaItems.ALEXANDRITE);
         //simpleItem(MtaItems.AQUAMARINE);
         //simpleItem(MtaItems.CELESTITE);
         //simpleItem(MtaItems.GARNET);
         //simpleItem(MtaItems.MOONSTONE);
+
         //simpleItem(MtaItems.ARMAMENT_UPGRADE);
         //simpleItem(MtaItems.LOYALTY_UPGRADE);
         //simpleItem(MtaItems.AQUATIC_UPGRADE);

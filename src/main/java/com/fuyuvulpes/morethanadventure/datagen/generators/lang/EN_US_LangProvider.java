@@ -22,14 +22,18 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
 
         //ITEM
+       add(MtaItems.BIG_BOWL.get(),"Big Bowl");
+
         add(MtaItems.CLEAR_QUARTZ.get(),"Clear Quartz");
         add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
+
         add(MtaItems.AGATE.get(),"Agate");
         add(MtaItems.ALEXANDRITE.get(),"Alexandrite");
         add(MtaItems.AQUAMARINE.get(),"Aquamarine");
         add(MtaItems.CELESTITE.get(),"Celestite");
         add(MtaItems.GARNET.get(),"Garnet");
         add(MtaItems.MOONSTONE.get(),"Moonstone");
+
         add(MtaItems.ARMAMENT_UPGRADE.get(),"Armament_Upgrade");
         add(MtaItems.LOYALTY_UPGRADE.get(),"Loyalty_Upgrade");
         add(MtaItems.AQUATIC_UPGRADE.get(),"Aquatic_Upgrade");
