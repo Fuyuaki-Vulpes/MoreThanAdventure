@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure.game.client.model.entity.layers;
+package com.fuyuvulpes.morethanadventure.game.client.renderer.entity.layers;
 
 import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -13,8 +13,15 @@ import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 import software.bernie.geckolib.util.Color;
 
-public class ButterflyWingsOverlay extends GeoRenderLayer<Butterfly> {
-    public ButterflyWingsOverlay(GeoRenderer<Butterfly> entityRendererIn) {
+import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
+
+public class ButterflyWingsPattern extends GeoRenderLayer<Butterfly> {
+
+    private static final ResourceLocation PATTERN_A = ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/butterfly/pattern_a.png");
+    private static final ResourceLocation PATTERN_B = ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/butterfly/pattern_b.png");
+    private static final ResourceLocation PATTERN_C = ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/butterfly/pattern_c.png");
+
+    public ButterflyWingsPattern(GeoRenderer<Butterfly> entityRendererIn) {
         super(entityRendererIn);
     }
 
@@ -32,13 +39,19 @@ public class ButterflyWingsOverlay extends GeoRenderLayer<Butterfly> {
                 partialTick,
                 packedLight,
                 packedOverlay,
-                animatable.getOverlayColor().getTextureDiffuseColor());
+                animatable.getColor().getTextureDiffuseColor());
     }
-
-
 
     @Override
     protected ResourceLocation getTextureResource(Butterfly animatable) {
-        return animatable.getOverlayFile();
+
+
+        return switch (animatable.getPattern()) {
+            case 0 -> PATTERN_A;
+            case 1 -> PATTERN_B;
+            case 2 -> PATTERN_C;
+            default -> throw new IllegalStateException("Unexpected value: " + animatable.getOverlay());
+        };
     }
+
 }

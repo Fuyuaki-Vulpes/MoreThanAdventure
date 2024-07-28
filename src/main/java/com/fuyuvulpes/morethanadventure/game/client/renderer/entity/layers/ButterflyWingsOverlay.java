@@ -1,4 +1,4 @@
-package com.fuyuvulpes.morethanadventure.game.client.model.entity.layers;
+package com.fuyuvulpes.morethanadventure.game.client.renderer.entity.layers;
 
 import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -13,8 +13,16 @@ import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 import software.bernie.geckolib.util.Color;
 
-public class ButterflyWingsPattern extends GeoRenderLayer<Butterfly> {
-    public ButterflyWingsPattern(GeoRenderer<Butterfly> entityRendererIn) {
+import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
+
+public class ButterflyWingsOverlay extends GeoRenderLayer<Butterfly> {
+    private static final ResourceLocation OVERLAY_A = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_a.png");
+    private static final ResourceLocation OVERLAY_B = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_b.png");
+    private static final ResourceLocation OVERLAY_C = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_c.png");
+    private static final ResourceLocation OVERLAY_D = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_d.png");
+
+
+    public ButterflyWingsOverlay(GeoRenderer<Butterfly> entityRendererIn) {
         super(entityRendererIn);
     }
 
@@ -39,6 +47,14 @@ public class ButterflyWingsPattern extends GeoRenderLayer<Butterfly> {
 
     @Override
     protected ResourceLocation getTextureResource(Butterfly animatable) {
-        return animatable.getPatternFile();
+
+
+        return switch (animatable.getOverlay()) {
+            case 0 -> OVERLAY_A;
+            case 1 -> OVERLAY_B;
+            case 2 -> OVERLAY_C;
+            case 3 -> OVERLAY_D;
+            default -> throw new IllegalStateException("Unexpected value: " + animatable.getOverlay());
+        };
     }
 }

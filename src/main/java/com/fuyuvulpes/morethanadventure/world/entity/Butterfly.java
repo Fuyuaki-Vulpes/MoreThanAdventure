@@ -46,9 +46,14 @@ import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
 public class Butterfly extends Animal implements FlyingAnimal, GeoEntity {
+    public int pattern = 0;
+    public int overlay = 0;
     protected static final RawAnimation LANDED = RawAnimation.begin().thenLoop("animation.butterfly.landed");
     protected static final RawAnimation FLIGHT = RawAnimation.begin().thenLoop("animation.butterfly.flight");
     private static final int TICKS_PER_FLAP = Mth.ceil(1.4959966F);
@@ -75,10 +80,16 @@ public class Butterfly extends Animal implements FlyingAnimal, GeoEntity {
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(2, new Butterfly.ButterflyWanderGoal(this, 1.0F));
         this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(ItemTags.BEE_FOOD), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(ItemTags.FLOWERS), false));
+        this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
         this.goalSelector.addGoal(9, new FloatGoal(this));
 
 
+    }
+
+    @Override
+    public void checkDespawn() {
+        super.checkDespawn();
     }
 
     @Override
@@ -183,10 +194,10 @@ public class Butterfly extends Animal implements FlyingAnimal, GeoEntity {
     }
 
     public DyeColor getColor() {
-        return DyeColor.byId(this.entityData.get(DATA_ID_COLOR) & 15);
+        return DyeColor.byId(this.entityData.get(DATA_ID_COLOR));
     }
     public DyeColor getOverlayColor() {
-        return DyeColor.byId(this.entityData.get(DATA_ID_COLOR_OVERLAY) & 15);
+        return DyeColor.byId(this.entityData.get(DATA_ID_COLOR_OVERLAY));
     }
 
 
@@ -194,41 +205,20 @@ public class Butterfly extends Animal implements FlyingAnimal, GeoEntity {
         byte b0 = this.entityData.get(DATA_ID_COLOR);
         this.entityData.set(DATA_ID_COLOR, (byte)(b0 & 240 | pDyeColor.getId() & 15));
         this.entityData.set(DATA_ID_PATTERN,id);
+        this.pattern = id;
     }
     public void setOverlayAndColor(int id, DyeColor pDyeColor) {
         byte b0 = this.entityData.get(DATA_ID_COLOR_OVERLAY);
         this.entityData.set(DATA_ID_COLOR_OVERLAY, (byte)(b0 & 240 | pDyeColor.getId() & 15));
         this.entityData.set(DATA_ID_OVERLAY,id);
+        this.overlay = id;
+
     }
     public int getPattern(){
         return this.entityData.get(DATA_ID_PATTERN);
     }
     public int getOverlay(){
         return this.entityData.get(DATA_ID_OVERLAY);
-    }
-
-    public ResourceLocation getPatternFile(){
-        String key;
-        switch (this.getPattern()){
-            case 0: key = "a";
-            case 1: key = "b";
-            case 2: key = "c";
-            default: key = "a";
-        }
-        return ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/pattern_"+key+".png");
-
-    }
-    public ResourceLocation getOverlayFile(){
-        String key;
-        switch (this.getOverlay()){
-            case 0: key = "a";
-            case 1: key = "b";
-            case 2: key = "c";
-            case 3: key = "d";
-            default: key = "a";
-        }
-        return ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_"+key+".png");
-
     }
 
     @javax.annotation.Nullable
@@ -238,13 +228,12 @@ public class Butterfly extends Animal implements FlyingAnimal, GeoEntity {
         DyeColor[] adyecolor = DyeColor.values();
         DyeColor dyecolor = Util.getRandom(adyecolor, randomsource);
         DyeColor dyecolorb = Util.getRandom(adyecolor, randomsource);
-
-        this.setPatternAndColor(UniformInt.of(0,2).sample(randomsource),
-                dyecolor
-                );
-        this.setOverlayAndColor(UniformInt.of(0,3).sample(randomsource),
-                dyecolorb
-                );
+        int pattern = pLevel.getRandom().nextInt(2);
+        int overlay = pLevel.getRandom().nextInt(3);
+        this.overlay = overlay;
+        this.pattern = pattern;
+        this.setPatternAndColor(pattern, dyecolor);
+        this.setOverlayAndColor(overlay, dyecolorb);
 
 
         return super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
@@ -261,6 +250,7 @@ public class Butterfly extends Animal implements FlyingAnimal, GeoEntity {
         protected Vec3 getPosition() {
             Vec3 vec3 = null;
             if (this.mob.isInWater()) {
+                vec3 = this.mob.getViewVector(0.0F);
                 vec3 = HoverRandomPos.getPos(this.mob, 12, 9, vec3.x, vec3.z, (float) (Math.PI / 2), 3, 1);
             }
             if (this.mob.getRandom().nextFloat() >= 0.8F){

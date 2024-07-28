@@ -1,8 +1,8 @@
 package com.fuyuvulpes.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuvulpes.morethanadventure.game.client.model.entity.ButterflyModel;
-import com.fuyuvulpes.morethanadventure.game.client.model.entity.layers.ButterflyWingsOverlay;
-import com.fuyuvulpes.morethanadventure.game.client.model.entity.layers.ButterflyWingsPattern;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.layers.ButterflyWingsOverlay;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.layers.ButterflyWingsPattern;
 import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -12,8 +12,9 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 public class ButterflyRender extends GeoEntityRenderer<Butterfly> {
     public ButterflyRender(EntityRendererProvider.Context renderManager) {
         super(renderManager, new ButterflyModel());
-        addRenderLayer(new ButterflyWingsPattern(this));
-        addRenderLayer(new ButterflyWingsOverlay(this));
+
+        this.addRenderLayer(new ButterflyWingsPattern(this));
+        this.addRenderLayer(new ButterflyWingsOverlay(this));
     }
 
 

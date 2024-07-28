@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "refmap": "yoamod.refmap.json",
   "mixins": [
-    "FarmBlockMixin"
+    "FarmBlockMixin",
+    "ServerPlayerMixin"
   ],
   "client": [
   ],
