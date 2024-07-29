@@ -85,6 +85,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SWEET_CHICKEN_CURRY.get(),"Sweet Chicken Curry");
         add(MtaItems.SWEET_SHRIMP_CURRY.get(),"Sweet Shrimp Curry");
         add(MtaItems.MILD_BEEF_CURRY.get(),"Mild Beef Curry");
+        add(MtaItems.MILD_PORK_CURRY.get(),"Mild Pork Curry");
         add(MtaItems.MILD_CHICKEN_CURRY.get(),"Mild Chicken Curry");
         add(MtaItems.MILD_SHRIMP_CURRY.get(),"Mild Shrimp Curry");
         add(MtaItems.SPICY_BEEF_CURRY.get(),"Spicy Beef Curry");

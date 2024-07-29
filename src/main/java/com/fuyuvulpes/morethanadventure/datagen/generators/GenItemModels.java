@@ -102,18 +102,18 @@ public class GenItemModels extends ItemModelProvider {
     //    simpleItem(MtaItems.COCONUT_MILK);
     //    simpleItem(MtaItems.COCONUT_SLICE);
     //    simpleItem(MtaItems.SPICE_MIX);
-    //    simpleItem(MtaItems.SWEET_BEEF_CURRY);
-    //    simpleItem(MtaItems.SWEET_PORK_CURRY);
-    //    simpleItem(MtaItems.SWEET_CHICKEN_CURRY);
-    //    simpleItem(MtaItems.SWEET_SHRIMP_CURRY);
-    //    simpleItem(MtaItems.MILD_BEEF_CURRY);
-    //    simpleItem(MtaItems.MILD_PORK_CURRY);
-    //    simpleItem(MtaItems.MILD_CHICKEN_CURRY);
-    //    simpleItem(MtaItems.MILD_SHRIMP_CURRY);
-    //    simpleItem(MtaItems.SPICY_BEEF_CURRY);
-    //    simpleItem(MtaItems.SPICY_PORK_CURRY);
-    //    simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
-    //    simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
+        simpleItem(MtaItems.SWEET_BEEF_CURRY);
+        simpleItem(MtaItems.SWEET_PORK_CURRY);
+        simpleItem(MtaItems.SWEET_CHICKEN_CURRY);
+        simpleItem(MtaItems.SWEET_SHRIMP_CURRY);
+        simpleItem(MtaItems.MILD_BEEF_CURRY);
+        simpleItem(MtaItems.MILD_PORK_CURRY);
+        simpleItem(MtaItems.MILD_CHICKEN_CURRY);
+        simpleItem(MtaItems.MILD_SHRIMP_CURRY);
+        simpleItem(MtaItems.SPICY_BEEF_CURRY);
+        simpleItem(MtaItems.SPICY_PORK_CURRY);
+        simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
+        simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
 
         //SPAWN EGGS
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
