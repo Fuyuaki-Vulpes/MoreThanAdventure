@@ -71,6 +71,11 @@ public class MtaTabs {
 
 
 
+
+                //FOOD TOOLS
+
+                output.accept(MtaItems.BIG_BOWL);
+
                 //FOOD
                 output.accept(MtaItems.ONION);
                 output.accept(MtaItems.SHRIMP);

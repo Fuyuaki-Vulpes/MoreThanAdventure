@@ -137,6 +137,8 @@ dependencies {
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 
+    implementation "curse.maven:farmers-delight-398521:${farmersDelightVersion}"
+
 
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 
@@ -183,6 +185,7 @@ tasks.withType(ProcessResources).configureEach {
             placeboVersion         : placeboVersion,
             attributesLibVersion   : attributesLibVersion,
             terrablenderVersion    : terrablenderVersion,
+            farmersDelightVersion    : farmersDelightVersion,
             emi_version            : emi_version,
             curiosVersion     : curiosVersion,
             geckolib_version       : geckolib_version
