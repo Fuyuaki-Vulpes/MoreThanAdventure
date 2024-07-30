@@ -3,11 +3,8 @@ package com.fuyuvulpes.morethanadventure.datagen.generators.lang;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaItems;
-import com.fuyuvulpes.morethanadventure.core.registry.MtaTabs;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-
-import java.awt.*;
 
 import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
@@ -75,11 +72,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.RED_PEPPER.get(),"Red Pepper");
         add(MtaItems.CHILI_PEPPER.get(),"Chili Pepper");
         add(MtaItems.RICE.get(),"Rice");
-        add(MtaItems.RICE_BALL.get(),"Rice Ball");
+        add(MtaItems.ONIGIRI.get(),"Onigiri");
         add(MtaItems.COCONUT.get(),"Coconut");
         add(MtaItems.COCONUT_MILK.get(),"Coconut Milk");
         add(MtaItems.COCONUT_SLICE.get(),"Coconut Slice");
-        add(MtaItems.SPICE_MIX.get(),"Spice Mix");
+        //add(MtaItems.SPICE_MIX.get(),"Spice Mix");
         add(MtaItems.SWEET_BEEF_CURRY.get(),"Sweet Beef Curry");
         add(MtaItems.SWEET_PORK_CURRY.get(),"Sweet Pork Curry");
         add(MtaItems.SWEET_CHICKEN_CURRY.get(),"Sweet Chicken Curry");

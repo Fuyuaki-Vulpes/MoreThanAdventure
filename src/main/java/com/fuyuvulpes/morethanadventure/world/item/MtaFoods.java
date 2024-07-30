@@ -30,7 +30,7 @@ public class MtaFoods {
             .saturationModifier(1.0F)
             .build();
 
-    public static final FoodProperties RICE_BALL = new FoodProperties.Builder()
+    public static final FoodProperties ONIGIRI = new FoodProperties.Builder()
             .nutrition(7)
             .saturationModifier(1.3F)
             .build();

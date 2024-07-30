@@ -42,12 +42,12 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.CLEAR_QUARTZ);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
 
-        //simpleItem(MtaItems.AGATE);
-        //simpleItem(MtaItems.ALEXANDRITE);
-        //simpleItem(MtaItems.AQUAMARINE);
-        //simpleItem(MtaItems.CELESTITE);
-        //simpleItem(MtaItems.GARNET);
-        //simpleItem(MtaItems.MOONSTONE);
+        simpleItem(MtaItems.AGATE);
+        simpleItem(MtaItems.ALEXANDRITE);
+        simpleItem(MtaItems.AQUAMARINE);
+        simpleItem(MtaItems.CELESTITE);
+        simpleItem(MtaItems.GARNET);
+        simpleItem(MtaItems.MOONSTONE);
 
         simpleItem(MtaItems.ARMAMENT_UPGRADE);
         simpleItem(MtaItems.LOYALTY_UPGRADE);
@@ -96,11 +96,11 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.TOMATO);
         simpleItem(MtaItems.RED_PEPPER);
         simpleItem(MtaItems.CHILI_PEPPER);
-    //    simpleItem(MtaItems.RICE);
-    //    simpleItem(MtaItems.RICE_BALL);
-    //    simpleItem(MtaItems.COCONUT);
-    //    simpleItem(MtaItems.COCONUT_MILK);
-    //    simpleItem(MtaItems.COCONUT_SLICE);
+        simpleItem(MtaItems.RICE);
+        simpleItem(MtaItems.ONIGIRI);
+        simpleItem(MtaItems.COCONUT);
+        simpleItem(MtaItems.COCONUT_MILK);
+        simpleItem(MtaItems.COCONUT_SLICE);
     //    simpleItem(MtaItems.SPICE_MIX);
         simpleItem(MtaItems.SWEET_BEEF_CURRY);
         simpleItem(MtaItems.SWEET_PORK_CURRY);

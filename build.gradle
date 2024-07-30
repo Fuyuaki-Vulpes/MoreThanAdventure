@@ -137,7 +137,7 @@ dependencies {
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 
-    //implementation "curse.maven:farmers-delight-398521:${farmersDelightVersion}"
+    implementation "curse.maven:farmers-delight-398521:${farmersDelightVersion}"
 
 
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"

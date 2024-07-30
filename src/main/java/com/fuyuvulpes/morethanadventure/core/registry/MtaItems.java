@@ -84,7 +84,7 @@ public class MtaItems {
     public static final DeferredItem<Item> RED_PEPPER = ITEMS.registerSimpleItem("red_pepper", new Item.Properties().food(MtaFoods.RED_PEPPER));
     public static final DeferredItem<Item> CHILI_PEPPER = ITEMS.registerSimpleItem("chilli_pepper", new Item.Properties().food(MtaFoods.CHILI_PEPPER));
     public static final DeferredItem<Item> RICE = ITEMS.registerSimpleItem("rice", new Item.Properties());
-    public static final DeferredItem<Item> RICE_BALL = ITEMS.registerSimpleItem("rice_ball", new Item.Properties().food(MtaFoods.RICE_BALL));
+    public static final DeferredItem<Item> ONIGIRI = ITEMS.registerSimpleItem("onigiri", new Item.Properties().food(MtaFoods.ONIGIRI));
     public static final DeferredItem<Item> COCONUT = ITEMS.registerSimpleItem("coconut", new Item.Properties());
     public static final DeferredItem<Item> COCONUT_MILK = ITEMS.registerSimpleItem("coconut_milk", new Item.Properties());
     public static final DeferredItem<Item> COCONUT_SLICE = ITEMS.registerSimpleItem("coconut_slice", new Item.Properties().food(MtaFoods.COCONUT_SLICE));
