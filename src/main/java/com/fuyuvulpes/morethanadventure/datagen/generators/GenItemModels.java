@@ -49,12 +49,12 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.GARNET);
         //simpleItem(MtaItems.MOONSTONE);
 
-        //simpleItem(MtaItems.ARMAMENT_UPGRADE);
-        //simpleItem(MtaItems.LOYALTY_UPGRADE);
-        //simpleItem(MtaItems.AQUATIC_UPGRADE);
-        //simpleItem(MtaItems.ANGELIC_UPGRADE);
-        //simpleItem(MtaItems.BERSERK_UPGRADE);
-        //simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
+        simpleItem(MtaItems.ARMAMENT_UPGRADE);
+        simpleItem(MtaItems.LOYALTY_UPGRADE);
+        simpleItem(MtaItems.AQUATIC_UPGRADE);
+        simpleItem(MtaItems.ANGELIC_UPGRADE);
+        simpleItem(MtaItems.BERSERK_UPGRADE);
+        simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
 
         //ARMOR
 
