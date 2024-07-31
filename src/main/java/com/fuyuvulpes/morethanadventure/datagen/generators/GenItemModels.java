@@ -78,10 +78,10 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
         //simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
-        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
+        simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
-        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
-        //simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
+        simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
+        simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
 
         //simpleItem(MtaItems.SHADOW_ROGUES_HELMET);
         //simpleItem(MtaItems.SHADOW_ROGUES_CHESTPLATE);
@@ -101,7 +101,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.COCONUT);
         simpleItem(MtaItems.COCONUT_MILK);
         simpleItem(MtaItems.COCONUT_SLICE);
-    //    simpleItem(MtaItems.SPICE_MIX);
+        simpleItem(MtaItems.SPICE_MIX);
         simpleItem(MtaItems.SWEET_BEEF_CURRY);
         simpleItem(MtaItems.SWEET_PORK_CURRY);
         simpleItem(MtaItems.SWEET_CHICKEN_CURRY);
