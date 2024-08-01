@@ -20,6 +20,7 @@ public class GenBiomeTags  extends BiomeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
         //this.tag(Tags.Biomes.IS_LUSH).add(MtaBiomes.LUSH_RIVER);
         //this.tag(Tags.Biomes.IS_RIVER).add(MtaBiomes.LUSH_RIVER);
 
