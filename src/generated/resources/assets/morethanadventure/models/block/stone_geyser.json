@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/stone",
+    "east": "minecraft:block/stone",
+    "north": "minecraft:block/stone",
+    "particle": "morethanadventure:block/stone_geyser",
+    "south": "minecraft:block/stone",
+    "up": "morethanadventure:block/stone_geyser",
+    "west": "minecraft:block/stone"
+  }
+}

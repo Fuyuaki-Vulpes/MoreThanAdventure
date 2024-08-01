@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/terracotta",
+    "east": "minecraft:block/terracotta",
+    "north": "minecraft:block/terracotta",
+    "particle": "morethanadventure:block/terracotta_geyser",
+    "south": "minecraft:block/terracotta",
+    "up": "morethanadventure:block/terracotta_geyser",
+    "west": "minecraft:block/terracotta"
+  }
+}

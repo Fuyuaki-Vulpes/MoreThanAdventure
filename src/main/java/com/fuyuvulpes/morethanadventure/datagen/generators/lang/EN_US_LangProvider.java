@@ -17,9 +17,14 @@ public class EN_US_LangProvider extends LanguageProvider {
     protected void addTranslations() {
         //BLOCKS
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
+        add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
+        add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
+        add(MtaBlocks.NETHERRACK_GEYSER.get(),"Netherrack Geyser");
+        add(MtaBlocks.BASALT_GEYSER.get(),"Basalt Geyser");
+
 
         //ITEM
-       add(MtaItems.BIG_BOWL.get(),"Big Bowl");
+        add(MtaItems.BIG_BOWL.get(),"Big Bowl");
 
         add(MtaItems.CLEAR_QUARTZ.get(),"Clear Quartz");
         add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
