@@ -21,6 +21,13 @@ public class MtaTabs {
             .displayItems((parameters, output) -> {
                 //BLOCKS
                 output.accept(MtaBlocks.SPRINKLER.get());
+                output.accept(MtaBlocks.STONE_GEYSER.get());
+                output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());
+                output.accept(MtaBlocks.NETHERRACK_GEYSER.get());
+                output.accept(MtaBlocks.BASALT_GEYSER.get());
+
+
+
                 //ITEMS
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);

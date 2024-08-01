@@ -1,5 +1,6 @@
 package com.fuyuvulpes.morethanadventure.core.registry;
 
+import com.fuyuvulpes.morethanadventure.world.block.GeyserBlock;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -36,6 +37,31 @@ public class MtaBlocks {
                     .sound(SoundType.METAL)
                     .noOcclusion()));
 
+
+
+
+
+
+    public static final DeferredBlock<GeyserBlock> STONE_GEYSER = registerBlock("stone_geyser",() -> new GeyserBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.STONE),false
+    ));
+
+    public static final DeferredBlock<GeyserBlock> TERRACOTTA_GEYSER = registerBlock("terracotta_geyser",() -> new GeyserBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.TERRACOTTA),false
+    ));
+
+    public static final DeferredBlock<GeyserBlock> NETHERRACK_GEYSER = registerBlock("netherrack_geyser",() -> new GeyserBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.NETHERRACK)
+                    .strength(1.25F, 4.2F),true
+    ));
+
+    public static final DeferredBlock<GeyserBlock> BASALT_GEYSER = registerBlock("basalt_geyser",() -> new GeyserBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.BASALT), true
+    ));
 
 
 

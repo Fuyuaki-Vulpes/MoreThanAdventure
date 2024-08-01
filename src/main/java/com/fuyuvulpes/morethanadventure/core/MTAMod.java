@@ -2,6 +2,7 @@ package com.fuyuvulpes.morethanadventure.core;
 
 import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
+import com.fuyuvulpes.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.ButterflyRender;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
@@ -10,6 +11,8 @@ import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.fuyuvulpes.morethanadventure.world.entity.FallenSamurai;
 import com.fuyuvulpes.morethanadventure.world.entity.YukiOnna;
+import dev.shadowsoffire.apothic_attributes.api.ALObjects;
+import dev.shadowsoffire.apothic_attributes.client.AttributesLibClient;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
@@ -19,6 +22,7 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.slf4j.Logger;
@@ -131,7 +135,15 @@ public class MTAMod
 
         }
 
+        @SubscribeEvent
         public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+
+        }
+
+        @SubscribeEvent
+        public static void particleFactory(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(MtaParticles.GEYSER_WATER.get(), GeyserParticle.Water::new);
+            event.registerSpriteSet(MtaParticles.GEYSER_LAVA.get(), GeyserParticle.Lava::new);
 
         }
     }
