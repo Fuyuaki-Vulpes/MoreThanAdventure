@@ -15,6 +15,14 @@ public class MTAToolTiers {
             20,
             () -> Ingredient.of(Tags.Items.INGOTS_COPPER)
     );
+    public static final Tier NETHERSTEEL = new SimpleTier(
+            MtaTags.Blocks.INCORRECT_FOR_NETHERSTEEL_TOOL,
+            870,
+            7f,
+            2.5f,
+            16,
+            () -> Ingredient.of(Tags.Items.INGOTS_COPPER)
+    );
 
 
 
