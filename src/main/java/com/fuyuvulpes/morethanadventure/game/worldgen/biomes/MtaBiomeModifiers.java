@@ -1,5 +1,6 @@
-package com.fuyuvulpes.morethanadventure.game.worldgen;
+package com.fuyuvulpes.morethanadventure.game.worldgen.biomes;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -10,7 +11,11 @@ import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
 public class MtaBiomeModifiers {
 
+
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
+
+        var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+        var biomes = context.lookup(Registries.BIOME);
 
     }
 

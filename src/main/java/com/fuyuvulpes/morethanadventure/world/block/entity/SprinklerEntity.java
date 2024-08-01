@@ -1,6 +1,6 @@
 package com.fuyuvulpes.morethanadventure.world.block.entity;
 
-import com.fuyuvulpes.morethanadventure.core.MTAServerConfig;
+import com.fuyuvulpes.morethanadventure.core.MTACommonConfig;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaBlockEntities;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
@@ -53,7 +53,7 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
 
     public static void particleTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
         for (int k = 0; k < 50; k += 5) {
-            float cRange = (float) (MTAServerConfig.sprinklerRange * k) / 25;
+            float cRange = (float) (MTACommonConfig.sprinklerRange * k) / 25;
             float xRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             float zRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             level.addParticle(ParticleTypes.FALLING_WATER, blockPos.getCenter().x + xRange,
@@ -64,7 +64,7 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
     }
 
     public static void growthTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
-        int range = MTAServerConfig.sprinklerRange;
+        int range = MTACommonConfig.sprinklerRange;
         if (level.random.nextFloat() < 0.005) {
             for (BlockPos pos : BlockPos.betweenClosed(blockPos.east(range).above(2).south(range), blockPos.west(range).below().north(range))) {
                 BlockState state = level.getBlockState(pos);

@@ -1,7 +1,6 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
-import com.fuyuvulpes.morethanadventure.game.worldgen.MtaBiomeModifiers;
-import com.fuyuvulpes.morethanadventure.game.worldgen.MtaBiomes;
+import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaBiomeModifiers;
 import com.fuyuvulpes.morethanadventure.game.worldgen.MtaConfigFeatures;
 import com.fuyuvulpes.morethanadventure.game.worldgen.MtaPlacedFeatures;
 import net.minecraft.core.HolderLookup;
@@ -21,7 +20,6 @@ public class GenWorld extends DatapackBuiltinEntriesProvider {
             .add(Registries.CONFIGURED_FEATURE, MtaConfigFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, MtaPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, MtaBiomeModifiers::bootstrap)
-            .add(Registries.BIOME, MtaBiomes::boostrap)
             ;
 
 
