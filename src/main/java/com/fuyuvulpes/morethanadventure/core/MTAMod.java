@@ -7,6 +7,8 @@ import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRend
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.ButterflyRender;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
+import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaOverworldRegions;
+import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
 import com.fuyuvulpes.morethanadventure.world.entity.FallenSamurai;
@@ -16,6 +18,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -39,6 +42,8 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MTAMod.MODID)
@@ -81,7 +86,8 @@ public class MTAMod
     {
         event.enqueueWork(() ->
         {
-            //MtaBiomes.setupTerrablender();
+            Regions.register(new MtaOverworldRegions(ResourceLocation.fromNamespaceAndPath(MODID, "overworld"), 2));
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,MODID,MtaSurfaceRules.makeOverworld());
         });
     }
 
