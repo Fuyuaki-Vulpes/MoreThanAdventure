@@ -8,6 +8,7 @@ import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.ButterflyRen
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaOverworldRegions;
+import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
@@ -86,7 +87,7 @@ public class MTAMod
     {
         event.enqueueWork(() ->
         {
-            Regions.register(new MtaOverworldRegions(ResourceLocation.fromNamespaceAndPath(MODID, "overworld"), 2));
+            MtaTerrablender.registerBiomes();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,MODID,MtaSurfaceRules.makeOverworld());
         });
     }

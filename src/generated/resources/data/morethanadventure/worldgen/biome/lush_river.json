@@ -61,7 +61,11 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "morethanadventure:frequent_clay"
     ],
     [],
     [
@@ -71,12 +75,15 @@
     [
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
+      "minecraft:trees_water",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
       "minecraft:patch_waterlily",
-      "minecraft:lush_caves_vegetation",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "morethanadventure:lush_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

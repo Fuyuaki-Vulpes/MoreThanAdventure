@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": "minecraft:seagrass_tall",
+        "placement": []
+      },
+      {
+        "feature": "minecraft:sea_pickle",
+        "placement": []
+      },
+      {
+        "feature": "minecraft:seagrass_simple",
+        "placement": []
+      },
+      {
+        "feature": "minecraft:kelp",
+        "placement": []
+      },
+      {
+        "feature": "morethanadventure:dripleaf",
+        "placement": []
+      }
+    ]
+  }
+}

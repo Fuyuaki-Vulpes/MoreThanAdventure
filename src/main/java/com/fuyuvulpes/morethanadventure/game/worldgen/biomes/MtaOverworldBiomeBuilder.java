@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import terrablender.api.ParameterUtils;
 
@@ -74,22 +75,28 @@ public class MtaOverworldBiomeBuilder {
 
 
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
+        addValleys(consumer,Climate.Parameter.span(-0.05F, 0.05F));
+
+    }
+
+    private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter pParam) {
+
         addSurfaceBiome(consumer,
                 temperatures[3],
                 humidities[4],
                 this.coastContinentalness,
-                erosions[6],
-                point(0.0F),
-                span(0.0F,VALLEY_SIZE),
+                span(erosions[0],erosions[1]),
+                pParam,
                 0.0F,
-                MtaBiomes.LUSH_RIVER);
+                pParam.max() < 0L ? Biomes.STONY_SHORE : MtaBiomes.LUSH_RIVER);
 
     }
 
 
 
-    private void addSurfaceBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion,Climate.Parameter depth, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
-        builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, depth, weirdness, offset), biome));
+        private void addSurfaceBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
+        builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, point(0.0F), weirdness, offset), biome));
+        builder.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, point(1.0F), weirdness, offset), biome));
     }
 
     private void addUndergroundBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> builder, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
@@ -105,6 +112,10 @@ public class MtaOverworldBiomeBuilder {
     }
 
     private Climate.Parameter span (float min, float max){
+        return Climate.Parameter.span(min,max);
+    }
+
+    private Climate.Parameter span (Climate.Parameter min, Climate.Parameter max){
         return Climate.Parameter.span(min,max);
     }
 
