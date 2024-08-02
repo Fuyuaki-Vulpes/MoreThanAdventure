@@ -38,10 +38,6 @@ import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 public class MtaConfigFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> FREQUENT_CLAY = registerKey("frequent_clay");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LUSH_VEGETATION_POOL = registerKey("lush_vegetation_pool");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> LUSH_WATER_VEGETATION = registerKey("lush_water_vegetation");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DRIPLEAF = registerKey("dripleaf");
-
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -55,53 +51,6 @@ public class MtaConfigFeatures {
                 )
         );
 
-        register(context,
-                DRIPLEAF,
-                Feature.WATERLOGGED_VEGETATION_PATCH,
-                new VegetationPatchConfiguration(
-                        BlockTags.LUSH_GROUND_REPLACEABLE,
-                        BlockStateProvider.simple(Blocks.CLAY),
-                        PlacementUtils.inlinePlaced(holdergetter.getOrThrow(CaveFeatures.DRIPLEAF)),
-                        CaveSurface.FLOOR,
-                        ConstantInt.of(3),
-                        0.4F,
-                        5,
-                        0.3F,
-                        UniformInt.of(4, 7),
-                        0.7F
-                ));
-
-
-        register(context,
-                LUSH_VEGETATION_POOL,Feature.VEGETATION_PATCH,
-                new VegetationPatchConfiguration(
-                        BlockTags.LUSH_GROUND_REPLACEABLE,
-                        BlockStateProvider.simple(Blocks.SAND),
-                        PlacementUtils.inlinePlaced(holdergetter.getOrThrow(LUSH_WATER_VEGETATION)),
-                        CaveSurface.FLOOR,
-                        ConstantInt.of(1),
-                        0.0F,
-                        5,
-                        0.8F,
-                        UniformInt.of(4, 7),
-                        0.3F
-                )
-        );
-
-        register(context,
-                LUSH_WATER_VEGETATION,
-                Feature.SIMPLE_RANDOM_SELECTOR,
-                new SimpleRandomFeatureConfiguration(
-                        HolderSet.direct(
-                                PlacementUtils.inlinePlaced(holdergetter.getOrThrow(AquaticFeatures.SEAGRASS_TALL)),
-                                PlacementUtils.inlinePlaced(holdergetter.getOrThrow(AquaticFeatures.SEA_PICKLE)),
-                                PlacementUtils.inlinePlaced(holdergetter.getOrThrow(AquaticFeatures.SEAGRASS_SIMPLE)),
-                                PlacementUtils.inlinePlaced(holdergetter.getOrThrow(AquaticFeatures.KELP)),
-                                PlacementUtils.inlinePlaced(holdergetter.getOrThrow(MtaConfigFeatures.DRIPLEAF)
-                                )
-                        )
-                )
-        );
 
 
     }

@@ -23,7 +23,6 @@ import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 public class MtaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
-    public static final ResourceKey<PlacedFeature> LUSH_VEGETATION = registerKey("lush_vegetation");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -38,21 +37,6 @@ public class MtaPlacedFeatures {
                 BiomeFilter.biome()
         );
 
-        register(
-                context,
-                LUSH_VEGETATION,
-                holder(context,MtaConfigFeatures.LUSH_VEGETATION_POOL),
-                CountPlacement.of(32),
-                InSquarePlacement.spread(),
-                PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
-                EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(),
-                        BlockPredicate.allOf(
-                        BlockPredicate.matchesBlocks(BlockPos.ZERO, Blocks.WATER),
-                        BlockPredicate.matchesBlocks(Direction.UP.getNormal(), Blocks.WATER)
-                ), 12),
-                RandomOffsetPlacement.vertical(ConstantInt.of(1)),
-                BiomeFilter.biome()
-        );
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

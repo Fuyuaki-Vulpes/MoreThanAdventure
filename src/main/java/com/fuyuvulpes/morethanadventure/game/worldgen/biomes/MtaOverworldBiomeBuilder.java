@@ -82,10 +82,26 @@ public class MtaOverworldBiomeBuilder {
     private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter pParam) {
 
         addSurfaceBiome(consumer,
-                temperatures[3],
+                temperatures[4],
                 humidities[4],
                 this.coastContinentalness,
                 span(erosions[0],erosions[1]),
+                pParam,
+                0.0F,
+                pParam.max() < 0L ? Biomes.STONY_SHORE : MtaBiomes.LUSH_RIVER);
+        addSurfaceBiome(consumer,
+                temperatures[3],
+                humidities[4],
+                this.nearInlandContinentalness,
+                span(erosions[0],erosions[1]),
+                pParam,
+                0.0F,
+                MtaBiomes.LUSH_RIVER);
+        addSurfaceBiome(consumer,
+                temperatures[3],
+                humidities[4],
+                span(this.coastContinentalness, this.farInlandContinentalness),
+                span(erosions[2],erosions[5]),
                 pParam,
                 0.0F,
                 pParam.max() < 0L ? Biomes.STONY_SHORE : MtaBiomes.LUSH_RIVER);

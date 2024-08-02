@@ -20,5 +20,6 @@ public class MtaOverworldRegions extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         (new MtaOverworldBiomeBuilder()).addBiomes(registry, mapper);
 
+
     }
 }
