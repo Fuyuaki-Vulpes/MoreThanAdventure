@@ -19,6 +19,9 @@ public class MtaTags {
         public static final TagKey<Block> INCORRECT_FOR_GARNET_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_garnet_tool"));
         public static final TagKey<Block> INCORRECT_FOR_MOONSTONE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_moonstone_tool"));
 
+        public static final TagKey<Block> NEEDS_NETHERSTEEL_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "needs_copper_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_NETHERSTEEL_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_cooper_tool"));
+
 
     }
 }

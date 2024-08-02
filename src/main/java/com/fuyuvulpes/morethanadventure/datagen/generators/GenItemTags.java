@@ -1,6 +1,7 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
 import com.fuyuvulpes.morethanadventure.core.registry.MtaItems;
+import com.fuyuvulpes.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
