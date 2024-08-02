@@ -69,6 +69,27 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SHADOW_ROGUES_LEGGINGS.get(), "Shadow Rogue's Leggings");
         add(MtaItems.SHADOW_ROGUES_BOOTS.get(), "Shadow Rogue's Boots");
 
+        //TOOLS
+        add(MtaItems.ARMAMENT_PICKAXE.get(), "Armament Pickaxe");
+        add(MtaItems.ARMAMENT_AXE.get(), "Armament Axe");
+        add(MtaItems.ARMAMENT_SHOVEL.get(), "Armament Shovel");
+        add(MtaItems.LOYAL_PICKAXE.get(), "Loyal Pickaxe");
+        add(MtaItems.LOYAL_AXE.get(), "Loyal Axe");
+        add(MtaItems.LOYAL_SHOVEL.get(), "Loyal Shovel");
+        add(MtaItems.AQUATIC_PICKAXE.get(), "Aquatic Pickaxe");
+        add(MtaItems.AQUATIC_AXE.get(), "Aquatic Axe");
+        add(MtaItems.AQUATIC_SHOVEL.get(), "Aquatic Shovel");
+        add(MtaItems.ANGELIC_PICKAXE.get(), "Angelic Pickaxe");
+        add(MtaItems.ANGELIC_AXE.get(), "Angelic Axe");
+        add(MtaItems.ANGELIC_SHOVEL.get(), "Angelic Shovel");
+        add(MtaItems.BERSERK_PICKAXE.get(), "Berserk Pickaxe");
+        add(MtaItems.BERSERK_AXE.get(), "Berserk Axe");
+        add(MtaItems.BERSERK_SHOVEL.get(), "Berserk Shovel");
+        add(MtaItems.FEATHERWEIGHT_PICKAXE.get(), "Featherweight Pickaxe");
+        add(MtaItems.FEATHERWEIGHT_AXE.get(), "Featherweight Axe");
+        add(MtaItems.FEATHERWEIGHT_SHOVEL.get(), "Featherweight Shovel");
+
+
         //FOODS
         add(MtaItems.ONION.get(),"Onion");
         add(MtaItems.SHRIMP.get(),"Shrimp");
@@ -81,7 +102,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.COCONUT.get(),"Coconut");
         add(MtaItems.COCONUT_MILK.get(),"Coconut Milk");
         add(MtaItems.COCONUT_SLICE.get(),"Coconut Slice");
-        //add(MtaItems.SPICE_MIX.get(),"Spice Mix");
+        add(MtaItems.SPICE_MIX.get(),"Spice Mix");
         add(MtaItems.SWEET_BEEF_CURRY.get(),"Sweet Beef Curry");
         add(MtaItems.SWEET_PORK_CURRY.get(),"Sweet Pork Curry");
         add(MtaItems.SWEET_CHICKEN_CURRY.get(),"Sweet Chicken Curry");

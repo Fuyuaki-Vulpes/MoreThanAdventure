@@ -12,6 +12,12 @@ public class MtaTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_COPPER_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "needs_copper_tool"));
         public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_cooper_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_AGATE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_agate_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_ALEXANDRITE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_alexandrite_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_AQUAMARINE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_aquamarine_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_CELESTITE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_celestite_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_GARNET_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_garnet_tool"));
+        public static final TagKey<Block> INCORRECT_FOR_MOONSTONE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_moonstone_tool"));
 
 
     }

@@ -88,6 +88,31 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.SHADOW_ROGUES_LEGGINGS);
         //simpleItem(MtaItems.SHADOW_ROGUES_BOOTS);
 
+        //TOOLS
+        handheldItem(MtaItems.ARMAMENT_PICKAXE);
+        handheldItem(MtaItems.ARMAMENT_AXE);
+        handheldItem(MtaItems.ARMAMENT_SHOVEL);
+
+        handheldItem(MtaItems.LOYAL_PICKAXE);
+        handheldItem(MtaItems.LOYAL_AXE);
+        handheldItem(MtaItems.LOYAL_SHOVEL);
+
+        handheldItem(MtaItems.AQUATIC_PICKAXE);
+        handheldItem(MtaItems.AQUATIC_AXE);
+        handheldItem(MtaItems.AQUATIC_SHOVEL);
+
+        handheldItem(MtaItems.ANGELIC_PICKAXE);
+        handheldItem(MtaItems.ANGELIC_AXE);
+        handheldItem(MtaItems.ANGELIC_SHOVEL);
+
+        handheldItem(MtaItems.BERSERK_PICKAXE);
+        handheldItem(MtaItems.BERSERK_AXE);
+        handheldItem(MtaItems.BERSERK_SHOVEL);
+
+        handheldItem(MtaItems.FEATHERWEIGHT_PICKAXE);
+        handheldItem(MtaItems.FEATHERWEIGHT_AXE);
+        handheldItem(MtaItems.FEATHERWEIGHT_SHOVEL);
+
         //FOODS
 
         simpleItem(MtaItems.ONION);

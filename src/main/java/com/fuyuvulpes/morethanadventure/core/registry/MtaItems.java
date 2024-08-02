@@ -1,12 +1,15 @@
 package com.fuyuvulpes.morethanadventure.core.registry;
 
+import com.fuyuvulpes.morethanadventure.world.item.MTAToolTiers;
 import com.fuyuvulpes.morethanadventure.world.item.MtaFoods;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.checkerframework.checker.units.qual.A;
+
+import java.util.function.Supplier;
 
 import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
@@ -73,6 +76,32 @@ public class MtaItems {
 
 
     //TOOLS
+
+    public static final DeferredItem<PickaxeItem> ARMAMENT_PICKAXE = ITEMS.register("armament_pickaxe", () -> new PickaxeItem(MTAToolTiers.AGATE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.AGATE, 1, -2.8f))));
+    public static final DeferredItem<AxeItem> ARMAMENT_AXE = ITEMS.register("armament_axe", () -> new AxeItem(MTAToolTiers.AGATE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.AGATE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> ARMAMENT_SHOVEL = ITEMS.register("armament_shovel", () -> new ShovelItem(MTAToolTiers.AGATE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.AGATE, 1.5F, -3F))));
+
+    public static final DeferredItem<PickaxeItem> LOYAL_PICKAXE = ITEMS.register("loyal_pickaxe", () -> new PickaxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> LOYAL_AXE = ITEMS.register("loyal_axe", () -> new AxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> LOYAL_SHOVEL = ITEMS.register("loyal_shovel", () -> new ShovelItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.5F, -3F))));
+
+    public static final DeferredItem<PickaxeItem> AQUATIC_PICKAXE = ITEMS.register("aquatic_pickaxe", () -> new PickaxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> AQUATIC_AXE = ITEMS.register("aquatic_axe", () -> new AxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> AQUATIC_SHOVEL = ITEMS.register("aquatic_shovel", () -> new ShovelItem(MTAToolTiers.AQUAMARINE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.5F, -3F))));
+
+    public static final DeferredItem<PickaxeItem> ANGELIC_PICKAXE = ITEMS.register("angelic_pickaxe", () -> new PickaxeItem(MTAToolTiers.CELESTITE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.CELESTITE, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> ANGELIC_AXE = ITEMS.register("angelic_axe", () -> new AxeItem(MTAToolTiers.CELESTITE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.CELESTITE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> ANGELIC_SHOVEL = ITEMS.register("angelic_shovel", () -> new ShovelItem(MTAToolTiers.CELESTITE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.CELESTITE, 1.5F, -3F))));
+
+    public static final DeferredItem<PickaxeItem> BERSERK_PICKAXE = ITEMS.register("berserk_pickaxe", () -> new PickaxeItem(MTAToolTiers.GARNET, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.GARNET, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> BERSERK_AXE = ITEMS.register("berserk_axe", () -> new AxeItem(MTAToolTiers.GARNET, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.GARNET, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> BERSERK_SHOVEL = ITEMS.register("berserk_shovel", () -> new ShovelItem(MTAToolTiers.GARNET, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.GARNET, 1.5F, -3F))));
+
+    public static final DeferredItem<PickaxeItem> FEATHERWEIGHT_PICKAXE = ITEMS.register("featherweight_pickaxe", () -> new PickaxeItem(MTAToolTiers.MOONSTONE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.MOONSTONE, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> FEATHERWEIGHT_AXE = ITEMS.register("featherweight_axe", () -> new AxeItem(MTAToolTiers.MOONSTONE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.MOONSTONE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> FEATHERWEIGHT_SHOVEL = ITEMS.register("featherweight_shovel", () -> new ShovelItem(MTAToolTiers.MOONSTONE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.MOONSTONE, 1.5F, -3F))));
+
+
 
     //WEAPONS
 
