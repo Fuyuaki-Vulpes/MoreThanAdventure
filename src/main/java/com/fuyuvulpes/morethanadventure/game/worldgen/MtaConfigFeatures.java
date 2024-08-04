@@ -61,11 +61,11 @@ public class MtaConfigFeatures {
                 DEBRIS_CLUSTER,
                 MtaFeatures.CLUSTER_VEIN.get(),
                 new OreClusterConfiguration(clusterOresOverworld,
-                        64,
+                        32,
                         2,
+                        3,
                         4,
-                        1,
-                        0.2F,
+                        0.1F,
                         Blocks.ANCIENT_DEBRIS.defaultBlockState(),
                         Blocks.BASALT.defaultBlockState()
                         )

@@ -43,8 +43,8 @@ public class MtaPlacedFeatures {
                 context,
                 DIAMOND_CLUSTER,
                 holder(context, MtaConfigFeatures.DIAMOND_CLUSTER),
-                MtaOrePlacements.commonOrePlacement(
-                        1,
+                MtaOrePlacements.rareOrePlacement(
+                        12,
                         HeightRangePlacement.triangle(
                                 VerticalAnchor.aboveBottom(-20),
                                 VerticalAnchor.aboveBottom(40))
