@@ -1,6 +1,7 @@
 package com.fuyuvulpes.morethanadventure.game.worldgen.biomes;
 
 import com.fuyuvulpes.morethanadventure.game.worldgen.MtaPlacedFeatures;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -16,6 +17,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import javax.annotation.Nullable;
 
@@ -44,6 +47,9 @@ public class MtaBiomes {
     }
 
     public static void bootstrap(BootstrapContext<Biome> context){
+
+        HolderGetter<ConfiguredWorldCarver<?>> carversGetter = context.lookup(Registries.CONFIGURED_CARVER);
+        HolderGetter<PlacedFeature> featuresGetter = context.lookup(Registries.PLACED_FEATURE);
         register(context,LUSH_RIVER, lushRiver(context));
     }
 
