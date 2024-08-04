@@ -10,8 +10,8 @@ import java.util.List;
 
 public class MtaOrePlacements {
 
-    public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
-        return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
+    public static List<PlacementModifier> orePlacement(PlacementModifier pCountPlacement, PlacementModifier pHeightRange) {
+        return List.of(pCountPlacement, InSquarePlacement.spread(), pHeightRange, BiomeFilter.biome());
     }
 
     public static List<PlacementModifier> commonOrePlacement(int pCount, PlacementModifier pHeightRange) {

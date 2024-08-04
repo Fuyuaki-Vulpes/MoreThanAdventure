@@ -23,5 +23,9 @@ public class MtaTags {
         public static final TagKey<Block> INCORRECT_FOR_NETHERSTEEL_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_cooper_tool"));
 
 
+        public static final TagKey<Block> ORE_CLUSTER_REPLACEABLE = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "ore_vein_replaceable"));
+        public static final TagKey<Block> NETHER_CLUSTER_CLUSTER_REPLACEABLE = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "nether_ore_vein_replaceable"));
+
+
     }
 }
