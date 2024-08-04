@@ -1,0 +1,23 @@
+{
+  "type": "morethanadventure:ore_clusters",
+  "config": {
+    "block": {
+      "Name": "minecraft:ancient_debris"
+    },
+    "length": 64,
+    "max_branches": 4,
+    "min_branches": 2,
+    "ore_chance": 0.2,
+    "targets": {
+      "predicate_type": "minecraft:tag_match",
+      "tag": "morethanadventure:ore_vein_replaceable"
+    },
+    "thickness": 1,
+    "vein": {
+      "Name": "minecraft:basalt",
+      "Properties": {
+        "axis": "y"
+      }
+    }
+  }
+}
