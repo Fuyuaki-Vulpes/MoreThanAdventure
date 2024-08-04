@@ -7,9 +7,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.checkerframework.checker.units.qual.A;
-
-import java.util.function.Supplier;
 
 import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
@@ -36,7 +33,7 @@ public class MtaItems {
 
     //UPGRADES
     public static final DeferredItem<Item> ARMAMENT_UPGRADE = ITEMS.registerSimpleItem("armament_upgrade", new Item.Properties());
-    public static final DeferredItem<Item> LOYALTY_UPGRADE = ITEMS.registerSimpleItem("loyalty_upgrade", new Item.Properties());
+    public static final DeferredItem<Item> ROYAL_UPGRADE = ITEMS.registerSimpleItem("royal_upgrade", new Item.Properties());
     public static final DeferredItem<Item> AQUATIC_UPGRADE = ITEMS.registerSimpleItem("aquatic_upgrade", new Item.Properties());
     public static final DeferredItem<Item> ANGELIC_UPGRADE = ITEMS.registerSimpleItem("angelic_upgrade", new Item.Properties());
     public static final DeferredItem<Item> BERSERK_UPGRADE = ITEMS.registerSimpleItem("berserk_upgrade", new Item.Properties());
@@ -81,9 +78,9 @@ public class MtaItems {
     public static final DeferredItem<AxeItem> ARMAMENT_AXE = ITEMS.register("armament_axe", () -> new AxeItem(MTAToolTiers.AGATE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.AGATE, 1.0F, -2.8F))));
     public static final DeferredItem<ShovelItem> ARMAMENT_SHOVEL = ITEMS.register("armament_shovel", () -> new ShovelItem(MTAToolTiers.AGATE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.AGATE, 1.5F, -3F))));
 
-    public static final DeferredItem<PickaxeItem> LOYAL_PICKAXE = ITEMS.register("loyal_pickaxe", () -> new PickaxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> LOYAL_AXE = ITEMS.register("loyal_axe", () -> new AxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> LOYAL_SHOVEL = ITEMS.register("loyal_shovel", () -> new ShovelItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.5F, -3F))));
+    public static final DeferredItem<PickaxeItem> ROYAL_PICKAXE = ITEMS.register("royal_pickaxe", () -> new PickaxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> ROYAL_AXE = ITEMS.register("royal_axe", () -> new AxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> ROYAL_SHOVEL = ITEMS.register("royal_shovel", () -> new ShovelItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.5F, -3F))));
 
     public static final DeferredItem<PickaxeItem> AQUATIC_PICKAXE = ITEMS.register("aquatic_pickaxe", () -> new PickaxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
     public static final DeferredItem<AxeItem> AQUATIC_AXE = ITEMS.register("aquatic_axe", () -> new AxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
@@ -143,6 +140,45 @@ public class MtaItems {
 
     public static final DeferredItem<Item> BUTTERFLY_SPAWN_EGG =  ITEMS.register("butterfly_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.BUTTERFLY::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> BEARDED_DRAGON_SPAWN_EGG =  ITEMS.register("bearded_dragon_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.BEARDED_DRAGON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> CAPYBARA_SPAWN_EGG =  ITEMS.register("capybara_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.CAPIBARA::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> DUCK_SPAWN_EGG =  ITEMS.register("duck_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.DUCK::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> FERRET_SPAWN_EGG =  ITEMS.register("ferret_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.FERRET::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> GREAT_WHITE_SHARK_SPAWN_EGG =  ITEMS.register("great_white_shark_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.GREAT_WHITE_SHARK::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> HORSESHOE_CRAB_SPAWN_EGG =  ITEMS.register("horseshoe_crab_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.HORSESHOE_CRAB::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> JELLYFISH_SPAWN_EGG =  ITEMS.register("jellyfish_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.JELLYFISH::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> OCTOPUS_SPAWN_EGG =  ITEMS.register("octopus_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.OCTOPUS::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> OWL_SPAWN_EGG =  ITEMS.register("owl_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.OWL::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> PENGUIN_SPAWN_EGG =  ITEMS.register("penguin_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.PENGUIN::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> RACCOON_SPAWN_EGG =  ITEMS.register("raccoon_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.RACCOON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> SHRIMP_SPAWN_EGG =  ITEMS.register("shrimp_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.SHRIMP::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
+    public static final DeferredItem<Item> TOUCAN_SPAWN_EGG =  ITEMS.register("toucan_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.TOUCAN::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

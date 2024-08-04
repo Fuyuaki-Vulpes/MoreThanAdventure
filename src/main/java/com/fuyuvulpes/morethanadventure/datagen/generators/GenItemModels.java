@@ -50,7 +50,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.MOONSTONE);
 
         simpleItem(MtaItems.ARMAMENT_UPGRADE);
-        simpleItem(MtaItems.LOYALTY_UPGRADE);
+        simpleItem(MtaItems.ROYAL_UPGRADE);
         simpleItem(MtaItems.AQUATIC_UPGRADE);
         simpleItem(MtaItems.ANGELIC_UPGRADE);
         simpleItem(MtaItems.BERSERK_UPGRADE);
@@ -93,9 +93,9 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.ARMAMENT_AXE);
         handheldItem(MtaItems.ARMAMENT_SHOVEL);
 
-        handheldItem(MtaItems.LOYAL_PICKAXE);
-        handheldItem(MtaItems.LOYAL_AXE);
-        handheldItem(MtaItems.LOYAL_SHOVEL);
+        handheldItem(MtaItems.ROYAL_PICKAXE);
+        handheldItem(MtaItems.ROYAL_AXE);
+        handheldItem(MtaItems.ROYAL_SHOVEL);
 
         handheldItem(MtaItems.AQUATIC_PICKAXE);
         handheldItem(MtaItems.AQUATIC_AXE);
@@ -144,6 +144,19 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
         simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
         simpleItem(MtaItems.BUTTERFLY_SPAWN_EGG);
+        //simpleItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
+        //simpleItem(MtaItems.CAPyBARA_SPAWN_EGG);
+        //simpleItem(MtaItems.DUCK_SPAWN_EGG);
+        //simpleItem(MtaItems.FERRET_SPAWN_EGG);
+        //simpleItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
+        //simpleItem(MtaItems.HORSESHOE_CRAB_SPAWN_EGG);
+        //simpleItem(MtaItems.JELLYFISH_SPAWN_EGG);
+        //simpleItem(MtaItems.OCTOPUS_SPAWN_EGG);
+        //simpleItem(MtaItems.OWL_SPAWN_EGG);
+        //simpleItem(MtaItems.PENGUIN_SPAWN_EGG);
+        //simpleItem(MtaItems.RACCOON_SPAWN_EGG);
+        //simpleItem(MtaItems.SHRIMP_SPAWN_EGG);
+        //simpleItem(MtaItems.TOUCAN_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

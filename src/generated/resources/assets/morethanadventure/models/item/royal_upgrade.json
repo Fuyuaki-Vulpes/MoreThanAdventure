@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "morethanadventure:item/loyalty_upgrade"
+    "layer0": "morethanadventure:item/royal_upgrade"
   }
 }

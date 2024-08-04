@@ -36,12 +36,12 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.GARNET.get(),"Garnet");
         add(MtaItems.MOONSTONE.get(),"Moonstone");
 
-        add(MtaItems.ARMAMENT_UPGRADE.get(),"Armament_Upgrade");
-        add(MtaItems.LOYALTY_UPGRADE.get(),"Loyalty_Upgrade");
-        add(MtaItems.AQUATIC_UPGRADE.get(),"Aquatic_Upgrade");
-        add(MtaItems.ANGELIC_UPGRADE.get(),"Angelic_Upgrade");
-        add(MtaItems.BERSERK_UPGRADE.get(),"Berserk_Upgrade");
-        add(MtaItems.FEATHERWEIGHT_UPGRADE.get(),"Featherweight_Upgrade");
+        add(MtaItems.ARMAMENT_UPGRADE.get(),"Armament Upgrade");
+        add(MtaItems.ROYAL_UPGRADE.get(),"Royal Upgrade");
+        add(MtaItems.AQUATIC_UPGRADE.get(),"Aquatic Upgrade");
+        add(MtaItems.ANGELIC_UPGRADE.get(),"Angelic Upgrade");
+        add(MtaItems.BERSERK_UPGRADE.get(),"Berserk Upgrade");
+        add(MtaItems.FEATHERWEIGHT_UPGRADE.get(),"Featherweight Upgrade");
 
         //ARMOR
         add(MtaItems.GREAT_SENTINELS_HELMET.get(), "Great Sentinel's Helmet");
@@ -73,9 +73,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.ARMAMENT_PICKAXE.get(), "Armament Pickaxe");
         add(MtaItems.ARMAMENT_AXE.get(), "Armament Axe");
         add(MtaItems.ARMAMENT_SHOVEL.get(), "Armament Shovel");
-        add(MtaItems.LOYAL_PICKAXE.get(), "Loyal Pickaxe");
-        add(MtaItems.LOYAL_AXE.get(), "Loyal Axe");
-        add(MtaItems.LOYAL_SHOVEL.get(), "Loyal Shovel");
+        add(MtaItems.ROYAL_PICKAXE.get(), "Loyal Pickaxe");
+        add(MtaItems.ROYAL_AXE.get(), "Loyal Axe");
+        add(MtaItems.ROYAL_SHOVEL.get(), "Loyal Shovel");
         add(MtaItems.AQUATIC_PICKAXE.get(), "Aquatic Pickaxe");
         add(MtaItems.AQUATIC_AXE.get(), "Aquatic Axe");
         add(MtaItems.AQUATIC_SHOVEL.get(), "Aquatic Shovel");
@@ -121,12 +121,37 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.YUKI_ONNA_SPAWN_EGG.get(),"Yuki Onna Spawn Egg");
         add(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get(),"Fallen Samurai Spawn Egg");
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
+        add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
+        add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
+        add(MtaItems.DUCK_SPAWN_EGG.get(),"Duck Spawn Egg");
+        add(MtaItems.FERRET_SPAWN_EGG.get(),"Ferret Spawn Egg");
+        add(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG.get(),"Great White Shark Spawn Egg");
+        add(MtaItems.HORSESHOE_CRAB_SPAWN_EGG.get(),"Horseshoe Crab Spawn Egg");
+        add(MtaItems.JELLYFISH_SPAWN_EGG.get(),"Jellyfish Spawn Egg");
+        add(MtaItems.OCTOPUS_SPAWN_EGG.get(),"Octopus Spawn Egg");
+        add(MtaItems.OWL_SPAWN_EGG.get(),"Owl Spawn Egg");
+        add(MtaItems.PENGUIN_SPAWN_EGG.get(),"Penguin Spawn Egg");
+        add(MtaItems.RACCOON_SPAWN_EGG.get(),"Raccoon Spawn Egg");
+        add(MtaItems.SHRIMP_SPAWN_EGG.get(),"Shrimp Spawn Egg");
+        add(MtaItems.TOUCAN_SPAWN_EGG.get(),"Toucan Spawn Egg");
 
 
         //ENTITIES
         add(MtaEntityTypes.YUKI_ONNA.get(),"Yuki Onna");
         add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
-        add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
+        add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
+        add(MtaEntityTypes.CAPIBARA.get(),"Capybara");
+        add(MtaEntityTypes.DUCK.get(),"Duck");
+        add(MtaEntityTypes.FERRET.get(),"Ferret");
+        add(MtaEntityTypes.GREAT_WHITE_SHARK.get(),"Great White Shark");
+        add(MtaEntityTypes.HORSESHOE_CRAB.get(),"Horseshoe Crab");
+        add(MtaEntityTypes.JELLYFISH.get(),"Jellyfish");
+        add(MtaEntityTypes.OCTOPUS.get(),"Octopus");
+        add(MtaEntityTypes.OWL.get(),"Owl");
+        add(MtaEntityTypes.PENGUIN.get(),"Penguin");
+        add(MtaEntityTypes.RACCOON.get(),"Raccoon");
+        add(MtaEntityTypes.SHRIMP.get(),"Shrimp");
+        add(MtaEntityTypes.TOUCAN.get(),"Toucan");
 
         //OTHER
         add("itemGroup.morethanadventure","More Than Adventure");

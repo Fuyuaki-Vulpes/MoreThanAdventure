@@ -4,22 +4,16 @@ import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
 import com.fuyuvulpes.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
-import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.ButterflyRender;
-import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.FallenSamuraiRenderer;
-import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.YukiOnnaRenderer;
-import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaOverworldRegions;
+import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
-import com.fuyuvulpes.morethanadventure.world.entity.Butterfly;
-import com.fuyuvulpes.morethanadventure.world.entity.FallenSamurai;
-import com.fuyuvulpes.morethanadventure.world.entity.YukiOnna;
+import com.fuyuvulpes.morethanadventure.world.entity.*;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaArmorMats;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -43,7 +37,6 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
-import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -139,6 +132,19 @@ public class MTAMod
             event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
             event.registerEntityRenderer(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamuraiRenderer::new);
             event.registerEntityRenderer(MtaEntityTypes.BUTTERFLY.get(), ButterflyRender::new);
+            event.registerEntityRenderer(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragonRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.CAPIBARA.get(), CapybaraRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.DUCK.get(), DuckRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.FERRET.get(), FerretRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.GREAT_WHITE_SHARK.get(), GreatWhiteSharkRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.JELLYFISH.get(), JellyfishRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.OCTOPUS.get(), OctopusRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.OWL.get(), OwlRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.PENGUIN.get(), PenguinRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.RACCOON.get(), RaccoonRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.SHRIMP.get(), ShrimpRenderer::new);
+            event.registerEntityRenderer(MtaEntityTypes.TOUCAN.get(), ToucanRenderer::new);
 
         }
 
@@ -174,6 +180,19 @@ public class MTAMod
             event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
             event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
             event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
+            event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());
+            event.put(MtaEntityTypes.CAPIBARA.get(), Capybara.createAttributes().build());
+            event.put(MtaEntityTypes.DUCK.get(), Duck.createAttributes().build());
+            event.put(MtaEntityTypes.FERRET.get(), Ferret.createAttributes().build());
+            event.put(MtaEntityTypes.GREAT_WHITE_SHARK.get(), GreatWhiteShark.createAttributes().build());
+            event.put(MtaEntityTypes.HORSESHOE_CRAB.get(), HorseshoeCrab.createAttributes().build());
+            event.put(MtaEntityTypes.JELLYFISH.get(), Jellyfish.createAttributes().build());
+            event.put(MtaEntityTypes.OCTOPUS.get(), Octopus.createAttributes().build());
+            event.put(MtaEntityTypes.OWL.get(), Owl.createAttributes().build());
+            event.put(MtaEntityTypes.PENGUIN.get(), Penguin.createAttributes().build());
+            event.put(MtaEntityTypes.RACCOON.get(), Raccoon.createAttributes().build());
+            event.put(MtaEntityTypes.SHRIMP.get(), Shrimp.createAttributes().build());
+            event.put(MtaEntityTypes.TOUCAN.get(), Toucan.createAttributes().build());
         }
 
 
@@ -194,6 +213,71 @@ public class MTAMod
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING,
                     Butterfly::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.BEARDED_DRAGON.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    BeardedDragon::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.CAPIBARA.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Capybara::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.DUCK.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Duck::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.FERRET.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Ferret::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.GREAT_WHITE_SHARK.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    GreatWhiteShark::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.HORSESHOE_CRAB.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    HorseshoeCrab::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.JELLYFISH.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Jellyfish::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.OCTOPUS.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Octopus::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.OWL.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Owl::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.PENGUIN.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Penguin::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.RACCOON.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Raccoon::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.SHRIMP.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Shrimp::checkAnimalSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.OR);
+            event.register(MtaEntityTypes.TOUCAN.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Toucan::checkAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
 
         }

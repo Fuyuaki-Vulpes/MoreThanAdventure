@@ -38,7 +38,7 @@ public class MtaTabs {
                 output.accept(MtaItems.GARNET);
                 output.accept(MtaItems.MOONSTONE);
                 output.accept(MtaItems.ARMAMENT_UPGRADE);
-                output.accept(MtaItems.LOYALTY_UPGRADE);
+                output.accept(MtaItems.ROYAL_UPGRADE);
                 output.accept(MtaItems.AQUATIC_UPGRADE);
                 output.accept(MtaItems.ANGELIC_UPGRADE);
                 output.accept(MtaItems.BERSERK_UPGRADE);
@@ -78,9 +78,9 @@ public class MtaTabs {
                 output.accept(MtaItems.ARMAMENT_AXE);
                 output.accept(MtaItems.ARMAMENT_SHOVEL);
 
-                output.accept(MtaItems.LOYAL_PICKAXE);
-                output.accept(MtaItems.LOYAL_AXE);
-                output.accept(MtaItems.LOYAL_SHOVEL);
+                output.accept(MtaItems.ROYAL_PICKAXE);
+                output.accept(MtaItems.ROYAL_AXE);
+                output.accept(MtaItems.ROYAL_SHOVEL);
 
                 output.accept(MtaItems.AQUATIC_PICKAXE);
                 output.accept(MtaItems.AQUATIC_AXE);
@@ -138,6 +138,19 @@ public class MtaTabs {
                 output.accept(MtaItems.YUKI_ONNA_SPAWN_EGG);
                 output.accept(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
                 output.accept(MtaItems.BUTTERFLY_SPAWN_EGG);
+                output.accept(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
+                output.accept(MtaItems.CAPYBARA_SPAWN_EGG);
+                output.accept(MtaItems.DUCK_SPAWN_EGG);
+                output.accept(MtaItems.FERRET_SPAWN_EGG);
+                output.accept(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
+                output.accept(MtaItems.HORSESHOE_CRAB_SPAWN_EGG);
+                output.accept(MtaItems.JELLYFISH_SPAWN_EGG);
+                output.accept(MtaItems.OCTOPUS_SPAWN_EGG);
+                output.accept(MtaItems.OWL_SPAWN_EGG);
+                output.accept(MtaItems.PENGUIN_SPAWN_EGG);
+                output.accept(MtaItems.RACCOON_SPAWN_EGG);
+                output.accept(MtaItems.SHRIMP_SPAWN_EGG);
+                output.accept(MtaItems.TOUCAN_SPAWN_EGG);
             }).build());
 
 

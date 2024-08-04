@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "morethanadventure:item/loyal_axe"
+    "layer0": "morethanadventure:item/royal_shovel"
   }
 }
