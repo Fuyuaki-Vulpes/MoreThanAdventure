@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#c:is_stony_shores",
+  "features": "morethanadventure:stony_rocks",
+  "step": "underground_ores"
+}

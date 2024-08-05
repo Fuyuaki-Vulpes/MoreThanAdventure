@@ -7,6 +7,6 @@ import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
 public class MtaTerrablender {
     public static void registerBiomes(){
-        Regions.register(new MtaOverworldRegions(ResourceLocation.fromNamespaceAndPath(MODID,"overworld"), 3));
+        Regions.register(new MtaOverworldRegions(ResourceLocation.fromNamespaceAndPath(MODID,"overworld"), 6));
     }
 }

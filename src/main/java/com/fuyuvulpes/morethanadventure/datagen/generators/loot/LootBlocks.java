@@ -23,6 +23,7 @@ public class LootBlocks extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(MtaBlocks.SPRINKLER.get());
+        dropSelf(MtaBlocks.MOSSY_ANDESITE.get());
         this.add(MtaBlocks.STONE_GEYSER.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));
         this.add(MtaBlocks.TERRACOTTA_GEYSER.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.TERRACOTTA));
         this.add(MtaBlocks.NETHERRACK_GEYSER.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.NETHERRACK));

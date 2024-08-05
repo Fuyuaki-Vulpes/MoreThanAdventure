@@ -26,7 +26,7 @@ public class GenBlockstate extends BlockStateProvider {
         verticalBlock(MtaBlocks.TERRACOTTA_GEYSER.get(), Blocks.TERRACOTTA,Blocks.TERRACOTTA);
         verticalBlock(MtaBlocks.NETHERRACK_GEYSER.get(), Blocks.NETHERRACK,Blocks.NETHERRACK);
         verticalBlock(MtaBlocks.BASALT_GEYSER.get(), ResourceLocation.withDefaultNamespace("block/basalt_top"),ResourceLocation.withDefaultNamespace("block/basalt_side"));
-
+        blockWithItem(MtaBlocks.MOSSY_ANDESITE);
 
     }
 

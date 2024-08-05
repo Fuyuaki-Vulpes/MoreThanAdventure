@@ -21,6 +21,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
         add(MtaBlocks.NETHERRACK_GEYSER.get(),"Netherrack Geyser");
         add(MtaBlocks.BASALT_GEYSER.get(),"Basalt Geyser");
+        add(MtaBlocks.MOSSY_ANDESITE.get(),"Mossy Andesite");
 
 
         //ITEM
@@ -154,6 +155,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.TOUCAN.get(),"Toucan");
 
         //OTHER
+
         add("itemGroup.morethanadventure","More Than Adventure");
 
     }

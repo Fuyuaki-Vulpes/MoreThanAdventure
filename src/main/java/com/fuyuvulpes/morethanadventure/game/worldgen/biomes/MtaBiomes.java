@@ -37,6 +37,8 @@ public class MtaBiomes {
     private static final Music MAGICAL_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CHERRY_GROVE);
 
     public static final ResourceKey<Biome> LUSH_RIVER = createBiome("lush_river");
+    public static final ResourceKey<Biome> SPARSE_CHERRY_GROVE = createBiome("sparse_cherry_grove");
+    public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -51,7 +53,11 @@ public class MtaBiomes {
         HolderGetter<ConfiguredWorldCarver<?>> carversGetter = context.lookup(Registries.CONFIGURED_CARVER);
         HolderGetter<PlacedFeature> featuresGetter = context.lookup(Registries.PLACED_FEATURE);
         register(context,LUSH_RIVER, lushRiver(context));
+        register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(context));
+        register(context,SPARSE_TAIGA, sparseTaiga(context));
     }
+
+
 
     public static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
@@ -80,13 +86,19 @@ public class MtaBiomes {
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MtaPlacedFeatures.MOSSY_ROCKS);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+
 
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
 
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SPARSE_MANGROVE);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_SAND);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
         biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.FREQUENT_CLAY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.DISK_MOSS);
 
         BiomeDefaultFeatures.addWaterTrees(biomeBuilder);
         BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
@@ -107,8 +119,83 @@ public class MtaBiomes {
 
 
 
-        return biome(true,0.6F,0.3F, 4159204, 329011, null, null,spawnBuilder,biomeBuilder,null);
+        return biome(true,0.6F,0.3F, 4566514, 267827, null, null,spawnBuilder,biomeBuilder,null);
 
+    }
+
+    private static Biome sparseCherryGrove(BootstrapContext<Biome> context){
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 2, 2, 6))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.FREQUENT_CLAY);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_CHERRY);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SPARSE_CHERRY_TREE);
+
+        BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
+        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
+
+        return biome(true,
+                0.5F,
+                0.8F,
+                6141935,
+                6141935,
+                11983713,
+                11983713,
+                spawnBuilder,
+                biomeBuilder,
+                MAGICAL_MUSIC);
+    }
+
+    private static Biome sparseTaiga(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 2, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 6, 2, 5))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 5, 1, 4));
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SPARSE_SPRUCE_TREE);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addTaigaGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+        BiomeDefaultFeatures.addCommonBerryBushes(biomeBuilder);
+        return biome(
+                true,
+                0.2F,
+                0.6F,
+                4159204,
+                329011,
+                null,
+                null,
+                spawnBuilder,
+                biomeBuilder,
+                NORMAL_MUSIC);
     }
 
     private static void registerVillagerTypes() {
