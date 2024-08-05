@@ -73,7 +73,6 @@ public class OreClusterFeature extends Feature<OreClusterConfiguration> {
 
 
         }
-        System.out.println(i);
 
         return i > 0;
     }

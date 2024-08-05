@@ -6,18 +6,26 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 0.3,
+  "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
+    "foliage_color": 11983713,
+    "grass_color": 11983713,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 8037887,
-    "water_color": 4566514,
-    "water_fog_color": 267827
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.cherry_grove"
+    },
+    "sky_color": 8103167,
+    "water_color": 6141935,
+    "water_fog_color": 6141935
   },
   "features": [
     [],
@@ -26,8 +34,7 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "morethanadventure:mossy_rocks"
+      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:monster_room",
@@ -64,31 +71,23 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
+      "minecraft:disk_gravel",
       "morethanadventure:frequent_clay",
-      "morethanadventure:disk_moss"
+      "minecraft:ore_emerald"
     ],
-    [],
+    [
+      "minecraft:ore_infested"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "morethanadventure:sparse_mangrove",
-      "minecraft:trees_water",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_waterlily",
-      "minecraft:patch_grass_jungle",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:seagrass_swamp",
-      "minecraft:sea_pickle",
-      "minecraft:kelp_warm",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_tall_grass_2",
+      "minecraft:patch_grass_plain",
+      "minecraft:flower_cherry",
+      "morethanadventure:sparse_cherry"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -106,15 +105,28 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:pig",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 1
+      },
+      {
+        "type": "minecraft:rabbit",
+        "maxCount": 6,
+        "minCount": 2,
+        "weight": 2
+      },
+      {
+        "type": "minecraft:sheep",
+        "maxCount": 4,
+        "minCount": 2,
+        "weight": 2
+      }
+    ],
     "misc": [],
     "monster": [
-      {
-        "type": "minecraft:drowned",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 40
-      },
       {
         "type": "minecraft:spider",
         "maxCount": 4,
@@ -172,34 +184,8 @@
         "weight": 10
       }
     ],
-    "water_ambient": [
-      {
-        "type": "minecraft:salmon",
-        "maxCount": 5,
-        "minCount": 1,
-        "weight": 6
-      },
-      {
-        "type": "minecraft:cod",
-        "maxCount": 5,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:tropical_fish",
-        "maxCount": 8,
-        "minCount": 3,
-        "weight": 2
-      }
-    ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 2
-      }
-    ]
+    "water_ambient": [],
+    "water_creature": []
   },
-  "temperature": 0.6
+  "temperature": 0.5
 }

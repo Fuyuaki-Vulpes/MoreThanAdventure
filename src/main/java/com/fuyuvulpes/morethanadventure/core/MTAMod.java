@@ -5,6 +5,7 @@ import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
 import com.fuyuvulpes.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.*;
+import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
@@ -63,7 +64,7 @@ public class MTAMod
         MtaFeatures.register(modEventBus);
         MtaParticles.register(modEventBus);
         MtaArmorMats.register(modEventBus);
-
+        MtaBiomes.addBiomes();
 
         MtaTabs.register(modEventBus);
 

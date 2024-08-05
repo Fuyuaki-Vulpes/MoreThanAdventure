@@ -64,6 +64,8 @@ public class MtaBlocks {
     ));
 
 
+    public static final DeferredBlock<Block> MOSSY_ANDESITE = registerBlock("mossy_andesite", BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE));
+
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);

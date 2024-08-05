@@ -25,6 +25,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());
                 output.accept(MtaBlocks.NETHERRACK_GEYSER.get());
                 output.accept(MtaBlocks.BASALT_GEYSER.get());
+                output.accept(MtaBlocks.MOSSY_ANDESITE.get());
 
 
 

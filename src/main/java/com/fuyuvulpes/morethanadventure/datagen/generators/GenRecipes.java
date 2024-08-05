@@ -1,5 +1,6 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
+import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -36,6 +37,16 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .requires(Tags.Items.ORES_COAL)
                 .unlockedBy("has_coal",has(Tags.Items.ORES_COAL))
                 .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(),2)
+                .requires(Blocks.ANDESITE,2)
+                .requires(Blocks.VINE,2)
+                .unlockedBy("has_andesite",has(Blocks.ANDESITE))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(),4)
+                .requires(Blocks.ANDESITE,2)
+                .requires(Blocks.MOSS_BLOCK,2)
+                .unlockedBy("has_andesite",has(Blocks.ANDESITE))
+                .save(output,"mossy_andesite_from_moss");
 
         twoByTwoPacker(output, RecipeCategory.BUILDING_BLOCKS, Blocks.QUARTZ_BLOCK, MtaItems.CLEAR_QUARTZ);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE, 2)
