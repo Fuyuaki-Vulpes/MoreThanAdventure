@@ -1,9 +1,7 @@
 package com.fuyuvulpes.morethanadventure.game.worldgen;
 
 import com.fuyuvulpes.morethanadventure.game.worldgen.util.MtaOrePlacements;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderGetter;
+import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
@@ -28,6 +26,7 @@ public class MtaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<PlacedFeature> DISK_MOSS = registerKey("disk_moss");
+    public static final ResourceKey<PlacedFeature> DISK_MOSS_RARE = registerKey("disk_moss_rare");
     public static final ResourceKey<PlacedFeature> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<PlacedFeature> DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<PlacedFeature> SPARSE_CHERRY_TREE = registerKey("sparse_cherry");
@@ -35,6 +34,8 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SPARSE_MANGROVE = registerKey("sparse_mangrove");
     public static final ResourceKey<PlacedFeature> STONY_ROCK = registerKey("stony_rocks");
     public static final ResourceKey<PlacedFeature> MOSSY_ROCKS = registerKey("mossy_rocks");
+    public static final ResourceKey<PlacedFeature> GEYSER_OVERWORLD = registerKey("geyser_overworld");
+    public static final ResourceKey<PlacedFeature> GEYSER_NETHER = registerKey("geyser_nether");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -128,6 +129,35 @@ public class MtaPlacedFeatures {
                 BiomeFilter.biome()
         );
 
+        register(context,
+                GEYSER_OVERWORLD,
+                holder(context,MtaConfigFeatures.GEYSER_OVERWORLD),
+                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.UP.getNormal(), Blocks.AIR)),
+                RarityFilter.onAverageOnceEvery(16),
+                BiomeFilter.biome(),
+                InSquarePlacement.spread()
+                );
+        register(context,
+                GEYSER_NETHER,
+                holder(context,MtaConfigFeatures.GEYSER_NETHER),
+                PlacementUtils.FULL_RANGE,
+                CountPlacement.of(8),
+                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.UP.getNormal(), Blocks.AIR)),
+                BiomeFilter.biome(),
+                InSquarePlacement.spread()
+                );
+
+        register(
+                context,
+                DISK_MOSS_RARE,
+                holder(context,MtaConfigFeatures.DISK_MOSS),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP_TOP_SOLID,
+                RarityFilter.onAverageOnceEvery(2),
+                BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE),
+                BiomeFilter.biome()
+        );
 
 
     }

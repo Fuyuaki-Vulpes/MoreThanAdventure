@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#morethanadventure:overworld_geysers",
+  "features": "morethanadventure:geyser_overworld",
+  "step": "underground_ores"
+}

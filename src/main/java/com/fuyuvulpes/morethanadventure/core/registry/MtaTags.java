@@ -1,8 +1,11 @@
 package com.fuyuvulpes.morethanadventure.core.registry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
@@ -27,5 +30,17 @@ public class MtaTags {
         public static final TagKey<Block> NETHER_CLUSTER_CLUSTER_REPLACEABLE = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "nether_ore_vein_replaceable"));
 
 
+    }
+
+    public static class Biomes {
+
+
+        public static final TagKey<Biome> OVERWORLD_GEYSERS = tag("overworld_geysers");
+        public static final TagKey<Biome> NETHER_GEYSERS = tag("nether_geysers");
+
+
+        private static TagKey<Biome> tag(String name) {
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID, name));
+        }
     }
 }

@@ -4,18 +4,22 @@ import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaFeatures;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaTags;
 import com.fuyuvulpes.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
@@ -25,12 +29,14 @@ import static com.fuyuvulpes.morethanadventure.core.MTAMod.MODID;
 
 public class MtaConfigFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> FREQUENT_CLAY = registerKey("frequent_clay");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DISK_MOSS = registerKey("disk_moss");
+    public static final ResourceKey<ConfiguredFeature<?,?>> FREQUENT_CLAY = registerKey("frequent_clay");
+    public static final ResourceKey<ConfiguredFeature<?,?>> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> STONY_ROCKS = registerKey("stony_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOSSY_ROCKS = registerKey("mossy_rocks");
+    public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_OVERWORLD = registerKey("geyser_overworld");
+    public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_NETHER = registerKey("geyser_nether");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -53,7 +59,7 @@ public class MtaConfigFeatures {
                 DISK_MOSS,
                 Feature.DISK,
                 new DiskConfiguration(
-                        RuleBasedBlockStateProvider.simple(Blocks.MOSS_BLOCK), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)), UniformInt.of(2, 6), 1
+                        RuleBasedBlockStateProvider.simple(Blocks.MOSS_BLOCK), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.SAND)), UniformInt.of(2, 6), 1
                 )
         );
 
@@ -94,7 +100,25 @@ public class MtaConfigFeatures {
                 new BlockStateConfiguration(MtaBlocks.MOSSY_ANDESITE.get().defaultBlockState())
         );
 
+        List<OreConfiguration.TargetBlockState> geyserOverworld = List.of(
+                OreConfiguration.target(new BlockMatchTest(Blocks.STONE), MtaBlocks.STONE_GEYSER.get().defaultBlockState()),
+                OreConfiguration.target(new BlockMatchTest(Blocks.GRAVEL), MtaBlocks.STONE_GEYSER.get().defaultBlockState()),
+                OreConfiguration.target(new TagMatchTest(BlockTags.TERRACOTTA), MtaBlocks.TERRACOTTA_GEYSER.get().defaultBlockState()),
+                OreConfiguration.target(new BlockMatchTest(Blocks.RED_SAND), MtaBlocks.TERRACOTTA_GEYSER.get().defaultBlockState())
+        );
+        List<OreConfiguration.TargetBlockState> geyserNether = List.of(
+                OreConfiguration.target(new BlockMatchTest(Blocks.NETHERRACK), MtaBlocks.NETHERRACK_GEYSER.get().defaultBlockState()),
+                OreConfiguration.target(new BlockMatchTest(Blocks.BASALT), MtaBlocks.BASALT_GEYSER.get().defaultBlockState())
+        );
 
+        register(context,
+                GEYSER_OVERWORLD,
+                Feature.REPLACE_SINGLE_BLOCK,
+                new ReplaceBlockConfiguration(geyserOverworld));
+        register(context,
+                GEYSER_NETHER,
+                Feature.REPLACE_SINGLE_BLOCK,
+                new ReplaceBlockConfiguration(geyserNether));
 
     }
 

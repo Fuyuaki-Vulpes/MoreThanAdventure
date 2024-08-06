@@ -1,5 +1,6 @@
 package com.fuyuvulpes.morethanadventure.game.worldgen.biomes;
 
+import com.fuyuvulpes.morethanadventure.core.registry.MtaTags;
 import com.fuyuvulpes.morethanadventure.game.worldgen.MtaPlacedFeatures;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -22,6 +23,8 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<BiomeModifier> ADD_MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<BiomeModifier> ADD_STONY_ROCKS = registerKey("stony_rocks");
+    public static final ResourceKey<BiomeModifier> ADD_GEYSER_OVERWORLD = registerKey("geyser_overworld");
+    public static final ResourceKey<BiomeModifier> ADD_GEYSER_NETHER = registerKey("geyser_nether");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -42,6 +45,16 @@ public class MtaBiomeModifiers {
         context.register(ADD_STONY_ROCKS,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_STONY_SHORES),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.STONY_ROCK)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_GEYSER_OVERWORLD,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.OVERWORLD_GEYSERS),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.GEYSER_OVERWORLD)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_GEYSER_NETHER,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.NETHER_GEYSERS),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.GEYSER_NETHER)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 

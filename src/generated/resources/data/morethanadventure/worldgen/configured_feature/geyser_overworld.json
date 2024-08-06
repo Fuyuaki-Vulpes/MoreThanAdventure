@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:replace_single_block",
+  "config": {
+    "targets": [
+      {
+        "state": {
+          "Name": "morethanadventure:stone_geyser",
+          "Properties": {
+            "erupting": "false"
+          }
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "morethanadventure:stone_geyser",
+          "Properties": {
+            "erupting": "false"
+          }
+        },
+        "target": {
+          "block": "minecraft:gravel",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "morethanadventure:terracotta_geyser",
+          "Properties": {
+            "erupting": "false"
+          }
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:terracotta"
+        }
+      },
+      {
+        "state": {
+          "Name": "morethanadventure:terracotta_geyser",
+          "Properties": {
+            "erupting": "false"
+          }
+        },
+        "target": {
+          "block": "minecraft:red_sand",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

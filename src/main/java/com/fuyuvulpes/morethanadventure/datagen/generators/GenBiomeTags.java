@@ -1,10 +1,12 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
+import com.fuyuvulpes.morethanadventure.core.registry.MtaTags;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -37,5 +39,19 @@ public class GenBiomeTags  extends BiomeTagsProvider {
 
 
         */
+
+        this.tag(MtaTags.Biomes.OVERWORLD_GEYSERS)
+                .add(   Biomes.STONY_PEAKS
+                )
+                .addTag(Tags.Biomes.IS_STONY_SHORES)
+                .addTag(Tags.Biomes.IS_WINDSWEPT)
+                .addTag(BiomeTags.IS_BADLANDS);
+
+        this.tag(MtaTags.Biomes.NETHER_GEYSERS)
+                .add(   Biomes.NETHER_WASTES,
+                        Biomes.BASALT_DELTAS
+
+                );
+
     }
 }

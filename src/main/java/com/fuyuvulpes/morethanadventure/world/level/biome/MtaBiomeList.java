@@ -38,7 +38,7 @@ public class MtaBiomeList {
             {null, null, null, MtaBiomes.SPARSE_TAIGA, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, null, null}
+            {null, null, null, null, MtaBiomes.OASIS}
     };
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
@@ -46,7 +46,7 @@ public class MtaBiomeList {
             {null, null, null, MtaBiomes.SPARSE_TAIGA, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, null, null}
+            {null, null, MtaBiomes.OASIS, MtaBiomes.OASIS, null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES = new ResourceKey[][]{
@@ -110,7 +110,7 @@ public class MtaBiomeList {
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, null, null}
+            {null, null, null, MtaBiomes.OASIS, MtaBiomes.OASIS}
     };
 
     public static final ResourceKey<Biome>[][] MTA_STONY_SHORES_BIOMES = new ResourceKey[][]{

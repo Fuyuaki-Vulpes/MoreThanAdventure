@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:replace_single_block",
+  "config": {
+    "targets": [
+      {
+        "state": {
+          "Name": "morethanadventure:netherrack_geyser",
+          "Properties": {
+            "erupting": "false"
+          }
+        },
+        "target": {
+          "block": "minecraft:netherrack",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "morethanadventure:basalt_geyser",
+          "Properties": {
+            "erupting": "false"
+          }
+        },
+        "target": {
+          "block": "minecraft:basalt",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

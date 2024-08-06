@@ -39,6 +39,7 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> LUSH_RIVER = createBiome("lush_river");
     public static final ResourceKey<Biome> SPARSE_CHERRY_GROVE = createBiome("sparse_cherry_grove");
     public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
+    public static final ResourceKey<Biome> OASIS = createBiome("oasis");
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -55,6 +56,7 @@ public class MtaBiomes {
         register(context,LUSH_RIVER, lushRiver(context));
         register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(context));
         register(context,SPARSE_TAIGA, sparseTaiga(context));
+        register(context,OASIS, oasis(context));
     }
 
 
@@ -198,7 +200,46 @@ public class MtaBiomes {
                 NORMAL_MUSIC);
     }
 
-    private static void registerVillagerTypes() {
+
+    private static Biome oasis(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+
+        BiomeDefaultFeatures.desertSpawns(spawnBuilder);
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CAMEL, 4, 1, 3));
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+
+        BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+
+        BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+
+        BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
+        BiomeDefaultFeatures.addDesertExtraDecoration(biomeBuilder);
+
+
+        return biome(
+                false,
+                2.0F,
+                0.4F,
+                spawnBuilder,
+                biomeBuilder,
+                DESERT_MUSIC);
+    }
+
+        private static void registerVillagerTypes() {
         /*//FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.JUNGLE);
