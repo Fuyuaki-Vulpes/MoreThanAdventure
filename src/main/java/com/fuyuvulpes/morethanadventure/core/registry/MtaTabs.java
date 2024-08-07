@@ -26,6 +26,10 @@ public class MtaTabs {
                 output.accept(MtaBlocks.NETHERRACK_GEYSER.get());
                 output.accept(MtaBlocks.BASALT_GEYSER.get());
                 output.accept(MtaBlocks.MOSSY_ANDESITE.get());
+                output.accept(MtaBlocks.NETHER_IRON_ORE.get());
+                output.accept(MtaBlocks.NETHER_DIAMOND_ORE.get());
+                output.accept(MtaBlocks.END_LAPIS_ORE.get());
+                output.accept(MtaBlocks.END_EMERALD_ORE.get());
 
 
 

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "morethanadventure:nether_lapis",
+  "step": "underground_ores"
+}

@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
@@ -25,6 +26,10 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_STONY_ROCKS = registerKey("stony_rocks");
     public static final ResourceKey<BiomeModifier> ADD_GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<BiomeModifier> ADD_GEYSER_NETHER = registerKey("geyser_nether");
+    public static final ResourceKey<BiomeModifier> ADD_NETHER_IRON = registerKey("nether_iron");
+    public static final ResourceKey<BiomeModifier> ADD_NETHER_DIAMOND = registerKey("nether_diamond");
+    public static final ResourceKey<BiomeModifier> ADD_END_LAPIS = registerKey("nether_lapis");
+    public static final ResourceKey<BiomeModifier> ADD_END_EMERALD = registerKey("nether_emerald");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -57,6 +62,30 @@ public class MtaBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.GEYSER_NETHER)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
+
+        context.register(ADD_NETHER_IRON,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.NETHER_IRON)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_NETHER_DIAMOND,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.NETHER_DIAMOND)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_END_LAPIS,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.END_LAPIS)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_END_EMERALD,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.END_EMERALD)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+
 
     }
 

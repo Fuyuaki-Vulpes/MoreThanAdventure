@@ -1,6 +1,6 @@
 package com.fuyuvulpes.morethanadventure.game.worldgen;
 
-import com.fuyuvulpes.morethanadventure.game.worldgen.util.MtaOrePlacements;
+import com.fuyuvulpes.morethanadventure.game.worldgen.util.MTAOreUtils;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -36,6 +36,10 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<PlacedFeature> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<PlacedFeature> GEYSER_NETHER = registerKey("geyser_nether");
+    public static final ResourceKey<PlacedFeature> NETHER_IRON = registerKey("nether_iron");
+    public static final ResourceKey<PlacedFeature> NETHER_DIAMOND = registerKey("nether_diamond");
+    public static final ResourceKey<PlacedFeature> END_LAPIS = registerKey("nether_lapis");
+    public static final ResourceKey<PlacedFeature> END_EMERALD = registerKey("nether_emerald");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -63,7 +67,7 @@ public class MtaPlacedFeatures {
                 context,
                 DIAMOND_CLUSTER,
                 holder(context, MtaConfigFeatures.DIAMOND_CLUSTER),
-                MtaOrePlacements.rareOrePlacement(
+                MTAOreUtils.rareOrePlacement(
                         12,
                         HeightRangePlacement.triangle(
                                 VerticalAnchor.aboveBottom(-20),
@@ -74,7 +78,7 @@ public class MtaPlacedFeatures {
                 context,
                 DEBRIS_CLUSTER,
                 holder(context, MtaConfigFeatures.DEBRIS_CLUSTER),
-                MtaOrePlacements.rareOrePlacement(
+                MTAOreUtils.rareOrePlacement(
                         12,
                         HeightRangePlacement.of(
                                 UniformHeight.of(
@@ -158,7 +162,30 @@ public class MtaPlacedFeatures {
                 BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE),
                 BiomeFilter.biome()
         );
-
+        register(
+                context,
+                NETHER_IRON,
+                holder(context,MtaConfigFeatures.NETHER_IRON),
+                MTAOreUtils.commonOrePlacement(20, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(128)))
+        );
+        register(
+                context,
+                NETHER_DIAMOND,
+                holder(context,MtaConfigFeatures.NETHER_DIAMOND),
+                MTAOreUtils.commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(96)))
+        );
+        register(
+                context,
+                END_LAPIS,
+                holder(context,MtaConfigFeatures.END_LAPIS),
+                MTAOreUtils.commonOrePlacement(10, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                END_EMERALD,
+                holder(context,MtaConfigFeatures.END_EMERALD),
+                MTAOreUtils.commonOrePlacement(28, PlacementUtils.FULL_RANGE)
+        );
 
     }
 

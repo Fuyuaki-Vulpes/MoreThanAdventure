@@ -4,6 +4,8 @@ import com.fuyuvulpes.morethanadventure.world.block.GeyserBlock;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Instrument;
@@ -65,6 +67,27 @@ public class MtaBlocks {
 
 
     public static final DeferredBlock<Block> MOSSY_ANDESITE = registerBlock("mossy_andesite", BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE));
+
+    public static final DeferredBlock<DropExperienceBlock> NETHER_IRON_ORE = registerBlock("nether_iron_ore",
+            () -> new DropExperienceBlock(ConstantInt.of(0),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> NETHER_DIAMOND_ORE = registerBlock("nether_diamond_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(3, 12),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> END_LAPIS_ORE = registerBlock("end_lapis_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(6, 14),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> END_EMERALD_ORE = registerBlock("end_emerald_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(6, 14),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
+            ));
 
 
     public static void register(IEventBus eventBus){

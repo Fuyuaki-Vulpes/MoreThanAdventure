@@ -4,7 +4,6 @@ import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaFeatures;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaTags;
 import com.fuyuvulpes.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
-import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -17,11 +16,11 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.List;
 
@@ -37,11 +36,19 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_NETHER = registerKey("geyser_nether");
+    public static final ResourceKey<ConfiguredFeature<?,?>> NETHER_IRON = registerKey("nether_iron");
+    public static final ResourceKey<ConfiguredFeature<?,?>> NETHER_DIAMOND = registerKey("nether_diamond");
+    public static final ResourceKey<ConfiguredFeature<?,?>> END_LAPIS = registerKey("nether_lapis");
+    public static final ResourceKey<ConfiguredFeature<?,?>> END_EMERALD = registerKey("nether_emerald");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
         RuleTest clusterOresOverworld = new TagMatchTest(MtaTags.Blocks.ORE_CLUSTER_REPLACEABLE);
         RuleTest clusterOresNether = new TagMatchTest(MtaTags.Blocks.NETHER_CLUSTER_CLUSTER_REPLACEABLE);
+        RuleTest oresStone = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest oresDeepslate = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest oresNetherrack = new TagMatchTest(Tags.Blocks.NETHERRACKS);
+        RuleTest oresEndstone = new TagMatchTest(Tags.Blocks.END_STONES);
 
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = context.lookup(Registries.CONFIGURED_FEATURE);
 
@@ -119,6 +126,48 @@ public class MtaConfigFeatures {
                 GEYSER_NETHER,
                 Feature.REPLACE_SINGLE_BLOCK,
                 new ReplaceBlockConfiguration(geyserNether));
+
+        register(context,
+                NETHER_IRON,
+                Feature.ORE,
+                new OreConfiguration(List.of(
+                        OreConfiguration.target(oresNetherrack, MtaBlocks.NETHER_IRON_ORE.get().defaultBlockState())
+                        ),
+                        9
+
+                    )
+        );
+        register(context,
+                NETHER_DIAMOND,
+                Feature.ORE,
+                new OreConfiguration(List.of(
+                        OreConfiguration.target(oresNetherrack, MtaBlocks.NETHER_DIAMOND_ORE.get().defaultBlockState())
+                        ),
+                        14,
+                        0.7F
+
+                    )
+        );
+        register(context,
+                END_LAPIS,
+                Feature.ORE,
+                new OreConfiguration(List.of(
+                        OreConfiguration.target(oresEndstone, MtaBlocks.END_LAPIS_ORE.get().defaultBlockState())
+                        ),
+                        9
+
+                    )
+        );
+        register(context,
+                END_EMERALD,
+                Feature.ORE,
+                new OreConfiguration(List.of(
+                        OreConfiguration.target(oresEndstone, MtaBlocks.END_EMERALD_ORE.get().defaultBlockState())
+                        ),
+                        5
+
+                    )
+        );
 
     }
 
