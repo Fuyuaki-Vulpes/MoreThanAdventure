@@ -1,10 +1,12 @@
 package com.fuyuvulpes.morethanadventure.game.worldgen.biomes;
 
+import com.fuyuvulpes.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuvulpes.morethanadventure.game.worldgen.MtaPlacedFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import org.antlr.v4.runtime.tree.Tree;
 
 import javax.annotation.Nullable;
 
@@ -40,6 +43,8 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> SPARSE_CHERRY_GROVE = createBiome("sparse_cherry_grove");
     public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
     public static final ResourceKey<Biome> OASIS = createBiome("oasis");
+    public static final ResourceKey<Biome> GRAVELLY_RIVER = createBiome("gravelly_river");
+    public static final ResourceKey<Biome> LUSH_MEADOW = createBiome("lush_meadow");
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -57,6 +62,8 @@ public class MtaBiomes {
         register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(context));
         register(context,SPARSE_TAIGA, sparseTaiga(context));
         register(context,OASIS, oasis(context));
+        register(context,GRAVELLY_RIVER, gravelRiver(context));
+        register(context,LUSH_MEADOW, lushMeadow(context));
     }
 
 
@@ -200,7 +207,6 @@ public class MtaBiomes {
                 NORMAL_MUSIC);
     }
 
-
     private static Biome oasis(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
@@ -239,7 +245,98 @@ public class MtaBiomes {
                 DESERT_MUSIC);
     }
 
-        private static void registerVillagerTypes() {
+    private static Biome gravelRiver(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+
+        spawnBuilder.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SQUID, 2, 1, 4))
+                .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.SALMON, 6, 1, 5));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.DROWNED, 40, 1, 1));
+
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
+
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+
+
+
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+
+        BiomeDefaultFeatures.addWaterTrees(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+
+
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_RIVER);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.VINES);
+
+
+        return biome(true,0.3F,0.1F, 0x7C8CC4, 0x171A2A, null, null,spawnBuilder,biomeBuilder,null);
+
+    }
+
+    private static Biome lushMeadow(BootstrapContext<Biome> context){
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 2))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 4, 2, 6))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.BUTTERFLY.get(), 3, 2, 5))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 2, 2, 4));
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        globalOverworldGeneration(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FOREST_FLOWERS);
+
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.DISK_MOSS_RARE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, CavePlacements.LUSH_CAVES_VEGETATION);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TreePlacements.FANCY_OAK_BEES_002);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TreePlacements.OAK_BEES_002);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TreePlacements.BIRCH_BEES_002);
+        BiomeDefaultFeatures.addMeadowVegetation(biomeBuilder);
+        BiomeDefaultFeatures.addWarmFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addJungleGrass(biomeBuilder);
+
+
+        BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
+        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
+
+        return biome(true,
+                0.3F,
+                0.8F,
+                6141935,
+                6141935,
+                11983713,
+                11983713,
+                spawnBuilder,
+                biomeBuilder,
+                MOUNTAIN_MUSIC);
+    }
+
+
+
+
+    private static void registerVillagerTypes() {
         /*//FOREST
         registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
         registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.JUNGLE);

@@ -51,18 +51,18 @@ public class MtaBiomeList {
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES = new ResourceKey[][]{
             {null, null, null, null, null},
-            {null, null, null, null, null},
-            {null, null, null, null, null},
+            {null, null, MtaBiomes.LUSH_MEADOW, null, null},
+            {null, null, null, MtaBiomes.LUSH_MEADOW, null},
             {null, null, null, null, null},
             {null, null, null, null, null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
-            {null, null, null, null, null},
-            {null, MtaBiomes.SPARSE_CHERRY_GROVE, MtaBiomes.SPARSE_CHERRY_GROVE, MtaBiomes.SPARSE_TAIGA, null},
-            {null, null, null, MtaBiomes.SPARSE_CHERRY_GROVE, null},
-            {null, null, null, null, null},
-            {null, null, null, null, null}
+            {null,                          null,                          null,                          null,         null},
+            {null, MtaBiomes.SPARSE_CHERRY_GROVE, MtaBiomes.SPARSE_CHERRY_GROVE,        MtaBiomes.SPARSE_TAIGA,         null},
+            {null,                          null,         MtaBiomes.LUSH_MEADOW, MtaBiomes.SPARSE_CHERRY_GROVE,         null},
+            {null,                          null,                          null,         MtaBiomes.LUSH_MEADOW,         null},
+            {null,                          null,                          null,                          null,         null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_SLOPE_BIOMES = new ResourceKey[][]{
@@ -98,9 +98,9 @@ public class MtaBiomeList {
     };
 
     public static final ResourceKey<Biome>[][] MTA_RIVER_BIOMES = new ResourceKey[][]{
-            {null, null, null, null, null},
-            {null, null, null, null, null},
-            {null, null, null, null, null},
+            {null, null, MtaBiomes.GRAVELLY_RIVER, null, null},
+            {MtaBiomes.GRAVELLY_RIVER, null, null, null, null},
+            {MtaBiomes.GRAVELLY_RIVER,null, null, null, null},
             {null, null, null, null, MtaBiomes.LUSH_RIVER},
             {null, null, null, null, MtaBiomes.LUSH_RIVER}
     };

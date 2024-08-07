@@ -60,26 +60,51 @@ public class MtaSurfaceRules {
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRAVEL),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, STONE)
         );
+        SurfaceRules.RuleSource sandstoneLinedSand = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SANDSTONE), SAND);
 
-        SurfaceRules.RuleSource desertSurface = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SANDSTONE),
-                SAND
 
-        );
-        SurfaceRules.RuleSource deepSandstone = SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SANDSTONE);
 
 
         return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                SurfaceRules.sequence(
 
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
-                        SurfaceRules.sequence(
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.noiseCondition
+                                                        (Noises.GRAVEL,-0.2D,0.2D),
+                                                DIRT),
+                                        sandstoneLinedSand
+                                ))
+                        ),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR,
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                SurfaceRules.sequence(
+
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.noiseCondition
+                                                        (Noises.GRAVEL,-0.2D,0.2D),
+                                                STONE),
+                                        SANDSTONE
+                                ))
+                        ),
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                SurfaceRules.sequence(
+                                        SurfaceRules.ifTrue(
+                                                SurfaceRules.noiseCondition
+                                                        (Noises.GRAVEL,-0.2D,0.2D),
+                                                grassSurface),
+                                        SAND
+                                ))
+                        ),
+
+
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.GRAVELLY_RIVER),
                                 SurfaceRules.ifTrue(
                                         SurfaceRules.noiseCondition
-                                                (Noises.GRAVEL,-0.05D,0.1D),
-                                        grassSurface),
-                                desertSurface,
-                                deepSandstone
-                        )),
+                                                (Noises.GRAVEL,-0.4D,0.4D),
+                                        gravelStoneSurface)),
 
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
         );
@@ -89,6 +114,12 @@ public class MtaSurfaceRules {
     {
         return SurfaceRules.state(block.defaultBlockState());
     }
+
+
+    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double p_194809_) {
+        return SurfaceRules.noiseCondition(Noises.SURFACE, p_194809_ / 8.25D, Double.MAX_VALUE);
+    }
+
 
 
 }

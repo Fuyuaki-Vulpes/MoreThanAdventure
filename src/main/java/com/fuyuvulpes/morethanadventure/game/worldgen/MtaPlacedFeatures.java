@@ -113,7 +113,7 @@ public class MtaPlacedFeatures {
                 context,
                 STONY_ROCK,
                 holder(context, MtaConfigFeatures.STONY_ROCKS),
-                CountPlacement.of(4),
+                CountPlacement.of(3),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
@@ -123,7 +123,7 @@ public class MtaPlacedFeatures {
                 context,
                 MOSSY_ROCKS,
                 holder(context, MtaConfigFeatures.MOSSY_ROCKS),
-                CountPlacement.of(4),
+                CountPlacement.of(3),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
