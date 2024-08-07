@@ -28,8 +28,7 @@ public class MtaArmorMats {
                         map.put(ArmorItem.Type.BODY, 13);
                     }),
                     10, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Ingredient.of(MtaItems.AGATE),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "great_sentinel")),
-                            new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "great_sentinel"), "_overlay", true)),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "great_sentinel"))),
                     4F, 0.25F
             ));
 
@@ -42,8 +41,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.BODY, 12);
             }),
             32, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(MtaItems.ALEXANDRITE),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "holy_knight")),
-                    new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "holy_knight"), "_overlay", true)),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "holy_knight"))),
             3F, 0.11F
     ));
 
@@ -56,8 +54,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.BODY, 11);
             }),
             18, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.AQUAMARINE),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid")),
-                    new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid"), "_overlay", true)),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid"))),
             3F, 0.1F
     ));
 
@@ -70,12 +67,12 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.BODY, 10);
             }),
             25, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CELESTITE),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "temple_angel")),
-                    new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "temple_angel"), "_overlay", true)),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "temple_angel"))),
             2F, 0.0F
     ));
 
-    public static final Holder<ArmorMaterial> WRATHFUL_BERSERKER = ARMOR_MAT.register("wrathful_berserker", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> WRATHFUL_BERSERKER =
+            ARMOR_MAT.register("wrathful_berserker", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 2);
                 map.put(ArmorItem.Type.LEGGINGS, 4);
@@ -83,9 +80,8 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 2);
                 map.put(ArmorItem.Type.BODY, 9);
             }),
-            15, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.GARNET),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "wrathful_berserker")),
-                    new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "wrathful_berserker"), "_overlay", true)),
+            15, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.GARNET.get()),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "wrathful_berserker"))),
             1F, 0.05F
     ));
 
@@ -98,8 +94,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.BODY, 11);
             }),
             25, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.MOONSTONE),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "shadow_rogue")),
-                    new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "shadow_rogue"), "_overlay", true)),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "shadow_rogue"))),
             2F, 0.025F
     ));
 
