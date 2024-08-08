@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:celestite"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:temple_angels_helmet"
+  },
+  "template": {
+    "item": "morethanadventure:angelic_upgrade"
+  }
+}

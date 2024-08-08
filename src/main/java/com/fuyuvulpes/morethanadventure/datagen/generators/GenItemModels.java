@@ -119,8 +119,11 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.COOKED_SHRIMP);
         simpleItem(MtaItems.TOMATO);
+        //simpleItem(MtaItems.TOMATO_SEEDS);
         simpleItem(MtaItems.RED_PEPPER);
+        //simpleItem(MtaItems.RED_PEPPER_SEEDS);
         simpleItem(MtaItems.CHILI_PEPPER);
+        //simpleItem(MtaItems.CHILI_PEPPER_SEEDS);
         simpleItem(MtaItems.RICE);
         simpleItem(MtaItems.ONIGIRI);
         simpleItem(MtaItems.COCONUT);

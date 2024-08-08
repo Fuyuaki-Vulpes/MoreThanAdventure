@@ -96,8 +96,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SHRIMP.get(),"Shrimp");
         add(MtaItems.COOKED_SHRIMP.get(),"Cooked Shrimp");
         add(MtaItems.TOMATO.get(),"Tomato");
+        add(MtaItems.TOMATO_SEEDS.get(),"Tomato Seeds");
         add(MtaItems.RED_PEPPER.get(),"Red Pepper");
+        add(MtaItems.RED_PEPPER_SEEDS.get(),"Red Pepper Seeds");
         add(MtaItems.CHILI_PEPPER.get(),"Chili Pepper");
+        add(MtaItems.CHILI_PEPPER_SEEDS.get(),"Chili Pepper Seeds");
         add(MtaItems.RICE.get(),"Rice");
         add(MtaItems.ONIGIRI.get(),"Onigiri");
         add(MtaItems.COCONUT.get(),"Coconut");

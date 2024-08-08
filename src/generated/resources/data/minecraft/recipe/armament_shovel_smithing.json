@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:agate"
+  },
+  "base": {
+    "item": "minecraft:netherite_shovel"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:armament_shovel"
+  },
+  "template": {
+    "item": "morethanadventure:armament_upgrade"
+  }
+}
