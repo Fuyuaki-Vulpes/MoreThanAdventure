@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "morethanadventure:chilli_pepper"
+    },
+    {
+      "item": "morethanadventure:red_pepper"
+    },
+    {
+      "item": "morethanadventure:onion"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:spice_mix"
+  }
+}

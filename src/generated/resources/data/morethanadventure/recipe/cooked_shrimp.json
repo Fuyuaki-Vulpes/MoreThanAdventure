@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "morethanadventure:shrimp"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:cooked_shrimp"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:aquamarine"
+  },
+  "base": {
+    "item": "minecraft:netherite_shovel"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:aquatic_shovel"
+  },
+  "template": {
+    "item": "morethanadventure:aquamarine"
+  }
+}

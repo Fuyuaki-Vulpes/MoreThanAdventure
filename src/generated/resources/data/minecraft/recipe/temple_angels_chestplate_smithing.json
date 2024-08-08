@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:celestite"
+  },
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:temple_angels_chestplate"
+  },
+  "template": {
+    "item": "morethanadventure:angelic_upgrade"
+  }
+}

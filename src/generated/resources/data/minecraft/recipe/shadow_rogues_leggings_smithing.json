@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:moonstone"
+  },
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:shadow_rogues_leggings"
+  },
+  "template": {
+    "item": "morethanadventure:featherweight_upgrade"
+  }
+}
