@@ -19,21 +19,36 @@ public class MtaTabs {
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(MtaItems.NETHERITE_FRACTURE.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
-                //BLOCKS
+                output.acceptAll(MtaTabs.BLOCK_ITEM.get().getDisplayItems());
+                output.acceptAll(MtaTabs.EQUIPMENTS.get().getDisplayItems());
+                output.acceptAll(MtaTabs.MISC.get().getDisplayItems());
+            }).build());
+
+
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCK_ITEM = TABS.register("mtaitemblock", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtaitemblock"))
+            .withTabsBefore(MtaTabs.MAIN.getId())
+            .icon(MtaItems.GARNET.get()::getDefaultInstance)
+            .displayItems((parameters, output) -> {
+
                 output.accept(MtaBlocks.SPRINKLER.get());
                 output.accept(MtaBlocks.STONE_GEYSER.get());
                 output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());
                 output.accept(MtaBlocks.NETHERRACK_GEYSER.get());
                 output.accept(MtaBlocks.BASALT_GEYSER.get());
                 output.accept(MtaBlocks.MOSSY_ANDESITE.get());
+                output.accept(MtaBlocks.CLEAR_QUARTZ_GROWTH.get());
+                output.accept(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get());
+                output.accept(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get());
+                output.accept(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get());
+                output.accept(MtaBlocks.CLEAR_QUARTZ_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get());
                 output.accept(MtaBlocks.NETHER_IRON_ORE.get());
                 output.accept(MtaBlocks.NETHER_DIAMOND_ORE.get());
                 output.accept(MtaBlocks.END_LAPIS_ORE.get());
                 output.accept(MtaBlocks.END_EMERALD_ORE.get());
 
-
-
-                //ITEMS
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.AGATE);
@@ -49,8 +64,14 @@ public class MtaTabs {
                 output.accept(MtaItems.BERSERK_UPGRADE);
                 output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
 
+            }).build());
 
-                //ARMOR
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EQUIPMENTS = TABS.register("mtaequip", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtaequip"))
+            .withTabsBefore(MtaTabs.BLOCK_ITEM.getId())
+            .icon(MtaItems.GREAT_SENTINELS_CHESTPLATE.get()::getDefaultInstance)
+            .displayItems((parameters, output) -> {
 
                 output.accept(MtaItems.GREAT_SENTINELS_HELMET);
                 output.accept(MtaItems.GREAT_SENTINELS_CHESTPLATE);
@@ -103,7 +124,14 @@ public class MtaTabs {
                 output.accept(MtaItems.FEATHERWEIGHT_AXE);
                 output.accept(MtaItems.FEATHERWEIGHT_SHOVEL);
 
+            }).build());
 
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MISC = TABS.register("mtamisc", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtamisc"))
+            .withTabsBefore(MtaTabs.EQUIPMENTS.getId())
+            .icon(MtaItems.GREAT_SENTINELS_CHESTPLATE.get()::getDefaultInstance)
+            .displayItems((parameters, output) -> {
 
 
 

@@ -3,6 +3,8 @@
     "morethanadventure:nether_iron_ore",
     "morethanadventure:nether_diamond_ore",
     "morethanadventure:end_emerald_ore",
-    "morethanadventure:end_lapis_ore"
+    "morethanadventure:end_lapis_ore",
+    "morethanadventure:clear_quartz_ore",
+    "morethanadventure:deepslate_clear_quartz_ore"
   ]
 }

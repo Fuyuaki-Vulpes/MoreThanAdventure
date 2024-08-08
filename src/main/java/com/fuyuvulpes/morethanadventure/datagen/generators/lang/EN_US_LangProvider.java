@@ -26,6 +26,12 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.NETHER_DIAMOND_ORE.get(),"Nether Diamond Ore");
         add(MtaBlocks.END_LAPIS_ORE.get(),"End Lapis Ore");
         add(MtaBlocks.END_EMERALD_ORE.get(),"End Emerald Ore");
+        add(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),"Clear Quartz Cluster");
+        add(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get(),"Deepslate Clear Quartz  Ore");
+        add(MtaBlocks.CLEAR_QUARTZ_ORE.get(),"Clear Quartz Ore");
+        add(MtaBlocks.CLEAR_QUARTZ_GROWTH.get(),"Clear Quartz Growth");
+        add(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),"Deepslate Clear Quartz Growth");
+        add(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),"Calcite Clear Quartz Growth");
 
 
         //ITEM
@@ -160,7 +166,10 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         //OTHER
 
-        add("itemGroup.morethanadventure","More Than Adventure");
+        add("itemGroup.morethanadventure","More Than Adventure ALL");
+        add("itemGroup.mtaitemblock","MTA: Blocks & Items");
+        add("itemGroup.mtaequip","MTA: Equipments");
+        add("itemGroup.mtamisc","MTA: Foods, Spawns & Miscellaneous");
 
     }
 }

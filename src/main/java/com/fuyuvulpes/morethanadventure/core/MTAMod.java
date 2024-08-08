@@ -74,7 +74,6 @@ public class MTAMod
 
         NeoForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, MTACommonConfig.SPEC);
     }
@@ -92,23 +91,16 @@ public class MTAMod
         RenderType transparentRenderType = RenderType.cutoutMipped();
         RenderType cutoutRenderType = RenderType.cutout();
         RenderType translucentRenderType = RenderType.translucent();
-/*
-        setRenderType(YoaBlocks.BLISSWOOD_LEAVES.get(), transparentRenderType);
-        setRenderType(YoaBlocks.BLISSWOOD_DOOR.get(), cutoutRenderType);
-        setRenderType(YoaBlocks.BLISSWOOD_SAPLING.get(), cutoutRenderType);
-        setRenderType(YoaBlocks.BLISSWOOD_TRAPDOOR.get(), cutoutRenderType);
-  */
+
+        setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
+
     }
     public static void setRenderType(Block block, RenderType renderType){
         ItemBlockRenderTypes.setRenderLayer(block, renderType);
     }
 
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-       // if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-         //   event.accept(EXAMPLE_BLOCK_ITEM);
-    }
+
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)

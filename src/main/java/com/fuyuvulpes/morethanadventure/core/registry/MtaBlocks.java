@@ -1,6 +1,8 @@
 package com.fuyuvulpes.morethanadventure.core.registry;
 
+import com.fuyuvulpes.morethanadventure.world.block.ShardClusterBlock;
 import com.fuyuvulpes.morethanadventure.world.block.GeyserBlock;
+import com.fuyuvulpes.morethanadventure.world.block.ShardGrowthBlock;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -8,7 +10,6 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -65,8 +66,40 @@ public class MtaBlocks {
                     .ofFullCopy(Blocks.BASALT), true
     ));
 
+    public static final DeferredBlock<ShardClusterBlock> CLEAR_QUARTZ_CLUSTER = registerBlock("clear_quartz_cluster",
+            () -> new ShardClusterBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER)
+            ));
+
+
+
 
     public static final DeferredBlock<Block> MOSSY_ANDESITE = registerBlock("mossy_andesite", BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE));
+
+    public static final DeferredBlock<ShardGrowthBlock> CALCITE_CLEAR_QUARTZ_GROWTH = registerBlock("calcite_clear_quartz_growth",
+            () -> new ShardGrowthBlock(Blocks.CALCITE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE).strength(12.0F).randomTicks()
+            ));
+    public static final DeferredBlock<ShardGrowthBlock> DEEPSLATE_CLEAR_QUARTZ_GROWTH = registerBlock("deepslate_clear_quartz_growth",
+            () -> new ShardGrowthBlock(Blocks.DEEPSLATE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(12.0F).randomTicks()
+            ));
+    public static final DeferredBlock<ShardGrowthBlock> CLEAR_QUARTZ_GROWTH = registerBlock("clear_quartz_growth",
+            () -> new ShardGrowthBlock(Blocks.STONE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(12.0F).randomTicks()
+            ));
+
+
+    public static final DeferredBlock<DropExperienceBlock> CLEAR_QUARTZ_ORE = registerBlock("clear_quartz_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(4, 6),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_CLEAR_QUARTZ_ORE = registerBlock("deepslate_clear_quartz_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(5, 7),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
+            ));
 
     public static final DeferredBlock<DropExperienceBlock> NETHER_IRON_ORE = registerBlock("nether_iron_ore",
             () -> new DropExperienceBlock(ConstantInt.of(0),
@@ -74,13 +107,13 @@ public class MtaBlocks {
             ));
     public static final DeferredBlock<DropExperienceBlock> NETHER_DIAMOND_ORE = registerBlock("nether_diamond_ore",
             () -> new DropExperienceBlock(
-                    UniformInt.of(3, 12),
+                    UniformInt.of(3, 8),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
             ));
 
     public static final DeferredBlock<DropExperienceBlock> END_LAPIS_ORE = registerBlock("end_lapis_ore",
             () -> new DropExperienceBlock(
-                    UniformInt.of(6, 14),
+                    UniformInt.of(6, 10),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
             ));
     public static final DeferredBlock<DropExperienceBlock> END_EMERALD_ORE = registerBlock("end_emerald_ore",

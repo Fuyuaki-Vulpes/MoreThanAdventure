@@ -1,5 +1,11 @@
 {
   "block.morethanadventure.basalt_geyser": "Basalt Geyser",
+  "block.morethanadventure.calcite_clear_quartz_growth": "Calcite Clear Quartz Growth",
+  "block.morethanadventure.clear_quartz_cluster": "Clear Quartz Cluster",
+  "block.morethanadventure.clear_quartz_growth": "Clear Quartz Growth",
+  "block.morethanadventure.clear_quartz_ore": "Clear Quartz Ore",
+  "block.morethanadventure.deepslate_clear_quartz_growth": "Deepslate Clear Quartz Growth",
+  "block.morethanadventure.deepslate_clear_quartz_ore": "Deepslate Clear Quartz  Ore",
   "block.morethanadventure.end_emerald_ore": "End Emerald Ore",
   "block.morethanadventure.end_lapis_ore": "End Lapis Ore",
   "block.morethanadventure.mossy_andesite": "Mossy Andesite",
@@ -121,5 +127,8 @@
   "item.morethanadventure.wrathful_berserkers_helmet": "Wrathful Berserker's Helmet",
   "item.morethanadventure.wrathful_berserkers_leggings": "Wrathful Berserker's Leggings",
   "item.morethanadventure.yuki_onna_spawn_egg": "Yuki Onna Spawn Egg",
-  "itemGroup.morethanadventure": "More Than Adventure"
+  "itemGroup.morethanadventure": "More Than Adventure ALL",
+  "itemGroup.mtaequip": "MTA: Equipments",
+  "itemGroup.mtaitemblock": "MTA: Blocks & Items",
+  "itemGroup.mtamisc": "MTA: Foods, Spawns & Miscellaneous"
 }

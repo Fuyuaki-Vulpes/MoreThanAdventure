@@ -10,7 +10,9 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -40,6 +42,9 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> NETHER_DIAMOND = registerKey("nether_diamond");
     public static final ResourceKey<ConfiguredFeature<?,?>> END_LAPIS = registerKey("nether_lapis");
     public static final ResourceKey<ConfiguredFeature<?,?>> END_EMERALD = registerKey("nether_emerald");
+    public static final ResourceKey<ConfiguredFeature<?,?>> CLEAR_QUARTZ_ORE = registerKey("clear_quartz_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> LARGE_CLEAR_QUARTZ_VEIN = registerKey("large_clear_quartz_vein");
+    public static final ResourceKey<ConfiguredFeature<?,?>> CLEAR_QUARTZ_SHARD = registerKey("clear_quartz_shard");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -130,9 +135,8 @@ public class MtaConfigFeatures {
         register(context,
                 NETHER_IRON,
                 Feature.ORE,
-                new OreConfiguration(List.of(
-                        OreConfiguration.target(oresNetherrack, MtaBlocks.NETHER_IRON_ORE.get().defaultBlockState())
-                        ),
+                new OreConfiguration(
+                        blockTest(oresNetherrack,MtaBlocks.NETHER_IRON_ORE.get()),
                         9
 
                     )
@@ -140,9 +144,7 @@ public class MtaConfigFeatures {
         register(context,
                 NETHER_DIAMOND,
                 Feature.ORE,
-                new OreConfiguration(List.of(
-                        OreConfiguration.target(oresNetherrack, MtaBlocks.NETHER_DIAMOND_ORE.get().defaultBlockState())
-                        ),
+                new OreConfiguration(blockTest(oresNetherrack,MtaBlocks.NETHER_DIAMOND_ORE.get()),
                         14,
                         0.7F
 
@@ -151,9 +153,8 @@ public class MtaConfigFeatures {
         register(context,
                 END_LAPIS,
                 Feature.ORE,
-                new OreConfiguration(List.of(
-                        OreConfiguration.target(oresEndstone, MtaBlocks.END_LAPIS_ORE.get().defaultBlockState())
-                        ),
+                new OreConfiguration(
+                        blockTest(oresEndstone,MtaBlocks.END_LAPIS_ORE.get()),
                         9
 
                     )
@@ -161,19 +162,66 @@ public class MtaConfigFeatures {
         register(context,
                 END_EMERALD,
                 Feature.ORE,
-                new OreConfiguration(List.of(
-                        OreConfiguration.target(oresEndstone, MtaBlocks.END_EMERALD_ORE.get().defaultBlockState())
-                        ),
+                new OreConfiguration(blockTest(oresEndstone,MtaBlocks.END_EMERALD_ORE.get()),
                         5
-
                     )
         );
+        register(context,
+                CLEAR_QUARTZ_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.CLEAR_QUARTZ_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()),
+                        3
+                    )
+        );
+        register(context,
+                LARGE_CLEAR_QUARTZ_VEIN,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.CLEAR_QUARTZ_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()),
+                        10
+                    )
+        );
+        register(context,
+                CLEAR_QUARTZ_SHARD,
+                Feature.REPLACE_SINGLE_BLOCK,
+                new ReplaceBlockConfiguration(List.of(
+                        OreConfiguration.target(new BlockMatchTest(Blocks.CALCITE), MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get().defaultBlockState()),
+                        OreConfiguration.target(new BlockMatchTest(Blocks.DEEPSLATE), MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get().defaultBlockState()),
+                        OreConfiguration.target(new BlockMatchTest(Blocks.STONE), MtaBlocks.CLEAR_QUARTZ_GROWTH.get().defaultBlockState())
+
+                        )
+                )
+        );
+
+
 
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(MODID, name));
     }
+
+    private static List<OreConfiguration.TargetBlockState> blockTest(Block target, Block replacement){
+        return List.of(
+                OreConfiguration.target(new BlockMatchTest(target), replacement.defaultBlockState())
+        );
+    }
+    private static List<OreConfiguration.TargetBlockState> blockTest(TagKey<Block> target, Block replacement){
+        return List.of(
+                OreConfiguration.target(new TagMatchTest(target), replacement.defaultBlockState())
+        );
+    }
+    private static List<OreConfiguration.TargetBlockState> blockTest(RuleTest target, Block replacement){
+        return List.of(
+                OreConfiguration.target(target, replacement.defaultBlockState())
+        );
+    }
+    private static List<OreConfiguration.TargetBlockState> blockTest(RuleTest target, Block replacement, RuleTest target2, Block replacement2){
+        return List.of(
+                OreConfiguration.target(target, replacement.defaultBlockState()),
+                OreConfiguration.target(target2, replacement2.defaultBlockState())
+        );
+    }
+
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

@@ -31,6 +31,11 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.NETHER_DIAMOND_ORE);
         blockWithItem(MtaBlocks.END_LAPIS_ORE);
         blockWithItem(MtaBlocks.END_EMERALD_ORE);
+        blockWithItem(MtaBlocks.CLEAR_QUARTZ_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE);
+        blockWithItem(MtaBlocks.CLEAR_QUARTZ_GROWTH);
+        blockWithItem(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH);
+        blockWithItem(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH);
 
     }
 

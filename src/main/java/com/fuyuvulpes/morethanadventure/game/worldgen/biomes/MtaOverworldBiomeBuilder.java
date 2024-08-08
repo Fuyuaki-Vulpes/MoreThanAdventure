@@ -361,9 +361,35 @@ public class MtaOverworldBiomeBuilder {
 
 
     protected void addUndergroundBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        //this.addUndergroundBiome(mapper, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.8F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, BOPBiomes.SPIDER_NEST);
-        //this.addUndergroundBiome(mapper, this.FULL_RANGE, Climate.Parameter.span(0.7F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, 0.0F, BOPBiomes.GLOWING_GROTTO);
-        //this.addBottomBiome(mapper, this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.erosions[0], this.erosions[1]), this.FULL_RANGE, 0.0F, Biomes.DEEP_DARK);
+        this.addUndergroundBiome(
+                mapper, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(0.8F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, 0.0F, Biomes.DRIPSTONE_CAVES
+        );
+        this.addUndergroundBiome(
+                mapper, this.FULL_RANGE, Climate.Parameter.span(0.7F, 1.0F), this.FULL_RANGE, this.FULL_RANGE, this.FULL_RANGE, 0.0F, Biomes.LUSH_CAVES
+        );
+        this.addBottomBiome(
+                mapper,
+                this.FULL_RANGE,
+                this.FULL_RANGE,
+                this.FULL_RANGE,
+                Climate.Parameter.span(this.erosions[0], this.erosions[1]),
+                this.FULL_RANGE,
+                0.0F,
+                Biomes.DEEP_DARK
+        );
+
+        this.addUndergroundBiome(
+                mapper,
+                temperatures[2],
+                this.FULL_RANGE,
+                span(coastContinentalness,farInlandContinentalness),
+                span(erosions[1],erosions[4]),
+                this.FULL_RANGE,
+                0.0F,
+                MtaBiomes.CRYSTALLINE_GROTTO
+
+                );
+
     }
 
     protected ResourceKey<Biome> pickMiddleBiomeVanilla(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {

@@ -10,10 +10,13 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.material.Fluids;
@@ -40,6 +43,9 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> NETHER_DIAMOND = registerKey("nether_diamond");
     public static final ResourceKey<PlacedFeature> END_LAPIS = registerKey("nether_lapis");
     public static final ResourceKey<PlacedFeature> END_EMERALD = registerKey("nether_emerald");
+    public static final ResourceKey<PlacedFeature> CLEAR_QUARTZ_ORE = registerKey("clear_quartz_ore");
+    public static final ResourceKey<PlacedFeature> LARGE_CLEAR_QUARTZ_VEIN = registerKey("large_clear_quartz_vein");
+    public static final ResourceKey<PlacedFeature> CLEAR_QUARTZ_SHARD = registerKey("clear_quartz_shard");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -186,6 +192,28 @@ public class MtaPlacedFeatures {
                 holder(context,MtaConfigFeatures.END_EMERALD),
                 MTAOreUtils.commonOrePlacement(28, PlacementUtils.FULL_RANGE)
         );
+        register(
+                context,
+                CLEAR_QUARTZ_ORE,
+                holder(context,MtaConfigFeatures.CLEAR_QUARTZ_ORE),
+                MTAOreUtils.commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-96),VerticalAnchor.absolute(32)))
+        );
+        register(
+                context,
+                LARGE_CLEAR_QUARTZ_VEIN,
+                holder(context,MtaConfigFeatures.LARGE_CLEAR_QUARTZ_VEIN),
+                MTAOreUtils.commonOrePlacement(32, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                CLEAR_QUARTZ_SHARD,
+                holder(context,MtaConfigFeatures.CLEAR_QUARTZ_SHARD),
+                CountPlacement.of(256),
+                PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+                InSquarePlacement.spread(),
+                BiomeFilter.biome()
+        );
+
 
     }
 

@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:replace_single_block",
+  "config": {
+    "targets": [
+      {
+        "state": {
+          "Name": "morethanadventure:calcite_clear_quartz_growth"
+        },
+        "target": {
+          "block": "minecraft:calcite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "morethanadventure:deepslate_clear_quartz_growth"
+        },
+        "target": {
+          "block": "minecraft:deepslate",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "morethanadventure:clear_quartz_growth"
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

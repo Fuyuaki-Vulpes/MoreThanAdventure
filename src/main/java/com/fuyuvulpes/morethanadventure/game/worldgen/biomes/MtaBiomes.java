@@ -35,6 +35,7 @@ public class MtaBiomes {
     private static final Music SWAMP_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SWAMP);
     private static final Music JUNGLE_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JUNGLE);
     private static final Music CAVE_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DRIPSTONE_CAVES);
+    private static final Music CAVE_LUSH_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_LUSH_CAVES);
     private static final Music MOUNTAIN_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JAGGED_PEAKS);
     private static final Music DESERT_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT);
     private static final Music MAGICAL_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CHERRY_GROVE);
@@ -45,6 +46,7 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> OASIS = createBiome("oasis");
     public static final ResourceKey<Biome> GRAVELLY_RIVER = createBiome("gravelly_river");
     public static final ResourceKey<Biome> LUSH_MEADOW = createBiome("lush_meadow");
+    public static final ResourceKey<Biome> CRYSTALLINE_GROTTO = createBiome("crystalline_grotto");
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -64,6 +66,7 @@ public class MtaBiomes {
         register(context,OASIS, oasis(context));
         register(context,GRAVELLY_RIVER, gravelRiver(context));
         register(context,LUSH_MEADOW, lushMeadow(context));
+        register(context,CRYSTALLINE_GROTTO, crystallineGrotto(context));
     }
 
 
@@ -331,6 +334,42 @@ public class MtaBiomes {
                 spawnBuilder,
                 biomeBuilder,
                 MOUNTAIN_MUSIC);
+    }
+
+
+    private static Biome crystallineGrotto(BootstrapContext<Biome> context){
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+
+
+        BiomeDefaultFeatures.caveSpawns(spawnBuilder);
+        int i = 95;
+        BiomeDefaultFeatures.monsters(spawnBuilder, 40, 6, 40, false);
+
+        spawnBuilder.addSpawn(MobCategory.MONSTER,
+                new MobSpawnSettings.SpawnerData(EntityType.SILVERFISH, 20, 2, 8));
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultSprings(biomeBuilder);
+        BiomeDefaultFeatures.addSurfaceFreezing(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder, true);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.LARGE_CLEAR_QUARTZ_VEIN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.CLEAR_QUARTZ_SHARD);
+
+
+
+
+
+        return biome(true, 0.0F, 0.4F, spawnBuilder, biomeBuilder, CAVE_LUSH_MUSIC);
     }
 
 

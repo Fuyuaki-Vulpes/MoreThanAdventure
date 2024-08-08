@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "morethanadventure:block/clear_quartz_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "morethanadventure:block/clear_quartz_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "morethanadventure:block/clear_quartz_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "morethanadventure:block/clear_quartz_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "morethanadventure:block/clear_quartz_cluster"
+    },
+    "facing=west": {
+      "model": "morethanadventure:block/clear_quartz_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

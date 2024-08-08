@@ -1,6 +1,8 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
+import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaItems;
+import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

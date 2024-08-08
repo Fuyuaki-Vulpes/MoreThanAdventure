@@ -30,6 +30,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_NETHER_DIAMOND = registerKey("nether_diamond");
     public static final ResourceKey<BiomeModifier> ADD_END_LAPIS = registerKey("nether_lapis");
     public static final ResourceKey<BiomeModifier> ADD_END_EMERALD = registerKey("nether_emerald");
+    public static final ResourceKey<BiomeModifier> ADD_CLEAR_QUARTZ = registerKey("clear_quartz");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -82,6 +83,11 @@ public class MtaBiomeModifiers {
         context.register(ADD_END_EMERALD,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_END),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.END_EMERALD)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_CLEAR_QUARTZ,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CLEAR_QUARTZ_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 

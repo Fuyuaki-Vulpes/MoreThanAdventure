@@ -37,14 +37,21 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.END_LAPIS_ORE.get()
                 );
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
-                MtaBlocks.NETHER_IRON_ORE.get()
+                MtaBlocks.NETHER_IRON_ORE.get(),
+                MtaBlocks.CLEAR_QUARTZ_ORE.get(),
+                MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
                 );
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
                 MtaBlocks.NETHER_DIAMOND_ORE.get(),
                 MtaBlocks.END_EMERALD_ORE.get(),
-                MtaBlocks.END_LAPIS_ORE.get()
+                MtaBlocks.END_LAPIS_ORE.get(),
+                MtaBlocks.CLEAR_QUARTZ_ORE.get(),
+                MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get(),
+                MtaBlocks.CLEAR_QUARTZ_GROWTH.get(),
+                MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),
+                MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get()
         );
 
 
@@ -59,6 +66,10 @@ public class GenBlockTags extends BlockTagsProvider {
                 );
         this.tag(BlockTags.EMERALD_ORES).add(
                 MtaBlocks.END_EMERALD_ORE.get()
+                );
+        this.tag(Tags.Blocks.ORES_QUARTZ).add(
+                MtaBlocks.CLEAR_QUARTZ_ORE.get(),
+                MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
                 );
 
 
