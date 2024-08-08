@@ -82,6 +82,7 @@ file="META-INF/mtaaccesstransformer.cfg"
     ordering="NONE"
     side="BOTH"
 
+
 [[dependencies.${mod_id}]]
     modId="placebo"
     type="required"
@@ -99,7 +100,6 @@ file="META-INF/mtaaccesstransformer.cfg"
 [[dependencies.${mod_id}]]
     modId="terrablender"
     type="required"
-    # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="${terrablenderVersionRange}"
     ordering="NONE"
     side="BOTH"
@@ -107,14 +107,13 @@ file="META-INF/mtaaccesstransformer.cfg"
 [[dependencies.${mod_id}]]
     modId="apothic_attributes"
     type="required"
-    # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="${attributesLibVersionRange}"
     ordering="NONE"
     side="BOTH"
+
 [[dependencies.${mod_id}]]
     modId="farmersdelight"
     type="required"
-    # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="${farmersDelightVersionRange}"
     ordering="NONE"
     side="BOTH"
