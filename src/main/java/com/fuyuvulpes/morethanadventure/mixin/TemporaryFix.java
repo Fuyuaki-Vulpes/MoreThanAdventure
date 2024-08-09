@@ -11,7 +11,7 @@ import vectorwing.farmersdelight.common.event.CommonModBusEvents;
 
 
 @Mixin(CommonModBusEvents.class)
-public class TemporaryFix {
+public abstract class TemporaryFix {
 
     @Inject(method = "onModifyDefaultComponents(Lnet/neoforged/neoforge/event/ModifyDefaultComponentsEvent;)V", at = @At("HEAD"), cancellable = true)
     private static void fixRunData(ModifyDefaultComponentsEvent event, CallbackInfo ci) {

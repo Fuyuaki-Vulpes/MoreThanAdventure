@@ -2,8 +2,10 @@ package com.fuyuvulpes.morethanadventure.world.entity;
 
 import com.fuyuvulpes.morethanadventure.core.registry.MtaEntityTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -16,29 +18,33 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Capybara extends Animal implements GeoEntity {
+public class Capybara extends MTATameableAnimal implements GeoEntity {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
-    public Capybara(EntityType<? extends Animal> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+    public Capybara(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
+        super(50.0F,pEntityType, pLevel);
     }
 
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
+        this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
+        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(Items.WHEAT), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(Items.SPIDER_EYE), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
-
     }
 
 
@@ -66,7 +72,14 @@ public class Capybara extends Animal implements GeoEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-
+        controllers.add(
+                new AnimationController<>(this, 10, (state) -> {
+                    if (state.isMoving()) {
+                        return state.setAndContinue(WALK);
+                    }
+                    return state.setAndContinue(DefaultAnimations.IDLE);
+                })
+        );
     }
 
     @Override

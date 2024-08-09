@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FarmBlock.class)
-public class FarmBlockMixin extends Block {
+public abstract class FarmBlockMixin extends Block {
     private static final int range = MTACommonConfig.sprinklerRange > 1 ? MTACommonConfig.sprinklerRange : 8;
     public FarmBlockMixin(Properties properties) {
         super(properties);
