@@ -5,7 +5,8 @@
   "refmap": "yoamod.refmap.json",
   "mixins": [
     "FarmBlockMixin",
-    "ServerPlayerMixin"
+    "ServerPlayerMixin",
+    "TemporaryFix"
   ],
   "client": [
   ],

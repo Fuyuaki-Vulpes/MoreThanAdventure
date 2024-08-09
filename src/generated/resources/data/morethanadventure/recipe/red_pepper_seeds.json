@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "morethanadventure:red_pepper"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:red_pepper_seeds"
+  }
+}
