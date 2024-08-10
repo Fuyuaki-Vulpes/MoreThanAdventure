@@ -2,6 +2,7 @@ package com.fuyuvulpes.morethanadventure.world.block.entity;
 
 import com.fuyuvulpes.morethanadventure.core.MTACommonConfig;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaBlockEntities;
+import com.fuyuvulpes.morethanadventure.core.registry.MtaParticles;
 import com.fuyuvulpes.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -12,6 +13,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.common.Tags;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
@@ -21,8 +23,8 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private static final RawAnimation RUN = RawAnimation.begin().thenLoop("animation.sprinkler.spin");
-    private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.sprinkler.idle");
+    private static final RawAnimation RUN = RawAnimation.begin().thenPlay("animation.sprinkler.pop").thenLoop("animation.sprinkler.spin");
+    private static final RawAnimation IDLE = RawAnimation.begin().thenPlay("animation.sprinkler.stop").thenLoop("animation.sprinkler.idle");
 
 
     public SprinklerEntity( BlockPos pPos, BlockState pBlockState) {
@@ -52,14 +54,19 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
     }
 
     public static void particleTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
-        for (int k = 0; k < 50; k += 5) {
+        for (int p = 0; p < 4; p++){
+            level.addParticle(MtaParticles.SPRINKLER.get(), blockPos.getX() + 0.5,blockPos.above().above().getY(),blockPos.getZ() + 0.5,0,0,0);
+        }
+        for (int k = 0; k < 10; k++ ) {
             float cRange = (float) (MTACommonConfig.sprinklerRange * k) / 25;
             float xRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             float zRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
-            level.addParticle(ParticleTypes.FALLING_WATER, blockPos.getCenter().x + xRange,
-                    blockPos.getCenter().y + 0.5,
-                    blockPos.getCenter().z + zRange
-                    ,0, 0, 0);
+            if (level.getBlockState(blockPos.below()).is(Tags.Blocks.VILLAGER_FARMLANDS)) {
+                level.addParticle(ParticleTypes.FALLING_WATER, blockPos.getCenter().x + xRange,
+                        blockPos.getCenter().y + 0.5,
+                        blockPos.getCenter().z + zRange
+                        , 0, 0, 0);
+            }
         }
     }
 

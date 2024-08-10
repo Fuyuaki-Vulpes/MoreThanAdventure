@@ -20,6 +20,7 @@ public class MtaParticles {
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> GEYSER_WATER = simpleParticle("geyser_water",false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> GEYSER_LAVA = simpleParticle("geyser_lava",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SPRINKLER = simpleParticle("sprinkler",false);
 
 
 

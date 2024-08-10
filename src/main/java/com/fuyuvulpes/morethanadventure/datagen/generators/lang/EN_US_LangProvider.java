@@ -100,6 +100,15 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.FEATHERWEIGHT_AXE.get(), "Featherweight Axe");
         add(MtaItems.FEATHERWEIGHT_SHOVEL.get(), "Featherweight Shovel");
 
+        add(MtaItems.COPPER_SWORD.get(), "Copper Sword");
+        add(MtaItems.COPPER_PICKAXE.get(), "Copper Pickaxe");
+        add(MtaItems.COPPER_AXE.get(), "Copper Axe");
+        add(MtaItems.COPPER_SHOVEL.get(), "Copper Shovel");
+        add(MtaItems.COPPER_HOE.get(), "Copper Hoe");
+
+
+
+
 
         //FOODS
         add(MtaItems.ONION.get(),"Onion");

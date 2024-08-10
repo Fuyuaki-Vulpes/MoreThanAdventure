@@ -3,6 +3,7 @@ package com.fuyuvulpes.morethanadventure.core;
 import com.fuyuvulpes.morethanadventure.core.registry.*;
 import com.fuyuvulpes.morethanadventure.game.capabilities.block.SprinkerWrapper;
 import com.fuyuvulpes.morethanadventure.game.client.particle.GeyserParticle;
+import com.fuyuvulpes.morethanadventure.game.client.particle.SprinklerParticle;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuvulpes.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaBiomes;
@@ -152,6 +153,7 @@ public class MTAMod
         public static void particleFactory(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(MtaParticles.GEYSER_WATER.get(), GeyserParticle.Water::new);
             event.registerSpriteSet(MtaParticles.GEYSER_LAVA.get(), GeyserParticle.Lava::new);
+            event.registerSpriteSet(MtaParticles.SPRINKLER.get(), SprinklerParticle.Builder::new);
 
         }
     }

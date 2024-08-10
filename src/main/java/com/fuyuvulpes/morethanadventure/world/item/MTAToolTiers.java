@@ -68,6 +68,15 @@ public class MTAToolTiers {
             () -> Ingredient.of(Tags.Items.INGOTS_COPPER)
     );
 
+    public static final Tier COPPER = new SimpleTier(
+            MtaTags.Blocks.INCORRECT_FOR_COPPER_TOOL,
+            190,
+            7.0F,
+            10.0f,
+            22,
+            () -> Ingredient.of(Tags.Items.INGOTS_COPPER)
+    );
+
 
 
 

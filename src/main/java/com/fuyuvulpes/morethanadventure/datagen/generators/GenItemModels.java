@@ -58,6 +58,13 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.BERSERK_UPGRADE);
         simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
 
+
+        simpleItem(MtaItems.COPPER_SWORD);
+        simpleItem(MtaItems.COPPER_PICKAXE);
+        simpleItem(MtaItems.COPPER_AXE);
+        simpleItem(MtaItems.COPPER_SHOVEL);
+        simpleItem(MtaItems.COPPER_HOE);
+
         //ARMOR
 
         simpleItem(MtaItems.GREAT_SENTINELS_HELMET);

@@ -101,7 +101,16 @@ public class MtaItems {
 
 
 
+    public static final DeferredItem<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new PickaxeItem(MTAToolTiers.COPPER, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.COPPER, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> COPPER_AXE = ITEMS.register("copper_axe", () -> new AxeItem(MTAToolTiers.COPPER, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.COPPER, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> COPPER_SHOVEL = ITEMS.register("copper_shovel", () -> new ShovelItem(MTAToolTiers.COPPER, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.COPPER, 1.5F, -3F))));
+    public static final DeferredItem<HoeItem> COPPER_HOE = ITEMS.register("copper_hoe", () -> new HoeItem(MTAToolTiers.COPPER, new Item.Properties().attributes(HoeItem.createAttributes(MTAToolTiers.COPPER, 1.5F, -3F))));
+
+
+
     //WEAPONS
+    public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(MTAToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.COPPER, 3.0F, -2.4F))));
+
 
     //FOODS
     public static final DeferredItem<Item> ONION = ITEMS.registerSimpleItem("onion", new Item.Properties().food(MtaFoods.ONION));

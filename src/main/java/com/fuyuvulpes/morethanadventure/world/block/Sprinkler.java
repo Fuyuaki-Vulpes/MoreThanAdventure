@@ -33,7 +33,7 @@ public class Sprinkler extends BaseEntityBlock {
 
     public static final MapCodec<Sprinkler> CODEC = simpleCodec(Sprinkler::new);
     public static final BooleanProperty ON = BooleanProperty.create("enabled");
-    private static final VoxelShape SHAPE =  Shapes.join(Block.box(0, 0, 0, 16, 3, 16), Block.box(5, 3, 5, 11, 15, 11), BooleanOp.OR);
+    private static final VoxelShape SHAPE =  Shapes.join(Block.box(0, 0, 0, 16, 12, 16), Block.box(4, 12, 4, 12, 17, 12), BooleanOp.OR);
 
 
 
@@ -90,7 +90,7 @@ public class Sprinkler extends BaseEntityBlock {
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         super.tick(pState, pLevel, pPos, pRandom);
         BlockState state = pLevel.getBlockState(pPos);
-        if (state.getValue(ON) && pLevel.random.nextFloat() > 0.6F && (pLevel.getBlockState(pPos.below()).is(Blocks.WATER) || pLevel.getBlockState(pPos.below()).is(Blocks.WATER_CAULDRON))){
+        if (state.getValue(ON) && pLevel.random.nextFloat() > 0.6F ){
             pLevel.addParticle(ParticleTypes.DRIPPING_WATER, pPos.getX(), pPos.above().getY(), pPos.getZ(), 0.0, 0.0, 0.0);
         }
 

@@ -26,7 +26,7 @@ public abstract class FarmBlockMixin extends Block {
         for (BlockPos blockpos : BlockPos.betweenClosed(pPos.offset(-range, -1, -range), pPos.offset(range, 2, range))) {
             BlockState blockState = pLevel.getBlockState(blockpos);
 
-            if (blockState.is(MtaBlocks.SPRINKLER.get()) && blockState.getValue(Sprinkler.ON) && (pLevel.getBlockState(blockpos.below()).is(Blocks.WATER)|| pLevel.getBlockState(blockpos.below()).is(Blocks.WATER_CAULDRON))) {
+            if (blockState.is(MtaBlocks.SPRINKLER.get()) && blockState.getValue(Sprinkler.ON)) {
                 cir.setReturnValue(true);
             }
         }

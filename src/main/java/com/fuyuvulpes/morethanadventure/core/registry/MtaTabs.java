@@ -73,7 +73,14 @@ public class MtaTabs {
             .icon(MtaItems.GREAT_SENTINELS_CHESTPLATE.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
-                output.accept(MtaItems.GREAT_SENTINELS_HELMET);
+                output.accept(MtaItems.COPPER_SWORD);
+                output.accept(MtaItems.COPPER_PICKAXE);
+                output.accept(MtaItems.COPPER_AXE);
+                output.accept(MtaItems.COPPER_SHOVEL);
+                output.accept(MtaItems.COPPER_HOE);
+
+
+
                 output.accept(MtaItems.GREAT_SENTINELS_CHESTPLATE);
                 output.accept(MtaItems.GREAT_SENTINELS_LEGGINGS);
                 output.accept(MtaItems.GREAT_SENTINELS_BOOTS);
@@ -130,7 +137,7 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MISC = TABS.register("mtamisc", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtamisc"))
             .withTabsBefore(MtaTabs.EQUIPMENTS.getId())
-            .icon(MtaItems.GREAT_SENTINELS_CHESTPLATE.get()::getDefaultInstance)
+            .icon(MtaItems.COCONUT_MILK.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
 
