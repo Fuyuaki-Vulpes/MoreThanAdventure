@@ -1,5 +1,11 @@
 {
   "values": [
-    "morethanadventure:copper_shovel"
+    "morethanadventure:copper_shovel",
+    "morethanadventure:armament_shovel",
+    "morethanadventure:royal_shovel",
+    "morethanadventure:aquatic_shovel",
+    "morethanadventure:angelic_shovel",
+    "morethanadventure:berserk_shovel",
+    "morethanadventure:featherweight_shovel"
   ]
 }
