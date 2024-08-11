@@ -4,10 +4,7 @@ import com.fuyuvulpes.morethanadventure.core.registry.MtaArmorMats;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 
 import java.util.UUID;
@@ -43,11 +40,19 @@ public class MTAArmor extends ArmorItem {
         boolean hasChestplate = entity.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof ArmorItem;
         boolean hasLeggings = entity.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof ArmorItem;
         boolean hasBoots = entity.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof ArmorItem;
-        ArmorMaterial helmet = ((ArmorItem)entity.getItemBySlot(Type.HELMET.getSlot()).getItem()).getMaterial().value();
-        ArmorMaterial chestplate = ((ArmorItem)entity.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem()).getMaterial().value();
-        ArmorMaterial leggings = ((ArmorItem)entity.getItemBySlot(Type.LEGGINGS.getSlot()).getItem()).getMaterial().value();
-        ArmorMaterial boots = ((ArmorItem)entity.getItemBySlot(Type.BOOTS.getSlot()).getItem()).getMaterial().value();
 
+        //USED ARMADILLO SO IT DOESN'T BREAK FROM NULL!!!
+        ArmorMaterial helmet = ArmorMaterials.ARMADILLO.value();
+        ArmorMaterial chestplate = ArmorMaterials.ARMADILLO.value();
+        ArmorMaterial leggings = ArmorMaterials.ARMADILLO.value();
+        ArmorMaterial boots = ArmorMaterials.ARMADILLO.value();
+
+        if (hasHelmet) helmet = ((ArmorItem)entity.getItemBySlot(Type.HELMET.getSlot()).getItem()).getMaterial().value();
+        if (hasChestplate) chestplate = ((ArmorItem)entity.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem()).getMaterial().value();
+        if (hasLeggings) leggings = ((ArmorItem)entity.getItemBySlot(Type.LEGGINGS.getSlot()).getItem()).getMaterial().value();
+        if (hasBoots) boots = ((ArmorItem)entity.getItemBySlot(Type.BOOTS.getSlot()).getItem()).getMaterial().value();
+
+        
         doSentinelEffects(entity,
                 level,
                 hasHelmet && helmet == SENTINEL,
