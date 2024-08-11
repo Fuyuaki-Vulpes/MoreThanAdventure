@@ -38,6 +38,10 @@ public class MtaFoods {
             .nutrition(2)
             .saturationModifier(0.5F)
             .build();
+    public static final FoodProperties COCONUT_MILK = new FoodProperties.Builder()
+            .nutrition(3)
+            .saturationModifier(0.6F)
+            .build();
     public static final FoodProperties SWEET_BEEF_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
