@@ -1,8 +1,6 @@
 package com.fuyuvulpes.morethanadventure.datagen.generators;
 
-import com.fuyuvulpes.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuvulpes.morethanadventure.core.registry.MtaItems;
-import com.fuyuvulpes.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -67,60 +65,66 @@ public class GenItemModels extends ItemModelProvider {
 
         //ARMOR
 
+        simpleItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         simpleItem(MtaItems.GREAT_SENTINELS_HELMET);
         simpleItem(MtaItems.GREAT_SENTINELS_CHESTPLATE);
         simpleItem(MtaItems.GREAT_SENTINELS_LEGGINGS);
         simpleItem(MtaItems.GREAT_SENTINELS_BOOTS);
 
+        simpleItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
         //simpleItem(MtaItems.HOLY_KNIGHTS_HELMET);
         //simpleItem(MtaItems.HOLY_KNIGHTS_CHESTPLATE);
         //simpleItem(MtaItems.HOLY_KNIGHTS_LEGGINGS);
         //simpleItem(MtaItems.HOLY_KNIGHTS_BOOTS);
 
+        simpleItem(MtaItems.MYSTIC_MERMAIDS_TRIDENT);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_HELMET);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_BOOTS);
 
+        simpleItem(MtaItems.TEMPLE_ANGELS_BOW);
         simpleItem(MtaItems.TEMPLE_ANGELS_HELMET);
         simpleItem(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
         simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
         simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
+        simpleItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
 
+        simpleItem(MtaItems.SHADOW_ROGUES_DAGGER);
         simpleItem(MtaItems.SHADOW_ROGUES_HELMET);
         simpleItem(MtaItems.SHADOW_ROGUES_CHESTPLATE);
         simpleItem(MtaItems.SHADOW_ROGUES_LEGGINGS);
         simpleItem(MtaItems.SHADOW_ROGUES_BOOTS);
 
         //TOOLS
-        handheldItem(MtaItems.ARMAMENT_PICKAXE);
-        handheldItem(MtaItems.ARMAMENT_AXE);
-        handheldItem(MtaItems.ARMAMENT_SHOVEL);
+        simpleItem(MtaItems.ARMAMENT_PICKAXE);
+        simpleItem(MtaItems.ARMAMENT_AXE);
+        simpleItem(MtaItems.ARMAMENT_SHOVEL);
 
-        handheldItem(MtaItems.ROYAL_PICKAXE);
-        handheldItem(MtaItems.ROYAL_AXE);
-        handheldItem(MtaItems.ROYAL_SHOVEL);
+        simpleItem(MtaItems.ROYAL_PICKAXE);
+        simpleItem(MtaItems.ROYAL_AXE);
+        simpleItem(MtaItems.ROYAL_SHOVEL);
 
-        handheldItem(MtaItems.AQUATIC_PICKAXE);
-        handheldItem(MtaItems.AQUATIC_AXE);
-        handheldItem(MtaItems.AQUATIC_SHOVEL);
+        simpleItem(MtaItems.AQUATIC_PICKAXE);
+        simpleItem(MtaItems.AQUATIC_AXE);
+        simpleItem(MtaItems.AQUATIC_SHOVEL);
 
-        handheldItem(MtaItems.ANGELIC_PICKAXE);
-        handheldItem(MtaItems.ANGELIC_AXE);
-        handheldItem(MtaItems.ANGELIC_SHOVEL);
+        simpleItem(MtaItems.ANGELIC_PICKAXE);
+        simpleItem(MtaItems.ANGELIC_AXE);
+        simpleItem(MtaItems.ANGELIC_SHOVEL);
 
-        handheldItem(MtaItems.BERSERK_PICKAXE);
-        handheldItem(MtaItems.BERSERK_AXE);
-        handheldItem(MtaItems.BERSERK_SHOVEL);
+        simpleItem(MtaItems.BERSERK_PICKAXE);
+        simpleItem(MtaItems.BERSERK_AXE);
+        simpleItem(MtaItems.BERSERK_SHOVEL);
 
-        handheldItem(MtaItems.FEATHERWEIGHT_PICKAXE);
-        handheldItem(MtaItems.FEATHERWEIGHT_AXE);
-        handheldItem(MtaItems.FEATHERWEIGHT_SHOVEL);
+        simpleItem(MtaItems.FEATHERWEIGHT_PICKAXE);
+        simpleItem(MtaItems.FEATHERWEIGHT_AXE);
+        simpleItem(MtaItems.FEATHERWEIGHT_SHOVEL);
 
         //FOODS
 
@@ -156,19 +160,19 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
         simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
         simpleItem(MtaItems.BUTTERFLY_SPAWN_EGG);
-        //simpleItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
-        //simpleItem(MtaItems.CAPyBARA_SPAWN_EGG);
-        //simpleItem(MtaItems.DUCK_SPAWN_EGG);
-        //simpleItem(MtaItems.FERRET_SPAWN_EGG);
-        //simpleItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
-        //simpleItem(MtaItems.HORSESHOE_CRAB_SPAWN_EGG);
-        //simpleItem(MtaItems.JELLYFISH_SPAWN_EGG);
-        //simpleItem(MtaItems.OCTOPUS_SPAWN_EGG);
-        //simpleItem(MtaItems.OWL_SPAWN_EGG);
-        //simpleItem(MtaItems.PENGUIN_SPAWN_EGG);
-        //simpleItem(MtaItems.RACCOON_SPAWN_EGG);
-        //simpleItem(MtaItems.SHRIMP_SPAWN_EGG);
-        //simpleItem(MtaItems.TOUCAN_SPAWN_EGG);
+        simpleItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
+        simpleItem(MtaItems.CAPYBARA_SPAWN_EGG);
+        simpleItem(MtaItems.DUCK_SPAWN_EGG);
+        simpleItem(MtaItems.FERRET_SPAWN_EGG);
+        simpleItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
+        simpleItem(MtaItems.HORSESHOE_CRAB_SPAWN_EGG);
+        simpleItem(MtaItems.JELLYFISH_SPAWN_EGG);
+        simpleItem(MtaItems.OCTOPUS_SPAWN_EGG);
+        simpleItem(MtaItems.OWL_SPAWN_EGG);
+        simpleItem(MtaItems.PENGUIN_SPAWN_EGG);
+        simpleItem(MtaItems.RACCOON_SPAWN_EGG);
+        simpleItem(MtaItems.SHRIMP_SPAWN_EGG);
+        simpleItem(MtaItems.TOUCAN_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

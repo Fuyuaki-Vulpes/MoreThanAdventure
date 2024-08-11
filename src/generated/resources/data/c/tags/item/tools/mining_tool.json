@@ -3,6 +3,24 @@
     "morethanadventure:copper_pickaxe",
     "morethanadventure:copper_axe",
     "morethanadventure:copper_shovel",
-    "morethanadventure:copper_hoe"
+    "morethanadventure:copper_hoe",
+    "morethanadventure:armament_pickaxe",
+    "morethanadventure:armament_axe",
+    "morethanadventure:armament_shovel",
+    "morethanadventure:royal_pickaxe",
+    "morethanadventure:royal_axe",
+    "morethanadventure:royal_shovel",
+    "morethanadventure:aquatic_pickaxe",
+    "morethanadventure:aquatic_axe",
+    "morethanadventure:aquatic_shovel",
+    "morethanadventure:angelic_pickaxe",
+    "morethanadventure:angelic_axe",
+    "morethanadventure:angelic_shovel",
+    "morethanadventure:berserk_pickaxe",
+    "morethanadventure:berserk_axe",
+    "morethanadventure:berserk_shovel",
+    "morethanadventure:featherweight_pickaxe",
+    "morethanadventure:featherweight_axe",
+    "morethanadventure:featherweight_shovel"
   ]
 }

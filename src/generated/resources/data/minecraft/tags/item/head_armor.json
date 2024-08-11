@@ -1,5 +1,10 @@
 {
   "values": [
-    "morethanadventure:great_sentinel_helmet"
+    "morethanadventure:great_sentinel_helmet",
+    "morethanadventure:holy_knights_helmet",
+    "morethanadventure:mystic_mermaids_helmet",
+    "morethanadventure:temple_angels_helmet",
+    "morethanadventure:wrathful_berserkers_helmet",
+    "morethanadventure:shadow_rogues_helmet"
   ]
 }
