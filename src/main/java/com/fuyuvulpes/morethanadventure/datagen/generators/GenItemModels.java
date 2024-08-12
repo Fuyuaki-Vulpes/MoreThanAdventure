@@ -77,7 +77,7 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.HOLY_KNIGHTS_LEGGINGS);
         //simpleItem(MtaItems.HOLY_KNIGHTS_BOOTS);
 
-        simpleItem(MtaItems.MYSTIC_MERMAIDS_TRIDENT);
+        handheldItem(MtaItems.MYSTIC_MERMAIDS_TRIDENT);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_HELMET);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
@@ -95,36 +95,36 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
 
-        simpleItem(MtaItems.SHADOW_ROGUES_DAGGER);
+        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
         simpleItem(MtaItems.SHADOW_ROGUES_HELMET);
         simpleItem(MtaItems.SHADOW_ROGUES_CHESTPLATE);
         simpleItem(MtaItems.SHADOW_ROGUES_LEGGINGS);
         simpleItem(MtaItems.SHADOW_ROGUES_BOOTS);
 
         //TOOLS
-        simpleItem(MtaItems.ARMAMENT_PICKAXE);
-        simpleItem(MtaItems.ARMAMENT_AXE);
-        simpleItem(MtaItems.ARMAMENT_SHOVEL);
+        handheldItem(MtaItems.ARMAMENT_PICKAXE);
+        handheldItem(MtaItems.ARMAMENT_AXE);
+        handheldItem(MtaItems.ARMAMENT_SHOVEL);
 
-        simpleItem(MtaItems.ROYAL_PICKAXE);
-        simpleItem(MtaItems.ROYAL_AXE);
-        simpleItem(MtaItems.ROYAL_SHOVEL);
+        handheldItem(MtaItems.ROYAL_PICKAXE);
+        handheldItem(MtaItems.ROYAL_AXE);
+        handheldItem(MtaItems.ROYAL_SHOVEL);
 
-        simpleItem(MtaItems.AQUATIC_PICKAXE);
-        simpleItem(MtaItems.AQUATIC_AXE);
-        simpleItem(MtaItems.AQUATIC_SHOVEL);
+        handheldItem(MtaItems.AQUATIC_PICKAXE);
+        handheldItem(MtaItems.AQUATIC_AXE);
+        handheldItem(MtaItems.AQUATIC_SHOVEL);
 
-        simpleItem(MtaItems.ANGELIC_PICKAXE);
-        simpleItem(MtaItems.ANGELIC_AXE);
-        simpleItem(MtaItems.ANGELIC_SHOVEL);
+        handheldItem(MtaItems.ANGELIC_PICKAXE);
+        handheldItem(MtaItems.ANGELIC_AXE);
+        handheldItem(MtaItems.ANGELIC_SHOVEL);
 
-        simpleItem(MtaItems.BERSERK_PICKAXE);
-        simpleItem(MtaItems.BERSERK_AXE);
-        simpleItem(MtaItems.BERSERK_SHOVEL);
+        handheldItem(MtaItems.BERSERK_PICKAXE);
+        handheldItem(MtaItems.BERSERK_AXE);
+        handheldItem(MtaItems.BERSERK_SHOVEL);
 
-        simpleItem(MtaItems.FEATHERWEIGHT_PICKAXE);
-        simpleItem(MtaItems.FEATHERWEIGHT_AXE);
-        simpleItem(MtaItems.FEATHERWEIGHT_SHOVEL);
+        handheldItem(MtaItems.FEATHERWEIGHT_PICKAXE);
+        handheldItem(MtaItems.FEATHERWEIGHT_AXE);
+        handheldItem(MtaItems.FEATHERWEIGHT_SHOVEL);
 
         //FOODS
 
@@ -184,7 +184,7 @@ public class GenItemModels extends ItemModelProvider {
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/handheld")).texture("layer0",
+                ResourceLocation.parse("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
     }
 

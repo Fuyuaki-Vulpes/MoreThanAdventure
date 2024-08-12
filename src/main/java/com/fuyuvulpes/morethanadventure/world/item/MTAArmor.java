@@ -2,6 +2,8 @@ package com.fuyuvulpes.morethanadventure.world.item;
 
 import com.fuyuvulpes.morethanadventure.core.registry.MtaArmorMats;
 import net.minecraft.core.Holder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
@@ -96,108 +98,141 @@ public class MTAArmor extends ArmorItem {
 
     protected void doSentinelEffects(LivingEntity entity, Level level, boolean head, boolean chest, boolean legs, boolean feet){
         if (head){
-
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 0, false, false, false));
         }
         if (chest){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 0, false, false, false));
 
         }
         if (legs){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 0, false, false, false));
 
         }
         if (feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 0, false, false, false));
 
         }
         if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3, 4, false, false, false));
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 2, false, false, false));
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3, 0, false, false, false));
+
 
         }
     }
 
     protected void doKnightEffects(LivingEntity entity, Level level, boolean head, boolean chest, boolean legs, boolean feet){
         if (head){
+            entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 3, 1, false, false, false));
 
         }
         if (chest){
+            entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 3, 1, false, false, false));
 
         }
         if (legs){
+            entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 3, 1, false, false, false));
 
         }
         if (feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 3, 1, false, false, false));
 
         }
         if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 3, 0, false, false, false));
 
         }
     }
 
     protected void doMermaidEffects(LivingEntity entity, Level level, boolean head, boolean chest, boolean legs, boolean feet){
         if (head){
+            entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3, 0, false, false, false));
 
         }
         if (chest){
+            entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3, 0, false, false, false));
 
         }
         if (legs){
+            entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3, 0, false, false, false));
 
         }
         if (feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3, 0, false, false, false));
 
         }
         if (head && chest && legs && feet){
-
+            entity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 3, 0, false, false, false));
         }
     }
 
     protected void doAngelEffects(LivingEntity entity, Level level, boolean head, boolean chest, boolean legs, boolean feet){
         if (head){
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
         }
         if (chest){
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
         }
         if (legs){
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
         }
         if (feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
         }
         if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 3, 0, false, false, false));
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 5, false, false, false));
 
         }
     }
 
     protected void doBerserkerEffects(LivingEntity entity, Level level, boolean head, boolean chest, boolean legs, boolean feet){
         if (head){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 0, false, false, false));
 
         }
         if (chest){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 0, false, false, false));
 
         }
         if (legs){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 0, false, false, false));
 
         }
         if (feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 0, false, false, false));
 
         }
         if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 2, false, false, false));
 
         }
     }
 
     protected void doRogueEffects(LivingEntity entity, Level level, boolean head, boolean chest, boolean legs, boolean feet){
         if (head){
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
 
         }
         if (chest){
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
 
         }
         if (legs){
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
 
         }
         if (feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
 
         }
         if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 3, 0, false, false, false));
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 2, false, false, false));
 
         }
     }

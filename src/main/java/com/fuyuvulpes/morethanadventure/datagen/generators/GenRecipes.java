@@ -171,6 +171,11 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .requires(Tags.Items.COBBLESTONES)
                 .unlockedBy("has_coconut",has(MtaItems.COCONUT))
                 .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.COCONUT_MILK)
+                .requires(MtaItems.COCONUT)
+                .requires(Tags.Items.STONES)
+                .unlockedBy("has_coconut",has(MtaItems.COCONUT))
+                .save(output, "morethanadventure:coconut_milk_stones");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
                 .requires(MtaItems.RED_PEPPER)

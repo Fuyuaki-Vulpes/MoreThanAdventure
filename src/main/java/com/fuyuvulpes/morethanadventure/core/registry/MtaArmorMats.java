@@ -21,10 +21,10 @@ public class MtaArmorMats {
 
     public static final Holder<ArmorMaterial> GREAT_SENTINEL = ARMOR_MAT.register("great_sentinel", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                        map.put(ArmorItem.Type.BOOTS, 5);
-                        map.put(ArmorItem.Type.LEGGINGS, 8);
+                        map.put(ArmorItem.Type.BOOTS, 4);
+                        map.put(ArmorItem.Type.LEGGINGS, 7);
                         map.put(ArmorItem.Type.CHESTPLATE, 10);
-                        map.put(ArmorItem.Type.HELMET, 5);
+                        map.put(ArmorItem.Type.HELMET, 4);
                         map.put(ArmorItem.Type.BODY, 13);
                     }),
                     10, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Ingredient.of(MtaItems.AGATE),
@@ -34,7 +34,7 @@ public class MtaArmorMats {
 
     public static final Holder<ArmorMaterial> HOLY_KNIGHT = ARMOR_MAT.register("holy_knight", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 4);
+                map.put(ArmorItem.Type.BOOTS, 3);
                 map.put(ArmorItem.Type.LEGGINGS, 7);
                 map.put(ArmorItem.Type.CHESTPLATE, 9);
                 map.put(ArmorItem.Type.HELMET, 4);
