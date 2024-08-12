@@ -124,7 +124,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.TEMPLE_ANGELS_BOOTS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
-                );/*
+                );
         this.tag(ItemTags.TRIDENT_ENCHANTABLE)
                 .add(
                         MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
@@ -136,33 +136,33 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.SWORD_ENCHANTABLE)
                 .add(
                         MtaItems.COPPER_SWORD.get(),
-                        MtaItems.HOLY_KNIGHTS_GREAT_SWORD.get(),
+                        MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
                         MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
                         MtaItems.SHADOW_ROGUES_DAGGER.get()
                 );
-        this.tag(ItemTags.Items.MACE_ENCHANTABLE)
+        this.tag(ItemTags.MACE_ENCHANTABLE)
                 .add(
-                        MtaItems.GREAT_SENTINELS_HAMMER.get()
+                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get()
                 );
         this.tag(Tags.Items.TOOLS_BOW)
                 .add(
-                        MtaItems.TEMPLE_ANGELS_BOW.get();
+                        MtaItems.TEMPLE_ANGELS_BOW.get()
                 );
-        this.tag(Tags.Items.TOOLS_SHIELD)
-                .add(
-
-                );
+        //this.tag(Tags.Items.TOOLS_SHIELD)
+        //        .add(
+//
+  //              );
         this.tag(Tags.Items.TOOLS_SPEAR)
                 .add(
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
 
                 );
 
-        this.tag(Tags.Items.TOOLS_CROSSBOW)
-                .add(
+       // this.tag(Tags.Items.TOOLS_CROSSBOW)
+         //       .add(
+//
+  //              );
 
-                );
 
-
-*/
     }
 }
