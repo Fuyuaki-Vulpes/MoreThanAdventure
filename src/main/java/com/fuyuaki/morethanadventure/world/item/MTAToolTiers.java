@@ -27,7 +27,7 @@ public class MTAToolTiers {
 
     public static final Tier AQUAMARINE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_AQUAMARINE_TOOL,
-            2048,
+            3012,
             9f,
             4f,
             18,
@@ -36,7 +36,7 @@ public class MTAToolTiers {
 
     public static final Tier CELESTITE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_CELESTITE_TOOL,
-            1800,
+            2664,
             12f,
             3.5f,
             25,
@@ -44,7 +44,7 @@ public class MTAToolTiers {
     );
     public static final Tier GARNET = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GARNET_TOOL,
-            1600,
+            2340,
             16f,
             6f,
             15,
@@ -53,7 +53,7 @@ public class MTAToolTiers {
 
     public static final Tier MOONSTONE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_MOONSTONE_TOOL,
-            1024,
+            2048,
             24f,
             1.5f,
             20,

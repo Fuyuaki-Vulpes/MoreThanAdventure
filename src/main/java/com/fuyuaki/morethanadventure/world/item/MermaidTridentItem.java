@@ -100,4 +100,8 @@ public class MermaidTridentItem extends TridentItem {
     private static boolean isTooDamagedToUse(ItemStack pStack) {
         return pStack.getDamageValue() >= pStack.getMaxDamage() - 1;
     }
+    @Override
+    public int getEnchantmentValue() {
+        return 18;
+    }
 }

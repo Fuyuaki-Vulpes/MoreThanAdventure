@@ -5,6 +5,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -55,6 +56,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
                         MtaItems.SHADOW_ROGUES_DAGGER.get()
                 );
+
         this.tag(ItemTags.PICKAXES)
                 .add(
                         MtaItems.COPPER_PICKAXE.get(),
@@ -125,6 +127,17 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
                 );
+        this.tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+                .add(
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
+                );
+        this.tag(ItemTags.WEAPON_ENCHANTABLE)
+                .add(
+                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(),
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
+
+                );
         this.tag(ItemTags.TRIDENT_ENCHANTABLE)
                 .add(
                         MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
@@ -137,7 +150,6 @@ public class GenItemTags extends ItemTagsProvider {
                 .add(
                         MtaItems.COPPER_SWORD.get(),
                         MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
-                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
                         MtaItems.SHADOW_ROGUES_DAGGER.get()
                 );
         this.tag(ItemTags.MACE_ENCHANTABLE)
@@ -148,21 +160,33 @@ public class GenItemTags extends ItemTagsProvider {
                 .add(
                         MtaItems.TEMPLE_ANGELS_BOW.get()
                 );
-        //this.tag(Tags.Items.TOOLS_SHIELD)
-        //        .add(
-//
-  //              );
+        /*this.tag(Tags.Items.TOOLS_SHIELD)
+                .add(
+
+               );*/
         this.tag(Tags.Items.TOOLS_SPEAR)
                 .add(
                         MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
 
                 );
 
-       // this.tag(Tags.Items.TOOLS_CROSSBOW)
-         //       .add(
-//
-  //              );
+       /* this.tag(Tags.Items.TOOLS_CROSSBOW)
+               .add(
 
+        );*/
 
+        this.tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
+                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get()
+
+                );
+
+        this.tag(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+                .add(
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
+
+                );
     }
 }
