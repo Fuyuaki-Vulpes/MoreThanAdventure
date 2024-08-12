@@ -29,7 +29,7 @@ public class MtaArmorMats {
                     }),
                     10, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Ingredient.of(MtaItems.AGATE),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "great_sentinel"))),
-                    4F, 0.25F
+                    5F, 0.25F
             ));
 
     public static final Holder<ArmorMaterial> HOLY_KNIGHT = ARMOR_MAT.register("holy_knight", () -> new ArmorMaterial(
