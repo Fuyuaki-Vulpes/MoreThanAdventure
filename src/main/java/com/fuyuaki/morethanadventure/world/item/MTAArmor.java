@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaArmorMats;
 import com.google.common.base.Suppliers;
+import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,6 +15,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.NeoForgeMod;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -147,15 +149,20 @@ public class MTAArmor extends ArmorItem {
 
 
     protected void doSentinelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-        switch (pSlotId){
-            case 3:{
-            }
-            case 2:{
-            }
-            case 1:{
-            }
-            case 0:{
-            }
+        if (head) {
+
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+
         }
 
         if (head || chest || legs || feet){
@@ -172,15 +179,20 @@ public class MTAArmor extends ArmorItem {
     }
 
     protected void doKnightEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-        switch (pSlotId){
-            case 3:{
-            }
-            case 2:{
-            }
-            case 1:{
-            }
-            case 0:{
-            }
+        if (head) {
+
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+
         }
 
         if (head || chest || legs || feet){
@@ -194,17 +206,20 @@ public class MTAArmor extends ArmorItem {
     }
 
     protected void doMermaidEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-        switch (pSlotId){
-            case 3:{
-                entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3, 0, false, false, false));
+        if (head) {
 
-            }
-            case 2:{
-            }
-            case 1:{
-            }
-            case 0:{
-            }
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+
         }
 
         if (head || chest || legs || feet){
@@ -213,22 +228,28 @@ public class MTAArmor extends ArmorItem {
 
 
         if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 3, 0, false, false, false));
             entity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 3, 0, false, false, false));
         }
     }
 
     protected void doAngelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-        switch (pSlotId){
-            case 3:{
-            }
-            case 2:{
-            }
-            case 1:{
-                entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
-            }
-            case 0:{
-            }
+        if (head) {
+
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
+
+        }
+
+        if (feet) {
+
         }
 
         if (head || chest || legs || feet){
@@ -243,15 +264,20 @@ public class MTAArmor extends ArmorItem {
     }
 
     protected void doBerserkerEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-        switch (pSlotId){
-            case 3:{
-            }
-            case 2:{
-            }
-            case 1:{
-            }
-            case 0:{
-            }
+        if (head) {
+
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+
         }
 
         if (head || chest || legs || feet){
@@ -265,22 +291,28 @@ public class MTAArmor extends ArmorItem {
         }
     }
 
-    protected void doRogueEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-        switch (pSlotId){
-            case 3:{
-            }
-            case 2:{
-            }
-            case 1:{
-            }
-            case 0:{
-                entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
-            }
+    protected void doRogueEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet) {
+        if (head) {
+
         }
 
-        if (head || chest || legs || feet){
+        if (chest) {
+
         }
-        if (head && chest && legs && feet){
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
+
+        }
+
+
+        if (head || chest || legs || feet) {
+        }
+        if (head && chest && legs && feet) {
             if (entity.isCrouching()) {
                 entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 3, 0, false, false, false));
             }
@@ -322,14 +354,25 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
-            builder.add(Attributes.MOVEMENT_SPEED,new AttributeModifier(location,-0.1F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
+            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.02F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,1.0F,AttributeModifier.Operation.ADD_VALUE),slot);
+
         }else if (type == Type.CHESTPLATE){
+            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.1F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,4.0F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
+            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.05F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,2.0F,AttributeModifier.Operation.ADD_VALUE),slot);
+
 
         }else if (type == Type.BOOTS){
+            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.02F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,1.0F,AttributeModifier.Operation.ADD_VALUE),slot);
+
 
         }
+        builder.add(Attributes.MOVEMENT_SPEED,new AttributeModifier(location,-0.1F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
 
         return builder;
@@ -342,12 +385,16 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
+            builder.add(ALObjects.Attributes.CRIT_CHANCE,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
+            builder.add(ALObjects.Attributes.OVERHEAL,new AttributeModifier(location,0.4F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
+            builder.add(ALObjects.Attributes.CURRENT_HP_DAMAGE,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.BOOTS){
+            builder.add(Attributes.STEP_HEIGHT,new AttributeModifier(location,0.5F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }
 
@@ -360,13 +407,16 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
+            builder.add(Attributes.OXYGEN_BONUS, new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
+            builder.add(Attributes.SUBMERGED_MINING_SPEED, new AttributeModifier(location,3.0F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
+            builder.add(NeoForgeMod.SWIM_SPEED,new AttributeModifier(location,0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
 
         }else if (type == Type.BOOTS){
-
+            builder.add(Attributes.WATER_MOVEMENT_EFFICIENCY,new AttributeModifier(location,0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
         }
 
         return builder;
@@ -381,10 +431,14 @@ public class MTAArmor extends ArmorItem {
         if (type == Type.HELMET){
 
         }else if (type == Type.CHESTPLATE){
+            builder.add(Attributes.GRAVITY, new AttributeModifier(location,-0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }else if (type == Type.LEGGINGS){
 
         }else if (type == Type.BOOTS){
+            builder.add(Attributes.FALL_DAMAGE_MULTIPLIER, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
+            builder.add(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
+
 
         }
 
@@ -398,12 +452,22 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
+            builder.add(Attributes.ATTACK_DAMAGE,new AttributeModifier(location,2.4F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.ATTACK_KNOCKBACK,new AttributeModifier(location,0.4F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
+            builder.add(ALObjects.Attributes.LIFE_STEAL,new AttributeModifier(location,0.1F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,4.0F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
+            builder.add(ALObjects.Attributes.ARMOR_SHRED,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.FALL_DAMAGE_MULTIPLIER,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }else if (type == Type.BOOTS){
+            builder.add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,new AttributeModifier(location,0.1F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.SWEEPING_DAMAGE_RATIO,new AttributeModifier(location,0.7F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.MOVEMENT_EFFICIENCY,new AttributeModifier(location,0.3F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.FALL_DAMAGE_MULTIPLIER,new AttributeModifier(location,0.3F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }
 
@@ -417,12 +481,19 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
+            builder.add(Attributes.BLOCK_INTERACTION_RANGE,new AttributeModifier(location,0.35F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }else if (type == Type.CHESTPLATE){
+            builder.add(Attributes.ATTACK_SPEED,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
+            builder.add(Attributes.JUMP_STRENGTH,new AttributeModifier(location,0.6F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.FALL_DAMAGE_MULTIPLIER,new AttributeModifier(location,-0.5F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }else if (type == Type.BOOTS){
+            builder.add(Attributes.SAFE_FALL_DISTANCE,new AttributeModifier(location,6.0F,AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(Attributes.GRAVITY,new AttributeModifier(location,-0.4F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
+            builder.add(Attributes.SNEAKING_SPEED,new AttributeModifier(location,0.3F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }
 
