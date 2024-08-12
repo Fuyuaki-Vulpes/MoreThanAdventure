@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.fuyuvulpes.morethanadventure.mixin",
+  "package": "com.fuyuaki.morethanadventure.mixin",
   "compatibilityLevel": "JAVA_21",
   "refmap": "yoamod.refmap.json",
   "mixins": [
