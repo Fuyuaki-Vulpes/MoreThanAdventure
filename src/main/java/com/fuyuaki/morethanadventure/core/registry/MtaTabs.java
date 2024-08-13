@@ -48,6 +48,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.NETHER_DIAMOND_ORE.get());
                 output.accept(MtaBlocks.END_LAPIS_ORE.get());
                 output.accept(MtaBlocks.END_EMERALD_ORE.get());
+                output.accept(MtaBlocks.QUARTZ_LAMP.get());
 
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);
@@ -78,6 +79,8 @@ public class MtaTabs {
                 output.accept(MtaItems.COPPER_AXE);
                 output.accept(MtaItems.COPPER_SHOVEL);
                 output.accept(MtaItems.COPPER_HOE);
+                output.accept(MtaItems.NETHERITE_TRIDENT);
+                output.accept(MtaItems.NETHERITE_BOW);
 
 
 

@@ -36,6 +36,7 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.CLEAR_QUARTZ_GROWTH);
         blockWithItem(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH);
         blockWithItem(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH);
+        //blockWithItem(MtaBlocks.QUARTZ_LAMP);
 
     }
 

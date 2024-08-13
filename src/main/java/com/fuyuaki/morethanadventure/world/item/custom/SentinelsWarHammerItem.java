@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.item;
+package com.fuyuaki.morethanadventure.world.item.custom;
 
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -6,7 +6,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.MaceItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
-public class SentinelsWarHammer extends MaceItem {
+public class SentinelsWarHammerItem extends MaceItem {
 
     private static final int DEFAULT_ATTACK_DAMAGE = 10;
     private static final float DEFAULT_ATTACK_SPEED = -3.4F;
@@ -14,7 +14,7 @@ public class SentinelsWarHammer extends MaceItem {
     private static final float SMASH_ATTACK_HEAVY_THRESHOLD = 5.0F;
     public static final float SMASH_ATTACK_KNOCKBACK_RADIUS = 3.5F;
     private static final float SMASH_ATTACK_KNOCKBACK_POWER = 0.7F;
-    public SentinelsWarHammer(Properties pProperties) {
+    public SentinelsWarHammerItem(Properties pProperties) {
         super(pProperties);
     }
     public static ItemAttributeModifiers createAttributes() {

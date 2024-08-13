@@ -51,7 +51,8 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get(),
                 MtaBlocks.CLEAR_QUARTZ_GROWTH.get(),
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),
-                MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get()
+                MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),
+                MtaBlocks.QUARTZ_LAMP.get()
         );
 
 

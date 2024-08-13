@@ -122,6 +122,8 @@ public class MtaBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
             ));
 
+    public static final DeferredBlock<Block> QUARTZ_LAMP = registerBlock("quartz_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN)));
+
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);

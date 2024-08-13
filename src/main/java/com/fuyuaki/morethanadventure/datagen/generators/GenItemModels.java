@@ -57,51 +57,59 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
 
 
-        simpleItem(MtaItems.COPPER_SWORD);
-        simpleItem(MtaItems.COPPER_PICKAXE);
-        simpleItem(MtaItems.COPPER_AXE);
-        simpleItem(MtaItems.COPPER_SHOVEL);
-        simpleItem(MtaItems.COPPER_HOE);
+
 
         //ARMOR
 
-        simpleItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         simpleItem(MtaItems.GREAT_SENTINELS_HELMET);
         simpleItem(MtaItems.GREAT_SENTINELS_CHESTPLATE);
         simpleItem(MtaItems.GREAT_SENTINELS_LEGGINGS);
         simpleItem(MtaItems.GREAT_SENTINELS_BOOTS);
 
-        simpleItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
         //simpleItem(MtaItems.HOLY_KNIGHTS_HELMET);
         //simpleItem(MtaItems.HOLY_KNIGHTS_CHESTPLATE);
         //simpleItem(MtaItems.HOLY_KNIGHTS_LEGGINGS);
         //simpleItem(MtaItems.HOLY_KNIGHTS_BOOTS);
 
-        handheldItem(MtaItems.MYSTIC_MERMAIDS_TRIDENT);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_HELMET);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
         //simpleItem(MtaItems.MYSTIC_MERMAIDS_BOOTS);
 
-        simpleItem(MtaItems.TEMPLE_ANGELS_BOW);
         simpleItem(MtaItems.TEMPLE_ANGELS_HELMET);
         simpleItem(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
         simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
         simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
-        simpleItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_BOOTS);
 
-        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
         simpleItem(MtaItems.SHADOW_ROGUES_HELMET);
         simpleItem(MtaItems.SHADOW_ROGUES_CHESTPLATE);
         simpleItem(MtaItems.SHADOW_ROGUES_LEGGINGS);
         simpleItem(MtaItems.SHADOW_ROGUES_BOOTS);
 
+        //WEAPONS
+
+        handheldItem(MtaItems.COPPER_SWORD);
+        handheldItem(MtaItems.NETHERITE_TRIDENT);
+        handheldItem(MtaItems.NETHERITE_BOW);
+        simpleItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
+        simpleItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
+        handheldItem(MtaItems.MYSTIC_MERMAIDS_TRIDENT);
+        simpleItem(MtaItems.TEMPLE_ANGELS_BOW);
+        simpleItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
+        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
+
         //TOOLS
+
+        handheldItem(MtaItems.COPPER_PICKAXE);
+        handheldItem(MtaItems.COPPER_AXE);
+        handheldItem(MtaItems.COPPER_SHOVEL);
+        handheldItem(MtaItems.COPPER_HOE);
+
         handheldItem(MtaItems.ARMAMENT_PICKAXE);
         handheldItem(MtaItems.ARMAMENT_AXE);
         handheldItem(MtaItems.ARMAMENT_SHOVEL);

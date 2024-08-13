@@ -140,11 +140,13 @@ public class GenItemTags extends ItemTagsProvider {
                 );
         this.tag(ItemTags.TRIDENT_ENCHANTABLE)
                 .add(
-                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
+                        MtaItems.NETHERITE_TRIDENT.get()
                 );
         this.tag(ItemTags.BOW_ENCHANTABLE)
                 .add(
-                        MtaItems.TEMPLE_ANGELS_BOW.get()
+                        MtaItems.TEMPLE_ANGELS_BOW.get(),
+                        MtaItems.NETHERITE_BOW.get()
                 );
         this.tag(ItemTags.SWORD_ENCHANTABLE)
                 .add(
@@ -158,7 +160,8 @@ public class GenItemTags extends ItemTagsProvider {
                 );
         this.tag(Tags.Items.TOOLS_BOW)
                 .add(
-                        MtaItems.TEMPLE_ANGELS_BOW.get()
+                        MtaItems.TEMPLE_ANGELS_BOW.get(),
+                        MtaItems.NETHERITE_BOW.get()
                 );
         /*this.tag(Tags.Items.TOOLS_SHIELD)
                 .add(
@@ -166,7 +169,8 @@ public class GenItemTags extends ItemTagsProvider {
                );*/
         this.tag(Tags.Items.TOOLS_SPEAR)
                 .add(
-                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
+                        MtaItems.NETHERITE_TRIDENT.get()
 
                 );
 
@@ -179,7 +183,8 @@ public class GenItemTags extends ItemTagsProvider {
                 .add(
                         MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
                         MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
-                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get()
+                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(),
+                        MtaItems.NETHERITE_TRIDENT.get()
 
                 );
 

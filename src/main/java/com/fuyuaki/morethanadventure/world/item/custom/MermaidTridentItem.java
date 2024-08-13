@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.item;
+package com.fuyuaki.morethanadventure.world.item.custom;
 
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
