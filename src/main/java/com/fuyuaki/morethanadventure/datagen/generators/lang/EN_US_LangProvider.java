@@ -16,6 +16,21 @@ public class EN_US_LangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         //BLOCKS
+        add(MtaBlocks.PALM_LOG.get(),"Palm Log");
+        add(MtaBlocks.STRIPPED_PALM_LOG.get(),"Stripped Palm Log");
+        add(MtaBlocks.PALM_WOOD.get(),"Palm Wood");
+        add(MtaBlocks.STRIPPED_PALM_WOOD.get(),"Stripped Palm Wood");
+        add(MtaBlocks.PALM_PLANKS.get(),"Palm Planks");
+        add(MtaBlocks.PALM_LEAVES.get(),"Palm Leaves");
+        add(MtaBlocks.PALM_SAPLING.get(),"Palm Sapling");
+        add(MtaBlocks.PALM_STAIRS.get(),"Palm Stairs");
+        add(MtaBlocks.PALM_SLAB.get(),"Palm Slab");
+        add(MtaBlocks.PALM_PRESSURE_PLATE.get(),"Palm Pressure Plate");
+        add(MtaBlocks.PALM_BUTTON.get(),"Palm Button");
+        add(MtaBlocks.PALM_FENCE.get(),"Palm Fence");
+        add(MtaBlocks.PALM_FENCE_GATE.get(),"Palm Fence Gate");
+        add(MtaBlocks.PALM_DOOR.get(),"Palm Fence Gate");
+        add(MtaBlocks.PALM_TRAPDOOR.get(),"Palm Trapdoor");
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");

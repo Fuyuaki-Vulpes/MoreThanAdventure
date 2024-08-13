@@ -22,6 +22,31 @@ public class GenBlockstate extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        logBlock(((RotatedPillarBlock) MtaBlocks.PALM_LOG.get()));
+        //logBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) MtaBlocks.PALM_WOOD.get()), blockTexture(MtaBlocks.PALM_LOG.get()), blockTexture(MtaBlocks.PALM_LOG.get()));
+        //axisBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()));
+        blockItem(MtaBlocks.PALM_LOG);
+        //blockItem(MtaBlocks.STRIPPED_PALM_LOG);
+        blockItem(MtaBlocks.PALM_WOOD);
+        //blockItem(MtaBlocks.STRIPPED_PALM_WOOD);
+        blockWithItem(MtaBlocks.PALM_PLANKS);
+        leavesBlock(MtaBlocks.PALM_LEAVES);
+        saplingBlock(MtaBlocks.PALM_SAPLING);
+        stairsBlock(((StairBlock) MtaBlocks.PALM_STAIRS.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
+        slabBlock(((SlabBlock) MtaBlocks.PALM_SLAB.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) MtaBlocks.PALM_PRESSURE_PLATE.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
+        buttonBlock(((ButtonBlock) MtaBlocks.PALM_BUTTON.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
+        fenceBlock(((FenceBlock) MtaBlocks.PALM_FENCE.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) MtaBlocks.PALM_FENCE_GATE.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) MtaBlocks.PALM_DOOR.get()), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) MtaBlocks.PALM_TRAPDOOR.get()), modLoc("block/palm_trapdoor"), true, "cutout");
+        blockItem(MtaBlocks.PALM_STAIRS);
+        blockItem(MtaBlocks.PALM_SLAB);
+        blockItem(MtaBlocks.PALM_PRESSURE_PLATE);
+        blockItem(MtaBlocks.PALM_FENCE_GATE);
+        blockItem(MtaBlocks.PALM_TRAPDOOR, "_bottom");
+
         verticalBlock(MtaBlocks.STONE_GEYSER.get(), Blocks.STONE,Blocks.STONE);
         verticalBlock(MtaBlocks.TERRACOTTA_GEYSER.get(), Blocks.TERRACOTTA,Blocks.TERRACOTTA);
         verticalBlock(MtaBlocks.NETHERRACK_GEYSER.get(), Blocks.NETHERRACK,Blocks.NETHERRACK);
@@ -36,7 +61,7 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.CLEAR_QUARTZ_GROWTH);
         blockWithItem(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH);
         blockWithItem(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH);
-        //blockWithItem(MtaBlocks.QUARTZ_LAMP);
+        blockWithItem(MtaBlocks.QUARTZ_LAMP);
 
     }
 
@@ -78,6 +103,19 @@ public class GenBlockstate extends BlockStateProvider {
 
     }
 
+    private<T extends Block> void blockItem(DeferredBlock<T> deferredBlock, String appendix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("mccourse:block/" + deferredBlock.getId().getPath() + appendix));
+    }
+
+private void leavesBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlockWithItem(deferredBlock.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(deferredBlock.get())).renderType(("cutout")));
+}
+
+private void saplingBlock(DeferredBlock<Block> deferredBlock) {
+        simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
+}
 
     public <T extends Block>void plantBlock(T block,T potBLock, ResourceLocation texture) {
         ModelFile sign = models().cross(name(block), texture);

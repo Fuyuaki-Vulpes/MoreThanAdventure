@@ -22,6 +22,22 @@ public class GenBlockTags extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(MtaTags.Blocks.PALM_LOGS).add(
+          MtaBlocks.PALM_LOG.get(),
+          MtaBlocks.PALM_WOOD.get()
+        );
+
+        this.tag(BlockTags.LOGS_THAT_BURN).add(
+                MtaBlocks.PALM_LOG.get(),
+                MtaBlocks.STRIPPED_PALM_LOG.get(),
+                MtaBlocks.PALM_WOOD.get(),
+                MtaBlocks.STRIPPED_PALM_WOOD.get()
+        );
+
+        this.tag(BlockTags.PLANKS).add(
+          MtaBlocks.PALM_PLANKS.get()
+        );
+
         this.tag(MtaTags.Blocks.NEEDS_COPPER_TOOL).add(
                 Blocks.GOLD_BLOCK,
                 Blocks.GOLD_ORE,

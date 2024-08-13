@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:garnet"
+  },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:wrathful_berserkers_battleaxe"
+  },
+  "template": {
+    "item": "morethanadventure:berserk_upgrade"
+  }
+}

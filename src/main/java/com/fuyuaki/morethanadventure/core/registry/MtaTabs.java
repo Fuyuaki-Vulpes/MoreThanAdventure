@@ -32,6 +32,21 @@ public class MtaTabs {
             .icon(MtaItems.GARNET.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
+                output.accept(MtaBlocks.PALM_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_PALM_LOG.get());
+                output.accept(MtaBlocks.PALM_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_PALM_WOOD.get());
+                output.accept(MtaBlocks.PALM_PLANKS.get());
+                output.accept(MtaBlocks.PALM_LEAVES.get());
+                output.accept(MtaBlocks.PALM_SAPLING.get());
+                output.accept(MtaBlocks.PALM_STAIRS.get());
+                output.accept(MtaBlocks.PALM_SLAB.get());
+                output.accept(MtaBlocks.PALM_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.PALM_BUTTON.get());
+                output.accept(MtaBlocks.PALM_FENCE.get());
+                output.accept(MtaBlocks.PALM_FENCE_GATE.get());
+                output.accept(MtaBlocks.PALM_DOOR.get());
+                output.accept(MtaBlocks.PALM_TRAPDOOR.get());
                 output.accept(MtaBlocks.SPRINKLER.get());
                 output.accept(MtaBlocks.STONE_GEYSER.get());
                 output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());

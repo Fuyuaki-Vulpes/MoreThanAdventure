@@ -1,11 +1,13 @@
 package com.fuyuaki.morethanadventure.datagen.generators;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -37,6 +39,8 @@ public class GenItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        saplingItem(MtaBlocks.PALM_SAPLING);
+
         simpleItem(MtaItems.BIG_BOWL);
 
         simpleItem(MtaItems.CLEAR_QUARTZ);
@@ -207,6 +211,12 @@ public class GenItemModels extends ItemModelProvider {
                 ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
     }
+
+    private  ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
+        return  withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(MODID, "block/" + item.getId().getPath()));
+    }
+
     private ItemModelBuilder wallItem(DeferredBlock<?> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.withDefaultNamespace("block/generated")).texture("layer0",

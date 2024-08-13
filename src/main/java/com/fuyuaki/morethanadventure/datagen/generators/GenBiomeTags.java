@@ -52,6 +52,5 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                         Biomes.BASALT_DELTAS
 
                 );
-
     }
 }

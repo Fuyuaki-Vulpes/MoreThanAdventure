@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.worldgen;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.game.worldgen.util.MTAOreUtils;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
@@ -10,13 +11,10 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.material.Fluids;
@@ -27,6 +25,7 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class MtaPlacedFeatures {
 
+    public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<PlacedFeature> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<PlacedFeature> DISK_MOSS_RARE = registerKey("disk_moss_rare");
@@ -50,6 +49,13 @@ public class MtaPlacedFeatures {
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
+        register(
+                context,
+                PALM_TREE,
+                holder(context,MtaConfigFeatures.PALM_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1F, 2),
+                        MtaBlocks.PALM_SAPLING.get())
+        );
         register(
                 context,
                 FREQUENT_CLAY,

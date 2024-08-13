@@ -19,7 +19,7 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class MtaBiomeModifiers {
 
-
+    public  static final ResourceKey<BiomeModifier> ADD_PALM_TREE = registerKey(("palm_tree"));
     public static final ResourceKey<BiomeModifier> ADD_DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<BiomeModifier> ADD_DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<BiomeModifier> ADD_MOSSY_ROCKS = registerKey("mossy_rocks");
@@ -36,6 +36,12 @@ public class MtaBiomeModifiers {
 
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
+
+        context.register(ADD_PALM_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(MtaBiomes.OASIS)),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.PALM_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
 
         context.register(ADD_DIAMOND_CLUSTER,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),

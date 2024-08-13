@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "morethanadventure:block/palm_planks",
+    "side": "morethanadventure:block/palm_planks",
+    "top": "morethanadventure:block/palm_planks"
+  }
+}
