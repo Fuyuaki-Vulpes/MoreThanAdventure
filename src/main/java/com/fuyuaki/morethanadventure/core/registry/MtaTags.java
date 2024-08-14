@@ -62,4 +62,3 @@ public class MtaTags {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID, name));
         }
     }
-}

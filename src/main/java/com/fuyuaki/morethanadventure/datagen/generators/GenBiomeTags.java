@@ -58,5 +58,11 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                         Biomes.BASALT_DELTAS
 
                 );
+
+        this.tag(MtaTags.Biomes.HAS_PALE_WOLF)
+                .add(MtaBiomes.SPARSE_TAIGA);
+
+        this.tag(MtaTags.Biomes.HAS_SPOTTED_WOLF)
+                .add(MtaBiomes.OASIS);
     }
 }

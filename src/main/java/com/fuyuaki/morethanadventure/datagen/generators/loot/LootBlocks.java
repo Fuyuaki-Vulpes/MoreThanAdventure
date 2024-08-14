@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 public class LootBlocks extends BlockLootSubProvider {
     List<Block> excludedBlocks = List.of();
     List<Block> knownBlocks = MtaBlocks.BLOCKS.getEntries().stream().map(Holder::value).collect(Collectors.toList());
-    protected static final float[] PALM_LEAVES_SAPLING_CHANCES = new float[]{0.33F, 0.50F, 0.83F, 1F};
+    protected static final float[] PALM_LEAVES_SAPLING_CHANCES = new float[]{0.1F, 0.2F, 0.4F, 0.6F};
 
 
     public LootBlocks(HolderLookup.Provider provider) {
