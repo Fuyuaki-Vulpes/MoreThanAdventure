@@ -226,17 +226,17 @@ public class MTAMod
             event.register(MtaEntityTypes.BEARDED_DRAGON.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    BeardedDragon::checkAnimalSpawnRules,
+                    MTASpawnRules::checkDesertAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.CAPIBARA.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Capybara::checkAnimalSpawnRules,
+                    MTASpawnRules::checkLandSwimmerSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.DUCK.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Duck::checkAnimalSpawnRules,
+                    MTASpawnRules::checkLandSwimmerSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.FERRET.get(),
                     SpawnPlacementTypes.ON_GROUND,
@@ -246,22 +246,22 @@ public class MTAMod
             event.register(MtaEntityTypes.GREAT_WHITE_SHARK.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    GreatWhiteShark::checkAnimalSpawnRules,
+                    MTASpawnRules::checkSeaAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.HORSESHOE_CRAB.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    HorseshoeCrab::checkAnimalSpawnRules,
+                    MTASpawnRules::checkWaterAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.JELLYFISH.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Jellyfish::checkAnimalSpawnRules,
+                    MTASpawnRules::checkSeaAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.OCTOPUS.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Octopus::checkAnimalSpawnRules,
+                    MTASpawnRules::checkWaterAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.OWL.get(),
                     SpawnPlacementTypes.ON_GROUND,
@@ -271,7 +271,7 @@ public class MTAMod
             event.register(MtaEntityTypes.PENGUIN.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Penguin::checkAnimalSpawnRules,
+                    MTASpawnRules::checkLandSwimmerSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.RACCOON.get(),
                     SpawnPlacementTypes.ON_GROUND,
@@ -281,7 +281,7 @@ public class MTAMod
             event.register(MtaEntityTypes.SHRIMP.get(),
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Shrimp::checkAnimalSpawnRules,
+                    MTASpawnRules::checkSeaAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
             event.register(MtaEntityTypes.TOUCAN.get(),
                     SpawnPlacementTypes.ON_GROUND,
@@ -291,7 +291,7 @@ public class MTAMod
             event.register(EntityType.CAMEL,
                     SpawnPlacementTypes.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Animal::checkAnimalSpawnRules,
+                    MTASpawnRules::checkDesertAnimalSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.OR);
 
         }

@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.core.registry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -14,35 +13,47 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 public class MtaTags {
 
     public static class Blocks {
-        public static final TagKey<Block> PALM_LOGS = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "palm_logs"));
-        public static final TagKey<Block> NEEDS_COPPER_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "needs_copper_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_cooper_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_AGATE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_agate_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_ALEXANDRITE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_alexandrite_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_AQUAMARINE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_aquamarine_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_CELESTITE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_celestite_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_GARNET_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_garnet_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_MOONSTONE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_moonstone_tool"));
 
-        public static final TagKey<Block> NEEDS_NETHERSTEEL_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "needs_copper_tool"));
-        public static final TagKey<Block> INCORRECT_FOR_NETHERSTEEL_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "incorrect_for_cooper_tool"));
+        public static final TagKey<Block> SEA_ANIMAL_SPAWNABLE_ON = tag("sea_animal_spawnable_on");
+        public static final TagKey<Block> DESERT_ANIMAL_SPAWNABLE_ON = tag("desert_animal_spawnable_on");
+        public static final TagKey<Block> LAND_SWIMMER_SPAWNABLE_ON = tag("land_swimmer_spawnable_on");
+        public static final TagKey<Block> SNOW_ANIMAL_SPAWNABLE_ON = tag("mountain_animal_spawnable_on");
 
 
-        public static final TagKey<Block> ORE_CLUSTER_REPLACEABLE = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "ore_vein_replaceable"));
-        public static final TagKey<Block> NETHER_CLUSTER_CLUSTER_REPLACEABLE = TagKey.create(BuiltInRegistries.BLOCK.key(), ResourceLocation.fromNamespaceAndPath(MODID, "nether_ore_vein_replaceable"));
 
+        public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
+        public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
+        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = tag("incorrect_for_cooper_tool");
+        public static final TagKey<Block> INCORRECT_FOR_AGATE_TOOL = tag("incorrect_for_agate_tool");
+        public static final TagKey<Block> INCORRECT_FOR_ALEXANDRITE_TOOL = tag("incorrect_for_alexandrite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_AQUAMARINE_TOOL = tag("incorrect_for_aquamarine_tool");
+        public static final TagKey<Block> INCORRECT_FOR_CELESTITE_TOOL = tag("incorrect_for_celestite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_GARNET_TOOL = tag("incorrect_for_garnet_tool");
+        public static final TagKey<Block> INCORRECT_FOR_MOONSTONE_TOOL = tag("incorrect_for_moonstone_tool");
+
+        public static final TagKey<Block> NEEDS_NETHERSTEEL_TOOL = tag("needs_copper_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NETHERSTEEL_TOOL = tag("incorrect_for_cooper_tool");
+
+
+        public static final TagKey<Block> ORE_CLUSTER_REPLACEABLE = tag("ore_vein_replaceable");
+        public static final TagKey<Block> NETHER_CLUSTER_CLUSTER_REPLACEABLE = tag("nether_ore_vein_replaceable");
+
+        private static TagKey<Block> tag(String name) {
+            return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, name));
+        }
 
     }
 
     public static class Items{
-        public static final TagKey<Item> PALM_LOGS = TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, "palm_logs"));
+        public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
 
+        private static TagKey<Item> tag(String name) {
+            return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
+        }
 
     }
 
     public static class Biomes {
-
-
         public static final TagKey<Biome> OVERWORLD_GEYSERS = tag("overworld_geysers");
         public static final TagKey<Biome> NETHER_GEYSERS = tag("nether_geysers");
 

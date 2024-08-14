@@ -14,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.pathfinder.PathType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -32,19 +33,22 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
 
     public HorseshoeCrab(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
         super(40.0F,pEntityType, pLevel);
+        this.setPathfindingMalus(PathType.WATER, 0.0F);
     }
 
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
-        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(Items.SPIDER_EYE), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
+        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
+        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
 
 
@@ -52,10 +56,14 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 4.0F)
-                .add(Attributes.FOLLOW_RANGE, 7.0)
+                .add(Attributes.FOLLOW_RANGE, 12.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.1F);
     }
 
+    @Override
+    protected int decreaseAirSupply(int pCurrentAir) {
+        return pCurrentAir;
+    }
 
     @Override
     public boolean isFood(ItemStack pStack) {
