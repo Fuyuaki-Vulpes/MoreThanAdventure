@@ -1,5 +1,6 @@
-package com.fuyuaki.morethanadventure.core.registry;
+package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

@@ -12,6 +12,7 @@ import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRule
 import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import com.fuyuaki.morethanadventure.core.registry.MtaArmorMats;
+import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -19,7 +20,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
