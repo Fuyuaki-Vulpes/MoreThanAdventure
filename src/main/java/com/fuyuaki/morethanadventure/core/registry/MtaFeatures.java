@@ -15,6 +15,8 @@ public class MtaFeatures {
 
     public static final DeferredHolder<Feature<?>,Feature<OreClusterConfiguration>> CLUSTER_VEIN = FEATURES.register("ore_clusters", () ->
             new OreClusterFeature(OreClusterConfiguration.CODEC));
+
+
     public static void register(IEventBus eventBus){
         FEATURES.register(eventBus);
     }

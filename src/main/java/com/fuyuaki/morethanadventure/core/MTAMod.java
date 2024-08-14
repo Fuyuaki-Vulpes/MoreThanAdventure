@@ -39,7 +39,6 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -65,6 +64,7 @@ public class MTAMod
         MtaEntityTypes.register(modEventBus);
         MtaBlockEntities.register(modEventBus);
         MtaBlocks.register(modEventBus);
+        MTAPlacers.register(modEventBus);
         MtaItems.register(modEventBus);
         MtaEffects.register(modEventBus);
         MtaFeatures.register(modEventBus);

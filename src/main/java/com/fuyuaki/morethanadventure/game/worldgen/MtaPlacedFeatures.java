@@ -19,6 +19,7 @@ import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.material.Fluids;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
@@ -26,6 +27,7 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 public class MtaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
+    public static final ResourceKey<PlacedFeature> PALM_TREE_RARE = registerKey("palm_tree_rare");
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<PlacedFeature> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<PlacedFeature> DISK_MOSS_RARE = registerKey("disk_moss_rare");
@@ -53,8 +55,16 @@ public class MtaPlacedFeatures {
                 context,
                 PALM_TREE,
                 holder(context,MtaConfigFeatures.PALM_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1F, 2),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1),
                         MtaBlocks.PALM_SAPLING.get())
+        );
+        register(
+                context,
+                PALM_TREE_RARE,
+                holder(context,MtaConfigFeatures.PALM_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1),
+                        MtaBlocks.PALM_SAPLING.get())
+
         );
         register(
                 context,
@@ -123,6 +133,7 @@ public class MtaPlacedFeatures {
                 SPARSE_SPRUCE_TREE,
                 holder(context, TreeFeatures.SPRUCE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1),Blocks.SPRUCE_SAPLING)
+
         );
 
         register(
@@ -242,4 +253,9 @@ public class MtaPlacedFeatures {
         return holdergetter.getOrThrow(feature);
     }
 
+    private static List<PlacementModifier> listAdd(List<PlacementModifier> list, PlacementModifier... modifiers){
+        List<PlacementModifier> newList = new ArrayList<>(List.copyOf(list));
+        newList.addAll(List.of(modifiers));
+        return newList;
+    }
 }

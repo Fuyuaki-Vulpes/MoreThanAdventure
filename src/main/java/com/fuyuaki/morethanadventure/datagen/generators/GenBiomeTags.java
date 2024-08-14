@@ -25,8 +25,9 @@ public class GenBiomeTags  extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        /*this.tag(Tags.Biomes.IS_LUSH)
+        this.tag(Tags.Biomes.IS_LUSH)
                 .add(MtaBiomes.LUSH_RIVER)
+                .add(MtaBiomes.LUSH_MEADOW)
                 ;
 
         this.tag(Tags.Biomes.IS_RIVER).add(MtaBiomes.LUSH_RIVER);
@@ -35,10 +36,15 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(MtaBiomes.SPARSE_TAIGA,
                         MtaBiomes.SPARSE_CHERRY_GROVE);
 
-        this.tag(BiomeTags.IS_TAIGA).add(MtaBiomes.SPARSE_TAIGA);
 
 
-        */
+
+        this.tag(BiomeTags.HAS_VILLAGE_DESERT).add(MtaBiomes.OASIS);
+        this.tag(Tags.Biomes.IS_DESERT).add(MtaBiomes.OASIS);
+
+
+
+
 
         this.tag(MtaTags.Biomes.OVERWORLD_GEYSERS)
                 .add(   Biomes.STONY_PEAKS

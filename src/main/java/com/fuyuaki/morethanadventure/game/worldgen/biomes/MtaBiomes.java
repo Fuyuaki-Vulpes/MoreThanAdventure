@@ -58,8 +58,6 @@ public class MtaBiomes {
 
     public static void bootstrap(BootstrapContext<Biome> context){
 
-        HolderGetter<ConfiguredWorldCarver<?>> carversGetter = context.lookup(Registries.CONFIGURED_CARVER);
-        HolderGetter<PlacedFeature> featuresGetter = context.lookup(Registries.PLACED_FEATURE);
         register(context,LUSH_RIVER, lushRiver(context));
         register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(context));
         register(context,SPARSE_TAIGA, sparseTaiga(context));
@@ -226,6 +224,7 @@ public class MtaBiomes {
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PALM_TREE);
         BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
 
@@ -376,19 +375,15 @@ public class MtaBiomes {
 
 
     private static void registerVillagerTypes() {
-        /*//FOREST
-        registerVillagers(RuBiomes.AUTUMNAL_MAPLE_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.BAMBOO_FOREST, VillagerType.JUNGLE);
-        registerVillagers(RuBiomes.MAGNOLIA_WOODLAND, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.DECIDUOUS_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.MAPLE_FOREST, VillagerType.TAIGA);
-        registerVillagers(RuBiomes.MAUVE_HILLS, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.ORCHARD, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.SILVER_BIRCH_FOREST, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.TEMPERATE_GROVE, VillagerType.PLAINS);
-        registerVillagers(RuBiomes.WILLOW_FOREST, VillagerType.PLAINS);
+        registerVillagers(LUSH_MEADOW, VillagerType.PLAINS);
+        registerVillagers(LUSH_RIVER, VillagerType.PLAINS);
+        registerVillagers(GRAVELLY_RIVER, VillagerType.PLAINS);
+        registerVillagers(SPARSE_TAIGA, VillagerType.TAIGA);
+        registerVillagers(SPARSE_CHERRY_GROVE, VillagerType.PLAINS);
+        registerVillagers(OASIS, VillagerType.DESERT);
 
-         */
+
+
     }
     private static void register(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
         context.register(key, biome);

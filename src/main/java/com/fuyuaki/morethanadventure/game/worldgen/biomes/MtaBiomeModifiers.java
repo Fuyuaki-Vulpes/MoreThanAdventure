@@ -8,6 +8,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.Tags;
@@ -38,8 +39,8 @@ public class MtaBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
         context.register(ADD_PALM_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(MtaBiomes.OASIS)),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.PALM_TREE)),
+                HolderSet.direct(biomes.getOrThrow(Biomes.BEACH)),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.PALM_TREE_RARE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 

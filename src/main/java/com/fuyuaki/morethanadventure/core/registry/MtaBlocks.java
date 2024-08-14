@@ -4,12 +4,14 @@ import com.fuyuaki.morethanadventure.game.worldgen.tree.MtaTreeGrower;
 import com.fuyuaki.morethanadventure.world.block.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -60,7 +62,7 @@ public class MtaBlocks {
             return 5;
         }
     });
-    public static final DeferredBlock<Block> PALM_LEAVES = registerBlock("palm_leaves", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
+    public static final DeferredBlock<Block> PALM_LEAVES = registerBlock("palm_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
         @Override
         public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
             return true;
@@ -77,7 +79,13 @@ public class MtaBlocks {
         }
     });
 
-    public static final DeferredBlock<Block> PALM_SAPLING = registerBlock("palm_sapling", () -> new SaplingBlock(MtaTreeGrower.PALM_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> PALM_SAPLING = registerBlock("palm_sapling",
+            () -> new SaplingBlock(MtaTreeGrower.PALM_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_SAPLING)){
+                @Override
+                protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+                    return super.mayPlaceOn(pState, pLevel, pPos) || pState.is(BlockTags.SAND);
+                }
+            });
 
     public static final DeferredBlock<Block> PALM_STAIRS = registerBlock("palm_stairs",
             () -> new StairBlock(MtaBlocks.PALM_PLANKS.get().defaultBlockState(),

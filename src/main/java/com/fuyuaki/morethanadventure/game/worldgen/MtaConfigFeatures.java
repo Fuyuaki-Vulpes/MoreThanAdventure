@@ -4,6 +4,8 @@ import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaFeatures;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
+import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
+import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -21,12 +23,8 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -72,9 +70,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.PALM_LOG.get()),
-                        new StraightTrunkPlacer(4, 5, 3),
+                        new PalmTrunkPlacer(4, 5, 3),
                         BlockStateProvider.simple(MtaBlocks.PALM_LEAVES.get()),
-                        new AcaciaFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0)),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
 

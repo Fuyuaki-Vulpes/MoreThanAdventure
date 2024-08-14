@@ -7,10 +7,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
@@ -23,8 +25,10 @@ public class DataGen {
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        var datapackRegistries = new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), GenWorld.BUILDER, Set.of(MODID));
 
-        generator.addProvider(event.includeServer(),new GenAdvancements(packOutput,lookupProvider,existingFileHelper,
+
+        generator.addProvider(event.includeServer(),new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider(),existingFileHelper,
                         List.of()
                 )
         );
@@ -35,19 +39,18 @@ public class DataGen {
         generator.addProvider(event.includeClient(), new GenItemModels(packOutput, existingFileHelper));
 
         GenBlockTags blockTagGenerator = generator.addProvider(event.includeServer(),
-                new GenBlockTags(packOutput, lookupProvider, existingFileHelper));
+                new GenBlockTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
 
         generator.addProvider(event.includeServer(),
-                new GenItemTags(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
-
+                new GenItemTags(packOutput, datapackRegistries.getRegistryProvider(), blockTagGenerator.contentsGetter(), existingFileHelper));
 
         generator.addProvider(event.includeServer(),
-                new GenBiomeTags(packOutput, lookupProvider, existingFileHelper));
+                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
+
 
         generator.addProvider(event.includeServer(),
                 new GenWorld(packOutput, lookupProvider));
-
-
+        
         generator.addProvider(event.includeClient(),
                 new EN_US_LangProvider(packOutput));
 

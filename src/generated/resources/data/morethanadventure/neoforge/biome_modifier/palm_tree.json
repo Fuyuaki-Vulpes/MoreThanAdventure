@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "morethanadventure:oasis",
-  "features": "morethanadventure:palm_tree",
+  "biomes": "minecraft:beach",
+  "features": "morethanadventure:palm_tree_rare",
   "step": "vegetal_decoration"
 }

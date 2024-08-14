@@ -9,14 +9,19 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:acacia_foliage_placer",
-      "offset": 0,
+      "type": "morethanadventure:palm_trunk_placer",
+      "offset": 1,
       "radius": 4
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "morethanadventure:palm_leaves"
+        "Name": "morethanadventure:palm_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
       }
     },
     "force_dirt": false,
@@ -28,7 +33,7 @@
       "upper_size": 2
     },
     "trunk_placer": {
-      "type": "minecraft:straight_trunk_placer",
+      "type": "morethanadventure:palm_trunk_placer",
       "base_height": 4,
       "height_rand_a": 5,
       "height_rand_b": 3
