@@ -50,7 +50,7 @@ public class DataGen {
 
         generator.addProvider(event.includeServer(),
                 new GenWorld(packOutput, lookupProvider));
-        
+
         generator.addProvider(event.includeClient(),
                 new EN_US_LangProvider(packOutput));
 

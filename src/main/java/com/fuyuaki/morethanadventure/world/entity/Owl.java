@@ -45,7 +45,6 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
         this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(Items.SPIDER_EYE), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
     }
 

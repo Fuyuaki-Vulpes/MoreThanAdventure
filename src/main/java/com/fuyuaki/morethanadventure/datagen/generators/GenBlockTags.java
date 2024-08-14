@@ -128,5 +128,42 @@ public class GenBlockTags extends BlockTagsProvider {
                 .addTag(BlockTags.NETHER_CARVER_REPLACEABLES
                 );
 
+        this.tag(MtaTags.Blocks.SEA_ANIMAL_SPAWNABLE_ON)
+                .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .add(
+
+                        Blocks.STONE,
+                        Blocks.GRAVEL,
+                        Blocks.WATER,
+                        Blocks.SAND,
+                        Blocks.DIRT
+                );
+
+        this.tag(MtaTags.Blocks.DESERT_ANIMAL_SPAWNABLE_ON)
+                .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .addTag(BlockTags.BADLANDS_TERRACOTTA)
+                .add(
+                        Blocks.RED_SAND,
+                        Blocks.COARSE_DIRT,
+                        Blocks.DIRT
+                );
+
+        this.tag(MtaTags.Blocks.LAND_SWIMMER_SPAWNABLE_ON)
+                .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .add(
+                        Blocks.STONE,
+                        Blocks.GRAVEL,
+                        Blocks.WATER,
+                        Blocks.SAND,
+                        Blocks.DIRT
+                );
+        this.tag(MtaTags.Blocks.SNOW_ANIMAL_SPAWNABLE_ON)
+                .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .add(
+                        Blocks.STONE,
+                        Blocks.SNOW,
+                        Blocks.SNOW_BLOCK,
+                        Blocks.PACKED_ICE,
+                        Blocks.GRAVEL);
     }
 }
