@@ -69,13 +69,23 @@ public class MtaSurfaceRules {
                                 SurfaceRules.ifTrue(
                                         sixBelowWater,
                                         SurfaceRules.sequence(
+                                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
+                                                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                                                SurfaceRules.sequence(
+                                                                        SurfaceRules.ifTrue(
+                                                                                SurfaceRules.noiseCondition
+                                                                                        (Noises.GRAVEL, -0.1D, 0.1D),
+                                                                                grassSurface),
+                                                                        SAND
+                                                                ))
+                                                ),
                                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,
                                                         SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
                                                                 SurfaceRules.sequence(
 
                                                                         SurfaceRules.ifTrue(
                                                                                 SurfaceRules.noiseCondition
-                                                                                        (Noises.GRAVEL, -0.2D, 0.2D),
+                                                                                        (Noises.GRAVEL, -0.1D, 0.1D),
                                                                                 DIRT),
                                                                         sandstoneLinedSand
                                                                 ))
@@ -86,27 +96,18 @@ public class MtaSurfaceRules {
 
                                                                         SurfaceRules.ifTrue(
                                                                                 SurfaceRules.noiseCondition
-                                                                                        (Noises.GRAVEL, -0.2D, 0.2D),
+                                                                                        (Noises.GRAVEL, -0.1D, 0.1D),
                                                                                 STONE),
                                                                         SANDSTONE
                                                                 ))
                                                 ),
-                                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
-                                                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
-                                                                SurfaceRules.sequence(
-                                                                        SurfaceRules.ifTrue(
-                                                                                SurfaceRules.noiseCondition
-                                                                                        (Noises.GRAVEL, -0.2D, 0.2D),
-                                                                                grassSurface),
-                                                                        SAND
-                                                                ))
-                                                ),
+
 
 
                                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.GRAVELLY_RIVER),
                                                         SurfaceRules.ifTrue(
                                                                 SurfaceRules.noiseCondition
-                                                                        (Noises.GRAVEL, -0.4D, 0.4D),
+                                                                        (Noises.GRAVEL, -0.3D, 0.3D),
                                                                 gravelStoneSurface)),
 
                                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
