@@ -121,6 +121,8 @@ public class MTAMod
             event.enqueueWork(() -> {
                 setupRenderTypes();
             });
+
+            MtaItemProperties.addCustomItemProperties();
         }
 
 

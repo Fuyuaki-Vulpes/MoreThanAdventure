@@ -55,6 +55,20 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_WOODS_WOLF = tag("has_woods_wolf");
         public static final TagKey<Biome> HAS_CHESTNUT_WOLF = tag("has_chestnut_wolf");
         public static final TagKey<Biome> HAS_STRIPED_WOLF = tag("has_striped_wolf");
+
+        public static final TagKey<Biome> HAS_BEARDED_DRAGON = tag("has_bearded_dragon");
+        public static final TagKey<Biome> HAS_CAPYBARA = tag("has_capybara");
+        public static final TagKey<Biome> HAS_DUCK = tag("has_duck");
+        public static final TagKey<Biome> HAS_FERRET = tag("has_ferret");
+        public static final TagKey<Biome> HAS_GREAT_WHITE_SHARK = tag("has_great_white_shark");
+        public static final TagKey<Biome> HAS_HORSESHOE_CRAB = tag("has_horseshoe_crab");
+        public static final TagKey<Biome> HAS_JELLYFISH = tag("has_jellyfish");
+        public static final TagKey<Biome> HAS_OCTOPUS = tag("has_octopus");
+        public static final TagKey<Biome> HAS_OWL = tag("has_owl");
+        public static final TagKey<Biome> HAS_PENGUIN = tag("has_penguin");
+        public static final TagKey<Biome> HAS_RACCOON = tag("has_raccoon");
+        public static final TagKey<Biome> HAS_SHRIMP = tag("has_shrimp");
+        public static final TagKey<Biome> HAS_TOUCAN = tag("has_toucan");
     }
 
 

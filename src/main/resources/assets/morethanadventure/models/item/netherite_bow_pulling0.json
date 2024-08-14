@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "morethanadventure:item/temple_angels_bow"
+    "layer0": "morethanadventure:item/netherite_bow_pulling0"
   }
 }
