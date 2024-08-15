@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "morethanadventure:item/mystic_mermaids_trident",
   "textures": {
     "layer0": "morethanadventure:item/mystic_mermaids_trident"
   },

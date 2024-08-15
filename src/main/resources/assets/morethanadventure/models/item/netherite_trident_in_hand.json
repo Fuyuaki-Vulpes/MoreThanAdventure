@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "morethanadventure:item/netherite_trident_3d",
   "textures": {
-    "layer0": "morethanadventure:item/netherite_trident"
+    "layer0": "morethanadventure:entity/netherite_trident"
   },
   "display": {
     "thirdperson_righthand": {

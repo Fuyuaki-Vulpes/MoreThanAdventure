@@ -3,10 +3,11 @@ package com.fuyuaki.morethanadventure.world.item.custom;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.item.TridentItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
-public class NetheriteTridentItem extends TridentItem {
+public class NetheriteTridentItem extends TridentItem implements ProjectileItem {
     public NetheriteTridentItem(Properties pProperties) {
         super(pProperties);
     }

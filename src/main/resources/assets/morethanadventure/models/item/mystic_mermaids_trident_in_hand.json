@@ -1,5 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "morethanadventure:item/mystic_mermaids_trident",
+  "texture_size": [32, 32],
   "textures": {
     "layer0": "morethanadventure:item/mystic_mermaids_trident"
   },
