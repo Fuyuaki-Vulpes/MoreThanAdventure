@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.item.custom;
+package com.fuyuaki.morethanadventure.world.item;
 
 import net.minecraft.world.item.*;
 

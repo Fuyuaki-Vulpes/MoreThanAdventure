@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -96,6 +97,11 @@ public class MtaEntityTypes {
             () -> EntityType.Builder.<Raccoon>of(Raccoon::new, MobCategory.CREATURE)
                     .sized(0.3f,0.3F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"raccoon").toString()));
+
+
+    public static final DeferredHolder<EntityType<?>,EntityType<ThrownNetheriteTrident>> NETHERITE_TRIDENT = ENTITY.register("netherite_trident",
+            () -> EntityType.Builder.<ThrownNetheriteTrident>of(ThrownNetheriteTrident::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"netherite_trident").toString()));
 
 
     public static void register(IEventBus eventBus){

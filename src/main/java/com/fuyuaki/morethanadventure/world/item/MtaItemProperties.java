@@ -34,7 +34,7 @@ public class MtaItemProperties {
         ItemProperties.register(
                 item,
                 ResourceLocation.withDefaultNamespace("throwing"),
-                (p_234996_, p_234997_, p_234998_, p_234999_) -> p_234998_ != null && p_234998_.isUsingItem() && p_234998_.getUseItem() == p_234996_ ? 1.0F : 0.0F
+                (stack, level, entity, p_234999_) -> entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F
         );
     }
 }

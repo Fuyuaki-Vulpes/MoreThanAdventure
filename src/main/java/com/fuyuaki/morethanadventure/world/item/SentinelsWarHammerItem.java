@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.item.custom;
+package com.fuyuaki.morethanadventure.world.item;
 
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;

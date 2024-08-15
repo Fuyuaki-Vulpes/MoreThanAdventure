@@ -1,18 +1,12 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
-import com.fuyuaki.morethanadventure.world.item.MTAArmor;
-import com.fuyuaki.morethanadventure.world.item.MTAToolTiers;
-import com.fuyuaki.morethanadventure.world.item.MtaFoods;
-import com.fuyuaki.morethanadventure.world.item.custom.*;
+import com.fuyuaki.morethanadventure.world.item.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Function;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 

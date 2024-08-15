@@ -47,6 +47,9 @@ public class DataGen {
         generator.addProvider(event.includeServer(),
                 new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
 
+        generator.addProvider(event.includeServer(),
+                new GenEntityTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
+
 
         generator.addProvider(event.includeServer(),
                 new GenWorld(packOutput, lookupProvider));
