@@ -119,7 +119,7 @@ public class GenBlockstate extends BlockStateProvider {
     }
 
     private<T extends Block> void blockItem(DeferredBlock<T> deferredBlock, String appendix) {
-        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("mccourse:block/" + deferredBlock.getId().getPath() + appendix));
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("morethanadventure:block/" + deferredBlock.getId().getPath() + appendix));
     }
 
 private void leavesBlock(DeferredBlock<Block> deferredBlock) {

@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.datagen.generators;
 
+import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
@@ -40,6 +41,9 @@ public class GenItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
         saplingItem(MtaBlocks.PALM_SAPLING);
+        basicItem(MtaBlocks.PALM_DOOR.asItem());
+        buttonItem(MtaBlocks.PALM_BUTTON, MtaBlocks.PALM_PLANKS);
+        fenceItem(MtaBlocks.PALM_FENCE, MtaBlocks.PALM_PLANKS);
 
         simpleItem(MtaItems.BIG_BOWL);
 
@@ -219,15 +223,27 @@ public class GenItemModels extends ItemModelProvider {
                 ResourceLocation.parse("item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(MODID, "block/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder wallItem(DeferredBlock<?> item) {
+    private ItemModelBuilder slabItem(DeferredBlock<?> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.withDefaultNamespace("block/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MODID,"block/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder slabItem(DeferredBlock<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("block/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"block/" + item.getId().getPath()));
+    public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void fenceItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void wallItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall",  ResourceLocation.fromNamespaceAndPath(MODID,
+                        "block/" + baseBlock.getId().getPath()));
     }
 }
