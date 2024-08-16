@@ -71,6 +71,17 @@ public class GenBlockTags extends BlockTagsProvider {
                 Blocks.REDSTONE_ORE,
                 Blocks.DEEPSLATE_REDSTONE_ORE
         );
+        this.tag(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).add(
+                MtaBlocks.NETHERITIC_CRYSTAL.get(),
+                Blocks.OBSIDIAN
+        );
+        this.tag(MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL).remove(MtaTags.Blocks.NEEDS_GEM_TOOL);
+
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
+
+
+        this.tag(BlockTags.NEEDS_IRON_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
+        this.tag(BlockTags.INCORRECT_FOR_IRON_TOOL).addTag(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
                 MtaBlocks.NETHER_DIAMOND_ORE.get(),
@@ -93,6 +104,7 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.CLEAR_QUARTZ_GROWTH.get(),
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),
                 MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),
+                MtaBlocks.NETHERITIC_CRYSTAL.get(),
                 MtaBlocks.QUARTZ_LAMP.get()
         );
 

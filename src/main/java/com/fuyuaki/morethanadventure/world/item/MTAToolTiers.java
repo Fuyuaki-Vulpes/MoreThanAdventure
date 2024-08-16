@@ -9,7 +9,7 @@ import net.neoforged.neoforge.common.Tags;
 
 public class MTAToolTiers {
     public static final Tier AGATE = new SimpleTier(
-            MtaTags.Blocks.INCORRECT_FOR_AGATE_TOOL,
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             8192,
             6f,
             3.5f,
@@ -18,7 +18,7 @@ public class MTAToolTiers {
     );
 
     public static final Tier ALEXANDRITE = new SimpleTier(
-            MtaTags.Blocks.INCORRECT_FOR_ALEXANDRITE_TOOL,
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             4096,
             10f,
             4.5f, 32,
@@ -26,7 +26,7 @@ public class MTAToolTiers {
     );
 
     public static final Tier AQUAMARINE = new SimpleTier(
-            MtaTags.Blocks.INCORRECT_FOR_AQUAMARINE_TOOL,
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             3012,
             9f,
             4f,
@@ -35,7 +35,7 @@ public class MTAToolTiers {
     );
 
     public static final Tier CELESTITE = new SimpleTier(
-            MtaTags.Blocks.INCORRECT_FOR_CELESTITE_TOOL,
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             2664,
             12f,
             3.5f,
@@ -43,7 +43,7 @@ public class MTAToolTiers {
             () -> Ingredient.of(MtaItems.CELESTITE)
     );
     public static final Tier GARNET = new SimpleTier(
-            MtaTags.Blocks.INCORRECT_FOR_GARNET_TOOL,
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             2340,
             16f,
             6f,
@@ -52,7 +52,7 @@ public class MTAToolTiers {
     );
 
     public static final Tier MOONSTONE = new SimpleTier(
-            MtaTags.Blocks.INCORRECT_FOR_MOONSTONE_TOOL,
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             2048,
             24f,
             1.5f,

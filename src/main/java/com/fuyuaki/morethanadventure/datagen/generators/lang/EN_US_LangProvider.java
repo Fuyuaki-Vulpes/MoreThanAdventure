@@ -121,8 +121,14 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.COPPER_SHOVEL.get(), "Copper Shovel");
         add(MtaItems.COPPER_HOE.get(), "Copper Hoe");
 
+        add(MtaItems.NETHERSTEEL_PICKAXE.get(), "Nethersteel Pickaxe");
+        add(MtaItems.NETHERSTEEL_AXE.get(), "Nethersteel Axe");
+        add(MtaItems.NETHERSTEEL_SHOVEL.get(), "Nethersteel Shovel");
+        add(MtaItems.NETHERSTEEL_HOE.get(), "Nethersteel Hoe");
+
         //WEAPONS
         add(MtaItems.COPPER_SWORD.get(), "Copper Sword");
+        add(MtaItems.NETHERSTEEL_SWORD.get(), "Nethersteel Sword");
         add(MtaItems.NETHERITE_TRIDENT.get(), "Netherite Trident");
         add(MtaItems.NETHERITE_BOW.get(), "Netherite Bow");
         add(MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(), "Great Sentinel's War Hammer");

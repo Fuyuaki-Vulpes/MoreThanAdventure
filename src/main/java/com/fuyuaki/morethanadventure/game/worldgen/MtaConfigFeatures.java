@@ -52,6 +52,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> CLEAR_QUARTZ_ORE = registerKey("clear_quartz_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> LARGE_CLEAR_QUARTZ_VEIN = registerKey("large_clear_quartz_vein");
     public static final ResourceKey<ConfiguredFeature<?,?>> CLEAR_QUARTZ_SHARD = registerKey("clear_quartz_shard");
+    public static final ResourceKey<ConfiguredFeature<?,?>> NETHERITIC_CRYSTAL_ORE = registerKey("netheritic_crystal_ore");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -211,6 +212,15 @@ public class MtaConfigFeatures {
                 )
         );
 
+        register(context,
+                NETHERITIC_CRYSTAL_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresNetherrack,MtaBlocks.NETHERITIC_CRYSTAL.get()),
+                        7,
+                        0.8F
+
+                )
+        );
 
 
     }

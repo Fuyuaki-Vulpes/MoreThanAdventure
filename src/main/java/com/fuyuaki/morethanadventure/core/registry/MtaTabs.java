@@ -94,6 +94,11 @@ public class MtaTabs {
                 output.accept(MtaItems.COPPER_AXE);
                 output.accept(MtaItems.COPPER_SHOVEL);
                 output.accept(MtaItems.COPPER_HOE);
+                output.accept(MtaItems.NETHERSTEEL_SWORD);
+                output.accept(MtaItems.NETHERSTEEL_PICKAXE);
+                output.accept(MtaItems.NETHERSTEEL_AXE);
+                output.accept(MtaItems.NETHERSTEEL_SHOVEL);
+                output.accept(MtaItems.NETHERSTEEL_HOE);
                 output.accept(MtaItems.NETHERITE_TRIDENT);
                 output.accept(MtaItems.NETHERITE_BOW);
 

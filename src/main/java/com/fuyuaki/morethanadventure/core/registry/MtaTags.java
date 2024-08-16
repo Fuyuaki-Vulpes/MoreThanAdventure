@@ -23,16 +23,12 @@ public class MtaTags {
 
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
-        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = tag("incorrect_for_cooper_tool");
-        public static final TagKey<Block> INCORRECT_FOR_AGATE_TOOL = tag("incorrect_for_agate_tool");
-        public static final TagKey<Block> INCORRECT_FOR_ALEXANDRITE_TOOL = tag("incorrect_for_alexandrite_tool");
-        public static final TagKey<Block> INCORRECT_FOR_AQUAMARINE_TOOL = tag("incorrect_for_aquamarine_tool");
-        public static final TagKey<Block> INCORRECT_FOR_CELESTITE_TOOL = tag("incorrect_for_celestite_tool");
-        public static final TagKey<Block> INCORRECT_FOR_GARNET_TOOL = tag("incorrect_for_garnet_tool");
-        public static final TagKey<Block> INCORRECT_FOR_MOONSTONE_TOOL = tag("incorrect_for_moonstone_tool");
+        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = tag("incorrect_for_copper_tool");
+        public static final TagKey<Block> INCORRECT_FOR_GEM_TOOL = tag("incorrect_for_gem_tool");
+        public static final TagKey<Block> NEEDS_GEM_TOOL = tag("needs_gem_tool");
 
-        public static final TagKey<Block> NEEDS_NETHERSTEEL_TOOL = tag("needs_copper_tool");
-        public static final TagKey<Block> INCORRECT_FOR_NETHERSTEEL_TOOL = tag("incorrect_for_cooper_tool");
+        public static final TagKey<Block> NEEDS_NETHERSTEEL_TOOL = tag("needs_nethersteel_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NETHERSTEEL_TOOL = tag("incorrect_for_nethersteel_tool");
 
 
         public static final TagKey<Block> ORE_CLUSTER_REPLACEABLE = tag("ore_vein_replaceable");

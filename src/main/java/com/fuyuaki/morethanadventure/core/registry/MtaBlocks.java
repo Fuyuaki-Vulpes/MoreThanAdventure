@@ -191,6 +191,18 @@ public class MtaBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
             ));
 
+
+    public static final DeferredBlock<DropExperienceBlock> NETHERITIC_CRYSTAL = registerBlock("netheritic_crystal",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(1, 35),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
+                            .strength(5.0F, 32.0F)
+
+            ));
+
+
+
+
     public static final DeferredBlock<Block> QUARTZ_LAMP = registerBlock("quartz_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN)));
 
 

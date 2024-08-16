@@ -106,9 +106,16 @@ public class MtaItems {
     public static final DeferredItem<HoeItem> COPPER_HOE = ITEMS.register("copper_hoe", () -> new HoeItem(MTAToolTiers.COPPER, new Item.Properties().attributes(HoeItem.createAttributes(MTAToolTiers.COPPER, 1.5F, -3F))));
 
 
+    public static final DeferredItem<PickaxeItem> NETHERSTEEL_PICKAXE = ITEMS.register("nethersteel_pickaxe", () -> new PickaxeItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.NETHERSTEEL, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> NETHERSTEEL_AXE = ITEMS.register("nethersteel_axe", () -> new AxeItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.NETHERSTEEL, 1.5F, -2.8F))));
+    public static final DeferredItem<ShovelItem> NETHERSTEEL_SHOVEL = ITEMS.register("nethersteel_shovel", () -> new ShovelItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.NETHERSTEEL, 1.5F, -3F))));
+    public static final DeferredItem<HoeItem> NETHERSTEEL_HOE = ITEMS.register("nethersteel_hoe", () -> new HoeItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(HoeItem.createAttributes(MTAToolTiers.NETHERSTEEL, 1.5F, -3F))));
+
+
 
     //WEAPONS
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(MTAToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.COPPER, 3.0F, -2.4F))));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.register("nethersteel_sword", () -> new SwordItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.NETHERSTEEL, 3.0F, -2.4F))));
     public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.register("netherite_trident", () -> new NetheriteTridentItem( new Item.Properties().rarity(Rarity.EPIC).fireResistant().durability(2031).attributes(NetheriteTridentItem.createAttributes()).component(DataComponents.TOOL, MermaidTridentItem.createToolProperties())));
     public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.register("netherite_bow", () -> new NetheriteBowItem( new Item.Properties().rarity(Rarity.EPIC).fireResistant().durability(2031)));
     public static final DeferredItem<SentinelsWarHammerItem> GREAT_SENTINELS_WAR_HAMMER = ITEMS.register("great_sentinels_war_hammer", () -> new SentinelsWarHammerItem(new Item.Properties().fireResistant().rarity(Rarity.EPIC).durability(8192).component(DataComponents.TOOL, SentinelsWarHammerItem.createToolProperties()).attributes(MaceItem.createAttributes())));

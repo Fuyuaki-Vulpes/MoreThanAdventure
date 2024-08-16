@@ -47,6 +47,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CLEAR_QUARTZ_ORE = registerKey("clear_quartz_ore");
     public static final ResourceKey<PlacedFeature> LARGE_CLEAR_QUARTZ_VEIN = registerKey("large_clear_quartz_vein");
     public static final ResourceKey<PlacedFeature> CLEAR_QUARTZ_SHARD = registerKey("clear_quartz_shard");
+    public static final ResourceKey<PlacedFeature> NETHERITIC_CRYSTAL_ORE = registerKey("netheritic_crystal_ore");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -229,6 +230,12 @@ public class MtaPlacedFeatures {
                 PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
                 InSquarePlacement.spread(),
                 BiomeFilter.biome()
+        );
+        register(
+                context,
+                NETHERITIC_CRYSTAL_ORE,
+                holder(context,MtaConfigFeatures.NETHERITIC_CRYSTAL_ORE),
+                MTAOreUtils.commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(64)))
         );
 
 

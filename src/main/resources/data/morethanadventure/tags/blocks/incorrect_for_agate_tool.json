@@ -1,7 +1,0 @@
-{  "values": [
-    "#minecraft:incorrect_for_netherite_tool"
-  ],
-  "remove": [
-    "#mod_id:needs_copper_tool"
-  ]
-}

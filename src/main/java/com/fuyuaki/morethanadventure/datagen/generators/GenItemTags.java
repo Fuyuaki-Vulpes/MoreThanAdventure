@@ -38,6 +38,10 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.COPPER_AXE.get(),
                         MtaItems.COPPER_SHOVEL.get(),
                         MtaItems.COPPER_HOE.get(),
+                        MtaItems.NETHERSTEEL_PICKAXE.get(),
+                        MtaItems.NETHERSTEEL_AXE.get(),
+                        MtaItems.NETHERSTEEL_SHOVEL.get(),
+                        MtaItems.NETHERSTEEL_HOE.get(),
                         MtaItems.ARMAMENT_PICKAXE.get(),
                         MtaItems.ARMAMENT_AXE.get(),
                         MtaItems.ARMAMENT_SHOVEL.get(),
@@ -60,6 +64,7 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.SWORDS)
                 .add(
                         MtaItems.COPPER_SWORD.get(),
+                        MtaItems.NETHERSTEEL_SWORD.get(),
                         MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
                         MtaItems.SHADOW_ROGUES_DAGGER.get()
                 );
@@ -67,6 +72,7 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.PICKAXES)
                 .add(
                         MtaItems.COPPER_PICKAXE.get(),
+                        MtaItems.NETHERSTEEL_PICKAXE.get(),
                         MtaItems.ARMAMENT_PICKAXE.get(),
                         MtaItems.ROYAL_PICKAXE.get(),
                         MtaItems.AQUATIC_PICKAXE.get(),
@@ -77,6 +83,7 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.AXES)
                 .add(
                         MtaItems.COPPER_AXE.get(),
+                        MtaItems.NETHERSTEEL_AXE.get(),
                         MtaItems.ARMAMENT_AXE.get(),
                         MtaItems.ROYAL_AXE.get(),
                         MtaItems.AQUATIC_AXE.get(),
@@ -87,6 +94,7 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.SHOVELS)
                 .add(
                         MtaItems.COPPER_SHOVEL.get(),
+                        MtaItems.NETHERSTEEL_SHOVEL.get(),
                         MtaItems.ARMAMENT_SHOVEL.get(),
                         MtaItems.ROYAL_SHOVEL.get(),
                         MtaItems.AQUATIC_SHOVEL.get(),
@@ -96,7 +104,8 @@ public class GenItemTags extends ItemTagsProvider {
                 );
         this.tag(ItemTags.HOES)
                 .add(
-                        MtaItems.COPPER_HOE.get()
+                        MtaItems.COPPER_HOE.get(),
+                        MtaItems.NETHERSTEEL_HOE.get()
                 );
         this.tag(ItemTags.HEAD_ARMOR)
                 .add(
@@ -158,6 +167,7 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.SWORD_ENCHANTABLE)
                 .add(
                         MtaItems.COPPER_SWORD.get(),
+                        MtaItems.NETHERSTEEL_SWORD.get(),
                         MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
                         MtaItems.SHADOW_ROGUES_DAGGER.get()
                 );

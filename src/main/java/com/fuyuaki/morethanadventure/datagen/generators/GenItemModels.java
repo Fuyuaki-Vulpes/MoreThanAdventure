@@ -98,6 +98,7 @@ public class GenItemModels extends ItemModelProvider {
         //WEAPONS
 
         handheldItem(MtaItems.COPPER_SWORD);
+        handheldItem(MtaItems.NETHERSTEEL_SWORD);
         simpleItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         simpleItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
@@ -109,6 +110,11 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.COPPER_AXE);
         handheldItem(MtaItems.COPPER_SHOVEL);
         handheldItem(MtaItems.COPPER_HOE);
+
+        handheldItem(MtaItems.NETHERSTEEL_PICKAXE);
+        handheldItem(MtaItems.NETHERSTEEL_AXE);
+        handheldItem(MtaItems.NETHERSTEEL_SHOVEL);
+        handheldItem(MtaItems.NETHERSTEEL_HOE);
 
         handheldItem(MtaItems.ARMAMENT_PICKAXE);
         handheldItem(MtaItems.ARMAMENT_AXE);
