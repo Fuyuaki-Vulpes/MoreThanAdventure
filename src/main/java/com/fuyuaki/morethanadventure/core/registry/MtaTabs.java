@@ -182,8 +182,8 @@ public class MtaTabs {
                 output.accept(MtaItems.COOKED_SHRIMP);
                 output.accept(MtaItems.TOMATO);
                 output.accept(MtaItems.TOMATO_SEEDS);
-                output.accept(MtaItems.RED_PEPPER);
-                output.accept(MtaItems.RED_PEPPER_SEEDS);
+                output.accept(MtaItems.BELL_PEPPER);
+                output.accept(MtaItems.BELL_PEPPER_SEEDS);
                 output.accept(MtaItems.CHILI_PEPPER);
                 output.accept(MtaItems.CHILI_PEPPER_SEEDS);
                 output.accept(MtaItems.RICE);

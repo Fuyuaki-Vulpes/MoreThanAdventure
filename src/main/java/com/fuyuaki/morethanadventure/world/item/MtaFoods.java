@@ -21,7 +21,7 @@ public class MtaFoods {
             .nutrition(3)
             .saturationModifier(0.3F)
             .build();
-    public static final FoodProperties RED_PEPPER = new FoodProperties.Builder()
+    public static final FoodProperties BELL_PEPPER = new FoodProperties.Builder()
             .nutrition(2)
             .saturationModifier(0.5F)
             .build();

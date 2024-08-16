@@ -205,6 +205,10 @@ public class MtaBlocks {
 
     public static final DeferredBlock<Block> QUARTZ_LAMP = registerBlock("quartz_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN)));
 
+    public static final DeferredBlock<Block> ONION_CROP = BLOCKS.register("onion_crop", () -> new OnionCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+    public static final DeferredBlock<Block> TOMATO_CROP = BLOCKS.register("tomato_crop", () -> new TomatoCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+    public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.register("bell_pepper_crop", () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+    public static final DeferredBlock<Block> CHILI_PEPPER_CROP = BLOCKS.register("chili_pepper_crop", () -> new ChiliPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);

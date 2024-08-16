@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "morethanadventure:chilli_pepper"
+      "item": "morethanadventure:bell_pepper"
     }
   ],
   "result": {
     "count": 1,
-    "id": "morethanadventure:chilli_pepper_seeds"
+    "id": "morethanadventure:bell_pepper_seeds"
   }
 }

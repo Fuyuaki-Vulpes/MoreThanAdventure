@@ -116,7 +116,7 @@ public class MtaItems {
     //WEAPONS
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(MTAToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.COPPER, 3.0F, -2.4F))));
     public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.register("nethersteel_sword", () -> new SwordItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.NETHERSTEEL, 3.0F, -2.4F))));
-    public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.register("netherite_trident", () -> new NetheriteTridentItem( new Item.Properties().rarity(Rarity.EPIC).fireResistant().durability(2031).attributes(NetheriteTridentItem.createAttributes()).component(DataComponents.TOOL, MermaidTridentItem.createToolProperties())));
+    public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.register("netherite_trident", () -> new NetheriteTridentItem( new Item.Properties().rarity(Rarity.EPIC).fireResistant().durability(2031).attributes(NetheriteTridentItem.createAttributes()).component(DataComponents.TOOL, NetheriteTridentItem.createToolProperties())));
     public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.register("netherite_bow", () -> new NetheriteBowItem( new Item.Properties().rarity(Rarity.EPIC).fireResistant().durability(2031)));
     public static final DeferredItem<SentinelsWarHammerItem> GREAT_SENTINELS_WAR_HAMMER = ITEMS.register("great_sentinels_war_hammer", () -> new SentinelsWarHammerItem(new Item.Properties().fireResistant().rarity(Rarity.EPIC).durability(8192).component(DataComponents.TOOL, SentinelsWarHammerItem.createToolProperties()).attributes(MaceItem.createAttributes())));
     public static final DeferredItem<KnightGreatswordItem> HOLY_KNIGHTS_GREATSWORD = ITEMS.register("holy_knights_greatsword", () -> new KnightGreatswordItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().fireResistant().attributes(KnightGreatswordItem.createAttributes(MTAToolTiers.ALEXANDRITE, 7F, -3.5F))));
@@ -126,15 +126,15 @@ public class MtaItems {
     public static final DeferredItem<RogueDaggerItem> SHADOW_ROGUES_DAGGER = ITEMS.register("shadow_rogues_dagger", () -> new RogueDaggerItem(MTAToolTiers.MOONSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(RogueDaggerItem.createAttributes(MTAToolTiers.MOONSTONE, 5F, -0.5F))));
 
     //FOODS
-    public static final DeferredItem<Item> ONION = ITEMS.registerSimpleItem("onion", new Item.Properties().food(MtaFoods.ONION));
+    public static final DeferredItem<Item> ONION = ITEMS.register("onion", () -> new ItemNameBlockItem(MtaBlocks.ONION_CROP.get(), new Item.Properties().food(MtaFoods.ONION)));
     public static final DeferredItem<Item> SHRIMP = ITEMS.registerSimpleItem("shrimp", new Item.Properties().food(MtaFoods.SHRIMP));
     public static final DeferredItem<Item> COOKED_SHRIMP = ITEMS.registerSimpleItem("cooked_shrimp", new Item.Properties().food(MtaFoods.COOKED_SHRIMP));
     public static final DeferredItem<Item> TOMATO = ITEMS.registerSimpleItem("tomato", new Item.Properties().food(MtaFoods.TOMATO));
-    public static final DeferredItem<Item> TOMATO_SEEDS = ITEMS.registerSimpleItem("tomato_seeds");
-    public static final DeferredItem<Item> RED_PEPPER = ITEMS.registerSimpleItem("red_pepper", new Item.Properties().food(MtaFoods.RED_PEPPER));
-    public static final DeferredItem<Item> RED_PEPPER_SEEDS = ITEMS.registerSimpleItem("red_pepper_seeds");
+    public static final DeferredItem<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds", () -> new ItemNameBlockItem(MtaBlocks.TOMATO_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> BELL_PEPPER = ITEMS.registerSimpleItem("bell_pepper", new Item.Properties().food(MtaFoods.BELL_PEPPER));
+    public static final DeferredItem<Item> BELL_PEPPER_SEEDS = ITEMS.register("bell_pepper_seeds", () -> new ItemNameBlockItem(MtaBlocks.BELL_PEPPER_CROP.get(), new Item.Properties()));
     public static final DeferredItem<Item> CHILI_PEPPER = ITEMS.registerSimpleItem("chilli_pepper", new Item.Properties().food(MtaFoods.CHILI_PEPPER));
-    public static final DeferredItem<Item> CHILI_PEPPER_SEEDS = ITEMS.registerSimpleItem("chilli_pepper_seeds");
+    public static final DeferredItem<Item> CHILI_PEPPER_SEEDS = ITEMS.register("chili_pepper_seeds", () -> new ItemNameBlockItem(MtaBlocks.CHILI_PEPPER_CROP.get(), new Item.Properties()));
     public static final DeferredItem<Item> RICE = ITEMS.registerSimpleItem("rice", new Item.Properties());
     public static final DeferredItem<Item> ONIGIRI = ITEMS.registerSimpleItem("onigiri", new Item.Properties().food(MtaFoods.ONIGIRI));
     public static final DeferredItem<Item> COCONUT = ITEMS.register("coconut", () -> new ItemNameBlockItem(MtaBlocks.PALM_SAPLING.get(), new Item.Properties()));

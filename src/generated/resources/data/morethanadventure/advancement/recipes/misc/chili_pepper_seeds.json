@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_red_pepper": {
+    "has_chili_pepper": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:red_pepper"
+            "items": "morethanadventure:chilli_pepper"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "morethanadventure:red_pepper_seeds"
+        "recipe": "morethanadventure:chili_pepper_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_red_pepper"
+      "has_chili_pepper"
     ]
   ],
   "rewards": {
     "recipes": [
-      "morethanadventure:red_pepper_seeds"
+      "morethanadventure:chili_pepper_seeds"
     ]
   }
 }

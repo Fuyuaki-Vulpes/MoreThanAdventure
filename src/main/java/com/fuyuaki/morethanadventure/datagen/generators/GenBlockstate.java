@@ -1,6 +1,9 @@
 package com.fuyuaki.morethanadventure.datagen.generators;
 
+import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.world.block.MtaCrops;
+import com.fuyuaki.morethanadventure.world.block.TomatoCropBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.model.ModelTemplates;
@@ -8,10 +11,14 @@ import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.function.Function;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -63,6 +70,13 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH);
         blockWithItem(MtaBlocks.QUARTZ_LAMP);
         blockWithItem(MtaBlocks.NETHERITIC_CRYSTAL);
+
+        makeCrop((MtaCrops) MtaBlocks.ONION_CROP.get(), "onion_stage", "onion_stage");
+        makeCrop((MtaCrops) MtaBlocks.TOMATO_CROP.get(), "tomato_stage", "tomato_stage");
+        makeCrop((MtaCrops) MtaBlocks.BELL_PEPPER_CROP.get(), "bell_pepper_stage", "bell_pepper_stage");
+        makeCrop((MtaCrops) MtaBlocks.CHILI_PEPPER_CROP.get(), "chili_stage", "chili_stage");
+
+
 
     }
 
@@ -163,6 +177,21 @@ private void saplingBlock(DeferredBlock<Block> deferredBlock) {
                 .texture("particle",blockTexture(block));
         simpleBlock(block, blockModel);
         simpleBlockItem(block,blockModel);
+    }
+
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((MtaCrops) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(MODID, "block/" + textureName +
+                        state.getValue(((MtaCrops) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
     }
 
 

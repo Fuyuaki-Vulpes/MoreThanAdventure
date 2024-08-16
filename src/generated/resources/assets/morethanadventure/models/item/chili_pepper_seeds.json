@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "morethanadventure:item/red_pepper"
+    "layer0": "morethanadventure:item/chili_pepper_seeds"
   }
 }

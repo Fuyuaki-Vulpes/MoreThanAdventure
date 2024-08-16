@@ -29,7 +29,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.PALM_BUTTON.get(),"Palm Button");
         add(MtaBlocks.PALM_FENCE.get(),"Palm Fence");
         add(MtaBlocks.PALM_FENCE_GATE.get(),"Palm Fence Gate");
-        add(MtaBlocks.PALM_DOOR.get(),"Palm Fence Gate");
+        add(MtaBlocks.PALM_DOOR.get(),"Palm Door");
         add(MtaBlocks.PALM_TRAPDOOR.get(),"Palm Trapdoor");
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
@@ -48,6 +48,12 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),"Deepslate Clear Quartz Growth");
         add(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),"Calcite Clear Quartz Growth");
         add(MtaBlocks.QUARTZ_LAMP.get(),"Quartz Lamp");
+
+        //CROPS
+        add(MtaBlocks.ONION_CROP.get(), "Onion Crop");
+        add(MtaBlocks.TOMATO_CROP.get(), "Tomato Crop");
+        add(MtaBlocks.BELL_PEPPER_CROP.get(), "Bell Pepper Crop");
+        add(MtaBlocks.CHILI_PEPPER_CROP.get(), "Chili Pepper Crop");
 
 
         //ITEM
@@ -146,8 +152,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.COOKED_SHRIMP.get(),"Cooked Shrimp");
         add(MtaItems.TOMATO.get(),"Tomato");
         add(MtaItems.TOMATO_SEEDS.get(),"Tomato Seeds");
-        add(MtaItems.RED_PEPPER.get(),"Red Pepper");
-        add(MtaItems.RED_PEPPER_SEEDS.get(),"Red Pepper Seeds");
+        add(MtaItems.BELL_PEPPER.get(),"Bell Pepper");
+        add(MtaItems.BELL_PEPPER_SEEDS.get(),"Bell Pepper Seeds");
         add(MtaItems.CHILI_PEPPER.get(),"Chili Pepper");
         add(MtaItems.CHILI_PEPPER_SEEDS.get(),"Chili Pepper Seeds");
         add(MtaItems.RICE.get(),"Rice");

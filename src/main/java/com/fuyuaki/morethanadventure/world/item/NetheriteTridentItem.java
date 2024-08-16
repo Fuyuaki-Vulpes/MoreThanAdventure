@@ -90,7 +90,7 @@ public class NetheriteTridentItem extends TridentItem{
                             f3 *= f / f5;
                             f4 *= f / f5;
                             player.push((double)f2, (double)f3, (double)f4);
-                            player.startAutoSpinAttack(20, 8.0F, pStack);
+                            player.startAutoSpinAttack(20, 9.0F, pStack);
                             if (player.onGround()) {
                                 float f6 = 1.1999999F;
                                 player.move(MoverType.SELF, new Vec3(0.0, 1.1999999F, 0.0));

@@ -10,8 +10,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -205,9 +203,9 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .requires(MtaItems.TOMATO)
                 .unlockedBy("has_tomato",has(MtaItems.TOMATO))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.RED_PEPPER_SEEDS)
-                .requires(MtaItems.RED_PEPPER)
-                .unlockedBy("has_red_pepper",has(MtaItems.RED_PEPPER))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.BELL_PEPPER_SEEDS)
+                .requires(MtaItems.BELL_PEPPER)
+                .unlockedBy("has_red_pepper",has(MtaItems.BELL_PEPPER))
                 .save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.CHILI_PEPPER_SEEDS)
                 .requires(MtaItems.CHILI_PEPPER)
@@ -229,7 +227,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .save(output, "morethanadventure:coconut_milk_stones");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
-                .requires(MtaItems.RED_PEPPER)
+                .requires(MtaItems.BELL_PEPPER)
                 .requires(MtaItems.ONION)
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_glass_bottle",has(Items.GLASS_BOTTLE))

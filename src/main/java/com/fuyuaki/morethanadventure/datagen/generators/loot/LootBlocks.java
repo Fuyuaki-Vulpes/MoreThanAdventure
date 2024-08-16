@@ -2,6 +2,8 @@ package com.fuyuaki.morethanadventure.datagen.generators.loot;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.world.block.OnionCropBlock;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -73,6 +76,26 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.QUARTZ_LAMP.get());
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
 
+        LootItemCondition.Builder onionCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MtaBlocks.ONION_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OnionCropBlock.AGE, 7));
+        this.add(MtaBlocks.ONION_CROP.get(), this.createCropDrops(MtaBlocks.ONION_CROP.get(),
+                MtaItems.ONION.get(), MtaItems.ONION.asItem(), onionCrop));
+
+        LootItemCondition.Builder tomatoCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MtaBlocks.TOMATO_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OnionCropBlock.AGE, 7));
+        this.add(MtaBlocks.TOMATO_CROP.get(), this.createCropDrops(MtaBlocks.ONION_CROP.get(),
+                MtaItems.TOMATO.get(), MtaItems.TOMATO_SEEDS.asItem(), tomatoCrop));
+
+        LootItemCondition.Builder bellPepperCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MtaBlocks.BELL_PEPPER_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OnionCropBlock.AGE, 7));
+        this.add(MtaBlocks.BELL_PEPPER_CROP.get(), this.createCropDrops(MtaBlocks.BELL_PEPPER_CROP.get(),
+                MtaItems.BELL_PEPPER.get(), MtaItems.BELL_PEPPER_SEEDS.asItem(), bellPepperCrop));
+
+        LootItemCondition.Builder chillPepperCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MtaBlocks.CHILI_PEPPER_CROP.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OnionCropBlock.AGE, 7));
+        this.add(MtaBlocks.CHILI_PEPPER_CROP.get(), this.createCropDrops(MtaBlocks.CHILI_PEPPER_CROP.get(),
+                MtaItems.CHILI_PEPPER.get(), MtaItems.CHILI_PEPPER_SEEDS.asItem(), chillPepperCrop));
+
     }
 
     @Override
@@ -90,4 +113,5 @@ public class LootBlocks extends BlockLootSubProvider {
                                 .when(BonusLevelTableCondition.bonusLevelFlatChance(registrylookup.getOrThrow(Enchantments.FORTUNE), pChances))
                 );
     }
+
 }
