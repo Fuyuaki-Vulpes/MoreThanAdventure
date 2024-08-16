@@ -6,11 +6,10 @@ import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
+import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
-import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.level.FoliageColor;
@@ -37,9 +36,10 @@ public class MTAClientEvents
 
         event.enqueueWork(() -> {
             MTAMod.setupRenderTypes();
+            MtaItemProperties.addCustomItemProperties();
+
         });
 
-        MtaItemProperties.addCustomItemProperties();
     }
 
 
