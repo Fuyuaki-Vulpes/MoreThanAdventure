@@ -48,6 +48,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),"Deepslate Clear Quartz Growth");
         add(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),"Calcite Clear Quartz Growth");
         add(MtaBlocks.QUARTZ_LAMP.get(),"Quartz Lamp");
+        add(MtaBlocks.NETHERITIC_CRYSTAL.get(),"Netheritic Crystal");
 
         //CROPS
         add(MtaBlocks.ONION_CROP.get(), "Onion Crop");
