@@ -75,19 +75,25 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.NETHERITIC_CRYSTAL.get(),
                 Blocks.OBSIDIAN
         );
+
+        this.tag(MtaTags.Blocks.NEEDS_GEM_TOOL);
+
+
         this.tag(MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL).addTag(BlockTags.INCORRECT_FOR_NETHERITE_TOOL).remove(MtaTags.Blocks.NEEDS_GEM_TOOL);
+        this.tag(MtaTags.Blocks.INCORRECT_FOR_COPPER_TOOL).addTag(BlockTags.INCORRECT_FOR_STONE_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
+        this.tag(MtaTags.Blocks.INCORRECT_FOR_NETHERSTEEL_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).addTag(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
+        this.tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
 
-        this.tag(BlockTags.NEEDS_IRON_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
-        this.tag(BlockTags.INCORRECT_FOR_IRON_TOOL).addTag(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
                 MtaBlocks.NETHER_DIAMOND_ORE.get(),
                 MtaBlocks.END_EMERALD_ORE.get(),
                 MtaBlocks.END_LAPIS_ORE.get()
-                );
+                ).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
+        
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
                 MtaBlocks.CLEAR_QUARTZ_ORE.get(),

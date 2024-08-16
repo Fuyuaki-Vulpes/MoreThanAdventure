@@ -1,8 +1,8 @@
 {
-  "values": [
-    "#minecraft:incorrect_for_stone_tool"
-  ],
   "remove": [
     "#morethanadventure:needs_copper_tool"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_stone_tool"
   ]
 }

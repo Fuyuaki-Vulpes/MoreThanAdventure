@@ -1,6 +1,5 @@
 {
-  "remove": [
+  "values": [
     "#morethanadventure:needs_nethersteel_tool"
-  ],
-  "values": []
+  ]
 }

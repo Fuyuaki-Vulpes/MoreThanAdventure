@@ -1,4 +1,8 @@
 {
+  "remove": [
+    "#morethanadventure:needs_nethersteel_tool",
+    "#morethanadventure:needs_copper_tool"
+  ],
   "values": [
     "morethanadventure:nether_diamond_ore",
     "morethanadventure:end_emerald_ore",
