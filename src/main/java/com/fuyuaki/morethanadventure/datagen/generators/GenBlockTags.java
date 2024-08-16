@@ -93,7 +93,7 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.END_EMERALD_ORE.get(),
                 MtaBlocks.END_LAPIS_ORE.get()
                 ).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
-        
+
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
                 MtaBlocks.CLEAR_QUARTZ_ORE.get(),
