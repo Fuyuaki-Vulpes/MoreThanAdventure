@@ -16,6 +16,7 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TridentItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class MermaidTridentItem extends TridentItem implements ProjectileItem {
     public MermaidTridentItem(Properties pProperties) {
-        super(pProperties);
+        super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
 
     public static ItemAttributeModifiers createAttributes() {

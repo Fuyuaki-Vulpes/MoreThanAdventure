@@ -1,0 +1,25 @@
+{
+  "values": {
+    "morethanadventure:onion": {
+      "chance": 0.65
+    },
+    "morethanadventure:tomato": {
+      "chance": 0.65
+    },
+    "morethanadventure:tomato_seeds": {
+      "chance": 0.3
+    },
+    "morethanadventure:bell_pepper": {
+      "chance": 0.65
+    },
+    "morethanadventure:bell_pepper_seeds": {
+      "chance": 0.3
+    },
+    "morethanadventure:chili_pepper": {
+      "chance": 0.65
+    },
+    "morethanadventure:chili_pepper_seeds": {
+      "chance": 0.3
+    }
+  }
+}

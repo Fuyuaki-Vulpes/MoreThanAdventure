@@ -20,6 +20,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TridentItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
@@ -32,7 +33,7 @@ import java.util.function.Consumer;
 
 public class NetheriteTridentItem extends TridentItem{
     public NetheriteTridentItem(Properties pProperties) {
-        super(pProperties);
+        super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
 
     public static ItemAttributeModifiers createAttributes() {
