@@ -13,6 +13,24 @@ public class DuckModel extends DefaultedEntityGeoModel<Duck> {
     }
 
     @Override
+    public ResourceLocation getTextureResource(Duck animatable) {
+        return getVariantTexture(animatable.getVariant());
+    }
+
+    private static final ResourceLocation MALLARD = ResourceLocation.withDefaultNamespace("textures/entity/duck/mallard.png");
+    private static final ResourceLocation MARBLED = ResourceLocation.withDefaultNamespace("textures/entity/duck/marbled.png");
+    private static final ResourceLocation WHITE = ResourceLocation.withDefaultNamespace("textures/entity/duck/white.png");
+
+
+    public static ResourceLocation getVariantTexture(Duck.Variant pVariant) {
+        return switch (pVariant) {
+            case MALLARD -> MALLARD;
+            case MARBLED -> MARBLED;
+            case WHITE -> WHITE;
+        };
+    }
+
+    @Override
     public RenderType getRenderType(Duck animatable, ResourceLocation texture) {
         return RenderType.entityCutout(getTextureResource(animatable));
     }
