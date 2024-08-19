@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_badlands",
+  "features": "morethanadventure:agate_ore",
+  "step": "underground_ores"
+}

@@ -201,6 +201,71 @@ public class MtaBlocks {
             ));
 
 
+    public static final DeferredBlock<DropExperienceBlock> AGATE_ORE = registerBlock("agate_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_AGATE_ORE = registerBlock("deepslate_agate_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_ALEXANDRITE_ORE = registerBlock("deepslate_alexandrite_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> AQUAMARINE_ORE = registerBlock("aquamarine_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_AQUAMARINE_ORE = registerBlock("deepslate_aquamarine_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> CELESTITE_ORE = registerBlock("celestite_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_CELESTITE_ORE = registerBlock("deepslate_celestite_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> GARNET_ORE = registerBlock("garnet_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_GARNET_ORE = registerBlock("deepslate_garnet_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> MOONSTONE_ORE = registerBlock("moonstone_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_MOONSTONE_ORE = registerBlock("deepslate_moonstone_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
 
 
     public static final DeferredBlock<Block> QUARTZ_LAMP = registerBlock("quartz_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN)));

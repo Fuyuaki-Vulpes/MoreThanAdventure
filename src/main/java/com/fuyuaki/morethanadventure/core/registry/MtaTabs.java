@@ -63,6 +63,20 @@ public class MtaTabs {
                 output.accept(MtaBlocks.NETHER_DIAMOND_ORE.get());
                 output.accept(MtaBlocks.END_LAPIS_ORE.get());
                 output.accept(MtaBlocks.END_EMERALD_ORE.get());
+
+                output.accept(MtaBlocks.AGATE_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_AGATE_ORE.get());
+                output.accept(MtaBlocks.ALEXANDRITE_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
+                output.accept(MtaBlocks.AQUAMARINE_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get());
+                output.accept(MtaBlocks.CELESTITE_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get());
+                output.accept(MtaBlocks.GARNET_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_GARNET_ORE.get());
+                output.accept(MtaBlocks.MOONSTONE_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get());
+
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
 
                 output.accept(MtaItems.CLEAR_QUARTZ);
