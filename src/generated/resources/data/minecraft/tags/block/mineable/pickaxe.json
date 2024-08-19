@@ -10,6 +10,18 @@
     "morethanadventure:deepslate_clear_quartz_growth",
     "morethanadventure:calcite_clear_quartz_growth",
     "morethanadventure:netheritic_crystal",
-    "morethanadventure:quartz_lamp"
+    "morethanadventure:quartz_lamp",
+    "morethanadventure:agate_ore",
+    "morethanadventure:deepslate_agate_ore",
+    "morethanadventure:alexandrite_ore",
+    "morethanadventure:deepslate_alexandrite_ore",
+    "morethanadventure:aquamarine_ore",
+    "morethanadventure:deepslate_aquamarine_ore",
+    "morethanadventure:celestite_ore",
+    "morethanadventure:deepslate_celestite_ore",
+    "morethanadventure:garnet_ore",
+    "morethanadventure:deepslate_garnet_ore",
+    "morethanadventure:moonstone_ore",
+    "morethanadventure:deepslate_moonstone_ore"
   ]
 }

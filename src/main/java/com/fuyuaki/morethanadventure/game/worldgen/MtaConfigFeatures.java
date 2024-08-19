@@ -53,6 +53,12 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> LARGE_CLEAR_QUARTZ_VEIN = registerKey("large_clear_quartz_vein");
     public static final ResourceKey<ConfiguredFeature<?,?>> CLEAR_QUARTZ_SHARD = registerKey("clear_quartz_shard");
     public static final ResourceKey<ConfiguredFeature<?,?>> NETHERITIC_CRYSTAL_ORE = registerKey("netheritic_crystal_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> AGATE_ORE = registerKey("agate_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> ALEXANDRITE_ORE = registerKey("alexandrite_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> AQUAMARINE_ORE = registerKey("aquamarine_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> CELESTITE_ORE = registerKey("celestite_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> GARNET_ORE = registerKey("garnet_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> MOONSTONE_ORE = registerKey("moonstone_ore");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -219,6 +225,55 @@ public class MtaConfigFeatures {
                         7,
                         0.8F
 
+                )
+        );
+
+        register(context,
+                AGATE_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.AGATE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_AGATE_ORE.get()),
+                        1,
+                        0.5F
+                )
+        );
+        register(context,
+                ALEXANDRITE_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.ALEXANDRITE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get()),
+                        1,
+                        0.5F
+                )
+        );
+        register(context,
+                AQUAMARINE_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.AQUAMARINE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get()),
+                        1,
+                        0.5F
+                )
+        );
+        register(context,
+                CELESTITE_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.CELESTITE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CELESTITE_ORE.get()),
+                        1,
+                        0.5F
+                )
+        );
+        register(context,
+                GARNET_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.GARNET_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_GARNET_ORE.get()),
+                        1,
+                        0.5F
+                )
+        );
+        register(context,
+                MOONSTONE_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.MOONSTONE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()),
+                        1,
+                        0.5F
                 )
         );
 

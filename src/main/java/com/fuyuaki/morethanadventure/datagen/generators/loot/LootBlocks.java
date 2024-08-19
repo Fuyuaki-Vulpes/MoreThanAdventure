@@ -76,6 +76,20 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.QUARTZ_LAMP.get());
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
 
+        this.add(MtaBlocks.AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));
+        this.add(MtaBlocks.DEEPSLATE_AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));
+        this.add(MtaBlocks.ALEXANDRITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.ALEXANDRITE.get()));
+        this.add(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.ALEXANDRITE.get()));
+        this.add(MtaBlocks.AQUAMARINE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AQUAMARINE.get()));
+        this.add(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AQUAMARINE.get()));
+        this.add(MtaBlocks.CELESTITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.CELESTITE.get()));
+        this.add(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.CELESTITE.get()));
+        this.add(MtaBlocks.GARNET_ORE.get(), block -> this.createOreDrop(block, MtaItems.GARNET.get()));
+        this.add(MtaBlocks.DEEPSLATE_GARNET_ORE.get(), block -> this.createOreDrop(block, MtaItems.GARNET.get()));
+        this.add(MtaBlocks.MOONSTONE_ORE.get(), block -> this.createOreDrop(block, MtaItems.MOONSTONE.get()));
+        this.add(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get(), block -> this.createOreDrop(block, MtaItems.MOONSTONE.get()));
+
+
         LootItemCondition.Builder onionCrop = LootItemBlockStatePropertyCondition.hasBlockStateProperties(MtaBlocks.ONION_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(OnionCropBlock.AGE, 7));
         this.add(MtaBlocks.ONION_CROP.get(), this.createCropDrops(MtaBlocks.ONION_CROP.get(),

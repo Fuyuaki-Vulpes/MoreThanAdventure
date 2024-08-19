@@ -71,6 +71,20 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.QUARTZ_LAMP);
         blockWithItem(MtaBlocks.NETHERITIC_CRYSTAL);
 
+        blockWithItem(MtaBlocks.AGATE_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_AGATE_ORE);
+        blockWithItem(MtaBlocks.ALEXANDRITE_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE);
+        blockWithItem(MtaBlocks.AQUAMARINE_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE);
+        blockWithItem(MtaBlocks.CELESTITE_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_CELESTITE_ORE);
+        blockWithItem(MtaBlocks.GARNET_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_GARNET_ORE);
+        blockWithItem(MtaBlocks.MOONSTONE_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_MOONSTONE_ORE);
+
+
         makeCrop((MtaCrops) MtaBlocks.ONION_CROP.get(), "onion_stage", "onion_stage");
         makeCrop((MtaCrops) MtaBlocks.TOMATO_CROP.get(), "tomato_stage", "tomato_stage");
         makeCrop((MtaCrops) MtaBlocks.BELL_PEPPER_CROP.get(), "bell_pepper_stage", "bell_pepper_stage");

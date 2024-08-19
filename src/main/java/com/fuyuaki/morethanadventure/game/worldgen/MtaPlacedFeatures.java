@@ -48,6 +48,12 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARGE_CLEAR_QUARTZ_VEIN = registerKey("large_clear_quartz_vein");
     public static final ResourceKey<PlacedFeature> CLEAR_QUARTZ_SHARD = registerKey("clear_quartz_shard");
     public static final ResourceKey<PlacedFeature> NETHERITIC_CRYSTAL_ORE = registerKey("netheritic_crystal_ore");
+    public static final ResourceKey<PlacedFeature> AGATE_ORE = registerKey("agate_ore");
+    public static final ResourceKey<PlacedFeature> ALEXANDRITE_ORE = registerKey("alexandrite_ore");
+    public static final ResourceKey<PlacedFeature> AQUAMARINE_ORE = registerKey("aquamarine_ore");
+    public static final ResourceKey<PlacedFeature> CELESTITE_ORE = registerKey("celestite_ore");
+    public static final ResourceKey<PlacedFeature> GARNET_ORE = registerKey("garnet_ore");
+    public static final ResourceKey<PlacedFeature> MOONSTONE_ORE = registerKey("moonstone_ore");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -239,6 +245,42 @@ public class MtaPlacedFeatures {
         );
 
 
+        register(
+                context,
+                AGATE_ORE,
+                holder(context,MtaConfigFeatures.AGATE_ORE),
+                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                ALEXANDRITE_ORE,
+                holder(context,MtaConfigFeatures.ALEXANDRITE_ORE),
+                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                AQUAMARINE_ORE,
+                holder(context,MtaConfigFeatures.AQUAMARINE_ORE),
+                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                CELESTITE_ORE,
+                holder(context,MtaConfigFeatures.CELESTITE_ORE),
+                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                GARNET_ORE,
+                holder(context,MtaConfigFeatures.GARNET_ORE),
+                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                MOONSTONE_ORE,
+                holder(context,MtaConfigFeatures.MOONSTONE_ORE),
+                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

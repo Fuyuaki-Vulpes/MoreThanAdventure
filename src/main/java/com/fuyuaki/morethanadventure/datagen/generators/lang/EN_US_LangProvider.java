@@ -50,6 +50,19 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.QUARTZ_LAMP.get(),"Quartz Lamp");
         add(MtaBlocks.NETHERITIC_CRYSTAL.get(),"Netheritic Crystal");
 
+        add(MtaBlocks.AGATE_ORE.get(),"Agate Ore");
+        add(MtaBlocks.DEEPSLATE_AGATE_ORE.get(),"Deepslate Agate Ore");
+        add(MtaBlocks.ALEXANDRITE_ORE.get(),"Alexandrite Ore");
+        add(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),"Deepslate Alexandrite Ore");
+        add(MtaBlocks.AQUAMARINE_ORE.get(),"Aquamarine Ore");
+        add(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(),"Deepslate Aquamarine Ore");
+        add(MtaBlocks.CELESTITE_ORE.get(),"Celestite Ore");
+        add(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),"Deepslate Celestite Ore");
+        add(MtaBlocks.GARNET_ORE.get(),"Garnet Ore");
+        add(MtaBlocks.DEEPSLATE_GARNET_ORE.get(),"Deepslate Garnet Ore");
+        add(MtaBlocks.MOONSTONE_ORE.get(),"Moonstone Ore");
+        add(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get(),"Deepslate Moonstone Ore");
+
         //CROPS
         add(MtaBlocks.ONION_CROP.get(), "Onion Crop");
         add(MtaBlocks.TOMATO_CROP.get(), "Tomato Crop");

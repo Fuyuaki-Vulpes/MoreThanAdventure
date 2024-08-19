@@ -23,8 +23,8 @@ public class GenBlockTags extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(MtaTags.Blocks.PALM_LOGS).add(
-          MtaBlocks.PALM_LOG.get(),
-          MtaBlocks.PALM_WOOD.get()
+                MtaBlocks.PALM_LOG.get(),
+                MtaBlocks.PALM_WOOD.get()
         );
 
         this.tag(BlockTags.LOGS_THAT_BURN).add(
@@ -35,32 +35,32 @@ public class GenBlockTags extends BlockTagsProvider {
         );
 
         this.tag(BlockTags.PLANKS).add(
-          MtaBlocks.PALM_PLANKS.get()
+                MtaBlocks.PALM_PLANKS.get()
         );
 
         this.tag(BlockTags.LEAVES).add(
-          MtaBlocks.PALM_LEAVES.get()
+                MtaBlocks.PALM_LEAVES.get()
         );
         this.tag(BlockTags.WOODEN_STAIRS).add(
-          MtaBlocks.PALM_STAIRS.get()
+                MtaBlocks.PALM_STAIRS.get()
         );
         this.tag(BlockTags.WOODEN_BUTTONS).add(
-          MtaBlocks.PALM_BUTTON.get()
+                MtaBlocks.PALM_BUTTON.get()
         );
         this.tag(BlockTags.WOODEN_FENCES).add(
-          MtaBlocks.PALM_FENCE.get()
+                MtaBlocks.PALM_FENCE.get()
         );
         this.tag(BlockTags.WOODEN_DOORS).add(
-          MtaBlocks.PALM_DOOR.get()
+                MtaBlocks.PALM_DOOR.get()
         );
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(
-          MtaBlocks.PALM_TRAPDOOR.get()
+                MtaBlocks.PALM_TRAPDOOR.get()
         );
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
-          MtaBlocks.PALM_PRESSURE_PLATE.get()
+                MtaBlocks.PALM_PRESSURE_PLATE.get()
         );
         this.tag(BlockTags.SAPLINGS).add(
-          MtaBlocks.PALM_SAPLING.get()
+                MtaBlocks.PALM_SAPLING.get()
         );
 
         this.tag(MtaTags.Blocks.NEEDS_COPPER_TOOL).add(
@@ -87,18 +87,17 @@ public class GenBlockTags extends BlockTagsProvider {
         this.tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
 
-
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
                 MtaBlocks.NETHER_DIAMOND_ORE.get(),
                 MtaBlocks.END_EMERALD_ORE.get(),
                 MtaBlocks.END_LAPIS_ORE.get()
-                ).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
+        ).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
 
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
                 MtaBlocks.CLEAR_QUARTZ_ORE.get(),
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
-                );
+        );
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
@@ -111,26 +110,39 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(),
                 MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),
                 MtaBlocks.NETHERITIC_CRYSTAL.get(),
-                MtaBlocks.QUARTZ_LAMP.get()
+                MtaBlocks.QUARTZ_LAMP.get(),
+
+                MtaBlocks.AGATE_ORE.get(),
+                MtaBlocks.DEEPSLATE_AGATE_ORE.get(),
+                MtaBlocks.ALEXANDRITE_ORE.get(),
+                MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
+                MtaBlocks.AQUAMARINE_ORE.get(),
+                MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(),
+                MtaBlocks.CELESTITE_ORE.get(),
+                MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),
+                MtaBlocks.GARNET_ORE.get(),
+                MtaBlocks.DEEPSLATE_GARNET_ORE.get(),
+                MtaBlocks.MOONSTONE_ORE.get(),
+                MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()
         );
 
 
         this.tag(BlockTags.IRON_ORES).add(
                 MtaBlocks.NETHER_IRON_ORE.get()
-                );
+        );
         this.tag(BlockTags.DIAMOND_ORES).add(
                 MtaBlocks.NETHER_DIAMOND_ORE.get()
-                );
+        );
         this.tag(BlockTags.LAPIS_ORES).add(
                 MtaBlocks.END_LAPIS_ORE.get()
-                );
+        );
         this.tag(BlockTags.EMERALD_ORES).add(
                 MtaBlocks.END_EMERALD_ORE.get()
-                );
+        );
         this.tag(Tags.Blocks.ORES_QUARTZ).add(
                 MtaBlocks.CLEAR_QUARTZ_ORE.get(),
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
-                );
+        );
 
 
         this.tag(MtaTags.Blocks.ORE_CLUSTER_REPLACEABLE)
