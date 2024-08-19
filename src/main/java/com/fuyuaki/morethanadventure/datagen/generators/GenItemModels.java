@@ -103,9 +103,9 @@ public class GenItemModels extends ItemModelProvider {
 
         handheldItem(MtaItems.COPPER_SWORD);
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
-        simpleItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
-        simpleItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
-        simpleItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
+        handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
+        handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
+        handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
 
         //TOOLS
