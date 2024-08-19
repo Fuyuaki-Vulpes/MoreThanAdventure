@@ -48,7 +48,7 @@ public class NetheriteBowItem extends BowItem {
         );
         builder.add(
                 ALObjects.Attributes.ARROW_VELOCITY,
-                new AttributeModifier(location, 1.5F, AttributeModifier.Operation.ADD_VALUE),
+                new AttributeModifier(location, 1F, AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         builder.add(

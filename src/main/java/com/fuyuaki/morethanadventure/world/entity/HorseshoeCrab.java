@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.AgeableMob;
@@ -41,13 +42,13 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(Items.SPIDER_EYE), false));
+        this.goalSelector.addGoal(5, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(MtaItems.SHRIMP), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
+        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
     }
 
@@ -57,7 +58,12 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 4.0F)
                 .add(Attributes.FOLLOW_RANGE, 12.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.1F);
+                .add(Attributes.MOVEMENT_SPEED, 0.02F);
+    }
+
+    @Override
+    public int getMaxAirSupply() {
+        return 148000;
     }
 
     @Override
@@ -67,7 +73,7 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return false;
+        return pStack.is(MtaItems.SHRIMP);
     }
 
     @Nullable
