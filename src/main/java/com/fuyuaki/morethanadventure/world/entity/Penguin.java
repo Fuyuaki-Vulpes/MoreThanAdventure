@@ -26,6 +26,8 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Penguin extends MTATameableAnimal implements GeoEntity {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -42,21 +44,23 @@ public class Penguin extends MTATameableAnimal implements GeoEntity {
         this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new FollowParentGoal(this, 1.0F));
-        this.goalSelector.addGoal(7, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(ItemTags.FISHES), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1, stack -> stack.is(ItemTags.FISHES), false));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.25));
+        this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(7, new RandomSwimmingGoal(this, 1.0, 20));
+
     }
 
 
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 4.0F)
+                .add(Attributes.MAX_HEALTH, 8.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 2.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.1F);
+                .add(Attributes.MOVEMENT_SPEED, 0.05F);
     }
 
     @Override
@@ -86,7 +90,11 @@ public class Penguin extends MTATameableAnimal implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving()) {
+                /*if (isOrderedToSit()){
+                    return state.setAndContinue(SIT);
+                    }else if (isInWater()){
+                        return state.setAndContinue(SWIM);
+                    }else */ if (state.isMoving()) {
                         return state.setAndContinue(WALK);
                     }
                     return state.setAndContinue(DefaultAnimations.IDLE);

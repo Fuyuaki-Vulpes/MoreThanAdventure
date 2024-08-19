@@ -24,7 +24,9 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class BeardedDragon extends MTATameableAnimal implements GeoEntity {
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -41,22 +43,24 @@ public class BeardedDragon extends MTATameableAnimal implements GeoEntity {
         this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.25));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.25, stack -> stack.is(Items.SPIDER_EYE), false));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1, stack -> stack.is(Items.SPIDER_EYE), false));
         this.goalSelector.addGoal(3, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(7, new RandomStrollGoal(this, 1.0));
+
     }
 
 
 
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 6.0F)
+                .add(Attributes.MAX_HEALTH, 8.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.5F);
+                .add(Attributes.MOVEMENT_SPEED, 0.4F);
     }
 
 
@@ -76,6 +80,9 @@ public class BeardedDragon extends MTATameableAnimal implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
+                    if (isOrderedToSit()) {
+                        return state.setAndContinue(SIT);
+                    }
                     if (state.isMoving()) {
                         return state.setAndContinue(WALK);
                     }

@@ -25,7 +25,9 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Ferret extends MTATameableAnimal implements GeoEntity {
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -42,18 +44,20 @@ public class Ferret extends MTATameableAnimal implements GeoEntity {
         this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(5, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
+        this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.0));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(6, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(Items.RABBIT), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
+        this.goalSelector.addGoal(7, new RandomStrollGoal(this, 1.0));
+
     }
 
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes().add(Attributes.MAX_HEALTH, 4.0F)
+        return Animal.createMobAttributes().add(Attributes.MAX_HEALTH, 7.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.1F);
+                .add(Attributes.MOVEMENT_SPEED, 0.3F);
     }
 
 
@@ -73,7 +77,10 @@ public class Ferret extends MTATameableAnimal implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving()) {
+                    /*if(isOrderedToSit()) {
+                        return state.setAndContinue(SIT);
+                    }
+                    else */if (state.isMoving()) {
                         return state.setAndContinue(WALK);
                     }
                     return state.setAndContinue(DefaultAnimations.IDLE);

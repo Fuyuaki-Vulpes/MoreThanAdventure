@@ -24,8 +24,8 @@ public class DuckRenderer extends GeoEntityRenderer<Duck> {
     @Override
     public void scaleModelForRender(float widthScale, float heightScale, PoseStack poseStack, Duck animatable, BakedGeoModel model, boolean isReRender, float partialTick, int packedLight, int packedOverlay) {
         if (animatable.isBaby()){
-            widthScale = 0.5F;
-            heightScale = 0.5F;
+            widthScale = 0.45F;
+            heightScale = 0.45F;
         }
         super.scaleModelForRender(widthScale, heightScale, poseStack, animatable, model, isReRender, partialTick, packedLight, packedOverlay);
     }

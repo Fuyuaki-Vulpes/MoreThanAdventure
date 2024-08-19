@@ -15,7 +15,7 @@ public class PenguinRenderer extends GeoEntityRenderer<Penguin> {
     public void render(Penguin entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
 
         if(entity.isBaby()) {
-            poseStack.scale(0.4f,0.4f,0.4f);
+            poseStack.scale(0.45f,0.45f,0.45f);
         }
 
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);

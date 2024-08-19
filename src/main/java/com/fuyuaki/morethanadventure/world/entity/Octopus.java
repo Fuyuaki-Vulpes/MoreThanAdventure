@@ -8,10 +8,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -34,8 +31,11 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.EnumSet;
+
 public class Octopus extends MTATameableAnimal implements GeoEntity {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -50,16 +50,20 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
-        this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
+        this.goalSelector.addGoal(2, new OctopusSitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(ItemTags.FISHES), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
         this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
-        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
-        this.goalSelector.addGoal(5, new RandomSwimmingGoal(this, 1.0,20));
-        this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(6, new RandomSwimmingGoal(this, 1.0,20));
+        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+    }
+
+    @Override
+    public int getMaxAirSupply() {
+        return 148000;
     }
 
 
@@ -70,16 +74,16 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 4.0F)
+                .add(Attributes.MAX_HEALTH, 9.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
-                .add(Attributes.ATTACK_DAMAGE, 6.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.2F);
+                .add(Attributes.MOVEMENT_SPEED, 0.15F)
+                .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 2.2F);
     }
 
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return false;
+        return pStack.is(ItemTags.FISHES);
     }
 
     @Nullable
@@ -87,6 +91,37 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         Octopus octopus = MtaEntityTypes.OCTOPUS.get().create(pLevel);
         return octopus;
+    }
+
+    @Override
+    public boolean onClimbable() {
+        return this.isClimbing();
+    }
+
+    public boolean isClimbing() {
+        return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+    }
+
+    /**
+     * Updates the WatchableObject (Byte) created in entityInit(), setting it to 0x01 if par1 is true or 0x00 if it is false.
+     */
+    public void setClimbing(boolean pClimbing) {
+        byte b0 = this.entityData.get(DATA_FLAGS_ID);
+        if (pClimbing) {
+            b0 = (byte)(b0 | 1);
+        } else {
+            b0 = (byte)(b0 & -2);
+        }
+
+        this.entityData.set(DATA_FLAGS_ID, b0);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!this.level().isClientSide) {
+            this.setClimbing(this.horizontalCollision);
+        }
     }
 
     @Override
@@ -98,8 +133,10 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving()) {
+                    if (state.isMoving() && onGround()) {
                         return state.setAndContinue(WALK);
+                    } else if(isInWater() && !onGround()) {
+                        return state.setAndContinue(SWIM);
                     }
                     return state.setAndContinue(DefaultAnimations.IDLE);
                 })
@@ -143,6 +180,47 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
+    }
+
+    public class OctopusSitWhenOrderedToGoal extends Goal {
+        private final TamableAnimal mob;
+
+        public OctopusSitWhenOrderedToGoal(TamableAnimal pMob) {
+            this.mob = pMob;
+            this.setFlags(EnumSet.of(Goal.Flag.JUMP, Goal.Flag.MOVE));
+        }
+
+        @Override
+        public boolean canContinueToUse() {
+            return this.mob.isOrderedToSit();
+        }
+
+        @Override
+        public boolean canUse() {
+            if (!this.mob.isTame()) {
+                return false;
+            } else if (!this.mob.isInWaterOrBubble()) {
+                return false;
+            } else {
+                LivingEntity livingentity = this.mob.getOwner();
+                if (livingentity == null) {
+                    return true;
+                } else {
+                    return this.mob.distanceToSqr(livingentity) < 144.0 && livingentity.getLastHurtByMob() != null ? false : this.mob.isOrderedToSit();
+                }
+            }
+        }
+
+        @Override
+        public void start() {
+            this.mob.getNavigation().stop();
+            this.mob.setInSittingPose(true);
+        }
+
+        @Override
+        public void stop() {
+            this.mob.setInSittingPose(false);
+        }
     }
 
 }

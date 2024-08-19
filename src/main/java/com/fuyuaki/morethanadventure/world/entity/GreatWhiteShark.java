@@ -31,14 +31,16 @@ import net.minecraft.world.level.Level;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMob {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
     private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(GreatWhiteShark.class, EntityDataSerializers.INT);
 
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
@@ -80,16 +82,24 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes().add(Attributes.MAX_HEALTH, 4.0F)
+        return Animal.createMobAttributes().add(Attributes.MAX_HEALTH, 15.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.1F);
+                .add(Attributes.MOVEMENT_SPEED, 0.2F)
+                .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 3.2F);
 
     }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-
+        controllers.add(
+                new AnimationController<>(this, 10, (state) -> {
+                    if (state.isMoving()) {
+                        return state.setAndContinue(SWIM);
+                    }
+                    return state.setAndContinue(DefaultAnimations.IDLE);
+                })
+        );
     }
 
     @Override

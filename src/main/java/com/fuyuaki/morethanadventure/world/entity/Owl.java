@@ -42,7 +42,7 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation FLY = RawAnimation.begin().thenLoop("fly");
 
     public float flap;
     public float flapSpeed;
@@ -70,7 +70,6 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(5, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(ItemTags.VILLAGER_PLANTABLE_SEEDS), false));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.25));
         this.goalSelector.addGoal(6, new OwlWanderGoal(this, 1.0F));
@@ -146,8 +145,8 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving()) {
-                        return state.setAndContinue(WALK);
+                    if (isFlying()) {
+                        return state.setAndContinue(FLY);
                     }
                     return state.setAndContinue(DefaultAnimations.IDLE);
                 })
