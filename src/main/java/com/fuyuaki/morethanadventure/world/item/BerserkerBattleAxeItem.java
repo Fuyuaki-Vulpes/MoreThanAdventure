@@ -35,7 +35,7 @@ public class BerserkerBattleAxeItem extends SwordItem {
 
         builder.add(
                 Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(location, 10 + pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
+                new AttributeModifier(location, 8 + pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         builder.add(

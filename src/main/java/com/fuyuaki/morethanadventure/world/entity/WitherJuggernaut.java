@@ -17,6 +17,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
@@ -67,8 +68,7 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
             this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS
     ).setDarkenScreen(true);
 
-    private static final int stunTimeMax = 40;
-
+    private static final int stunTimeMax = 200;
     public WitherJuggernaut(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.xpReward = 200;
@@ -92,6 +92,11 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
 
     }
 
+    @Override
+    public boolean isWithinMeleeAttackRange(LivingEntity pEntity) {
+        return this.getAttackBoundingBox().inflate(1.5F).intersects(pEntity.getHitbox());
+
+    }
 
     @Override
     protected void enchantSpawnedWeapon(ServerLevelAccessor pLevel, RandomSource pRandom, DifficultyInstance pDifficulty) {
@@ -147,17 +152,21 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
     protected void customServerAiStep() {
         if (!this.level().isClientSide){
             if (this.isStunned()){
+                if (this.getStunTime() < 0){
+                    this.setStunTime(0);
+                }
+                this.setStunTime(this.getStunTime() + 1);
+                this.setNoActionTime(5);
 
                 if (this.getStunTime() >= stunTimeMax){
                     this.setStunned(false);
-                }else if (this.getStunTime() < 0){
-                    this.setStunTime(0);
                 }
 
-                this.setStunTime(this.getStunTime() + 1);
 
             }
         }
+        super.customServerAiStep();
+        this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
     }
 
 
@@ -165,7 +174,7 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new WitherJuggernaut.CustomMeleeAttackGoal(this, 1.0f, true));
-        this.goalSelector.addGoal(3, new WitherJuggernaut.CustomRandomStrollGoal(this,0.8F));
+        this.goalSelector.addGoal(3, new WitherJuggernaut.CustomRandomStrollGoal(this,1.0F));
         this.goalSelector.addGoal(6, new WitherJuggernaut.CustomRandomLookAroundGoal(this));
         this.goalSelector.addGoal(6, new WitherJuggernaut.CustomLookAtPlayerGoal(this, Player.class, 16.0F));
 
@@ -233,9 +242,9 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 250.0F)
+                .add(Attributes.MAX_HEALTH, 200.0F)
                 .add(Attributes.FOLLOW_RANGE, 32.0)
-                .add(Attributes.ATTACK_DAMAGE, 18.0)
+                .add(Attributes.ATTACK_DAMAGE, 2.0F)
                 .add(Attributes.MOVEMENT_SPEED, 0.25F)
                 .add(Attributes.ARMOR,20.0F)
                 .add(Attributes.ARMOR_TOUGHNESS,2.0F)
@@ -244,10 +253,13 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
                 .add(Attributes.SAFE_FALL_DISTANCE,6.0F)
                 .add(Attributes.ENTITY_INTERACTION_RANGE,5.0F)
                 .add(ALObjects.Attributes.LIFE_STEAL,0.3F)
-                .add(ALObjects.Attributes.FIRE_DAMAGE,2.0F)
                 ;
     }
 
+    @Override
+    public void tick() {
+        super.tick();
+    }
 
     @Override
     public SoundSource getSoundSource() {
@@ -279,18 +291,22 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
         return true;
     }
 
+
+
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 0, (state) -> {
+                    if (state.getAnimatable().isStunned()) {
+                        return state.setAndContinue(STUN);
+                    }else
                     if (state.isMoving()) {
                         return state.setAndContinue(MOVE);
-                    }if (state.getAnimatable().isStunned()) {
-                        return state.setAndContinue(STUN);
                     }
                     else return state.setAndContinue(DefaultAnimations.IDLE);
                 })
-        );
+        , new AnimationController<>(this, "attack_controller", state -> PlayState.STOP)
+                        .triggerableAnim("attack_animation",SWING).transitionLength(5).setAnimationSpeed(2.0F));
     }
 
 
@@ -301,6 +317,7 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
 
     public class CustomMeleeAttackGoal extends MeleeAttackGoal {
         protected final WitherJuggernaut mob;
+        private int attackAnimSync = -1;
 
         public CustomMeleeAttackGoal(WitherJuggernaut pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
             super(pMob, pSpeedModifier, pFollowingTargetEvenIfNotSeen);
@@ -313,6 +330,35 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
                 return false;
             }
             return super.canUse();
+        }
+
+        @Override
+        public void tick() {
+            super.tick();
+            LivingEntity livingentity = this.mob.getTarget();
+
+            if (this.attackAnimSync > 0){
+                this.attackAnimSync--;
+            }
+
+            if (this.attackAnimSync == 0){
+                if(livingentity != null) this.mob.doHurtTarget(livingentity);
+                this.attackAnimSync = -1;
+            }
+        }
+
+        @Override
+        protected void checkAndPerformAttack(LivingEntity pTarget) {
+            if (super.canPerformAttack(pTarget)) {
+                this.resetAttackCooldown();
+                triggerAnimation();
+                this.mob.swing(InteractionHand.MAIN_HAND);
+                this.attackAnimSync = this.adjustedTickDelay(5);
+            }
+        }
+
+        protected void triggerAnimation() {
+            mob.triggerAnim("attack_controller", "attack_animation");
         }
 
         @Override
@@ -341,6 +387,14 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
                 return false;
             }
             return super.canUse();
+        }
+
+        @Override
+        public void tick() {
+            super.tick();
+            if (this.mob.isStunned()){
+                this.stop();
+            }
         }
 
         @Override
