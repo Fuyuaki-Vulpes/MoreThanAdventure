@@ -40,7 +40,7 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMob {
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.great_white_shark.swim");
     private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(GreatWhiteShark.class, EntityDataSerializers.INT);
 
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);

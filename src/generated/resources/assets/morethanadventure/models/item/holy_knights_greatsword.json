@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "morethanadventure:item/handheld_big",
   "textures": {
     "layer0": "morethanadventure:item/holy_knights_greatsword"
   }

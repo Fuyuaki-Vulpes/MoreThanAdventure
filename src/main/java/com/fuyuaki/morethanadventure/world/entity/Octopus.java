@@ -34,8 +34,8 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.EnumSet;
 
 public class Octopus extends MTATameableAnimal implements GeoEntity {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
+    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.octopus.walk");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.octopus.swim");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

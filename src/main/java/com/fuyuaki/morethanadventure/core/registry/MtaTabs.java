@@ -238,6 +238,10 @@ public class MtaTabs {
                 output.accept(MtaItems.RACCOON_SPAWN_EGG);
                 output.accept(MtaItems.SHRIMP_SPAWN_EGG);
                 output.accept(MtaItems.TOUCAN_SPAWN_EGG);
+                //BOSS SPAWNS
+                if (parameters.hasPermissions()){
+                output.accept(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG);
+                }
             }).build());
 
 

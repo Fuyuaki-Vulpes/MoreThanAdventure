@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"walk": {
+		"animation.ferret.walk": {
 			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
@@ -67,6 +67,5 @@
 				}
 			}
 		}
-	},
-	"geckolib_format_version": 2
+	}
 }

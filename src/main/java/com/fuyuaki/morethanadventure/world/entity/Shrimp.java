@@ -26,7 +26,7 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Shrimp extends AbstractSchoolingFish implements GeoEntity {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.shrimp.idle");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

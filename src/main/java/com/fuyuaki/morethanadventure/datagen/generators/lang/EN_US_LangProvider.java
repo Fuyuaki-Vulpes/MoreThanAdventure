@@ -207,11 +207,13 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.RACCOON_SPAWN_EGG.get(),"Raccoon Spawn Egg");
         add(MtaItems.SHRIMP_SPAWN_EGG.get(),"Shrimp Spawn Egg");
         add(MtaItems.TOUCAN_SPAWN_EGG.get(),"Toucan Spawn Egg");
+        add(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG.get(),"Wither Juggernaut Spawn Egg");
 
 
         //ENTITIES
         add(MtaEntityTypes.YUKI_ONNA.get(),"Yuki Onna");
         add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
+        add(MtaEntityTypes.WITHER_JUGGERNAUT.get(),"Wither Juggernaut");
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
         add(MtaEntityTypes.CAPIBARA.get(),"Capybara");
         add(MtaEntityTypes.DUCK.get(),"Duck");

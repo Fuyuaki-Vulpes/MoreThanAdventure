@@ -206,6 +206,9 @@ public class MtaItems {
     public static final DeferredItem<Item> TOUCAN_SPAWN_EGG =  ITEMS.register("toucan_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.TOUCAN::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
 
+    public static final DeferredItem<Item> WITHER_JUGGERNAUT_SPAWN_EGG =  ITEMS.register("wither_juggernaut_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.WITHER_JUGGERNAUT::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

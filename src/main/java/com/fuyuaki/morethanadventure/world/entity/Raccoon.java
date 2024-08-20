@@ -25,8 +25,8 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Raccoon extends MTATameableAnimal implements GeoEntity {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
+    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.raccoon.walk");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.raccoon.sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

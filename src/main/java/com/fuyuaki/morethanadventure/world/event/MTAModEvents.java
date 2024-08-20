@@ -37,6 +37,7 @@ public class MTAModEvents {
     public static void entityAttributes(EntityAttributeCreationEvent event){
         event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
         event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
+        event.put(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernaut.createAttributes().build());
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());
         event.put(MtaEntityTypes.CAPIBARA.get(), Capybara.createAttributes().build());

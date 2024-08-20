@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"idle": {
+		"animation.bearded_dragon.idle": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {
@@ -86,7 +86,7 @@
 				}
 			}
 		},
-		"walk": {
+		"animation.bearded_dragon.walk": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {
@@ -312,7 +312,7 @@
 				}
 			}
 		},
-		"sit": {
+		"animation.bearded_dragon.sit": {
 			"loop": true,
 			"animation_length": 0.5,
 			"bones": {

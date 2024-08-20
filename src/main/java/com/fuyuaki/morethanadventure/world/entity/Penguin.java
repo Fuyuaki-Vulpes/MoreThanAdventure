@@ -25,9 +25,9 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Penguin extends MTATameableAnimal implements GeoEntity {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
+    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.penguin.walk");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.penguin.swim");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.penguin.sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

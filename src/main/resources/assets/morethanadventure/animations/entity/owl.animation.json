@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"fly": {
+		"animation.owl.fly": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {
@@ -134,7 +134,7 @@
 				}
 			}
 		},
-		"start_flight": {
+		"animation.owl.start_flight": {
 			"animation_length": 0.5,
 			"bones": {
 				"root": {

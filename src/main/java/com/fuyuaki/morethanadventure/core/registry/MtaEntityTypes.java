@@ -1,11 +1,11 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
+import com.fuyuaki.morethanadventure.world.entity.WitherJuggernaut;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -21,7 +21,11 @@ public class MtaEntityTypes {
                     .sized(0.8f,2.2F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID, "fallen_samurai").toString()));
 
-
+    public static final DeferredHolder<EntityType<?>,EntityType<WitherJuggernaut>> WITHER_JUGGERNAUT = ENTITY.register("wither_juggernaut",
+            () -> EntityType.Builder.<WitherJuggernaut>of(WitherJuggernaut::new, MobCategory.MONSTER)
+                    .sized(0.9f,3.0F)
+                    .fireImmune()
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID, "wither_juggernaut").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<YukiOnna>> YUKI_ONNA = ENTITY.register("yuki_onna",
             () -> EntityType.Builder.<YukiOnna>of(YukiOnna::new, MobCategory.MONSTER)

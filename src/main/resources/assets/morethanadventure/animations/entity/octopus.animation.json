@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"walk": {
+		"animation.octopus.walk": {
 			"loop": true,
 			"animation_length": 2,
 			"bones": {
@@ -577,7 +577,7 @@
 				}
 			}
 		},
-		"swim": {
+		"animation.octopus.swim": {
 			"loop": true,
 			"animation_length": 1.5,
 			"bones": {

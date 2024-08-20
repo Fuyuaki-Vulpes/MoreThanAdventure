@@ -28,7 +28,7 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Jellyfish extends Squid implements GeoEntity {
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.jellyfish.swim");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

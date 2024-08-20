@@ -191,6 +191,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.RACCOON_SPAWN_EGG);
         simpleItem(MtaItems.SHRIMP_SPAWN_EGG);
         simpleItem(MtaItems.TOUCAN_SPAWN_EGG);
+        simpleItem(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

@@ -42,7 +42,7 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Toucan extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
-    protected static final RawAnimation FLY = RawAnimation.begin().thenLoop("fly");
+    protected static final RawAnimation FLY = RawAnimation.begin().thenLoop("animation.toucan.fly");
 
     public float flap;
     public float flapSpeed;

@@ -25,9 +25,9 @@ import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Ferret extends MTATameableAnimal implements GeoEntity {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.ferret.idle");
+    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.ferret.walk");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.ferret.sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

@@ -34,7 +34,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.EnumSet;
 
 public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
+    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.horseshoe_crab.walk");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);

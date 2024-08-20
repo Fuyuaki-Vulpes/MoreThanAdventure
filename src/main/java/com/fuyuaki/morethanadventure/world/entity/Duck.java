@@ -40,11 +40,11 @@ public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(Duck.class, EntityDataSerializers.INT);
 
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
-    protected static final RawAnimation IN_WATER = RawAnimation.begin().thenLoop("in_water");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("sit");
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.duck.idle");
+    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.duck.walk");
+    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.duck.swim");
+    protected static final RawAnimation IN_WATER = RawAnimation.begin().thenLoop("animation.duck.in_water");
+    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.duck.sit");
 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
