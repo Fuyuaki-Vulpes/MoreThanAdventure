@@ -28,6 +28,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.pathfinder.PathType;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
@@ -52,18 +53,19 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
 
     public GreatWhiteShark(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.04F, 0.1F, true);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 1.2F, 0.1F, true);
         this.lookControl = new SmoothSwimmingLookControl(this, 10);
+        this.setPathfindingMalus(PathType.WATER, 0.0F);
     }
 
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0, 10));
+        this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1.0, 10));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.2F, true));
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 2.2F, true));
         this.goalSelector.addGoal(8, new FollowBoatGoal(this));
 
 
