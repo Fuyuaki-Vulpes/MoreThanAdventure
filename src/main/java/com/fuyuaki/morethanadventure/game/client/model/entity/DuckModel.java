@@ -17,17 +17,21 @@ public class DuckModel extends DefaultedEntityGeoModel<Duck> {
         return getVariantTexture(animatable.getVariant());
     }
 
-    private static final ResourceLocation MALLARD = ResourceLocation.withDefaultNamespace("textures/entity/duck/mallard.png");
-    private static final ResourceLocation MARBLED = ResourceLocation.withDefaultNamespace("textures/entity/duck/marbled.png");
-    private static final ResourceLocation WHITE = ResourceLocation.withDefaultNamespace("textures/entity/duck/white.png");
+    private static final ResourceLocation MALLARD = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "textures/entity/duck/mallard.png");
+    private static final ResourceLocation MARBLED = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "textures/entity/duck/marbled.png");
+    private static final ResourceLocation WHITE = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "textures/entity/duck/white.png");
 
 
     public static ResourceLocation getVariantTexture(Duck.Variant pVariant) {
-        return switch (pVariant) {
-            case MALLARD -> MALLARD;
-            case MARBLED -> MARBLED;
-            case WHITE -> WHITE;
-        };
+        if (pVariant.equals(Duck.Variant.MALLARD)) {
+            return MALLARD;
+        }
+        else if (pVariant.equals(Duck.Variant.MARBLED)) {
+            return MARBLED;
+        }
+        else {
+            return WHITE;
+        }
     }
 
     @Override
