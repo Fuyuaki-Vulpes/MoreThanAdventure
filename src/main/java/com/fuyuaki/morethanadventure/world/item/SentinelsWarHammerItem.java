@@ -42,7 +42,7 @@ public class SentinelsWarHammerItem extends MaceItem {
 
         builder.add(
                 Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(location, 11, AttributeModifier.Operation.ADD_VALUE),
+                new AttributeModifier(location, 6, AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         builder.add(

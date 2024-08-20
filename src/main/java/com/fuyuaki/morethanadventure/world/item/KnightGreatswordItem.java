@@ -37,7 +37,7 @@ public class KnightGreatswordItem extends SwordItem {
 
         builder.add(
                 Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(location, 9 + pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
+                new AttributeModifier(location, 5 + pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
                 );
         builder.add(
