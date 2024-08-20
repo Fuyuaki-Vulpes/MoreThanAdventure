@@ -285,6 +285,8 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
                 new AnimationController<>(this, 0, (state) -> {
                     if (state.isMoving()) {
                         return state.setAndContinue(MOVE);
+                    }if (state.getAnimatable().isStunned()) {
+                        return state.setAndContinue(STUN);
                     }
                     else return state.setAndContinue(DefaultAnimations.IDLE);
                 })
