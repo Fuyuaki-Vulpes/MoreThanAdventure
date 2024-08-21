@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morethanadventure:block/sand_path"
+      },
+      {
+        "model": "morethanadventure:block/sand_path",
+        "y": 90
+      },
+      {
+        "model": "morethanadventure:block/sand_path",
+        "y": 180
+      },
+      {
+        "model": "morethanadventure:block/sand_path",
+        "y": 270
+      }
+    ]
+  }
+}

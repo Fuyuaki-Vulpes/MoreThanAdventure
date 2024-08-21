@@ -1,24 +1,31 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.world.entity.MTAArrowEntity;
 import com.google.common.base.Suppliers;
 import dev.shadowsoffire.apothic_attributes.api.ALObjects;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Unit;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -44,16 +51,7 @@ public class AngelBowItem extends BowItem {
     protected ItemAttributeModifiers.Builder createAttributeModifiers(ItemAttributeModifiers.Builder builder){
         ResourceLocation location = ResourceLocation.withDefaultNamespace("angel_bow");
 
-        builder.add(
-                ALObjects.Attributes.ARROW_DAMAGE,
-                new AttributeModifier(location, -0.2F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.ARROW_VELOCITY,
-                new AttributeModifier(location, 4, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
+
         builder.add(
                 ALObjects.Attributes.DRAW_SPEED,
                 new AttributeModifier(location, 0.5F, AttributeModifier.Operation.ADD_VALUE),
@@ -70,29 +68,30 @@ public class AngelBowItem extends BowItem {
     @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
         if (pEntityLiving instanceof Player player) {
-            ItemStack itemstack = player.getProjectile(pStack);
-                int i = this.getUseDuration(pStack, pEntityLiving) - pTimeLeft;
-                i = net.neoforged.neoforge.event.EventHooks.onArrowLoose(pStack, pLevel, player, i, itemstack.isEmpty());
-                if (i < 0) return;
-                float f = getPowerForTime(i);
-                if (!((double)f < 0.1)) {
-                    List<ItemStack> list = draw(pStack, itemstack, player);
-                    if (pLevel instanceof ServerLevel serverlevel) {
-                        this.shoot(serverlevel, player, player.getUsedItemHand(), pStack, list, f * 3.0F, 1.0F, f == 1.0F, null);
-                    }
+            int i = this.getUseDuration(pStack, pEntityLiving) - pTimeLeft;
 
-                    pLevel.playSound(
-                            null,
-                            player.getX(),
-                            player.getY(),
-                            player.getZ(),
-                            SoundEvents.ARROW_SHOOT,
-                            SoundSource.PLAYERS,
-                            1.0F,
-                            1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F
-                    );
-                    player.awardStat(Stats.ITEM_USED.get(this));
+            i = net.neoforged.neoforge.event.EventHooks.onArrowLoose(pStack, pLevel, player, i, this.getDefaultCreativeAmmo(player, pStack).isEmpty());
+
+            if (i < 0) return;
+            float f = getPowerForTime(i);
+            if (!((double) f < 0.1)) {
+                List<ItemStack> list = draw(pStack, this.getDefaultCreativeAmmo(player, pStack), player);
+                if (pLevel instanceof ServerLevel serverlevel) {
+                    this.shoot(serverlevel, player, player.getUsedItemHand(), pStack, list, f * 4.0F, 0.0F, f >= 0.8F, null);
                 }
+
+                pLevel.playSound(
+                        null,
+                        player.getX(),
+                        player.getY(),
+                        player.getZ(),
+                        SoundEvents.ARROW_SHOOT,
+                        SoundSource.PLAYERS,
+                        1.0F,
+                        1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F
+                );
+                player.awardStat(Stats.ITEM_USED.get(this));
+            }
         }
     }
 
@@ -100,4 +99,15 @@ public class AngelBowItem extends BowItem {
     public int getDefaultProjectileRange() {
         return 60;
     }
+
+    @Override
+    protected Projectile createProjectile(Level pLevel, LivingEntity pShooter, ItemStack pWeapon, ItemStack pAmmo, boolean pIsCrit) {
+        AbstractArrow abstractarrow = new MTAArrowEntity(pShooter,pLevel,10,0.7F,pWeapon);
+        if (pIsCrit) {
+            abstractarrow.setCritArrow(true);
+        }
+
+        return customArrow(abstractarrow, pAmmo, pWeapon);
+    }
+
 }

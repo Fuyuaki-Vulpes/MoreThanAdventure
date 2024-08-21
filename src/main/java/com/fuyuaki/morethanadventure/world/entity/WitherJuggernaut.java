@@ -72,6 +72,7 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
     public WitherJuggernaut(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.xpReward = 200;
+        this.setPersistenceRequired();
         this.setPathfindingMalus(PathType.LAVA, 8.0F);
     }
     @Override
@@ -191,15 +192,7 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
         }
     }
 
-    @Override
-    public void checkDespawn() {
-        if (net.neoforged.neoforge.event.EventHooks.checkMobDespawn(this)) return;
-        if (this.level().getDifficulty() == Difficulty.PEACEFUL && this.shouldDespawnInPeaceful()) {
-            this.discard();
-        } else {
-            this.noActionTime = 0;
-        }
-    }
+
 
     @Override
     public boolean addEffect(MobEffectInstance pEffectInstance, @javax.annotation.Nullable Entity pEntity) {

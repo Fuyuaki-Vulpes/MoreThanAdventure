@@ -66,6 +66,7 @@ public class MTAClientEvents
 
         //ITEM & BLOCK
         event.registerEntityRenderer(MtaEntityTypes.NETHERITE_TRIDENT.get(), ThrownNetheriteTridentRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.MTA_ARROW.get(), MTAArrowRenderer::new);
 
     }
 

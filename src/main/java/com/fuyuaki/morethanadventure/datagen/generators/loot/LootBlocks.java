@@ -75,6 +75,7 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(), block -> this.createSingleItemTable(Blocks.CALCITE));
         dropSelf(MtaBlocks.QUARTZ_LAMP.get());
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
+        this.add(MtaBlocks.SAND_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
 
         this.add(MtaBlocks.AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));
         this.add(MtaBlocks.DEEPSLATE_AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));

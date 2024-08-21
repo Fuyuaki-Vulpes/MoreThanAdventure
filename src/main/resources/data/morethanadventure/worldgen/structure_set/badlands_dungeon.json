@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "morethanadventure:badlands_dungeon",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 414005389,
+    "spacing": 24,
+    "separation": 9
+  }
+}
