@@ -18,20 +18,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ProjectileItem;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TridentItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
 public class NetheriteTridentItem extends TridentItem{
+
     public NetheriteTridentItem(Properties pProperties) {
         super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
@@ -115,5 +114,13 @@ public class NetheriteTridentItem extends TridentItem{
     private static boolean isTooDamagedToUse(ItemStack pStack) {
         return pStack.getDamageValue() >= pStack.getMaxDamage() - 1;
     }
+
+    @Override
+    public UseAnim getUseAnimation(ItemStack pStack) {
+        return UseAnim.SPEAR;
+    }
+
+
+
 
 }

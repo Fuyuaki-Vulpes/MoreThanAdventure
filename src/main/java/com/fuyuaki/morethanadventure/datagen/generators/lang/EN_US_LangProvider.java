@@ -120,9 +120,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.ARMAMENT_PICKAXE.get(), "Armament Pickaxe");
         add(MtaItems.ARMAMENT_AXE.get(), "Armament Axe");
         add(MtaItems.ARMAMENT_SHOVEL.get(), "Armament Shovel");
-        add(MtaItems.ROYAL_PICKAXE.get(), "Loyal Pickaxe");
-        add(MtaItems.ROYAL_AXE.get(), "Loyal Axe");
-        add(MtaItems.ROYAL_SHOVEL.get(), "Loyal Shovel");
+        add(MtaItems.ROYAL_PICKAXE.get(), "Royal Pickaxe");
+        add(MtaItems.ROYAL_AXE.get(), "Royal Axe");
+        add(MtaItems.ROYAL_SHOVEL.get(), "Royal Shovel");
         add(MtaItems.AQUATIC_PICKAXE.get(), "Aquatic Pickaxe");
         add(MtaItems.AQUATIC_AXE.get(), "Aquatic Axe");
         add(MtaItems.AQUATIC_SHOVEL.get(), "Aquatic Shovel");

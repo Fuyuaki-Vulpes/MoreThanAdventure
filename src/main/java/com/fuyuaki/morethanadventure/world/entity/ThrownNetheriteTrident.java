@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -169,7 +170,7 @@ public class ThrownNetheriteTrident extends AbstractArrow {
 
     @Override
     protected ItemStack getDefaultPickupItem() {
-        return new ItemStack(Items.TRIDENT);
+        return new ItemStack(MtaItems.NETHERITE_TRIDENT.get());
     }
 
     @Override
