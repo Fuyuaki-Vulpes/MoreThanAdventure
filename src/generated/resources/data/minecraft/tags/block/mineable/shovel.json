@@ -1,5 +1,8 @@
 {
   "values": [
-    "morethanadventure:sand_path"
+    "morethanadventure:sand_path",
+    "morethanadventure:grassy_dirt",
+    "morethanadventure:coarse_dirt_path",
+    "morethanadventure:cobbled_dirt"
   ]
 }

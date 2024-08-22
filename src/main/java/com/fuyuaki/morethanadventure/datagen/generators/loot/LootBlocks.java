@@ -74,9 +74,16 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get(), block -> this.createSingleItemTable(Blocks.DEEPSLATE));
         this.add(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(), block -> this.createSingleItemTable(Blocks.CALCITE));
         dropSelf(MtaBlocks.QUARTZ_LAMP.get());
+        dropSelf(MtaBlocks.COBBLED_DIRT.get());
+        dropSelf(MtaBlocks.STONE_TILES.get());
+        dropSelf(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get());
+        dropSelf(MtaBlocks.DIRTY_STONE_TILES.get());
+        dropSelf(MtaBlocks.VERY_DIRTY_STONE_TILES.get());
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
         this.add(MtaBlocks.SAND_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
         this.add(MtaBlocks.GRASSY_DIRT.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        this.add(MtaBlocks.COARSE_DIRT_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        this.add(MtaBlocks.SWEET_BERRY_LEAVES.get(), block -> createLeavesDrops(block, Blocks.SPRUCE_SAPLING, 0.1F));
 
         this.add(MtaBlocks.AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));
         this.add(MtaBlocks.DEEPSLATE_AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));

@@ -39,6 +39,13 @@ public class MTACommonEvents {
                     level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, MtaBlocks.SAND_PATH.get().defaultBlockState()));
                     player.swing(event.getHand());
                 }
+                if (block.is(Blocks.DIRT_PATH) && level.getBlockState(pos.above()).isAir()) {
+                    level.setBlockAndUpdate(pos, MtaBlocks.COARSE_DIRT_PATH.get().defaultBlockState());
+                    event.getItemStack().hurtAndBreak(1, player, LivingEntity.getSlotForHand(event.getHand()));
+                    level.playSound(player, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, MtaBlocks.COARSE_DIRT_PATH.get().defaultBlockState()));
+                    player.swing(event.getHand());
+                }
             }
 
         }

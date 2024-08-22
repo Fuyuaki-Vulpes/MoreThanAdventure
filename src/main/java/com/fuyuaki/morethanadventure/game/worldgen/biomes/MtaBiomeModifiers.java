@@ -10,7 +10,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
@@ -25,6 +24,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<BiomeModifier> ADD_MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<BiomeModifier> ADD_STONY_ROCKS = registerKey("stony_rocks");
+    public static final ResourceKey<BiomeModifier> ADD_STONY_ROCKS_MOUNTAIN = registerKey("stony_rocks_mountain");
     public static final ResourceKey<BiomeModifier> ADD_GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<BiomeModifier> ADD_GEYSER_NETHER = registerKey("geyser_nether");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_IRON = registerKey("nether_iron");
@@ -39,6 +39,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_CELESTITE_ORE = registerKey("celestite_ore");
     public static final ResourceKey<BiomeModifier> ADD_GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<BiomeModifier> ADD_MOONSTONE_ORE = registerKey("moonstone_ore");
+    public static final ResourceKey<BiomeModifier> ADD_SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -65,7 +66,13 @@ public class MtaBiomeModifiers {
         context.register(ADD_STONY_ROCKS,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_STONY_SHORES),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.STONY_ROCK)),
-                GenerationStep.Decoration.UNDERGROUND_ORES
+                GenerationStep.Decoration.UNDERGROUND_DECORATION
+        ));
+
+        context.register(ADD_STONY_ROCKS_MOUNTAIN,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_MOUNTAIN_PEAK),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.STONY_ROCK)),
+                GenerationStep.Decoration.UNDERGROUND_DECORATION
         ));
         context.register(ADD_GEYSER_OVERWORLD,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.OVERWORLD_GEYSERS),
@@ -147,6 +154,17 @@ public class MtaBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
+        context.register(ADD_MOSSY_ROCKS,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_SWAMP),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.MOSSY_ROCKS)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_SWEET_BERRY_LEAVES,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_TAIGA),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.SWEET_BERRY_LEAVES)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
 
 
     }
