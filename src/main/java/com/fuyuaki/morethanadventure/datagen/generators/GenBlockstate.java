@@ -83,7 +83,8 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.DEEPSLATE_GARNET_ORE);
         blockWithItem(MtaBlocks.MOONSTONE_ORE);
         blockWithItem(MtaBlocks.DEEPSLATE_MOONSTONE_ORE);
-
+        blockItem(MtaBlocks.SAND_PATH);
+        blockItem(MtaBlocks.GRASSY_DIRT);
 
         makeCrop((MtaCrops) MtaBlocks.ONION_CROP.get(), "onion_stage", "onion_stage");
         makeCrop((MtaCrops) MtaBlocks.TOMATO_CROP.get(), "tomato_stage", "tomato_stage");

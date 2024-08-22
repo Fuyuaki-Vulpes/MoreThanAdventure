@@ -201,6 +201,17 @@ public class MtaBlocks {
             ));
 
 
+    public static final DeferredBlock<SandPathBlock> SAND_PATH = registerBlock("sand_path",() -> new SandPathBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.DIRT_PATH)
+    ));
+
+    public static final DeferredBlock<Block> GRASSY_DIRT = registerBlock("grassy_dirt",
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.DIRT)
+    );
+
+
     public static final DeferredBlock<DropExperienceBlock> AGATE_ORE = registerBlock("agate_ore",
             () -> new DropExperienceBlock(
                     UniformInt.of(2, 5),
@@ -275,18 +286,21 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.register("bell_pepper_crop", () -> new BellPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
     public static final DeferredBlock<Block> CHILI_PEPPER_CROP = BLOCKS.register("chili_pepper_crop", () -> new ChiliPepperCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
+
+
+
+
+
+
+
+
+
+
+
+
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
     }
-
-
-
-
-
-
-
-
-
 
     private static <I extends Block> DeferredBlock<I> registerBlock(String name, Supplier<? extends I> block) {
         DeferredBlock<I> toReturn = BLOCKS.register(name, block);

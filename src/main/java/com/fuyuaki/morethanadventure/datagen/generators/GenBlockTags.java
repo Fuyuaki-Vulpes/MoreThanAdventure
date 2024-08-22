@@ -44,6 +44,9 @@ public class GenBlockTags extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_STAIRS).add(
                 MtaBlocks.PALM_STAIRS.get()
         );
+        this.tag(BlockTags.WOODEN_SLABS).add(
+                MtaBlocks.PALM_SLAB.get()
+        );
         this.tag(BlockTags.WOODEN_BUTTONS).add(
                 MtaBlocks.PALM_BUTTON.get()
         );
@@ -98,6 +101,18 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.CLEAR_QUARTZ_ORE.get(),
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
         );
+//        this.tag(BlockTags.MINEABLE_WITH_HOE).add();
+//        this.tag(BlockTags.MINEABLE_WITH_AXE).add();
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(
+                        MtaBlocks.SAND_PATH.get(),
+                        MtaBlocks.GRASSY_DIRT.get()
+                );
+
+        this.tag(BlockTags.DIRT)
+                .add(
+                        MtaBlocks.GRASSY_DIRT.get()
+                );
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
