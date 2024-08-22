@@ -206,6 +206,11 @@ public class MtaBlocks {
                     .ofFullCopy(Blocks.DIRT_PATH)
     ));
 
+    public static final DeferredBlock<Block> GRASSY_DIRT = registerBlock("grassy_dirt",
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.DIRT)
+    );
+
 
     public static final DeferredBlock<DropExperienceBlock> AGATE_ORE = registerBlock("agate_ore",
             () -> new DropExperienceBlock(

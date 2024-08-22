@@ -38,6 +38,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.BASALT_GEYSER.get(),"Basalt Geyser");
         add(MtaBlocks.MOSSY_ANDESITE.get(),"Mossy Andesite");
         add(MtaBlocks.SAND_PATH.get(),"Sand Path");
+        add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
         add(MtaBlocks.NETHER_IRON_ORE.get(),"Nether Iron Ore");
         add(MtaBlocks.NETHER_DIAMOND_ORE.get(),"Nether Diamond Ore");
         add(MtaBlocks.END_LAPIS_ORE.get(),"End Lapis Ore");

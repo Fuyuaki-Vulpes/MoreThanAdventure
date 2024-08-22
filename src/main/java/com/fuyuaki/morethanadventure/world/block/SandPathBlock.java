@@ -53,8 +53,9 @@ public class SandPathBlock extends ColoredFallingBlock {
 
     @Override
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        turnToSand(null, pState, pLevel, pPos);
-        super.tick(pState,pLevel,pPos,pRandom);
+        if (!pState.canSurvive(pLevel, pPos)) {
+            turnToSand(null, pState, pLevel, pPos);
+        }
     }
 
     public static void turnToSand(@Nullable Entity pEntity, BlockState pState, Level pLevel, BlockPos pPos) {
@@ -64,8 +65,8 @@ public class SandPathBlock extends ColoredFallingBlock {
     }
 
     @Override
-    protected boolean canSurvive(BlockState p_153148_, LevelReader p_153149_, BlockPos p_153150_) {
-        BlockState blockstate = p_153149_.getBlockState(p_153150_.above());
+    protected boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
+        BlockState blockstate = pLevel.getBlockState(pPos.above());
         return !blockstate.isSolid() || blockstate.getBlock() instanceof FenceGateBlock;
     }
 
@@ -76,6 +77,6 @@ public class SandPathBlock extends ColoredFallingBlock {
 
     @Override
     protected boolean isPathfindable(BlockState p_153138_, PathComputationType p_153141_) {
-        return false;
+        return true;
     }
 }

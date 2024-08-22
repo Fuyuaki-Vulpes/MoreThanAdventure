@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morethanadventure:block/grassy_dirt"
+      },
+      {
+        "model": "morethanadventure:block/grassy_dirt",
+        "y": 90
+      },
+      {
+        "model": "morethanadventure:block/grassy_dirt",
+        "y": 180
+      },
+      {
+        "model": "morethanadventure:block/grassy_dirt",
+        "y": 270
+      }
+    ]
+  }
+}

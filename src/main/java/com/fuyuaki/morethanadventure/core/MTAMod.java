@@ -98,6 +98,8 @@ public class MTAMod
         RenderType translucentRenderType = RenderType.translucent();
 
         setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.GRASSY_DIRT.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.PALM_LEAVES.get(), cutoutRenderType);
 
     }
     public static void setRenderType(Block block, RenderType renderType){

@@ -79,6 +79,7 @@ public class MtaTabs {
 
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
                 output.accept(MtaBlocks.SAND_PATH.get());
+                output.accept(MtaBlocks.GRASSY_DIRT.get());
 
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);
