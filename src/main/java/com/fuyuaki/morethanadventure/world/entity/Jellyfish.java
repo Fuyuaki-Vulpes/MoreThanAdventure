@@ -41,8 +41,7 @@ public class Jellyfish extends Squid implements GeoEntity {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(0, new RandomSwimmingGoal(this, 1, 2));
+        this.goalSelector.addGoal(0, new Jellyfish.SquidRandomMovementGoal(this));
     }
 
 
@@ -91,4 +90,31 @@ public class Jellyfish extends Squid implements GeoEntity {
     }
 
 
+    class SquidRandomMovementGoal extends Goal {
+        private final Squid squid;
+
+        public SquidRandomMovementGoal(Squid pSquid) {
+            this.squid = pSquid;
+        }
+
+        @Override
+        public boolean canUse() {
+            return true;
+        }
+
+        @Override
+        public void tick() {
+            int i = this.squid.getNoActionTime();
+            if (i > 100) {
+                this.squid.setMovementVector(0.0F, 0.0F, 0.0F);
+            } else if (this.squid.getRandom().nextInt(reducedTickDelay(50)) == 0 || !this.squid.wasTouchingWater || !this.squid.hasMovementVector()) {
+                float f = this.squid.getRandom().nextFloat() * (float) (Math.PI * 2);
+                float f1 = Mth.cos(f) * 0.2F;
+                float f2 = -0.1F + this.squid.getRandom().nextFloat() * 0.2F;
+                float f3 = Mth.sin(f) * 0.2F;
+                this.squid.setMovementVector(f1, f2, f3);
+            }
+        }
     }
+
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#minecraft:animals_spawnable_on",
+    "#minecraft:leaves",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:sand",
+    "minecraft:dirt"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_ferret",
+  "spawners": {
+    "type": "morethanadventure:ferret",
+    "maxCount": 4,
+    "minCount": 2,
+    "weight": 5
+  }
+}

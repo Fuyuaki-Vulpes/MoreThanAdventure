@@ -80,10 +80,10 @@ public class Raccoon extends MTATameableAnimal implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
-                    /* if(isOrderedToSit()) {
+                     if(isOrderedToSit()) {
                          return state.setAndContinue(SIT);
                      }
-                     else*/ if (state.isMoving()) {
+                     else if (state.isMoving()) {
                          return state.setAndContinue(WALK);
                      }
                     return state.setAndContinue(DefaultAnimations.IDLE);

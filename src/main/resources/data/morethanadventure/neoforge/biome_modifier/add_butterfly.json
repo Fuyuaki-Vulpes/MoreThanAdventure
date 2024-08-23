@@ -3,7 +3,7 @@
   "biomes": "#morethanadventure:has_butterfly",
   "spawners": {
     "type": "morethanadventure:butterfly",
-    "weight": 20,
+    "weight": 7,
     "minCount": 2,
     "maxCount": 6
   }

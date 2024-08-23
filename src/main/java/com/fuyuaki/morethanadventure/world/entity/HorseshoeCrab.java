@@ -55,6 +55,7 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
         this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 13.0, 10.0F, 2.0F));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
         this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0, 20));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
 

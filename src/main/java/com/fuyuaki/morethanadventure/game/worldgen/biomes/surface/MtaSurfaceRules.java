@@ -1,6 +1,9 @@
 package com.fuyuaki.morethanadventure.game.worldgen.biomes.surface;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
@@ -18,6 +21,7 @@ public class MtaSurfaceRules {
     private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
+    private static final SurfaceRules.RuleSource GRASSY_DIRT = makeStateRule(MtaBlocks.GRASSY_DIRT.get());
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
     private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
@@ -70,14 +74,17 @@ public class MtaSurfaceRules {
                                         sixBelowWater,
                                         SurfaceRules.sequence(
                                                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
-                                                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
-                                                                SurfaceRules.sequence(
-                                                                        SurfaceRules.ifTrue(
-                                                                                SurfaceRules.noiseCondition
-                                                                                        (Noises.GRAVEL, -0.1D, 0.1D),
-                                                                                grassSurface),
-                                                                        SAND
-                                                                ))
+                                                        SurfaceRules.sequence(
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                                                        SurfaceRules.sequence(
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (Noises.GRAVEL, -0.25D, 0.3D),
+                                                                                        grassSurface),
+                                                                                SAND
+                                                                        ))
+
+                                                        )
                                                 ),
                                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,
                                                         SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
@@ -101,7 +108,6 @@ public class MtaSurfaceRules {
                                                                         SANDSTONE
                                                                 ))
                                                 ),
-
 
 
                                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.GRAVELLY_RIVER),
@@ -149,7 +155,7 @@ public class MtaSurfaceRules {
                                                 CALCITE)
                                 )
 
-                                )
+                        )
 
 
                 );
@@ -163,6 +169,9 @@ public class MtaSurfaceRules {
 
     private static SurfaceRules.ConditionSource surfaceNoiseAbove(double p_194809_) {
         return SurfaceRules.noiseCondition(Noises.SURFACE, p_194809_ / 8.25D, Double.MAX_VALUE);
+    }
+    private static SurfaceRules.ConditionSource surfaceNoiseBelow(double p_194809_) {
+        return SurfaceRules.noiseCondition(Noises.SURFACE, Double.MIN_VALUE, p_194809_ / 8.25D);
     }
 
 

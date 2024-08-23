@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_penguin",
+  "spawners": {
+    "type": "morethanadventure:penguin",
+    "maxCount": 6,
+    "minCount": 2,
+    "weight": 5
+  }
+}

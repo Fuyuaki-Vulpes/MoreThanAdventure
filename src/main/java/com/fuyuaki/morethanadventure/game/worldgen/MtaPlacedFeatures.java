@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.game.worldgen.util.MTAOreUtils;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.CaveFeatures;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -31,6 +32,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<PlacedFeature> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<PlacedFeature> DISK_MOSS_RARE = registerKey("disk_moss_rare");
+    public static final ResourceKey<PlacedFeature> LUSH_VEGETATION = registerKey("lush_vegetation");
     public static final ResourceKey<PlacedFeature> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<PlacedFeature> DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<PlacedFeature> SPARSE_CHERRY_TREE = registerKey("sparse_cherry");
@@ -56,7 +58,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<PlacedFeature> MOONSTONE_ORE = registerKey("moonstone_ore");
     public static final ResourceKey<PlacedFeature> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
-
+    public static final ResourceKey<PlacedFeature> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -123,7 +125,7 @@ public class MtaPlacedFeatures {
                 context,
                 SPARSE_MANGROVE,
                 holder(context, VegetationFeatures.MANGROVE_VEGETATION),
-                CountPlacement.of(6),
+                CountPlacement.of(4),
                 InSquarePlacement.spread(),
                 SurfaceWaterDepthFilter.forMaxDepth(5),
                 PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
@@ -150,7 +152,7 @@ public class MtaPlacedFeatures {
                 context,
                 STONY_ROCK,
                 holder(context, MtaConfigFeatures.STONY_ROCKS),
-                CountPlacement.of(3),
+                CountPlacement.of(1),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
@@ -160,7 +162,7 @@ public class MtaPlacedFeatures {
                 context,
                 MOSSY_ROCKS,
                 holder(context, MtaConfigFeatures.MOSSY_ROCKS),
-                CountPlacement.of(3),
+                CountPlacement.of(1),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
@@ -192,6 +194,16 @@ public class MtaPlacedFeatures {
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP_TOP_SOLID,
                 RarityFilter.onAverageOnceEvery(2),
+                BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE),
+                BiomeFilter.biome()
+        );
+        register(
+                context,
+                LUSH_VEGETATION,
+                holder(context, CaveFeatures.MOSS_PATCH),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP_TOP_SOLID,
+                CountPlacement.of(24),
                 BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE),
                 BiomeFilter.biome()
         );
@@ -288,13 +300,26 @@ public class MtaPlacedFeatures {
                 context,
                 SWEET_BERRY_LEAVES,
                 holder(context, MtaConfigFeatures.SWEET_BERRY_LEAVES),
-                RarityFilter.onAverageOnceEvery(3),
+                RarityFilter.onAverageOnceEvery(5),
                 SurfaceWaterDepthFilter.forMaxDepth(0),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                 BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.SPRUCE_SAPLING.defaultBlockState(), BlockPos.ZERO)),
                 BiomeFilter.biome()
         );
+
+
+        register(
+                context,
+                GRASSY_DIRT_PATCH,
+                holder(context,MtaConfigFeatures.GRASSY_DIRT_PATCH),
+                InSquarePlacement.spread(),
+                CountPlacement.of(9),
+                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                BiomeFilter.biome()
+        );
+
+
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

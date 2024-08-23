@@ -310,12 +310,14 @@ public class MtaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FLOWER_FOREST);
 
 
-        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.DISK_MOSS_RARE);
-        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, CavePlacements.LUSH_CAVES_VEGETATION);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.DISK_MOSS_RARE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.LUSH_VEGETATION);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TreePlacements.FANCY_OAK_BEES_002);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TreePlacements.OAK_BEES_002);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, TreePlacements.BIRCH_BEES_002);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, MtaPlacedFeatures.MOSSY_ROCKS);
+
         BiomeDefaultFeatures.addMeadowVegetation(biomeBuilder);
         BiomeDefaultFeatures.addWarmFlowers(biomeBuilder);
         BiomeDefaultFeatures.addJungleGrass(biomeBuilder);

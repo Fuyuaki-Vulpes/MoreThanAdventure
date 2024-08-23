@@ -224,6 +224,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
         add(MtaEntityTypes.WITHER_JUGGERNAUT.get(),"Wither Juggernaut");
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
+        add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
         add(MtaEntityTypes.CAPIBARA.get(),"Capybara");
         add(MtaEntityTypes.DUCK.get(),"Duck");
         add(MtaEntityTypes.FERRET.get(),"Ferret");

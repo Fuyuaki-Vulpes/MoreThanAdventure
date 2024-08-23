@@ -57,6 +57,8 @@ public class Capybara extends MTATameableAnimal implements GeoEntity {
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(7, new RandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(7, new RandomSwimmingGoal(this, 1.0, 20));
+
 
 
     }

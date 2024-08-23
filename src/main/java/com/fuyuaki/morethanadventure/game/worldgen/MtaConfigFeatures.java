@@ -64,6 +64,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOONSTONE_ORE = registerKey("moonstone_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
+    public static final ResourceKey<ConfiguredFeature<?,?>> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -291,6 +292,17 @@ public class MtaConfigFeatures {
                         new TwoLayersFeatureSize(0, 0, 0)
                 )
                         .build()
+        );
+
+
+
+        register(
+                context,
+                GRASSY_DIRT_PATCH,
+                Feature.DISK,
+                new DiskConfiguration(
+                        RuleBasedBlockStateProvider.simple(MtaBlocks.GRASSY_DIRT.get()), BlockPredicate.matchesBlocks(List.of(Blocks.GRASS_BLOCK)), UniformInt.of(2, 6), 1
+                )
         );
 
 

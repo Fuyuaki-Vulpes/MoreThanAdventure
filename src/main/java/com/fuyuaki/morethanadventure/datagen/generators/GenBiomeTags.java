@@ -25,6 +25,11 @@ public class GenBiomeTags  extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        this.tag(MtaTags.Biomes.GRASSY_DIRT_SHOULD_GENERATE)
+                .addTag(Tags.Biomes.IS_DENSE_VEGETATION)
+                .addTag(Tags.Biomes.IS_FOREST)
+                ;
+
         this.tag(Tags.Biomes.IS_LUSH)
                 .add(MtaBiomes.LUSH_RIVER)
                 .add(MtaBiomes.LUSH_MEADOW)
@@ -70,7 +75,8 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .addTag(Tags.Biomes.IS_DESERT);
         this.tag(MtaTags.Biomes.HAS_CAPYBARA)
                 .add(MtaBiomes.LUSH_RIVER)
-                .addTag(Tags.Biomes.IS_SWAMP);
+                .addTag(Tags.Biomes.IS_SWAMP)
+                .addTag(Tags.Biomes.IS_RIVER);
         this.tag(MtaTags.Biomes.HAS_DUCK)
                 .addTag(Tags.Biomes.IS_RIVER);
         this.tag(MtaTags.Biomes.HAS_FERRET)
@@ -94,7 +100,8 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .addTag(Tags.Biomes.IS_FOREST);
         this.tag(MtaTags.Biomes.HAS_PENGUIN)
                 .add(Biomes.FROZEN_OCEAN)
-                .add(Biomes.ICE_SPIKES);
+                .add(Biomes.ICE_SPIKES)
+                .add(Biomes.SNOWY_PLAINS);
         this.tag(MtaTags.Biomes.HAS_RACCOON)
                 .addTag(Tags.Biomes.IS_FOREST);
         this.tag(MtaTags.Biomes.HAS_SHRIMP)

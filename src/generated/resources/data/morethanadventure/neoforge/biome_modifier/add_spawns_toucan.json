@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_toucan",
+  "spawners": {
+    "type": "morethanadventure:toucan",
+    "maxCount": 5,
+    "minCount": 1,
+    "weight": 15
+  }
+}

@@ -71,7 +71,7 @@ public class MTAModEvents {
         event.register(MtaEntityTypes.BUTTERFLY.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING,
-                Butterfly::checkAnimalSpawnRules,
+                MTASpawnRules::checkBirdSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.BEARDED_DRAGON.get(),
                 SpawnPlacementTypes.ON_GROUND,
@@ -101,7 +101,7 @@ public class MTAModEvents {
         event.register(MtaEntityTypes.HORSESHOE_CRAB.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                MTASpawnRules::checkWaterAnimalSpawnRules,
+                MTASpawnRules::checkLandSwimmerSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.JELLYFISH.get(),
                 SpawnPlacementTypes.ON_GROUND,
@@ -116,12 +116,12 @@ public class MTAModEvents {
         event.register(MtaEntityTypes.OWL.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Owl::checkAnimalSpawnRules,
+                MTASpawnRules::checkBirdSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.PENGUIN.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                MTASpawnRules::checkLandSwimmerSpawnRules,
+                MTASpawnRules::checkSnowAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.RACCOON.get(),
                 SpawnPlacementTypes.ON_GROUND,
@@ -136,7 +136,7 @@ public class MTAModEvents {
         event.register(MtaEntityTypes.TOUCAN.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Toucan::checkAnimalSpawnRules,
+                MTASpawnRules::checkBirdSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(EntityType.CAMEL,
                 SpawnPlacementTypes.ON_GROUND,
