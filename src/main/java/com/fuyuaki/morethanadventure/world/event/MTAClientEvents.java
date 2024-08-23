@@ -12,8 +12,6 @@ import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
@@ -67,6 +65,7 @@ public class MTAClientEvents
 
         //ITEM & BLOCK
         event.registerEntityRenderer(MtaEntityTypes.NETHERITE_TRIDENT.get(), ThrownNetheriteTridentRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.MYSTIC_MERMAIDS_TRIDENT.get(), ThrownMysticMermaidsTridentRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.MTA_ARROW.get(), MTAArrowRenderer::new);
 
     }

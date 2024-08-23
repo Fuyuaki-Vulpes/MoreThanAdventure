@@ -107,6 +107,10 @@ public class MtaEntityTypes {
             () -> EntityType.Builder.<ThrownNetheriteTrident>of(ThrownNetheriteTrident::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"netherite_trident").toString()));
 
+    public static final DeferredHolder<EntityType<?>,EntityType<ThrownMysticMermaidsTrident>> MYSTIC_MERMAIDS_TRIDENT = ENTITY.register("mystic_mermaids_trident",
+            () -> EntityType.Builder.<ThrownMysticMermaidsTrident>of(ThrownMysticMermaidsTrident::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"mystic_mermaids_trident").toString()));
+
 
     public static final DeferredHolder<EntityType<?>,EntityType<MTAArrowEntity>> MTA_ARROW = ENTITY.register("mta_arrow",
             () -> EntityType.Builder.<MTAArrowEntity>of(MTAArrowEntity::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)

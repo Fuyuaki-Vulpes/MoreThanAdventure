@@ -21,7 +21,8 @@ public class GenEntityTags extends EntityTypeTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(EntityTypeTags.IMPACT_PROJECTILES)
                 .add(
-                        MtaEntityTypes.NETHERITE_TRIDENT.get()
+                        MtaEntityTypes.NETHERITE_TRIDENT.get(),
+                        MtaEntityTypes.MYSTIC_MERMAIDS_TRIDENT.get()
                 );
     }
 }

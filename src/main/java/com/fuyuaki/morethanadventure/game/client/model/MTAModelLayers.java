@@ -7,5 +7,5 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class MTAModelLayers {
     public static final ModelLayerLocation NETHERITE_TRIDENT = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, "netherite_trident"), "main");
-
+    public static final ModelLayerLocation MYSTIC_MERMAIDS_TRIDENT = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid_trident"), "main");
 }

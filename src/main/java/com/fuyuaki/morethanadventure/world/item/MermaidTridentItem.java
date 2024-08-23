@@ -1,6 +1,9 @@
 package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.Position;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -13,21 +16,19 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.ThrownTrident;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TridentItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.List;
-
 public class MermaidTridentItem extends TridentItem implements ProjectileItem {
+
     public MermaidTridentItem(Properties pProperties) {
         super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
     }
@@ -43,10 +44,6 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                 .build();
     }
 
-    public static Tool createToolProperties() {
-        return new Tool(List.of(), 1.0F, 2);
-    }
-
     @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
         if (pEntityLiving instanceof Player player) {
@@ -60,7 +57,7 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                         if (!pLevel.isClientSide) {
                             pStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(pEntityLiving.getUsedItemHand()));
                             if (f == 0.0F) {
-                                ThrownTrident throwntrident = new ThrownTrident(pLevel, player, pStack);
+                                ThrownMysticMermaidsTrident throwntrident = new ThrownMysticMermaidsTrident(pLevel, player, pStack);
                                 throwntrident.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, 1.0F);
                                 if (player.hasInfiniteMaterials()) {
                                     throwntrident.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
@@ -102,6 +99,14 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
     private static boolean isTooDamagedToUse(ItemStack pStack) {
         return pStack.getDamageValue() >= pStack.getMaxDamage() - 1;
     }
+
+    @Override
+    public Projectile asProjectile(Level pLevel, Position pPos, ItemStack pStack, Direction pDirection) {
+        ThrownMysticMermaidsTrident throwntrident = new ThrownMysticMermaidsTrident(pLevel, pPos.x(), pPos.y(), pPos.z(), pStack.copyWithCount(1));
+        throwntrident.pickup = AbstractArrow.Pickup.ALLOWED;
+        return throwntrident;
+    }
+
     @Override
     public int getEnchantmentValue() {
         return 18;

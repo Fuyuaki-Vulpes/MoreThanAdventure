@@ -30,13 +30,13 @@ public class GenBlockstate extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         logBlock(((RotatedPillarBlock) MtaBlocks.PALM_LOG.get()));
-        //logBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_LOG.get()));
+        logBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_LOG.get()));
         axisBlock(((RotatedPillarBlock) MtaBlocks.PALM_WOOD.get()), blockTexture(MtaBlocks.PALM_LOG.get()), blockTexture(MtaBlocks.PALM_LOG.get()));
-        //axisBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()));
+        axisBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()));
         blockItem(MtaBlocks.PALM_LOG);
-        //blockItem(MtaBlocks.STRIPPED_PALM_LOG);
+        blockItem(MtaBlocks.STRIPPED_PALM_LOG);
         blockItem(MtaBlocks.PALM_WOOD);
-        //blockItem(MtaBlocks.STRIPPED_PALM_WOOD);
+        blockItem(MtaBlocks.STRIPPED_PALM_WOOD);
         blockWithItem(MtaBlocks.PALM_PLANKS);
         leavesBlock(MtaBlocks.PALM_LEAVES);
         saplingBlock(MtaBlocks.PALM_SAPLING);

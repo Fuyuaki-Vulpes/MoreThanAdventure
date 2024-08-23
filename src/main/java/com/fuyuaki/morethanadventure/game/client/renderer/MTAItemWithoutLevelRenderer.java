@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
+import com.fuyuaki.morethanadventure.game.client.model.entity.MysticMermaidsTridentModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -25,6 +26,7 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
 
     private static final Minecraft minecraft = Minecraft.getInstance();
     private NetheriteTridentModel netheriteTrident;
+    private MysticMermaidsTridentModel mysticMermaidsTrident;
     private final EntityModelSet entityModelSet;
 
 
@@ -42,6 +44,8 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
     public void onResourceManagerReload(ResourceManager pResourceManager) {
 
         this.netheriteTrident = new NetheriteTridentModel(this.entityModelSet.bakeLayer(MTAModelLayers.NETHERITE_TRIDENT));
+        this.mysticMermaidsTrident = new MysticMermaidsTridentModel();
+
 
 
     }
@@ -61,5 +65,7 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
             this.netheriteTrident.renderToBuffer(pPoseStack, vertexconsumer1, pPackedLight, pPackedOverlay);
             pPoseStack.popPose();
         }
+
+
     }
 }
