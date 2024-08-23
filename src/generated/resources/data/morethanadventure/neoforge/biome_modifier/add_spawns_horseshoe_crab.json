@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_horseshoe_crab",
+  "spawners": {
+    "type": "morethanadventure:horseshoe_crab",
+    "maxCount": 5,
+    "minCount": 1,
+    "weight": 4
+  }
+}

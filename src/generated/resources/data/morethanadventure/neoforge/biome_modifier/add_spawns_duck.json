@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_duck",
+  "spawners": {
+    "type": "morethanadventure:duck",
+    "maxCount": 7,
+    "minCount": 2,
+    "weight": 4
+  }
+}

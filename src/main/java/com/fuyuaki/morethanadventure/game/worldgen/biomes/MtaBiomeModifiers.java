@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.worldgen.biomes;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
 import net.minecraft.core.HolderSet;
@@ -8,12 +9,16 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.SpawnData;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
+
+import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -40,6 +45,24 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<BiomeModifier> ADD_MOONSTONE_ORE = registerKey("moonstone_ore");
     public static final ResourceKey<BiomeModifier> ADD_SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
+    public static final ResourceKey<BiomeModifier> ADD_GRASSY_DIRT_PATCHES = registerKey("grassy_dirt_patches");
+
+
+    public static final ResourceKey<BiomeModifier> SPAWNS_BEARDED_DRAGON = registerKey("add_spawns_bearded_dragon");
+    public static final ResourceKey<BiomeModifier> SPAWNS_CAPYBARA = registerKey("add_spawns_capybara");
+    public static final ResourceKey<BiomeModifier> SPAWNS_DUCK = registerKey("add_spawns_duck");
+    public static final ResourceKey<BiomeModifier> SPAWNS_FERRET = registerKey("add_spawns_ferret");
+    public static final ResourceKey<BiomeModifier> SPAWNS_GREAT_WHITE_SHARK = registerKey("add_spawns_great_white_shark");
+    public static final ResourceKey<BiomeModifier> SPAWNS_HORSESHOE_CRAB = registerKey("add_spawns_horseshoe_crab");
+    public static final ResourceKey<BiomeModifier> SPAWNS_JELLYFISH = registerKey("add_spawns_jellyfish");
+    public static final ResourceKey<BiomeModifier> SPAWNS_OCTOPUS = registerKey("add_spawns_octopus");
+    public static final ResourceKey<BiomeModifier> SPAWNS_OWL = registerKey("add_spawns_owl");
+    public static final ResourceKey<BiomeModifier> SPAWNS_PENGUIN = registerKey("add_spawns_penguin");
+    public static final ResourceKey<BiomeModifier> SPAWNS_RACCOON = registerKey("add_spawns_raccoon");
+    public static final ResourceKey<BiomeModifier> SPAWNS_SHRIMP = registerKey("add_spawns_shrimp");
+    public static final ResourceKey<BiomeModifier> SPAWNS_TOUCAN = registerKey("add_spawns_toucan");
+
+
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
 
@@ -164,6 +187,66 @@ public class MtaBiomeModifiers {
                 biomes.getOrThrow(Tags.Biomes.IS_TAIGA),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.SWEET_BERRY_LEAVES)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_GRASSY_DIRT_PATCHES,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.GRASSY_DIRT_SHOULD_GENERATE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.GRASSY_DIRT_PATCH)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+
+        //MOB SPAWNS
+        context.register(SPAWNS_BEARDED_DRAGON,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_BEARDED_DRAGON),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.BEARDED_DRAGON.get(),10,1,2))
+        ));
+        context.register(SPAWNS_CAPYBARA,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_CAPYBARA),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.CAPIBARA.get(),10,1,7))
+        ));
+        context.register(SPAWNS_DUCK,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_DUCK),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.DUCK.get(),4,2,7))
+        ));
+        context.register(SPAWNS_FERRET,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_FERRET),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.FERRET.get(),5,2,4))
+        ));
+        context.register(SPAWNS_GREAT_WHITE_SHARK,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_GREAT_WHITE_SHARK),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.GREAT_WHITE_SHARK.get(),3,1,1))
+        ));
+        context.register(SPAWNS_HORSESHOE_CRAB,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_HORSESHOE_CRAB),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.HORSESHOE_CRAB.get(),4,1,5))
+        ));
+        context.register(SPAWNS_JELLYFISH,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_JELLYFISH),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.JELLYFISH.get(),20,1,5))
+        ));
+        context.register(SPAWNS_OCTOPUS,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_OCTOPUS),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.OCTOPUS.get(),8,1,2))
+        ));
+        context.register(SPAWNS_OWL,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_OWL),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.OWL.get(),8,1,3))
+        ));
+        context.register(SPAWNS_PENGUIN,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_PENGUIN),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.PENGUIN.get(),5,2,6))
+        ));
+        context.register(SPAWNS_RACCOON,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_RACCOON),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.RACCOON.get(),6,1,5))
+        ));
+        context.register(SPAWNS_SHRIMP,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_SHRIMP),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.SHRIMP.get(),14,1,5))
+        ));
+        context.register(SPAWNS_TOUCAN,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_TOUCAN),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOUCAN.get(),15,1,5))
         ));
 
 

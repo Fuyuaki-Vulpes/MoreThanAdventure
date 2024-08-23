@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#morethanadventure:grassy_dirt_should_generate",
+  "features": "morethanadventure:grassy_dirt_patch",
+  "step": "vegetal_decoration"
+}

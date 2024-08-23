@@ -17,6 +17,7 @@ public class MtaTags {
         public static final TagKey<Block> SEA_ANIMAL_SPAWNABLE_ON = tag("sea_animal_spawnable_on");
         public static final TagKey<Block> DESERT_ANIMAL_SPAWNABLE_ON = tag("desert_animal_spawnable_on");
         public static final TagKey<Block> LAND_SWIMMER_SPAWNABLE_ON = tag("land_swimmer_spawnable_on");
+        public static final TagKey<Block> BIRD_SPAWNABLE_ON = tag("bird_spawnable_on");
         public static final TagKey<Block> SNOW_ANIMAL_SPAWNABLE_ON = tag("mountain_animal_spawnable_on");
 
         public static final TagKey<Block> DIRTIES_STONE_TILES = tag("dirties_stone_tiles");
@@ -81,6 +82,8 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_RACCOON = tag("has_raccoon");
         public static final TagKey<Biome> HAS_SHRIMP = tag("has_shrimp");
         public static final TagKey<Biome> HAS_TOUCAN = tag("has_toucan");
+
+        public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
     }
 
 

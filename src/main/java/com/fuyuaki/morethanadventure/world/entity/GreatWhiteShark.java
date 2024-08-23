@@ -55,14 +55,13 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
         super(pEntityType, pLevel);
         this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 1.2F, 0.1F, true);
         this.lookControl = new SmoothSwimmingLookControl(this, 10);
-        this.setPathfindingMalus(PathType.WATER, 0.0F);
     }
 
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1.0, 10));
+        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0, 10));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 2.2F, true));
@@ -70,7 +69,7 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
 
 
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractFish.class, 10, true, false, this::isAngryAt));
+        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractFish.class, 10, true, false, null));
 
     }
     @Override

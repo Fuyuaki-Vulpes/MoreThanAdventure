@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_bearded_dragon",
+  "spawners": {
+    "type": "morethanadventure:bearded_dragon",
+    "maxCount": 2,
+    "minCount": 1,
+    "weight": 10
+  }
+}

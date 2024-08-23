@@ -72,11 +72,10 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
-      "morethanadventure:disk_moss_rare",
-      "minecraft:lush_caves_vegetation",
       "minecraft:ore_emerald"
     ],
     [
+      "morethanadventure:mossy_rocks",
       "minecraft:ore_infested"
     ],
     [
@@ -87,6 +86,8 @@
       "minecraft:glow_lichen",
       "minecraft:flower_forest_flowers",
       "minecraft:flower_flower_forest",
+      "morethanadventure:disk_moss_rare",
+      "morethanadventure:lush_vegetation",
       "minecraft:fancy_oak_bees_002",
       "minecraft:oak_bees_002",
       "minecraft:birch_bees_002",

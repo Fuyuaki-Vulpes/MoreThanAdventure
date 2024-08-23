@@ -97,10 +97,10 @@ public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, 10, (state) -> {
-                /*if(isOrderedToSit()){
+                if(isOrderedToSit()){
                         return state.setAndContinue(SIT);
                     }
-                else */if (state.isMoving() && isInWater()){
+                else if (state.isMoving() && isInWater()){
                     return state.setAndContinue(SWIM);
                 }
                 else if(state.isMoving() && !isInWater()) {

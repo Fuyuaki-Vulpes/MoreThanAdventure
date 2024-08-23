@@ -1,4 +1,5 @@
 {
+  "name": "morethanadventure:badlands_dungeon/entrance",
   "fallback": "minecraft:empty",
   "elements": [
     {

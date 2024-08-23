@@ -10,29 +10,26 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 
 public class MTASpawnRules {
 
     public static boolean checkSeaAnimalSpawnRules(
             EntityType<? extends WaterAnimal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
     ) {
-        int i = pLevel.getSeaLevel();
-        int j = i - 13;
-        return pPos.getY() >= j
-                && pPos.getY() <= i
+        int i = 63;
+        return pPos.getY() <= i
                 && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER)
-                && pLevel.getBlockState(pPos.below()).is(MtaTags.Blocks.SEA_ANIMAL_SPAWNABLE_ON);
+                && pLevel.getBlockState(pPos.above()).is(Blocks.WATER);
     }
 
     public static boolean checkWaterAnimalSpawnRules(
             EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
     ) {
-        int i = pLevel.getSeaLevel();
-        int j = i - 13;
-        return pPos.getY() >= j
-                && pPos.getY() <= i
-                && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER)
-                && pLevel.getBlockState(pPos.below()).is(MtaTags.Blocks.SEA_ANIMAL_SPAWNABLE_ON);
+        int i = 63;
+
+        return  pPos.getY() <= i
+                && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER);
     }
 
     public static boolean checkDesertAnimalSpawnRules(
@@ -46,6 +43,11 @@ public class MTASpawnRules {
             EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
     ) {
         return pLevel.getBlockState(pPos.below()).is(MtaTags.Blocks.LAND_SWIMMER_SPAWNABLE_ON);
+    }
+    public static boolean checkBirdSpawnRules(
+            EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
+    ) {
+        return pLevel.getBlockState(pPos.below()).is(MtaTags.Blocks.BIRD_SPAWNABLE_ON);
     }
 
     public static boolean checkSnowAnimalSpawnRules(

@@ -9,7 +9,7 @@ import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 public class JellyfishModel extends DefaultedEntityGeoModel<Jellyfish> {
 
     public JellyfishModel() {
-        super(ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "jellyfish"),true);
+        super(ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "jellyfish"),false);
     }
 
     @Override

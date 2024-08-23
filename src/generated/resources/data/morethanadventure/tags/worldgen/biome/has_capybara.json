@@ -1,6 +1,7 @@
 {
   "values": [
     "morethanadventure:lush_river",
-    "#c:is_swamp"
+    "#c:is_swamp",
+    "#c:is_river"
   ]
 }

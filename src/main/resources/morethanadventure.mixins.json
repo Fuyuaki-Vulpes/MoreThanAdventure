@@ -5,6 +5,8 @@
   "refmap": "yoamod.refmap.json",
   "mixins": [
     "FarmBlockMixin",
+    "MixinMobCategory",
+    "MusicMixin",
     "ServerPlayerMixin",
     "TamableAnimalMixin",
     "TemporaryFix",

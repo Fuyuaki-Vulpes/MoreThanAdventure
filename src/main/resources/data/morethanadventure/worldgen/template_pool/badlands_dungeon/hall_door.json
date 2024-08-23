@@ -1,4 +1,5 @@
 {
+  "name": "morethanadventure:badlands_dungeon/hall_door",
   "fallback": "minecraft:empty",
   "elements": [
     {

@@ -561,11 +561,19 @@ public class GenBlockTags extends BlockTagsProvider {
                 .addTag(BlockTags.NETHER_CARVER_REPLACEABLES
                 );
 
+        this.tag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .add(
+                        MtaBlocks.GRASSY_DIRT.get(),
+                        Blocks.COARSE_DIRT,
+                        Blocks.PODZOL
+                );
         this.tag(MtaTags.Blocks.SEA_ANIMAL_SPAWNABLE_ON)
                 .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .addTag(BlockTags.CORALS)
                 .add(
 
                         Blocks.STONE,
+                        Blocks.WATER,
                         Blocks.GRAVEL,
                         Blocks.WATER,
                         Blocks.SAND,
@@ -578,15 +586,27 @@ public class GenBlockTags extends BlockTagsProvider {
                 .add(
                         Blocks.RED_SAND,
                         Blocks.COARSE_DIRT,
-                        Blocks.DIRT
+                        Blocks.DIRT,
+                        Blocks.SAND
                 );
 
         this.tag(MtaTags.Blocks.LAND_SWIMMER_SPAWNABLE_ON)
                 .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
                 .add(
                         Blocks.STONE,
+                        Blocks.WATER,
                         Blocks.GRAVEL,
                         Blocks.WATER,
+                        Blocks.SAND,
+                        Blocks.DIRT
+                );
+
+        this.tag(MtaTags.Blocks.BIRD_SPAWNABLE_ON)
+                .addTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                .addTag(BlockTags.LEAVES)
+                .add(
+                        Blocks.STONE,
+                        Blocks.GRAVEL,
                         Blocks.SAND,
                         Blocks.DIRT
                 );
@@ -597,6 +617,7 @@ public class GenBlockTags extends BlockTagsProvider {
                         Blocks.SNOW,
                         Blocks.SNOW_BLOCK,
                         Blocks.PACKED_ICE,
+                        Blocks.ICE,
                         Blocks.GRAVEL);
     }
 }
