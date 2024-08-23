@@ -81,12 +81,87 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.DEEPSLATE_MOONSTONE_ORE);
         blockWithItem(MtaBlocks.COBBLED_DIRT);
         blockWithItem(MtaBlocks.STONE_TILES);
+        makeStoneSet(MtaBlocks.STONE_TILES, MtaBlocks.STONE_TILES_STAIRS, MtaBlocks.STONE_TILES_WALL, MtaBlocks.STONE_TILES_SLAB);
         blockWithItem(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES);
+        makeStoneSet(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_STAIRS, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB);
         blockWithItem(MtaBlocks.DIRTY_STONE_TILES);
+        makeStoneSet(MtaBlocks.DIRTY_STONE_TILES, MtaBlocks.DIRTY_STONE_TILES_STAIRS, MtaBlocks.DIRTY_STONE_TILES_WALL, MtaBlocks.DIRTY_STONE_TILES_SLAB);
         blockWithItem(MtaBlocks.VERY_DIRTY_STONE_TILES);
+        makeStoneSet(MtaBlocks.VERY_DIRTY_STONE_TILES, MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS, MtaBlocks.VERY_DIRTY_STONE_TILES_WALL, MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB);
         blockItem(MtaBlocks.SAND_PATH);
         blockItem(MtaBlocks.GRASSY_DIRT);
         blockItem(MtaBlocks.COARSE_DIRT_PATH);
+
+        blockWithItem(MtaBlocks.TERRACOTTA_TILES);
+        makeStoneSet(Blocks.TERRACOTTA, MtaBlocks.TERRACOTTA_STAIRS, MtaBlocks.TERRACOTTA_WALL, MtaBlocks.TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.TERRACOTTA_TILES, MtaBlocks.TERRACOTTA_TILES_STAIRS, MtaBlocks.TERRACOTTA_TILES_WALL, MtaBlocks.TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.WHITE_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.WHITE_TERRACOTTA, MtaBlocks.WHITE_TERRACOTTA_STAIRS, MtaBlocks.WHITE_TERRACOTTA_WALL, MtaBlocks.WHITE_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.WHITE_TERRACOTTA_TILES, MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS, MtaBlocks.WHITE_TERRACOTTA_TILES_WALL, MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.LIGHT_GRAY_TERRACOTTA, MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS, MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL, MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES, MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS, MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL, MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.GRAY_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.GRAY_TERRACOTTA, MtaBlocks.GRAY_TERRACOTTA_STAIRS, MtaBlocks.GRAY_TERRACOTTA_WALL, MtaBlocks.GRAY_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.GRAY_TERRACOTTA_TILES, MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS, MtaBlocks.GRAY_TERRACOTTA_TILES_WALL, MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.BLACK_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.BLACK_TERRACOTTA, MtaBlocks.BLACK_TERRACOTTA_STAIRS, MtaBlocks.BLACK_TERRACOTTA_WALL, MtaBlocks.BLACK_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.BLACK_TERRACOTTA_TILES, MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS, MtaBlocks.BLACK_TERRACOTTA_TILES_WALL, MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.BROWN_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.BROWN_TERRACOTTA, MtaBlocks.BROWN_TERRACOTTA_STAIRS, MtaBlocks.BROWN_TERRACOTTA_WALL, MtaBlocks.BROWN_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.BROWN_TERRACOTTA_TILES, MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS, MtaBlocks.BROWN_TERRACOTTA_TILES_WALL, MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.RED_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.RED_TERRACOTTA, MtaBlocks.RED_TERRACOTTA_STAIRS, MtaBlocks.RED_TERRACOTTA_WALL, MtaBlocks.RED_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.RED_TERRACOTTA_TILES, MtaBlocks.RED_TERRACOTTA_TILES_STAIRS, MtaBlocks.RED_TERRACOTTA_TILES_WALL, MtaBlocks.RED_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.ORANGE_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.ORANGE_TERRACOTTA, MtaBlocks.ORANGE_TERRACOTTA_STAIRS, MtaBlocks.ORANGE_TERRACOTTA_WALL, MtaBlocks.ORANGE_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.ORANGE_TERRACOTTA_TILES, MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS, MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL, MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.YELLOW_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.YELLOW_TERRACOTTA, MtaBlocks.YELLOW_TERRACOTTA_STAIRS, MtaBlocks.YELLOW_TERRACOTTA_WALL, MtaBlocks.YELLOW_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.YELLOW_TERRACOTTA_TILES, MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS, MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL, MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.LIME_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.LIME_TERRACOTTA, MtaBlocks.LIME_TERRACOTTA_STAIRS, MtaBlocks.LIME_TERRACOTTA_WALL, MtaBlocks.LIME_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.LIME_TERRACOTTA_TILES, MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS, MtaBlocks.LIME_TERRACOTTA_TILES_WALL, MtaBlocks.LIME_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.GREEN_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.GREEN_TERRACOTTA, MtaBlocks.GREEN_TERRACOTTA_STAIRS, MtaBlocks.GREEN_TERRACOTTA_WALL, MtaBlocks.GREEN_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.GREEN_TERRACOTTA_TILES, MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS, MtaBlocks.GREEN_TERRACOTTA_TILES_WALL, MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.CYAN_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.CYAN_TERRACOTTA, MtaBlocks.CYAN_TERRACOTTA_STAIRS, MtaBlocks.CYAN_TERRACOTTA_WALL, MtaBlocks.CYAN_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.CYAN_TERRACOTTA_TILES, MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS, MtaBlocks.CYAN_TERRACOTTA_TILES_WALL, MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.LIGHT_BLUE_TERRACOTTA, MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS, MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL, MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES, MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS, MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL, MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.BLUE_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.BLUE_TERRACOTTA, MtaBlocks.BLUE_TERRACOTTA_STAIRS, MtaBlocks.BLUE_TERRACOTTA_WALL, MtaBlocks.BLUE_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.BLUE_TERRACOTTA_TILES, MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS, MtaBlocks.BLUE_TERRACOTTA_TILES_WALL, MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.PURPLE_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.PURPLE_TERRACOTTA, MtaBlocks.PURPLE_TERRACOTTA_STAIRS, MtaBlocks.PURPLE_TERRACOTTA_WALL, MtaBlocks.PURPLE_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.PURPLE_TERRACOTTA_TILES, MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS, MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL, MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.MAGENTA_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.MAGENTA_TERRACOTTA, MtaBlocks.MAGENTA_TERRACOTTA_STAIRS, MtaBlocks.MAGENTA_TERRACOTTA_WALL, MtaBlocks.MAGENTA_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.MAGENTA_TERRACOTTA_TILES, MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS, MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL, MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB);
+        blockWithItem(MtaBlocks.PINK_TERRACOTTA_TILES);
+        makeStoneSet(Blocks.PINK_TERRACOTTA, MtaBlocks.PINK_TERRACOTTA_STAIRS, MtaBlocks.PINK_TERRACOTTA_WALL, MtaBlocks.PINK_TERRACOTTA_SLAB);
+        makeStoneSet(MtaBlocks.PINK_TERRACOTTA_TILES, MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS, MtaBlocks.PINK_TERRACOTTA_TILES_WALL, MtaBlocks.PINK_TERRACOTTA_TILES_SLAB);
+
+
+        makeStoneSet(Blocks.WHITE_CONCRETE, MtaBlocks.WHITE_CONCRETE_STAIRS, MtaBlocks.WHITE_CONCRETE_WALL, MtaBlocks.WHITE_CONCRETE_SLAB);
+        makeStoneSet(Blocks.LIGHT_GRAY_CONCRETE, MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS, MtaBlocks.LIGHT_GRAY_CONCRETE_WALL, MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB);
+        makeStoneSet(Blocks.GRAY_CONCRETE, MtaBlocks.GRAY_CONCRETE_STAIRS, MtaBlocks.GRAY_CONCRETE_WALL, MtaBlocks.GRAY_CONCRETE_SLAB);
+        makeStoneSet(Blocks.BLACK_CONCRETE, MtaBlocks.BLACK_CONCRETE_STAIRS, MtaBlocks.BLACK_CONCRETE_WALL, MtaBlocks.BLACK_CONCRETE_SLAB);
+        makeStoneSet(Blocks.BROWN_CONCRETE, MtaBlocks.BROWN_CONCRETE_STAIRS, MtaBlocks.BROWN_CONCRETE_WALL, MtaBlocks.BROWN_CONCRETE_SLAB);
+        makeStoneSet(Blocks.RED_CONCRETE, MtaBlocks.RED_CONCRETE_STAIRS, MtaBlocks.RED_CONCRETE_WALL, MtaBlocks.RED_CONCRETE_SLAB);
+        makeStoneSet(Blocks.ORANGE_CONCRETE, MtaBlocks.ORANGE_CONCRETE_STAIRS, MtaBlocks.ORANGE_CONCRETE_WALL, MtaBlocks.ORANGE_CONCRETE_SLAB);
+        makeStoneSet(Blocks.YELLOW_CONCRETE, MtaBlocks.YELLOW_CONCRETE_STAIRS, MtaBlocks.YELLOW_CONCRETE_WALL, MtaBlocks.YELLOW_CONCRETE_SLAB);
+        makeStoneSet(Blocks.LIME_CONCRETE, MtaBlocks.LIME_CONCRETE_STAIRS, MtaBlocks.LIME_CONCRETE_WALL, MtaBlocks.LIME_CONCRETE_SLAB);
+        makeStoneSet(Blocks.GREEN_CONCRETE, MtaBlocks.GREEN_CONCRETE_STAIRS, MtaBlocks.GREEN_CONCRETE_WALL, MtaBlocks.GREEN_CONCRETE_SLAB);
+        makeStoneSet(Blocks.CYAN_CONCRETE, MtaBlocks.CYAN_CONCRETE_STAIRS, MtaBlocks.CYAN_CONCRETE_WALL, MtaBlocks.CYAN_CONCRETE_SLAB);
+        makeStoneSet(Blocks.LIGHT_BLUE_CONCRETE, MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS, MtaBlocks.LIGHT_BLUE_CONCRETE_WALL, MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB);
+        makeStoneSet(Blocks.BLUE_CONCRETE, MtaBlocks.BLUE_CONCRETE_STAIRS, MtaBlocks.BLUE_CONCRETE_WALL, MtaBlocks.BLUE_CONCRETE_SLAB);
+        makeStoneSet(Blocks.PURPLE_CONCRETE, MtaBlocks.PURPLE_CONCRETE_STAIRS, MtaBlocks.PURPLE_CONCRETE_WALL, MtaBlocks.PURPLE_CONCRETE_SLAB);
+        makeStoneSet(Blocks.MAGENTA_CONCRETE, MtaBlocks.MAGENTA_CONCRETE_STAIRS, MtaBlocks.MAGENTA_CONCRETE_WALL, MtaBlocks.MAGENTA_CONCRETE_SLAB);
+        makeStoneSet(Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_STAIRS, MtaBlocks.PINK_CONCRETE_WALL, MtaBlocks.PINK_CONCRETE_SLAB);
+
 
 
         makeCrop((MtaCrops) MtaBlocks.ONION_CROP.get(), "onion_stage", "onion_stage");
@@ -103,9 +178,15 @@ public class GenBlockstate extends BlockStateProvider {
     }
 
 
-    private <T extends Block> void makeStoneSet(DeferredBlock<T> texture, DeferredBlock<T> sideTexture, DeferredBlock<T> stairs, DeferredBlock<T> wall, DeferredBlock<T> slab) {
+    private <T extends Block> void makeStoneSet(DeferredBlock<T> texture, DeferredBlock<T> stairs, DeferredBlock<T> wall, DeferredBlock<T> slab) {
         makeStairs(stairs, texture);
-        makeSlab(slab, sideTexture, texture);
+        makeSlab(slab, texture, texture);
+        makeWall(wall, texture);
+    }
+
+    private <T extends Block> void makeStoneSet(Block texture, DeferredBlock<T> stairs, DeferredBlock<T> wall, DeferredBlock<T> slab) {
+        makeStairs(stairs, texture);
+        makeSlab(slab, texture, texture);
         makeWall(wall, texture);
     }
 
@@ -115,15 +196,33 @@ public class GenBlockstate extends BlockStateProvider {
 
     }
 
+    private <T extends Block> void makeStairs(DeferredBlock<T> deferredBlock, Block texture) {
+        stairsBlock(((StairBlock) deferredBlock.get()), blockTexture(texture));
+        simpleBlockItem(deferredBlock.get(), models().stairs(name(deferredBlock.get()), blockTexture(texture), blockTexture(texture), blockTexture(texture)));
+
+    }
+
     private <T extends Block> void makeSlab(DeferredBlock<T> deferredBlock, DeferredBlock<T> doubleSlab, DeferredBlock<T> halfSlab) {
         slabBlock(((SlabBlock) deferredBlock.get()), blockTexture(doubleSlab.get()), blockTexture(halfSlab.get()));
         simpleBlockItem(deferredBlock.get(), models().slab(name(deferredBlock.get()), blockTexture(doubleSlab.get()), blockTexture(halfSlab.get()), blockTexture(halfSlab.get())));
 
     }
 
+    private <T extends Block> void makeSlab(DeferredBlock<T> deferredBlock, Block doubleSlab, Block halfSlab) {
+        slabBlock(((SlabBlock) deferredBlock.get()), blockTexture(doubleSlab), blockTexture(halfSlab));
+        simpleBlockItem(deferredBlock.get(), models().slab(name(deferredBlock.get()), blockTexture(doubleSlab), blockTexture(halfSlab), blockTexture(halfSlab)));
+
+    }
+
     private <T extends Block> void makeWall(DeferredBlock<T> deferredBlock, DeferredBlock<T> texture) {
         wallBlock(((WallBlock) deferredBlock.get()), blockTexture(texture.get()));
         simpleBlockItem(deferredBlock.get(), models().wallInventory(name(deferredBlock.get()) + "_inventory", blockTexture(texture.get())));
+
+    }
+
+    private <T extends Block> void makeWall(DeferredBlock<T> deferredBlock, Block texture) {
+        wallBlock(((WallBlock) deferredBlock.get()), blockTexture(texture));
+        simpleBlockItem(deferredBlock.get(), models().wallInventory(name(deferredBlock.get()) + "_inventory", blockTexture(texture)));
 
     }
 

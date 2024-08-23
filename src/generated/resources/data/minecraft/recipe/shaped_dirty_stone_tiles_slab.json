@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "morethanadventure:dirty_stone_tiles"
+    }
+  },
+  "pattern": [
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:dirty_stone_tiles_slab"
+  }
+}

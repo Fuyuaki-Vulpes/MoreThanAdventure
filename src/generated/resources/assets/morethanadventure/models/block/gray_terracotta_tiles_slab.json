@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "morethanadventure:block/gray_terracotta_tiles",
+    "side": "morethanadventure:block/gray_terracotta_tiles",
+    "top": "morethanadventure:block/gray_terracotta_tiles"
+  }
+}

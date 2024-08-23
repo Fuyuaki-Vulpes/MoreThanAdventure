@@ -37,7 +37,6 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_PALM_WOOD.get());
                 output.accept(MtaBlocks.PALM_PLANKS.get());
-                output.accept(MtaBlocks.PALM_LEAVES.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
                 output.accept(MtaBlocks.PALM_STAIRS.get());
                 output.accept(MtaBlocks.PALM_SLAB.get());
@@ -47,7 +46,11 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_FENCE_GATE.get());
                 output.accept(MtaBlocks.PALM_DOOR.get());
                 output.accept(MtaBlocks.PALM_TRAPDOOR.get());
-                output.accept(MtaBlocks.SPRINKLER.get());
+
+
+                output.accept(MtaBlocks.PALM_LEAVES.get());
+                output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
+
                 output.accept(MtaBlocks.STONE_GEYSER.get());
                 output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());
                 output.accept(MtaBlocks.NETHERRACK_GEYSER.get());
@@ -77,31 +80,232 @@ public class MtaTabs {
                 output.accept(MtaBlocks.MOONSTONE_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get());
 
-                output.accept(MtaBlocks.QUARTZ_LAMP.get());
+
                 output.accept(MtaBlocks.SAND_PATH.get());
                 output.accept(MtaBlocks.GRASSY_DIRT.get());
                 output.accept(MtaBlocks.COBBLED_DIRT.get());
                 output.accept(MtaBlocks.COARSE_DIRT_PATH.get());
                 output.accept(MtaBlocks.STONE_TILES.get());
+                output.accept(MtaBlocks.STONE_TILES_SLAB.get());
+                output.accept(MtaBlocks.STONE_TILES_STAIRS.get());
+                output.accept(MtaBlocks.STONE_TILES_WALL.get());
                 output.accept(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get());
+                output.accept(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get());
+                output.accept(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_STAIRS.get());
+                output.accept(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL.get());
                 output.accept(MtaBlocks.DIRTY_STONE_TILES.get());
+                output.accept(MtaBlocks.DIRTY_STONE_TILES_SLAB.get());
+                output.accept(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get());
+                output.accept(MtaBlocks.DIRTY_STONE_TILES_WALL.get());
                 output.accept(MtaBlocks.VERY_DIRTY_STONE_TILES.get());
-                output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
+                output.accept(MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get());
+                output.accept(MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get());
+                output.accept(MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get());
 
-                output.accept(MtaItems.CLEAR_QUARTZ);
-                output.accept(MtaItems.NETHERITE_FRACTURE);
-                output.accept(MtaItems.AGATE);
-                output.accept(MtaItems.ALEXANDRITE);
-                output.accept(MtaItems.AQUAMARINE);
-                output.accept(MtaItems.CELESTITE);
-                output.accept(MtaItems.GARNET);
-                output.accept(MtaItems.MOONSTONE);
-                output.accept(MtaItems.ARMAMENT_UPGRADE);
-                output.accept(MtaItems.ROYAL_UPGRADE);
-                output.accept(MtaItems.AQUATIC_UPGRADE);
-                output.accept(MtaItems.ANGELIC_UPGRADE);
-                output.accept(MtaItems.BERSERK_UPGRADE);
-                output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
+                output.accept(MtaBlocks.TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.RED_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.RED_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.RED_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.RED_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.RED_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.LIME_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.LIME_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.LIME_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.LIME_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get());
+
+                output.accept(MtaBlocks.PINK_TERRACOTTA_TILES.get());
+                output.accept(MtaBlocks.PINK_TERRACOTTA_SLAB.get());
+                output.accept(MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get());
+                output.accept(MtaBlocks.PINK_TERRACOTTA_STAIRS.get());
+                output.accept(MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get());
+                output.accept(MtaBlocks.PINK_TERRACOTTA_WALL.get());
+                output.accept(MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get());
+
+
+                output.accept(MtaBlocks.WHITE_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.WHITE_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.WHITE_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.GRAY_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.GRAY_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.GRAY_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.BLACK_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.BLACK_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.BLACK_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.BROWN_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.BROWN_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.BROWN_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.RED_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.RED_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.RED_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.ORANGE_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.ORANGE_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.ORANGE_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.YELLOW_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.YELLOW_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.YELLOW_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.LIME_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.LIME_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.LIME_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.GREEN_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.GREEN_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.GREEN_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.CYAN_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.CYAN_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.CYAN_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.BLUE_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.BLUE_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.BLUE_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.PURPLE_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.PURPLE_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.PURPLE_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.MAGENTA_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.MAGENTA_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.MAGENTA_CONCRETE_WALL.get());
+
+                output.accept(MtaBlocks.PINK_CONCRETE_SLAB.get());
+                output.accept(MtaBlocks.PINK_CONCRETE_STAIRS.get());
+                output.accept(MtaBlocks.PINK_CONCRETE_WALL.get());
+
+
+
+
 
             }).build());
 
@@ -227,6 +431,25 @@ public class MtaTabs {
                 output.accept(MtaItems.SPICY_PORK_CURRY);
                 output.accept(MtaItems.SPICY_CHICKEN_CURRY);
                 output.accept(MtaItems.SPICY_SHRIMP_CURRY);
+
+                output.accept(MtaBlocks.SPRINKLER.get());
+                output.accept(MtaBlocks.QUARTZ_LAMP.get());
+
+
+                output.accept(MtaItems.CLEAR_QUARTZ);
+                output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.AGATE);
+                output.accept(MtaItems.ALEXANDRITE);
+                output.accept(MtaItems.AQUAMARINE);
+                output.accept(MtaItems.CELESTITE);
+                output.accept(MtaItems.GARNET);
+                output.accept(MtaItems.MOONSTONE);
+                output.accept(MtaItems.ARMAMENT_UPGRADE);
+                output.accept(MtaItems.ROYAL_UPGRADE);
+                output.accept(MtaItems.AQUATIC_UPGRADE);
+                output.accept(MtaItems.ANGELIC_UPGRADE);
+                output.accept(MtaItems.BERSERK_UPGRADE);
+                output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
 
 
                 //SPAWNS

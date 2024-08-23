@@ -76,14 +76,227 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.QUARTZ_LAMP.get());
         dropSelf(MtaBlocks.COBBLED_DIRT.get());
         dropSelf(MtaBlocks.STONE_TILES.get());
+        this.add(MtaBlocks.STONE_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.STONE_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.STONE_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.STONE_TILES_WALL.get());
         dropSelf(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get());
+        this.add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL.get());
         dropSelf(MtaBlocks.DIRTY_STONE_TILES.get());
+        this.add(MtaBlocks.DIRTY_STONE_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.DIRTY_STONE_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.DIRTY_STONE_TILES_WALL.get());
         dropSelf(MtaBlocks.VERY_DIRTY_STONE_TILES.get());
+        this.add(MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get());
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
         this.add(MtaBlocks.SAND_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
         this.add(MtaBlocks.GRASSY_DIRT.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(MtaBlocks.COARSE_DIRT_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(MtaBlocks.SWEET_BERRY_LEAVES.get(), block -> createLeavesDrops(block, Blocks.SPRUCE_SAPLING, 0.1F));
+
+        dropSelf(MtaBlocks.TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.WHITE_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.WHITE_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.WHITE_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.WHITE_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.WHITE_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.GRAY_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.GRAY_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.GRAY_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.GRAY_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.GRAY_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.BLACK_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.BLACK_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BLACK_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.BLACK_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.BLACK_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.BROWN_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.BROWN_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BROWN_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.BROWN_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.BROWN_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.RED_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.RED_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.RED_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.RED_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.RED_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.RED_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.ORANGE_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.ORANGE_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.ORANGE_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.ORANGE_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.YELLOW_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.YELLOW_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.YELLOW_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.YELLOW_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.LIME_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.LIME_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIME_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.LIME_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.LIME_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.GREEN_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.GREEN_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.GREEN_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.GREEN_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.GREEN_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.CYAN_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.CYAN_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.CYAN_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.CYAN_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.CYAN_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.BLUE_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.BLUE_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BLUE_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.BLUE_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.BLUE_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.PURPLE_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.PURPLE_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.PURPLE_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.PURPLE_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.MAGENTA_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.MAGENTA_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get());
+
+        dropSelf(MtaBlocks.PINK_TERRACOTTA_TILES.get());
+        this.add(MtaBlocks.PINK_TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.PINK_TERRACOTTA_SLAB.get()));
+        this.add(MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get()));
+        dropSelf(MtaBlocks.PINK_TERRACOTTA_STAIRS.get());
+        dropSelf(MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get());
+        dropSelf(MtaBlocks.PINK_TERRACOTTA_WALL.get());
+        dropSelf(MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get());
+
+        this.add(MtaBlocks.WHITE_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.WHITE_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.WHITE_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.WHITE_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.GRAY_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.GRAY_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.GRAY_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.GRAY_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.BLACK_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BLACK_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.BLACK_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.BLACK_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.BROWN_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BROWN_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.BROWN_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.BROWN_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.RED_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.RED_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.RED_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.RED_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.ORANGE_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.ORANGE_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.ORANGE_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.ORANGE_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.YELLOW_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.YELLOW_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.YELLOW_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.YELLOW_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.LIME_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIME_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.LIME_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.LIME_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.GREEN_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.GREEN_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.GREEN_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.GREEN_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.CYAN_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.CYAN_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.CYAN_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.CYAN_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.BLUE_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.BLUE_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.BLUE_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.BLUE_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.PURPLE_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.PURPLE_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.PURPLE_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.PURPLE_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.MAGENTA_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.MAGENTA_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.MAGENTA_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.MAGENTA_CONCRETE_WALL.get());
+
+        this.add(MtaBlocks.PINK_CONCRETE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.PINK_CONCRETE_SLAB.get()));
+        dropSelf(MtaBlocks.PINK_CONCRETE_STAIRS.get());
+        dropSelf(MtaBlocks.PINK_CONCRETE_WALL.get());
+
 
         this.add(MtaBlocks.AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));
         this.add(MtaBlocks.DEEPSLATE_AGATE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AGATE.get()));

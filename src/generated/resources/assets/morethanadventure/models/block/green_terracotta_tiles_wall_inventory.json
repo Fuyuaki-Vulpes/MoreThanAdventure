@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "morethanadventure:block/green_terracotta_tiles"
+  }
+}

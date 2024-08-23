@@ -40,11 +40,224 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SAND_PATH.get(),"Sand Path");
         add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
         add(MtaBlocks.COBBLED_DIRT.get(),"Cobbled Dirt");
-        add(MtaBlocks.STONE_TILES.get(),"Stone Tiles");
+        add(MtaBlocks.STONE_TILES.get(), "Stone Tiles");
+        add(MtaBlocks.STONE_TILES_SLAB.get(),"Stone Tiles Slab");
+        add(MtaBlocks.STONE_TILES_STAIRS.get(),"Stone Tiles Stairs");
+        add(MtaBlocks.STONE_TILES_WALL.get(),"Stone Tiles Wall");
         add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get(),"Slightly Dirty Stone Tiles");
+        add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get(),"Slightly Dirty Stone Tiles Slab");
+        add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_STAIRS.get(),"Slightly Dirty Stone Tiles Stairs");
+        add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL.get(),"Slightly Dirty Stone Tiles Wall");
         add(MtaBlocks.DIRTY_STONE_TILES.get(),"Dirty Stone Tiles");
+        add(MtaBlocks.DIRTY_STONE_TILES_SLAB.get(),"Dirty Stone Tiles Slab");
+        add(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get(),"Dirty Stone Tiles Slab");
+        add(MtaBlocks.DIRTY_STONE_TILES_WALL.get(),"Dirty Stone Tiles Slab");
         add(MtaBlocks.VERY_DIRTY_STONE_TILES.get(),"Very Dirty Stone Tiles");
+        add(MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(),"Very Dirty Stone Tiles Slab");
+        add(MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(),"Very Dirty Stone Tiles Stairs");
+        add(MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get(),"Very Dirty Stone Tiles Wall");
         add(MtaBlocks.SWEET_BERRY_LEAVES.get(),"Sweet Berry Leaves");
+
+        add(MtaBlocks.TERRACOTTA_TILES.get(),"Terracotta Tiles");
+        add(MtaBlocks.TERRACOTTA_SLAB.get(),"Terracotta Slab");
+        add(MtaBlocks.TERRACOTTA_TILES_SLAB.get(),"Terracotta Tiles Slab");
+        add(MtaBlocks.TERRACOTTA_STAIRS.get(),"Terracotta Stairs");
+        add(MtaBlocks.TERRACOTTA_TILES_STAIRS.get(),"Terracotta Tiles Stairs");
+        add(MtaBlocks.TERRACOTTA_WALL.get(),"Terracotta Wall");
+        add(MtaBlocks.TERRACOTTA_TILES_WALL.get(),"Terracotta Tiles Wall");
+
+        add(MtaBlocks.WHITE_TERRACOTTA_TILES.get(),"White Terracotta Tiles");
+        add(MtaBlocks.WHITE_TERRACOTTA_SLAB.get(),"White Terracotta Slab");
+        add(MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get(),"White Terracotta Tiles Slab");
+        add(MtaBlocks.WHITE_TERRACOTTA_STAIRS.get(),"White Terracotta Stairs");
+        add(MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get(),"White Terracotta Tiles Stairs");
+        add(MtaBlocks.WHITE_TERRACOTTA_WALL.get(),"White Terracotta Wall");
+        add(MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get(),"White Terracotta Tiles Wall");
+
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get(),"Light Gray Terracotta Tiles");
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(),"Light Gray Terracotta Slab");
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get(),"Light Gray Terracotta Tiles Slab");
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(),"Light Gray Terracotta Stairs");
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get(),"Light Gray Terracotta Tiles Stairs");
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(),"Light Gray Terracotta Wall");
+        add(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get(),"Light Gray Terracotta Tiles Wall");
+
+        add(MtaBlocks.GRAY_TERRACOTTA_TILES.get(),"Gray Terracotta Tiles");
+        add(MtaBlocks.GRAY_TERRACOTTA_SLAB.get(),"Gray Terracotta Slab");
+        add(MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get(),"Gray Terracotta Tiles Slab");
+        add(MtaBlocks.GRAY_TERRACOTTA_STAIRS.get(),"Gray Terracotta Stairs");
+        add(MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get(),"Gray Terracotta Tiles Stairs");
+        add(MtaBlocks.GRAY_TERRACOTTA_WALL.get(),"Gray Terracotta Wall");
+        add(MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get(),"Gray Terracotta Tiles Wall");
+
+        add(MtaBlocks.BLACK_TERRACOTTA_TILES.get(),"Black Terracotta Tiles");
+        add(MtaBlocks.BLACK_TERRACOTTA_SLAB.get(),"Black Terracotta Slab");
+        add(MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get(),"Black Terracotta Tiles Slab");
+        add(MtaBlocks.BLACK_TERRACOTTA_STAIRS.get(),"Black Terracotta Stairs");
+        add(MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get(),"Black Terracotta Tiles Stairs");
+        add(MtaBlocks.BLACK_TERRACOTTA_WALL.get(),"Black Terracotta Wall");
+        add(MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get(),"Black Terracotta Tiles Wall");
+
+        add(MtaBlocks.BROWN_TERRACOTTA_TILES.get(),"Brown Terracotta Tiles");
+        add(MtaBlocks.BROWN_TERRACOTTA_SLAB.get(),"Brown Terracotta Slab");
+        add(MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get(),"Brown Terracotta Tiles Slab");
+        add(MtaBlocks.BROWN_TERRACOTTA_STAIRS.get(),"Brown Terracotta Stairs");
+        add(MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get(),"Brown Terracotta Tiles Stairs");
+        add(MtaBlocks.BROWN_TERRACOTTA_WALL.get(),"Brown Terracotta Wall");
+        add(MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get(),"Brown Terracotta Tiles Wall");
+
+        add(MtaBlocks.RED_TERRACOTTA_TILES.get(),"Red Terracotta Tiles");
+        add(MtaBlocks.RED_TERRACOTTA_SLAB.get(),"Red Terracotta Slab");
+        add(MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get(),"Red Terracotta Tiles Slab");
+        add(MtaBlocks.RED_TERRACOTTA_STAIRS.get(),"Red Terracotta Stairs");
+        add(MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get(),"Red Terracotta Tiles Stairs");
+        add(MtaBlocks.RED_TERRACOTTA_WALL.get(),"Red Terracotta Wall");
+        add(MtaBlocks.RED_TERRACOTTA_TILES_WALL.get(),"Red Terracotta Tiles Wall");
+
+        add(MtaBlocks.ORANGE_TERRACOTTA_TILES.get(),"Orange Terracotta Tiles");
+        add(MtaBlocks.ORANGE_TERRACOTTA_SLAB.get(),"Orange Terracotta Slab");
+        add(MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get(),"Orange Terracotta Tiles Slab");
+        add(MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get(),"Orange Terracotta Stairs");
+        add(MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get(),"Orange Terracotta Tiles Stairs");
+        add(MtaBlocks.ORANGE_TERRACOTTA_WALL.get(),"Orange Terracotta Wall");
+        add(MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get(),"Orange Terracotta Tiles Wall");
+
+        add(MtaBlocks.YELLOW_TERRACOTTA_TILES.get(),"Yellow Terracotta Tiles");
+        add(MtaBlocks.YELLOW_TERRACOTTA_SLAB.get(),"Yellow Terracotta Slab");
+        add(MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get(),"Yellow Terracotta Tiles Slab");
+        add(MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get(),"Yellow Terracotta Stairs");
+        add(MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get(),"Yellow Terracotta Tiles Stairs");
+        add(MtaBlocks.YELLOW_TERRACOTTA_WALL.get(),"Yellow Terracotta Wall");
+        add(MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get(),"Yellow Terracotta Tiles Wall");
+
+        add(MtaBlocks.LIME_TERRACOTTA_TILES.get(),"Lime Terracotta Tiles");
+        add(MtaBlocks.LIME_TERRACOTTA_SLAB.get(),"Lime Terracotta Slab");
+        add(MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get(),"Lime Terracotta Tiles Slab");
+        add(MtaBlocks.LIME_TERRACOTTA_STAIRS.get(),"Lime Terracotta Stairs");
+        add(MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get(),"Lime Terracotta Tiles Stairs");
+        add(MtaBlocks.LIME_TERRACOTTA_WALL.get(),"Lime Terracotta Wall");
+        add(MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get(),"Lime Terracotta Tiles Wall");
+
+        add(MtaBlocks.GREEN_TERRACOTTA_TILES.get(),"Green Terracotta Tiles");
+        add(MtaBlocks.GREEN_TERRACOTTA_SLAB.get(),"Green Terracotta Slab");
+        add(MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get(),"Green Terracotta Tiles Slab");
+        add(MtaBlocks.GREEN_TERRACOTTA_STAIRS.get(),"Green Terracotta Stairs");
+        add(MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get(),"Green Terracotta Tiles Stairs");
+        add(MtaBlocks.GREEN_TERRACOTTA_WALL.get(),"Green Terracotta Wall");
+        add(MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get(),"Green Terracotta Tiles Wall");
+
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES.get(),"Blue Terracotta Tiles");
+        add(MtaBlocks.CYAN_TERRACOTTA_SLAB.get(),"Blue Terracotta Slab");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(),"Blue Terracotta Tiles Slab");
+        add(MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(),"Blue Terracotta Stairs");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(),"Blue Terracotta Tiles Stairs");
+        add(MtaBlocks.CYAN_TERRACOTTA_WALL.get(),"Blue Terracotta Wall");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get(),"Blue Terracotta Tiles Wall");
+
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get(),"Light Blue Terracotta Tiles");
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(),"Light Blue Terracotta Slab");
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get(),"Light Blue Terracotta Tiles Slab");
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(),"Light Blue Terracotta Stairs");
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get(),"Light Blue Terracotta Tiles Stairs");
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(),"Light Blue Terracotta Wall");
+        add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get(),"Light Blue Terracotta Tiles Wall");
+
+        add(MtaBlocks.BLUE_TERRACOTTA_TILES.get(),"Blue Terracotta Tiles");
+        add(MtaBlocks.BLUE_TERRACOTTA_SLAB.get(),"Blue Terracotta Slab");
+        add(MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get(),"Blue Terracotta Tiles Slab");
+        add(MtaBlocks.BLUE_TERRACOTTA_STAIRS.get(),"Blue Terracotta Stairs");
+        add(MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get(),"Blue Terracotta Tiles Stairs");
+        add(MtaBlocks.BLUE_TERRACOTTA_WALL.get(),"Blue Terracotta Wall");
+        add(MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get(),"Blue Terracotta Tiles Wall");
+
+        add(MtaBlocks.PURPLE_TERRACOTTA_TILES.get(),"Purple Terracotta Tiles");
+        add(MtaBlocks.PURPLE_TERRACOTTA_SLAB.get(),"Purple Terracotta Slab");
+        add(MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get(),"Purple Terracotta Tiles Slab");
+        add(MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get(),"Purple Terracotta Stairs");
+        add(MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get(),"Purple Terracotta Tiles Stairs");
+        add(MtaBlocks.PURPLE_TERRACOTTA_WALL.get(),"Purple Terracotta Wall");
+        add(MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get(),"Purple Terracotta Tiles Wall");
+
+        add(MtaBlocks.MAGENTA_TERRACOTTA_TILES.get(),"Magenta Terracotta Tiles");
+        add(MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get(),"Magenta Terracotta Slab");
+        add(MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get(),"Magenta Terracotta Tiles Slab");
+        add(MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get(),"Magenta Terracotta Stairs");
+        add(MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get(),"Magenta Terracotta Tiles Stairs");
+        add(MtaBlocks.MAGENTA_TERRACOTTA_WALL.get(),"Magenta Terracotta Wall");
+        add(MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get(),"Magenta Terracotta Tiles Wall");
+
+        add(MtaBlocks.PINK_TERRACOTTA_TILES.get(),"Pink Terracotta Tiles");
+        add(MtaBlocks.PINK_TERRACOTTA_SLAB.get(),"Pink Terracotta Slab");
+        add(MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get(),"Pink Terracotta Tiles Slab");
+        add(MtaBlocks.PINK_TERRACOTTA_STAIRS.get(),"Pink Terracotta Stairs");
+        add(MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get(),"Pink Terracotta Tiles Stairs");
+        add(MtaBlocks.PINK_TERRACOTTA_WALL.get(),"Pink Terracotta Wall");
+        add(MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get(),"Pink Terracotta Tiles Wall");
+
+        add(MtaBlocks.WHITE_CONCRETE_SLAB.get(),"White Concrete Slab");
+        add(MtaBlocks.WHITE_CONCRETE_STAIRS.get(),"White Concrete Stairs");
+        add(MtaBlocks.WHITE_CONCRETE_WALL.get(),"White Concrete Wall");
+
+        add(MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(),"Light Gray Concrete Slab");
+        add(MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(),"Light Gray Concrete Stairs");
+        add(MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get(),"Light Gray Concrete Wall");
+
+        add(MtaBlocks.GRAY_CONCRETE_SLAB.get(),"Gray Concrete Slab");
+        add(MtaBlocks.GRAY_CONCRETE_STAIRS.get(),"Gray Concrete Stairs");
+        add(MtaBlocks.GRAY_CONCRETE_WALL.get(),"Gray Concrete Wall");
+
+        add(MtaBlocks.BLACK_CONCRETE_SLAB.get(),"Black Concrete Slab");
+        add(MtaBlocks.BLACK_CONCRETE_STAIRS.get(),"Black Concrete Stairs");
+        add(MtaBlocks.BLACK_CONCRETE_WALL.get(),"Black Concrete Wall");
+
+        add(MtaBlocks.BROWN_CONCRETE_SLAB.get(),"Brown Concrete Slab");
+        add(MtaBlocks.BROWN_CONCRETE_STAIRS.get(),"Brown Concrete Stairs");
+        add(MtaBlocks.BROWN_CONCRETE_WALL.get(),"Brown Concrete Wall");
+
+        add(MtaBlocks.RED_CONCRETE_SLAB.get(),"Red Concrete Slab");
+        add(MtaBlocks.RED_CONCRETE_STAIRS.get(),"Red Concrete Stairs");
+        add(MtaBlocks.RED_CONCRETE_WALL.get(),"Red Concrete Wall");
+
+        add(MtaBlocks.ORANGE_CONCRETE_SLAB.get(),"Orange Concrete Slab");
+        add(MtaBlocks.ORANGE_CONCRETE_STAIRS.get(),"Orange Concrete Stairs");
+        add(MtaBlocks.ORANGE_CONCRETE_WALL.get(),"Orange Concrete Wall");
+
+        add(MtaBlocks.YELLOW_CONCRETE_SLAB.get(),"Yellow Concrete Slab");
+        add(MtaBlocks.YELLOW_CONCRETE_STAIRS.get(),"Yellow Concrete Stairs");
+        add(MtaBlocks.YELLOW_CONCRETE_WALL.get(),"Yellow Concrete Wall");
+
+        add(MtaBlocks.LIME_CONCRETE_SLAB.get(),"Lime Concrete Slab");
+        add(MtaBlocks.LIME_CONCRETE_STAIRS.get(),"Lime Concrete Stairs");
+        add(MtaBlocks.LIME_CONCRETE_WALL.get(),"Lime Concrete Wall");
+
+        add(MtaBlocks.GREEN_CONCRETE_SLAB.get(),"Green Concrete Slab");
+        add(MtaBlocks.GREEN_CONCRETE_STAIRS.get(),"Green Concrete Stairs");
+        add(MtaBlocks.GREEN_CONCRETE_WALL.get(),"Green Concrete Wall");
+
+        add(MtaBlocks.CYAN_CONCRETE_SLAB.get(),"Blue Concrete Slab");
+        add(MtaBlocks.CYAN_CONCRETE_STAIRS.get(),"Blue Concrete Stairs");
+        add(MtaBlocks.CYAN_CONCRETE_WALL.get(),"Blue Concrete Wall");
+
+        add(MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(),"Light Blue Concrete Slab");
+        add(MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(),"Light Blue Concrete Stairs");
+        add(MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get(),"Light Blue Concrete Wall");
+
+        add(MtaBlocks.BLUE_CONCRETE_SLAB.get(),"Blue Concrete Slab");
+        add(MtaBlocks.BLUE_CONCRETE_STAIRS.get(),"Blue Concrete Stairs");
+        add(MtaBlocks.BLUE_CONCRETE_WALL.get(),"Blue Concrete Wall");
+
+        add(MtaBlocks.PURPLE_CONCRETE_SLAB.get(),"Purple Concrete Slab");
+        add(MtaBlocks.PURPLE_CONCRETE_STAIRS.get(),"Purple Concrete Stairs");
+        add(MtaBlocks.PURPLE_CONCRETE_WALL.get(),"Purple Concrete Wall");
+
+        add(MtaBlocks.MAGENTA_CONCRETE_SLAB.get(),"Magenta Concrete Slab");
+        add(MtaBlocks.MAGENTA_CONCRETE_STAIRS.get(),"Magenta Concrete Stairs");
+        add(MtaBlocks.MAGENTA_CONCRETE_WALL.get(),"Magenta Concrete Wall");
+
+        add(MtaBlocks.PINK_CONCRETE_SLAB.get(),"Pink Concrete Slab");
+        add(MtaBlocks.PINK_CONCRETE_STAIRS.get(),"Pink Concrete Stairs");
+        add(MtaBlocks.PINK_CONCRETE_WALL.get(),"Pink Concrete Wall");
+
         add(MtaBlocks.COARSE_DIRT_PATH.get(),"Coarse Dirt Path");
         add(MtaBlocks.NETHER_IRON_ORE.get(),"Nether Iron Ore");
         add(MtaBlocks.NETHER_DIAMOND_ORE.get(),"Nether Diamond Ore");

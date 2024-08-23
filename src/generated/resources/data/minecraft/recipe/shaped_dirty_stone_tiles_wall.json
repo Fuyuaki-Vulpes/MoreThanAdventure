@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "morethanadventure:dirty_stone_tiles"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:dirty_stone_tiles_wall"
+  }
+}

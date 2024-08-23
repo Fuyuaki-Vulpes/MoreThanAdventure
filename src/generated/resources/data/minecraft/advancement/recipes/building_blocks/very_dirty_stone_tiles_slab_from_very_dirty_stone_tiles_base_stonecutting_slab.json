@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:very_dirty_stone_tiles_slab_from_very_dirty_stone_tiles_base_stonecutting_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_very_dirty_stone_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "morethanadventure:very_dirty_stone_tiles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_very_dirty_stone_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:very_dirty_stone_tiles_slab_from_very_dirty_stone_tiles_base_stonecutting_slab"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "morethanadventure:dirty_stone_tiles"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:dirty_stone_tiles_slab"
+  }
+}

@@ -9,6 +9,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -226,17 +227,62 @@ public class MtaBlocks {
             BlockBehaviour.Properties
                     .ofFullCopy(Blocks.STONE_BRICKS) ,0)
     );
+    public static final DeferredBlock<Block> STONE_TILES_STAIRS = registerBlock("stone_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.STONE_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)));
+    public static final DeferredBlock<Block> STONE_TILES_SLAB = registerBlock("stone_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB)));
+
+    public static final DeferredBlock<Block> STONE_TILES_WALL = registerBlock("stone_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL)));
+
     public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES = registerBlock("slightly_dirty_stone_tiles", () -> new StoneTilesBlock(
             BlockBehaviour.Properties
                     .ofFullCopy(MtaBlocks.STONE_TILES.get()) ,1)
+    );
+
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_STAIRS = registerBlock("slightly_dirty_stone_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.STONE_TILES_STAIRS.get()))
+    );
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_SLAB = registerBlock("slightly_dirty_stone_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.STONE_TILES_SLAB.get()))
+    );
+
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_WALL = registerBlock("sightly_dirty_stone_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.STONE_TILES_WALL.get()))
     );
     public static final DeferredBlock<Block> DIRTY_STONE_TILES = registerBlock("dirty_stone_tiles", () -> new StoneTilesBlock(
             BlockBehaviour.Properties
                     .ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get()) ,2)
     );
+
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES_STAIRS = registerBlock("dirty_stone_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.DIRTY_STONE_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_STAIRS.get()))
+    );
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES_SLAB = registerBlock("dirty_stone_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get()))
+    );
+
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES_WALL = registerBlock("dirty_stone_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL.get()))
+    );
     public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES = registerBlock("very_dirty_stone_tiles", () -> new StoneTilesBlock(
             BlockBehaviour.Properties
                     .ofFullCopy(MtaBlocks.DIRTY_STONE_TILES.get()), 3)
+    );
+
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_STAIRS = registerBlock("very_dirty_stone_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.VERY_DIRTY_STONE_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get()))
+    );
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_SLAB = registerBlock("very_dirty_stone_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.DIRTY_STONE_TILES_SLAB.get()))
+    );
+
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_WALL = registerBlock("very_dirty_stone_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.DIRTY_STONE_TILES_WALL.get()))
     );
 
     public static final DeferredBlock<Block> SWEET_BERRY_LEAVES = registerBlock("sweet_berry_leaves", () -> new SweetBerryLeavesBlock(
@@ -311,6 +357,722 @@ public class MtaBlocks {
                     UniformInt.of(2, 5),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
             ));
+
+    //Terracotta
+
+    public static final DeferredBlock<Block> TERRACOTTA_SLAB = registerBlock("terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> TERRACOTTA_STAIRS = registerBlock("terracotta_stairs",
+            () -> new StairBlock(Blocks.TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> TERRACOTTA_WALL = registerBlock("terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_SLAB = registerBlock("white_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_STAIRS = registerBlock("white_terracotta_stairs",
+            () -> new StairBlock(Blocks.WHITE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_WALL = registerBlock("white_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_SLAB = registerBlock("light_gray_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_STAIRS = registerBlock("light_gray_terracotta_stairs",
+            () -> new StairBlock(Blocks.LIGHT_GRAY_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_WALL = registerBlock("light_gray_terracottas_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_SLAB = registerBlock("gray_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_STAIRS = registerBlock("gray_terracotta_stairs",
+            () -> new StairBlock(Blocks.GRAY_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GRAY)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_WALL = registerBlock("gray_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_SLAB = registerBlock("black_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_STAIRS = registerBlock("black_terracotta_stairs",
+            () -> new StairBlock(Blocks.BLACK_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_WALL = registerBlock("black_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_SLAB = registerBlock("brown_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_STAIRS = registerBlock("brown_terracotta_stairs",
+            () -> new StairBlock(Blocks.BROWN_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_WALL = registerBlock("brown_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> RED_TERRACOTTA_SLAB = registerBlock("red_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> RED_TERRACOTTA_STAIRS = registerBlock("red_terracotta_stairs",
+            () -> new StairBlock(Blocks.RED_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> RED_TERRACOTTA_WALL = registerBlock("red_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_SLAB = registerBlock("orange_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_STAIRS = registerBlock("orange_terracotta_stairs",
+            () -> new StairBlock(Blocks.ORANGE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_WALL = registerBlock("orange_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_SLAB = registerBlock("yellow_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_STAIRS = registerBlock("yellow_terracotta_stairs",
+            () -> new StairBlock(Blocks.YELLOW_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_WALL = registerBlock("yellow_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_SLAB = registerBlock("lime_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_STAIRS = registerBlock("lime_terracotta_stairs",
+            () -> new StairBlock(Blocks.LIME_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_WALL = registerBlock("lime_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_SLAB = registerBlock("green_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_STAIRS = registerBlock("green_terracotta_stairs",
+            () -> new StairBlock(Blocks.GREEN_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_WALL = registerBlock("green_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_SLAB = registerBlock("cyan_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_CYAN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_STAIRS = registerBlock("cyan_terracotta_stairs",
+            () -> new StairBlock(Blocks.CYAN_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_CYAN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_WALL = registerBlock("cyan_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_CYAN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_SLAB = registerBlock("light_blue_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_STAIRS = registerBlock("light_blue_terracotta_stairs",
+            () -> new StairBlock(Blocks.LIGHT_BLUE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_GREEN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_WALL = registerBlock("light_blue_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_SLAB = registerBlock("blue_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_STAIRS = registerBlock("blue_terracotta_stairs",
+            () -> new StairBlock(Blocks.BLUE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLUE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_WALL = registerBlock("blue_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_SLAB = registerBlock("purple_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PURPLE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_STAIRS = registerBlock("purple_terracotta_stairs",
+            () -> new StairBlock(Blocks.PURPLE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PURPLE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_WALL = registerBlock("purple_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PURPLE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_SLAB = registerBlock("magenta_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_STAIRS = registerBlock("magenta_terracottastairs",
+            () -> new StairBlock(Blocks.MAGENTA_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_WALL = registerBlock("magenta_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_MAGENTA)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_SLAB = registerBlock("pink_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_STAIRS = registerBlock("pink_terracotta_stairs",
+            () -> new StairBlock(Blocks.PINK_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.25F, 4.2F)));
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_WALL = registerBlock("pink_terracotta_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.25F, 4.2F)));
+
+
+    public static final DeferredBlock<Block> TERRACOTTA_TILES = registerBlock("terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA));
+    public static final DeferredBlock<Block> TERRACOTTA_TILES_SLAB = registerBlock("terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> TERRACOTTA_TILES_STAIRS = registerBlock("terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> TERRACOTTA_TILES_WALL = registerBlock("terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES = registerBlock("white_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_TERRACOTTA));
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_SLAB = registerBlock("white_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.WHITE_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_STAIRS = registerBlock("white_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.WHITE_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.WHITE_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_WALL = registerBlock("white_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.WHITE_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES = registerBlock("light_gray_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_TERRACOTTA));
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_SLAB = registerBlock("light_gray_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_STAIRS = registerBlock("light_gray_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_WALL = registerBlock("light_gray_terracottas_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES = registerBlock("gray_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_TERRACOTTA));
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_SLAB = registerBlock("gray_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.GRAY_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_STAIRS = registerBlock("gray_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.GRAY_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.GRAY_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_WALL = registerBlock("gray_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.GRAY_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES = registerBlock("black_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_TERRACOTTA));
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_SLAB = registerBlock("black_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BLACK_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_STAIRS = registerBlock("black_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.BLACK_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BLACK_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_WALL = registerBlock("black_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BLACK_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES = registerBlock("brown_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_TERRACOTTA));
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_SLAB = registerBlock("brown_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BROWN_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_STAIRS = registerBlock("brown_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.BROWN_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BROWN_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_WALL = registerBlock("brown_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BROWN_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES = registerBlock("red_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.RED_TERRACOTTA));
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_SLAB = registerBlock("red_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.RED_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_STAIRS = registerBlock("red_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.RED_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.RED_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_WALL = registerBlock("red_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.RED_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES = registerBlock("orange_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_TERRACOTTA));
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_SLAB = registerBlock("orange_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.ORANGE_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_STAIRS = registerBlock("orange_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.ORANGE_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_WALL = registerBlock("orange_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.ORANGE_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES = registerBlock("yellow_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_TERRACOTTA));
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_SLAB = registerBlock("yellow_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.YELLOW_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_STAIRS = registerBlock("yellow_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.YELLOW_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_WALL = registerBlock("yellow_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.YELLOW_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES = registerBlock("lime_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_TERRACOTTA));
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_SLAB = registerBlock("lime_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIME_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_STAIRS = registerBlock("lime_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.LIME_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIME_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_WALL = registerBlock("lime_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIME_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES = registerBlock("green_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_TERRACOTTA));
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_SLAB = registerBlock("green_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.GREEN_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_STAIRS = registerBlock("green_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.GREEN_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.GREEN_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_WALL = registerBlock("green_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.GREEN_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES = registerBlock("cyan_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_TERRACOTTA));
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_SLAB = registerBlock("cyan_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.CYAN_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_STAIRS = registerBlock("cyan_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.CYAN_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.CYAN_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_WALL = registerBlock("cyan_terracotta_tileswall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.CYAN_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES = registerBlock("light_blue_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_TERRACOTTA));
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_SLAB = registerBlock("light_blue_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_STAIRS = registerBlock("light_blue_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_WALL = registerBlock("light_blue_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES = registerBlock("blue_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_TERRACOTTA));
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_SLAB = registerBlock("blue_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BLUE_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_STAIRS = registerBlock("blue_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.BLUE_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BLUE_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_WALL = registerBlock("blue_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.BLUE_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES = registerBlock("purple_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_TERRACOTTA));
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_SLAB = registerBlock("purple_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.PURPLE_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_STAIRS = registerBlock("purple_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.PURPLE_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_WALL = registerBlock("purple_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.PURPLE_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES = registerBlock("magenta_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_TERRACOTTA));
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_SLAB = registerBlock("magenta_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_STAIRS = registerBlock("magenta_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.MAGENTA_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_WALL = registerBlock("magenta_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.MAGENTA_TERRACOTTA_WALL.get())));
+
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES = registerBlock("pink_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA));
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_SLAB = registerBlock("pink_terracotta_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.PINK_TERRACOTTA_SLAB.get())));
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_STAIRS = registerBlock("pink_terracotta_tiles_stairs",
+            () -> new StairBlock(MtaBlocks.PINK_TERRACOTTA_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.PINK_TERRACOTTA_STAIRS.get())));
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_WALL = registerBlock("pink_terracotta_tiles_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(MtaBlocks.PINK_TERRACOTTA_WALL.get())));
+
+
+    public static final DeferredBlock<Block> WHITE_CONCRETE_SLAB = registerBlock("white_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> WHITE_CONCRETE_STAIRS = registerBlock("white_concrete_stairs",
+            () -> new StairBlock(Blocks.WHITE_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> WHITE_CONCRETE_WALL = registerBlock("white_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> LIGHT_GRAY_CONCRETE_SLAB = registerBlock("light_gray_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> LIGHT_GRAY_CONCRETE_STAIRS = registerBlock("light_gray_concrete_stairs",
+            () -> new StairBlock(Blocks.LIGHT_GRAY_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+
+    public static final DeferredBlock<Block> LIGHT_GRAY_CONCRETE_WALL = registerBlock("light_gray_concretes_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> GRAY_CONCRETE_SLAB = registerBlock("gray_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> GRAY_CONCRETE_STAIRS = registerBlock("gray_concrete_stairs",
+            () -> new StairBlock(Blocks.GRAY_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> GRAY_CONCRETE_WALL = registerBlock("gray_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> BLACK_CONCRETE_SLAB = registerBlock("black_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> BLACK_CONCRETE_STAIRS = registerBlock("black_concrete_stairs",
+            () -> new StairBlock(Blocks.BLACK_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> BLACK_CONCRETE_WALL = registerBlock("black_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> BROWN_CONCRETE_SLAB = registerBlock("brown_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> BROWN_CONCRETE_STAIRS = registerBlock("brown_concrete_stairs",
+            () -> new StairBlock(Blocks.BROWN_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> BROWN_CONCRETE_WALL = registerBlock("brown_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> RED_CONCRETE_SLAB = registerBlock("red_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> RED_CONCRETE_STAIRS = registerBlock("red_concrete_stairs",
+            () -> new StairBlock(Blocks.RED_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.RED)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> RED_CONCRETE_WALL = registerBlock("red_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> ORANGE_CONCRETE_SLAB = registerBlock("orange_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> ORANGE_CONCRETE_STAIRS = registerBlock("orange_concrete_stairs",
+            () -> new StairBlock(Blocks.ORANGE_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.ORANGE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> ORANGE_CONCRETE_WALL = registerBlock("orange_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> YELLOW_CONCRETE_SLAB = registerBlock("yellow_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> YELLOW_CONCRETE_STAIRS = registerBlock("yellow_concrete_stairs",
+            () -> new StairBlock(Blocks.YELLOW_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.YELLOW)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> YELLOW_CONCRETE_WALL = registerBlock("yellow_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> LIME_CONCRETE_SLAB = registerBlock("lime_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIME)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> LIME_CONCRETE_STAIRS = registerBlock("lime_concrete_stairs",
+            () -> new StairBlock(Blocks.LIME_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.LIME)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> LIME_CONCRETE_WALL = registerBlock("lime_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIME)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> GREEN_CONCRETE_SLAB = registerBlock("green_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> GREEN_CONCRETE_STAIRS = registerBlock("green_concrete_stairs",
+            () -> new StairBlock(Blocks.GREEN_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> GREEN_CONCRETE_WALL = registerBlock("green_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> CYAN_CONCRETE_SLAB = registerBlock("cyan_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.CYAN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> CYAN_CONCRETE_STAIRS = registerBlock("cyan_concrete_stairs",
+            () -> new StairBlock(Blocks.CYAN_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.CYAN)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> CYAN_CONCRETE_WALL = registerBlock("cyan_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.CYAN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> LIGHT_BLUE_CONCRETE_SLAB = registerBlock("light_blue_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> LIGHT_BLUE_CONCRETE_STAIRS = registerBlock("light_blue_concrete_stairs",
+            () -> new StairBlock(Blocks.LIGHT_BLUE_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_BLUE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> LIGHT_BLUE_CONCRETE_WALL = registerBlock("light_blue_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> BLUE_CONCRETE_SLAB = registerBlock("blue_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> BLUE_CONCRETE_STAIRS = registerBlock("blue_concrete_stairs",
+            () -> new StairBlock(Blocks.BLUE_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.BLUE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> BLUE_CONCRETE_WALL = registerBlock("blue_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> PURPLE_CONCRETE_SLAB = registerBlock("purple_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.PURPLE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> PURPLE_CONCRETE_STAIRS = registerBlock("purple_concrete_stairs",
+            () -> new StairBlock(Blocks.PURPLE_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.PURPLE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> PURPLE_CONCRETE_WALL = registerBlock("purple_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.PURPLE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> MAGENTA_CONCRETE_SLAB = registerBlock("magenta_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.MAGENTA)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> MAGENTA_CONCRETE_STAIRS = registerBlock("magenta_concretestairs",
+            () -> new StairBlock(Blocks.MAGENTA_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.MAGENTA)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> MAGENTA_CONCRETE_WALL = registerBlock("magenta_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.MAGENTA)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+    public static final DeferredBlock<Block> PINK_CONCRETE_SLAB = registerBlock("pink_concrete_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+    public static final DeferredBlock<Block> PINK_CONCRETE_STAIRS = registerBlock("pink_concrete_stairs",
+            () -> new StairBlock(Blocks.PINK_CONCRETE.defaultBlockState(),
+                    BlockBehaviour.Properties.of().mapColor(DyeColor.PINK)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .requiresCorrectToolForDrops()
+                            .strength(1.8F)));
+    public static final DeferredBlock<Block> PINK_CONCRETE_WALL = registerBlock("pink_concrete_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().mapColor(DyeColor.PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.8F)));
+
+
 
 
     public static final DeferredBlock<Block> QUARTZ_LAMP = registerBlock("quartz_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN)));
