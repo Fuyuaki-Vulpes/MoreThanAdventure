@@ -37,6 +37,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SPARSE_SPRUCE_TREE = registerKey("sparse_taiga");
     public static final ResourceKey<PlacedFeature> SPARSE_MANGROVE = registerKey("sparse_mangrove");
     public static final ResourceKey<PlacedFeature> STONY_ROCK = registerKey("stony_rocks");
+    public static final ResourceKey<PlacedFeature> STONY_ROCK_CAVE = registerKey("stony_rocks_cave");
     public static final ResourceKey<PlacedFeature> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<PlacedFeature> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<PlacedFeature> GEYSER_NETHER = registerKey("geyser_nether");
@@ -54,6 +55,8 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CELESTITE_ORE = registerKey("celestite_ore");
     public static final ResourceKey<PlacedFeature> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<PlacedFeature> MOONSTONE_ORE = registerKey("moonstone_ore");
+    public static final ResourceKey<PlacedFeature> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
+
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -280,6 +283,17 @@ public class MtaPlacedFeatures {
                 MOONSTONE_ORE,
                 holder(context,MtaConfigFeatures.MOONSTONE_ORE),
                 MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+        );
+        register(
+                context,
+                SWEET_BERRY_LEAVES,
+                holder(context, MtaConfigFeatures.SWEET_BERRY_LEAVES),
+                RarityFilter.onAverageOnceEvery(3),
+                SurfaceWaterDepthFilter.forMaxDepth(0),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.SPRUCE_SAPLING.defaultBlockState(), BlockPos.ZERO)),
+                BiomeFilter.biome()
         );
     }
 

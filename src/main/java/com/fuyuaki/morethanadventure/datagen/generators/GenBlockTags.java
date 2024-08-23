@@ -39,7 +39,8 @@ public class GenBlockTags extends BlockTagsProvider {
         );
 
         this.tag(BlockTags.LEAVES).add(
-                MtaBlocks.PALM_LEAVES.get()
+                MtaBlocks.PALM_LEAVES.get(),
+                MtaBlocks.SWEET_BERRY_LEAVES.get()
         );
         this.tag(BlockTags.WOODEN_STAIRS).add(
                 MtaBlocks.PALM_STAIRS.get()
@@ -101,18 +102,32 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.CLEAR_QUARTZ_ORE.get(),
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
         );
-//        this.tag(BlockTags.MINEABLE_WITH_HOE).add();
+        this.tag(BlockTags.MINEABLE_WITH_HOE).add(
+                MtaBlocks.PALM_LEAVES.get(),
+                MtaBlocks.SWEET_BERRY_LEAVES.get()
+        );
 //        this.tag(BlockTags.MINEABLE_WITH_AXE).add();
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(
                         MtaBlocks.SAND_PATH.get(),
-                        MtaBlocks.GRASSY_DIRT.get()
+                        MtaBlocks.GRASSY_DIRT.get(),
+                        MtaBlocks.COARSE_DIRT_PATH.get(),
+                        MtaBlocks.COBBLED_DIRT.get()
                 );
 
         this.tag(BlockTags.DIRT)
                 .add(
-                        MtaBlocks.GRASSY_DIRT.get()
+                        MtaBlocks.GRASSY_DIRT.get(),
+                        MtaBlocks.COARSE_DIRT_PATH.get(),
+                        MtaBlocks.COBBLED_DIRT.get()
                 );
+        this.tag(MtaTags.Blocks.DIRTIES_STONE_TILES)
+                .add(
+                        Blocks.GRASS_BLOCK,
+                        MtaBlocks.DIRTY_STONE_TILES.get(),
+                        MtaBlocks.VERY_DIRTY_STONE_TILES.get()
+                )
+                .addTag(BlockTags.DIRT);
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 MtaBlocks.NETHER_IRON_ORE.get(),
@@ -126,6 +141,11 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(),
                 MtaBlocks.NETHERITIC_CRYSTAL.get(),
                 MtaBlocks.QUARTZ_LAMP.get(),
+                MtaBlocks.COBBLED_DIRT.get(),
+                MtaBlocks.STONE_TILES.get(),
+                MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get(),
+                MtaBlocks.DIRTY_STONE_TILES.get(),
+                MtaBlocks.VERY_DIRTY_STONE_TILES.get(),
 
                 MtaBlocks.AGATE_ORE.get(),
                 MtaBlocks.DEEPSLATE_AGATE_ORE.get(),

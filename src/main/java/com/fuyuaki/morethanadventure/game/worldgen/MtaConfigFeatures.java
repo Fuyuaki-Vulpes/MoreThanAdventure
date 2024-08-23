@@ -3,6 +3,7 @@ package com.fuyuaki.morethanadventure.game.worldgen;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaFeatures;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
+import com.fuyuaki.morethanadventure.world.block.SweetBerryLeavesBlock;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
@@ -17,14 +18,17 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -59,6 +63,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> CELESTITE_ORE = registerKey("celestite_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOONSTONE_ORE = registerKey("moonstone_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -275,6 +280,17 @@ public class MtaConfigFeatures {
                         1,
                         0.5F
                 )
+        );
+        register(context,
+                SWEET_BERRY_LEAVES,Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.SPRUCE_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(MtaBlocks.SWEET_BERRY_LEAVES.get().defaultBlockState().setValue(SweetBerryLeavesBlock.AGE, Integer.valueOf(2))),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
         );
 
 

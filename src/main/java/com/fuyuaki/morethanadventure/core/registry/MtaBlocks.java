@@ -11,7 +11,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -209,6 +208,41 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> GRASSY_DIRT = registerBlock("grassy_dirt",
             BlockBehaviour.Properties
                     .ofFullCopy(Blocks.DIRT)
+    );
+
+    public static final DeferredBlock<Block> COBBLED_DIRT = registerBlock("cobbled_dirt",
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.DIRT)
+                    .strength(1.0F,3.0F)
+    );
+
+    public static final DeferredBlock<Block> COARSE_DIRT_PATH = registerBlock("coarse_dirt_path",() -> new MTAPathBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.COARSE_DIRT)
+            , Blocks.DIRT)
+    );
+
+    public static final DeferredBlock<Block> STONE_TILES = registerBlock("stone_tiles", () -> new StoneTilesBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.STONE_BRICKS) ,0)
+    );
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES = registerBlock("slightly_dirty_stone_tiles", () -> new StoneTilesBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(MtaBlocks.STONE_TILES.get()) ,1)
+    );
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES = registerBlock("dirty_stone_tiles", () -> new StoneTilesBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get()) ,2)
+    );
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES = registerBlock("very_dirty_stone_tiles", () -> new StoneTilesBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(MtaBlocks.DIRTY_STONE_TILES.get()), 3)
+    );
+
+    public static final DeferredBlock<Block> SWEET_BERRY_LEAVES = registerBlock("sweet_berry_leaves", () -> new SweetBerryLeavesBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.SPRUCE_LEAVES)
+                    .sound(SoundType.SWEET_BERRY_BUSH))
     );
 
 

@@ -86,12 +86,14 @@ public class MTAClientEvents
     @SubscribeEvent
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), MtaBlocks.PALM_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), MtaBlocks.SWEET_BERRY_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT.get());
     }
 
     @SubscribeEvent
     public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
         event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.PALM_LEAVES);
+        event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.SWEET_BERRY_LEAVES);
         event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT);
     }
 

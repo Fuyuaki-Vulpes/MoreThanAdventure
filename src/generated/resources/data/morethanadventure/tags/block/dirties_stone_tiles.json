@@ -1,0 +1,8 @@
+{
+  "values": [
+    "minecraft:grass_block",
+    "morethanadventure:dirty_stone_tiles",
+    "morethanadventure:very_dirty_stone_tiles",
+    "#minecraft:dirt"
+  ]
+}

@@ -39,6 +39,13 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MOSSY_ANDESITE.get(),"Mossy Andesite");
         add(MtaBlocks.SAND_PATH.get(),"Sand Path");
         add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
+        add(MtaBlocks.COBBLED_DIRT.get(),"Cobbled Dirt");
+        add(MtaBlocks.STONE_TILES.get(),"Stone Tiles");
+        add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get(),"Slightly Dirty Stone Tiles");
+        add(MtaBlocks.DIRTY_STONE_TILES.get(),"Dirty Stone Tiles");
+        add(MtaBlocks.VERY_DIRTY_STONE_TILES.get(),"Very Dirty Stone Tiles");
+        add(MtaBlocks.SWEET_BERRY_LEAVES.get(),"Sweet Berry Leaves");
+        add(MtaBlocks.COARSE_DIRT_PATH.get(),"Coarse Dirt Path");
         add(MtaBlocks.NETHER_IRON_ORE.get(),"Nether Iron Ore");
         add(MtaBlocks.NETHER_DIAMOND_ORE.get(),"Nether Diamond Ore");
         add(MtaBlocks.END_LAPIS_ORE.get(),"End Lapis Ore");

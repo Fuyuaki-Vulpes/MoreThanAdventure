@@ -81,6 +81,8 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
 
         smeltingResultFromBase(output, Items.LEATHER,Items.ROTTEN_FLESH);
 
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STONE_TILES.get(),Blocks.STONE,2);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.BIG_BOWL)
                 .requires(Items.BOWL, 2)
                 .unlockedBy("has_bowl",has(Items.BOWL))

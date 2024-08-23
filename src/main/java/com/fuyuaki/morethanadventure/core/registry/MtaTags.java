@@ -19,6 +19,9 @@ public class MtaTags {
         public static final TagKey<Block> LAND_SWIMMER_SPAWNABLE_ON = tag("land_swimmer_spawnable_on");
         public static final TagKey<Block> SNOW_ANIMAL_SPAWNABLE_ON = tag("mountain_animal_spawnable_on");
 
+        public static final TagKey<Block> DIRTIES_STONE_TILES = tag("dirties_stone_tiles");
+
+
 
 
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");

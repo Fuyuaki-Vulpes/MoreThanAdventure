@@ -80,6 +80,13 @@ public class MtaTabs {
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
                 output.accept(MtaBlocks.SAND_PATH.get());
                 output.accept(MtaBlocks.GRASSY_DIRT.get());
+                output.accept(MtaBlocks.COBBLED_DIRT.get());
+                output.accept(MtaBlocks.COARSE_DIRT_PATH.get());
+                output.accept(MtaBlocks.STONE_TILES.get());
+                output.accept(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get());
+                output.accept(MtaBlocks.DIRTY_STONE_TILES.get());
+                output.accept(MtaBlocks.VERY_DIRTY_STONE_TILES.get());
+                output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
 
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);
