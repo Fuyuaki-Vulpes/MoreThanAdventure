@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "X": {
-      "item": "minecraft:cyan_terracotta"
+      "item": "morethanadventure:cyan_terracotta_tiles"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "XXX"
   ],
   "result": {
-    "count": 1,
-    "id": "morethanadventure:cyan_terracotta_stairs"
+    "count": 4,
+    "id": "morethanadventure:cyan_terracotta_tiles_stairs"
   }
 }

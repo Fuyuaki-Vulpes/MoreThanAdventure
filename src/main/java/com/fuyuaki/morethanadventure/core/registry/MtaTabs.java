@@ -4,9 +4,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.Collection;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -16,40 +19,30 @@ public class MtaTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = TABS.register("mtatab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.morethanadventure")) //The language key for the title of your CreativeModeTab
-            .withTabsBefore(CreativeModeTabs.COMBAT)
+            .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .icon(MtaItems.NETHERITE_FRACTURE.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
-                output.acceptAll(MtaTabs.BLOCK_ITEM.get().getDisplayItems());
+                Collection<ItemStack> wgItems = MtaTabs.WORLD_GEN.get().getDisplayItems();
+                wgItems.removeIf(stack -> MtaTabs.BUILDING.get().getDisplayItems().contains(stack));
+                Collection<ItemStack> building = MtaTabs.BUILDING.get().getDisplayItems();
+                building.removeIf(stack -> MtaTabs.MISC.get().getDisplayItems().contains(stack));
+
+                output.acceptAll(wgItems);
+                output.acceptAll(building);
                 output.acceptAll(MtaTabs.EQUIPMENTS.get().getDisplayItems());
                 output.acceptAll(MtaTabs.MISC.get().getDisplayItems());
             }).build());
 
-
-
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCK_ITEM = TABS.register("mtaitemblock", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.mtaitemblock"))
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WORLD_GEN = TABS.register("mtaworldgen", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtagenblocks"))
             .withTabsBefore(MtaTabs.MAIN.getId())
-            .icon(MtaItems.GARNET.get()::getDefaultInstance)
+            .icon(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get().asItem()::getDefaultInstance)
             .displayItems((parameters, output) -> {
-
                 output.accept(MtaBlocks.PALM_LOG.get());
-                output.accept(MtaBlocks.STRIPPED_PALM_LOG.get());
-                output.accept(MtaBlocks.PALM_WOOD.get());
-                output.accept(MtaBlocks.STRIPPED_PALM_WOOD.get());
-                output.accept(MtaBlocks.PALM_PLANKS.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
-                output.accept(MtaBlocks.PALM_STAIRS.get());
-                output.accept(MtaBlocks.PALM_SLAB.get());
-                output.accept(MtaBlocks.PALM_PRESSURE_PLATE.get());
-                output.accept(MtaBlocks.PALM_BUTTON.get());
-                output.accept(MtaBlocks.PALM_FENCE.get());
-                output.accept(MtaBlocks.PALM_FENCE_GATE.get());
-                output.accept(MtaBlocks.PALM_DOOR.get());
-                output.accept(MtaBlocks.PALM_TRAPDOOR.get());
-
-
                 output.accept(MtaBlocks.PALM_LEAVES.get());
                 output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
+
 
                 output.accept(MtaBlocks.STONE_GEYSER.get());
                 output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());
@@ -81,10 +74,31 @@ public class MtaTabs {
                 output.accept(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get());
 
 
-                output.accept(MtaBlocks.SAND_PATH.get());
                 output.accept(MtaBlocks.GRASSY_DIRT.get());
-                output.accept(MtaBlocks.COBBLED_DIRT.get());
-                output.accept(MtaBlocks.COARSE_DIRT_PATH.get());
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BUILDING = TABS.register("mtabuilding", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtabuilding"))
+            .withTabsBefore(MtaTabs.WORLD_GEN.getId())
+            .icon(MtaItems.NETHERITE_FRACTURE.get()::getDefaultInstance)
+            .displayItems((parameters, output) -> {
+
+                output.accept(MtaBlocks.PALM_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_PALM_LOG.get());
+                output.accept(MtaBlocks.PALM_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_PALM_WOOD.get());
+                output.accept(MtaBlocks.PALM_PLANKS.get());
+                output.accept(MtaBlocks.PALM_SAPLING.get());
+                output.accept(MtaBlocks.PALM_STAIRS.get());
+                output.accept(MtaBlocks.PALM_SLAB.get());
+                output.accept(MtaBlocks.PALM_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.PALM_BUTTON.get());
+                output.accept(MtaBlocks.PALM_FENCE.get());
+                output.accept(MtaBlocks.PALM_FENCE_GATE.get());
+                output.accept(MtaBlocks.PALM_DOOR.get());
+                output.accept(MtaBlocks.PALM_TRAPDOOR.get());
+
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());
                 output.accept(MtaBlocks.STONE_TILES_STAIRS.get());
@@ -303,17 +317,18 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PINK_CONCRETE_STAIRS.get());
                 output.accept(MtaBlocks.PINK_CONCRETE_WALL.get());
 
-
-
-
+                output.accept(MtaBlocks.COARSE_DIRT_PATH.get());
+                output.accept(MtaBlocks.COBBLED_DIRT.get());
+                output.accept(MtaBlocks.SAND_PATH.get());
 
             }).build());
 
 
+
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EQUIPMENTS = TABS.register("mtaequip", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtaequip"))
-            .withTabsBefore(MtaTabs.BLOCK_ITEM.getId())
-            .icon(MtaItems.GREAT_SENTINELS_CHESTPLATE.get()::getDefaultInstance)
+            .withTabsBefore(MtaTabs.BUILDING.getId())
+            .icon(MtaItems.NETHERSTEEL_PICKAXE.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
                 output.accept(MtaItems.COPPER_SWORD);
@@ -394,7 +409,7 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MISC = TABS.register("mtamisc", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtamisc"))
             .withTabsBefore(MtaTabs.EQUIPMENTS.getId())
-            .icon(MtaItems.COCONUT_MILK.get()::getDefaultInstance)
+            .icon(MtaBlocks.SPRINKLER.get().asItem()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
 
@@ -470,6 +485,7 @@ public class MtaTabs {
                 output.accept(MtaItems.RACCOON_SPAWN_EGG);
                 output.accept(MtaItems.SHRIMP_SPAWN_EGG);
                 output.accept(MtaItems.TOUCAN_SPAWN_EGG);
+
                 //BOSS SPAWNS
                 if (parameters.hasPermissions()){
                 output.accept(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG);

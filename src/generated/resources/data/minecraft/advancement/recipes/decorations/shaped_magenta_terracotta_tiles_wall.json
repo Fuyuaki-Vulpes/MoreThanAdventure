@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:magenta_terracotta"
+            "items": "morethanadventure:magenta_terracotta_tiles"
           }
         ]
       },

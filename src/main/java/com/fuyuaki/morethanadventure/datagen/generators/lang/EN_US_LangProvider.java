@@ -455,7 +455,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         //OTHER
 
         add("itemGroup.morethanadventure","More Than Adventure ALL");
-        add("itemGroup.mtaitemblock","MTA: Blocks & Items");
+        add("itemGroup.mtagenblocks","MTA: World Gen");
+        add("itemGroup.mtabuilding","MTA: Building Blocks");
         add("itemGroup.mtaequip","MTA: Equipments");
         add("itemGroup.mtamisc","MTA: Foods, Spawns & Miscellaneous");
 
