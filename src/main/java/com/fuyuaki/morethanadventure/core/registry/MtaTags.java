@@ -49,6 +49,10 @@ public class MtaTags {
     public static class Items{
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
 
+        public static final TagKey<Item> CORE_STONES = tag("core_stones");
+        public static final TagKey<Item> COSMETIC_CORE_STONES = tag("cosmetic_core_stones");
+        public static final TagKey<Item> EFFECTIVE_CORE_STONES = tag("effective_core_stones");
+
         private static TagKey<Item> tag(String name) {
             return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
         }

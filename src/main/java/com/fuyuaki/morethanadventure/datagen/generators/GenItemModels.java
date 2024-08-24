@@ -174,6 +174,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
         simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
 
+
         //SPAWN EGGS
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
         simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
@@ -211,6 +212,10 @@ public class GenItemModels extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    }
+    private ItemModelBuilder coreStoneItem(DeferredItem<?> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/template_core_stone"));
     }
 
     private ItemModelBuilder simpleBlockItem(DeferredBlock<?> item) {

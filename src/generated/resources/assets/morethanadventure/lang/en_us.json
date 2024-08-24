@@ -377,5 +377,6 @@
   "itemGroup.mtabuilding": "MTA: Building Blocks",
   "itemGroup.mtaequip": "MTA: Equipments",
   "itemGroup.mtagenblocks": "MTA: World Gen",
-  "itemGroup.mtamisc": "MTA: Foods, Spawns & Miscellaneous"
+  "itemGroup.mtamisc": "MTA: Foods, Spawns & Miscellaneous",
+  "mtadesc.corestone.hover": "Press SHIFT to See Details"
 }
