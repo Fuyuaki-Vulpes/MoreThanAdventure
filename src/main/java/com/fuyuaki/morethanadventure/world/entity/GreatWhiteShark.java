@@ -53,7 +53,7 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
 
     public GreatWhiteShark(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 1.2F, 0.1F, true);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 50, 1.7F, 0.1F, false);
         this.lookControl = new SmoothSwimmingLookControl(this, 10);
     }
 
@@ -94,7 +94,7 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
+                new AnimationController<>(this, 60, (state) -> {
                     if (state.isMoving()) {
                         return state.setAndContinue(SWIM);
                     }
