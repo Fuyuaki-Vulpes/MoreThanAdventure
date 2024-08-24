@@ -42,19 +42,19 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         cuttingStoneSetRecipe(output, MtaBlocks.DIRTY_STONE_TILES.get(), MtaBlocks.DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.DIRTY_STONE_TILES_WALL.get());
         basicStoneSetRecipe(output, MtaBlocks.VERY_DIRTY_STONE_TILES.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get(), "has_very_dirty_stone_tiles", "very_dirty_stone_tiles");
         cuttingStoneSetRecipe(output, MtaBlocks.VERY_DIRTY_STONE_TILES.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get());
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES,3)
                 .requires(Blocks.DIRT)
-                .requires(MtaBlocks.STONE_TILES)
+                .requires(MtaBlocks.STONE_TILES,3)
                 .unlockedBy("has_stone_tiles",has(MtaBlocks.STONE_TILES))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.DIRTY_STONE_TILES)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.DIRTY_STONE_TILES,3)
                 .requires(Blocks.DIRT)
-                .requires(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES)
+                .requires(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES,3)
                 .unlockedBy("has_slight_dirty_stone_tiles",has(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.VERY_DIRTY_STONE_TILES)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.VERY_DIRTY_STONE_TILES,3)
                 .requires(Blocks.DIRT)
-                .requires(MtaBlocks.DIRTY_STONE_TILES)
+                .requires(MtaBlocks.DIRTY_STONE_TILES,3)
                 .unlockedBy("has_dirty_stone_tiles",has(MtaBlocks.DIRTY_STONE_TILES))
                 .save(output);
 

@@ -7,10 +7,16 @@
     },
     {
       "item": "morethanadventure:dirty_stone_tiles"
+    },
+    {
+      "item": "morethanadventure:dirty_stone_tiles"
+    },
+    {
+      "item": "morethanadventure:dirty_stone_tiles"
     }
   ],
   "result": {
-    "count": 1,
+    "count": 3,
     "id": "morethanadventure:very_dirty_stone_tiles"
   }
 }
