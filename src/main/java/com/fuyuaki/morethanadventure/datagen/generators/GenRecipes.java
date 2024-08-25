@@ -6,14 +6,21 @@ import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
+import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -259,6 +266,13 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 .save(output);
 
+        upgradeTemplate(output, MtaItems.ARMAMENT_UPGRADE.get(), Blocks.RED_TERRACOTTA, "has_armament_upgrade");
+        upgradeTemplate(output, MtaItems.ROYAL_UPGRADE.get(), Blocks.PINK_TERRACOTTA, "has_royal_upgrade");
+        upgradeTemplate(output, MtaItems.AQUATIC_UPGRADE.get(), Blocks.CYAN_TERRACOTTA, "has_aquatic_upgrade");
+        upgradeTemplate(output, MtaItems.ANGELIC_UPGRADE.get(), Blocks.WHITE_TERRACOTTA, "has_angelic_upgrade");
+        upgradeTemplate(output, MtaItems.BERSERK_UPGRADE.get(), Blocks.ORANGE_TERRACOTTA, "has_berserk_upgrade");
+        upgradeTemplate(output, MtaItems.FEATHERWEIGHT_UPGRADE.get(), Blocks.BLUE_TERRACOTTA, "has_featherweight_upgrade");
+
         agateSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_HELMET.get());
         agateSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_CHESTPLATE.get());
         agateSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_LEGGINGS.get());
@@ -357,6 +371,12 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.SHRIMP), RecipeCategory.FOOD, MtaItems.COOKED_SHRIMP, 0.35F, 200)
                 .unlockedBy("has_shrimp", has(MtaItems.SHRIMP))
                 .save(output);
+
+        stripLogForBark(output, MtaBlocks.PALM_LOG, MtaBlocks.STRIPPED_PALM_LOG);
+        stripLogForBark(output, MtaBlocks.PALM_WOOD, MtaBlocks.STRIPPED_PALM_WOOD);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(new ItemLike[]{MtaItems.COCONUT}), Ingredient.of(CommonTags.TOOLS_KNIFE), MtaItems.COCONUT_SLICE, 4).build(output);
+
     }
 
 
@@ -426,5 +446,20 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, tStair, ing);
         stonecutterResultFromBase(output, RecipeCategory.DECORATIONS, wall, ing);
         stonecutterResultFromBase(output, RecipeCategory.DECORATIONS, tWall, ing);
+    }
+
+    public static void upgradeTemplate(RecipeOutput output, Item template, Block frame, String unlock) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, template, 2)
+                .define('X', template)
+                .define('O', frame)
+                .pattern("OOO")
+                .pattern("OXO")
+                .pattern("OOO")
+                .unlockedBy(unlock, has(template))
+                .save(output);
+    }
+
+    private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(new ItemLike[]{log}), (new ItemAbilityIngredient(ItemAbilities.AXE_STRIP)).toVanilla(), strippedLog).addResult((ItemLike) ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).build(output);
     }
 }
