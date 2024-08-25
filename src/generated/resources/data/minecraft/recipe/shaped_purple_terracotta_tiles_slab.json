@@ -3,14 +3,14 @@
   "category": "building",
   "key": {
     "X": {
-      "item": "minecraft:purple_terracotta"
+      "item": "morethanadventure:purple_terracotta_tiles"
     }
   },
   "pattern": [
     "XXX"
   ],
   "result": {
-    "count": 1,
-    "id": "morethanadventure:purple_terracotta_slab"
+    "count": 6,
+    "id": "morethanadventure:purple_terracotta_tiles_slab"
   }
 }

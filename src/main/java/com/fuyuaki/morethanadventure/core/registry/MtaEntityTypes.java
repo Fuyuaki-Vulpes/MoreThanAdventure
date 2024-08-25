@@ -58,17 +58,17 @@ public class MtaEntityTypes {
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"ferret").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<HorseshoeCrab>> HORSESHOE_CRAB = ENTITY.register("horseshoe_crab",
-            () -> EntityType.Builder.<HorseshoeCrab>of(HorseshoeCrab::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<HorseshoeCrab>of(HorseshoeCrab::new, MobCategory.WATER_CREATURE)
                     .sized(0.7f,0.25F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"horseshoe_crab").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Jellyfish>> JELLYFISH = ENTITY.register("jellyfish",
-            () -> EntityType.Builder.<Jellyfish>of(Jellyfish::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<Jellyfish>of(Jellyfish::new, MobCategory.WATER_CREATURE)
                     .sized(0.8f,0.5F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"jellyfish").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Octopus>> OCTOPUS = ENTITY.register("octopus",
-            () -> EntityType.Builder.<Octopus>of(Octopus::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<Octopus>of(Octopus::new, MobCategory.WATER_CREATURE)
                     .sized(1.5f,0.6F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"octopus").toString()));
 
@@ -78,17 +78,17 @@ public class MtaEntityTypes {
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"owl").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Penguin>> PENGUIN = ENTITY.register("penguin",
-            () -> EntityType.Builder.<Penguin>of(Penguin::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<Penguin>of(Penguin::new, MobCategory.WATER_CREATURE)
                     .sized(0.55f,0.95F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"penguin").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<GreatWhiteShark>> GREAT_WHITE_SHARK = ENTITY.register("great_white_shark",
-            () -> EntityType.Builder.<GreatWhiteShark>of(GreatWhiteShark::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<GreatWhiteShark>of(GreatWhiteShark::new, MobCategory.WATER_CREATURE)
                     .sized(3.5f,1.3F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"great_white_shark").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Shrimp>> SHRIMP = ENTITY.register("shirmp",
-            () -> EntityType.Builder.<Shrimp>of(Shrimp::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<Shrimp>of(Shrimp::new, MobCategory.WATER_CREATURE)
                     .sized(0.4f,0.35F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"shrimp").toString()));
 

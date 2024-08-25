@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "morethanadventure:item/core_stone_0",
+    "layer1": "morethanadventure:item/core_stone_1",
+    "layer2": "morethanadventure:item/core_stone_2",
+    "layer3": "morethanadventure:item/core_stone_3"
+  }
+}

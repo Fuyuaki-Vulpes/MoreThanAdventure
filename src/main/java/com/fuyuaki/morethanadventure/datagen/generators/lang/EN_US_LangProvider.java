@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
@@ -455,9 +456,16 @@ public class EN_US_LangProvider extends LanguageProvider {
         //OTHER
 
         add("itemGroup.morethanadventure","More Than Adventure ALL");
-        add("itemGroup.mtaitemblock","MTA: Blocks & Items");
+        add("itemGroup.mtagenblocks","MTA: World Gen");
+        add("itemGroup.mtabuilding","MTA: Building Blocks");
         add("itemGroup.mtaequip","MTA: Equipments");
         add("itemGroup.mtamisc","MTA: Foods, Spawns & Miscellaneous");
 
+        add("mtadesc.corestone.hover","Press SHIFT to See Details");
+
+    }
+
+    protected void makeCoreStoneName(Item key, String translation){
+        add(key,"Core Stone of " + translation);
     }
 }

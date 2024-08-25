@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "X": {
-      "item": "minecraft:blue_terracotta"
+      "item": "morethanadventure:blue_terracotta_tiles"
     }
   },
   "pattern": [
@@ -11,7 +11,7 @@
     "XXX"
   ],
   "result": {
-    "count": 1,
-    "id": "morethanadventure:blue_terracotta_wall"
+    "count": 6,
+    "id": "morethanadventure:blue_terracotta_tiles_wall"
   }
 }

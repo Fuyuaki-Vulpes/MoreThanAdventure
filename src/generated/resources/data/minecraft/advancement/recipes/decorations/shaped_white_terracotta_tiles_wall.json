@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:white_terracotta"
+            "items": "morethanadventure:white_terracotta_tiles"
           }
         ]
       },

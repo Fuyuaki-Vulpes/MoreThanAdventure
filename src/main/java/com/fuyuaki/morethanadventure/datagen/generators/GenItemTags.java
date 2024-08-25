@@ -26,6 +26,12 @@ public class GenItemTags extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.copy(MtaTags.Blocks.PALM_LOGS, MtaTags.Items.PALM_LOGS);
+
+
+        //this.tag(MtaTags.Items.COSMETIC_CORE_STONES).add();
+        //this.tag(MtaTags.Items.EFFECTIVE_CORE_STONES).add();
+
+
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
 
@@ -210,5 +216,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
 
                 );
+        this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
+
     }
 }

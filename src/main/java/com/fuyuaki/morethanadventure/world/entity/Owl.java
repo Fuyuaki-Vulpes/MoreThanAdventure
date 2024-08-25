@@ -81,7 +81,7 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 4.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
-                .add(Attributes.FLYING_SPEED,0.4)
+                .add(Attributes.FLYING_SPEED,0.9)
                 .add(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 

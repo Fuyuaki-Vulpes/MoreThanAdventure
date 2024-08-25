@@ -374,7 +374,9 @@
   "item.morethanadventure.wrathful_berserkers_leggings": "Wrathful Berserker's Leggings",
   "item.morethanadventure.yuki_onna_spawn_egg": "Yuki Onna Spawn Egg",
   "itemGroup.morethanadventure": "More Than Adventure ALL",
+  "itemGroup.mtabuilding": "MTA: Building Blocks",
   "itemGroup.mtaequip": "MTA: Equipments",
-  "itemGroup.mtaitemblock": "MTA: Blocks & Items",
-  "itemGroup.mtamisc": "MTA: Foods, Spawns & Miscellaneous"
+  "itemGroup.mtagenblocks": "MTA: World Gen",
+  "itemGroup.mtamisc": "MTA: Foods, Spawns & Miscellaneous",
+  "mtadesc.corestone.hover": "Press SHIFT to See Details"
 }
