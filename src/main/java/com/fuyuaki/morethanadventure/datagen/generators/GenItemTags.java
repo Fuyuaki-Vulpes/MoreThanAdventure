@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -202,6 +203,16 @@ public class GenItemTags extends ItemTagsProvider {
 
         );*/
 
+        this.tag(Tags.Items.FOODS_VEGETABLE)
+                .add(
+                        MtaItems.ONION.get()
+                );
+
+        this.tag(CommonTags.FOODS_TOMATO)
+                .add(
+                        MtaItems.TOMATO.get()
+                );
+
         this.tag(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(
                         MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
@@ -216,7 +227,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
 
                 );
-        this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
+        //this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
 
     }
 }

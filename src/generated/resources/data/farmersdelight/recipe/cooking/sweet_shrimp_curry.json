@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "morethanadventure:big_bowl"
+  },
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/vegetable"
+    },
+    {
+      "item": "morethanadventure:spice_mix"
+    },
+    {
+      "item": "morethanadventure:coconut_milk"
+    },
+    {
+      "tag": "c:foods/tomato"
+    },
+    {
+      "item": "morethanadventure:shrimp"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:sweet_shrimp_curry"
+  }
+}

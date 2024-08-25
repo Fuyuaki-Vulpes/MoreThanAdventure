@@ -17,9 +17,11 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -372,10 +374,24 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_shrimp", has(MtaItems.SHRIMP))
                 .save(output);
 
+        //Farmer's Delight
+
         stripLogForBark(output, MtaBlocks.PALM_LOG, MtaBlocks.STRIPPED_PALM_LOG);
         stripLogForBark(output, MtaBlocks.PALM_WOOD, MtaBlocks.STRIPPED_PALM_WOOD);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(new ItemLike[]{MtaItems.COCONUT}), Ingredient.of(CommonTags.TOOLS_KNIFE), MtaItems.COCONUT_SLICE, 4).build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(MtaItems.COCONUT), Ingredient.of(CommonTags.TOOLS_KNIFE), MtaItems.COCONUT_SLICE, 3).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SWEET_BEEF_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(CommonTags.FOODS_TOMATO).addIngredient(Items.BEEF).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SWEET_PORK_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(CommonTags.FOODS_TOMATO).addIngredient(Items.PORKCHOP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SWEET_CHICKEN_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(CommonTags.FOODS_TOMATO).addIngredient(Items.CHICKEN).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SWEET_SHRIMP_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(CommonTags.FOODS_TOMATO).addIngredient(MtaItems.SHRIMP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.MILD_BEEF_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.BELL_PEPPER).addIngredient(Items.BEEF).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.MILD_PORK_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.BELL_PEPPER).addIngredient(Items.PORKCHOP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.MILD_CHICKEN_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.BELL_PEPPER).addIngredient(Items.CHICKEN).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.MILD_SHRIMP_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.BELL_PEPPER).addIngredient(MtaItems.SHRIMP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_BEEF_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(Items.BEEF).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_PORK_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(Items.PORKCHOP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_CHICKEN_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(Items.CHICKEN).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
+        CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_SHRIMP_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(MtaItems.SHRIMP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
 
     }
 
