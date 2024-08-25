@@ -1,8 +1,10 @@
 package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Items;
 
 public class MtaFoods {
     public static final FoodProperties ONION = new FoodProperties.Builder()
@@ -45,62 +47,62 @@ public class MtaFoods {
     public static final FoodProperties SWEET_BEEF_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
     public static final FoodProperties SWEET_PORK_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
     public static final FoodProperties SWEET_CHICKEN_CURRY = new FoodProperties.Builder()
             .nutrition(8)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
     public static final FoodProperties SWEET_SHRIMP_CURRY = new FoodProperties.Builder()
             .nutrition(7)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
     public static final FoodProperties MILD_BEEF_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
      public static final FoodProperties MILD_PORK_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
              .build();
      public static final FoodProperties MILD_CHICKEN_CURRY = new FoodProperties.Builder()
             .nutrition(8)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
              .build();
      public static final FoodProperties MILD_SHRIMP_CURRY = new FoodProperties.Builder()
             .nutrition(7)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
      public static final FoodProperties SPICY_BEEF_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
      public static final FoodProperties SPICY_PORK_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
      public static final FoodProperties SPICY_CHICKEN_CURRY = new FoodProperties.Builder()
             .nutrition(8)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
      public static final FoodProperties SPICY_SHRIMP_CURRY = new FoodProperties.Builder()
             .nutrition(7)
             .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
+             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F).usingConvertsTo(MtaItems.BIG_BOWL.get())
             .build();
 
 }

@@ -1,0 +1,16 @@
+{
+  "name": "morethanadventure:ocean_temple",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "morethanadventure:ocean_temple",
+        "override_liquid_settings": "apply_waterlogging",
+        "processors": "morethanadventure:ocean_temple_loot"
+      }
+    }
+  ]
+}

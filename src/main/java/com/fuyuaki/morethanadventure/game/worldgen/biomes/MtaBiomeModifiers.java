@@ -46,6 +46,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_MOONSTONE_ORE = registerKey("moonstone_ore");
     public static final ResourceKey<BiomeModifier> ADD_SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
     public static final ResourceKey<BiomeModifier> ADD_GRASSY_DIRT_PATCHES = registerKey("grassy_dirt_patches");
+    public static final ResourceKey<BiomeModifier> ADD_SCATTERED_LEAVES = registerKey("scattered_leaves");
 
 
     public static final ResourceKey<BiomeModifier> SPAWNS_BEARDED_DRAGON = registerKey("add_spawns_bearded_dragon");
@@ -191,6 +192,12 @@ public class MtaBiomeModifiers {
         context.register(ADD_GRASSY_DIRT_PATCHES,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.GRASSY_DIRT_SHOULD_GENERATE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.GRASSY_DIRT_PATCH)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+        context.register(ADD_SCATTERED_LEAVES,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_FOREST),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.SCATTERED_LEAVES)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 

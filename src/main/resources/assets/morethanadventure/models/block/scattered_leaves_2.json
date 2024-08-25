@@ -1,0 +1,7 @@
+{
+  "parent": "morethanadventure:block/flowerbed_2",
+  "textures": {
+    "flowerbed": "morethanadventure:block/scattered_leaves",
+    "stem": "morethanadventure:block/scattered_leaves_stem"
+  }
+}

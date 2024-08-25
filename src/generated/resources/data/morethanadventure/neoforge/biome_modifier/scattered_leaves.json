@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_forest",
+  "features": "morethanadventure:scattered_leaves",
+  "step": "vegetal_decoration"
+}

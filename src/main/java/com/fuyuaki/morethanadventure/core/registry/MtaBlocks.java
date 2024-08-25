@@ -1084,6 +1084,12 @@ public class MtaBlocks {
 
 
 
+    public static final DeferredBlock<Block> SCATTERED_LEAVES =  registerBlock("scattered_leaves", () -> new PinkPetalsBlock(
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)
+            )
+    );
+
+
 
 
 

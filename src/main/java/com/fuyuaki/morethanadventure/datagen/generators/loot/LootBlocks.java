@@ -42,6 +42,7 @@ public class LootBlocks extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.add(MtaBlocks.SCATTERED_LEAVES.get(), this.createPetalsDrops(MtaBlocks.SCATTERED_LEAVES.get()));
         dropSelf(MtaBlocks.PALM_LOG.get());
         dropSelf(MtaBlocks.PALM_WOOD.get());
         dropSelf(MtaBlocks.STRIPPED_PALM_LOG.get());
