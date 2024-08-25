@@ -357,11 +357,11 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.STONES)
                 .unlockedBy("has_coconut",has(MtaItems.COCONUT))
-                .save(output, "morethanadventure:coconut_milk_stones");
+                .save(output, "_stones");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
                 .requires(MtaItems.BELL_PEPPER)
-                .requires(MtaItems.ONION)
+                .requires(CommonTags.FOODS_ONION)
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_glass_bottle",has(Items.GLASS_BOTTLE))
                 .save(output);

@@ -9,7 +9,7 @@
       "item": "morethanadventure:bell_pepper"
     },
     {
-      "item": "morethanadventure:onion"
+      "tag": "c:foods/onion"
     },
     {
       "item": "minecraft:glass_bottle"

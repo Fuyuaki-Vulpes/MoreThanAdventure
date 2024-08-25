@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "morethanadventure:coconut_milk_stones"
+        "recipe": "minecraft:_stones"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "morethanadventure:coconut_milk_stones"
+      "minecraft:_stones"
     ]
   }
 }

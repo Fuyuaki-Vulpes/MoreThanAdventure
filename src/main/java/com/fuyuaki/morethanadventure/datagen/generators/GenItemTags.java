@@ -208,6 +208,11 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.ONION.get()
                 );
 
+        this.tag(CommonTags.FOODS_ONION)
+                .add(
+                        MtaItems.ONION.get()
+                );
+
         this.tag(CommonTags.FOODS_TOMATO)
                 .add(
                         MtaItems.TOMATO.get()
