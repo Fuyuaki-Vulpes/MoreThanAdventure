@@ -59,6 +59,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MOONSTONE_ORE = registerKey("moonstone_ore");
     public static final ResourceKey<PlacedFeature> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
     public static final ResourceKey<PlacedFeature> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
+    public static final ResourceKey<PlacedFeature> SCATTERED_LEAVES = registerKey("scattered_leaves");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -318,6 +319,18 @@ public class MtaPlacedFeatures {
                 PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                 BiomeFilter.biome()
         );
+
+
+        PlacementUtils.register(
+                context,
+                SCATTERED_LEAVES,
+                holder(context,MtaConfigFeatures.SCATTERED_LEAVES),
+                NoiseThresholdCountPlacement.of(-0.8, 2, 6),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome()
+        );
+
 
 
     }

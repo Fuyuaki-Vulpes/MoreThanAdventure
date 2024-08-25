@@ -26,6 +26,15 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.PALM_LOG.get(),
                 MtaBlocks.PALM_WOOD.get()
         );
+        this.tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+                .add(
+                        MtaBlocks.SCATTERED_LEAVES.get()
+                );
+
+        this.tag(BlockTags.SWORD_EFFICIENT)
+                .add(
+                        MtaBlocks.SCATTERED_LEAVES.get()
+                );
 
         this.tag(BlockTags.LOGS_THAT_BURN).add(
                 MtaBlocks.PALM_LOG.get(),
@@ -104,7 +113,8 @@ public class GenBlockTags extends BlockTagsProvider {
         );
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(
                 MtaBlocks.PALM_LEAVES.get(),
-                MtaBlocks.SWEET_BERRY_LEAVES.get()
+                MtaBlocks.SWEET_BERRY_LEAVES.get(),
+                MtaBlocks.SCATTERED_LEAVES.get()
         );
 //        this.tag(BlockTags.MINEABLE_WITH_AXE).add();
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)

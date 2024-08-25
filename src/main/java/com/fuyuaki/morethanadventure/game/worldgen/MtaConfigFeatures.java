@@ -7,18 +7,23 @@ import com.fuyuaki.morethanadventure.world.block.SweetBerryLeavesBlock;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.PinkPetalsBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -28,6 +33,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePl
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -65,8 +71,20 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> MOONSTONE_ORE = registerKey("moonstone_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
+        SimpleWeightedRandomList.Builder<BlockState> leavesBuilder = SimpleWeightedRandomList.builder();
+
+        for (int i = 1; i <= 4; i++) {
+            for (Direction direction : Direction.Plane.HORIZONTAL) {
+                leavesBuilder.add(
+                        MtaBlocks.SCATTERED_LEAVES.get().defaultBlockState().setValue(PinkPetalsBlock.AMOUNT, Integer.valueOf(i)).setValue(PinkPetalsBlock.FACING, direction), 1
+                );
+            }
+        }
+
 
         RuleTest clusterOresOverworld = new TagMatchTest(MtaTags.Blocks.ORE_CLUSTER_REPLACEABLE);
         RuleTest clusterOresNether = new TagMatchTest(MtaTags.Blocks.NETHER_CLUSTER_CLUSTER_REPLACEABLE);
@@ -302,6 +320,14 @@ public class MtaConfigFeatures {
                 Feature.DISK,
                 new DiskConfiguration(
                         RuleBasedBlockStateProvider.simple(MtaBlocks.GRASSY_DIRT.get()), BlockPredicate.matchesBlocks(List.of(Blocks.GRASS_BLOCK)), UniformInt.of(2, 6), 1
+                )
+        );
+        register(
+                context,
+                SCATTERED_LEAVES,
+                Feature.FLOWER,
+                new RandomPatchConfiguration(
+                        56, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(leavesBuilder)))
                 )
         );
 

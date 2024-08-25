@@ -36,12 +36,13 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WORLD_GEN = TABS.register("mtaworldgen", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtagenblocks"))
             .withTabsBefore(MtaTabs.MAIN.getId())
-            .icon(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get().asItem()::getDefaultInstance)
+            .icon(MtaBlocks.SWEET_BERRY_LEAVES.get().asItem()::getDefaultInstance)
             .displayItems((parameters, output) -> {
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
                 output.accept(MtaBlocks.PALM_LEAVES.get());
                 output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
+                output.accept(MtaBlocks.SCATTERED_LEAVES.get());
 
 
                 output.accept(MtaBlocks.STONE_GEYSER.get());
@@ -81,7 +82,7 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BUILDING = TABS.register("mtabuilding", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtabuilding"))
             .withTabsBefore(MtaTabs.WORLD_GEN.getId())
-            .icon(MtaItems.NETHERITE_FRACTURE.get()::getDefaultInstance)
+            .icon(MtaBlocks.STONE_TILES.get().asItem()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
                 output.accept(MtaBlocks.PALM_LOG.get());
