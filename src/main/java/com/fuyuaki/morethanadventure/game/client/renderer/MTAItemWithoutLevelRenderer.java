@@ -44,7 +44,7 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
     public void onResourceManagerReload(ResourceManager pResourceManager) {
 
         this.netheriteTrident = new NetheriteTridentModel(this.entityModelSet.bakeLayer(MTAModelLayers.NETHERITE_TRIDENT));
-        this.mysticMermaidsTrident = new MysticMermaidsTridentModel();
+        this.mysticMermaidsTrident = new MysticMermaidsTridentModel(this.entityModelSet.bakeLayer(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT));
 
 
 
@@ -63,6 +63,14 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
                     pBuffer, this.netheriteTrident.renderType(NetheriteTridentModel.TEXTURE), false, pStack.hasFoil()
             );
             this.netheriteTrident.renderToBuffer(pPoseStack, vertexconsumer1, pPackedLight, pPackedOverlay);
+            pPoseStack.popPose();
+        }else if (pStack.is(MtaItems.MYSTIC_MERMAIDS_TRIDENT)) {
+            pPoseStack.pushPose();
+            pPoseStack.scale(1.0F, -1.0F, -1.0F);
+            VertexConsumer vertexconsumer1 = ItemRenderer.getFoilBufferDirect(
+                    pBuffer, this.mysticMermaidsTrident.renderType(MysticMermaidsTridentModel.TEXTURE), false, pStack.hasFoil()
+            );
+            this.mysticMermaidsTrident.renderToBuffer(pPoseStack, vertexconsumer1, pPackedLight, pPackedOverlay);
             pPoseStack.popPose();
         }
 

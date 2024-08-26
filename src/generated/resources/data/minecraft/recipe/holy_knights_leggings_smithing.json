@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:alexandrite"
+  },
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:holy_knights_leggings"
+  },
+  "template": {
+    "item": "morethanadventure:royal_upgrade"
+  }
+}

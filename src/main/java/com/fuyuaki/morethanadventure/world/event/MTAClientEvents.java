@@ -3,6 +3,7 @@ package com.fuyuaki.morethanadventure.world.event;
 import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.*;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
+import com.fuyuaki.morethanadventure.game.client.model.entity.MysticMermaidsTridentModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
@@ -12,6 +13,8 @@ import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
@@ -73,6 +76,11 @@ public class MTAClientEvents
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(MTAModelLayers.NETHERITE_TRIDENT, NetheriteTridentModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT, MysticMermaidsTridentModel::createBodyLayer);
+
+    }
+    @SubscribeEvent
+    public static void modelEvent(ModelEvent.RegisterAdditional event) {
 
     }
 
@@ -108,7 +116,7 @@ public class MTAClientEvents
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 return ister.get();
             }
-        }, MtaItems.NETHERITE_TRIDENT.get()
+        }, MtaItems.NETHERITE_TRIDENT.get(), MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
                 );
     }
     @SubscribeEvent

@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -268,6 +269,24 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 .save(output);
 
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, MtaBlocks.SPRINKLER.get())
+                .define('C', Tags.Items.INGOTS_COPPER)
+                .define('N', Tags.Items.NUGGETS_IRON)
+                .define('#', ItemTags.PLANKS)
+                .pattern(" N ")
+                .pattern("NCN")
+                .pattern("C#C")
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MtaBlocks.QUARTZ_LAMP.get(),2)
+                .define('Q', MtaItems.CLEAR_QUARTZ)
+                .define('#', Tags.Items.DUSTS_GLOWSTONE)
+                .pattern("Q#")
+                .pattern("#Q")
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .save(output);
+
         upgradeTemplate(output, MtaItems.ARMAMENT_UPGRADE.get(), Blocks.RED_TERRACOTTA, "has_armament_upgrade");
         upgradeTemplate(output, MtaItems.ROYAL_UPGRADE.get(), Blocks.PINK_TERRACOTTA, "has_royal_upgrade");
         upgradeTemplate(output, MtaItems.AQUATIC_UPGRADE.get(), Blocks.CYAN_TERRACOTTA, "has_aquatic_upgrade");
@@ -284,19 +303,19 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         agateSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.ARMAMENT_AXE.get());
         agateSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.ARMAMENT_SHOVEL.get());
 
-        //alexandriteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_HELMET.get());
-        //alexandriteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_CHESTPLATE.get());
-        //alexandriteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_LEGGINGS.get());
-        //alexandriteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_BOOTS.get());
+        alexandriteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_HELMET.get());
+        alexandriteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_CHESTPLATE.get());
+        alexandriteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_LEGGINGS.get());
+        alexandriteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_BOOTS.get());
         alexandriteSmithing(output, Items.NETHERITE_SWORD, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_GREATSWORD.get());
         alexandriteSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.ROYAL_PICKAXE.get());
         alexandriteSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.ROYAL_AXE.get());
         alexandriteSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.ROYAL_SHOVEL.get());
 
-        //aquamarineSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_HELMET.get());
-        //aquamarineSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get());
-        //aquamarineSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get());
-        //aquamarineSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_BOOTS.get());
+        aquamarineSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_HELMET.get());
+        aquamarineSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get());
+        aquamarineSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get());
+        aquamarineSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_BOOTS.get());
         aquamarineSmithing(output, MtaItems.NETHERITE_TRIDENT.get(), RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_TRIDENT.get());
         aquamarineSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_PICKAXE.get());
         aquamarineSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_AXE.get());
