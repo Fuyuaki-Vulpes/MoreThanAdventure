@@ -74,10 +74,10 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.GREAT_SENTINELS_LEGGINGS);
         simpleItem(MtaItems.GREAT_SENTINELS_BOOTS);
 
-        //simpleItem(MtaItems.HOLY_KNIGHTS_HELMET);
-        //simpleItem(MtaItems.HOLY_KNIGHTS_CHESTPLATE);
-        //simpleItem(MtaItems.HOLY_KNIGHTS_LEGGINGS);
-        //simpleItem(MtaItems.HOLY_KNIGHTS_BOOTS);
+        simpleItem(MtaItems.HOLY_KNIGHTS_HELMET);
+        simpleItem(MtaItems.HOLY_KNIGHTS_CHESTPLATE);
+        simpleItem(MtaItems.HOLY_KNIGHTS_LEGGINGS);
+        simpleItem(MtaItems.HOLY_KNIGHTS_BOOTS);
 
         simpleItem(MtaItems.MYSTIC_MERMAIDS_HELMET);
         simpleItem(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
