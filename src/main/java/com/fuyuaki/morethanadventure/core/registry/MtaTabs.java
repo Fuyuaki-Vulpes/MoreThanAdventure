@@ -358,10 +358,10 @@ public class MtaTabs {
                 //output.accept(MtaItems.HOLY_KNIGHTS_LEGGINGS);
                 //output.accept(MtaItems.HOLY_KNIGHTS_BOOTS);
                 output.accept(MtaItems.MYSTIC_MERMAIDS_TRIDENT);
-                //output.accept(MtaItems.MYSTIC_MERMAIDS_HELMET);
-                //output.accept(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
-                //output.accept(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
-                //output.accept(MtaItems.MYSTIC_MERMAIDS_BOOTS);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_HELMET);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
+                output.accept(MtaItems.MYSTIC_MERMAIDS_BOOTS);
                 output.accept(MtaItems.TEMPLE_ANGELS_BOW);
                 output.accept(MtaItems.TEMPLE_ANGELS_HELMET);
                 output.accept(MtaItems.TEMPLE_ANGELS_CHESTPLATE);

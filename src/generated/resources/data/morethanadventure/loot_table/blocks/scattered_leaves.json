@@ -67,7 +67,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "minecraft:air"
+          "name": "morethanadventure:scattered_leaves"
         }
       ],
       "rolls": 1.0
