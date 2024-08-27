@@ -1,0 +1,17 @@
+{
+  "name": "morethanadventure:colosseum/corner_c",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "morethanadventure:colosseum/corner_c",
+        "override_liquid_settings": "ignore_waterlogging",
+        "processors": "morethanadventure:colosseum_degradation"
+      }
+    }
+  ]
+}
+

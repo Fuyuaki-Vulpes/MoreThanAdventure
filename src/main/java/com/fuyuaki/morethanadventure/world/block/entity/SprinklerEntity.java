@@ -58,7 +58,7 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
             level.addParticle(MtaParticles.SPRINKLER.get(), blockPos.getX() + 0.5,blockPos.above().above().getY(),blockPos.getZ() + 0.5,0,0,0);
         }
         for (int k = 0; k < 10; k++ ) {
-            float cRange = (float) (MTACommonConfig.sprinklerRange * k) / 25;
+            float cRange = (float) ((MTACommonConfig.sprinklerRange / 10) * k) / 25;
             float xRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             float zRange = cRange * level.random.nextIntBetweenInclusive(-20,20) / 20;
             if (level.getBlockState(blockPos.below()).is(Tags.Blocks.VILLAGER_FARMLANDS)) {

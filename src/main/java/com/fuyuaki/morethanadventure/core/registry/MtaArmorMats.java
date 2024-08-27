@@ -40,7 +40,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 4);
                 map.put(ArmorItem.Type.BODY, 12);
             }),
-            32, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(MtaItems.ALEXANDRITE),
+            50, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(MtaItems.ALEXANDRITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "holy_knight"))),
             3F, 0.11F
     ));
@@ -53,7 +53,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 11);
             }),
-            18, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.AQUAMARINE),
+            21, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.AQUAMARINE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid"))),
             3F, 0.1F
     ));
@@ -66,7 +66,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 10);
             }),
-            25, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CELESTITE),
+            35, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CELESTITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "temple_angel"))),
             2F, 0.0F
     ));

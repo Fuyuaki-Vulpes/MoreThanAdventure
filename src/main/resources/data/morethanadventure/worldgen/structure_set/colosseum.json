@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "morethanadventure:colosseum",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1393836911,
+    "spacing": 48,
+    "separation": 16
+  }
+}
