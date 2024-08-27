@@ -1,27 +1,16 @@
+# More Than Adventure Mod Info
 
-Installation information
-=======
+## More than adventure is a mod that focuses on the expansion of adventure aspects to minecraft in all sorts of ways, with emphasis on exploration & QoL
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions at [github](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+MTA Mod (More Than Adventure) adds features the following ways:
+- Gems that enhance Netherite Armor and add both buffs and debuffs, making it so you have to choose your weaknesses and strenghts according to your own goals.
+- Block sets for already existing blocks.
+- Enhanced Biomes & New Biome Variants
+- Functional Blocks that make the life of the player easier.
+- New Tameable Creatures, Animals, & Monsters.
+- Adding some Overworld Ores into the Nether and End.
+- New rare big clusters of Diamonds and Ancient Debris.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+We plan to add **even more** features as we develop the mod, so make sure you keep yourself updated.
 
-> **Note**: For Eclipse, use tasks in `Launch Group` instead of ones founds in `Java Application`. A preparation task must run before launching the game. NeoGradle uses launch groups to do these subsequently.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+# For more info about the features MTA adds, Read our WIKI.
