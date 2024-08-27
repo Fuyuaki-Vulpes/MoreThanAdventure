@@ -13,4 +13,4 @@ MTA Mod (More Than Adventure) adds features the following ways:
 
 We plan to add **even more** features as we develop the mod, so make sure you keep yourself updated.
 
-# For more info about the features MTA adds, Read our WIKI.
+# For more info about the features MTA adds, Read our [WIKI](https://github.com/Fuyuaki-Vulpes/MoreThanAdventure/wiki).
