@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure": "morethanadventure:castle",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1862486440,
+    "frequency_reduction_method": "legacy_type_2",
+    "frequency": 0.2,
+    "spacing": 32,
+    "separation": 8
+  }
+}

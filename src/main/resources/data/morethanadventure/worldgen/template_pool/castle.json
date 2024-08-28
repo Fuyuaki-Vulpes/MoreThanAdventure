@@ -1,5 +1,5 @@
 {
-  "name": "morethanadventure:sky_temple",
+  "name": "morethanadventure:castle",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -7,9 +7,9 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "morethanadventure:sky_temple",
+        "location": "morethanadventure:castle",
         "override_liquid_settings": "ignore_waterlogging",
-        "processors": "minecraft:empty"
+        "processors": "morethanadventure:castle"
       }
     }
   ]

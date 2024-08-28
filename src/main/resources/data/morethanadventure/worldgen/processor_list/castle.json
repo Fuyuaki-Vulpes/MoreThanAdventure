@@ -1,0 +1,60 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "block": "morethanadventure:stone_tiles",
+            "probability": 0.1
+          },
+          "output_state": {
+            "Name": "morethanadventure:dirty_stone_tiles"
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "block": "minecraft:cobbled_deepslate",
+            "probability": 0.1
+          },
+          "output_state": {
+            "Name": "minecraft:cobweb"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.95,
+      "rottable_blocks": "morethanadventure:stone_tiles"
+    },
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.95,
+      "rottable_blocks": "morethanadventure:slightly_dirty_stone_tiles"
+    },
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.95,
+      "rottable_blocks": "morethanadventure:dirty_stone_tiles"
+    },
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.95,
+      "rottable_blocks": "morethanadventure:lime_terracotta_tiles"
+    },
+    {
+      "processor_type": "minecraft:block_rot",
+      "integrity": 0.95,
+      "rottable_blocks": "minecraft:cobbled_deepslate"
+    }
+  ]
+}
