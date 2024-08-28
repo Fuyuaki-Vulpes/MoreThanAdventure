@@ -78,5 +78,8 @@ public class SentinelsWarHammerItem extends MaceItem {
         return this.attributeModifiers.get();
     }
 
-
+    @Override
+    public int getEnchantmentValue() {
+        return 10;
+    }
 }

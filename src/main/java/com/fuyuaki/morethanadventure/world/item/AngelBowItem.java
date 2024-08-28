@@ -110,4 +110,8 @@ public class AngelBowItem extends BowItem {
         return customArrow(abstractarrow, pAmmo, pWeapon);
     }
 
+    @Override
+    public int getEnchantmentValue() {
+        return 19;
+    }
 }

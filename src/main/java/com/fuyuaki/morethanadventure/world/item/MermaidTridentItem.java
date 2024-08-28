@@ -109,6 +109,6 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
 
     @Override
     public int getEnchantmentValue() {
-        return 18;
+        return 19;
     }
 }

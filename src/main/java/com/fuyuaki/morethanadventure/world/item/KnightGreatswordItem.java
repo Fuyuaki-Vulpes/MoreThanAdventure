@@ -68,5 +68,8 @@ public class KnightGreatswordItem extends SwordItem {
         return this.attributeModifiers.get();
     }
 
-
+    @Override
+    public int getEnchantmentValue() {
+        return 28;
+    }
 }

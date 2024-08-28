@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -76,5 +77,9 @@ public class BerserkerBattleAxeItem extends SwordItem {
         return this.attributeModifiers.get();
     }
 
+    @Override
+    public int getEnchantmentValue() {
+        return 17;
 
+    }
 }
