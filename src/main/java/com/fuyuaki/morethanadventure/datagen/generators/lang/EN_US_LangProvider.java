@@ -51,8 +51,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL.get(),"Slightly Dirty Stone Tiles Wall");
         add(MtaBlocks.DIRTY_STONE_TILES.get(),"Dirty Stone Tiles");
         add(MtaBlocks.DIRTY_STONE_TILES_SLAB.get(),"Dirty Stone Tiles Slab");
-        add(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get(),"Dirty Stone Tiles Slab");
-        add(MtaBlocks.DIRTY_STONE_TILES_WALL.get(),"Dirty Stone Tiles Slab");
+        add(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get(),"Dirty Stone Tiles Stairs");
+        add(MtaBlocks.DIRTY_STONE_TILES_WALL.get(),"Dirty Stone Tiles wall");
         add(MtaBlocks.VERY_DIRTY_STONE_TILES.get(),"Very Dirty Stone Tiles");
         add(MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(),"Very Dirty Stone Tiles Slab");
         add(MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(),"Very Dirty Stone Tiles Stairs");
@@ -148,13 +148,13 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.GREEN_TERRACOTTA_WALL.get(),"Green Terracotta Wall");
         add(MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get(),"Green Terracotta Tiles Wall");
 
-        add(MtaBlocks.CYAN_TERRACOTTA_TILES.get(),"Blue Terracotta Tiles");
-        add(MtaBlocks.CYAN_TERRACOTTA_SLAB.get(),"Blue Terracotta Slab");
-        add(MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(),"Blue Terracotta Tiles Slab");
-        add(MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(),"Blue Terracotta Stairs");
-        add(MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(),"Blue Terracotta Tiles Stairs");
-        add(MtaBlocks.CYAN_TERRACOTTA_WALL.get(),"Blue Terracotta Wall");
-        add(MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get(),"Blue Terracotta Tiles Wall");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES.get(),"Cyan Terracotta Tiles");
+        add(MtaBlocks.CYAN_TERRACOTTA_SLAB.get(),"Cyan Terracotta Slab");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(),"Cyan Terracotta Tiles Slab");
+        add(MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(),"Cyan Terracotta Stairs");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(),"Cyan Terracotta Tiles Stairs");
+        add(MtaBlocks.CYAN_TERRACOTTA_WALL.get(),"Cyan Terracotta Wall");
+        add(MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get(),"Cyan Terracotta Tiles Wall");
 
         add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get(),"Light Blue Terracotta Tiles");
         add(MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(),"Light Blue Terracotta Slab");
