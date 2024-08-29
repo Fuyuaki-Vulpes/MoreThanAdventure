@@ -78,7 +78,7 @@ public class MtaEntityTypes {
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"owl").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Penguin>> PENGUIN = ENTITY.register("penguin",
-            () -> EntityType.Builder.<Penguin>of(Penguin::new, MobCategory.WATER_CREATURE)
+            () -> EntityType.Builder.<Penguin>of(Penguin::new, MobCategory.CREATURE)
                     .sized(0.55f,0.95F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"penguin").toString()));
 

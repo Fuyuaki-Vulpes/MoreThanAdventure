@@ -29,7 +29,7 @@ public class MTASpawnRules {
         int i = 63;
 
         return  pPos.getY() <= i
-                && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER);
+                && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER) ||   pLevel.getBlockState(pPos.above()).is(Blocks.WATER);
     }
 
     public static boolean checkDesertAnimalSpawnRules(
@@ -42,7 +42,7 @@ public class MTASpawnRules {
     public static boolean checkLandSwimmerSpawnRules(
             EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
     ) {
-        return pLevel.getBlockState(pPos.below()).is(MtaTags.Blocks.LAND_SWIMMER_SPAWNABLE_ON);
+        return pLevel.getBlockState(pPos.below()).is(MtaTags.Blocks.LAND_SWIMMER_SPAWNABLE_ON) ||  pLevel.getFluidState(pPos.below()).is(FluidTags.WATER);
     }
     public static boolean checkBirdSpawnRules(
             EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom

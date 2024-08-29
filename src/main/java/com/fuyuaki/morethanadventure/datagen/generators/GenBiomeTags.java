@@ -84,7 +84,8 @@ public class GenBiomeTags  extends BiomeTagsProvider {
         this.tag(MtaTags.Biomes.HAS_GREAT_WHITE_SHARK)
                 .addTag(Tags.Biomes.IS_OCEAN);
         this.tag(MtaTags.Biomes.HAS_HORSESHOE_CRAB)
-                .add(Biomes.BEACH);
+                .addTag(Tags.Biomes.IS_BEACH)
+                .addTag(Tags.Biomes.IS_STONY_SHORES);
         this.tag(MtaTags.Biomes.HAS_JELLYFISH)
                 .add(Biomes.OCEAN)
                 .add(Biomes.COLD_OCEAN)
@@ -93,7 +94,6 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(Biomes.DEEP_COLD_OCEAN)
                 .add(Biomes.DEEP_LUKEWARM_OCEAN);
         this.tag(MtaTags.Biomes.HAS_OCTOPUS)
-                .add(Biomes.BEACH)
                 .add(Biomes.OCEAN)
                 .add(Biomes.LUKEWARM_OCEAN);
         this.tag(MtaTags.Biomes.HAS_OWL)
@@ -101,7 +101,9 @@ public class GenBiomeTags  extends BiomeTagsProvider {
         this.tag(MtaTags.Biomes.HAS_PENGUIN)
                 .add(Biomes.FROZEN_OCEAN)
                 .add(Biomes.ICE_SPIKES)
-                .add(Biomes.SNOWY_PLAINS);
+                .add(Biomes.SNOWY_PLAINS)
+                .add(Biomes.SNOWY_BEACH)
+                .add(Biomes.SNOWY_SLOPES);
         this.tag(MtaTags.Biomes.HAS_RACCOON)
                 .addTag(Tags.Biomes.IS_FOREST);
         this.tag(MtaTags.Biomes.HAS_SHRIMP)

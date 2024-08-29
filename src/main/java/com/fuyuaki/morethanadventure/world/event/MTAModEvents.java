@@ -69,7 +69,7 @@ public class MTAModEvents {
                 FallenSamurai::checkMonsterSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.BUTTERFLY.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                MTAPlacementTypes.GROUND_OR_AIR,
                 Heightmap.Types.MOTION_BLOCKING,
                 MTASpawnRules::checkBirdSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
@@ -84,7 +84,7 @@ public class MTAModEvents {
                 MTASpawnRules::checkLandSwimmerSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.DUCK.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                MTAPlacementTypes.GROUND_OR_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkLandSwimmerSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
@@ -99,7 +99,7 @@ public class MTAModEvents {
                 MTASpawnRules::checkSeaAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.HORSESHOE_CRAB.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                MTAPlacementTypes.GROUND_OR_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkLandSwimmerSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
@@ -110,12 +110,12 @@ public class MTAModEvents {
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.OCTOPUS.get(),
                 SpawnPlacementTypes.IN_WATER,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Heightmap.Types.OCEAN_FLOOR,
                 MTASpawnRules::checkWaterAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.OWL.get(),
                 SpawnPlacementTypes.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Heightmap.Types.MOTION_BLOCKING,
                 MTASpawnRules::checkBirdSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.PENGUIN.get(),
@@ -135,7 +135,7 @@ public class MTAModEvents {
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.TOUCAN.get(),
                 SpawnPlacementTypes.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Heightmap.Types.MOTION_BLOCKING,
                 MTASpawnRules::checkBirdSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(EntityType.CAMEL,

@@ -43,6 +43,7 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
     public HorseshoeCrab(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
         super(40.0F,pEntityType, pLevel);
         this.setPathfindingMalus(PathType.WATER, 0.0F);
+        this.setPathfindingMalus(PathType.WATER_BORDER, 0.0F);
     }
 
 

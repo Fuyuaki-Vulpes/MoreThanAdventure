@@ -1,5 +1,6 @@
 {
   "values": [
-    "minecraft:beach"
+    "#c:is_beach",
+    "#c:is_stony_shores"
   ]
 }

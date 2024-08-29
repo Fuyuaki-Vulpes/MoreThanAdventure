@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "refmap": "yoamod.refmap.json",
   "mixins": [
+    "BlocksMixin",
     "FarmBlockMixin",
     "MixinMobCategory",
     "MusicMixin",

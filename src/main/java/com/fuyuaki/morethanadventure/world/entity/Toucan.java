@@ -60,6 +60,7 @@ public class Toucan extends MTATameableAnimal implements FlyingAnimal, GeoEntity
         this.moveControl = new FlyingMoveControl(this, 10, false);
         this.setPathfindingMalus(PathType.DANGER_FIRE, -1.0F);
         this.setPathfindingMalus(PathType.DAMAGE_FIRE, -1.0F);
+        this.setPathfindingMalus(PathType.LEAVES, 0.0F);
     }
 
 
