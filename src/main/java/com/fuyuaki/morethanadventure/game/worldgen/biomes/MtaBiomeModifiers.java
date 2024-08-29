@@ -253,7 +253,7 @@ public class MtaBiomeModifiers {
         ));
         context.register(SPAWNS_TOUCAN,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_TOUCAN),
-                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOUCAN.get(),15,1,5))
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOUCAN.get(),30,1,5))
         ));
 
 

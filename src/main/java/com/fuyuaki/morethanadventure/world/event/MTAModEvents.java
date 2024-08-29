@@ -94,7 +94,7 @@ public class MTAModEvents {
                 Ferret::checkAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.GREAT_WHITE_SHARK.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkSeaAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
@@ -104,12 +104,12 @@ public class MTAModEvents {
                 MTASpawnRules::checkLandSwimmerSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.JELLYFISH.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkSeaAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.OCTOPUS.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkWaterAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
@@ -129,7 +129,7 @@ public class MTAModEvents {
                 Raccoon::checkAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.SHRIMP.get(),
-                SpawnPlacementTypes.ON_GROUND,
+                SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkSeaAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
