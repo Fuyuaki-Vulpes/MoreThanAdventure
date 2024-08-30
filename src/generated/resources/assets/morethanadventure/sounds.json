@@ -1,0 +1,26 @@
+{
+  "capybara_hurt": {
+    "sounds": [
+      "morethanadventure:entity/capybara/capybara_hurt"
+    ],
+    "subtitle": "sound.morethanadventure.capybara_hurt"
+  },
+  "duck_ambient_1": {
+    "sounds": [
+      "morethanadventure:entity/duck/duck_ambient_1"
+    ],
+    "subtitle": "sound.morethanadventure.duck_ambient_1"
+  },
+  "duck_ambient_2": {
+    "sounds": [
+      "morethanadventure:entity/duck/duck_ambient_2"
+    ],
+    "subtitle": "sound.morethanadventure.duck_ambient_2"
+  },
+  "duck_laugh_1": {
+    "sounds": [
+      "morethanadventure:entity/duck/duck_laugh_1"
+    ],
+    "subtitle": "sound.morethanadventure.duck_laugh_1"
+  }
+}

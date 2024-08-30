@@ -57,6 +57,9 @@ public class DataGen {
         generator.addProvider(event.includeClient(),
                 new EN_US_LangProvider(packOutput));
 
+        generator.addProvider(event.includeClient(),
+                new GenSoundDefinition(packOutput,existingFileHelper));
+
     }
 
 }

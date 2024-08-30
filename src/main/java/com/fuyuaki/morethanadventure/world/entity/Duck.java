@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import com.mojang.serialization.Codec;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
@@ -8,6 +9,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
@@ -80,6 +82,11 @@ public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<
                 .add(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.DUCK_AMBIENT_1.get();
+    }
 
     @Override
     public boolean isFood(ItemStack pStack) {
