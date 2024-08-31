@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "morethanadventure:onion_from_tall_grass",
+    "morethanadventure:onion_from_grass",
+    "morethanadventure:tomato_seeds_from_tall_grass",
+    "morethanadventure:bell_pepper_seeds_from_tall_grass",
+    "morethanadventure:chili_pepper_seeds_from_tall_grass",
+    "morethanadventure:chili_pepper_seeds_from_grass",
+    "morethanadventure:bell_pepper_seeds_from_grass",
+    "morethanadventure:tomato_seeds_from_grass"
+  ],
+  "replace": false
+}

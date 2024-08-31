@@ -48,6 +48,7 @@ public class MTAMod
         MtaArmorMats.register(modEventBus);
         MtaBiomes.addBiomes();
         MtaSounds.register(modEventBus);
+        MtaLootModifier.register(modEventBus);
 
         MtaTabs.register(modEventBus);
 

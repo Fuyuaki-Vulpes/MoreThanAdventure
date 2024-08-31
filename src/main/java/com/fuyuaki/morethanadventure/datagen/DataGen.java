@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.datagen;
 
 import com.fuyuaki.morethanadventure.datagen.generators.*;
 import com.fuyuaki.morethanadventure.datagen.generators.lang.EN_US_LangProvider;
+import com.fuyuaki.morethanadventure.datagen.generators.loot.GlobalLootModifiers;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -60,6 +61,8 @@ public class DataGen {
         generator.addProvider(event.includeClient(),
                 new GenSoundDefinition(packOutput,existingFileHelper));
 
+        generator.addProvider(event.includeClient(),
+                new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
     }
 
 }
