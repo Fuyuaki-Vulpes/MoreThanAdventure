@@ -71,13 +71,7 @@ public class GeyserBlock extends Block {
         ((ServerLevel)pLevel).playSound(null,pPos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.BLOCKS,1.2F,0.1F);
         setEruptingAtHeight(Boolean.TRUE, pState, pLevel, pPos);
         AABB aabb = new AABB(pPos).expandTowards(pPos.above(maxHeight).getCenter());
-
-        pLevel.getEntitiesOfClass(LivingEntity.class, aabb).forEach(livingEntity -> {
-            if (livingEntity.isAlive()) {
-                livingEntity.hurt(livingEntity.damageSources().hotFloor(),3.0F);
-            }
-        });
-
+        
 
     }
 

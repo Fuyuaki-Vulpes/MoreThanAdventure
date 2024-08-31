@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
+import com.fuyuaki.morethanadventure.world.entity.Arrows.MTAArrowEntity;
 import com.fuyuaki.morethanadventure.world.entity.WitherJuggernaut;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import net.minecraft.core.registries.Registries;
