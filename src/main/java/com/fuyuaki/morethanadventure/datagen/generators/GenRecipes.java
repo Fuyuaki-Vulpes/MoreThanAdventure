@@ -40,6 +40,22 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         woodFromLogs(output,MtaBlocks.PALM_WOOD, MtaBlocks.PALM_LOG);
         planksFromLogs(output, MtaBlocks.PALM_PLANKS, MtaTags.Items.PALM_LOGS, 4);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
+                .requires(Blocks.DIRT,2)
+                .requires(Blocks.GRASS_BLOCK,2)
+                .unlockedBy("has_dirt", has(Blocks.DIRT))
+                .save(output,"grass_block");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
+                .requires(Blocks.DIRT,2)
+                .requires(Blocks.SHORT_GRASS,2)
+                .unlockedBy("has_dirt", has(Blocks.DIRT))
+                .save(output,"short_grass");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.COBBLED_DIRT, 4)
+                .requires(Blocks.DIRT,2)
+                .requires(Blocks.COBBLESTONE,2)
+                .unlockedBy("has_dirt", has(Blocks.DIRT))
+                .save(output);
+
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STONE_TILES, Blocks.STONE);
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STONE_TILES_SLAB, Blocks.STONE, 2);
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STONE_TILES_STAIRS, Blocks.STONE);
