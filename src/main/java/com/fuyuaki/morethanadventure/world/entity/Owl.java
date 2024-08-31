@@ -92,7 +92,11 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return MtaSounds.OWL_AMBIENT.get();
+
+        if (!this.level().isDay()) {
+            return MtaSounds.OWL_AMBIENT.get();
+        }
+        return null;
     }
 
     @Nullable
