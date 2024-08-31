@@ -2,14 +2,17 @@ package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -84,6 +87,18 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.FLYING_SPEED,0.9)
                 .add(Attributes.MOVEMENT_SPEED, 0.2F);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.OWL_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.OWL_HURT.get();
     }
 
     @Override

@@ -454,6 +454,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.TOUCAN.get(),"Toucan");
         add(MtaEntityTypes.MTA_ARROW.get(),"Special Arrow");
 
+
         //OTHER
 
         add("itemGroup.morethanadventure","More Than Adventure ALL");

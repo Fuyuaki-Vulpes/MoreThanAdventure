@@ -5,22 +5,36 @@
     ],
     "subtitle": "sound.morethanadventure.capybara_hurt"
   },
-  "duck_ambient_1": {
+  "duck_ambient": {
     "sounds": [
-      "morethanadventure:entity/duck/duck_ambient_1"
+      "morethanadventure:entity/duck/duck_ambient_1",
+      "morethanadventure:entity/duck/duck_ambient_2",
+      "morethanadventure:entity/duck/duck_laugh_1"
     ],
     "subtitle": "sound.morethanadventure.duck_ambient_1"
   },
-  "duck_ambient_2": {
+  "ferret_ambient": {
     "sounds": [
-      "morethanadventure:entity/duck/duck_ambient_2"
+      "morethanadventure:entity/ferret/ferret_ambient"
     ],
-    "subtitle": "sound.morethanadventure.duck_ambient_2"
+    "subtitle": "sound.morethanadventure.ferret_ambient"
   },
-  "duck_laugh_1": {
+  "ferret_hurt": {
     "sounds": [
-      "morethanadventure:entity/duck/duck_laugh_1"
+      "morethanadventure:entity/ferret/ferret_hurt"
     ],
-    "subtitle": "sound.morethanadventure.duck_laugh_1"
+    "subtitle": "sound.morethanadventure.ferret_hurt"
+  },
+  "owl_ambient": {
+    "sounds": [
+      "morethanadventure:entity/owl/owl_ambient"
+    ],
+    "subtitle": "sound.morethanadventure.owl_ambient"
+  },
+  "owl_hurt": {
+    "sounds": [
+      "morethanadventure:entity/owl/owl_hurt"
+    ],
+    "subtitle": "sound.morethanadventure.owl_hurt"
   }
 }

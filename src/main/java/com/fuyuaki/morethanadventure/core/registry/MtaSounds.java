@@ -15,9 +15,11 @@ public class MtaSounds {
 
 
     public static final Supplier<SoundEvent> CAPYBARA_HURT = registerSoundEvent("capybara_hurt");
-    public static final Supplier<SoundEvent> DUCK_AMBIENT_1 = registerSoundEvent("duck_ambient_1");
-    public static final Supplier<SoundEvent> DUCK_AMBIENT_2 = registerSoundEvent("duck_ambient_2");
-    public static final Supplier<SoundEvent> DUCK_LAUGH_1 = registerSoundEvent("duck_laugh_1");
+    public static final Supplier<SoundEvent> DUCK_AMBIENT = registerSoundEvent("duck_ambient");
+    public static final Supplier<SoundEvent> FERRET_AMBIENT = registerSoundEvent("ferret_ambient");
+    public static final Supplier<SoundEvent> FERRET_HURT = registerSoundEvent("ferret_hurt");
+    public static final Supplier<SoundEvent> OWL_AMBIENT = registerSoundEvent("owl_ambient");
+    public static final Supplier<SoundEvent> OWL_HURT = registerSoundEvent("owl_hurt");
 
 
     private static Supplier<SoundEvent> registerSoundEvent (String name) {

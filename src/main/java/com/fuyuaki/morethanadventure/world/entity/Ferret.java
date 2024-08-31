@@ -1,9 +1,12 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
@@ -60,6 +63,17 @@ public class Ferret extends MTATameableAnimal implements GeoEntity {
                 .add(Attributes.MOVEMENT_SPEED, 0.3F);
     }
 
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.FERRET_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.FERRET_HURT.get();
+    }
 
     @Override
     public boolean isFood(ItemStack pStack) {

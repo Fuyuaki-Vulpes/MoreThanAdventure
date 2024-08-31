@@ -85,7 +85,9 @@ public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return MtaSounds.DUCK_AMBIENT_1.get();
+
+
+        return MtaSounds.DUCK_AMBIENT.get();
     }
 
     @Override
