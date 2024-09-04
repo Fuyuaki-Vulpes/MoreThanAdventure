@@ -1,15 +1,20 @@
 package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.google.common.base.Suppliers;
 import dev.shadowsoffire.apothic_attributes.api.ALObjects;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MaceItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.function.Supplier;
 
@@ -67,10 +72,20 @@ public class SentinelsWarHammerItem extends MaceItem {
         );
         builder.add(
                 Attributes.ATTACK_KNOCKBACK,
-                new AttributeModifier(location, 2F, AttributeModifier.Operation.ADD_VALUE),
+                new AttributeModifier(location, 3F, AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         return builder;
+    }
+
+    @Override
+    public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
+        return stack.getItem() == MtaItems.GREAT_SENTINELS_WAR_HAMMER.get() && enchantment.is(Enchantments.FIRE_ASPECT) ||
+                enchantment.is(Enchantments.SMITE) ||
+                enchantment.is(Enchantments.DENSITY) ||
+                enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
+                enchantment.is(Enchantments.BREACH) ||
+                enchantment.is(Enchantments.UNBREAKING);
     }
 
     @Override

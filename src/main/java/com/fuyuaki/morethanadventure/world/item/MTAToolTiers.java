@@ -11,7 +11,7 @@ public class MTAToolTiers {
     public static final Tier AGATE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             12288,
-            7f,
+            8f,
             3.5f,
             10,
             () -> Ingredient.of(MtaItems.AGATE)
@@ -20,7 +20,7 @@ public class MTAToolTiers {
     public static final Tier ALEXANDRITE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             8192,
-            12f,
+            13f,
             4.5f, 28,
             () -> Ingredient.of(MtaItems.ALEXANDRITE)
     );
@@ -28,7 +28,7 @@ public class MTAToolTiers {
     public static final Tier AQUAMARINE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             7108,
-            11f,
+            14f,
             4f,
             19,
             () -> Ingredient.of(MtaItems.AQUAMARINE)
@@ -44,7 +44,7 @@ public class MTAToolTiers {
     );
     public static final Tier GARNET = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
-            6436,
+            5736,
             19f,
             6f,
             17,
@@ -53,7 +53,7 @@ public class MTAToolTiers {
 
     public static final Tier MOONSTONE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
-            6144,
+            5144,
             24f,
             1.5f,
             25,

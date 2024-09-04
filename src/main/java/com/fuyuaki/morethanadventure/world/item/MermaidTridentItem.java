@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -22,8 +23,10 @@ import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TridentItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
@@ -42,6 +45,17 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                         Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND
                 )
                 .build();
+    }
+
+    @Override
+    public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {
+        return stack.getItem() == MtaItems.MYSTIC_MERMAIDS_TRIDENT.get() && enchantment.is(Enchantments.CHANNELING) ||
+                enchantment.is(Enchantments.SMITE) ||
+                enchantment.is(Enchantments.BANE_OF_ARTHROPODS) ||
+                enchantment.is(Enchantments.UNBREAKING) ||
+                enchantment.is(Enchantments.LOYALTY) ||
+                enchantment.is(Enchantments.IMPALING) ||
+                enchantment.is(Enchantments.RIPTIDE);
     }
 
     @Override

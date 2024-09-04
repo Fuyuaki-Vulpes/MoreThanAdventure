@@ -1,16 +1,18 @@
 package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.google.common.base.Suppliers;
 import dev.shadowsoffire.apothic_attributes.api.ALObjects;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.function.Supplier;
 
@@ -71,6 +73,7 @@ public class BerserkerBattleAxeItem extends SwordItem {
         );
         return builder;
     }
+
 
     @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers() {

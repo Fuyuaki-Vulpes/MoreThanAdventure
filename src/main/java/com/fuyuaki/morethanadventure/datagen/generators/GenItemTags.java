@@ -150,14 +150,10 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
                 );
-        this.tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
-                .add(
-                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
-                );
+        //this.tag(ItemTags.SHARP_WEAPON_ENCHANTABLE).add(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get());
         this.tag(ItemTags.WEAPON_ENCHANTABLE)
                 .add(
                         MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(),
-                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
                         MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
 
                 );
@@ -176,7 +172,8 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.COPPER_SWORD.get(),
                         MtaItems.NETHERSTEEL_SWORD.get(),
                         MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
-                        MtaItems.SHADOW_ROGUES_DAGGER.get()
+                        MtaItems.SHADOW_ROGUES_DAGGER.get(),
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
                 );
         this.tag(ItemTags.MACE_ENCHANTABLE)
                 .add(
@@ -229,7 +226,8 @@ public class GenItemTags extends ItemTagsProvider {
 
         this.tag(ItemTags.FIRE_ASPECT_ENCHANTABLE)
                 .add(
-                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
+                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get()
 
                 );
         //this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
