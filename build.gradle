@@ -164,7 +164,6 @@ tasks.withType(ProcessResources).configureEach {
             attributesLibVersion   : attributesLibVersion,
             terrablenderVersion    : terrablenderVersion,
             farmersDelightVersion    : farmersDelightVersion,
-            expandedDelightVersion    : expandedDelightVersion,
             emi_version            : emi_version,
             curiosVersion     : curiosVersion,
             geckolib_version       : geckolib_version,
@@ -172,7 +171,6 @@ tasks.withType(ProcessResources).configureEach {
             attributesLibVersionRange   : attributesLibVersionRange,
             terrablenderVersionRange    : terrablenderVersionRange,
             farmersDelightVersionRange    : farmersDelightVersionRange,
-            expandedDelightVersionRange    : expandedDelightVersionRange,
             emi_versionRange            : emi_versionRange,
             curiosVersionRange     : curiosVersionRange,
             geckolib_versionRange       : geckolib_versionRange

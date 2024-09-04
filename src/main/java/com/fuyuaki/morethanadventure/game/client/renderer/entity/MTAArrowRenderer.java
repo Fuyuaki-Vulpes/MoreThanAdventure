@@ -1,10 +1,9 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
-import com.fuyuaki.morethanadventure.world.entity.MTAArrowEntity;
+import com.fuyuaki.morethanadventure.world.entity.Arrows.MTAArrowEntity;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.projectile.SpectralArrow;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 

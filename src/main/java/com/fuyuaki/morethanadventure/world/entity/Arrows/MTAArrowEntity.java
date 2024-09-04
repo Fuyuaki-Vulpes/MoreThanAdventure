@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.entity;
+package com.fuyuaki.morethanadventure.world.entity.Arrows;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.google.common.collect.Lists;
@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -91,7 +92,7 @@ public class MTAArrowEntity extends AbstractArrow {
             for (int j = 0; j < pParticleAmount; j++) {
                 this.level()
                         .addParticle(
-                                ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT,51,235,255 ),
+                                ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, FastColor.ARGB32.color(255,0x32EAFF) ),
                                 this.getRandomX(0.5),
                                 this.getRandomY(),
                                 this.getRandomZ(0.5),
