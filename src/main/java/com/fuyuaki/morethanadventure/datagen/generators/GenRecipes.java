@@ -401,7 +401,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_glass_bottle",has(Items.GLASS_BOTTLE))
                 .save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.ONIGIRI)
-                .requires(MtaItems.RICE)
+                .requires(CommonTags.CROPS_RICE)
                 .requires(Items.DRIED_KELP)
                 .unlockedBy("has_rice",has(MtaItems.RICE))
                 .save(output);
