@@ -24,19 +24,34 @@ public class GenItemTags extends ItemTagsProvider {
         super(pOutput, pLookupProvider, pBlockTags, MODID, existingFileHelper);
     }
 
+    private void commonTags() {
+        this.tag(Tags.Items.FOODS_VEGETABLE)
+                .add(
+                        MtaItems.ONION.get()
+                );
+
+
+        this.tag(CommonTags.CROPS_ONION).add(MtaItems.ONION.get());
+        this.tag(CommonTags.CROPS_RICE).add(MtaItems.RICE.get());
+        this.tag(CommonTags.CROPS_TOMATO).add(MtaItems.TOMATO_SEEDS.get());
+
+        this.tag(CommonTags.FOODS_ONION).add(MtaItems.ONION.get());
+        this.tag(CommonTags.FOODS_TOMATO).add(MtaItems.TOMATO.get());
+
+
+        this.tag(Tags.Items.GEMS_QUARTZ).add(MtaItems.CLEAR_QUARTZ.get());
+
+    }
+
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.copy(MtaTags.Blocks.PALM_LOGS, MtaTags.Items.PALM_LOGS);
 
-
         //this.tag(MtaTags.Items.COSMETIC_CORE_STONES).add();
         //this.tag(MtaTags.Items.EFFECTIVE_CORE_STONES).add();
 
-
         this.copy(BlockTags.LOGS_THAT_BURN, ItemTags.LOGS_THAT_BURN);
         this.copy(BlockTags.PLANKS, ItemTags.PLANKS);
-
-        this.tag(Tags.Items.GEMS_QUARTZ).add(MtaItems.CLEAR_QUARTZ.get());
 
 
         this.tag(Tags.Items.MINING_TOOL_TOOLS)
@@ -200,20 +215,6 @@ public class GenItemTags extends ItemTagsProvider {
 
         );*/
 
-        this.tag(Tags.Items.FOODS_VEGETABLE)
-                .add(
-                        MtaItems.ONION.get()
-                );
-
-        this.tag(CommonTags.FOODS_ONION)
-                .add(
-                        MtaItems.ONION.get()
-                );
-
-        this.tag(CommonTags.FOODS_TOMATO)
-                .add(
-                        MtaItems.TOMATO.get()
-                );
 
         this.tag(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(
@@ -232,5 +233,8 @@ public class GenItemTags extends ItemTagsProvider {
                 );
         //this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
 
+
+        commonTags();
     }
+
 }

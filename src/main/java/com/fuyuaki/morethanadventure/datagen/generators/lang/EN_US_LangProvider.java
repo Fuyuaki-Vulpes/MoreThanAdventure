@@ -456,6 +456,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         //OTHER
+        sounds();
 
         add("itemGroup.morethanadventure","More Than Adventure ALL");
         add("itemGroup.mtagenblocks","MTA: World Gen");
@@ -467,7 +468,12 @@ public class EN_US_LangProvider extends LanguageProvider {
 
     }
 
-    protected void makeCoreStoneName(Item key, String translation){
-        add(key,"Core Stone of " + translation);
+    private void sounds() {
+        add("sound.morethanadventure.capybara_hurt", "Capybara Barks");
+        add("sound.morethanadventure.ferret_ambient", "Ferret Dooking");
+        add("sound.morethanadventure.ferret_hurt", "Ferret Squeak");
+        add("sound.morethanadventure.owl_ambient", "Owl Call");
+        add("sound.morethanadventure.owl_hurt", "Owl Hurt");
     }
+
 }

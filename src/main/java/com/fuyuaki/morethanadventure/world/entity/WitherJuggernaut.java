@@ -142,6 +142,13 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
     }
 
 
+    @Override
+    public boolean hurt(DamageSource pSource, float pAmount) {
+        if (!this.isStunned()){
+            return false;
+        }
+        return super.hurt(pSource, pAmount);
+    }
 
     @Override
     public void onExplosionHit(@Nullable Entity pEntity) {

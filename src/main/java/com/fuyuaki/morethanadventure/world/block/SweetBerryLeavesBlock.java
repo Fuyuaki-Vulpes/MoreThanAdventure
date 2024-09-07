@@ -74,7 +74,7 @@ public class SweetBerryLeavesBlock extends LeavesBlock implements BonemealableBl
             pLevel.playSound(
                     null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F
             );
-            BlockState blockstate = pState.setValue(AGE, Integer.valueOf(1));
+            BlockState blockstate = pState.setValue(AGE, Integer.valueOf(0));
             pLevel.setBlock(pPos, blockstate, 2);
             pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
             return InteractionResult.sidedSuccess(pLevel.isClientSide);
