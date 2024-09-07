@@ -379,5 +379,10 @@
   "itemGroup.mtaequip": "MTA: Equipments",
   "itemGroup.mtagenblocks": "MTA: World Gen",
   "itemGroup.mtamisc": "MTA: Foods, Spawns & Miscellaneous",
-  "mtadesc.corestone.hover": "Press SHIFT to See Details"
+  "mtadesc.corestone.hover": "Press SHIFT to See Details",
+  "sound.morethanadventure.capybara_hurt": "Capybara Barks",
+  "sound.morethanadventure.ferret_ambient": "Ferret Dooking",
+  "sound.morethanadventure.ferret_hurt": "Ferret Squeak",
+  "sound.morethanadventure.owl_ambient": "Owl Call",
+  "sound.morethanadventure.owl_hurt": "Owl Hurt"
 }
