@@ -18,12 +18,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
-import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
-import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.CommonTags;
-import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
-import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -396,12 +390,12 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
                 .requires(MtaItems.BELL_PEPPER)
-                .requires(CommonTags.FOODS_ONION)
+                .requires(MtaTags.Common.FOODS_ONION)
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_glass_bottle",has(Items.GLASS_BOTTLE))
                 .save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.ONIGIRI)
-                .requires(CommonTags.CROPS_RICE)
+                .requires(MtaTags.Common.CROPS_RICE)
                 .requires(Items.DRIED_KELP)
                 .unlockedBy("has_rice",has(MtaItems.RICE))
                 .save(output);
@@ -411,9 +405,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
 
         //Farmer's Delight
 
-        stripLogForBark(output, MtaBlocks.PALM_LOG, MtaBlocks.STRIPPED_PALM_LOG);
-        stripLogForBark(output, MtaBlocks.PALM_WOOD, MtaBlocks.STRIPPED_PALM_WOOD);
-
+/*
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(MtaItems.COCONUT), Ingredient.of(CommonTags.TOOLS_KNIFE), MtaItems.COCONUT_SLICE, 3).build(output);
         CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SWEET_BEEF_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(CommonTags.FOODS_TOMATO).addIngredient(Items.BEEF).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
         CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SWEET_PORK_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(CommonTags.FOODS_TOMATO).addIngredient(Items.PORKCHOP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
@@ -427,7 +419,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_PORK_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(Items.PORKCHOP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
         CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_CHICKEN_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(Items.CHICKEN).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
         CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_SHRIMP_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(MtaItems.SHRIMP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
-
+*/
     }
 
 
@@ -510,7 +502,4 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .save(output);
     }
 
-    private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog) {
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(new ItemLike[]{log}), (new ItemAbilityIngredient(ItemAbilities.AXE_STRIP)).toVanilla(), strippedLog).addResult((ItemLike) ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).build(output);
-    }
 }

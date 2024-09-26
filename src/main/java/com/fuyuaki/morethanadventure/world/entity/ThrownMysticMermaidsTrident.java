@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -142,6 +143,10 @@ public class ThrownMysticMermaidsTrident extends AbstractArrow implements GeoEnt
                 this.doKnockback(livingentity, damagesource);
                 this.doPostHurtEffects(livingentity);
             }
+        }
+
+        if (this.level() instanceof ServerLevel) {
+            ((ServerLevel)this.level()).sendParticles(ParticleTypes.SONIC_BOOM, this.getX(), this.getY(0.5), this.getZ(), 0, 0, 0.0, 0, 0.0);
         }
 
         this.setDeltaMovement(this.getDeltaMovement().multiply(-0.01, -0.1, -0.01));
