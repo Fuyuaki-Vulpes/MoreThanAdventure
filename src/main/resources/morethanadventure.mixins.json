@@ -10,7 +10,6 @@
     "MusicMixin",
     "ServerPlayerMixin",
     "TamableAnimalMixin",
-    "TemporaryFix",
     "VanillaEnchantmentProviderMixin"
   ],
   "client": [

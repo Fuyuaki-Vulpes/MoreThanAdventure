@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.145'
+    id 'net.neoforged.gradle.userdev' version '7.0.165'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -136,9 +136,6 @@ dependencies {
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 
-    implementation "maven.modrinth:farmers-delight:${farmersDelightVersion}"
-
-
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 
 }
@@ -163,14 +160,12 @@ tasks.withType(ProcessResources).configureEach {
             placeboVersion         : placeboVersion,
             attributesLibVersion   : attributesLibVersion,
             terrablenderVersion    : terrablenderVersion,
-            farmersDelightVersion    : farmersDelightVersion,
             emi_version            : emi_version,
             curiosVersion     : curiosVersion,
             geckolib_version       : geckolib_version,
             placeboVersionRange         : placeboVersionRange,
             attributesLibVersionRange   : attributesLibVersionRange,
             terrablenderVersionRange    : terrablenderVersionRange,
-            farmersDelightVersionRange    : farmersDelightVersionRange,
             emi_versionRange            : emi_versionRange,
             curiosVersionRange     : curiosVersionRange,
             geckolib_versionRange       : geckolib_versionRange

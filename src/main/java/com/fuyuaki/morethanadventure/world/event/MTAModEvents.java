@@ -7,6 +7,7 @@ import com.fuyuaki.morethanadventure.world.entity.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -15,6 +16,7 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
@@ -37,6 +39,7 @@ public class MTAModEvents {
     public static void entityAttributes(EntityAttributeCreationEvent event){
         event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
         event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
+        event.put(MtaEntityTypes.ICICLE_CREEPER.get(), IcicleCreeper.createAttributes().build());
         event.put(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernaut.createAttributes().build());
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());
@@ -53,6 +56,12 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.SHRIMP.get(), Shrimp.createAttributes().build());
         event.put(MtaEntityTypes.TOUCAN.get(), Toucan.createAttributes().build());
     }
+    @SubscribeEvent
+    public static void entityAttributeModification(EntityAttributeModificationEvent event){
+        event.add(EntityType.ENDER_DRAGON, Attributes.MAX_HEALTH, 800.0F);
+        event.add(EntityType.ENDER_DRAGON, Attributes.ARMOR, 10.0F);
+        event.add(EntityType.WITHER, Attributes.MAX_HEALTH, 500.0F);
+    }
 
 
 
@@ -67,6 +76,11 @@ public class MTAModEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 FallenSamurai::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.ICICLE_CREEPER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                IcicleCreeper::checkMonsterSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.BUTTERFLY.get(),
                 MTAPlacementTypes.GROUND_OR_AIR,

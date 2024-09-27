@@ -22,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 
 import java.util.Arrays;
@@ -101,12 +102,14 @@ public class MTAArrowEntity extends AbstractArrow {
                                 0.0
                         );
             }
+
         }
     }
 
 
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
+        if (!this.level().isClientSide) ((ServerLevel)this.level()).sendParticles(ParticleTypes.SONIC_BOOM, this.getX(), this.getY(0.5), this.getZ(), 0, 0, 0.0, 0, 0.0);
         Entity entity = pResult.getEntity();
         double d0 = this.getBaseDamage();
         Entity entity1 = this.getOwner();
@@ -202,6 +205,13 @@ public class MTAArrowEntity extends AbstractArrow {
     @Override
     public double getBaseDamage() {
         return this.damage;
+    }
+
+    @Override
+    protected void onHitBlock(BlockHitResult pResult) {
+        super.onHitBlock(pResult);
+        if (!this.level().isClientSide)((ServerLevel)this.level()).sendParticles(ParticleTypes.SONIC_BOOM, this.getX(), this.getY(0.5), this.getZ(), 0, 0, 0.0, 0, 0.0);
+
     }
 
     @Override

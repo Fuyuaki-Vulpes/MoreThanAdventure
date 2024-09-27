@@ -242,7 +242,7 @@ public class MtaPlacedFeatures {
                 context,
                 LARGE_CLEAR_QUARTZ_VEIN,
                 holder(context,MtaConfigFeatures.LARGE_CLEAR_QUARTZ_VEIN),
-                MTAOreUtils.commonOrePlacement(32, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(62, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
@@ -257,7 +257,7 @@ public class MtaPlacedFeatures {
                 context,
                 NETHERITIC_CRYSTAL_ORE,
                 holder(context,MtaConfigFeatures.NETHERITIC_CRYSTAL_ORE),
-                MTAOreUtils.commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(64)))
+                MTAOreUtils.commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(64)))
         );
 
 
@@ -265,37 +265,37 @@ public class MtaPlacedFeatures {
                 context,
                 AGATE_ORE,
                 holder(context,MtaConfigFeatures.AGATE_ORE),
-                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(3, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 ALEXANDRITE_ORE,
                 holder(context,MtaConfigFeatures.ALEXANDRITE_ORE),
-                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(3, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 AQUAMARINE_ORE,
                 holder(context,MtaConfigFeatures.AQUAMARINE_ORE),
-                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(3, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 CELESTITE_ORE,
                 holder(context,MtaConfigFeatures.CELESTITE_ORE),
-                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(3, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 GARNET_ORE,
                 holder(context,MtaConfigFeatures.GARNET_ORE),
-                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(3, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 MOONSTONE_ORE,
                 holder(context,MtaConfigFeatures.MOONSTONE_ORE),
-                MTAOreUtils.commonOrePlacement(1, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(3, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
@@ -315,7 +315,7 @@ public class MtaPlacedFeatures {
                 GRASSY_DIRT_PATCH,
                 holder(context,MtaConfigFeatures.GRASSY_DIRT_PATCH),
                 InSquarePlacement.spread(),
-                CountPlacement.of(9),
+                CountPlacement.of(7),
                 PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                 BiomeFilter.biome()
         );

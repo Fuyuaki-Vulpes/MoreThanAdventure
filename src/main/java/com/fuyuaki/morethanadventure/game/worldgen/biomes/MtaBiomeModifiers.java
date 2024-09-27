@@ -62,6 +62,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_RACCOON = registerKey("add_spawns_raccoon");
     public static final ResourceKey<BiomeModifier> SPAWNS_SHRIMP = registerKey("add_spawns_shrimp");
     public static final ResourceKey<BiomeModifier> SPAWNS_TOUCAN = registerKey("add_spawns_toucan");
+    public static final ResourceKey<BiomeModifier> SPAWNS_ICICLE_CREEPER = registerKey("add_spawns_icicle_creeper");
 
 
 
@@ -254,6 +255,10 @@ public class MtaBiomeModifiers {
         context.register(SPAWNS_TOUCAN,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_TOUCAN),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOUCAN.get(),40,1,5))
+        ));
+        context.register(SPAWNS_ICICLE_CREEPER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.ICICLE_CREEPER.get(),25,1,2))
         ));
 
 

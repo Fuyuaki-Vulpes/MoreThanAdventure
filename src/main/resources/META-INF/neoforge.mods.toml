@@ -91,13 +91,6 @@ file="META-INF/mtaaccesstransformer.cfg"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
-    modId="geckolib"
-    type="required"
-    versionRange="${geckolib_versionRange}"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
     modId="terrablender"
     type="required"
     versionRange="${terrablenderVersionRange}"
@@ -108,13 +101,6 @@ file="META-INF/mtaaccesstransformer.cfg"
     modId="apothic_attributes"
     type="required"
     versionRange="${attributesLibVersionRange}"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
-    modId="farmersdelight"
-    type="required"
-    versionRange="${farmersDelightVersionRange}"
     ordering="NONE"
     side="BOTH"
 

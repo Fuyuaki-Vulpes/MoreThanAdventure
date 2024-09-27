@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.tag.CommonTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -31,12 +30,12 @@ public class GenItemTags extends ItemTagsProvider {
                 );
 
 
-        this.tag(CommonTags.CROPS_ONION).add(MtaItems.ONION.get());
-        this.tag(CommonTags.CROPS_RICE).add(MtaItems.RICE.get());
-        this.tag(CommonTags.CROPS_TOMATO).add(MtaItems.TOMATO_SEEDS.get());
+        this.tag(MtaTags.Common.CROPS_ONION).add(MtaItems.ONION.get());
+        this.tag(MtaTags.Common.CROPS_RICE).add(MtaItems.RICE.get());
+        this.tag(MtaTags.Common.CROPS_TOMATO).add(MtaItems.TOMATO_SEEDS.get());
 
-        this.tag(CommonTags.FOODS_ONION).add(MtaItems.ONION.get());
-        this.tag(CommonTags.FOODS_TOMATO).add(MtaItems.TOMATO.get());
+        this.tag(MtaTags.Common.FOODS_ONION).add(MtaItems.ONION.get());
+        this.tag(MtaTags.Common.FOODS_TOMATO).add(MtaItems.TOMATO.get());
 
 
         this.tag(Tags.Items.GEMS_QUARTZ).add(MtaItems.CLEAR_QUARTZ.get());

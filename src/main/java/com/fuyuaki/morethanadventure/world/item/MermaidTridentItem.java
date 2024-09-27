@@ -5,6 +5,8 @@ import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Position;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -46,6 +48,18 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                 )
                 .build();
     }
+
+    @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+
+        double d0 = (double)(-Mth.sin(pAttacker.getYRot() * (float) (Math.PI / 180.0)));
+        double d1 = (double)Mth.cos(pAttacker.getYRot() * (float) (Math.PI / 180.0));
+        if (pAttacker.level() instanceof ServerLevel) {
+            ((ServerLevel)pAttacker.level()).sendParticles(ParticleTypes.SONIC_BOOM, pAttacker.getX() + d0, pAttacker.getY(0.5), pAttacker.getZ() + d1, 0, d0, 0.0, d1, 0.0);
+        }
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
+    }
+
 
     @Override
     public boolean isPrimaryItemFor(ItemStack stack, Holder<Enchantment> enchantment) {

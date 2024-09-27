@@ -33,6 +33,14 @@ public class MtaEntityTypes {
                     .sized(0.8f,1.9F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"yuki_onna").toString()));
 
+    public static final DeferredHolder<EntityType<?>,EntityType<IcicleCreeper>> ICICLE_CREEPER = ENTITY.register("icicle_creeper",
+            () -> EntityType.Builder.<IcicleCreeper>of(IcicleCreeper::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"icicle_creeper").toString()));
+
+
+
+
     public static final DeferredHolder<EntityType<?>,EntityType<Butterfly>> BUTTERFLY = ENTITY.register("butterfly",
             () -> EntityType.Builder.<Butterfly>of(Butterfly::new, MobCategory.CREATURE)
                     .sized(0.3f,0.3F)

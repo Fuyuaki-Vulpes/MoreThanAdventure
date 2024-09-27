@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -16,6 +17,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -36,6 +38,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.Tags;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
@@ -131,6 +134,9 @@ public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
     @Override
     public boolean doHurtTarget(Entity pEntity) {
         pEntity.setTicksFrozen(pEntity.getTicksFrozen() + 100);
+        if (pEntity instanceof LivingEntity living) {
+            living.addEffect(new MobEffectInstance(MtaEffects.FREEZING, 40));
+        }
 
         return super.doHurtTarget(pEntity);
     }
@@ -207,6 +213,14 @@ public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
     }
 
     @Override
+    public boolean addEffect(MobEffectInstance pEffectInstance, @Nullable Entity pEntity) {
+        if (pEffectInstance.is(ALObjects.MobEffects.BLEEDING) || pEffectInstance.is(MtaEffects.FREEZING)){
+            return false;
+        }
+        return super.addEffect(pEffectInstance, pEntity);
+    }
+
+    @Override
     public boolean canAttackType(EntityType<?> pType) {
         return true;
     }
@@ -230,7 +244,7 @@ public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
     }
 
     public static boolean canSpawn(EntityType<YukiOnna> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
-        return checkMonsterSpawnRules(pType,pLevel,pSpawnType,pPos,pRandom)
+        return checkMobSpawnRules(pType,pLevel,pSpawnType,pPos,pRandom)
                 && pLevel.canSeeSky(pPos.above().above())
                 && pLevel.getBiome(pPos).is(Tags.Biomes.IS_SNOWY)
                 ;
@@ -301,7 +315,8 @@ public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
                     }
                 }
                 else {
-                    livingentity.hurt(new DamageSource(this.mob.damageSources().freeze().typeHolder(), this.mob),6.0F);
+                    livingentity.hurt(new DamageSource(this.mob.damageSources().freeze().typeHolder(), this.mob),4.0F);
+                    livingentity.addEffect(new MobEffectInstance(MtaEffects.FREEZING,120,4));
                     level.playSound(null,livingentity.blockPosition(),SoundEvents.GLASS_BREAK,SoundSource.HOSTILE,0.6F,2.0F);
                     level.playSound(null,livingentity.blockPosition(),SoundEvents.PLAYER_HURT_FREEZE,SoundSource.HOSTILE);
                     livingentity.setTicksFrozen(500);

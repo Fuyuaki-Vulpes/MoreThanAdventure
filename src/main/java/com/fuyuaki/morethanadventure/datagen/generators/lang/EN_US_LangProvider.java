@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.datagen.generators.lang;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
@@ -427,6 +428,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         add(MtaItems.YUKI_ONNA_SPAWN_EGG.get(),"Yuki Onna Spawn Egg");
         add(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get(),"Fallen Samurai Spawn Egg");
+        add(MtaItems.ICICLE_CREEPER_SPAWN_EGG.get(),"Icicle Creeper Spawn Egg");
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
         add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
         add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
@@ -447,6 +449,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //ENTITIES
         add(MtaEntityTypes.YUKI_ONNA.get(),"Yuki Onna");
         add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
+        add(MtaEntityTypes.ICICLE_CREEPER.get(),"Icicle Creeper");
         add(MtaEntityTypes.WITHER_JUGGERNAUT.get(),"Wither Juggernaut");
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
         add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
@@ -463,6 +466,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.SHRIMP.get(),"Shrimp");
         add(MtaEntityTypes.TOUCAN.get(),"Toucan");
         add(MtaEntityTypes.MTA_ARROW.get(),"Special Arrow");
+
+
+
+        //EFFECTS
+        add(MtaEffects.FREEZING.get(),"Freezing");
 
 
         //OTHER
