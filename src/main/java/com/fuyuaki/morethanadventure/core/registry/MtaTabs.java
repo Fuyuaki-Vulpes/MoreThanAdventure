@@ -362,6 +362,11 @@ public class MtaTabs {
                 output.accept(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE);
                 output.accept(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
                 output.accept(MtaItems.MYSTIC_MERMAIDS_BOOTS);
+                output.accept(MtaItems.SILENT_REAPERS_SCYTHE);
+                output.accept(MtaItems.SILENT_REAPERS_HELMET);
+                output.accept(MtaItems.SILENT_REAPERS_CHESTPLATE);
+                output.accept(MtaItems.SILENT_REAPERS_LEGGINGS);
+                output.accept(MtaItems.SILENT_REAPERS_BOOTS);
                 output.accept(MtaItems.TEMPLE_ANGELS_BOW);
                 output.accept(MtaItems.TEMPLE_ANGELS_HELMET);
                 output.accept(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
@@ -391,6 +396,10 @@ public class MtaTabs {
                 output.accept(MtaItems.AQUATIC_PICKAXE);
                 output.accept(MtaItems.AQUATIC_AXE);
                 output.accept(MtaItems.AQUATIC_SHOVEL);
+
+                output.accept(MtaItems.DEATHLY_PICKAXE);
+                output.accept(MtaItems.DEATHLY_AXE);
+                output.accept(MtaItems.DEATHLY_SHOVEL);
 
                 output.accept(MtaItems.ANGELIC_PICKAXE);
                 output.accept(MtaItems.ANGELIC_AXE);
@@ -463,6 +472,7 @@ public class MtaTabs {
                 output.accept(MtaItems.ARMAMENT_UPGRADE);
                 output.accept(MtaItems.ROYAL_UPGRADE);
                 output.accept(MtaItems.AQUATIC_UPGRADE);
+                output.accept(MtaItems.DEATHLY_UPGRADE);
                 output.accept(MtaItems.ANGELIC_UPGRADE);
                 output.accept(MtaItems.BERSERK_UPGRADE);
                 output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);

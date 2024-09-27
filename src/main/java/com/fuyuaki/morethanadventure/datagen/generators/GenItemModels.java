@@ -53,6 +53,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.AGATE);
         simpleItem(MtaItems.ALEXANDRITE);
         simpleItem(MtaItems.AQUAMARINE);
+        //simpleItem(MtaItems.BLOODSTONE);
         simpleItem(MtaItems.CELESTITE);
         simpleItem(MtaItems.GARNET);
         simpleItem(MtaItems.MOONSTONE);
@@ -60,6 +61,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.ARMAMENT_UPGRADE);
         simpleItem(MtaItems.ROYAL_UPGRADE);
         simpleItem(MtaItems.AQUATIC_UPGRADE);
+        //simpleItem(MtaItems.DEATHLY_UPGRADE);
         simpleItem(MtaItems.ANGELIC_UPGRADE);
         simpleItem(MtaItems.BERSERK_UPGRADE);
         simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
@@ -84,6 +86,11 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.MYSTIC_MERMAIDS_LEGGINGS);
         simpleItem(MtaItems.MYSTIC_MERMAIDS_BOOTS);
 
+        simpleItem(MtaItems.SILENT_REAPERS_HELMET);
+        simpleItem(MtaItems.SILENT_REAPERS_CHESTPLATE);
+        simpleItem(MtaItems.SILENT_REAPERS_LEGGINGS);
+        simpleItem(MtaItems.SILENT_REAPERS_BOOTS);
+
         simpleItem(MtaItems.TEMPLE_ANGELS_HELMET);
         simpleItem(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
         simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
@@ -105,6 +112,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
+        //handheldBigItem(MtaItems.SILENT_REAPERS_SCYTHE);
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
 
@@ -131,6 +139,10 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.AQUATIC_PICKAXE);
         handheldItem(MtaItems.AQUATIC_AXE);
         handheldItem(MtaItems.AQUATIC_SHOVEL);
+
+        //handheldItem(MtaItems.DEATHLY_PICKAXE);
+        //handheldItem(MtaItems.DEATHLY_AXE);
+        //handheldItem(MtaItems.DEATHLY_SHOVEL);
 
         handheldItem(MtaItems.ANGELIC_PICKAXE);
         handheldItem(MtaItems.ANGELIC_AXE);

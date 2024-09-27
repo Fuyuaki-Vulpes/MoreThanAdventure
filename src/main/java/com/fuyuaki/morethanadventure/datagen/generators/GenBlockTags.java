@@ -359,6 +359,8 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
                 MtaBlocks.AQUAMARINE_ORE.get(),
                 MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(),
+                MtaBlocks.BLOODSTONE_ORE.get(),
+                MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get(),
                 MtaBlocks.CELESTITE_ORE.get(),
                 MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),
                 MtaBlocks.GARNET_ORE.get(),

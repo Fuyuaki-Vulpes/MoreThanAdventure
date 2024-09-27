@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "item": "minecraft:brown_terracotta"
+    },
+    "X": {
+      "item": "morethanadventure:deathly_upgrade"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "OXO",
+    "OOO"
+  ],
+  "result": {
+    "count": 2,
+    "id": "morethanadventure:deathly_upgrade"
+  }
+}

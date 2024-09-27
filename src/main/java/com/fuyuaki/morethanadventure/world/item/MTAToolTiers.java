@@ -34,6 +34,15 @@ public class MTAToolTiers {
             () -> Ingredient.of(MtaItems.AQUAMARINE)
     );
 
+    public static final Tier BLOODSTONE = new SimpleTier(
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
+            6446,
+            17f,
+            5f,
+            19,
+            () -> Ingredient.of(MtaItems.BLOODSTONE)
+    );
+
     public static final Tier CELESTITE = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             6760,
