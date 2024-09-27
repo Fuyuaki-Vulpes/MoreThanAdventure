@@ -15,4 +15,5 @@ public class IcicleCreeperModel extends DefaultedEntityGeoModel<IcicleCreeper> {
     public RenderType getRenderType(IcicleCreeper animatable, ResourceLocation texture) {
         return RenderType.entityCutout(getTextureResource(animatable));
     }
+
 }

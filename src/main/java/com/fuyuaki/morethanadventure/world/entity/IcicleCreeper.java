@@ -86,10 +86,11 @@ public class IcicleCreeper extends AbstractCreeperVariant {
         Level level = this.level();
         BlockPos blockpos = this.getOnPos().above();
         for (BlockPos pos : BlockPos.betweenClosed(blockpos.offset(-6, -1, -6), blockpos.offset(6, 5, 6))){
+
             if (this.random.nextFloat() < 0.3F && !level.getBlockState(pos.below()).isAir() && level.getFluidState(pos.below()).isEmpty()){
                 level.addParticle(ParticleTypes.SNOWFLAKE,pos.getX(),pos.getY(),pos.getZ(),0,0,0);
             }
-            if (!level.getBlockState(pos.below()).isAir() && level.getFluidState(pos.below()).isEmpty()){
+            if (!level.getBlockState(pos.below()).isAir() && level.getBlockState(pos.below()).isSolid() && !level.getBlockState(pos.below()).liquid()){
                 if (level.getBlockState(pos).isAir()) {
                     level.setBlockAndUpdate(pos,Blocks.SNOW.defaultBlockState());
                 }else if (level.getBlockState(pos).is(Blocks.SNOW)) {

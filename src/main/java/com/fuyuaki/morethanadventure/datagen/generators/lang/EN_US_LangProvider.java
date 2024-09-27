@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.datagen.generators.lang;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
@@ -438,6 +439,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //ENTITIES
         add(MtaEntityTypes.YUKI_ONNA.get(),"Yuki Onna");
         add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
+        add(MtaEntityTypes.ICICLE_CREEPER.get(),"Icicle Creeper");
         add(MtaEntityTypes.WITHER_JUGGERNAUT.get(),"Wither Juggernaut");
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
         add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
@@ -454,6 +456,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.SHRIMP.get(),"Shrimp");
         add(MtaEntityTypes.TOUCAN.get(),"Toucan");
         add(MtaEntityTypes.MTA_ARROW.get(),"Special Arrow");
+
+
+
+        //EFFECTS
+        add(MtaEffects.FREEZING.get(),"Freezing");
 
 
         //OTHER
