@@ -24,5 +24,9 @@ public class GenEntityTags extends EntityTypeTagsProvider {
                         MtaEntityTypes.NETHERITE_TRIDENT.get(),
                         MtaEntityTypes.MYSTIC_MERMAIDS_TRIDENT.get()
                 );
+        this.tag(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)
+                .add(
+                        MtaEntityTypes.ICICLE_CREEPER.get()
+                );
     }
 }

@@ -178,6 +178,7 @@ public class GenItemModels extends ItemModelProvider {
         //SPAWN EGGS
         simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
         simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
+        simpleItem(MtaItems.ICICLE_CREEPER_SPAWN_EGG);
         simpleItem(MtaItems.BUTTERFLY_SPAWN_EGG);
         simpleItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
         simpleItem(MtaItems.CAPYBARA_SPAWN_EGG);

@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": "#c:is_snowy",
+  "biomes": "#c:is_cold/overworld",
   "spawners": {
     "type": "morethanadventure:yuki_onna",
     "weight": 20,

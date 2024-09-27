@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbility;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class MtaFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public MtaFlammableRotatedPillarBlock(Properties pProperties) {

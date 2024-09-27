@@ -470,8 +470,6 @@ public class MtaTabs {
 
                 //SPAWNS
 
-                output.accept(MtaItems.YUKI_ONNA_SPAWN_EGG);
-                output.accept(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
                 output.accept(MtaItems.BUTTERFLY_SPAWN_EGG);
                 output.accept(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
                 output.accept(MtaItems.CAPYBARA_SPAWN_EGG);
@@ -486,6 +484,12 @@ public class MtaTabs {
                 output.accept(MtaItems.RACCOON_SPAWN_EGG);
                 output.accept(MtaItems.SHRIMP_SPAWN_EGG);
                 output.accept(MtaItems.TOUCAN_SPAWN_EGG);
+
+                //HOSTILE
+
+                output.accept(MtaItems.YUKI_ONNA_SPAWN_EGG);
+                output.accept(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
+                output.accept(MtaItems.ICICLE_CREEPER_SPAWN_EGG);
 
                 //BOSS SPAWNS
                 if (parameters.hasPermissions()){

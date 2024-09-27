@@ -17,9 +17,6 @@ public abstract class AbstractCreeperVariant extends Creeper implements GeoEntit
         doParticles(this.position());
         super.tick();
     }
-
-    public abstract String getTextureName();
-
     protected abstract void doParticles(Vec3 pos);
 
 

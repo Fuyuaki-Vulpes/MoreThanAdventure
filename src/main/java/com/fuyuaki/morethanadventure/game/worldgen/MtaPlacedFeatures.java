@@ -242,7 +242,7 @@ public class MtaPlacedFeatures {
                 context,
                 LARGE_CLEAR_QUARTZ_VEIN,
                 holder(context,MtaConfigFeatures.LARGE_CLEAR_QUARTZ_VEIN),
-                MTAOreUtils.commonOrePlacement(32, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(62, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,

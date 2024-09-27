@@ -39,6 +39,7 @@ public class MTAModEvents {
     public static void entityAttributes(EntityAttributeCreationEvent event){
         event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
         event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
+        event.put(MtaEntityTypes.ICICLE_CREEPER.get(), IcicleCreeper.createAttributes().build());
         event.put(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernaut.createAttributes().build());
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());
@@ -75,6 +76,11 @@ public class MTAModEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 FallenSamurai::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.ICICLE_CREEPER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                IcicleCreeper::checkMonsterSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.BUTTERFLY.get(),
                 MTAPlacementTypes.GROUND_OR_AIR,

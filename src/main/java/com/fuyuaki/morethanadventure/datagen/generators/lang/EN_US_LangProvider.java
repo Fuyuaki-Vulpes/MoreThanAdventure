@@ -417,6 +417,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         add(MtaItems.YUKI_ONNA_SPAWN_EGG.get(),"Yuki Onna Spawn Egg");
         add(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get(),"Fallen Samurai Spawn Egg");
+        add(MtaItems.ICICLE_CREEPER_SPAWN_EGG.get(),"Icicle Creeper Spawn Egg");
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
         add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
         add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
