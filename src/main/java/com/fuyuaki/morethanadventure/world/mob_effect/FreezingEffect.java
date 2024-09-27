@@ -21,9 +21,9 @@ public class FreezingEffect extends MobEffect {
         if (entity.getRandom().nextBoolean()) {
             entity.level().addParticle(
                     ParticleTypes.SNOWFLAKE,
-                    entity.getX(),
-                    (double) (entity.getY(0.75)),
-                    entity.getZ(),
+                    entity.getX() + (Mth.randomBetween(entity.getRandom(), -0.2F, 0.2F)),
+                    (double) (entity.getY( + (Mth.randomBetween(entity.getRandom(), 0.3F, 0.8F)))),
+                    entity.getZ() + (Mth.randomBetween(entity.getRandom(), -0.2F, 0.2F)) ,
                     (double) (Mth.randomBetween(entity.getRandom(), -1.0F, 1.0F) * 0.083333336F),
                     0.05F,
                     (double) (Mth.randomBetween(entity.getRandom(), -1.0F, 1.0F) * 0.083333336F)
