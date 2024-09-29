@@ -23,13 +23,9 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class BeardedDragon extends MTATameableAnimal implements GeoEntity {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.bearded_dragon.idle");
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.bearded_dragon.walk");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.bearded_dragon.sit");
+public class BeardedDragon extends MTATameableAnimal {
 
 
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public BeardedDragon(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -74,25 +70,5 @@ public class BeardedDragon extends MTATameableAnimal implements GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         BeardedDragon beardedDragon = MtaEntityTypes.BEARDED_DRAGON.get().create(pLevel);
         return beardedDragon;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                    if (isOrderedToSit()) {
-                        return state.setAndContinue(SIT);
-                    }
-                    if (state.isMoving()) {
-                        return state.setAndContinue(WALK);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 }

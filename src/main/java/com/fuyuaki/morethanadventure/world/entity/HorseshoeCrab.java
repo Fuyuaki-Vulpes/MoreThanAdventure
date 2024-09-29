@@ -33,11 +33,9 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
 
-public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
+public class HorseshoeCrab extends MTATameableAnimal {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.horseshoe_crab.walk");
 
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public HorseshoeCrab(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -94,23 +92,6 @@ public class HorseshoeCrab extends MTATameableAnimal implements GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         HorseshoeCrab horseshoeCrab = MtaEntityTypes.HORSESHOE_CRAB.get().create(pLevel);
         return horseshoeCrab;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving()) {
-                        return state.setAndContinue(WALK);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

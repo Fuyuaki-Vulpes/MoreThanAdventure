@@ -32,14 +32,13 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Capybara extends MTATameableAnimal implements GeoEntity {
+public class Capybara extends MTATameableAnimal {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.capybara.idle");
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.capybara.walk");
     protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.capybara.swim");
     protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.capybara.sit");
 
 
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Capybara(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -93,28 +92,6 @@ public class Capybara extends MTATameableAnimal implements GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         Capybara capybara = MtaEntityTypes.CAPIBARA.get().create(pLevel);
         return capybara;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-
-                    if (isOrderedToSit()) {
-                        return state.setAndContinue(SIT);
-                    }else if (state.isMoving() && !isInWater()) {
-                        return state.setAndContinue(WALK);
-                    } else if (this.isInWaterOrBubble()) {
-                        return state.setAndContinue(SWIM);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
 

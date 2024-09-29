@@ -49,13 +49,12 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.EnumSet;
 import java.util.Objects;
 
-public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
+public class YukiOnna extends Monster implements FlyingAnimal {
     private static final EntityDataAccessor<Boolean> DATA_IS_BLOWING = SynchedEntityData.defineId(YukiOnna.class, EntityDataSerializers.BOOLEAN);
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.yukionna.idle");
     protected static final RawAnimation CHASE = RawAnimation.begin().thenLoop("animation.yukionna.chase");
     protected static final RawAnimation BLOW = RawAnimation.begin().thenPlay("animation.yukionna.blow").thenLoop("animation.yukionna.idle");
 
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public YukiOnna(EntityType<? extends Monster> pEntityType, Level pLevel) {
@@ -225,23 +224,6 @@ public class YukiOnna extends Monster implements GeoEntity, FlyingAnimal {
         return true;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                    if (state.getAnimatable().isBlowing()) {
-                        return state.setAndContinue(BLOW);
-                    } else if (state.getAnimatable().isAggressive()) {
-                        return state.setAndContinue(CHASE);
-                    } else return state.setAndContinue(IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 
     public static boolean canSpawn(EntityType<YukiOnna> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
         return checkMobSpawnRules(pType,pLevel,pSpawnType,pPos,pRandom)

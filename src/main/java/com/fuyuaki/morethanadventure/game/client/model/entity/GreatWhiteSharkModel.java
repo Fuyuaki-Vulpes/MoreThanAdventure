@@ -2,6 +2,13 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.world.entity.GreatWhiteShark;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -11,26 +18,69 @@ import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
-public class GreatWhiteSharkModel extends DefaultedEntityGeoModel<GreatWhiteShark> {
+public class GreatWhiteSharkModel extends HierarchicalModel<GreatWhiteShark> {
+    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+    private final ModelPart root;
 
-    public GreatWhiteSharkModel() {
-        super(ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, "great_white_shark"),false);
+    public GreatWhiteSharkModel(ModelPart root) {
+        this.root = root.getChild("root");
+    }
+
+    public static LayerDefinition createBodyLayer() {
+        MeshDefinition meshdefinition = new MeshDefinition();
+        PartDefinition partdefinition = meshdefinition.getRoot();
+
+        PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 16.0F, 0.0F));
+
+        PartDefinition torso = root.addOrReplaceChild("torso", CubeListBuilder.create().texOffs(0, 41).addBox(-9.0F, -9.0F, -29.0F, 18.0F, 16.0F, 29.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 1.0F, 8.0F));
+
+        PartDefinition cube_r1 = torso.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(1, 44).addBox(-1.0F, -14.0F, -2.0F, 2.0F, 14.0F, 12.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -9.0F, -20.0F, -0.48F, 0.0F, 0.0F));
+
+        PartDefinition head = torso.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-6.0F, -6.0F, -17.0F, 12.0F, 8.0F, 17.0F, new CubeDeformation(0.0F))
+                .texOffs(47, 0).addBox(-4.0F, 2.0F, -11.9F, 8.0F, 1.0F, 12.0F, new CubeDeformation(0.0F))
+                .texOffs(36, 25).addBox(-3.5F, 2.0F, -11.0F, 7.0F, 1.0F, 11.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, -29.0F));
+
+        PartDefinition jaw = head.addOrReplaceChild("jaw", CubeListBuilder.create().texOffs(0, 25).addBox(-6.0F, -1.0F, -12.0F, 12.0F, 4.0F, 12.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 102).addBox(-5.0F, -2.0F, -11.0F, 10.0F, 1.0F, 11.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 114).addBox(-4.5F, -2.0F, -10.0F, 9.0F, 1.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 3.0F, 0.0F));
+
+        PartDefinition left_fin = torso.addOrReplaceChild("left_fin", CubeListBuilder.create().texOffs(0, 86).addBox(0.0F, -1.0F, -5.0F, 18.0F, 2.0F, 14.0F, new CubeDeformation(0.0F)), PartPose.offset(9.0F, 5.0F, -17.0F));
+
+        PartDefinition right_fin = torso.addOrReplaceChild("right_fin", CubeListBuilder.create().texOffs(0, 86).mirror().addBox(-18.0F, -1.0F, -5.0F, 18.0F, 2.0F, 14.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-9.0F, 5.0F, -17.0F));
+
+        PartDefinition torso_back = root.addOrReplaceChild("torso_back", CubeListBuilder.create().texOffs(66, 96).addBox(-6.0F, -6.5F, 0.0F, 12.0F, 14.0F, 19.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 8.0F));
+
+        PartDefinition cube_r2 = torso_back.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(65, 64).addBox(-0.5F, -3.0F, -2.0F, 1.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.5F, -5.0F, 19.0F, -0.7854F, 0.0F, 0.0F));
+
+        PartDefinition cube_r3 = torso_back.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(94, 73).mirror().addBox(-0.5F, 0.0F, -1.0F, 1.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-4.5F, 7.0F, 6.0F, 0.829F, 0.2182F, 0.4363F));
+
+        PartDefinition cube_r4 = torso_back.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(94, 73).addBox(-0.5F, 0.0F, -1.0F, 1.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.5F, 7.0F, 6.0F, 0.829F, -0.2182F, -0.4363F));
+
+        PartDefinition tail = torso_back.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(80, 44).addBox(-4.0F, -4.0F, 0.0F, 8.0F, 10.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, 19.0F));
+
+        PartDefinition cube_r5 = tail.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(120, 53).addBox(-0.5F, 0.0F, -1.0F, 1.0F, 4.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 5.0F, 3.0F, 0.7854F, 0.0F, 0.0F));
+
+        PartDefinition fin = tail.addOrReplaceChild("fin", CubeListBuilder.create(), PartPose.offset(0.0F, 1.0F, 13.0F));
+
+        PartDefinition cube_r6 = fin.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(106, 4).addBox(-1.0F, 0.0F, -4.0F, 2.0F, 17.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -1.0F, 1.0F, 0.3927F, 0.0F, 0.0F));
+
+        PartDefinition cube_r7 = fin.addOrReplaceChild("cube_r7", CubeListBuilder.create().texOffs(74, 0).addBox(-2.0F, -24.0F, -6.0F, 3.0F, 24.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.25F, -1.0F, 1.0F, -0.3927F, 0.0F, 0.0F));
+
+        return LayerDefinition.create(meshdefinition, 128, 129);
     }
 
     @Override
-    public RenderType getRenderType(GreatWhiteShark animatable, ResourceLocation texture) {
-        return RenderType.entityCutout(getTextureResource(animatable));
+    public void setupAnim(GreatWhiteShark entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+
     }
 
     @Override
-    public void setCustomAnimations(GreatWhiteShark animatable, long instanceId, AnimationState<GreatWhiteShark> animationState) {
-        EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
+    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+    }
 
-        GeoBone body = getAnimationProcessor().getBone("root");
-
-        if (body != null) {
-            body.setRotX(entityData.headPitch() * (float) (Math.PI / 180.0));
-            body.setRotY(entityData.netHeadYaw() * (float) (Math.PI / 180.0));
-        }
+    @Override
+    public ModelPart root() {
+        return root;
     }
 }

@@ -38,7 +38,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.IntFunction;
 
-public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<Duck.Variant> {
+public class Duck extends MTATameableAnimal implements VariantHolder<Duck.Variant> {
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(Duck.class, EntityDataSerializers.INT);
 
@@ -48,8 +48,6 @@ public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<
     protected static final RawAnimation IN_WATER = RawAnimation.begin().thenLoop("animation.duck.in_water");
     protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.duck.sit");
 
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Duck(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -102,31 +100,6 @@ public class Duck extends MTATameableAnimal implements GeoEntity, VariantHolder<
         return duck;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                if(isOrderedToSit()){
-                        return state.setAndContinue(SIT);
-                    }
-                else if (state.isMoving() && isInWater()){
-                    return state.setAndContinue(SWIM);
-                }
-                else if(state.isMoving() && !isInWater()) {
-                        return state.setAndContinue(WALK);
-                    }
-                else if(isInWater()){
-                    return  state.setAndContinue(IN_WATER);
-                }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 
     public Duck.Variant getVariant() {
         return Duck.Variant.byId(this.entityData.get(VARIANT));

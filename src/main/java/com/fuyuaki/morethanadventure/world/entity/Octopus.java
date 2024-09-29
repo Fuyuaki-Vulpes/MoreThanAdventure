@@ -33,12 +33,9 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
 
-public class Octopus extends MTATameableAnimal implements GeoEntity {
+public class Octopus extends MTATameableAnimal {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.octopus.walk");
     protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.octopus.swim");
-
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Octopus(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -131,20 +128,6 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving() && onGround()) {
-                        return state.setAndContinue(WALK);
-                    } else if(isInWater() && !onGround()) {
-                        return state.setAndContinue(SWIM);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
     public boolean checkSpawnObstruction(LevelReader pLevel) {
         return pLevel.isUnobstructed(this);
     }
@@ -176,11 +159,6 @@ public class Octopus extends MTATameableAnimal implements GeoEntity {
         int i = this.getAirSupply();
         super.baseTick();
         this.handleAirSupply(i);
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     public class OctopusSitWhenOrderedToGoal extends Goal {
