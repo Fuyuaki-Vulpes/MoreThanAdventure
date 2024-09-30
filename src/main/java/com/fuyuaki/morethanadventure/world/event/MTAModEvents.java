@@ -60,7 +60,21 @@ public class MTAModEvents {
     public static void entityAttributeModification(EntityAttributeModificationEvent event){
         event.add(EntityType.ENDER_DRAGON, Attributes.MAX_HEALTH, 800.0F);
         event.add(EntityType.ENDER_DRAGON, Attributes.ARMOR, 10.0F);
+
         event.add(EntityType.WITHER, Attributes.MAX_HEALTH, 500.0F);
+
+        event.add(EntityType.ZOMBIE, Attributes.MOVEMENT_SPEED, 0.32F); // Was 0.23F
+
+
+        event.add(EntityType.SNOW_GOLEM, Attributes.MAX_HEALTH, 10.0F); // Was 4.0F
+
+        event.add(EntityType.IRON_GOLEM, Attributes.MAX_HEALTH, 200.0F);
+        event.add(EntityType.IRON_GOLEM, Attributes.ARMOR, 15.0F);
+        event.add(EntityType.IRON_GOLEM, Attributes.MOVEMENT_SPEED, 0.18F); // Was 0.25F
+        event.add(EntityType.IRON_GOLEM, Attributes.ATTACK_DAMAGE, 25.0F); // Was 15.0F
+        event.add(EntityType.IRON_GOLEM, Attributes.FALL_DAMAGE_MULTIPLIER, 0.2F);
+        event.add(EntityType.IRON_GOLEM, Attributes.BURNING_TIME, 0.2F);
+        event.add(EntityType.IRON_GOLEM, Attributes.ATTACK_KNOCKBACK, 0.15F);
     }
 
 
