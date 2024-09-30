@@ -24,12 +24,10 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Raccoon extends MTATameableAnimal implements GeoEntity {
+public class Raccoon extends MTATameableAnimal {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.raccoon.walk");
     protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.raccoon.sit");
 
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Raccoon(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -74,25 +72,5 @@ public class Raccoon extends MTATameableAnimal implements GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         Raccoon raccoon = MtaEntityTypes.RACCOON.get().create(pLevel);
         return raccoon;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                     if(isOrderedToSit()) {
-                         return state.setAndContinue(SIT);
-                     }
-                     else if (state.isMoving()) {
-                         return state.setAndContinue(WALK);
-                     }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 }

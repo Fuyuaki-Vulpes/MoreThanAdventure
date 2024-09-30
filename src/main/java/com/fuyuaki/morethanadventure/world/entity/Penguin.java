@@ -24,13 +24,11 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Penguin extends MTATameableAnimal implements GeoEntity {
+public class Penguin extends MTATameableAnimal {
     protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.penguin.walk");
     protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.penguin.swim");
     protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.penguin.sit");
 
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Penguin(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -84,26 +82,5 @@ public class Penguin extends MTATameableAnimal implements GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         Penguin penguin = MtaEntityTypes.PENGUIN.get().create(pLevel);
         return penguin;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                if (isOrderedToSit()){
-                    return state.setAndContinue(SIT);
-                    }else if (isInWater()){
-                        return state.setAndContinue(SWIM);
-                    }else  if (state.isMoving()) {
-                        return state.setAndContinue(WALK);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 }

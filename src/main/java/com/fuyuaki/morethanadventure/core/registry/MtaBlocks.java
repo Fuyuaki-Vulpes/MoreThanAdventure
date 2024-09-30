@@ -325,6 +325,17 @@ public class MtaBlocks {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
             ));
 
+    public static final DeferredBlock<DropExperienceBlock> BLOODSTONE_ORE = registerBlock("bloodstone_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_BLOODSTONE_ORE = registerBlock("deepslate_bloodstone_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 5),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+            ));
+
     public static final DeferredBlock<DropExperienceBlock> CELESTITE_ORE = registerBlock("celestite_ore",
             () -> new DropExperienceBlock(
                     UniformInt.of(2, 5),

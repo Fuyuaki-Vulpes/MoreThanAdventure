@@ -25,11 +25,8 @@ import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Shrimp extends AbstractSchoolingFish implements GeoEntity {
+public class Shrimp extends AbstractSchoolingFish {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.shrimp.idle");
-
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Shrimp(EntityType<? extends AbstractSchoolingFish> pEntityType, Level pLevel) {
@@ -42,19 +39,6 @@ public class Shrimp extends AbstractSchoolingFish implements GeoEntity {
         return SoundEvents.TADPOLE_FLOP;
     }
 
-
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> state.setAndContinue(IDLE)));
-
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 
     @Override
     public ItemStack getBucketItemStack() {

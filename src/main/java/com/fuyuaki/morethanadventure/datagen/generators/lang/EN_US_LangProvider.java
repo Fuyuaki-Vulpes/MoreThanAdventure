@@ -281,6 +281,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),"Deepslate Alexandrite Ore");
         add(MtaBlocks.AQUAMARINE_ORE.get(),"Aquamarine Ore");
         add(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(),"Deepslate Aquamarine Ore");
+        add(MtaBlocks.BLOODSTONE_ORE.get(),"Bloodstone Ore");
+        add(MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get(),"Deepslate Bloodstone Ore");
         add(MtaBlocks.CELESTITE_ORE.get(),"Celestite Ore");
         add(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),"Deepslate Celestite Ore");
         add(MtaBlocks.GARNET_ORE.get(),"Garnet Ore");
@@ -328,6 +330,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get(), "Mystic Mermaid's Chestplate");
         add(MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get(), "Mystic Mermaid's Leggings");
         add(MtaItems.MYSTIC_MERMAIDS_BOOTS.get(), "Mystic Mermaid's Boots");
+        add(MtaItems.SILENT_REAPERS_HELMET.get(), "Silent Reaper's Helmet");
+        add(MtaItems.SILENT_REAPERS_CHESTPLATE.get(), "Silent Reaper's Chestplate");
+        add(MtaItems.SILENT_REAPERS_LEGGINGS.get(), "Silent Reaper's Leggings");
+        add(MtaItems.SILENT_REAPERS_BOOTS.get(), "Silent Reaper's Boots");
         add(MtaItems.TEMPLE_ANGELS_HELMET.get(), "Temple Angel's Helmet");
         add(MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(), "Temple Angel's Chestplate");
         add(MtaItems.TEMPLE_ANGELS_LEGGINGS.get(), "Temple Angel's Leggings");
@@ -351,6 +357,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.AQUATIC_PICKAXE.get(), "Aquatic Pickaxe");
         add(MtaItems.AQUATIC_AXE.get(), "Aquatic Axe");
         add(MtaItems.AQUATIC_SHOVEL.get(), "Aquatic Shovel");
+        add(MtaItems.DEATHLY_PICKAXE.get(), "Deathly Pickaxe");
+        add(MtaItems.DEATHLY_AXE.get(), "Deathly Axe");
+        add(MtaItems.DEATHLY_SHOVEL.get(), "Deathly Shovel");
         add(MtaItems.ANGELIC_PICKAXE.get(), "Angelic Pickaxe");
         add(MtaItems.ANGELIC_AXE.get(), "Angelic Axe");
         add(MtaItems.ANGELIC_SHOVEL.get(), "Angelic Shovel");
@@ -379,6 +388,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(), "Great Sentinel's War Hammer");
         add(MtaItems.HOLY_KNIGHTS_GREATSWORD.get(), "Holy Knight's Greatsword");
         add(MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(), "Mystic Mermaid's Trident");
+        add(MtaItems.SILENT_REAPERS_SCYTHE.get(), "Silent Reaper's Scythe");
         add(MtaItems.TEMPLE_ANGELS_BOW.get(), "Temple Angel's Bow");
         add(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(), "Wrathful Berserker's Battleaxe");
         add(MtaItems.SHADOW_ROGUES_DAGGER.get(), "Shadow Rogue's Dagger");

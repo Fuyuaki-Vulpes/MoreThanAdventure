@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib.animatable.GeoEntity;
 
-public abstract class AbstractCreeperVariant extends Creeper implements GeoEntity {
+public abstract class AbstractCreeperVariant extends Creeper {
     public AbstractCreeperVariant(EntityType<? extends AbstractCreeperVariant> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }

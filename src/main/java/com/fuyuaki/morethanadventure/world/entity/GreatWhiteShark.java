@@ -40,15 +40,13 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMob {
+public class GreatWhiteShark extends WaterAnimal implements NeutralMob {
     protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.great_white_shark.swim");
     private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(GreatWhiteShark.class, EntityDataSerializers.INT);
 
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
     @Nullable
     private UUID persistentAngerTarget;
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public GreatWhiteShark(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
@@ -89,23 +87,6 @@ public class GreatWhiteShark extends WaterAnimal implements GeoEntity, NeutralMo
                 .add(Attributes.MOVEMENT_SPEED, 0.2F)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 3.2F);
 
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 60, (state) -> {
-                    if (state.isMoving()) {
-                        return state.setAndContinue(SWIM);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

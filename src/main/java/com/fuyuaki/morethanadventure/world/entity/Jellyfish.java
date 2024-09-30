@@ -25,10 +25,9 @@ import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Jellyfish extends WaterAnimal implements GeoEntity {RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.jellyfish.swim");
+public class Jellyfish extends WaterAnimal {
 
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.jellyfish.swim");
 
 
     public Jellyfish(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
@@ -57,20 +56,6 @@ public class Jellyfish extends WaterAnimal implements GeoEntity {RawAnimation SW
                 .add(Attributes.OXYGEN_BONUS, 10.0);
     }
 
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> state.setAndContinue(SWIM))
-        );
-
-    }
-
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 
     @Override
     protected SoundEvent getAmbientSound() {

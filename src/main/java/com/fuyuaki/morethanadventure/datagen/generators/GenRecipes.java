@@ -300,6 +300,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         upgradeTemplate(output, MtaItems.ARMAMENT_UPGRADE.get(), Blocks.RED_TERRACOTTA, "has_armament_upgrade");
         upgradeTemplate(output, MtaItems.ROYAL_UPGRADE.get(), Blocks.PINK_TERRACOTTA, "has_royal_upgrade");
         upgradeTemplate(output, MtaItems.AQUATIC_UPGRADE.get(), Blocks.CYAN_TERRACOTTA, "has_aquatic_upgrade");
+        upgradeTemplate(output, MtaItems.DEATHLY_UPGRADE.get(), Blocks.BROWN_TERRACOTTA, "has_deathly_upgrade");
         upgradeTemplate(output, MtaItems.ANGELIC_UPGRADE.get(), Blocks.WHITE_TERRACOTTA, "has_angelic_upgrade");
         upgradeTemplate(output, MtaItems.BERSERK_UPGRADE.get(), Blocks.ORANGE_TERRACOTTA, "has_berserk_upgrade");
         upgradeTemplate(output, MtaItems.FEATHERWEIGHT_UPGRADE.get(), Blocks.BLUE_TERRACOTTA, "has_featherweight_upgrade");
@@ -330,6 +331,15 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         aquamarineSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_PICKAXE.get());
         aquamarineSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_AXE.get());
         aquamarineSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.AQUATIC_SHOVEL.get());
+
+        aquamarineSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_HELMET.get());
+        aquamarineSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_CHESTPLATE.get());
+        aquamarineSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_LEGGINGS.get());
+        aquamarineSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_BOOTS.get());
+        aquamarineSmithing(output, Items.NETHERITE_HOE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_SCYTHE.get());
+        aquamarineSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_PICKAXE.get());
+        aquamarineSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_AXE.get());
+        aquamarineSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.DEATHLY_SHOVEL.get());
 
         celestiteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_HELMET.get());
         celestiteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_CHESTPLATE.get());

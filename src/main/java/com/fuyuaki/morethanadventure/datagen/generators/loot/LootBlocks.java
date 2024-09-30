@@ -305,6 +305,8 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.ALEXANDRITE.get()));
         this.add(MtaBlocks.AQUAMARINE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AQUAMARINE.get()));
         this.add(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(), block -> this.createOreDrop(block, MtaItems.AQUAMARINE.get()));
+        this.add(MtaBlocks.BLOODSTONE_ORE.get(), block -> this.createOreDrop(block, MtaItems.BLOODSTONE.get()));
+        this.add(MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get(), block -> this.createOreDrop(block, MtaItems.BLOODSTONE.get()));
         this.add(MtaBlocks.CELESTITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.CELESTITE.get()));
         this.add(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(), block -> this.createOreDrop(block, MtaItems.CELESTITE.get()));
         this.add(MtaBlocks.GARNET_ORE.get(), block -> this.createOreDrop(block, MtaItems.GARNET.get()));

@@ -44,7 +44,7 @@ import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
+public class Owl extends MTATameableAnimal implements FlyingAnimal {
     protected static final RawAnimation FLY = RawAnimation.begin().thenLoop("animation.owl.fly");
 
     public float flap;
@@ -53,9 +53,6 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
     public float oFlap;
     private float flapping = 1.0F;
     private float nextFlap = 1.0F;
-
-
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
     public Owl(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
@@ -159,23 +156,6 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal, GeoEntity {
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         Owl owl = MtaEntityTypes.OWL.get().create(pLevel);
         return owl;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                    if (isFlying()) {
-                        return state.setAndContinue(FLY);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

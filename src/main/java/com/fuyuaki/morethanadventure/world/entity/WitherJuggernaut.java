@@ -56,14 +56,13 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.Objects;
 
-public class WitherJuggernaut extends Monster implements GeoEntity {
+public class WitherJuggernaut extends Monster{
     private static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(WitherJuggernaut.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> STUN_TIME = SynchedEntityData.defineId(WitherJuggernaut.class, EntityDataSerializers.INT);
 
     protected static final RawAnimation MOVE = RawAnimation.begin().thenLoop("animation.wither_juggernaut.walk");
     protected static final RawAnimation SWING = RawAnimation.begin().thenPlay("animation.wither_juggernaut.swing");
     protected static final RawAnimation STUN = RawAnimation.begin().then("animation.wither_juggernaut.enter_stun", Animation.LoopType.PLAY_ONCE).thenLoop("animation.wither_juggernaut.stun");
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private final ServerBossEvent bossEvent = (ServerBossEvent)new ServerBossEvent(
             this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS
     ).setDarkenScreen(true);
@@ -291,30 +290,6 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
         return true;
     }
 
-
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 0, (state) -> {
-                    if (state.getAnimatable().isStunned()) {
-                        return state.setAndContinue(STUN);
-                    }else
-                    if (state.isMoving()) {
-                        return state.setAndContinue(MOVE);
-                    }
-                    else return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        , new AnimationController<>(this, "attack_controller", state -> PlayState.STOP)
-                        .triggerableAnim("attack_animation",SWING).transitionLength(5).setAnimationSpeed(2.0F));
-    }
-
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
-
     public class CustomMeleeAttackGoal extends MeleeAttackGoal {
         protected final WitherJuggernaut mob;
         private int attackAnimSync = -1;
@@ -351,14 +326,9 @@ public class WitherJuggernaut extends Monster implements GeoEntity {
         protected void checkAndPerformAttack(LivingEntity pTarget) {
             if (super.canPerformAttack(pTarget)) {
                 this.resetAttackCooldown();
-                triggerAnimation();
                 this.mob.swing(InteractionHand.MAIN_HAND);
                 this.attackAnimSync = this.adjustedTickDelay(5);
             }
-        }
-
-        protected void triggerAnimation() {
-            mob.triggerAnim("attack_controller", "attack_animation");
         }
 
         @Override

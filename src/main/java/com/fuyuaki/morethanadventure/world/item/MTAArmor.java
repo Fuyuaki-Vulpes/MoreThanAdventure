@@ -25,6 +25,7 @@ public class MTAArmor extends ArmorItem {
     private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL.value();
     private static final ArmorMaterial KNIGHT = MtaArmorMats.HOLY_KNIGHT.value();
     private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID.value();
+    private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER.value();
     private static final ArmorMaterial ANGEL = MtaArmorMats.TEMPLE_ANGEL.value();
     private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER.value();
     private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE.value();
@@ -119,6 +120,12 @@ public class MTAArmor extends ArmorItem {
                 hasChestplate && chestplate == MERMAID,
                 hasLeggings && leggings == MERMAID,
                 hasBoots && boots == MERMAID);
+        doReaperEffects(entity,
+                level,pSlotId,
+                hasHelmet && helmet == REAPER,
+                hasChestplate && chestplate == REAPER,
+                hasLeggings && leggings == REAPER,
+                hasBoots && boots == REAPER);
         doAngelEffects(entity,
                 level,pSlotId,
                 hasHelmet && helmet == ANGEL,
@@ -233,6 +240,33 @@ public class MTAArmor extends ArmorItem {
         }
     }
 
+    protected void doReaperEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        if (head) {
+
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+
+        }
+
+        if (head || chest || legs || feet){
+
+        }
+
+
+        if (head && chest && legs && feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.TRIAL_OMEN, 3, 0, false, false, false));
+        }
+    }
+
     protected void doAngelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
 
         if (head) {
@@ -244,7 +278,6 @@ public class MTAArmor extends ArmorItem {
         }
 
         if (legs) {
-            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
         }
 
@@ -253,6 +286,7 @@ public class MTAArmor extends ArmorItem {
         }
 
         if (head || chest || legs || feet){
+            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
 
         }
 
@@ -333,6 +367,9 @@ public class MTAArmor extends ArmorItem {
         }else
             if ( material.value() == MERMAID){
                 return mermaidAttributes(type,builder);
+        }else
+            if ( material.value() == REAPER){
+                return reaperAttributes(type,builder);
         }else
             if ( material.value() == ANGEL){
                 return angelAttributes(type,builder);
@@ -417,6 +454,28 @@ public class MTAArmor extends ArmorItem {
 
         }else if (type == Type.BOOTS){
             builder.add(Attributes.WATER_MOVEMENT_EFFICIENCY,new AttributeModifier(location,0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
+        }
+
+        return builder;
+    }
+
+    protected ItemAttributeModifiers.Builder reaperAttributes(Type type, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+
+
+        if (type == Type.HELMET){
+            builder.add(ALObjects.Attributes.CRIT_CHANCE, new AttributeModifier(location,0.3F, AttributeModifier.Operation.ADD_VALUE),slot);
+
+        }else if (type == Type.CHESTPLATE){
+            builder.add(ALObjects.Attributes.CRIT_DAMAGE, new AttributeModifier(location,1.1F, AttributeModifier.Operation.ADD_VALUE),slot);
+            builder.add(ALObjects.Attributes.LIFE_STEAL, new AttributeModifier(location,0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
+
+        }else if (type == Type.LEGGINGS){
+            builder.add(Attributes.SNEAKING_SPEED,new AttributeModifier(location,0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
+
+        }else if (type == Type.BOOTS){
+            builder.add(Attributes.SAFE_FALL_DISTANCE,new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
         }
 
         return builder;

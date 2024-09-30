@@ -40,7 +40,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 4);
                 map.put(ArmorItem.Type.BODY, 12);
             }),
-            50, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(MtaItems.ALEXANDRITE),
+            28, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(MtaItems.ALEXANDRITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "holy_knight"))),
             3F, 0.11F
     ));
@@ -53,9 +53,22 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 11);
             }),
-            21, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.AQUAMARINE),
+            19, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.AQUAMARINE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid"))),
             3F, 0.1F
+    ));
+
+    public static final Holder<ArmorMaterial> SILENT_REAPER = ARMOR_MAT.register("silent_reaper", () -> new ArmorMaterial(
+            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 6);
+                map.put(ArmorItem.Type.CHESTPLATE, 8);
+                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BODY, 11);
+            }),
+            23, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.BLOODSTONE),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "silent_reaper"))),
+            1.5F, 0.01F
     ));
 
     public static final Holder<ArmorMaterial> TEMPLE_ANGEL = ARMOR_MAT.register("temple_angel", () -> new ArmorMaterial(
@@ -66,7 +79,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 10);
             }),
-            35, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CELESTITE),
+            19, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CELESTITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "temple_angel"))),
             2F, 0.0F
     ));
@@ -80,7 +93,7 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 2);
                 map.put(ArmorItem.Type.BODY, 9);
             }),
-            15, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.GARNET.get()),
+            17, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.GARNET.get()),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "wrathful_berserker"))),
             1F, 0.05F
     ));

@@ -24,12 +24,11 @@ import software.bernie.geckolib.animation.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class FallenSamurai extends Monster implements GeoEntity {
+public class FallenSamurai extends Monster {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.fallensamurai.idle");
     protected static final RawAnimation CHASE = RawAnimation.begin().thenLoop("animation.fallensamurai.chase");
     protected static final RawAnimation MOVE = RawAnimation.begin().thenLoop("animation.fallensamurai.walk");
 
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
 
 
@@ -120,24 +119,6 @@ public class FallenSamurai extends Monster implements GeoEntity {
     @Override
     public boolean canAttackType(EntityType<?> pType) {
         return true;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 10, (state) -> {
-                    if (state.isMoving()) {
-                        return state.setAndContinue(MOVE);
-                    } else if (state.getAnimatable().isAggressive() && state.isMoving()) {
-                        return state.setAndContinue(CHASE);
-                    } else return state.setAndContinue(IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
 }

@@ -27,6 +27,7 @@ public class MtaItems {
     public static final DeferredItem<Item> AGATE = ITEMS.registerSimpleItem("agate", new Item.Properties());
     public static final DeferredItem<Item> ALEXANDRITE = ITEMS.registerSimpleItem("alexandrite", new Item.Properties());
     public static final DeferredItem<Item> AQUAMARINE = ITEMS.registerSimpleItem("aquamarine", new Item.Properties());
+    public static final DeferredItem<Item> BLOODSTONE = ITEMS.registerSimpleItem("bloodstone", new Item.Properties());
     public static final DeferredItem<Item> CELESTITE = ITEMS.registerSimpleItem("celestite", new Item.Properties());
     public static final DeferredItem<Item> GARNET = ITEMS.registerSimpleItem("garnet", new Item.Properties());
     public static final DeferredItem<Item> MOONSTONE = ITEMS.registerSimpleItem("moonstone", new Item.Properties());
@@ -35,6 +36,7 @@ public class MtaItems {
     public static final DeferredItem<Item> ARMAMENT_UPGRADE = ITEMS.registerSimpleItem("armament_upgrade", new Item.Properties());
     public static final DeferredItem<Item> ROYAL_UPGRADE = ITEMS.registerSimpleItem("royal_upgrade", new Item.Properties());
     public static final DeferredItem<Item> AQUATIC_UPGRADE = ITEMS.registerSimpleItem("aquatic_upgrade", new Item.Properties());
+    public static final DeferredItem<Item> DEATHLY_UPGRADE = ITEMS.registerSimpleItem("deathly_upgrade", new Item.Properties());
     public static final DeferredItem<Item> ANGELIC_UPGRADE = ITEMS.registerSimpleItem("angelic_upgrade", new Item.Properties());
     public static final DeferredItem<Item> BERSERK_UPGRADE = ITEMS.registerSimpleItem("berserk_upgrade", new Item.Properties());
     public static final DeferredItem<Item> FEATHERWEIGHT_UPGRADE = ITEMS.registerSimpleItem("featherweight_upgrade", new Item.Properties());
@@ -54,6 +56,11 @@ public class MtaItems {
     public static final DeferredItem<MTAArmor> MYSTIC_MERMAIDS_CHESTPLATE = ITEMS.register("mystic_mermaids_chestplate", () -> new MTAArmor(MtaArmorMats.MYSTIC_MERMAID, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(49))));
     public static final DeferredItem<MTAArmor> MYSTIC_MERMAIDS_LEGGINGS = ITEMS.register("mystic_mermaids_leggings", () -> new MTAArmor(MtaArmorMats.MYSTIC_MERMAID, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(49))));
     public static final DeferredItem<MTAArmor> MYSTIC_MERMAIDS_BOOTS = ITEMS.register("mystic_mermaids_boots", () -> new MTAArmor(MtaArmorMats.MYSTIC_MERMAID, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(49))));
+
+    public static final DeferredItem<MTAArmor> SILENT_REAPERS_HELMET = ITEMS.register("silent_reapers_helmet", () -> new MTAArmor(MtaArmorMats.SILENT_REAPER, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(41))));
+    public static final DeferredItem<MTAArmor> SILENT_REAPERS_CHESTPLATE = ITEMS.register("silent_reapers_chestplate", () -> new MTAArmor(MtaArmorMats.SILENT_REAPER, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(41))));
+    public static final DeferredItem<MTAArmor> SILENT_REAPERS_LEGGINGS = ITEMS.register("silent_reapers_leggings", () -> new MTAArmor(MtaArmorMats.SILENT_REAPER, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(41))));
+    public static final DeferredItem<MTAArmor> SILENT_REAPERS_BOOTS = ITEMS.register("silent_reapers_boots", () -> new MTAArmor(MtaArmorMats.SILENT_REAPER, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(41))));
 
     public static final DeferredItem<MTAArmor> TEMPLE_ANGELS_HELMET = ITEMS.register("temple_angels_helmet", () -> new MTAArmor(MtaArmorMats.TEMPLE_ANGEL, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(45))));
     public static final DeferredItem<MTAArmor> TEMPLE_ANGELS_CHESTPLATE = ITEMS.register("temple_angels_chestplate", () -> new MTAArmor(MtaArmorMats.TEMPLE_ANGEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(45))));
@@ -85,6 +92,10 @@ public class MtaItems {
     public static final DeferredItem<PickaxeItem> AQUATIC_PICKAXE = ITEMS.register("aquatic_pickaxe", () -> new PickaxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
     public static final DeferredItem<AxeItem> AQUATIC_AXE = ITEMS.register("aquatic_axe", () -> new AxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
     public static final DeferredItem<ShovelItem> AQUATIC_SHOVEL = ITEMS.register("aquatic_shovel", () -> new ShovelItem(MTAToolTiers.AQUAMARINE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.5F, -3F))));
+
+    public static final DeferredItem<PickaxeItem> DEATHLY_PICKAXE = ITEMS.register("deathly_pickaxe", () -> new PickaxeItem(MTAToolTiers.BLOODSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.BLOODSTONE, 1.0F, -2.8F))));
+    public static final DeferredItem<AxeItem> DEATHLY_AXE = ITEMS.register("deathly_axe", () -> new AxeItem(MTAToolTiers.BLOODSTONE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.BLOODSTONE, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> DEATHLY_SHOVEL = ITEMS.register("deathly_shovel", () -> new ShovelItem(MTAToolTiers.BLOODSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.BLOODSTONE, 1.5F, -3F))));
 
     public static final DeferredItem<PickaxeItem> ANGELIC_PICKAXE = ITEMS.register("angelic_pickaxe", () -> new PickaxeItem(MTAToolTiers.CELESTITE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.CELESTITE, 1.0F, -2.8F))));
     public static final DeferredItem<AxeItem> ANGELIC_AXE = ITEMS.register("angelic_axe", () -> new AxeItem(MTAToolTiers.CELESTITE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.CELESTITE, 1.0F, -2.8F))));
@@ -120,8 +131,9 @@ public class MtaItems {
     public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.register("netherite_bow", () -> new NetheriteBowItem( new Item.Properties().durability(2031)));
     public static final DeferredItem<SentinelsWarHammerItem> GREAT_SENTINELS_WAR_HAMMER = ITEMS.register("great_sentinels_war_hammer", () -> new SentinelsWarHammerItem(new Item.Properties().durability(8192).component(DataComponents.TOOL, SentinelsWarHammerItem.createToolProperties())));
     public static final DeferredItem<KnightGreatswordItem> HOLY_KNIGHTS_GREATSWORD = ITEMS.register("holy_knights_greatsword", () -> new KnightGreatswordItem(MTAToolTiers.ALEXANDRITE, new Item.Properties()));
-    public static final DeferredItem<MermaidTridentItem> MYSTIC_MERMAIDS_TRIDENT = ITEMS.register("mystic_mermaids_trident", () -> new MermaidTridentItem( new Item.Properties().rarity(Rarity.EPIC).fireResistant().durability(2048).attributes(MermaidTridentItem.createAttributes())));
-    public static final DeferredItem<AngelBowItem> TEMPLE_ANGELS_BOW = ITEMS.register("temple_angels_bow", () -> new AngelBowItem( new Item.Properties().durability(2400)));
+    public static final DeferredItem<MermaidTridentItem> MYSTIC_MERMAIDS_TRIDENT = ITEMS.register("mystic_mermaids_trident", () -> new MermaidTridentItem( new Item.Properties().durability(7108).attributes(MermaidTridentItem.createAttributes())));
+    public static final DeferredItem<ReaperScytheItem> SILENT_REAPERS_SCYTHE = ITEMS.register("silent_reaper_scythe", () -> new ReaperScytheItem(MTAToolTiers.BLOODSTONE, new Item.Properties()));
+    public static final DeferredItem<AngelBowItem> TEMPLE_ANGELS_BOW = ITEMS.register("temple_angels_bow", () -> new AngelBowItem( new Item.Properties().durability(6760)));
     public static final DeferredItem<BerserkerBattleAxeItem> WRATHFUL_BERSERKERS_BATTLEAXE = ITEMS.register("wrathful_berserkers_battleaxe", () -> new BerserkerBattleAxeItem(MTAToolTiers.GARNET, new Item.Properties()));
     public static final DeferredItem<RogueDaggerItem> SHADOW_ROGUES_DAGGER = ITEMS.register("shadow_rogues_dagger", () -> new RogueDaggerItem(MTAToolTiers.MOONSTONE, new Item.Properties()));
 

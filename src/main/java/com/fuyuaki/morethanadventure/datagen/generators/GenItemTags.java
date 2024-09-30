@@ -72,6 +72,9 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.AQUATIC_PICKAXE.get(),
                         MtaItems.AQUATIC_AXE.get(),
                         MtaItems.AQUATIC_SHOVEL.get(),
+                        MtaItems.DEATHLY_PICKAXE.get(),
+                        MtaItems.DEATHLY_AXE.get(),
+                        MtaItems.DEATHLY_SHOVEL.get(),
                         MtaItems.ANGELIC_PICKAXE.get(),
                         MtaItems.ANGELIC_AXE.get(),
                         MtaItems.ANGELIC_SHOVEL.get(),
@@ -97,6 +100,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.ARMAMENT_PICKAXE.get(),
                         MtaItems.ROYAL_PICKAXE.get(),
                         MtaItems.AQUATIC_PICKAXE.get(),
+                        MtaItems.DEATHLY_PICKAXE.get(),
                         MtaItems.ANGELIC_PICKAXE.get(),
                         MtaItems.BERSERK_PICKAXE.get(),
                         MtaItems.FEATHERWEIGHT_PICKAXE.get()
@@ -108,6 +112,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.ARMAMENT_AXE.get(),
                         MtaItems.ROYAL_AXE.get(),
                         MtaItems.AQUATIC_AXE.get(),
+                        MtaItems.DEATHLY_AXE.get(),
                         MtaItems.ANGELIC_AXE.get(),
                         MtaItems.BERSERK_AXE.get(),
                         MtaItems.FEATHERWEIGHT_AXE.get()
@@ -119,6 +124,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.ARMAMENT_SHOVEL.get(),
                         MtaItems.ROYAL_SHOVEL.get(),
                         MtaItems.AQUATIC_SHOVEL.get(),
+                        MtaItems.DEATHLY_SHOVEL.get(),
                         MtaItems.ANGELIC_SHOVEL.get(),
                         MtaItems.BERSERK_SHOVEL.get(),
                         MtaItems.FEATHERWEIGHT_SHOVEL.get()
@@ -133,6 +139,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.GREAT_SENTINELS_HELMET.get(),
                         MtaItems.HOLY_KNIGHTS_HELMET.get(),
                         MtaItems.MYSTIC_MERMAIDS_HELMET.get(),
+                        MtaItems.SILENT_REAPERS_HELMET.get(),
                         MtaItems.TEMPLE_ANGELS_HELMET.get(),
                         MtaItems.WRATHFUL_BERSERKERS_HELMET.get(),
                         MtaItems.SHADOW_ROGUES_HELMET.get()
@@ -142,6 +149,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.GREAT_SENTINELS_CHESTPLATE.get(),
                         MtaItems.HOLY_KNIGHTS_CHESTPLATE.get(),
                         MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get(),
+                        MtaItems.SILENT_REAPERS_CHESTPLATE.get(),
                         MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(),
                         MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get(),
                         MtaItems.SHADOW_ROGUES_CHESTPLATE.get()
@@ -151,6 +159,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.GREAT_SENTINELS_LEGGINGS.get(),
                         MtaItems.HOLY_KNIGHTS_LEGGINGS.get(),
                         MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get(),
+                        MtaItems.SILENT_REAPERS_LEGGINGS.get(),
                         MtaItems.TEMPLE_ANGELS_LEGGINGS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get(),
                         MtaItems.SHADOW_ROGUES_LEGGINGS.get()
@@ -160,6 +169,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.GREAT_SENTINELS_BOOTS.get(),
                         MtaItems.HOLY_KNIGHTS_BOOTS.get(),
                         MtaItems.MYSTIC_MERMAIDS_BOOTS.get(),
+                        MtaItems.SILENT_REAPERS_BOOTS.get(),
                         MtaItems.TEMPLE_ANGELS_BOOTS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
@@ -168,7 +178,8 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.WEAPON_ENCHANTABLE)
                 .add(
                         MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(),
-                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
+                        MtaItems.SILENT_REAPERS_SCYTHE.get()
 
                 );
         this.tag(ItemTags.TRIDENT_ENCHANTABLE)
@@ -186,6 +197,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.COPPER_SWORD.get(),
                         MtaItems.NETHERSTEEL_SWORD.get(),
                         MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
+                        MtaItems.SILENT_REAPERS_SCYTHE.get(),
                         MtaItems.SHADOW_ROGUES_DAGGER.get(),
                         MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
                 );

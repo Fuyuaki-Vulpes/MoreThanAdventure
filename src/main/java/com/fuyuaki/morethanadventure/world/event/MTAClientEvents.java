@@ -3,8 +3,7 @@ package com.fuyuaki.morethanadventure.world.event;
 import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.*;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
-import com.fuyuaki.morethanadventure.game.client.model.entity.MysticMermaidsTridentModel;
-import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
+import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
@@ -80,6 +79,23 @@ public class MTAClientEvents
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(MTAModelLayers.NETHERITE_TRIDENT, NetheriteTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT, MysticMermaidsTridentModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.CAPYBARA, CapybaraModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.DUCK, DuckModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.OCTOPUS, OctopusModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.OWL, OwlModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.PENGUIN, PenguinModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.RACCOON, RaccoonModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.SHRIMP, ShrimpModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.TOUCAN, ToucanModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.WITHER_JUGGERNAUT, WitherJuggernautModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
 
     }
     @SubscribeEvent

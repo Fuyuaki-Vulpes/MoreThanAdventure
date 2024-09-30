@@ -25,7 +25,6 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class IcicleCreeper extends AbstractCreeperVariant {
 
     protected static final RawAnimation WALK = RawAnimation.begin().thenPlayAndHold("animation.creeper.walk");
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public IcicleCreeper(EntityType<? extends AbstractCreeperVariant> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -44,23 +43,6 @@ public class IcicleCreeper extends AbstractCreeperVariant {
     }
 
 
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(
-                new AnimationController<>(this, 5, (state) -> {
-                   if (state.isMoving()) {
-                        return state.setAndContinue(WALK);
-                    }
-                    return state.setAndContinue(DefaultAnimations.IDLE);
-                })
-        );
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 
     @Override
     public void setTicksFrozen(int pTicksFrozen) {
