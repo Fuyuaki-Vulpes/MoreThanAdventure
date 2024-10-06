@@ -40,6 +40,17 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
         event.put(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamurai.createAttributes().build());
         event.put(MtaEntityTypes.ICICLE_CREEPER.get(), IcicleCreeper.createAttributes().build());
+        event.put(MtaEntityTypes.ARMORED_SKELETON.get(), ArmoredSkeleton.createAttributes().build());
+        event.put(MtaEntityTypes.BLACK_WIDOW.get(), BlackWidow.createAttributes().build());
+        event.put(MtaEntityTypes.CHARRED_SKELETON.get(), CharredSkeleton.createAttributes().build());
+        event.put(MtaEntityTypes.CORROSIVE_CUBE.get(), CorrosiveCube.createAttributes().build());
+        event.put(MtaEntityTypes.FROZEN_SLIME.get(), FrozenSlime.createAttributes().build());
+        event.put(MtaEntityTypes.GLOW_SPIDER.get(), GlowSpider.createAttributes().build());
+        event.put(MtaEntityTypes.HOST.get(), Host.createAttributes().build());
+        event.put(MtaEntityTypes.MOSSY_ZOMBIE.get(), MossyZombie.createAttributes().build());
+        event.put(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighter.createAttributes().build());
+        event.put(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombie.createAttributes().build());
+        event.put(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMiner.createAttributes().build());
         event.put(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernaut.createAttributes().build());
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());

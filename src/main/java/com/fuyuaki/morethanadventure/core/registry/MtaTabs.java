@@ -500,6 +500,17 @@ public class MtaTabs {
                 output.accept(MtaItems.YUKI_ONNA_SPAWN_EGG);
                 output.accept(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
                 output.accept(MtaItems.ICICLE_CREEPER_SPAWN_EGG);
+                output.accept(MtaItems.ARMORED_SKELETON_SPAWN_EGG);
+                output.accept(MtaItems.BLACK_WIDOW_SPAWN_EGG);
+                output.accept(MtaItems.CHARRED_SKELETON_SPAWN_EGG);
+                output.accept(MtaItems.CORROSIVE_CUBE_SPAWN_EGG);
+                output.accept(MtaItems.FROZEN_SLIME_SPAWN_EGG);
+                output.accept(MtaItems.GLOW_SPIDER_SPAWN_EGG);
+                output.accept(MtaItems.HOST_SPAWN_EGG);
+                output.accept(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG);
+                output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
+                output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
+                output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
 
                 //BOSS SPAWNS
                 if (parameters.hasPermissions()){
