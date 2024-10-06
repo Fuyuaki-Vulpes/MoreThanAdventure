@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ShrimpRenderer extends MobRenderer<Shrimp, ShrimpModel> {
+public class ShrimpRenderer extends MobRenderer<Shrimp, ShrimpModel<Shrimp>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/shrimp.png");
 
     public ShrimpRenderer(EntityRendererProvider.Context pContext) {
