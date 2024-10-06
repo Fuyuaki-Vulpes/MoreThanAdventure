@@ -12,8 +12,6 @@ import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
@@ -54,7 +52,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.BLACK_WIDOW.get(), BlackWidowRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CHARRED_SKELETON.get(), CharredSkeletonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CORROSIVE_CUBE.get(), CorrosiveCubeRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.FROZEN_SLIME.get(), FrozenSlineRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.FROZEN_SLIME.get(), FrozenSlimeRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.GLOW_SPIDER.get(), GlowSpiderRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.HOST.get(), HostRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.MOSSY_ZOMBIE.get(), MossyZombieRenderer::new);
