@@ -3,7 +3,6 @@ package com.fuyuaki.morethanadventure.world.block.entity;
 import com.fuyuaki.morethanadventure.core.MTACommonConfig;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlockEntities;
 import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
-import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -14,18 +13,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.Tags;
-import software.bernie.geckolib.animatable.GeoBlockEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private static final RawAnimation RUN = RawAnimation.begin().thenPlay("animation.sprinkler.pop").thenLoop("animation.sprinkler.spin");
-    private static final RawAnimation IDLE = RawAnimation.begin().thenPlay("animation.sprinkler.stop").thenLoop("animation.sprinkler.idle");
-
+public class SprinklerEntity extends BlockEntity {
 
     public SprinklerEntity( BlockPos pPos, BlockState pBlockState) {
         super(MtaBlockEntities.SPRINKLER.get(), pPos, pBlockState);
@@ -34,24 +23,6 @@ public class SprinklerEntity extends BlockEntity implements GeoBlockEntity {
 
 
 
-
-
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, state -> {
-            if (state.getAnimatable().getBlockState().getValue(Sprinkler.ON))
-                return state.setAndContinue(RUN);
-
-            return state.setAndContinue(IDLE);
-        }));
-    }
-
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 
     public static void particleTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
         for (int p = 0; p < 4; p++){

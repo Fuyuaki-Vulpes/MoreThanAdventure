@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
-import com.fuyuaki.morethanadventure.core.MTAMod;
-import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.Model;
@@ -10,7 +8,6 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 

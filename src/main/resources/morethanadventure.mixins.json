@@ -9,6 +9,7 @@
     "MixinMobCategory",
     "MusicMixin",
     "ServerPlayerMixin",
+    "SnowballMixin",
     "TamableAnimalMixin",
     "VanillaEnchantmentProviderMixin"
   ],

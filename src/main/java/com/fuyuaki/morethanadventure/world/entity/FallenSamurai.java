@@ -17,19 +17,8 @@ import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class FallenSamurai extends Monster {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.fallensamurai.idle");
-    protected static final RawAnimation CHASE = RawAnimation.begin().thenLoop("animation.fallensamurai.chase");
-    protected static final RawAnimation MOVE = RawAnimation.begin().thenLoop("animation.fallensamurai.walk");
-
-
 
 
     public FallenSamurai(EntityType<? extends Monster> pEntityType, Level pLevel) {

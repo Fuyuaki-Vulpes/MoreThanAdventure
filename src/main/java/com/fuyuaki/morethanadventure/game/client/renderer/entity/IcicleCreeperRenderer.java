@@ -1,18 +1,11 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
-import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.IcicleCreeperModel;
-import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.IcicleCreeper;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import software.bernie.geckolib.cache.object.BakedGeoModel;
-import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -20,7 +13,9 @@ public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCree
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/icicle_creeper.png");
 
     public IcicleCreeperRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new IcicleCreeperModel(pContext.bakeLayer(MTAModelLayers.ICICLE_CREEPER)), .5F);
+        super(pContext,new IcicleCreeperModel(pContext.bakeLayer(MTAModelLayers.ICICLE_CREEPER)), 0.5F);
+        //this.addLayer(new CreeperPowerLayer(this, pContext.getModelSet()));
+
     }
 
 

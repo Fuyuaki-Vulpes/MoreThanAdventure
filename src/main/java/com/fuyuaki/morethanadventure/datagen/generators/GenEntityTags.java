@@ -5,6 +5,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.entity.EntityType;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,7 +27,20 @@ public class GenEntityTags extends EntityTypeTagsProvider {
                 );
         this.tag(EntityTypeTags.POWDER_SNOW_WALKABLE_MOBS)
                 .add(
-                        MtaEntityTypes.ICICLE_CREEPER.get()
+                        MtaEntityTypes.ICICLE_CREEPER.get(),
+                        EntityType.SNOW_GOLEM
+                );
+        this.tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)
+                .add(
+                        MtaEntityTypes.ICICLE_CREEPER.get(),
+                        MtaEntityTypes.YUKI_ONNA.get()
+                );
+        this.tag(EntityTypeTags.AQUATIC)
+                .add(
+                        MtaEntityTypes.GREAT_WHITE_SHARK.get(),
+                        MtaEntityTypes.JELLYFISH.get(),
+                        MtaEntityTypes.OCTOPUS.get(),
+                        MtaEntityTypes.SHRIMP.get()
                 );
     }
 }

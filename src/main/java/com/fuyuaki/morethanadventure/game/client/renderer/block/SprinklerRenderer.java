@@ -1,11 +1,14 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.block;
 
-import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
-import com.fuyuaki.morethanadventure.world.block.entity.SprinklerEntity;
-import software.bernie.geckolib.renderer.GeoBlockRenderer;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
+import net.minecraft.world.level.block.entity.BlockEntity;
 
-public class SprinklerRenderer extends GeoBlockRenderer<SprinklerEntity> {
-    public SprinklerRenderer() {
-        super(new SprinklerModel());
+public class SprinklerRenderer<T extends BlockEntity > implements BlockEntityRenderer<T> {
+
+    @Override
+    public void render(T blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
+
     }
 }

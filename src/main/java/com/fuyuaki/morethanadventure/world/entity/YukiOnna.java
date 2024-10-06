@@ -14,10 +14,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -39,22 +36,11 @@ import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
-import java.util.Objects;
 
 public class YukiOnna extends Monster implements FlyingAnimal {
     private static final EntityDataAccessor<Boolean> DATA_IS_BLOWING = SynchedEntityData.defineId(YukiOnna.class, EntityDataSerializers.BOOLEAN);
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.yukionna.idle");
-    protected static final RawAnimation CHASE = RawAnimation.begin().thenLoop("animation.yukionna.chase");
-    protected static final RawAnimation BLOW = RawAnimation.begin().thenPlay("animation.yukionna.blow").thenLoop("animation.yukionna.idle");
-
 
 
     public YukiOnna(EntityType<? extends Monster> pEntityType, Level pLevel) {

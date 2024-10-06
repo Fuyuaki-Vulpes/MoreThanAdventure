@@ -45,13 +45,6 @@ repositories {
         url = uri("https://maven.octo-studios.com/releases")
     }
 
-    maven {
-        name = 'GeckoLib'
-        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-        content {
-            includeGroup("software.bernie.geckolib")
-        }
-    }
 
 }
 
@@ -136,7 +129,6 @@ dependencies {
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 
-    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 
 }
 
@@ -162,14 +154,11 @@ tasks.withType(ProcessResources).configureEach {
             terrablenderVersion    : terrablenderVersion,
             emi_version            : emi_version,
             curiosVersion     : curiosVersion,
-            geckolib_version       : geckolib_version,
             placeboVersionRange         : placeboVersionRange,
             attributesLibVersionRange   : attributesLibVersionRange,
             terrablenderVersionRange    : terrablenderVersionRange,
             emi_versionRange            : emi_versionRange,
-            curiosVersionRange     : curiosVersionRange,
-            geckolib_versionRange       : geckolib_versionRange
-
+            curiosVersionRange     : curiosVersionRange
 
     ]
     inputs.properties replaceProperties

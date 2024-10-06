@@ -1,26 +1,23 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.world.entity.Butterfly;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.model.DefaultedEntityGeoModel;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.geom.ModelPart;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+public class ButterflyModel extends HierarchicalModel<Butterfly> {
+    private final ModelPart root;
 
-public class ButterflyModel extends DefaultedEntityGeoModel<Butterfly> {
-    public ButterflyModel() {
-        super(ResourceLocation.fromNamespaceAndPath(MODID, "butterfly"));
+    public ButterflyModel(ModelPart root) {
+        this.root = root.getChild("root");
     }
 
     @Override
-    public ResourceLocation getTextureResource(Butterfly animatable) {
-        return ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/body.png");
+    public void setupAnim(Butterfly entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+
     }
 
-
     @Override
-    public @Nullable RenderType getRenderType(Butterfly animatable, ResourceLocation texture) {
-        return RenderType.entityCutout(getTextureResource(animatable));
+    public ModelPart root() {
+        return null;
     }
 }

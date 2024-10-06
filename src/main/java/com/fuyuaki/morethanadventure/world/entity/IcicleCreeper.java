@@ -15,16 +15,8 @@ import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.constant.DefaultAnimations;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class IcicleCreeper extends AbstractCreeperVariant {
-
-    protected static final RawAnimation WALK = RawAnimation.begin().thenPlayAndHold("animation.creeper.walk");
 
     public IcicleCreeper(EntityType<? extends AbstractCreeperVariant> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);

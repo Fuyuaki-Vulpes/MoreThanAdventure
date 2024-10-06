@@ -19,35 +19,18 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.constant.DefaultAnimations;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.function.IntFunction;
 
 public class Duck extends MTATameableAnimal implements VariantHolder<Duck.Variant> {
     private static final EntityDataAccessor<Integer> VARIANT =
             SynchedEntityData.defineId(Duck.class, EntityDataSerializers.INT);
-
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.duck.idle");
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.duck.walk");
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.duck.swim");
-    protected static final RawAnimation IN_WATER = RawAnimation.begin().thenLoop("animation.duck.in_water");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.duck.sit");
-
 
 
     public Duck(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
