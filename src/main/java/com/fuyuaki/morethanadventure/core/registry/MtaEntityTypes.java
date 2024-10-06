@@ -38,6 +38,62 @@ public class MtaEntityTypes {
                     .sized(0.6F, 1.7F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"icicle_creeper").toString()));
 
+    public static final DeferredHolder<EntityType<?>,EntityType<ArmoredSkeleton>> ARMORED_SKELETON = ENTITY.register("armored_skeleton",
+            () -> EntityType.Builder.<ArmoredSkeleton>of(ArmoredSkeleton::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"armored_skeleton").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<BlackWidow>> BLACK_WIDOW = ENTITY.register("black_widow",
+            () -> EntityType.Builder.<BlackWidow>of(BlackWidow::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"black_widow").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<CharredSkeleton>> CHARRED_SKELETON = ENTITY.register("charred_skeleton",
+            () -> EntityType.Builder.<CharredSkeleton>of(CharredSkeleton::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"charred_skeleton").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<CorrosiveCube>> CORROSIVE_CUBE = ENTITY.register("corrosive_cube",
+            () -> EntityType.Builder.<CorrosiveCube>of(CorrosiveCube::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"corrosive_cube").toString()));
+    public static final DeferredHolder<EntityType<?>,EntityType<FrozenSlime>> FROZEN_SLIME = ENTITY.register("frozen_slime",
+            () -> EntityType.Builder.<FrozenSlime>of(FrozenSlime::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"corrosive_cube").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<GlowSpider>> GLOW_SPIDER = ENTITY.register("glow_spider",
+            () -> EntityType.Builder.<GlowSpider>of(GlowSpider::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"glow_spider").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Host>> HOST = ENTITY.register("host",
+            () -> EntityType.Builder.<Host>of(Host::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"host").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<MossyZombie>> MOSSY_ZOMBIE = ENTITY.register("mossy_zombie",
+            () -> EntityType.Builder.<MossyZombie>of(MossyZombie::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"mossy_zombie").toString()));
+
+
+    public static final DeferredHolder<EntityType<?>,EntityType<SkeletonFighter>> SKELETON_FIGHTER = ENTITY.register("skeleton_fighter",
+            () -> EntityType.Builder.<SkeletonFighter>of(SkeletonFighter::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"skeleton_fighter").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<ToxicZombie>> TOXIC_ZOMBIE = ENTITY.register("toxic_zombie",
+            () -> EntityType.Builder.<ToxicZombie>of(ToxicZombie::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"toxic_zombie").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<ZombifiedMiner>> ZOMBIFIED_MINER = ENTITY.register("zombified_miner",
+            () -> EntityType.Builder.<ZombifiedMiner>of(ZombifiedMiner::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.7F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"zombified_miner").toString()));
+
+
 
 
 

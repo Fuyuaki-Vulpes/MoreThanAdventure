@@ -206,6 +206,17 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.SHRIMP_SPAWN_EGG);
         simpleItem(MtaItems.TOUCAN_SPAWN_EGG);
         simpleItem(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG);
+        //simpleItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG);
+        //simpleItem(MtaItems.BLACK_WIDOW_SPAWN_EGG);
+       // simpleItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG);
+        //simpleItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG);
+        //simpleItem(MtaItems.FROZEN_SLIME_SPAWN_EGG);
+        //simpleItem(MtaItems.GLOW_SPIDER_SPAWN_EGG);
+        //simpleItem(MtaItems.HOST_SPAWN_EGG);
+        //simpleItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG);
+        //simpleItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
+        //simpleItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
+        //simpleItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {
