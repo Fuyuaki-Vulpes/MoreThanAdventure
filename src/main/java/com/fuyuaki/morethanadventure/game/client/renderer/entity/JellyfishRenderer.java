@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class JellyfishRenderer extends MobRenderer<Jellyfish, JellyfishModel> {
+public class JellyfishRenderer extends MobRenderer<Jellyfish, JellyfishModel<Jellyfish>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/jellyfish.png");
 
     public JellyfishRenderer(EntityRendererProvider.Context pContext) {

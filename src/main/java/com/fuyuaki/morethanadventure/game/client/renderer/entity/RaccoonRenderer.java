@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class RaccoonRenderer extends MobRenderer<Raccoon, RaccoonModel> {
+public class RaccoonRenderer extends MobRenderer<Raccoon, RaccoonModel<Raccoon>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/raccoon.png");
 
     public RaccoonRenderer(EntityRendererProvider.Context pContext) {

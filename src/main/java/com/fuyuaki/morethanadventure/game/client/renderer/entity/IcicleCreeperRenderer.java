@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCreeperModel> {
+public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCreeperModel<IcicleCreeper>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/icicle_creeper.png");
 
     public IcicleCreeperRenderer(EntityRendererProvider.Context pContext) {

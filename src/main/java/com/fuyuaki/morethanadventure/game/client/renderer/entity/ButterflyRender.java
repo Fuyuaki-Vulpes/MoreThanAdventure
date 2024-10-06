@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class ButterflyRender extends MobRenderer<Butterfly,ButterflyModel> {
+public class ButterflyRender extends MobRenderer<Butterfly,ButterflyModel<Butterfly>> {
 
     public ButterflyRender(EntityRendererProvider.Context renderManager) {
         super(renderManager, new ButterflyModel(renderManager.bakeLayer(MTAModelLayers.BUTTERFLY)), 0.5F);

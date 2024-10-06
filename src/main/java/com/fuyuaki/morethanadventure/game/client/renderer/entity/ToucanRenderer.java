@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ToucanRenderer extends MobRenderer<Toucan, ToucanModel> {
+public class ToucanRenderer extends MobRenderer<Toucan, ToucanModel<Toucan>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/toucan.png");
 
     public ToucanRenderer(EntityRendererProvider.Context pContext) {

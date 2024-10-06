@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class OctopusRenderer extends MobRenderer<Octopus, OctopusModel> {
+public class OctopusRenderer extends MobRenderer<Octopus, OctopusModel<Octopus>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/octopus.png");
 
     public OctopusRenderer(EntityRendererProvider.Context pContext) {

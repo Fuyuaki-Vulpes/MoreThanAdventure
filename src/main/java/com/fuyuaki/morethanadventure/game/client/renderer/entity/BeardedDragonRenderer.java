@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class BeardedDragonRenderer extends MobRenderer<BeardedDragon, BeardedDragonModel> {
+public class BeardedDragonRenderer extends MobRenderer<BeardedDragon, BeardedDragonModel<BeardedDragon>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/bearded_dragon.png");
 
     public BeardedDragonRenderer(EntityRendererProvider.Context pContext) {

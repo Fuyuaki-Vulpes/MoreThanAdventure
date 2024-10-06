@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class GreatWhiteSharkRenderer extends MobRenderer<GreatWhiteShark, GreatWhiteSharkModel> {
+public class GreatWhiteSharkRenderer extends MobRenderer<GreatWhiteShark, GreatWhiteSharkModel<GreatWhiteShark>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/great_white_shark.png");
 
     public GreatWhiteSharkRenderer(EntityRendererProvider.Context pContext) {

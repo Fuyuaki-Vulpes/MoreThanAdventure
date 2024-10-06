@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class FallenSamuraiRenderer extends MobRenderer<FallenSamurai, FallenSamuraiModel> {
+public class FallenSamuraiRenderer extends MobRenderer<FallenSamurai, FallenSamuraiModel<FallenSamurai>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/fallen_samurai.png");
 
     public FallenSamuraiRenderer(EntityRendererProvider.Context pContext) {

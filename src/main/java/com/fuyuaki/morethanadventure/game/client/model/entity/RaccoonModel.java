@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.world.entity.Raccoon;
+import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HierarchicalModel;
@@ -8,7 +9,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class RaccoonModel extends HierarchicalModel<Raccoon> {
+public class RaccoonModel <T extends Raccoon> extends HierarchicalModel<T> {
     private final ModelPart root;
 
     public RaccoonModel(ModelPart root) {

@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class OwlRenderer extends MobRenderer<Owl, OwlModel> {
+public class OwlRenderer extends MobRenderer<Owl, OwlModel<Owl>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/owl.png");
 
     public OwlRenderer(EntityRendererProvider.Context pContext) {

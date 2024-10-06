@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class FerretRenderer extends MobRenderer<Ferret, FerretModel> {
+public class FerretRenderer extends MobRenderer<Ferret, FerretModel<Ferret>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/ferret.png");
 
     public FerretRenderer(EntityRendererProvider.Context pContext) {

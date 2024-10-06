@@ -15,7 +15,7 @@ import java.util.Map;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class DuckRenderer extends MobRenderer<Duck, DuckModel> {
+public class DuckRenderer extends MobRenderer<Duck, DuckModel<Duck>> {
 
     private static final Map<Duck.Variant, ResourceLocation> LOCATION_BY_VARIANT =
             Util.make(Maps.newEnumMap(Duck.Variant.class), map -> {

@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class PenguinRenderer extends MobRenderer<Penguin, PenguinModel> {
+public class PenguinRenderer extends MobRenderer<Penguin, PenguinModel<Penguin>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/penguin.png");
 
     public PenguinRenderer(EntityRendererProvider.Context pContext) {

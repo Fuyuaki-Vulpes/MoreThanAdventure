@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class CapybaraRenderer extends MobRenderer<Capybara, CapybaraModel> {
+public class CapybaraRenderer extends MobRenderer<Capybara, CapybaraModel<Capybara>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/capybara.png");
 
     public CapybaraRenderer(EntityRendererProvider.Context pContext) {

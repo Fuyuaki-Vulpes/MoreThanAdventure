@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class YukiOnnaRenderer extends MobRenderer<YukiOnna, YukiOnnaModel> {
+public class YukiOnnaRenderer extends MobRenderer<YukiOnna, YukiOnnaModel<YukiOnna>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/yuki_onna.png");
 
     public YukiOnnaRenderer(EntityRendererProvider.Context pContext) {
