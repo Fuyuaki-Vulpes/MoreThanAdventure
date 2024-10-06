@@ -15,7 +15,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.BossEvent;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -43,26 +42,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.providers.VanillaEnchantmentProviders;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.PathType;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
-import software.bernie.geckolib.constant.DefaultAnimations;
-import software.bernie.geckolib.util.GeckoLibUtil;
-
-import java.util.Objects;
 
 public class WitherJuggernaut extends Monster{
     private static final EntityDataAccessor<Boolean> STUNNED = SynchedEntityData.defineId(WitherJuggernaut.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> STUN_TIME = SynchedEntityData.defineId(WitherJuggernaut.class, EntityDataSerializers.INT);
 
-    protected static final RawAnimation MOVE = RawAnimation.begin().thenLoop("animation.wither_juggernaut.walk");
-    protected static final RawAnimation SWING = RawAnimation.begin().thenPlay("animation.wither_juggernaut.swing");
-    protected static final RawAnimation STUN = RawAnimation.begin().then("animation.wither_juggernaut.enter_stun", Animation.LoopType.PLAY_ONCE).thenLoop("animation.wither_juggernaut.stun");
     private final ServerBossEvent bossEvent = (ServerBossEvent)new ServerBossEvent(
             this.getDisplayName(), BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.PROGRESS
     ).setDarkenScreen(true);

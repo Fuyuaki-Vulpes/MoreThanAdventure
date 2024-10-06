@@ -13,22 +13,10 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.constant.DefaultAnimations;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Penguin extends MTATameableAnimal {
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.penguin.walk");
-    protected static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.penguin.swim");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.penguin.sit");
-
 
 
     public Penguin(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {

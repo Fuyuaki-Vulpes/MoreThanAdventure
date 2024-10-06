@@ -5,7 +5,6 @@ import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -19,19 +18,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.RawAnimation;
-import software.bernie.geckolib.constant.DefaultAnimations;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class Ferret extends MTATameableAnimal {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.ferret.idle");
-    protected static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.ferret.walk");
-    protected static final RawAnimation SIT = RawAnimation.begin().thenPlayAndHold("animation.ferret.sit");
-
 
 
     public Ferret(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {

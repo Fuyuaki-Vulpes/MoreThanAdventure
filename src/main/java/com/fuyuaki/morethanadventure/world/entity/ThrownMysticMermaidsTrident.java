@@ -24,20 +24,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 
-public class ThrownMysticMermaidsTrident extends AbstractArrow implements GeoEntity {
+public class ThrownMysticMermaidsTrident extends AbstractArrow {
     private static final EntityDataAccessor<Byte> ID_LOYALTY = SynchedEntityData.defineId(ThrownMysticMermaidsTrident.class, EntityDataSerializers.BYTE);
     private static final EntityDataAccessor<Boolean> ID_FOIL = SynchedEntityData.defineId(ThrownMysticMermaidsTrident.class, EntityDataSerializers.BOOLEAN);
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-
 
     public ThrownMysticMermaidsTrident(EntityType<? extends ThrownMysticMermaidsTrident> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -238,14 +232,5 @@ public class ThrownMysticMermaidsTrident extends AbstractArrow implements GeoEnt
         return true;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 }
 
