@@ -6,6 +6,8 @@
   "mixins": [
     "BlocksMixin",
     "FarmBlockMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
     "MixinMobCategory",
     "MusicMixin",
     "ServerPlayerMixin",
