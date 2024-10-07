@@ -20,6 +20,8 @@ public class MTAModelLayers {
     public static final ModelLayerLocation BEARDED_DRAGON = register("bearded_dragon");
     public static final ModelLayerLocation BLACK_WIDOW = register("black_widow");
     public static final ModelLayerLocation BUTTERFLY = register("butterfly");
+    public static final ModelLayerLocation BUTTERFLY_PATTERN = register("butterfly");
+    public static final ModelLayerLocation BUTTERFLY_OVERLAY = register("butterfly");
     public static final ModelLayerLocation CAPYBARA = register("capybara");
     public static final ModelLayerLocation CHARRED_SKELETON = register("charred_skeleton");
     public static final ModelLayerLocation CORROSIVE_CUBE = register("corrosive_cube");
