@@ -1,7 +1,10 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.ArmoredSkeletonModel;
+import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
 import com.fuyuaki.morethanadventure.world.entity.ArmoredSkeleton;
+import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.SkeletonRenderer;
@@ -13,12 +16,12 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 public class ArmoredSkeletonRenderer extends MobRenderer<ArmoredSkeleton, ArmoredSkeletonModel<ArmoredSkeleton>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/armored_skeleton.png");
 
-    public ArmoredSkeletonRenderer(EntityRendererProvider.Context context, ArmoredSkeletonModel model, float shadowRadius) {
-        super(context, model, shadowRadius);
+    public ArmoredSkeletonRenderer(EntityRendererProvider.Context pContext) {
+        super(pContext,new ArmoredSkeletonModel(pContext.bakeLayer(MTAModelLayers.ARMORED_SKELETON)), .5F);
     }
 
     @Override
     public ResourceLocation getTextureLocation(ArmoredSkeleton entity) {
-        return null;
+        return TEXTURE;
     }
 }

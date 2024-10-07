@@ -1,22 +1,29 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
+import com.fuyuaki.morethanadventure.game.client.model.entity.BlackWidowModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.SkeletonFighterModel;
 import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.SkeletonFighter;
+import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.SkeletonRenderer;
 import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
 import net.minecraft.resources.ResourceLocation;
 
+import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+
 public class SkeletonFighterRenderer extends MobRenderer<SkeletonFighter, SkeletonFighterModel<SkeletonFighter>> {
-    public SkeletonFighterRenderer(EntityRendererProvider.Context context, SkeletonFighterModel<SkeletonFighter> model, float shadowRadius) {
-        super(context, model, shadowRadius);
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton_fighter.png");
+
+    public SkeletonFighterRenderer(EntityRendererProvider.Context pContext) {
+        super(pContext,new SkeletonFighterModel<>(pContext.bakeLayer(MTAModelLayers.SKELETON_FIGHTER)), .5F);
     }
 
     @Override
     public ResourceLocation getTextureLocation(SkeletonFighter entity) {
-        return null;
+        return TEXTURE;
     }
 }

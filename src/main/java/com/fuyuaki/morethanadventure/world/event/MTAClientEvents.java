@@ -93,24 +93,35 @@ public class MTAClientEvents
 
         event.registerLayerDefinition(MTAModelLayers.NETHERITE_TRIDENT, NetheriteTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT, MysticMermaidsTridentModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON, ArmoredSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW, BlackWidowModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CAPYBARA, CapybaraModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON, CharredSkeletonModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE, CorrosiveCubeModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.DUCK, DuckModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.FROZEN_SLIME, FrozenSlimeModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, GlowSpiderModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.HOST, HostModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, MossyZombieModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.OCTOPUS, OctopusModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.OWL, OwlModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.PENGUIN, PenguinModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.RACCOON, RaccoonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.SHRIMP, ShrimpModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER, SkeletonFighterModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOUCAN, ToucanModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, ToxicZombieModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.WITHER_JUGGERNAUT, WitherJuggernautModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, ZombifiedMinerModel::createBodyLayer);
 
     }
     @SubscribeEvent
