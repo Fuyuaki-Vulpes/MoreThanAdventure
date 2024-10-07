@@ -174,12 +174,16 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
                 );
-        //this.tag(ItemTags.SHARP_WEAPON_ENCHANTABLE).add(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get());
+        this.tag(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+                .add(
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
+                );
         this.tag(ItemTags.WEAPON_ENCHANTABLE)
                 .add(
                         MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(),
                         MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
-                        MtaItems.SILENT_REAPERS_SCYTHE.get()
+                        MtaItems.SILENT_REAPERS_SCYTHE.get(),
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get()
 
                 );
         this.tag(ItemTags.TRIDENT_ENCHANTABLE)

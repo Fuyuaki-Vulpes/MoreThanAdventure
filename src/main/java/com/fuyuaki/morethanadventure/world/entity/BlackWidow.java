@@ -21,7 +21,7 @@ public class BlackWidow extends CaveSpider {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.22)
-                .add(Attributes.MAX_HEALTH, 16);
+                .add(Attributes.MAX_HEALTH, 10);
     }
 
     @Override
