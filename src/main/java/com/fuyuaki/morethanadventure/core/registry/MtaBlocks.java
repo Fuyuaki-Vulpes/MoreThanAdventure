@@ -1215,5 +1215,31 @@ public class MtaBlocks {
     private static Block flowerPot(Block pPotted) {
         return new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> pPotted, BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY));
     }
+
+
+    /*
+    >>>>PLACEHOLDER<<<<
+
+
+    public static final DeferredBlock<DropExperienceBlock> PLACEHOLDER_ORE = registerBlock("placeholder_ore",
+            () -> new DropExperienceBlock(ConstantInt.of(0),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLACEHOLDER_ORE = registerBlock("deepslate_placeholder_ore",
+            () -> new DropExperienceBlock(ConstantInt.of(0),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
+            ));
+    public static final DeferredBlock<DropExperienceBlock> NETHER_PLACEHOLDER_ORE = registerBlock("nether_placeholder_ore",
+            () -> new DropExperienceBlock(ConstantInt.of(0),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
+            ));
+
+    public static final DeferredBlock<DropExperienceBlock> END_PLACEHOLDER_ORE = registerBlock("end_placeholder_ore",
+            () -> new DropExperienceBlock(ConstantInt.of(0),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
+            ));
+
+
+     */
 }
 
