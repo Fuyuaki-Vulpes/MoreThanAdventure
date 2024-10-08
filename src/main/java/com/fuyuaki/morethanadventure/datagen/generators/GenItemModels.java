@@ -136,33 +136,6 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.NETHERSTEEL_SHOVEL);
         handheldItem(MtaItems.NETHERSTEEL_HOE);
 
-        handheldItem(MtaItems.ARMAMENT_PICKAXE);
-        handheldItem(MtaItems.ARMAMENT_AXE);
-        handheldItem(MtaItems.ARMAMENT_SHOVEL);
-
-        handheldItem(MtaItems.ROYAL_PICKAXE);
-        handheldItem(MtaItems.ROYAL_AXE);
-        handheldItem(MtaItems.ROYAL_SHOVEL);
-
-        handheldItem(MtaItems.AQUATIC_PICKAXE);
-        handheldItem(MtaItems.AQUATIC_AXE);
-        handheldItem(MtaItems.AQUATIC_SHOVEL);
-
-        //handheldItem(MtaItems.DEATHLY_PICKAXE);
-        //handheldItem(MtaItems.DEATHLY_AXE);
-        //handheldItem(MtaItems.DEATHLY_SHOVEL);
-
-        handheldItem(MtaItems.ANGELIC_PICKAXE);
-        handheldItem(MtaItems.ANGELIC_AXE);
-        handheldItem(MtaItems.ANGELIC_SHOVEL);
-
-        handheldItem(MtaItems.BERSERK_PICKAXE);
-        handheldItem(MtaItems.BERSERK_AXE);
-        handheldItem(MtaItems.BERSERK_SHOVEL);
-
-        handheldItem(MtaItems.FEATHERWEIGHT_PICKAXE);
-        handheldItem(MtaItems.FEATHERWEIGHT_AXE);
-        handheldItem(MtaItems.FEATHERWEIGHT_SHOVEL);
 
         //FOODS
 

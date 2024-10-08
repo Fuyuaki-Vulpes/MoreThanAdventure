@@ -361,27 +361,6 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SHADOW_ROGUES_BOOTS.get(), "Shadow Rogue's Boots");
 
         //TOOLS
-        add(MtaItems.ARMAMENT_PICKAXE.get(), "Armament Pickaxe");
-        add(MtaItems.ARMAMENT_AXE.get(), "Armament Axe");
-        add(MtaItems.ARMAMENT_SHOVEL.get(), "Armament Shovel");
-        add(MtaItems.ROYAL_PICKAXE.get(), "Royal Pickaxe");
-        add(MtaItems.ROYAL_AXE.get(), "Royal Axe");
-        add(MtaItems.ROYAL_SHOVEL.get(), "Royal Shovel");
-        add(MtaItems.AQUATIC_PICKAXE.get(), "Aquatic Pickaxe");
-        add(MtaItems.AQUATIC_AXE.get(), "Aquatic Axe");
-        add(MtaItems.AQUATIC_SHOVEL.get(), "Aquatic Shovel");
-        add(MtaItems.DEATHLY_PICKAXE.get(), "Deathly Pickaxe");
-        add(MtaItems.DEATHLY_AXE.get(), "Deathly Axe");
-        add(MtaItems.DEATHLY_SHOVEL.get(), "Deathly Shovel");
-        add(MtaItems.ANGELIC_PICKAXE.get(), "Angelic Pickaxe");
-        add(MtaItems.ANGELIC_AXE.get(), "Angelic Axe");
-        add(MtaItems.ANGELIC_SHOVEL.get(), "Angelic Shovel");
-        add(MtaItems.BERSERK_PICKAXE.get(), "Berserk Pickaxe");
-        add(MtaItems.BERSERK_AXE.get(), "Berserk Axe");
-        add(MtaItems.BERSERK_SHOVEL.get(), "Berserk Shovel");
-        add(MtaItems.FEATHERWEIGHT_PICKAXE.get(), "Featherweight Pickaxe");
-        add(MtaItems.FEATHERWEIGHT_AXE.get(), "Featherweight Axe");
-        add(MtaItems.FEATHERWEIGHT_SHOVEL.get(), "Featherweight Shovel");
 
         add(MtaItems.COPPER_PICKAXE.get(), "Copper Pickaxe");
         add(MtaItems.COPPER_AXE.get(), "Copper Axe");

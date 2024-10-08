@@ -395,33 +395,6 @@ public class MtaTabs {
 
 
                 //TOOLS
-                output.accept(MtaItems.ARMAMENT_PICKAXE);
-                output.accept(MtaItems.ARMAMENT_AXE);
-                output.accept(MtaItems.ARMAMENT_SHOVEL);
-
-                output.accept(MtaItems.ROYAL_PICKAXE);
-                output.accept(MtaItems.ROYAL_AXE);
-                output.accept(MtaItems.ROYAL_SHOVEL);
-
-                output.accept(MtaItems.AQUATIC_PICKAXE);
-                output.accept(MtaItems.AQUATIC_AXE);
-                output.accept(MtaItems.AQUATIC_SHOVEL);
-
-                output.accept(MtaItems.DEATHLY_PICKAXE);
-                output.accept(MtaItems.DEATHLY_AXE);
-                output.accept(MtaItems.DEATHLY_SHOVEL);
-
-                output.accept(MtaItems.ANGELIC_PICKAXE);
-                output.accept(MtaItems.ANGELIC_AXE);
-                output.accept(MtaItems.ANGELIC_SHOVEL);
-
-                output.accept(MtaItems.BERSERK_PICKAXE);
-                output.accept(MtaItems.BERSERK_AXE);
-                output.accept(MtaItems.BERSERK_SHOVEL);
-
-                output.accept(MtaItems.FEATHERWEIGHT_PICKAXE);
-                output.accept(MtaItems.FEATHERWEIGHT_AXE);
-                output.accept(MtaItems.FEATHERWEIGHT_SHOVEL);
 
             }).build());
 

@@ -62,28 +62,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.NETHERSTEEL_PICKAXE.get(),
                         MtaItems.NETHERSTEEL_AXE.get(),
                         MtaItems.NETHERSTEEL_SHOVEL.get(),
-                        MtaItems.NETHERSTEEL_HOE.get(),
-                        MtaItems.ARMAMENT_PICKAXE.get(),
-                        MtaItems.ARMAMENT_AXE.get(),
-                        MtaItems.ARMAMENT_SHOVEL.get(),
-                        MtaItems.ROYAL_PICKAXE.get(),
-                        MtaItems.ROYAL_AXE.get(),
-                        MtaItems.ROYAL_SHOVEL.get(),
-                        MtaItems.AQUATIC_PICKAXE.get(),
-                        MtaItems.AQUATIC_AXE.get(),
-                        MtaItems.AQUATIC_SHOVEL.get(),
-                        MtaItems.DEATHLY_PICKAXE.get(),
-                        MtaItems.DEATHLY_AXE.get(),
-                        MtaItems.DEATHLY_SHOVEL.get(),
-                        MtaItems.ANGELIC_PICKAXE.get(),
-                        MtaItems.ANGELIC_AXE.get(),
-                        MtaItems.ANGELIC_SHOVEL.get(),
-                        MtaItems.BERSERK_PICKAXE.get(),
-                        MtaItems.BERSERK_AXE.get(),
-                        MtaItems.BERSERK_SHOVEL.get(),
-                        MtaItems.FEATHERWEIGHT_PICKAXE.get(),
-                        MtaItems.FEATHERWEIGHT_AXE.get(),
-                        MtaItems.FEATHERWEIGHT_SHOVEL.get()
+                        MtaItems.NETHERSTEEL_HOE.get()
                 );
         this.tag(ItemTags.SWORDS)
                 .add(
@@ -96,38 +75,17 @@ public class GenItemTags extends ItemTagsProvider {
         this.tag(ItemTags.PICKAXES)
                 .add(
                         MtaItems.COPPER_PICKAXE.get(),
-                        MtaItems.NETHERSTEEL_PICKAXE.get(),
-                        MtaItems.ARMAMENT_PICKAXE.get(),
-                        MtaItems.ROYAL_PICKAXE.get(),
-                        MtaItems.AQUATIC_PICKAXE.get(),
-                        MtaItems.DEATHLY_PICKAXE.get(),
-                        MtaItems.ANGELIC_PICKAXE.get(),
-                        MtaItems.BERSERK_PICKAXE.get(),
-                        MtaItems.FEATHERWEIGHT_PICKAXE.get()
+                        MtaItems.NETHERSTEEL_PICKAXE.get()
                 );
         this.tag(ItemTags.AXES)
                 .add(
                         MtaItems.COPPER_AXE.get(),
-                        MtaItems.NETHERSTEEL_AXE.get(),
-                        MtaItems.ARMAMENT_AXE.get(),
-                        MtaItems.ROYAL_AXE.get(),
-                        MtaItems.AQUATIC_AXE.get(),
-                        MtaItems.DEATHLY_AXE.get(),
-                        MtaItems.ANGELIC_AXE.get(),
-                        MtaItems.BERSERK_AXE.get(),
-                        MtaItems.FEATHERWEIGHT_AXE.get()
+                        MtaItems.NETHERSTEEL_AXE.get()
                 );
         this.tag(ItemTags.SHOVELS)
                 .add(
                         MtaItems.COPPER_SHOVEL.get(),
-                        MtaItems.NETHERSTEEL_SHOVEL.get(),
-                        MtaItems.ARMAMENT_SHOVEL.get(),
-                        MtaItems.ROYAL_SHOVEL.get(),
-                        MtaItems.AQUATIC_SHOVEL.get(),
-                        MtaItems.DEATHLY_SHOVEL.get(),
-                        MtaItems.ANGELIC_SHOVEL.get(),
-                        MtaItems.BERSERK_SHOVEL.get(),
-                        MtaItems.FEATHERWEIGHT_SHOVEL.get()
+                        MtaItems.NETHERSTEEL_SHOVEL.get()
                 );
         this.tag(ItemTags.HOES)
                 .add(

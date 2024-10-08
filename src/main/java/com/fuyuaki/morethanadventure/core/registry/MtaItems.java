@@ -85,39 +85,6 @@ public class MtaItems {
     public static final DeferredItem<MTAArmor> SHADOW_ROGUES_BOOTS = ITEMS.register("shadow_rogues_boots", () -> new MTAArmor(MtaArmorMats.SHADOW_ROGUE, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(39))));
 
 
-
-    //TOOLS
-
-    public static final DeferredItem<PickaxeItem> ARMAMENT_PICKAXE = ITEMS.register("armament_pickaxe", () -> new PickaxeItem(MTAToolTiers.AGATE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.AGATE, 1, -2.8f))));
-    public static final DeferredItem<AxeItem> ARMAMENT_AXE = ITEMS.register("armament_axe", () -> new AxeItem(MTAToolTiers.AGATE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(AxeItem.createAttributes(MTAToolTiers.AGATE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> ARMAMENT_SHOVEL = ITEMS.register("armament_shovel", () -> new ShovelItem(MTAToolTiers.AGATE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.AGATE, 1.5F, -3F))));
-
-    public static final DeferredItem<PickaxeItem> ROYAL_PICKAXE = ITEMS.register("royal_pickaxe", () -> new PickaxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> ROYAL_AXE = ITEMS.register("royal_axe", () -> new AxeItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> ROYAL_SHOVEL = ITEMS.register("royal_shovel", () -> new ShovelItem(MTAToolTiers.ALEXANDRITE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.ALEXANDRITE, 1.5F, -3F))));
-
-    public static final DeferredItem<PickaxeItem> AQUATIC_PICKAXE = ITEMS.register("aquatic_pickaxe", () -> new PickaxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> AQUATIC_AXE = ITEMS.register("aquatic_axe", () -> new AxeItem(MTAToolTiers.AQUAMARINE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> AQUATIC_SHOVEL = ITEMS.register("aquatic_shovel", () -> new ShovelItem(MTAToolTiers.AQUAMARINE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.AQUAMARINE, 1.5F, -3F))));
-
-    public static final DeferredItem<PickaxeItem> DEATHLY_PICKAXE = ITEMS.register("deathly_pickaxe", () -> new PickaxeItem(MTAToolTiers.BLOODSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.BLOODSTONE, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> DEATHLY_AXE = ITEMS.register("deathly_axe", () -> new AxeItem(MTAToolTiers.BLOODSTONE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.BLOODSTONE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> DEATHLY_SHOVEL = ITEMS.register("deathly_shovel", () -> new ShovelItem(MTAToolTiers.BLOODSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.BLOODSTONE, 1.5F, -3F))));
-
-    public static final DeferredItem<PickaxeItem> ANGELIC_PICKAXE = ITEMS.register("angelic_pickaxe", () -> new PickaxeItem(MTAToolTiers.CELESTITE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.CELESTITE, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> ANGELIC_AXE = ITEMS.register("angelic_axe", () -> new AxeItem(MTAToolTiers.CELESTITE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.CELESTITE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> ANGELIC_SHOVEL = ITEMS.register("angelic_shovel", () -> new ShovelItem(MTAToolTiers.CELESTITE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.CELESTITE, 1.5F, -3F))));
-
-    public static final DeferredItem<PickaxeItem> BERSERK_PICKAXE = ITEMS.register("berserk_pickaxe", () -> new PickaxeItem(MTAToolTiers.GARNET, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.GARNET, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> BERSERK_AXE = ITEMS.register("berserk_axe", () -> new AxeItem(MTAToolTiers.GARNET, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.GARNET, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> BERSERK_SHOVEL = ITEMS.register("berserk_shovel", () -> new ShovelItem(MTAToolTiers.GARNET, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.GARNET, 1.5F, -3F))));
-
-    public static final DeferredItem<PickaxeItem> FEATHERWEIGHT_PICKAXE = ITEMS.register("featherweight_pickaxe", () -> new PickaxeItem(MTAToolTiers.MOONSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(PickaxeItem.createAttributes(MTAToolTiers.MOONSTONE, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> FEATHERWEIGHT_AXE = ITEMS.register("featherweight_axe", () -> new AxeItem(MTAToolTiers.MOONSTONE, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.MOONSTONE, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> FEATHERWEIGHT_SHOVEL = ITEMS.register("featherweight_shovel", () -> new ShovelItem(MTAToolTiers.MOONSTONE, new Item.Properties().rarity(Rarity.EPIC).fireResistant().attributes(ShovelItem.createAttributes(MTAToolTiers.MOONSTONE, 1.5F, -3F))));
-
-
-
     public static final DeferredItem<PickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new PickaxeItem(MTAToolTiers.COPPER, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.COPPER, 1.0F, -2.8F))));
     public static final DeferredItem<AxeItem> COPPER_AXE = ITEMS.register("copper_axe", () -> new AxeItem(MTAToolTiers.COPPER, new Item.Properties().attributes(AxeItem.createAttributes(MTAToolTiers.COPPER, 1.0F, -2.8F))));
     public static final DeferredItem<ShovelItem> COPPER_SHOVEL = ITEMS.register("copper_shovel", () -> new ShovelItem(MTAToolTiers.COPPER, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.COPPER, 1.5F, -3F))));
