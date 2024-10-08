@@ -11,9 +11,23 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class RaccoonModel <T extends Raccoon> extends HierarchicalModel<T> {
     private final ModelPart root;
+    private final ModelPart head;
+    private final ModelPart body;
+    private final ModelPart left_front_leg;
+    private final ModelPart right_front_leg;
+    private final ModelPart left_back_leg;
+    private final ModelPart right_back_leg;
+    private final ModelPart tail;
 
     public RaccoonModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.head = root.getChild("head");
+        this.body = root.getChild("body");
+        this.left_front_leg = root.getChild("left_front_leg");
+        this.right_front_leg = root.getChild("right_front_leg");
+        this.left_back_leg = root.getChild("left_back_leg");
+        this.right_back_leg = root.getChild("right_back_leg");
+        this.tail = root.getChild("tail");
     }
 
     public static LayerDefinition createBodyLayer() {

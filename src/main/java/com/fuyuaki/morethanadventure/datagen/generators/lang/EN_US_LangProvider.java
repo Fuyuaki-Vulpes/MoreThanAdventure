@@ -311,6 +311,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.AGATE.get(),"Agate");
         add(MtaItems.ALEXANDRITE.get(),"Alexandrite");
         add(MtaItems.AQUAMARINE.get(),"Aquamarine");
+        add(MtaItems.BLOODSTONE.get(),"Bloodstone");
         add(MtaItems.CELESTITE.get(),"Celestite");
         add(MtaItems.GARNET.get(),"Garnet");
         add(MtaItems.MOONSTONE.get(),"Moonstone");

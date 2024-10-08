@@ -332,14 +332,14 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         aquamarineSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_AXE.get());
         aquamarineSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.AQUATIC_SHOVEL.get());
 
-        //aquamarineSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_HELMET.get());
-        //aquamarineSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_CHESTPLATE.get());
-        //aquamarineSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_LEGGINGS.get());
-        //aquamarineSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_BOOTS.get());
-        //aquamarineSmithing(output, Items.NETHERITE_HOE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_SCYTHE.get());
-        //aquamarineSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_PICKAXE.get());
-        //aquamarineSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_AXE.get());
-        //aquamarineSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.DEATHLY_SHOVEL.get());
+        bloodstoneSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_HELMET.get());
+        bloodstoneSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_CHESTPLATE.get());
+        bloodstoneSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_LEGGINGS.get());
+        bloodstoneSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_BOOTS.get());
+        bloodstoneSmithing(output, Items.NETHERITE_HOE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_SCYTHE.get());
+        bloodstoneSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_PICKAXE.get());
+        bloodstoneSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_AXE.get());
+        bloodstoneSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.DEATHLY_SHOVEL.get());
 
         celestiteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_HELMET.get());
         celestiteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_CHESTPLATE.get());
@@ -444,6 +444,10 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
 
     protected static void aquamarineSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.AQUATIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AQUAMARINE), pCategory, pResultItem).unlocks("has_aquamarine", has(MtaItems.AQUAMARINE)).save(pRecipeOutput, getItemName(pResultItem) + "_smithing");
+    }
+
+    protected static void bloodstoneSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.DEATHLY_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.BLOODSTONE), pCategory, pResultItem).unlocks("has_bloodstone", has(MtaItems.BLOODSTONE)).save(pRecipeOutput, getItemName(pResultItem) + "_smithing");
     }
 
     protected static void celestiteSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {

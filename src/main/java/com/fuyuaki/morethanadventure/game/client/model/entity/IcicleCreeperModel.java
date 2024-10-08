@@ -12,9 +12,21 @@ import net.minecraft.client.model.geom.builders.*;
 public class IcicleCreeperModel <T extends IcicleCreeper> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
+    private final ModelPart body;
+    private final ModelPart head;
+    private final ModelPart leg1;
+    private final ModelPart leg2;
+    private final ModelPart leg3;
+    private final ModelPart leg4;
 
     public IcicleCreeperModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.body = root.getChild("body");
+        this.head = root.getChild("head");
+        this.leg1 = root.getChild("leg1");
+        this.leg2 = root.getChild("leg2");
+        this.leg3 = root.getChild("leg3");
+        this.leg4 = root.getChild("leg4");
     }
 
     public static LayerDefinition createBodyLayer() {

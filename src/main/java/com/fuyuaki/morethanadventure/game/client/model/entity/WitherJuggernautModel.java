@@ -11,9 +11,51 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class WitherJuggernautModel <T extends WitherJuggernaut> extends HierarchicalModel<T> {
     private final ModelPart root;
+    private final ModelPart hips;
+    private final ModelPart spine_low;
+    private final ModelPart spine_top;
+    private final ModelPart chest;
+    private final ModelPart head;
+    private final ModelPart jaw;
+    private final ModelPart helmet;
+    private final ModelPart left_arm;
+    private final ModelPart left_armor;
+    private final ModelPart left_armplate;
+    private final ModelPart left_hand;
+    private final ModelPart right_arm;
+    private final ModelPart right_armor;
+    private final ModelPart right_armplate;
+    private final ModelPart right_hand;
+    private final ModelPart left_leg;
+    private final ModelPart left_leg_bottom;
+    private final ModelPart left_boot;
+    private final ModelPart right_leg;
+    private final ModelPart right_leg_bottom;
+    private final ModelPart right_boot;
 
     public WitherJuggernautModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.hips = root.getChild("hips");
+        this.spine_low = root.getChild("spine_low");
+        this.spine_top = root.getChild("spine_top");
+        this.chest = root.getChild("chest");
+        this.head = root.getChild("head");
+        this.jaw = root.getChild("jaw");
+        this.helmet = root.getChild("helmet");
+        this.left_arm = root.getChild("left_arm");
+        this.left_armor = root.getChild("left_armor");
+        this.left_armplate = root.getChild("left_armplate");
+        this.left_hand = root.getChild("left_hand");
+        this.right_arm = root.getChild("right_arm");
+        this.right_armor = root.getChild("right_armor");
+        this.right_armplate = root.getChild("right_armplate");
+        this.right_hand = root.getChild("right_hand");
+        this.left_leg = root.getChild("left_leg");
+        this.left_leg_bottom = root.getChild("left_leg_bottom");
+        this.left_boot = root.getChild("left_boot");
+        this.right_leg = root.getChild("right_leg");
+        this.right_leg_bottom = root.getChild("right_leg_bottom");
+        this.right_boot = root.getChild("right_boot");
     }
 
     public static LayerDefinition createBodyLayer() {

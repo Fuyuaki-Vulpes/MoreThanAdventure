@@ -471,6 +471,7 @@ public class MtaTabs {
                 output.accept(MtaItems.AGATE);
                 output.accept(MtaItems.ALEXANDRITE);
                 output.accept(MtaItems.AQUAMARINE);
+                output.accept(MtaItems.BLOODSTONE);
                 output.accept(MtaItems.CELESTITE);
                 output.accept(MtaItems.GARNET);
                 output.accept(MtaItems.MOONSTONE);

@@ -12,10 +12,19 @@ import net.minecraft.client.model.geom.builders.*;
 public class CapybaraModel <T extends Capybara> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
+    private final ModelPart head;
+    private final ModelPart right_front_leg;
+    private final ModelPart left_front_leg;
+    private final ModelPart right_hind_leg;
+    private final ModelPart left_hind_leg;
 
     public CapybaraModel(ModelPart root) {
         this.root = root.getChild("root");
-
+        this.head = root.getChild("head");
+        this.right_front_leg = root.getChild("right_front_leg");
+        this.left_front_leg = root.getChild("left_front_leg");
+        this.right_hind_leg = root.getChild("right_hind_leg");
+        this.left_hind_leg = root.getChild("left_hind_leg");
     }
 
     public static LayerDefinition createBodyLayer() {

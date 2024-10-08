@@ -24,4 +24,6 @@ public class ArmoredSkeletonRenderer extends MobRenderer<ArmoredSkeleton, Armore
     public ResourceLocation getTextureLocation(ArmoredSkeleton entity) {
         return TEXTURE;
     }
+
+
 }

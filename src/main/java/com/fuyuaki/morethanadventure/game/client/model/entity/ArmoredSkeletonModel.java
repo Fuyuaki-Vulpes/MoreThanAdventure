@@ -8,6 +8,7 @@ import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.monster.Skeleton;
 
 public class ArmoredSkeletonModel<T extends ArmoredSkeleton> extends HierarchicalModel<T> {
@@ -53,7 +54,7 @@ public class ArmoredSkeletonModel<T extends ArmoredSkeleton> extends Hierarchica
 
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

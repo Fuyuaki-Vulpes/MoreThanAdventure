@@ -12,9 +12,25 @@ import net.minecraft.client.model.geom.builders.*;
 public class GreatWhiteSharkModel <T extends GreatWhiteShark> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
+    private final ModelPart torso;
+    private final ModelPart head;
+    private final ModelPart jaw;
+    private final ModelPart left_fin;
+    private final ModelPart right_fin;
+    private final ModelPart torso_back;
+    private final ModelPart tail;
+    private final ModelPart fin;
 
     public GreatWhiteSharkModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.torso = root.getChild("torso");
+        this.head = root.getChild("head");
+        this.jaw = root.getChild("jaw");
+        this.left_fin = root.getChild("left_fin");
+        this.right_fin = root.getChild("right_fin");
+        this.torso_back = root.getChild("torso_back");
+        this.tail = root.getChild("tail");
+        this.fin = root.getChild("fin");
     }
 
     public static LayerDefinition createBodyLayer() {

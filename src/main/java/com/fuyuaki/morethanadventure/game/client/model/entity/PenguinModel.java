@@ -11,9 +11,21 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class PenguinModel <T extends Penguin> extends HierarchicalModel<T> {
     private final ModelPart root;
+    private final ModelPart body;
+    private final ModelPart head;
+    private final ModelPart left_wing;
+    private final ModelPart right_wing;
+    private final ModelPart left_foot;
+    private final ModelPart right_foot;
 
     public PenguinModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.body = root.getChild("body");
+        this.head = root.getChild("head");
+        this.left_wing = root.getChild("left_wing");
+        this.right_wing = root.getChild("right_wing");
+        this.left_foot = root.getChild("left_foot");
+        this.right_foot = root.getChild("right_foot");
     }
 
     public static LayerDefinition createBodyLayer() {
