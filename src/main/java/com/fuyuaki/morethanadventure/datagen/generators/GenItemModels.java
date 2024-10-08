@@ -55,6 +55,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.AQUAMARINE);
         //simpleItem(MtaItems.BLOODSTONE);
         simpleItem(MtaItems.CELESTITE);
+        //simpleItem(MtaItems.CRYOLITE);
         simpleItem(MtaItems.GARNET);
         simpleItem(MtaItems.MOONSTONE);
 
@@ -63,6 +64,7 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.AQUATIC_UPGRADE);
         //simpleItem(MtaItems.DEATHLY_UPGRADE);
         simpleItem(MtaItems.ANGELIC_UPGRADE);
+        //simpleItem(MtaItems.FREEZING_UPGRADE);
         simpleItem(MtaItems.BERSERK_UPGRADE);
         simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
 
@@ -96,6 +98,11 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
         simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
+       // simpleItem(MtaItems.COLD_SET_HELMET);
+       // simpleItem(MtaItems.COLD_SET_CHESTPLATE);
+       // simpleItem(MtaItems.COLD_SET_LEGGINGS);
+       // simpleItem(MtaItems.COLD_SET_BOOTS);
+
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS);
@@ -114,6 +121,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
         //handheldBigItem(MtaItems.SILENT_REAPERS_SCYTHE);
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
+        //handheldItem(MtaItems.COLD_SET_WEAPON);
         handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
 
         //TOOLS

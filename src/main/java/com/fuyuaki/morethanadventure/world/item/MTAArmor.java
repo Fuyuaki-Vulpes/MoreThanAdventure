@@ -16,6 +16,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.NeoForgeMod;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -27,6 +28,7 @@ public class MTAArmor extends ArmorItem {
     private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID.value();
     private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER.value();
     private static final ArmorMaterial ANGEL = MtaArmorMats.TEMPLE_ANGEL.value();
+    private static final ArmorMaterial COLD = MtaArmorMats.COLD_SET.value();
     private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER.value();
     private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE.value();
 
@@ -132,6 +134,12 @@ public class MTAArmor extends ArmorItem {
                 hasChestplate && chestplate == ANGEL,
                 hasLeggings && leggings == ANGEL,
                 hasBoots && boots == ANGEL);
+        doColdEffects(entity,
+                level,pSlotId,
+                hasHelmet && helmet == COLD,
+                hasChestplate && chestplate == COLD,
+                hasLeggings && leggings == COLD,
+                hasBoots && boots == COLD);
         doBerserkerEffects(entity,
                 level,pSlotId,
                 hasHelmet && helmet == BERSERKER,
@@ -297,6 +305,34 @@ public class MTAArmor extends ArmorItem {
         }
     }
 
+
+    protected void doColdEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+
+        if (head) {
+
+        }
+
+        if (chest) {
+
+        }
+
+        if (legs) {
+
+        }
+
+        if (feet) {
+
+        }
+
+        if (head || chest || legs || feet){
+
+        }
+
+        if (head && chest && legs && feet){
+
+        }
+    }
+
     protected void doBerserkerEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
         if (head) {
 
@@ -373,6 +409,9 @@ public class MTAArmor extends ArmorItem {
         }else
             if ( material.value() == ANGEL){
                 return angelAttributes(type,builder);
+        }else
+            if ( material.value() == COLD){
+                return coldAttributes(type,builder);
         }else
             if ( material.value() == BERSERKER){
                 return berserkerAttributes(type,builder);
@@ -497,6 +536,26 @@ public class MTAArmor extends ArmorItem {
         }else if (type == Type.BOOTS){
             builder.add(Attributes.FALL_DAMAGE_MULTIPLIER, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
             builder.add(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
+
+
+        }
+
+        return builder;
+    }
+
+    protected ItemAttributeModifiers.Builder coldAttributes(Type type, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+
+
+
+        if (type == Type.HELMET){
+
+        }else if (type == Type.CHESTPLATE){
+
+        }else if (type == Type.LEGGINGS){
+
+        }else if (type == Type.BOOTS){
 
 
         }

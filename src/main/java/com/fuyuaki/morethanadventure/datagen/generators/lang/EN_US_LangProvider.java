@@ -308,13 +308,16 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.AQUAMARINE.get(),"Aquamarine");
         add(MtaItems.BLOODSTONE.get(),"Bloodstone");
         add(MtaItems.CELESTITE.get(),"Celestite");
+        add(MtaItems.CRYOLITE.get(),"Cryolite");
         add(MtaItems.GARNET.get(),"Garnet");
         add(MtaItems.MOONSTONE.get(),"Moonstone");
 
         add(MtaItems.ARMAMENT_UPGRADE.get(),"Armament Upgrade");
         add(MtaItems.ROYAL_UPGRADE.get(),"Royal Upgrade");
         add(MtaItems.AQUATIC_UPGRADE.get(),"Aquatic Upgrade");
+        add(MtaItems.DEATHLY_UPGRADE.get(),"Deathly Upgrade");
         add(MtaItems.ANGELIC_UPGRADE.get(),"Angelic Upgrade");
+        add(MtaItems.FREEZING_UPGRADE.get(),"Freezing Upgrade");
         add(MtaItems.BERSERK_UPGRADE.get(),"Berserk Upgrade");
         add(MtaItems.FEATHERWEIGHT_UPGRADE.get(),"Featherweight Upgrade");
 
@@ -339,6 +342,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(), "Temple Angel's Chestplate");
         add(MtaItems.TEMPLE_ANGELS_LEGGINGS.get(), "Temple Angel's Leggings");
         add(MtaItems.TEMPLE_ANGELS_BOOTS.get(), "Temple Angel's Boots");
+        add(MtaItems.COLD_SET_HELMET.get(), "Cold Set Helmet");
+        add(MtaItems.COLD_SET_CHESTPLATE.get(), "Cold Set Chestplate");
+        add(MtaItems.COLD_SET_LEGGINGS.get(), "Cold Set Leggings");
+        add(MtaItems.COLD_SET_BOOTS.get(), "Cold Set Boots");
         add(MtaItems.WRATHFUL_BERSERKERS_HELMET.get(), "Wrathful Berserker's Helmet");
         add(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get(), "Wrathful Berserker's Chestplate");
         add(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get(), "Wrathful Berserker's Leggings");
@@ -391,6 +398,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(), "Mystic Mermaid's Trident");
         add(MtaItems.SILENT_REAPERS_SCYTHE.get(), "Silent Reaper's Scythe");
         add(MtaItems.TEMPLE_ANGELS_BOW.get(), "Temple Angel's Bow");
+        add(MtaItems.COLD_SET_WEAPON.get(), "Cold Set Weapon");
         add(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(), "Wrathful Berserker's Battleaxe");
         add(MtaItems.SHADOW_ROGUES_DAGGER.get(), "Shadow Rogue's Dagger");
 

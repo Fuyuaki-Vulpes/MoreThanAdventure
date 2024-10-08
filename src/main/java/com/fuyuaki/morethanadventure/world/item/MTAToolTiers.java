@@ -51,6 +51,16 @@ public class MTAToolTiers {
             20,
             () -> Ingredient.of(MtaItems.CELESTITE)
     );
+
+    public static final Tier CRYOLITE = new SimpleTier(
+            MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
+            6760,
+            15f,
+            3.5f,
+            20,
+            () -> Ingredient.of(MtaItems.CRYOLITE)
+    );
+
     public static final Tier GARNET = new SimpleTier(
             MtaTags.Blocks.INCORRECT_FOR_GEM_TOOL,
             5736,

@@ -372,6 +372,11 @@ public class MtaTabs {
                 output.accept(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
                 output.accept(MtaItems.TEMPLE_ANGELS_LEGGINGS);
                 output.accept(MtaItems.TEMPLE_ANGELS_BOOTS);
+                output.accept(MtaItems.COLD_SET_WEAPON);
+                output.accept(MtaItems.COLD_SET_HELMET);
+                output.accept(MtaItems.COLD_SET_CHESTPLATE);
+                output.accept(MtaItems.COLD_SET_LEGGINGS);
+                output.accept(MtaItems.COLD_SET_BOOTS);
                 output.accept(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
                 output.accept(MtaItems.WRATHFUL_BERSERKERS_HELMET);
                 output.accept(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
@@ -468,6 +473,7 @@ public class MtaTabs {
                 output.accept(MtaItems.AQUAMARINE);
                 output.accept(MtaItems.BLOODSTONE);
                 output.accept(MtaItems.CELESTITE);
+                output.accept(MtaItems.CRYOLITE);
                 output.accept(MtaItems.GARNET);
                 output.accept(MtaItems.MOONSTONE);
                 output.accept(MtaItems.ARMAMENT_UPGRADE);
@@ -475,6 +481,7 @@ public class MtaTabs {
                 output.accept(MtaItems.AQUATIC_UPGRADE);
                 output.accept(MtaItems.DEATHLY_UPGRADE);
                 output.accept(MtaItems.ANGELIC_UPGRADE);
+                output.accept(MtaItems.FREEZING_UPGRADE);
                 output.accept(MtaItems.BERSERK_UPGRADE);
                 output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
 

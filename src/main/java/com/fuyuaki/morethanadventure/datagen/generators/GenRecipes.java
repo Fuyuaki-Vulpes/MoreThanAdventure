@@ -310,63 +310,48 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         agateSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_LEGGINGS.get());
         agateSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_BOOTS.get());
         agateSmithing(output, Items.MACE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_WAR_HAMMER.get());
-        agateSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.ARMAMENT_PICKAXE.get());
-        agateSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.ARMAMENT_AXE.get());
-        agateSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.ARMAMENT_SHOVEL.get());
 
         alexandriteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_HELMET.get());
         alexandriteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_CHESTPLATE.get());
         alexandriteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_LEGGINGS.get());
         alexandriteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_BOOTS.get());
         alexandriteSmithing(output, Items.NETHERITE_SWORD, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_GREATSWORD.get());
-        alexandriteSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.ROYAL_PICKAXE.get());
-        alexandriteSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.ROYAL_AXE.get());
-        alexandriteSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.ROYAL_SHOVEL.get());
 
         aquamarineSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_HELMET.get());
         aquamarineSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get());
         aquamarineSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get());
         aquamarineSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_BOOTS.get());
         aquamarineSmithing(output, MtaItems.NETHERITE_TRIDENT.get(), RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_TRIDENT.get());
-        aquamarineSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_PICKAXE.get());
-        aquamarineSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.AQUATIC_AXE.get());
-        aquamarineSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.AQUATIC_SHOVEL.get());
 
         bloodstoneSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_HELMET.get());
         bloodstoneSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_CHESTPLATE.get());
         bloodstoneSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_LEGGINGS.get());
         bloodstoneSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_BOOTS.get());
         bloodstoneSmithing(output, Items.NETHERITE_HOE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_SCYTHE.get());
-        bloodstoneSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_PICKAXE.get());
-        bloodstoneSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.DEATHLY_AXE.get());
-        bloodstoneSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.DEATHLY_SHOVEL.get());
 
         celestiteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_HELMET.get());
         celestiteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_CHESTPLATE.get());
         celestiteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_LEGGINGS.get());
         celestiteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOOTS.get());
         celestiteSmithing(output, MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOW.get());
-        celestiteSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.ANGELIC_PICKAXE.get());
-        celestiteSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.ANGELIC_AXE.get());
-        celestiteSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.ANGELIC_SHOVEL.get());
+
+        cryoliteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.COLD_SET_HELMET.get());
+        cryoliteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.COLD_SET_CHESTPLATE.get());
+        cryoliteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.COLD_SET_LEGGINGS.get());
+        cryoliteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.COLD_SET_BOOTS.get());
+        cryoliteSmithing(output, MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.COLD_SET_WEAPON.get());
 
         garnetSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_HELMET.get());
         garnetSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get());
         garnetSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get());
         garnetSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BOOTS.get());
-        garnetSmithing(output, Items.NETHERITE_SWORD, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get());
-        garnetSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.BERSERK_PICKAXE.get());
-        garnetSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.BERSERK_AXE.get());
-        garnetSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.BERSERK_SHOVEL.get());
+        garnetSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get());
 
         moonstoneSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_HELMET.get());
         moonstoneSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_CHESTPLATE.get());
         moonstoneSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_LEGGINGS.get());
         moonstoneSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_BOOTS.get());
         moonstoneSmithing(output, Items.NETHERITE_SWORD, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_DAGGER.get());
-        moonstoneSmithing(output, Items.NETHERITE_PICKAXE, RecipeCategory.COMBAT, MtaItems.FEATHERWEIGHT_PICKAXE.get());
-        moonstoneSmithing(output, Items.NETHERITE_AXE, RecipeCategory.COMBAT, MtaItems.FEATHERWEIGHT_AXE.get());
-        moonstoneSmithing(output, Items.NETHERITE_SHOVEL, RecipeCategory.COMBAT, MtaItems.FEATHERWEIGHT_SHOVEL.get());
 
         netheriteSmithing(output, Items.TRIDENT, RecipeCategory.COMBAT, MtaItems.NETHERITE_TRIDENT.get());
         netheriteSmithing(output, Items.BOW, RecipeCategory.COMBAT, MtaItems.NETHERITE_BOW.get());
@@ -452,6 +437,10 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
 
     protected static void celestiteSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ANGELIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.CELESTITE), pCategory, pResultItem).unlocks("has_celestite", has(MtaItems.CELESTITE)).save(pRecipeOutput, getItemName(pResultItem) + "_smithing");
+    }
+
+    protected static void cryoliteSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FREEZING_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.CRYOLITE), pCategory, pResultItem).unlocks("has_cryolite", has(MtaItems.CRYOLITE)).save(pRecipeOutput, getItemName(pResultItem) + "_smithing");
     }
 
     protected static void garnetSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {

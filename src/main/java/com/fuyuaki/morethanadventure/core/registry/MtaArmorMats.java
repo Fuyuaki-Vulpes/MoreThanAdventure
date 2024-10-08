@@ -84,6 +84,19 @@ public class MtaArmorMats {
             2F, 0.0F
     ));
 
+    public static final Holder<ArmorMaterial> COLD_SET = ARMOR_MAT.register("cold_set", () -> new ArmorMaterial(
+            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 6);
+                map.put(ArmorItem.Type.CHESTPLATE, 8);
+                map.put(ArmorItem.Type.HELMET, 3);
+                map.put(ArmorItem.Type.BODY, 10);
+            }),
+            19, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CRYOLITE),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "cold_set"))),
+            2F, 0.0F
+    ));
+
     public static final Holder<ArmorMaterial> WRATHFUL_BERSERKER =
             ARMOR_MAT.register("wrathful_berserker", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {

@@ -141,6 +141,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_HELMET.get(),
                         MtaItems.SILENT_REAPERS_HELMET.get(),
                         MtaItems.TEMPLE_ANGELS_HELMET.get(),
+                        MtaItems.COLD_SET_HELMET.get(),
                         MtaItems.WRATHFUL_BERSERKERS_HELMET.get(),
                         MtaItems.SHADOW_ROGUES_HELMET.get()
                 );
@@ -151,6 +152,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get(),
                         MtaItems.SILENT_REAPERS_CHESTPLATE.get(),
                         MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(),
+                        MtaItems.COLD_SET_CHESTPLATE.get(),
                         MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get(),
                         MtaItems.SHADOW_ROGUES_CHESTPLATE.get()
                 );
@@ -161,6 +163,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get(),
                         MtaItems.SILENT_REAPERS_LEGGINGS.get(),
                         MtaItems.TEMPLE_ANGELS_LEGGINGS.get(),
+                        MtaItems.COLD_SET_LEGGINGS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get(),
                         MtaItems.SHADOW_ROGUES_LEGGINGS.get()
                 );
@@ -171,6 +174,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_BOOTS.get(),
                         MtaItems.SILENT_REAPERS_BOOTS.get(),
                         MtaItems.TEMPLE_ANGELS_BOOTS.get(),
+                        MtaItems.COLD_SET_BOOTS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
                 );
