@@ -76,6 +76,11 @@ public class MtaTabs {
 
 
                 output.accept(MtaBlocks.GRASSY_DIRT.get());
+                output.accept(MtaBlocks.PERMAFROST_GRASS.get());
+                output.accept(MtaBlocks.PERMAFROST_DIRT.get());
+                output.accept(MtaBlocks.PERMAFROST_STONE.get());
+                output.accept(MtaBlocks.TUNDRA_GRASS.get());
+                output.accept(MtaBlocks.SHALLOW_GRASS.get());
 
             }).build());
 

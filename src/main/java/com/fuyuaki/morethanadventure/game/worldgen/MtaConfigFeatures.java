@@ -11,6 +11,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -33,6 +34,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePl
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
@@ -72,6 +74,8 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
     public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -330,6 +334,42 @@ public class MtaConfigFeatures {
                         56, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(leavesBuilder)))
                 )
         );
+        register(
+                context,
+                PATCH_TUNDRA_GRASS,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(
+                        54,
+                        9,
+                        3,
+                        PlacementUtils.filtered(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(
+                                        new WeightedStateProvider(
+                                                SimpleWeightedRandomList.<BlockState>builder()
+                                                        .add(Blocks.SHORT_GRASS.defaultBlockState(), 6)
+                                                        .add(Blocks.FERN.defaultBlockState(), 1)
+                                                        .add(Blocks.TALL_GRASS.defaultBlockState(), 3)
+                                                        .add(MtaBlocks.SHALLOW_GRASS.get().defaultBlockState(), 24)
+                                        )
+                                ),
+                                BlockPredicate.allOf(
+                                        BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.PODZOL))
+                                )
+                        )
+                )
+        );
+        register(
+                context,
+                SHALLOW_GRASS_SPARSE,
+                Feature.RANDOM_PATCH,
+                grassPatch(
+                        BlockStateProvider.simple(
+                                MtaBlocks.SHALLOW_GRASS.get()
+                        ),
+                        12
+                )
+        );
 
 
     }
@@ -359,7 +399,11 @@ public class MtaConfigFeatures {
                 OreConfiguration.target(target2, replacement2.defaultBlockState())
         );
     }
-
+    private static RandomPatchConfiguration grassPatch(BlockStateProvider stateProvider, int tries) {
+        return FeatureUtils.simpleRandomPatchConfiguration(
+                tries, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(stateProvider))
+        );
+    }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

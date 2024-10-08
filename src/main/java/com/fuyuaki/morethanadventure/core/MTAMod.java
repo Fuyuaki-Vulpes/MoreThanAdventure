@@ -76,6 +76,8 @@ public class MTAMod
 
         setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
         setRenderType(MtaBlocks.GRASSY_DIRT.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.PERMAFROST_GRASS.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.SHALLOW_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.PALM_LEAVES.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SWEET_BERRY_LEAVES.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SCATTERED_LEAVES.get(), cutoutRenderType);

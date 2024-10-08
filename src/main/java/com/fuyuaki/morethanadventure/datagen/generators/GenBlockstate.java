@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.world.block.MtaCrops;
 import com.fuyuaki.morethanadventure.world.block.SweetBerryLeavesBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -30,6 +31,9 @@ public class GenBlockstate extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) MtaBlocks.PALM_WOOD.get()), blockTexture(MtaBlocks.PALM_LOG.get()), blockTexture(MtaBlocks.PALM_LOG.get()));
         axisBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()));
         blockItem(MtaBlocks.PALM_LOG);
+        blockWithItem(MtaBlocks.PERMAFROST_DIRT);
+
+        blockWithItem(MtaBlocks.PERMAFROST_STONE);
         blockItem(MtaBlocks.STRIPPED_PALM_LOG);
         blockItem(MtaBlocks.PALM_WOOD);
         blockItem(MtaBlocks.STRIPPED_PALM_WOOD);
@@ -92,6 +96,8 @@ public class GenBlockstate extends BlockStateProvider {
         makeStoneSet(MtaBlocks.VERY_DIRTY_STONE_TILES, MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS, MtaBlocks.VERY_DIRTY_STONE_TILES_WALL, MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB);
         blockItem(MtaBlocks.SAND_PATH);
         blockItem(MtaBlocks.GRASSY_DIRT);
+        blockItem(MtaBlocks.PERMAFROST_GRASS);
+        blockItem(MtaBlocks.TUNDRA_GRASS);
         blockItem(MtaBlocks.COARSE_DIRT_PATH);
 
         blockWithItem(MtaBlocks.TERRACOTTA_TILES);

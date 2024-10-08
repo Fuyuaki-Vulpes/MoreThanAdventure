@@ -144,6 +144,8 @@ public class MTAClientEvents
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.SHALLOW_GRASS.get());
     }
 
     @SubscribeEvent
@@ -152,6 +154,8 @@ public class MTAClientEvents
         event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES);
         event.register((pStack, pTintIndex) -> FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES);
         event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT);
+        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS);
+        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.SHALLOW_GRASS);
     }
 
 

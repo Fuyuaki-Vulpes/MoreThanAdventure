@@ -95,8 +95,13 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
         this.add(MtaBlocks.SAND_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
         this.add(MtaBlocks.GRASSY_DIRT.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        dropSelf(MtaBlocks.PERMAFROST_DIRT.get());
+        this.add(MtaBlocks.PERMAFROST_GRASS.get(), block -> this.createSingleItemTableWithSilkTouch(block, MtaBlocks.PERMAFROST_DIRT.get()));
+        this.add(MtaBlocks.PERMAFROST_STONE.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));
+        this.add(MtaBlocks.TUNDRA_GRASS.get(), block -> this.createSingleItemTableWithSilkTouch(block, MtaBlocks.PERMAFROST_DIRT.get()));
         this.add(MtaBlocks.COARSE_DIRT_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(MtaBlocks.SWEET_BERRY_LEAVES.get(), block -> createLeavesDrops(block, Blocks.SPRUCE_SAPLING, 0.1F));
+        this.add(MtaBlocks.SHALLOW_GRASS.get(), BlockLootSubProvider::createShearsOnlyDrop);
 
         dropSelf(MtaBlocks.TERRACOTTA_TILES.get());
         this.add(MtaBlocks.TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.TERRACOTTA_SLAB.get()));

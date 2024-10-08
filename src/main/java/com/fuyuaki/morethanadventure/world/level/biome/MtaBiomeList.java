@@ -34,7 +34,7 @@ public class MtaBiomeList {
 
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES = new ResourceKey[][]{
-            {null, null, null, null, MtaBiomes.SPARSE_TAIGA},
+            {MtaBiomes.TUNDRA, MtaBiomes.TUNDRA, null, null, MtaBiomes.SPARSE_TAIGA},
             {null, null, null, MtaBiomes.SPARSE_TAIGA, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
@@ -50,7 +50,7 @@ public class MtaBiomeList {
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES = new ResourceKey[][]{
-            {null, null, null, null, null},
+            {MtaBiomes.TUNDRA, null, null, null, null},
             {null, null, MtaBiomes.LUSH_MEADOW, null, null},
             {null, null, null, MtaBiomes.LUSH_MEADOW, null},
             {null, null, null, null, null},

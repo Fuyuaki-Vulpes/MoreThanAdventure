@@ -121,6 +121,9 @@ public class GenBlockTags extends BlockTagsProvider {
                 .add(
                         MtaBlocks.SAND_PATH.get(),
                         MtaBlocks.GRASSY_DIRT.get(),
+                        MtaBlocks.PERMAFROST_GRASS.get(),
+                        MtaBlocks.PERMAFROST_DIRT.get(),
+                        MtaBlocks.TUNDRA_GRASS.get(),
                         MtaBlocks.COARSE_DIRT_PATH.get(),
                         MtaBlocks.COBBLED_DIRT.get()
                 );
@@ -129,7 +132,10 @@ public class GenBlockTags extends BlockTagsProvider {
                 .add(
                         MtaBlocks.GRASSY_DIRT.get(),
                         MtaBlocks.COARSE_DIRT_PATH.get(),
-                        MtaBlocks.COBBLED_DIRT.get()
+                        MtaBlocks.COBBLED_DIRT.get(),
+                        MtaBlocks.PERMAFROST_GRASS.get(),
+                        MtaBlocks.PERMAFROST_DIRT.get(),
+                        MtaBlocks.TUNDRA_GRASS.get()
                 );
         this.tag(MtaTags.Blocks.DIRTIES_STONE_TILES)
                 .add(
@@ -152,6 +158,8 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.NETHERITIC_CRYSTAL.get(),
                 MtaBlocks.QUARTZ_LAMP.get(),
                 MtaBlocks.COBBLED_DIRT.get(),
+                MtaBlocks.PERMAFROST_STONE.get(),
+
                 MtaBlocks.STONE_TILES.get(),
                 MtaBlocks.STONE_TILES_SLAB.get(),
                 MtaBlocks.STONE_TILES_STAIRS.get(),
@@ -540,6 +548,10 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.PURPLE_CONCRETE_WALL.get(),
                 MtaBlocks.MAGENTA_CONCRETE_WALL.get(),
                 MtaBlocks.PINK_CONCRETE_WALL.get()
+        );
+
+        this.tag(BlockTags.BASE_STONE_OVERWORLD).add(
+                MtaBlocks.PERMAFROST_STONE.get()
         );
 
         this.tag(BlockTags.IRON_ORES).add(

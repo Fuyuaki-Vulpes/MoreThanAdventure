@@ -1,9 +1,8 @@
 package com.fuyuaki.morethanadventure.game.worldgen.biomes.surface;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
-import com.fuyuaki.morethanadventure.core.registry.MtaTags;
+import com.fuyuaki.morethanadventure.game.worldgen.MTANoises;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
@@ -35,6 +34,10 @@ public class MtaSurfaceRules {
     private static final SurfaceRules.RuleSource TUFF = makeStateRule(Blocks.TUFF);
     private static final SurfaceRules.RuleSource SMOOTH_BASALT = makeStateRule(Blocks.SMOOTH_BASALT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource PERMAFROST_GRASS = makeStateRule(MtaBlocks.PERMAFROST_GRASS.get());
+    private static final SurfaceRules.RuleSource PERMAFROST_DIRT = makeStateRule(MtaBlocks.PERMAFROST_DIRT.get());
+    private static final SurfaceRules.RuleSource PERMAFROST_STONE = makeStateRule(MtaBlocks.PERMAFROST_STONE.get());
+    private static final SurfaceRules.RuleSource TUNDRA_GRASS = makeStateRule(MtaBlocks.TUNDRA_GRASS.get());
     private static final SurfaceRules.RuleSource CALCITE = makeStateRule(Blocks.CALCITE);
 
 
@@ -46,6 +49,8 @@ public class MtaSurfaceRules {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
         SurfaceRules.ConditionSource sixBelowWater = SurfaceRules.waterStartCheck(-6, -1);
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
+        SurfaceRules.RuleSource permafrostSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel,PERMAFROST_GRASS), PERMAFROST_DIRT);
+        SurfaceRules.RuleSource permafrostTundraSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel,TUNDRA_GRASS), PERMAFROST_DIRT);
         SurfaceRules.ConditionSource isTop5Blocks = SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0);
         SurfaceRules.ConditionSource isHole = SurfaceRules.hole();
         SurfaceRules.ConditionSource isSteep = SurfaceRules.steep();
@@ -79,34 +84,54 @@ public class MtaSurfaceRules {
                                                                         SurfaceRules.sequence(
                                                                                 SurfaceRules.ifTrue(
                                                                                         SurfaceRules.noiseCondition
-                                                                                                (Noises.GRAVEL, -0.25D, 0.3D),
+                                                                                                (MTANoises.OASIS_GRASS, -0.25D, 0.3D),
                                                                                         grassSurface),
                                                                                 SAND
+                                                                        )),
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.TUNDRA),
+                                                                        SurfaceRules.sequence(
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (MTANoises.TUNDRA_VEGETATION, 0.9D, Double.MAX_VALUE),
+                                                                                        permafrostTundraSurface),
+                                                                                permafrostSurface
                                                                         ))
 
                                                         )
                                                 ),
                                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,
-                                                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
-                                                                SurfaceRules.sequence(
-
-                                                                        SurfaceRules.ifTrue(
-                                                                                SurfaceRules.noiseCondition
-                                                                                        (Noises.GRAVEL, -0.1D, 0.1D),
-                                                                                DIRT),
-                                                                        sandstoneLinedSand
-                                                                ))
+                                                        SurfaceRules.sequence(
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                                                        SurfaceRules.sequence(
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (MTANoises.OASIS_GRASS, -0.25D, 0.3D),
+                                                                                        DIRT),
+                                                                                sandstoneLinedSand
+                                                                        )),
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.TUNDRA),
+                                                                        PERMAFROST_DIRT)
+                                                        )
                                                 ),
                                                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR,
+                                                        SurfaceRules.sequence(
                                                         SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
                                                                 SurfaceRules.sequence(
 
                                                                         SurfaceRules.ifTrue(
                                                                                 SurfaceRules.noiseCondition
-                                                                                        (Noises.GRAVEL, -0.1D, 0.1D),
+                                                                                        (MTANoises.OASIS_GRASS, -0.25D, 0.3D),
                                                                                 STONE),
                                                                         SANDSTONE
                                                                 ))
+                                                        )
+                                                ),
+                                                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR,
+                                                        SurfaceRules.sequence(
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.TUNDRA),
+                                                                                PERMAFROST_STONE
+                                                                        )
+                                                        )
                                                 ),
 
 
@@ -127,32 +152,34 @@ public class MtaSurfaceRules {
                                 SurfaceRules.sequence(
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, -0.04D, 0.0D),
-                                                CALCITE),
+                                                        (MTANoises.CALCITE_3D, -0.04D, 0.0D),
+                                                        CALCITE
+                                        ),
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, -0.23D, -0.2D),
-                                                CALCITE),
+                                                        (MTANoises.CALCITE_3D, -0.3D, -0.2D),
+                                                        CALCITE
+                                        ),
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, -0.8D, -0.68D),
-                                                CALCITE),
+                                                        (MTANoises.CALCITE_3D, 0.24D, 0.3D),
+                                                        CALCITE
+                                        ),
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, 0.45D, 0.77D),
-                                                CALCITE),
+                                                        (MTANoises.CALCITE_3D, 0.5D, 0.58D),
+                                                        CALCITE
+                                        ),
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, 0.82D, 0.85D),
-                                                CALCITE),
+                                                        (MTANoises.CALCITE_3D, 0.01D, 0.04D),
+                                                        CALCITE
+                                        ),
                                         SurfaceRules.ifTrue(
                                                 SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, 0.95D, 1.0D),
-                                                CALCITE),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (Noises.CALCITE, -0.5D, -0.45D),
-                                                CALCITE)
+                                                        (MTANoises.CALCITE_3D, -0.92D, -0.85D),
+                                                        CALCITE
+                                        )
                                 )
 
                         )

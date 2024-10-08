@@ -223,6 +223,42 @@ public class MtaBlocks {
             , Blocks.DIRT)
     );
 
+
+    public static final DeferredBlock<Block> SHALLOW_GRASS = registerBlock("shallow_grass",
+            () -> new ShortGrassBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .replaceable()
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XYZ)
+                            .ignitedByLava()
+                            .pushReaction(PushReaction.DESTROY)
+            )
+    );
+    public static final DeferredBlock<Block> PERMAFROST_DIRT = registerBlock("permafrost_dirt",
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.DIRT)
+    );
+    public static final DeferredBlock<Block> PERMAFROST_STONE = registerBlock("permafrost_stone",
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.STONE)
+    );
+
+    public static final DeferredBlock<Block> PERMAFROST_GRASS = registerBlock("permafrost_grass",
+            () -> new PermafrostDirtBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.GRASS_BLOCK)
+            )
+    );
+    public static final DeferredBlock<Block> TUNDRA_GRASS = registerBlock("tundra_grass",
+            () -> new PermafrostDirtBlock(
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.PODZOL)
+            )
+    );
+
     public static final DeferredBlock<Block> STONE_TILES = registerBlock("stone_tiles", () -> new StoneTilesBlock(
             BlockBehaviour.Properties
                     .ofFullCopy(Blocks.STONE_BRICKS) ,0)
@@ -1223,7 +1259,7 @@ public class MtaBlocks {
 
     public static final DeferredBlock<DropExperienceBlock> PLACEHOLDER_ORE = registerBlock("placeholder_ore",
             () -> new DropExperienceBlock(ConstantInt.of(0),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_ORE)
             ));
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLACEHOLDER_ORE = registerBlock("deepslate_placeholder_ore",
             () -> new DropExperienceBlock(ConstantInt.of(0),

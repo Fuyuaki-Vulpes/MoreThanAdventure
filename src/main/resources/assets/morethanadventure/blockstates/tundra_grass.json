@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morethanadventure:block/tundra_grass"
+      },
+      {
+        "model": "morethanadventure:block/tundra_grass",
+        "y": 90
+      },
+      {
+        "model": "morethanadventure:block/tundra_grass",
+        "y": 180
+      },
+      {
+        "model": "morethanadventure:block/tundra_grass",
+        "y": 270
+      }
+    ]
+  }
+}
