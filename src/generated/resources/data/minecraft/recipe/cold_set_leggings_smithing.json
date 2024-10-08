@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:cryolite"
+  },
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:cold_set_leggings"
+  },
+  "template": {
+    "item": "morethanadventure:freezing_upgrade"
+  }
+}
