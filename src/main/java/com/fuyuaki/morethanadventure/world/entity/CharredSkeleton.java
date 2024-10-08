@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.world.entity;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -18,6 +19,11 @@ public class CharredSkeleton extends AbstractSkeleton {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.31F)
                 .add(Attributes.MAX_HEALTH, 14F);
+    }
+
+    @Override
+    protected boolean isSunBurnTick() {
+        return false;
     }
 
     @Override

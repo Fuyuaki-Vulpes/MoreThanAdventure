@@ -22,6 +22,11 @@ public class ArmoredSkeleton extends AbstractSkeleton {
     }
 
     @Override
+    protected boolean isSunBurnTick() {
+        return false;
+    }
+
+    @Override
     protected SoundEvent getStepSound() {
         return SoundEvents.SKELETON_STEP;
     }

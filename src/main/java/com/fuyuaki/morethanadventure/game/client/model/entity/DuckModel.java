@@ -12,9 +12,19 @@ import net.minecraft.client.model.geom.builders.*;
 public class DuckModel <T extends Duck> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
+    private final ModelPart head;
+    private final ModelPart right_wing;
+    private final ModelPart left_wing;
+    private final ModelPart right_leg;
+    private final ModelPart left_leg;
 
     public DuckModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.head = root.getChild("head");
+        this.right_wing = root.getChild("right_wing");
+        this.left_wing = root.getChild("left_wing");
+        this.right_leg = root.getChild("right_leg");
+        this.left_leg = root.getChild("left_leg");
     }
 
     public static LayerDefinition createBodyLayer() {

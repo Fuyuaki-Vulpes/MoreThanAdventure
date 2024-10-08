@@ -11,9 +11,25 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class ToucanModel <T extends Toucan> extends HierarchicalModel<T> {
     private final ModelPart root;
+    private final ModelPart body;
+    private final ModelPart head;
+    private final ModelPart beak_jaw;
+    private final ModelPart left_wing;
+    private final ModelPart right_wing;
+    private final ModelPart tail;
+    private final ModelPart left_leg;
+    private final ModelPart right_leg;
 
     public ToucanModel(ModelPart root) {
         this.root = root.getChild("root");
+        this.body = root.getChild("body");
+        this.head = root.getChild("head");
+        this.beak_jaw = root.getChild("beak_jaw");
+        this.left_wing = root.getChild("left_wing");
+        this.right_wing = root.getChild("right_wing");
+        this.tail = root.getChild("tail");
+        this.left_leg = root.getChild("left_leg");
+        this.right_leg = root.getChild("right_leg");
     }
 
     public static LayerDefinition createBodyLayer() {
