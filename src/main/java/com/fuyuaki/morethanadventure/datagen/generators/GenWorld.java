@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.datagen.generators;
 
+import com.fuyuaki.morethanadventure.game.worldgen.MTANoises;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomeModifiers;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaConfigFeatures;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
@@ -20,6 +21,7 @@ public class GenWorld extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, MtaConfigFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, MtaPlacedFeatures::bootstrap)
+            .add(Registries.NOISE, MTANoises::bootstrap)
             .add(Registries.BIOME, MtaBiomes::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, MtaBiomeModifiers::bootstrap)
             ;

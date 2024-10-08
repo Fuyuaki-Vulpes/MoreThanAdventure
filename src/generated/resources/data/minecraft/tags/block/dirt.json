@@ -2,6 +2,9 @@
   "values": [
     "morethanadventure:grassy_dirt",
     "morethanadventure:coarse_dirt_path",
-    "morethanadventure:cobbled_dirt"
+    "morethanadventure:cobbled_dirt",
+    "morethanadventure:permafrost_grass",
+    "morethanadventure:permafrost_dirt",
+    "morethanadventure:tundra_grass"
   ]
 }

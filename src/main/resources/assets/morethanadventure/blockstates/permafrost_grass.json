@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "morethanadventure:block/permafrost_grass"
+      },
+      {
+        "model": "morethanadventure:block/permafrost_grass",
+        "y": 90
+      },
+      {
+        "model": "morethanadventure:block/permafrost_grass",
+        "y": 180
+      },
+      {
+        "model": "morethanadventure:block/permafrost_grass",
+        "y": 270
+      }
+    ]
+  }
+}

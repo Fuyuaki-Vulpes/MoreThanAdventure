@@ -45,7 +45,9 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
     public static final ResourceKey<Biome> OASIS = createBiome("oasis");
     public static final ResourceKey<Biome> GRAVELLY_RIVER = createBiome("gravelly_river");
+    public static final ResourceKey<Biome> TUNDRA = createBiome("tundra");
     public static final ResourceKey<Biome> LUSH_MEADOW = createBiome("lush_meadow");
+
     public static final ResourceKey<Biome> CRYSTALLINE_GROTTO = createBiome("crystalline_grotto");
 
     public static ResourceKey<Biome> createBiome(String name){
@@ -62,6 +64,7 @@ public class MtaBiomes {
         register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(context));
         register(context,SPARSE_TAIGA, sparseTaiga(context));
         register(context,OASIS, oasis(context));
+        register(context,TUNDRA, tundra(context));
         register(context,GRAVELLY_RIVER, gravelRiver(context));
         register(context,LUSH_MEADOW, lushMeadow(context));
         register(context,CRYSTALLINE_GROTTO, crystallineGrotto(context));
@@ -243,6 +246,10 @@ public class MtaBiomes {
                 false,
                 2.0F,
                 0.4F,
+                0x32A598,
+                0x32A598,
+                329011,
+                0xBFB755,
                 spawnBuilder,
                 biomeBuilder,
                 DESERT_MUSIC);
@@ -375,6 +382,37 @@ public class MtaBiomes {
     }
 
 
+    private static Biome tundra(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 2, 4));
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+        BiomeDefaultFeatures.snowySpawns(spawnBuilder);
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PATCH_TUNDRA_GRASS);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+
+
+        return biome(true, -1.0F, 0.5F,
+                4159204,
+                329011,
+                0xeac466,
+                0xa5bc6c,
+                spawnBuilder, biomeBuilder, MOUNTAIN_MUSIC);
+    }
 
 
     private static void registerVillagerTypes() {
@@ -384,6 +422,7 @@ public class MtaBiomes {
         registerVillagers(SPARSE_TAIGA, VillagerType.TAIGA);
         registerVillagers(SPARSE_CHERRY_GROVE, VillagerType.PLAINS);
         registerVillagers(OASIS, VillagerType.DESERT);
+        registerVillagers(TUNDRA, VillagerType.SNOW);
 
 
 

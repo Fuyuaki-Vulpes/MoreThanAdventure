@@ -39,7 +39,6 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SPARSE_SPRUCE_TREE = registerKey("sparse_taiga");
     public static final ResourceKey<PlacedFeature> SPARSE_MANGROVE = registerKey("sparse_mangrove");
     public static final ResourceKey<PlacedFeature> STONY_ROCK = registerKey("stony_rocks");
-    public static final ResourceKey<PlacedFeature> STONY_ROCK_CAVE = registerKey("stony_rocks_cave");
     public static final ResourceKey<PlacedFeature> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<PlacedFeature> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<PlacedFeature> GEYSER_NETHER = registerKey("geyser_nether");
@@ -61,6 +60,8 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
     public static final ResourceKey<PlacedFeature> SCATTERED_LEAVES = registerKey("scattered_leaves");
 
+    public static final ResourceKey<PlacedFeature> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
+    public static final ResourceKey<PlacedFeature> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
@@ -329,6 +330,16 @@ public class MtaPlacedFeatures {
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
+        );
+        PlacementUtils.register(
+                context,
+                PATCH_TUNDRA_GRASS,
+                holder(context,MtaConfigFeatures.PATCH_TUNDRA_GRASS),VegetationPlacements.worldSurfaceSquaredWithCount(32)
+        );
+        PlacementUtils.register(
+                context,
+                SHALLOW_GRASS_SPARSE,
+                holder(context,MtaConfigFeatures.SHALLOW_GRASS_SPARSE),VegetationPlacements.worldSurfaceSquaredWithCount(3)
         );
 
 
