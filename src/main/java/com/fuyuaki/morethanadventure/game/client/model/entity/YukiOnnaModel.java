@@ -10,7 +10,7 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class YukiOnnaModel<T extends YukiOnna> extends HierarchicalModel<T> {
     private final ModelPart root;
-    private final ModelPart head;
+    /*private final ModelPart head;
     private final ModelPart right_bang;
     private final ModelPart left_bang;
     private final ModelPart back_hair;
@@ -19,11 +19,11 @@ public class YukiOnnaModel<T extends YukiOnna> extends HierarchicalModel<T> {
     private final ModelPart torso;
     private final ModelPart fabric_a;
     private final ModelPart fabric_b;
-    private final ModelPart robe_bottom;
+    private final ModelPart robe_bottom;*/
 
     public YukiOnnaModel(ModelPart root) {
         this.root = root.getChild("root");
-        this.head = root.getChild("head");
+        /*this.head = root.getChild("head");
         this.right_bang = root.getChild("right_bang");
         this.left_bang = root.getChild("left_bang");
         this.back_hair = root.getChild("back_hair");
@@ -32,7 +32,7 @@ public class YukiOnnaModel<T extends YukiOnna> extends HierarchicalModel<T> {
         this.torso = root.getChild("torso");
         this.fabric_a = root.getChild("fabric_a");
         this.fabric_b = root.getChild("fabric_b");
-        this.robe_bottom = root.getChild("robe_bottom");
+        this.robe_bottom = root.getChild("robe_bottom");*/
     }
 
     public static LayerDefinition createBodyLayer() {

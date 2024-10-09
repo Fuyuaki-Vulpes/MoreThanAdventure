@@ -12,7 +12,7 @@ import net.minecraft.client.model.geom.builders.*;
 public class JellyfishModel <T extends Jellyfish> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
-    private final ModelPart head;
+   /* private final ModelPart head;
     private final ModelPart head_b;
     private final ModelPart oral_arm;
     private final ModelPart oral_arm_b;
@@ -40,11 +40,11 @@ public class JellyfishModel <T extends Jellyfish> extends HierarchicalModel<T> {
     private final ModelPart tentacle_g3;
     private final ModelPart tentacle_h;
     private final ModelPart tentacle_h2;
-    private final ModelPart tentacle_h3;
+    private final ModelPart tentacle_h3;*/
 
     public JellyfishModel(ModelPart root) {
         this.root = root.getChild("root");
-        this.head = root.getChild("head");
+        /*this.head = root.getChild("head");
         this.head_b = root.getChild("head_b");
         this.oral_arm = root.getChild("oral_arm");
         this.oral_arm_b = root.getChild("oral_arm_b");
@@ -72,7 +72,7 @@ public class JellyfishModel <T extends Jellyfish> extends HierarchicalModel<T> {
         this.tentacle_g3 = root.getChild("tentacle_g3");
         this.tentacle_h = root.getChild("tentacle_h");
         this.tentacle_h2 = root.getChild("tentacle_h2");
-        this.tentacle_h3 = root.getChild("tentacle_h3");
+        this.tentacle_h3 = root.getChild("tentacle_h3");*/
     }
 
     public static LayerDefinition createBodyLayer() {

@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class WitherJuggernautModel <T extends WitherJuggernaut> extends HierarchicalModel<T> {
     private final ModelPart root;
-    private final ModelPart hips;
+    /*private final ModelPart hips;
     private final ModelPart spine_low;
     private final ModelPart spine_top;
     private final ModelPart chest;
@@ -31,11 +31,11 @@ public class WitherJuggernautModel <T extends WitherJuggernaut> extends Hierarch
     private final ModelPart left_boot;
     private final ModelPart right_leg;
     private final ModelPart right_leg_bottom;
-    private final ModelPart right_boot;
+    private final ModelPart right_boot;*/
 
     public WitherJuggernautModel(ModelPart root) {
         this.root = root.getChild("root");
-        this.hips = root.getChild("hips");
+        /*this.hips = root.getChild("hips");
         this.spine_low = root.getChild("spine_low");
         this.spine_top = root.getChild("spine_top");
         this.chest = root.getChild("chest");
@@ -55,7 +55,7 @@ public class WitherJuggernautModel <T extends WitherJuggernaut> extends Hierarch
         this.left_boot = root.getChild("left_boot");
         this.right_leg = root.getChild("right_leg");
         this.right_leg_bottom = root.getChild("right_leg_bottom");
-        this.right_boot = root.getChild("right_boot");
+        this.right_boot = root.getChild("right_boot");*/
     }
 
     public static LayerDefinition createBodyLayer() {

@@ -12,7 +12,7 @@ import net.minecraft.client.model.geom.builders.*;
 public class FallenSamuraiModel <T extends FallenSamurai> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
-    private final ModelPart head;
+    /*private final ModelPart head;
     private final ModelPart hat;
     private final ModelPart scarf_tail_back;
     private final ModelPart scarf_tail_front;
@@ -21,11 +21,11 @@ public class FallenSamuraiModel <T extends FallenSamurai> extends HierarchicalMo
     private final ModelPart right_arm;
     private final ModelPart skirt;
     private final ModelPart left_leg;
-    private final ModelPart right_leg;
+    private final ModelPart right_leg;*/
 
     public FallenSamuraiModel(ModelPart root) {
         this.root = root.getChild("root");
-        this.head = root.getChild("head");
+        /*this.head = root.getChild("head");
         this.hat = root.getChild("hat");
         this.scarf_tail_back = root.getChild("scarf_tail_back");
         this.scarf_tail_front = root.getChild("scarf_tail_front");
@@ -34,7 +34,7 @@ public class FallenSamuraiModel <T extends FallenSamurai> extends HierarchicalMo
         this.right_arm = root.getChild("right_arm");
         this.skirt = root.getChild("skirt");
         this.left_leg = root.getChild("left_leg");
-        this.right_leg = root.getChild("right_leg");
+        this.right_leg = root.getChild("right_leg");*/
     }
 
     public static LayerDefinition createBodyLayer() {

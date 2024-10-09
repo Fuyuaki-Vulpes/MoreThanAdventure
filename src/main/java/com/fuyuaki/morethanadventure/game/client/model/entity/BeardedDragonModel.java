@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class BeardedDragonModel<T extends BeardedDragon> extends HierarchicalModel<T> {
     private final ModelPart root;
-    private final ModelPart head;
+    /*private final ModelPart head;
     private final ModelPart cheeks;
     private final ModelPart left_front_leg;
     private final ModelPart right_front_leg;
@@ -19,12 +19,12 @@ public class BeardedDragonModel<T extends BeardedDragon> extends HierarchicalMod
     private final ModelPart right_hind_leg;
     private final ModelPart body;
     private final ModelPart tail;
-    private final ModelPart tail_b;
+    private final ModelPart tail_b;*/
 
     public BeardedDragonModel(ModelPart root) {
 
         this.root = root.getChild("root");
-        this.head = root.getChild("head");
+        /*this.head = root.getChild("head");
         this.cheeks = root.getChild("cheeks");
         this.left_front_leg = root.getChild("left_front_leg");
         this.right_front_leg = root.getChild("right_front_leg");
@@ -32,7 +32,7 @@ public class BeardedDragonModel<T extends BeardedDragon> extends HierarchicalMod
         this.right_hind_leg = root.getChild("right_hind_leg");
         this.body = root.getChild("body");
         this.tail = root.getChild("tail");
-        this.tail_b = root.getChild("tail_b");
+        this.tail_b = root.getChild("tail_b");*/
     }
 
     public static LayerDefinition createBodyLayer() {

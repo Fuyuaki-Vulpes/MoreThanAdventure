@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class OctopusModel <T extends Octopus> extends HierarchicalModel<T> {
     private final ModelPart root;
-    private final ModelPart head;
+    /*private final ModelPart head;
     private final ModelPart mantle;
     private final ModelPart beak_right;
     private final ModelPart beak_left;
@@ -23,11 +23,11 @@ public class OctopusModel <T extends Octopus> extends HierarchicalModel<T> {
     private final ModelPart leg_5;
     private final ModelPart leg_6;
     private final ModelPart leg_7;
-    private final ModelPart leg_8;
+    private final ModelPart leg_8;*/
 
     public OctopusModel(ModelPart root) {
         this.root = root.getChild("root");
-        this.head = root.getChild("head");
+        /*this.head = root.getChild("head");
         this.mantle = root.getChild("mantle");
         this.beak_right = root.getChild("beak_right");
         this.beak_left = root.getChild("beak_left");
@@ -39,7 +39,7 @@ public class OctopusModel <T extends Octopus> extends HierarchicalModel<T> {
         this.leg_5 = root.getChild("leg_5");
         this.leg_6 = root.getChild("leg_6");
         this.leg_7 = root.getChild("leg_7");
-        this.leg_8 = root.getChild("leg_8");
+        this.leg_8 = root.getChild("leg_8");*/
     }
 
     public static LayerDefinition createBodyLayer() {
