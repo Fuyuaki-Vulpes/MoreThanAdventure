@@ -6,10 +6,12 @@ import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
+import com.fuyuaki.morethanadventure.game.client.particle.UnpoppableBubble;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
+import net.minecraft.client.particle.BubbleParticle;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.level.FoliageColor;
@@ -136,6 +138,7 @@ public class MTAClientEvents
         event.registerSpriteSet(MtaParticles.GEYSER_WATER.get(), GeyserParticle.Water::new);
         event.registerSpriteSet(MtaParticles.GEYSER_LAVA.get(), GeyserParticle.Lava::new);
         event.registerSpriteSet(MtaParticles.SPRINKLER.get(), SprinklerParticle.Builder::new);
+        event.registerSpriteSet(MtaParticles.UNPOPPABLE_BUBBLE.get(), UnpoppableBubble.Provider::new);
 
     }
     @SubscribeEvent

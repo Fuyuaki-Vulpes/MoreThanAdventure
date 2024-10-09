@@ -37,6 +37,7 @@ public class MTAMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        MTAComponents.register(modEventBus);
         MtaEntityTypes.register(modEventBus);
         MtaBlockEntities.register(modEventBus);
         MtaBlocks.register(modEventBus);
