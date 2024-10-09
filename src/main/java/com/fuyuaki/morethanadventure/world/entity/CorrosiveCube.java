@@ -15,37 +15,28 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.MagmaCube;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.Level;
 
 public class CorrosiveCube extends Slime {
-    private static final EntityDataAccessor<Integer> ID_SIZE = SynchedEntityData.defineId(Slime.class, EntityDataSerializers.INT);
     public CorrosiveCube(EntityType<? extends Slime> entityType, Level level) {
         super(entityType, level);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Monster.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.21F);
     }
 
     @Override
     public void setSize(int pSize, boolean pResetHealth) {
-        int i = Mth.clamp(pSize, 1, 127);
-        this.entityData.set(ID_SIZE, i);
-        this.reapplyPosition();
-        this.refreshDimensions();
-        this.getAttribute(Attributes.MAX_HEALTH).setBaseValue((i * i));
-        this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue((0.2F + 0.1F * (float)i));
-        this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(i);
+        super.setSize(pSize, pResetHealth);
+        this.getAttribute(Attributes.MAX_HEALTH).setBaseValue((pSize * pSize * 2));
+        this.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(pSize);
+        }
 
-        this.xpReward = i;
-    }
 
-    @Override
-    public int getSize() {
-        return this.entityData.get(ID_SIZE);
-    }
 
     @Override
     public boolean doHurtTarget(Entity entity) {
@@ -69,22 +60,12 @@ public class CorrosiveCube extends Slime {
         }
     }
 
-    @Override
-    public void addAdditionalSaveData(CompoundTag pCompound) {
-        super.addAdditionalSaveData(pCompound);
-        pCompound.putInt("size", this.entityData.get(ID_SIZE));
-    }
+
+
+
 
     @Override
-    public void readAdditionalSaveData(CompoundTag pCompound) {
-        super.readAdditionalSaveData(pCompound);
-        this.entityData.set(ID_SIZE, pCompound.getInt("size"));
-    }
-
-    @Override
-    protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
-        super.defineSynchedData(pBuilder);
-
-        pBuilder.define(ID_SIZE, 1);
+    protected float getAttackDamage() {
+        return super.getAttackDamage() + 2.0F;
     }
 }

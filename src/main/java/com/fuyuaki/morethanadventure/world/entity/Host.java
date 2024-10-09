@@ -21,13 +21,14 @@ public class Host extends Zombie {
                 .add(Attributes.MOVEMENT_SPEED, 0.18F)
                 .add(Attributes.ATTACK_DAMAGE, 2.0)
                 .add(Attributes.ARMOR, 3.0)
-                .add(Attributes.MAX_HEALTH, 34F);
+                .add(Attributes.MAX_HEALTH, 34F)
+                .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0F);
     }
 
     @Override
     public void tick() {
         if (!this.level().isClientSide && !this.hasEffect(MobEffects.INFESTED)){
-            hasEffect(MobEffects.INFESTED);
+
         }
 
         super.tick();
