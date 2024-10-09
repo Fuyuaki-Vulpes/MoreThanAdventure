@@ -41,6 +41,18 @@ public class MTAGameClientEvents {
             fovModifier *= 1f - deltaTicks * 0.10f;
             event.setNewFovModifier(fovModifier);
         }
+        if (event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == MtaItems.SHADOW_ROGUES_DAGGER.get()) {
+            float fovModifier = 1f;
+            int tickUsingItem = event.getPlayer().getTicksUsingItem();
+            float deltaTicks = (float) tickUsingItem / 4f;
+            if (deltaTicks > 5f) {
+                deltaTicks = 5f;
+            } else {
+                deltaTicks *= 0.2f * deltaTicks;
+            }
+            fovModifier *= 1f - deltaTicks * 0.10f;
+            event.setNewFovModifier(fovModifier);
+        }
 
     }
 
