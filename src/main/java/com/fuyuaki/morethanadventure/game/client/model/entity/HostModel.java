@@ -52,7 +52,7 @@ public class HostModel <T extends Host> extends HierarchicalModel<T> {
     }
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

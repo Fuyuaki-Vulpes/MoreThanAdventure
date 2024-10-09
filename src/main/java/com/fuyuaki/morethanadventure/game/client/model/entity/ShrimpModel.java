@@ -10,19 +10,19 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class ShrimpModel<T extends Shrimp> extends HierarchicalModel<T> {
     private final ModelPart root;
-    /*private final ModelPart body;
+    private final ModelPart body;
     private final ModelPart tail;
     private final ModelPart head;
     private final ModelPart left_claw;
-    private final ModelPart right_claw;*/
+    private final ModelPart right_claw;
 
-    public ShrimpModel(ModelPart root) {
-        this.root = root.getChild("root");
-        /*this.body = root.getChild("body");
-        this.tail = root.getChild("tail");
-        this.head = root.getChild("head");
-        this.left_claw = root.getChild("left_claw");
-        this.right_claw = root.getChild("right_claw");*/
+    public ShrimpModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.body = this.root.getChild("body");
+        this.tail = this.body.getChild("tail");
+        this.head = this.root.getChild("head");
+        this.left_claw = this.head.getChild("left_claw");
+        this.right_claw = this.head.getChild("right_claw");
     }
 
     public static LayerDefinition createBodyLayer() {

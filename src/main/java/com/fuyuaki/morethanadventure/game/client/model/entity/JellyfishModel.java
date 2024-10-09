@@ -12,7 +12,7 @@ import net.minecraft.client.model.geom.builders.*;
 public class JellyfishModel <T extends Jellyfish> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
-   /* private final ModelPart head;
+    private final ModelPart head;
     private final ModelPart head_b;
     private final ModelPart oral_arm;
     private final ModelPart oral_arm_b;
@@ -40,39 +40,39 @@ public class JellyfishModel <T extends Jellyfish> extends HierarchicalModel<T> {
     private final ModelPart tentacle_g3;
     private final ModelPart tentacle_h;
     private final ModelPart tentacle_h2;
-    private final ModelPart tentacle_h3;*/
+    private final ModelPart tentacle_h3;
 
-    public JellyfishModel(ModelPart root) {
-        this.root = root.getChild("root");
-        /*this.head = root.getChild("head");
-        this.head_b = root.getChild("head_b");
-        this.oral_arm = root.getChild("oral_arm");
-        this.oral_arm_b = root.getChild("oral_arm_b");
-        this.tentacles = root.getChild("tentacles");
-        this.tentacle_a = root.getChild("tentacle_a");
-        this.tentacle_a2 = root.getChild("tentacle_a2");
-        this.tentacle_a3 = root.getChild("tentacle_a3");
-        this.tentacle_b = root.getChild("tentacle_b");
-        this.tentacle_b2 = root.getChild("tentacle_b2");
-        this.tentacle_b3 = root.getChild("tentacle_b3");
-        this.tentacle_c = root.getChild("tentacle_c");
-        this.tentacle_c2 = root.getChild("tentacle_c2");
-        this.tentacle_c3 = root.getChild("tentacle_c3");
-        this.tentacle_d = root.getChild("tentacle_d");
-        this.tentacle_d2 = root.getChild("tentacle_d2");
-        this.tentacle_d3 = root.getChild("tentacle_d3");
-        this.tentacle_e = root.getChild("tentacle_e");
-        this.tentacle_e2 = root.getChild("tentacle_e2");
-        this.tentacle_e3 = root.getChild("tentacle_e3");
-        this.tentacle_f = root.getChild("tentacle_f");
-        this.tentacle_f2 = root.getChild("tentacle_f2");
-        this.tentacle_f3 = root.getChild("tentacle_f3");
-        this.tentacle_g = root.getChild("tentacle_g");
-        this.tentacle_g2 = root.getChild("tentacle_g2");
-        this.tentacle_g3 = root.getChild("tentacle_g3");
-        this.tentacle_h = root.getChild("tentacle_h");
-        this.tentacle_h2 = root.getChild("tentacle_h2");
-        this.tentacle_h3 = root.getChild("tentacle_h3");*/
+    public JellyfishModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.head = this.root.getChild("head");
+        this.head_b = this.head.getChild("head_b");
+        this.oral_arm = this.root.getChild("oral_arm");
+        this.oral_arm_b = this.oral_arm.getChild("oral_arm_b");
+        this.tentacles = this.root.getChild("tentacles");
+        this.tentacle_a = this.tentacles.getChild("tentacle_a");
+        this.tentacle_a2 = this.tentacle_a.getChild("tentacle_a2");
+        this.tentacle_a3 = this.tentacle_a2.getChild("tentacle_a3");
+        this.tentacle_b = this.tentacles.getChild("tentacle_b");
+        this.tentacle_b2 = this.tentacle_b.getChild("tentacle_b2");
+        this.tentacle_b3 = this.tentacle_b2.getChild("tentacle_b3");
+        this.tentacle_c = this.tentacles.getChild("tentacle_c");
+        this.tentacle_c2 = this.tentacle_c.getChild("tentacle_c2");
+        this.tentacle_c3 = this.tentacle_c2.getChild("tentacle_c3");
+        this.tentacle_d = this.tentacles.getChild("tentacle_d");
+        this.tentacle_d2 = this.tentacle_d.getChild("tentacle_d2");
+        this.tentacle_d3 = this.tentacle_d2.getChild("tentacle_d3");
+        this.tentacle_e = this.tentacles.getChild("tentacle_e");
+        this.tentacle_e2 = this.tentacle_e.getChild("tentacle_e2");
+        this.tentacle_e3 = this.tentacle_e2.getChild("tentacle_e3");
+        this.tentacle_f = this.tentacles.getChild("tentacle_f");
+        this.tentacle_f2 = this.tentacle_f.getChild("tentacle_f2");
+        this.tentacle_f3 = this.tentacle_f2.getChild("tentacle_f3");
+        this.tentacle_g = this.tentacles.getChild("tentacle_g");
+        this.tentacle_g2 = this.tentacle_g.getChild("tentacle_g2");
+        this.tentacle_g3 = this.tentacle_g2.getChild("tentacle_g3");
+        this.tentacle_h = this.tentacles.getChild("tentacle_h");
+        this.tentacle_h2 = this.tentacle_h.getChild("tentacle_h2");
+        this.tentacle_h3 = this.tentacle_h2.getChild("tentacle_h3");
     }
 
     public static LayerDefinition createBodyLayer() {

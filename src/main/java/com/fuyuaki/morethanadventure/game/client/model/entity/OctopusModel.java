@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class OctopusModel <T extends Octopus> extends HierarchicalModel<T> {
     private final ModelPart root;
-    /*private final ModelPart head;
+    private final ModelPart head;
     private final ModelPart mantle;
     private final ModelPart beak_right;
     private final ModelPart beak_left;
@@ -23,23 +23,23 @@ public class OctopusModel <T extends Octopus> extends HierarchicalModel<T> {
     private final ModelPart leg_5;
     private final ModelPart leg_6;
     private final ModelPart leg_7;
-    private final ModelPart leg_8;*/
+    private final ModelPart leg_8;
 
-    public OctopusModel(ModelPart root) {
-        this.root = root.getChild("root");
-        /*this.head = root.getChild("head");
-        this.mantle = root.getChild("mantle");
-        this.beak_right = root.getChild("beak_right");
-        this.beak_left = root.getChild("beak_left");
-        this.legs = root.getChild("legs");
-        this.leg_1 = root.getChild("leg_1");
-        this.leg_2 = root.getChild("leg_2");
-        this.leg_3 = root.getChild("leg_3");
-        this.leg_4 = root.getChild("leg_4");
-        this.leg_5 = root.getChild("leg_5");
-        this.leg_6 = root.getChild("leg_6");
-        this.leg_7 = root.getChild("leg_7");
-        this.leg_8 = root.getChild("leg_8");*/
+    public OctopusModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.head = this.root.getChild("head");
+        this.mantle = this.head.getChild("mantle");
+        this.beak_right = this.head.getChild("beak_right");
+        this.beak_left = this.head.getChild("beak_left");
+        this.legs = this.root.getChild("legs");
+        this.leg_1 = this.legs.getChild("leg_1");
+        this.leg_2 = this.legs.getChild("leg_2");
+        this.leg_3 = this.legs.getChild("leg_3");
+        this.leg_4 = this.legs.getChild("leg_4");
+        this.leg_5 = this.legs.getChild("leg_5");
+        this.leg_6 = this.legs.getChild("leg_6");
+        this.leg_7 = this.legs.getChild("leg_7");
+        this.leg_8 = this.legs.getChild("leg_8");
     }
 
     public static LayerDefinition createBodyLayer() {

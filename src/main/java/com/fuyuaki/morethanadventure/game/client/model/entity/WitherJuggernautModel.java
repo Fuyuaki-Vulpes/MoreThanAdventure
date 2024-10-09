@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.*;
 
 public class WitherJuggernautModel <T extends WitherJuggernaut> extends HierarchicalModel<T> {
     private final ModelPart root;
-    /*private final ModelPart hips;
+    private final ModelPart hips;
     private final ModelPart spine_low;
     private final ModelPart spine_top;
     private final ModelPart chest;
@@ -31,31 +31,31 @@ public class WitherJuggernautModel <T extends WitherJuggernaut> extends Hierarch
     private final ModelPart left_boot;
     private final ModelPart right_leg;
     private final ModelPart right_leg_bottom;
-    private final ModelPart right_boot;*/
+    private final ModelPart right_boot;
 
-    public WitherJuggernautModel(ModelPart root) {
-        this.root = root.getChild("root");
-        /*this.hips = root.getChild("hips");
-        this.spine_low = root.getChild("spine_low");
-        this.spine_top = root.getChild("spine_top");
-        this.chest = root.getChild("chest");
-        this.head = root.getChild("head");
-        this.jaw = root.getChild("jaw");
-        this.helmet = root.getChild("helmet");
-        this.left_arm = root.getChild("left_arm");
-        this.left_armor = root.getChild("left_armor");
-        this.left_armplate = root.getChild("left_armplate");
-        this.left_hand = root.getChild("left_hand");
-        this.right_arm = root.getChild("right_arm");
-        this.right_armor = root.getChild("right_armor");
-        this.right_armplate = root.getChild("right_armplate");
-        this.right_hand = root.getChild("right_hand");
-        this.left_leg = root.getChild("left_leg");
-        this.left_leg_bottom = root.getChild("left_leg_bottom");
-        this.left_boot = root.getChild("left_boot");
-        this.right_leg = root.getChild("right_leg");
-        this.right_leg_bottom = root.getChild("right_leg_bottom");
-        this.right_boot = root.getChild("right_boot");*/
+    public WitherJuggernautModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.hips = this.root.getChild("hips");
+        this.spine_low = this.hips.getChild("spine_low");
+        this.spine_top = this.spine_low.getChild("spine_top");
+        this.chest = this.spine_top.getChild("chest");
+        this.head = this.chest.getChild("head");
+        this.jaw = this.head.getChild("jaw");
+        this.helmet = this.head.getChild("helmet");
+        this.left_arm = this.chest.getChild("left_arm");
+        this.left_armor = this.left_arm.getChild("left_armor");
+        this.left_armplate =this.left_armor.getChild("left_armplate");
+        this.left_hand = this.left_arm.getChild("left_hand");
+        this.right_arm = this.chest.getChild("right_arm");
+        this.right_armor = this.right_arm.getChild("right_armor");
+        this.right_armplate = this.right_armor.getChild("right_armplate");
+        this.right_hand = this.right_arm.getChild("right_hand");
+        this.left_leg = this.root.getChild("left_leg");
+        this.left_leg_bottom = this.left_leg.getChild("left_leg_bottom");
+        this.left_boot = this.left_leg_bottom.getChild("left_boot");
+        this.right_leg = this.root.getChild("right_leg");
+        this.right_leg_bottom = this.right_leg.getChild("right_leg_bottom");
+        this.right_boot = this.right_leg_bottom.getChild("right_boot");
     }
 
     public static LayerDefinition createBodyLayer() {

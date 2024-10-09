@@ -12,7 +12,7 @@ import net.minecraft.client.model.geom.builders.*;
 public class OwlModel <T extends Owl> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
-    /*private final ModelPart head;
+    private final ModelPart head;
     private final ModelPart left_feather;
     private final ModelPart right_feather;
     private final ModelPart body;
@@ -20,19 +20,19 @@ public class OwlModel <T extends Owl> extends HierarchicalModel<T> {
     private final ModelPart right_wing;
     private final ModelPart left_foot;
     private final ModelPart right_foot;
-    private final ModelPart tail;*/
+    private final ModelPart tail;
 
-    public OwlModel(ModelPart root) {
-        this.root = root.getChild("root");
-        /*this.head = root.getChild("head");
-        this.left_feather = root.getChild("left_feather");
-        this.right_feather = root.getChild("right_feather");
-        this.body = root.getChild("body");
-        this.left_wing = root.getChild("left_wing");
-        this.right_wing = root.getChild("right_wing");
-        this.left_foot = root.getChild("left_foot");
-        this.right_foot = root.getChild("right_foot");
-        this.tail = root.getChild("tail");*/
+    public OwlModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.head = this.root.getChild("head");
+        this.left_feather = this.head.getChild("left_feather");
+        this.right_feather = this.head.getChild("right_feather");
+        this.body = this.root.getChild("body");
+        this.left_wing = this.body.getChild("left_wing");
+        this.right_wing = this.body.getChild("right_wing");
+        this.left_foot = this.body.getChild("left_foot");
+        this.right_foot = this.body.getChild("right_foot");
+        this.tail = this.body.getChild("tail");
     }
 
     public static LayerDefinition createBodyLayer() {

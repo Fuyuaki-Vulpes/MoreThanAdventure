@@ -12,8 +12,8 @@ public class ButterflyModel <T extends Butterfly> extends HierarchicalModel<T> {
     private final ModelPart left_wing;
     private final ModelPart right_wing;
 
-    public ButterflyModel(ModelPart root) {
-        this.root = root.getChild("root");
+    public ButterflyModel(ModelPart main) {
+        this.root = main.getChild("root");
         this.left_wing = this.root.getChild("left_wing");
         this.right_wing = this.root.getChild("right_wing");
     }

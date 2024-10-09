@@ -53,7 +53,7 @@ public class BlackWidowModel <T extends BlackWidow> extends HierarchicalModel<T>
 
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

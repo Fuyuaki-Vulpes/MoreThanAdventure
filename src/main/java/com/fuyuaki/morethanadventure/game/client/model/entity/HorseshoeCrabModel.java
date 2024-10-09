@@ -12,15 +12,15 @@ import net.minecraft.client.model.geom.builders.*;
 public class HorseshoeCrabModel <T extends HorseshoeCrab> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
-    /*private final ModelPart front;
+    private final ModelPart front;
     private final ModelPart back;
-    private final ModelPart tail;*/
+    private final ModelPart tail;
 
-    public HorseshoeCrabModel(ModelPart root) {
-        this.root = root.getChild("root");
-        /*this.front = root.getChild("front");
-        this.back = root.getChild("back");
-        this.tail = root.getChild("tail");*/
+    public HorseshoeCrabModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.front = this.root.getChild("front");
+        this.back = this.root.getChild("back");
+        this.tail = this.root.getChild("tail");
     }
 
     public static LayerDefinition createBodyLayer() {

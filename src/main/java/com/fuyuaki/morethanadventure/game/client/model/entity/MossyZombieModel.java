@@ -52,7 +52,7 @@ public class MossyZombieModel <T extends MossyZombie> extends HierarchicalModel<
     }
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

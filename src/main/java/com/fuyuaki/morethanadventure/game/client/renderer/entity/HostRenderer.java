@@ -21,7 +21,7 @@ public class HostRenderer extends MobRenderer<Host, HostModel<Host>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/host.png");
 
     public HostRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new HostModel<>(pContext.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE)), .5F);
+        super(pContext,new HostModel<>(pContext.bakeLayer(MTAModelLayers.HOST)), .5F);
 
     }
 

@@ -53,7 +53,7 @@ public class FrozenSlimeModel <T extends FrozenSlime> extends HierarchicalModel<
 
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

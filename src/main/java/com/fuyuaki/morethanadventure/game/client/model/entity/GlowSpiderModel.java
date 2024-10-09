@@ -53,7 +53,7 @@ public class GlowSpiderModel <T extends GlowSpider> extends HierarchicalModel<T>
 
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

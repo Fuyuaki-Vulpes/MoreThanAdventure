@@ -52,7 +52,7 @@ public class CharredSkeletonModel <T extends CharredSkeleton> extends Hierarchic
     }
     @Override
     public ModelPart root() {
-        return null;
+        return root;
     }
 
     @Override

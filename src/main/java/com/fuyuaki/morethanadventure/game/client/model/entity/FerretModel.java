@@ -12,25 +12,25 @@ import net.minecraft.client.model.geom.builders.*;
 public class FerretModel<T extends Ferret> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
-    /*private final ModelPart body_front;
+    private final ModelPart body_front;
     private final ModelPart head;
     private final ModelPart left_front_leg;
     private final ModelPart right_front_leg;
     private final ModelPart body_back;
     private final ModelPart left_back_leg;
     private final ModelPart right_back_leg;
-    private final ModelPart tail;*/
+    private final ModelPart tail;
 
-    public FerretModel(ModelPart root) {
-        this.root = root.getChild("root");
-       /* this.body_front = root.getChild("body_front");
-        this.head = root.getChild("head");
-        this.left_front_leg = root.getChild("left_front_leg");
-        this.right_front_leg = root.getChild("right_front_leg");
-        this.body_back = root.getChild("body_back");
-        this.left_back_leg = root.getChild("left_back_leg");
-        this.right_back_leg = root.getChild("right_back_leg");
-        this.tail = root.getChild("tail");*/
+    public FerretModel(ModelPart main) {
+        this.root = main.getChild("root");
+        this.body_front = this.root.getChild("body_front");
+        this.head = this.body_front.getChild("head");
+        this.left_front_leg = this.body_front.getChild("left_front_leg");
+        this.right_front_leg = this.body_front.getChild("right_front_leg");
+        this.body_back = this.root.getChild("body_back");
+        this.left_back_leg = this.body_back.getChild("left_back_leg");
+        this.right_back_leg = this.body_back.getChild("right_back_leg");
+        this.tail = this.body_back.getChild("tail");
     }
 
     public static LayerDefinition createBodyLayer() {

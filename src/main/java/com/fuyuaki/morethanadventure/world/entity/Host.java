@@ -1,5 +1,8 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import net.minecraft.tags.FluidTags;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -15,9 +18,19 @@ public class Host extends Zombie {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 42.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.2F)
-                .add(Attributes.ATTACK_DAMAGE, 3.0)
-                .add(Attributes.ARMOR, 3.0);
+                .add(Attributes.MOVEMENT_SPEED, 0.18F)
+                .add(Attributes.ATTACK_DAMAGE, 2.0)
+                .add(Attributes.ARMOR, 3.0)
+                .add(Attributes.MAX_HEALTH, 34F);
+    }
+
+    @Override
+    public void tick() {
+        if (!this.level().isClientSide && !this.hasEffect(MobEffects.INFESTED)){
+            hasEffect(MobEffects.INFESTED);
+        }
+
+        super.tick();
     }
 
 
