@@ -244,6 +244,8 @@
   "block.morethanadventure.yellow_terracotta_tiles_stairs": "Yellow Terracotta Tiles Stairs",
   "block.morethanadventure.yellow_terracotta_tiles_wall": "Yellow Terracotta Tiles Wall",
   "block.morethanadventure.yellow_terracotta_wall": "Yellow Terracotta Wall",
+  "effect.morethanadventure.berserk": "Berserk",
+  "effect.morethanadventure.charging": "Charging Skill",
   "effect.morethanadventure.freezing": "Freezing",
   "entity.morethanadventure.armored_skeleton": "Armored Skeleton",
   "entity.morethanadventure.bearded_dragon": "Bearded Dragon",
