@@ -486,6 +486,8 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         //EFFECTS
         add(MtaEffects.FREEZING.get(),"Freezing");
+        add(MtaEffects.CHARGING.get(),"Charging Skill");
+        add(MtaEffects.BERSERK.get(),"Berserk");
 
 
         //OTHER
