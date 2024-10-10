@@ -1,17 +1,21 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import net.minecraft.core.Holder;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.CaveSpider;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
+
+import javax.annotation.Nullable;
 
 public class BlackWidow extends CaveSpider {
     public BlackWidow(EntityType<? extends CaveSpider> entityType, Level level) {
@@ -47,5 +51,20 @@ public class BlackWidow extends CaveSpider {
         } else {
             return false;
         }
+    }
+
+    @Nullable
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
+        spawnGroupData = super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
+
+        if (spawnGroupData instanceof Spider.SpiderEffectsGroupData spider$spidereffectsgroupdata) {
+            Holder<MobEffect> holder = spider$spidereffectsgroupdata.effect;
+            if (holder != null) {
+                this.addEffect(new MobEffectInstance(holder, -1));
+            }
+        }
+
+        return spawnGroupData;
     }
 }

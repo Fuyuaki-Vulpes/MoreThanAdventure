@@ -17,9 +17,9 @@ public class Host extends Zombie {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.FOLLOW_RANGE, 42.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.18F)
-                .add(Attributes.ATTACK_DAMAGE, 2.0)
+                .add(Attributes.FOLLOW_RANGE, 50.0)
+                .add(Attributes.MOVEMENT_SPEED, 0.15F)
+                .add(Attributes.ATTACK_DAMAGE, 1.0)
                 .add(Attributes.ARMOR, 3.0)
                 .add(Attributes.MAX_HEALTH, 34F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0F);
@@ -28,7 +28,7 @@ public class Host extends Zombie {
     @Override
     public void tick() {
         if (!this.level().isClientSide && !this.hasEffect(MobEffects.INFESTED)){
-
+            this.addEffect(new MobEffectInstance(MobEffects.INFESTED, 100000), this);
         }
 
         super.tick();

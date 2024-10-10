@@ -25,8 +25,8 @@ public class CorrosiveCube extends Slime {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMobAttributes()
-                .add(Attributes.MOVEMENT_SPEED, 0.21F);
+        return Monster.createMonsterAttributes()
+                .add(Attributes.MOVEMENT_SPEED, 0.18F);
     }
 
     @Override
