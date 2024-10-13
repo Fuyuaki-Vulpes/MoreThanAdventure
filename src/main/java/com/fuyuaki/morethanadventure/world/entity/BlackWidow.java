@@ -24,8 +24,9 @@ public class BlackWidow extends CaveSpider {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.MOVEMENT_SPEED, 0.22)
-                .add(Attributes.MAX_HEALTH, 10);
+                .add(Attributes.MOVEMENT_SPEED, 0.22F)
+                .add(Attributes.MAX_HEALTH, 10F)
+                .add(Attributes.ATTACK_DAMAGE, 1F);
     }
 
     @Override
@@ -34,16 +35,16 @@ public class BlackWidow extends CaveSpider {
             if (entity instanceof LivingEntity) {
                 int i = 0;
                 if (this.level().getDifficulty() == Difficulty.EASY) {
-                    i = 2;
+                    i = 5;
                 } else if (this.level().getDifficulty() == Difficulty.NORMAL) {
-                    i = 7;
+                    i = 12;
                 } else if (this.level().getDifficulty() == Difficulty.HARD) {
-                    i = 15;
+                    i = 18;
                 }
 
                 if (i > 0) {
-                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.POISON, i * 10, 2), this);
-                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.WITHER, i * 10, 0), this);
+                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.POISON, i * 5, 1), this);
+                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.WITHER, i * 5, 0), this);
                 }
             }
 

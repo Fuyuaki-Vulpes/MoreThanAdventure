@@ -7,6 +7,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
@@ -114,6 +115,14 @@ public class MtaTags {
             return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
         }
 
+    }
+
+    public static class Enchantments {
+        public static final TagKey<Enchantment> FLAMING = tag("flaming_bow");
+
+        private static TagKey<Enchantment> tag(String name) {
+            return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(MODID, name));
+        }
     }
 
     public static class Biomes {

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "morethanadventure:alexandrite"
+    "item": "morethanadventure:awakened_alexandrite"
   },
   "base": {
     "item": "minecraft:netherite_boots"

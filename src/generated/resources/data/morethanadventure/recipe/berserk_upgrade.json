@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
     "O": {
       "item": "minecraft:orange_terracotta"
     },
@@ -10,9 +13,9 @@
     }
   },
   "pattern": [
-    "OOO",
-    "OXO",
-    "OOO"
+    "DOD",
+    "DXD",
+    "DDD"
   ],
   "result": {
     "count": 2,

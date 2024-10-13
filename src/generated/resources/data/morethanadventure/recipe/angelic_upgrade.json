@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
     "O": {
-      "item": "minecraft:white_terracotta"
+      "item": "minecraft:light_gray_terracotta"
     },
     "X": {
       "item": "morethanadventure:angelic_upgrade"
     }
   },
   "pattern": [
-    "OOO",
-    "OXO",
-    "OOO"
+    "DOD",
+    "DXD",
+    "DDD"
   ],
   "result": {
     "count": 2,

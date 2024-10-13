@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_agate": {
+    "has_awakened_agate": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:agate"
+            "items": "morethanadventure:awakened_agate"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_agate"
+      "has_awakened_agate"
     ]
   ],
   "rewards": {

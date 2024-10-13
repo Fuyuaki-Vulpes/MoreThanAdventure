@@ -317,6 +317,15 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.GARNET.get(),"Garnet");
         add(MtaItems.MOONSTONE.get(),"Moonstone");
 
+        add(MtaItems.AWAKENED_AGATE.get(),"Awakened Agate");
+        add(MtaItems.AWAKENED_ALEXANDRITE.get(),"Awakened Alexandrite");
+        add(MtaItems.AWAKENED_AQUAMARINE.get(),"Awakened Aquamarine");
+        add(MtaItems.AWAKENED_BLOODSTONE.get(),"Awakened Bloodstone");
+        add(MtaItems.AWAKENED_CELESTITE.get(),"Awakened Celestite");
+        add(MtaItems.AWAKENED_CRYOLITE.get(),"Awakened Cryolite");
+        add(MtaItems.AWAKENED_GARNET.get(),"Awakened Garnet");
+        add(MtaItems.AWAKENED_MOONSTONE.get(),"Awakened Moonstone");
+
         add(MtaItems.ARMAMENT_UPGRADE.get(),"Armament Upgrade");
         add(MtaItems.ROYAL_UPGRADE.get(),"Royal Upgrade");
         add(MtaItems.AQUATIC_UPGRADE.get(),"Aquatic Upgrade");

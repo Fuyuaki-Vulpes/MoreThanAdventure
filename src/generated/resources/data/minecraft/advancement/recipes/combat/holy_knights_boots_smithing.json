@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_alexandrite": {
+    "has_awakened_alexandrite": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:alexandrite"
+            "items": "morethanadventure:awakened_alexandrite"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_alexandrite"
+      "has_awakened_alexandrite"
     ]
   ],
   "rewards": {

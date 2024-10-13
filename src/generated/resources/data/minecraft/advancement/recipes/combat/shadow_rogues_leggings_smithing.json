@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_moonstone": {
+    "has_awakened_moonstone": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:moonstone"
+            "items": "morethanadventure:awakened_moonstone"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_moonstone"
+      "has_awakened_moonstone"
     ]
   ],
   "rewards": {

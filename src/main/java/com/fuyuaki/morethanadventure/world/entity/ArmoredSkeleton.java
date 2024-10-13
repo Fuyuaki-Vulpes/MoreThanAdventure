@@ -18,7 +18,8 @@ public class ArmoredSkeleton extends AbstractSkeleton {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.20F)
                 .add(Attributes.MAX_HEALTH, 16F)
-                .add(Attributes.ARMOR, 10);
+                .add(Attributes.ARMOR, 10)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 0.25F);
     }
 
     @Override

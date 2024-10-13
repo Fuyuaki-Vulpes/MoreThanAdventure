@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cryolite": {
+    "has_awakened_cryolite": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:cryolite"
+            "items": "morethanadventure:awakened_cryolite"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cryolite"
+      "has_awakened_cryolite"
     ]
   ],
   "rewards": {

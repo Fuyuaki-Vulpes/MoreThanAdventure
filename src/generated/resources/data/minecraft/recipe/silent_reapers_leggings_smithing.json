@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "morethanadventure:bloodstone"
+    "item": "morethanadventure:awakened_bloodstone"
   },
   "base": {
     "item": "minecraft:netherite_leggings"

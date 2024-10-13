@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": {
+      "item": "morethanadventure:bloodstone"
+    },
+    "k": {
+      "item": "minecraft:bone"
+    },
+    "l": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "n": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "p": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "pattern": [
+    "klk",
+    "ngn",
+    "kpk"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:awakened_bloodstone"
+  }
+}

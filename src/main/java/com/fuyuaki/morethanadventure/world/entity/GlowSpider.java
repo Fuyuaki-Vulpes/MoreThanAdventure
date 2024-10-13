@@ -19,12 +19,18 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import javax.annotation.Nullable;
 
 public class GlowSpider extends Spider {
+
     public GlowSpider(EntityType<? extends Spider> entityType, Level level) {
         super(entityType, level);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 20.0).add(Attributes.MOVEMENT_SPEED, 0.33F);
+    }
+
+    @Override
+    public float getLightLevelDependentMagicValue() {
+        return 1.0F;
     }
 
     @Override

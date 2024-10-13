@@ -454,7 +454,14 @@ public class MtaTabs {
                 output.accept(MtaItems.CRYOLITE);
                 output.accept(MtaItems.GARNET);
                 output.accept(MtaItems.MOONSTONE);
-                output.accept(MtaItems.ARMAMENT_UPGRADE);
+                output.accept(MtaItems.AWAKENED_AGATE);
+                output.accept(MtaItems.AWAKENED_ALEXANDRITE);
+                output.accept(MtaItems.AWAKENED_AQUAMARINE);
+                output.accept(MtaItems.AWAKENED_BLOODSTONE);
+                output.accept(MtaItems.AWAKENED_CELESTITE);
+                output.accept(MtaItems.AWAKENED_CRYOLITE);
+                output.accept(MtaItems.AWAKENED_GARNET);
+                output.accept(MtaItems.AWAKENED_MOONSTONE);
                 output.accept(MtaItems.ROYAL_UPGRADE);
                 output.accept(MtaItems.AQUATIC_UPGRADE);
                 output.accept(MtaItems.DEATHLY_UPGRADE);

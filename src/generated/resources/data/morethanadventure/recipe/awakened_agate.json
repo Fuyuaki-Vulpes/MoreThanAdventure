@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": {
+      "item": "morethanadventure:agate"
+    },
+    "k": {
+      "item": "minecraft:iron_ingot"
+    },
+    "l": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "n": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "p": {
+      "item": "minecraft:potato"
+    }
+  },
+  "pattern": [
+    "klk",
+    "ngn",
+    "kpk"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:awakened_agate"
+  }
+}

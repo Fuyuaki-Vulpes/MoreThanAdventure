@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "morethanadventure:agate"
+    "item": "morethanadventure:awakened_agate"
   },
   "base": {
     "item": "minecraft:netherite_helmet"

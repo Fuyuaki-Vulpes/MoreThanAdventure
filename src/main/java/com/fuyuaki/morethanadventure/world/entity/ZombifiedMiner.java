@@ -21,7 +21,7 @@ public class ZombifiedMiner extends Zombie {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.FOLLOW_RANGE, 37.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.3F)
+                .add(Attributes.MOVEMENT_SPEED, 0.28F)
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
                 .add(Attributes.ARMOR, 4.0)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);

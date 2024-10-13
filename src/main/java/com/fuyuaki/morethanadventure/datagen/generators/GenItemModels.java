@@ -59,6 +59,15 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.GARNET);
         simpleItem(MtaItems.MOONSTONE);
 
+        //simpleItem(MtaItems.AWAKENED_AGATE);
+        //simpleItem(MtaItems.AWAKENED_ALEXANDRITE);
+        //simpleItem(MtaItems.AWAKENED_AQUAMARINE);
+        //simpleItem(MtaItems.AWAKENED_BLOODSTONE);
+        //simpleItem(MtaItems.AWAKENED_CELESTITE);
+        //simpleItem(MtaItems.AWAKENED_CRYOLITE);
+        //simpleItem(MtaItems.AWAKENED_GARNET);
+        //simpleItem(MtaItems.AWAKENED_MOONSTONE);
+
         simpleItem(MtaItems.ARMAMENT_UPGRADE);
         simpleItem(MtaItems.ROYAL_UPGRADE);
         simpleItem(MtaItems.AQUATIC_UPGRADE);

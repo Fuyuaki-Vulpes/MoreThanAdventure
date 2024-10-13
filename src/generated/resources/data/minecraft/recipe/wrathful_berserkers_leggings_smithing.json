@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "morethanadventure:garnet"
+    "item": "morethanadventure:awakened_garnet"
   },
   "base": {
     "item": "minecraft:netherite_leggings"

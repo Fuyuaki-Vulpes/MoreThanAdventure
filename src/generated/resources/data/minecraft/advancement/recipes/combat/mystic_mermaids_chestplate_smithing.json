@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_aquamarine": {
+    "has_awakened_aquamarine": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:aquamarine"
+            "items": "morethanadventure:awakened_aquamarine"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_aquamarine"
+      "has_awakened_aquamarine"
     ]
   ],
   "rewards": {

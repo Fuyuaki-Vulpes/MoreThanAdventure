@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_celestite": {
+    "has_awakened_celestite": {
       "conditions": {
         "items": [
           {
-            "items": "morethanadventure:celestite"
+            "items": "morethanadventure:awakened_celestite"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_celestite"
+      "has_awakened_celestite"
     ]
   ],
   "rewards": {
