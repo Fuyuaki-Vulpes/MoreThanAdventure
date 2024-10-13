@@ -96,7 +96,23 @@ public class GenBlockTags extends BlockTagsProvider {
         this.tag(MtaTags.Blocks.INCORRECT_FOR_COPPER_TOOL).addTag(BlockTags.INCORRECT_FOR_STONE_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
         this.tag(MtaTags.Blocks.INCORRECT_FOR_NETHERSTEEL_TOOL).addTag(BlockTags.INCORRECT_FOR_IRON_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).addTag(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).addTag(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).add(
+                MtaBlocks.AGATE_ORE.get(),
+                MtaBlocks.DEEPSLATE_AGATE_ORE.get(),
+                MtaBlocks.ALEXANDRITE_ORE.get(),
+                MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
+                MtaBlocks.AQUAMARINE_ORE.get(),
+                MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get(),
+                MtaBlocks.BLOODSTONE_ORE.get(),
+                MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get(),
+                MtaBlocks.CELESTITE_ORE.get(),
+                MtaBlocks.CRYOLITE_ORE.get(),
+                MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),
+                MtaBlocks.GARNET_ORE.get(),
+                MtaBlocks.DEEPSLATE_GARNET_ORE.get(),
+                MtaBlocks.MOONSTONE_ORE.get(),
+                MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()
+        );
         this.tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL);
 
 
@@ -370,6 +386,7 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.BLOODSTONE_ORE.get(),
                 MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get(),
                 MtaBlocks.CELESTITE_ORE.get(),
+                MtaBlocks.CRYOLITE_ORE.get(),
                 MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),
                 MtaBlocks.GARNET_ORE.get(),
                 MtaBlocks.DEEPSLATE_GARNET_ORE.get(),

@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "morethanadventure:celestite_ore"
+          "Name": "morethanadventure:cryolite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "morethanadventure:deepslate_celestite_ore"
+          "Name": "morethanadventure:cryolite_ore"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

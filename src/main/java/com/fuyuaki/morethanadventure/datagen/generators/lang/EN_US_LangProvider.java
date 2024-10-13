@@ -290,6 +290,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get(),"Deepslate Bloodstone Ore");
         add(MtaBlocks.CELESTITE_ORE.get(),"Celestite Ore");
         add(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get(),"Deepslate Celestite Ore");
+        add(MtaBlocks.CRYOLITE_ORE.get(),"Cryolite Ore");
         add(MtaBlocks.GARNET_ORE.get(),"Garnet Ore");
         add(MtaBlocks.DEEPSLATE_GARNET_ORE.get(),"Deepslate Garnet Ore");
         add(MtaBlocks.MOONSTONE_ORE.get(),"Moonstone Ore");
