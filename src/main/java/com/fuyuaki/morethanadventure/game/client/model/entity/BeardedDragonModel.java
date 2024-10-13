@@ -1,9 +1,11 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -76,6 +78,10 @@ public class BeardedDragonModel<T extends BeardedDragon> extends HierarchicalMod
 
     @Override
     public void setupAnim(BeardedDragon entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,1.5F,false);
+        AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,1.5F,true);
+        AnimUtils.animateWalkRot(this.left_hind_leg,limbSwing,limbSwingAmount,1.5F,true);
+        AnimUtils.animateWalkRot(this.right_hind_leg,limbSwing,limbSwingAmount,1.5F,false);
 
     }
 }

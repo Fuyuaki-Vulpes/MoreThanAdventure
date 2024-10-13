@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.world.entity.Toucan;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -60,7 +61,8 @@ public class ToucanModel <T extends Toucan> extends HierarchicalModel<T> {
 
     @Override
     public void setupAnim(Toucan entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,0.8F,false);
+        AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,0.8F,true);
     }
 
     @Override

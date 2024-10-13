@@ -17,25 +17,9 @@ public class MtaTabs {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = TABS.register("mtatab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.morethanadventure")) //The language key for the title of your CreativeModeTab
-            .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-            .icon(MtaItems.NETHERITE_FRACTURE.get()::getDefaultInstance)
-            .displayItems((parameters, output) -> {
-                Collection<ItemStack> wgItems = MtaTabs.WORLD_GEN.get().getDisplayItems();
-                wgItems.removeIf(stack -> MtaTabs.BUILDING.get().getDisplayItems().contains(stack));
-                Collection<ItemStack> building = MtaTabs.BUILDING.get().getDisplayItems();
-                building.removeIf(stack -> MtaTabs.MISC.get().getDisplayItems().contains(stack));
-
-                output.acceptAll(wgItems);
-                output.acceptAll(building);
-                output.acceptAll(MtaTabs.EQUIPMENTS.get().getDisplayItems());
-                output.acceptAll(MtaTabs.MISC.get().getDisplayItems());
-            }).build());
-
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WORLD_GEN = TABS.register("mtaworldgen", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtagenblocks"))
-            .withTabsBefore(MtaTabs.MAIN.getId())
+            .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .icon(MtaBlocks.SWEET_BERRY_LEAVES.get().asItem()::getDefaultInstance)
             .displayItems((parameters, output) -> {
                 output.accept(MtaBlocks.PALM_LOG.get());
@@ -68,6 +52,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.AQUAMARINE_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get());
                 output.accept(MtaBlocks.CELESTITE_ORE.get());
+                output.accept(MtaBlocks.CRYOLITE_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get());
                 output.accept(MtaBlocks.GARNET_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_GARNET_ORE.get());

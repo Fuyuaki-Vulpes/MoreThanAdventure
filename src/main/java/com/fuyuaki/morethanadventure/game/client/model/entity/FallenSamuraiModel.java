@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.world.entity.FallenSamurai;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -76,6 +77,10 @@ public class FallenSamuraiModel <T extends FallenSamurai> extends HierarchicalMo
     @Override
     public void setupAnim(FallenSamurai entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
+        AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,1.0F,false);
+        AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,1.0F,true);
+        AnimUtils.animateWalkRot(this.right_arm,limbSwing,limbSwingAmount,1.0F,true);
+        AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,1.0F,false);
     }
 
     @Override

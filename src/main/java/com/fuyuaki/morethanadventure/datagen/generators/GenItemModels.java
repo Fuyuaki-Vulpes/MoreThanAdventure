@@ -53,18 +53,18 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.AGATE);
         simpleItem(MtaItems.ALEXANDRITE);
         simpleItem(MtaItems.AQUAMARINE);
-        //simpleItem(MtaItems.BLOODSTONE);
+        simpleItem(MtaItems.BLOODSTONE);
         simpleItem(MtaItems.CELESTITE);
-        //simpleItem(MtaItems.CRYOLITE);
+        simpleItem(MtaItems.CRYOLITE);
         simpleItem(MtaItems.GARNET);
         simpleItem(MtaItems.MOONSTONE);
 
         simpleItem(MtaItems.ARMAMENT_UPGRADE);
         simpleItem(MtaItems.ROYAL_UPGRADE);
         simpleItem(MtaItems.AQUATIC_UPGRADE);
-        //simpleItem(MtaItems.DEATHLY_UPGRADE);
+        simpleItem(MtaItems.DEATHLY_UPGRADE);
         simpleItem(MtaItems.ANGELIC_UPGRADE);
-        //simpleItem(MtaItems.FREEZING_UPGRADE);
+        simpleItem(MtaItems.FREEZING_UPGRADE);
         simpleItem(MtaItems.BERSERK_UPGRADE);
         simpleItem(MtaItems.FEATHERWEIGHT_UPGRADE);
 
