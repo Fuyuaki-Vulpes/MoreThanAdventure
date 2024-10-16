@@ -13,7 +13,7 @@ public class FallenSamuraiRenderer extends MobRenderer<FallenSamurai, FallenSamu
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/fallen_samurai.png");
 
     public FallenSamuraiRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new FallenSamuraiModel(pContext.bakeLayer(MTAModelLayers.FALLEN_SAMURAI)), .5F);
+        super(pContext,new FallenSamuraiModel<>(pContext.bakeLayer(MTAModelLayers.FALLEN_SAMURAI)), .5F);
     }
 
 

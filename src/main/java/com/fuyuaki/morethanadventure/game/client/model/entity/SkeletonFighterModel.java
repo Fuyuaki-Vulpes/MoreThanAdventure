@@ -10,13 +10,14 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class SkeletonFighterModel <T extends SkeletonFighter> extends HierarchicalModel<T> {
-    private final ModelPart root;
+public class SkeletonFighterModel <T extends SkeletonFighter> extends SkeletonModel<T> {
+    //private final ModelPart root;
 
     public SkeletonFighterModel(ModelPart root) {
-        this.root = root.getChild("root");
+        super(root);
+        //this.root = root.getChild("root");
     }
-
+/*
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -59,4 +60,6 @@ public class SkeletonFighterModel <T extends SkeletonFighter> extends Hierarchic
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
+
+ */
 }

@@ -59,6 +59,7 @@ public class RaccoonModel <T extends Raccoon> extends HierarchicalModel<T> {
 
     @Override
     public void setupAnim(Raccoon entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
         AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,0.8F,true);
         AnimUtils.animateWalkRot(this.left_back_leg,limbSwing,limbSwingAmount,0.8F,true);

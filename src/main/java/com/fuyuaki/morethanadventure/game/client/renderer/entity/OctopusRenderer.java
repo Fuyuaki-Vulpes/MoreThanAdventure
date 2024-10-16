@@ -13,7 +13,7 @@ public class OctopusRenderer extends MobRenderer<Octopus, OctopusModel<Octopus>>
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/octopus.png");
 
     public OctopusRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new OctopusModel(pContext.bakeLayer(MTAModelLayers.OCTOPUS)), .5F);
+        super(pContext,new OctopusModel<>(pContext.bakeLayer(MTAModelLayers.OCTOPUS)), .5F);
     }
 
 

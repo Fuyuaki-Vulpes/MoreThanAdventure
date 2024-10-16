@@ -65,6 +65,7 @@ public class CapybaraModel <T extends Capybara> extends HierarchicalModel<T> {
 
     @Override
     public void setupAnim(Capybara entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,0.8F,true);

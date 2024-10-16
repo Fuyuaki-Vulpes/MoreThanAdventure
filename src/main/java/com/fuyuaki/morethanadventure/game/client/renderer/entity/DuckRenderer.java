@@ -28,7 +28,7 @@ public class DuckRenderer extends MobRenderer<Duck, DuckModel<Duck>> {
             });
 
     public DuckRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new DuckModel(pContext.bakeLayer(MTAModelLayers.DUCK)), .5F);
+        super(pContext,new DuckModel<>(pContext.bakeLayer(MTAModelLayers.DUCK)), .5F);
     }
 
 

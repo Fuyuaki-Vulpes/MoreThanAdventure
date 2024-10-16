@@ -15,7 +15,7 @@ public class OwlRenderer extends MobRenderer<Owl, OwlModel<Owl>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/owl.png");
 
     public OwlRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new OwlModel(pContext.bakeLayer(MTAModelLayers.OWL)), .5F);
+        super(pContext,new OwlModel<>(pContext.bakeLayer(MTAModelLayers.OWL)), .5F);
     }
 
 

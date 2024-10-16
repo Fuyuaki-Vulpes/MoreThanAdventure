@@ -13,7 +13,7 @@ public class GreatWhiteSharkRenderer extends MobRenderer<GreatWhiteShark, GreatW
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/great_white_shark.png");
 
     public GreatWhiteSharkRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new GreatWhiteSharkModel(pContext.bakeLayer(MTAModelLayers.GREAT_WHITE_SHARK)), .5F);
+        super(pContext,new GreatWhiteSharkModel<>(pContext.bakeLayer(MTAModelLayers.GREAT_WHITE_SHARK)), .5F);
     }
 
 

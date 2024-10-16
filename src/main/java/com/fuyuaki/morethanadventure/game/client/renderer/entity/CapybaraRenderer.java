@@ -15,7 +15,7 @@ public class CapybaraRenderer extends MobRenderer<Capybara, CapybaraModel<Capyba
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/capybara.png");
 
     public CapybaraRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new CapybaraModel(pContext.bakeLayer(MTAModelLayers.CAPYBARA)), 0.5F);
+        super(pContext,new CapybaraModel<>(pContext.bakeLayer(MTAModelLayers.CAPYBARA)), 0.5F);
     }
 
 

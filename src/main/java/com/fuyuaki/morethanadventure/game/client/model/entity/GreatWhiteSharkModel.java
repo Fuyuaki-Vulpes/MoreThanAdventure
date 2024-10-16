@@ -8,6 +8,7 @@ import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class GreatWhiteSharkModel <T extends GreatWhiteShark> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -78,7 +79,19 @@ public class GreatWhiteSharkModel <T extends GreatWhiteShark> extends Hierarchic
 
     @Override
     public void setupAnim(GreatWhiteShark entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.torso.xRot = headPitch * (float) (Math.PI / 180.0);
+        this.torso.yRot = netHeadYaw * (float) (Math.PI / 180.0);
 
+        this.torso_back.xRot = headPitch * (float) (Math.PI / 180.0);
+        this.torso_back.yRot = netHeadYaw * (float) (Math.PI / 180.0);
+
+        if (entity.getDeltaMovement().horizontalDistanceSqr() > 1.0E-7) {
+            this.torso.xRot = this.torso.xRot + (-0.05F - 0.05F * Mth.cos(ageInTicks * 0.3F));
+            this.torso_back.xRot = this.torso_back.xRot + (-0.05F - 0.05F * Mth.cos(ageInTicks * 0.3F));
+
+            this.tail.xRot = -0.1F * Mth.cos(ageInTicks * 0.3F);
+            this.fin.xRot = -0.2F * Mth.cos(ageInTicks * 0.3F);
+        }
     }
 
     @Override

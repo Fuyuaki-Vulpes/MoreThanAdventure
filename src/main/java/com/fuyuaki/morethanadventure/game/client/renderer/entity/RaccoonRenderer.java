@@ -15,7 +15,7 @@ public class RaccoonRenderer extends MobRenderer<Raccoon, RaccoonModel<Raccoon>>
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/raccoon.png");
 
     public RaccoonRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new RaccoonModel(pContext.bakeLayer(MTAModelLayers.RACCOON)), .5F);
+        super(pContext,new RaccoonModel<>(pContext.bakeLayer(MTAModelLayers.RACCOON)), .5F);
     }
 
 

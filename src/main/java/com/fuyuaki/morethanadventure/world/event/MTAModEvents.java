@@ -1,19 +1,15 @@
 package com.fuyuaki.morethanadventure.world.event;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
-import com.fuyuaki.morethanadventure.game.capabilities.block.SprinkerWrapper;
-import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.MagmaCube;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
@@ -28,9 +24,7 @@ public class MTAModEvents {
     @SubscribeEvent
     public static void registerCapabilitiesEvent(RegisterCapabilitiesEvent event){
         for (Block block : BuiltInRegistries.BLOCK) {
-            if (block.getClass() == Sprinkler.class) {
-                event.registerBlock(Capabilities.FluidHandler.BLOCK, (level, pos, blockState, blockEntity, context) -> new SprinkerWrapper(level,pos), block);
-            }
+
 
 
         }

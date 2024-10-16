@@ -13,7 +13,7 @@ public class JellyfishRenderer extends MobRenderer<Jellyfish, JellyfishModel<Jel
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/jellyfish.png");
 
     public JellyfishRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new JellyfishModel(pContext.bakeLayer(MTAModelLayers.JELLYFISH)), .5F);
+        super(pContext,new JellyfishModel<>(pContext.bakeLayer(MTAModelLayers.JELLYFISH)), .5F);
     }
 
 

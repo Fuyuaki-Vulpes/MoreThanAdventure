@@ -13,6 +13,7 @@ import net.minecraft.client.model.geom.builders.*;
 public class BlackWidowModel <T extends BlackWidow> extends HierarchicalModel<T> {
     private final ModelPart root;
 
+    // Make a Default Spider Variant Class
     public BlackWidowModel(ModelPart root) {
         this.root = root.getChild("root");
     }

@@ -78,6 +78,7 @@ public class BeardedDragonModel<T extends BeardedDragon> extends HierarchicalMod
 
     @Override
     public void setupAnim(BeardedDragon entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
         AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,1.5F,false);
         AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,1.5F,true);
         AnimUtils.animateWalkRot(this.left_hind_leg,limbSwing,limbSwingAmount,1.5F,true);

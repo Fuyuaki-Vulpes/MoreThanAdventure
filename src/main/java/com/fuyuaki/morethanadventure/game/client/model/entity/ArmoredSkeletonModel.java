@@ -11,14 +11,15 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.monster.Skeleton;
 
-public class ArmoredSkeletonModel<T extends ArmoredSkeleton> extends HierarchicalModel<T> {
-    private final ModelPart root;
+public class ArmoredSkeletonModel<T extends ArmoredSkeleton> extends SkeletonModel<T> {
+    //private final ModelPart root;
 
     public ArmoredSkeletonModel(ModelPart root) {
-        this.root = root.getChild("root");
+        super(root);
+        //this.root = root.getChild("root");
     }
 
-    public static LayerDefinition createBodyLayer() {
+    /*public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
@@ -49,16 +50,14 @@ public class ArmoredSkeletonModel<T extends ArmoredSkeleton> extends Hierarchica
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+        //root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
 
-    @Override
-    public ModelPart root() {
-        return root;
-    }
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
+*/
+
 }

@@ -13,7 +13,7 @@ public class WitherJuggernautRenderer extends MobRenderer<WitherJuggernaut, With
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/wither_juggernaut.png");
 
     public WitherJuggernautRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new WitherJuggernautModel(pContext.bakeLayer(MTAModelLayers.WITHER_JUGGERNAUT)), 1F);
+        super(pContext,new WitherJuggernautModel<>(pContext.bakeLayer(MTAModelLayers.WITHER_JUGGERNAUT)), 1F);
     }
 
 

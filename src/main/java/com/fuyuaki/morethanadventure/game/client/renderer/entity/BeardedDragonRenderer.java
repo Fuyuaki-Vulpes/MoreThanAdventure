@@ -15,7 +15,7 @@ public class BeardedDragonRenderer extends MobRenderer<BeardedDragon, BeardedDra
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/bearded_dragon.png");
 
     public BeardedDragonRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new BeardedDragonModel(pContext.bakeLayer(MTAModelLayers.BEARDED_DRAGON)), .5F);
+        super(pContext,new BeardedDragonModel<>(pContext.bakeLayer(MTAModelLayers.BEARDED_DRAGON)), .5F);
     }
 
 

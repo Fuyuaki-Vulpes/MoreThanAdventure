@@ -53,6 +53,7 @@ public class IcicleCreeperModel <T extends IcicleCreeper> extends HierarchicalMo
 
     @Override
     public void setupAnim(IcicleCreeper entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.leg1,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.leg2,limbSwing,limbSwingAmount,0.8F,true);

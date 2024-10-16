@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.world.entity.Octopus;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;

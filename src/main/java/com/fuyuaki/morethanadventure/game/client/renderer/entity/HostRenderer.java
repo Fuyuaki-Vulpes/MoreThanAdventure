@@ -9,15 +9,12 @@ import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.Host;
 import com.fuyuaki.morethanadventure.world.entity.MossyZombie;
 import net.minecraft.client.model.ZombieModel;
-import net.minecraft.client.renderer.entity.DrownedRenderer;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.ZombieRenderer;
+import net.minecraft.client.renderer.entity.*;
 import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class HostRenderer extends MobRenderer<Host, HostModel<Host>> {
+public class HostRenderer extends HumanoidMobRenderer<Host, HostModel<Host>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/host.png");
 
     public HostRenderer(EntityRendererProvider.Context pContext) {

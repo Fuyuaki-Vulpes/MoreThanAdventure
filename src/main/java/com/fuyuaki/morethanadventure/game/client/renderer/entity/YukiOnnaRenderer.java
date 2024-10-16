@@ -13,7 +13,7 @@ public class YukiOnnaRenderer extends MobRenderer<YukiOnna, YukiOnnaModel<YukiOn
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/yuki_onna.png");
 
     public YukiOnnaRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new YukiOnnaModel(pContext.bakeLayer(MTAModelLayers.YUKI_ONNA)), .5F);
+        super(pContext,new YukiOnnaModel<>(pContext.bakeLayer(MTAModelLayers.YUKI_ONNA)), .5F);
     }
 
 

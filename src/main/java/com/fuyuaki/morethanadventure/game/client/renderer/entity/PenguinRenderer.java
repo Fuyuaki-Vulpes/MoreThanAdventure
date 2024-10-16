@@ -15,7 +15,7 @@ public class PenguinRenderer extends MobRenderer<Penguin, PenguinModel<Penguin>>
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/penguin.png");
 
     public PenguinRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new PenguinModel(pContext.bakeLayer(MTAModelLayers.PENGUIN)), .5F);
+        super(pContext,new PenguinModel<>(pContext.bakeLayer(MTAModelLayers.PENGUIN)), .5F);
     }
 
 

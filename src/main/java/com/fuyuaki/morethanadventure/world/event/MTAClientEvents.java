@@ -11,6 +11,8 @@ import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRen
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.particle.BubbleParticle;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -111,10 +113,10 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, GlowSpiderModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.HOST, HostModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.HOST,() -> LayerDefinition.create(HostModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
         event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, MossyZombieModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, () -> LayerDefinition.create(MossyZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
         event.registerLayerDefinition(MTAModelLayers.OCTOPUS, OctopusModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.OWL, OwlModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.PENGUIN, PenguinModel::createBodyLayer);
@@ -122,10 +124,10 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.SHRIMP, ShrimpModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER, SkeletonFighterModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOUCAN, ToucanModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, ToxicZombieModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, () -> LayerDefinition.create(ToxicZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
         event.registerLayerDefinition(MTAModelLayers.WITHER_JUGGERNAUT, WitherJuggernautModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, ZombifiedMinerModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, () -> LayerDefinition.create(ZombifiedMinerModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
 
     }
     @SubscribeEvent

@@ -15,7 +15,7 @@ public class ToucanRenderer extends MobRenderer<Toucan, ToucanModel<Toucan>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/toucan.png");
 
     public ToucanRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new ToucanModel(pContext.bakeLayer(MTAModelLayers.TOUCAN)), .5F);
+        super(pContext,new ToucanModel<>(pContext.bakeLayer(MTAModelLayers.TOUCAN)), .5F);
     }
 
 

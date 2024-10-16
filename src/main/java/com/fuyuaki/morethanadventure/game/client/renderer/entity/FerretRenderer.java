@@ -15,7 +15,7 @@ public class FerretRenderer extends MobRenderer<Ferret, FerretModel<Ferret>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/ferret.png");
 
     public FerretRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new FerretModel(pContext.bakeLayer(MTAModelLayers.FERRET)), .5F);
+        super(pContext,new FerretModel<>(pContext.bakeLayer(MTAModelLayers.FERRET)), .5F);
     }
 
 

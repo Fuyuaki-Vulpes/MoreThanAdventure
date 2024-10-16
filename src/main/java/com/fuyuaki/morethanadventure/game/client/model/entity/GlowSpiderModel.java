@@ -13,6 +13,8 @@ import net.minecraft.client.model.geom.builders.*;
 public class GlowSpiderModel <T extends GlowSpider> extends HierarchicalModel<T> {
     private final ModelPart root;
 
+
+    // Make a Default Spider Variant Class
     public GlowSpiderModel(ModelPart root) {
         this.root = root.getChild("root");
     }

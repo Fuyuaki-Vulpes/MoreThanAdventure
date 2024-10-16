@@ -22,7 +22,7 @@ public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveC
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/corrosive_cube.png");
 
     public CorrosiveCubeRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new CorrosiveCubeModel(pContext.bakeLayer(MTAModelLayers.CORROSIVE_CUBE)), .5F);
+        super(pContext,new CorrosiveCubeModel<>(pContext.bakeLayer(MTAModelLayers.CORROSIVE_CUBE)), .5F);
     }
 
     protected void scale(CorrosiveCube livingEntity, PoseStack poseStack, float partialTickTime) {

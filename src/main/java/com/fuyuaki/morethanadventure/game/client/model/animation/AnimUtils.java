@@ -18,5 +18,10 @@ public class AnimUtils {
         limb.x = defaultX + (Mth.cos(limbSwing * 0.6662F + invr) * 1.4F * limbSwingAmount * strength);
     }
 
+    public static void adjustHead(ModelPart head,float netHeadYaw, float headPitch){
+
+        head.yRot = netHeadYaw * (float) (Math.PI / 180.0);
+        head.xRot = headPitch * (float) (Math.PI / 180.0);
+    }
 
 }

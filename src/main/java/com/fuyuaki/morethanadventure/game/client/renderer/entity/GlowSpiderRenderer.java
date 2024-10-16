@@ -23,7 +23,7 @@ public class GlowSpiderRenderer extends MobRenderer<GlowSpider,GlowSpiderModel<G
     }
 
     public GlowSpiderRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new GlowSpiderModel(pContext.bakeLayer(MTAModelLayers.GLOW_SPIDER)), .5F);
+        super(pContext,new GlowSpiderModel<>(pContext.bakeLayer(MTAModelLayers.GLOW_SPIDER)), .5F);
     }
 
     @Override

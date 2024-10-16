@@ -13,7 +13,7 @@ public class ShrimpRenderer extends MobRenderer<Shrimp, ShrimpModel<Shrimp>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/shrimp.png");
 
     public ShrimpRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new ShrimpModel(pContext.bakeLayer(MTAModelLayers.SHRIMP)), .5F);
+        super(pContext,new ShrimpModel<>(pContext.bakeLayer(MTAModelLayers.SHRIMP)), .5F);
     }
 
 

@@ -10,13 +10,14 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class CharredSkeletonModel <T extends CharredSkeleton> extends HierarchicalModel<T> {
-    private final ModelPart root;
+public class CharredSkeletonModel <T extends CharredSkeleton> extends SkeletonModel<T> {
+    //private final ModelPart root;
 
     public CharredSkeletonModel(ModelPart root) {
-        this.root = root.getChild("root");
+        super(root);
+        //this.root = root.getChild("root");
     }
-
+/*
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -48,15 +49,12 @@ public class CharredSkeletonModel <T extends CharredSkeleton> extends Hierarchic
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-    @Override
-    public ModelPart root() {
-        return root;
+        //root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
+    */
 }

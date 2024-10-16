@@ -13,7 +13,7 @@ public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCree
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/icicle_creeper.png");
 
     public IcicleCreeperRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new IcicleCreeperModel(pContext.bakeLayer(MTAModelLayers.ICICLE_CREEPER)), 0.5F);
+        super(pContext,new IcicleCreeperModel<>(pContext.bakeLayer(MTAModelLayers.ICICLE_CREEPER)), 0.5F);
         //this.addLayer(new CreeperPowerLayer(this, pContext.getModelSet()));
 
     }

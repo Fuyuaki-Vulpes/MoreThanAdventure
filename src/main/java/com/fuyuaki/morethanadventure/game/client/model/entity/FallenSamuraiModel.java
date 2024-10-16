@@ -76,6 +76,7 @@ public class FallenSamuraiModel <T extends FallenSamurai> extends HierarchicalMo
 
     @Override
     public void setupAnim(FallenSamurai entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,1.0F,false);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,1.0F,true);

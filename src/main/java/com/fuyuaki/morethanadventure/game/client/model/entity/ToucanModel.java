@@ -61,6 +61,7 @@ public class ToucanModel <T extends Toucan> extends HierarchicalModel<T> {
 
     @Override
     public void setupAnim(Toucan entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,0.8F,true);
     }

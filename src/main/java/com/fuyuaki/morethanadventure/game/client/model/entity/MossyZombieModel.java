@@ -4,19 +4,27 @@ import com.fuyuaki.morethanadventure.world.entity.MossyZombie;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.AbstractZombieModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class MossyZombieModel <T extends MossyZombie> extends HierarchicalModel<T> {
-    private final ModelPart root;
+public class MossyZombieModel <T extends MossyZombie> extends AbstractZombieModel<T> {
+//    private final ModelPart root;
 
     public MossyZombieModel(ModelPart root) {
-        this.root = root.getChild("root");
+        super(root);
+        //this.root = root.getChild("root");
     }
 
+    public boolean isAggressive(T entity) {
+        return entity.isAggressive();
+    }
+
+
+/*
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -59,4 +67,6 @@ public class MossyZombieModel <T extends MossyZombie> extends HierarchicalModel<
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
+
+     */
 }

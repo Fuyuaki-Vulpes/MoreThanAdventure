@@ -3,6 +3,7 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 import com.fuyuaki.morethanadventure.world.entity.ZombifiedMiner;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.AbstractZombieModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
@@ -10,13 +11,19 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.monster.Zombie;
 
-public class ZombifiedMinerModel<T extends ZombifiedMiner> extends HierarchicalModel<T> {
-    private final ModelPart root;
+public class ZombifiedMinerModel<T extends ZombifiedMiner> extends AbstractZombieModel<T> {
+    //private final ModelPart root;
 
     public ZombifiedMinerModel(ModelPart root) {
-        this.root = root.getChild("root");
+        super(root);
+        //this.root = root.getChild("root");
     }
 
+    public boolean isAggressive(T entity) {
+        return entity.isAggressive();
+    }
+
+    /*
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -46,6 +53,7 @@ public class ZombifiedMinerModel<T extends ZombifiedMiner> extends HierarchicalM
         return LayerDefinition.create(meshdefinition, 32, 16);
     }
 
+    /*
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
         root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
@@ -59,5 +67,7 @@ public class ZombifiedMinerModel<T extends ZombifiedMiner> extends HierarchicalM
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
+
     }
+    */
 }

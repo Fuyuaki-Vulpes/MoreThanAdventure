@@ -4,19 +4,21 @@ import com.fuyuaki.morethanadventure.world.entity.Host;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.AbstractZombieModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class HostModel <T extends Host> extends HierarchicalModel<T> {
-    private final ModelPart root;
+public class HostModel <T extends Host> extends AbstractZombieModel<T> {
+    //private final ModelPart root;
 
     public HostModel(ModelPart root) {
-        this.root = root.getChild("root");
+        super(root);
+        //this.root = root.getChild("root");
     }
-
+/*
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -50,13 +52,13 @@ public class HostModel <T extends Host> extends HierarchicalModel<T> {
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
         root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
     }
-    @Override
-    public ModelPart root() {
-        return root;
-    }
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
+    }
+*/
+    public boolean isAggressive(T entity) {
+        return entity.isAggressive();
     }
 }

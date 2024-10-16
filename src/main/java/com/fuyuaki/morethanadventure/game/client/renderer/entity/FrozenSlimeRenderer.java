@@ -22,7 +22,7 @@ public class FrozenSlimeRenderer extends MobRenderer<FrozenSlime, FrozenSlimeMod
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/frozen_slime.png");
 
     public FrozenSlimeRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new FrozenSlimeModel(pContext.bakeLayer(MTAModelLayers.FROZEN_SLIME)), .5F);
+        super(pContext,new FrozenSlimeModel<>(pContext.bakeLayer(MTAModelLayers.FROZEN_SLIME)), .5F);
     }
 
     protected void scale(FrozenSlime livingEntity, PoseStack poseStack, float partialTickTime) {

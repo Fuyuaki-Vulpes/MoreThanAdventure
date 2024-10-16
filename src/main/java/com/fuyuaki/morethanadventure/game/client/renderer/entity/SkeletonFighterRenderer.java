@@ -7,15 +7,12 @@ import com.fuyuaki.morethanadventure.game.client.model.entity.SkeletonFighterMod
 import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.SkeletonFighter;
 import net.minecraft.client.model.SkeletonModel;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.SkeletonRenderer;
-import net.minecraft.client.renderer.entity.WitherSkeletonRenderer;
+import net.minecraft.client.renderer.entity.*;
 import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class SkeletonFighterRenderer extends MobRenderer<SkeletonFighter, SkeletonFighterModel<SkeletonFighter>> {
+public class SkeletonFighterRenderer extends HumanoidMobRenderer<SkeletonFighter, SkeletonFighterModel<SkeletonFighter>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton_fighter.png");
 
     public SkeletonFighterRenderer(EntityRendererProvider.Context pContext) {

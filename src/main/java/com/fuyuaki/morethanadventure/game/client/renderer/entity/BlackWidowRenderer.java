@@ -20,7 +20,7 @@ public class BlackWidowRenderer extends MobRenderer<BlackWidow, BlackWidowModel<
 
 
     public BlackWidowRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new BlackWidowModel(pContext.bakeLayer(MTAModelLayers.BLACK_WIDOW)), .5F);
+        super(pContext,new BlackWidowModel<>(pContext.bakeLayer(MTAModelLayers.BLACK_WIDOW)), .5F);
     }
 
     @Override

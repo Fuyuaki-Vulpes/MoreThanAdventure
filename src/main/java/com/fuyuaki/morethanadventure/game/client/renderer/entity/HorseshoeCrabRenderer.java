@@ -13,7 +13,7 @@ public class HorseshoeCrabRenderer extends MobRenderer<HorseshoeCrab, HorseshoeC
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/horseshoe_crab.png");
 
     public HorseshoeCrabRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new HorseshoeCrabModel(pContext.bakeLayer(MTAModelLayers.HORSESHOE_CRAB)), .5F);
+        super(pContext,new HorseshoeCrabModel<>(pContext.bakeLayer(MTAModelLayers.HORSESHOE_CRAB)), .5F);
     }
 
 

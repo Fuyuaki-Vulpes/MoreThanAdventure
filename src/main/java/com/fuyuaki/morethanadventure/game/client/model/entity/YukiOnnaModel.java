@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -78,7 +79,9 @@ public class YukiOnnaModel<T extends YukiOnna> extends HierarchicalModel<T> {
 
     @Override
     public void setupAnim(YukiOnna entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
+        AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,0.7F,false);
+        AnimUtils.animateWalkRot(this.right_arm,limbSwing,limbSwingAmount,0.7F,true);
     }
 
     @Override
