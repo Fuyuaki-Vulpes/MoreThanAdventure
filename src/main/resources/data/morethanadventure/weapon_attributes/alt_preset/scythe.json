@@ -1,0 +1,8 @@
+{
+  "parent": "bettercombat:scythe",
+  "attributes": {
+    "attack_range": 4.0,
+    "pose": "bettercombat:pose_one_handed_backwards",
+    "two_handed": false
+  }
+}

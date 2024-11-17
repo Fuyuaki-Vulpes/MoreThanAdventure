@@ -84,23 +84,9 @@ file="META-INF/mtaaccesstransformer.cfg"
 
 
 [[dependencies.${mod_id}]]
-    modId="placebo"
-    type="required"
-    versionRange="${placeboVersionRange}"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
     modId="terrablender"
     type="required"
     versionRange="${terrablenderVersionRange}"
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.${mod_id}]]
-    modId="apothic_attributes"
-    type="required"
-    versionRange="${attributesLibVersionRange}"
     ordering="NONE"
     side="BOTH"
 

@@ -77,8 +77,8 @@ public class GenBlockstate extends BlockStateProvider {
         blockWithItem(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE);
         blockWithItem(MtaBlocks.AQUAMARINE_ORE);
         blockWithItem(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE);
-        //blockWithItem(MtaBlocks.BLOODSTONE_ORE);
-        //blockWithItem(MtaBlocks.DEEPSLATE_BLOODSTONE_ORE);
+        blockWithItem(MtaBlocks.BLOODSTONE_ORE);
+        blockWithItem(MtaBlocks.DEEPSLATE_BLOODSTONE_ORE);
         blockWithItem(MtaBlocks.CELESTITE_ORE);
         blockWithItem(MtaBlocks.DEEPSLATE_CELESTITE_ORE);
         blockWithItem(MtaBlocks.CRYOLITE_ORE);

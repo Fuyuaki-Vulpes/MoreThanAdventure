@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.google.common.base.Suppliers;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -77,7 +76,6 @@ public class KnightGreatswordItem extends SwordItem {
             livingEntity.addEffect(new MobEffectInstance(MtaEffects.CHARGING,30));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING,30));
             livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING,40,2));
-            livingEntity.addEffect(new MobEffectInstance(ALObjects.MobEffects.VITALITY,30));
             stack.hurtAndBreak(1,livingEntity, EquipmentSlot.MAINHAND);
 
         }if (remainingUseDuration % 80L == 0) {
@@ -124,21 +122,6 @@ public class KnightGreatswordItem extends SwordItem {
                 new AttributeModifier(location, -2.9F, AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
                 );
-        builder.add(
-                Attributes.ENTITY_INTERACTION_RANGE,
-                new AttributeModifier(location, 2, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-                );
-        builder.add(
-                Attributes.BLOCK_INTERACTION_RANGE,
-                new AttributeModifier(location, 2, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.EXPERIENCE_GAINED,
-                new AttributeModifier(location, 1, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
                return builder;
     }
 

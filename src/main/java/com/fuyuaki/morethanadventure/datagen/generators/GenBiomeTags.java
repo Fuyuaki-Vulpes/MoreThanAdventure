@@ -126,6 +126,53 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(MtaBiomes.TUNDRA);
 
 
+
+        this.tag(MtaTags.Biomes.AGATE)
+                .addTag(Tags.Biomes.IS_HOT_OVERWORLD)
+                .addTag(Tags.Biomes.IS_DRY_OVERWORLD)
+        ;
+
+        this.tag(MtaTags.Biomes.ALEXANDRITE)
+                .addTag(Tags.Biomes.IS_PLAINS)
+                .addTag(Tags.Biomes.IS_FOREST)
+                .addTag(Tags.Biomes.IS_FLORAL)
+
+        ;
+
+        this.tag(MtaTags.Biomes.AQUAMARINE)
+                .addTag(Tags.Biomes.IS_WET_OVERWORLD)
+                .addTag(Tags.Biomes.IS_OCEAN)
+                .addTag(Tags.Biomes.IS_RIVER)
+                .addTag(Tags.Biomes.IS_AQUATIC)
+        ;
+
+        this.tag(MtaTags.Biomes.BLOODSTONE)
+                .addTag(Tags.Biomes.IS_SPOOKY)
+                .addTag(Tags.Biomes.IS_DENSE_VEGETATION_OVERWORLD)
+                .addTag(Tags.Biomes.IS_MAGICAL)
+                .addTag(Tags.Biomes.IS_TAIGA)
+        ;
+
+        this.tag(MtaTags.Biomes.CELESTITE)
+                .addTag(BiomeTags.IS_OVERWORLD)
+        ;
+
+        this.tag(MtaTags.Biomes.CRYOLITE)
+                .addTag(Tags.Biomes.IS_SNOWY)
+                .addTag(Tags.Biomes.IS_ICY)
+
+        ;
+
+        this.tag(MtaTags.Biomes.GARNET)
+                .addTag(BiomeTags.IS_OVERWORLD)
+        ;
+
+        this.tag(MtaTags.Biomes.MOONSTONE)
+                .addTag(Tags.Biomes.IS_MOUNTAIN)
+                .addTag(Tags.Biomes.IS_SWAMP)
+        ;
+
+
         addWolfTags();
     }
 

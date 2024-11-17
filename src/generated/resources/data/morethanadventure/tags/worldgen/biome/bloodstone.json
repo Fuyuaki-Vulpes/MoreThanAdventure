@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#c:is_spooky",
+    "#c:is_dense_vegetation/overworld",
+    "#c:is_magical",
+    "#c:is_taiga"
+  ]
+}

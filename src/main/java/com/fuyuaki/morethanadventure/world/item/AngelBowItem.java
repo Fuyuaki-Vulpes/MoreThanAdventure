@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.world.entity.Arrows.MTAArrowEntity;
 import com.google.common.base.Suppliers;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -52,13 +51,6 @@ public class AngelBowItem extends BowItem {
 
     protected ItemAttributeModifiers.Builder createAttributeModifiers(ItemAttributeModifiers.Builder builder){
         ResourceLocation location = ResourceLocation.withDefaultNamespace("angel_bow");
-
-
-        builder.add(
-                ALObjects.Attributes.DRAW_SPEED,
-                new AttributeModifier(location, 0.5F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
         return builder;
     }
 

@@ -1,7 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 import com.google.common.base.Suppliers;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -42,31 +41,6 @@ public class ReaperScytheItem extends SwordItem {
         builder.add(
                 Attributes.ATTACK_SPEED,
                 new AttributeModifier(location, -2.5F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                Attributes.ENTITY_INTERACTION_RANGE,
-                new AttributeModifier(location, 2.3F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                Attributes.BLOCK_INTERACTION_RANGE,
-                new AttributeModifier(location, 2.3F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.LIFE_STEAL,
-                new AttributeModifier(location, 0.5F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.CRIT_CHANCE,
-                new AttributeModifier(location, 0.02F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.CRIT_DAMAGE,
-                new AttributeModifier(location, 1F, AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         return builder;

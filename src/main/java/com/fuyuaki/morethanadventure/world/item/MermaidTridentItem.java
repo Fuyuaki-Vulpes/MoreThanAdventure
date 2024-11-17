@@ -1,16 +1,12 @@
 package com.fuyuaki.morethanadventure.world.item;
 
-import com.fuyuaki.morethanadventure.core.registry.MTAComponents;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
 import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Position;
-import net.minecraft.core.component.DataComponentMap;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -21,9 +17,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -111,7 +105,6 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                             level.addParticle(MtaParticles.UNPOPPABLE_BUBBLE.get(), living.getRandomX(0.8F), living.getY() + 0.5F, living.getRandomZ(0.8), 0, 0.5, 0);
                         }
                         living.hurt(player.damageSources().magic(), Math.min(Math.max(living.getMaxHealth() / 5, 15), 80));
-                        living.addEffect(new MobEffectInstance(ALObjects.MobEffects.SUNDERING, 200));
                         player.getCooldowns().addCooldown(stack.getItem(),200);
                         player.stopUsingItem();
 

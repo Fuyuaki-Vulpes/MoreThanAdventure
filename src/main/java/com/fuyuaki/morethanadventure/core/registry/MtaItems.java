@@ -35,14 +35,14 @@ public class MtaItems {
 
     //AWAKENED GEMS
 
-    public static final DeferredItem<Item> AWAKENED_AGATE = ITEMS.registerSimpleItem("awakened_agate", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_ALEXANDRITE = ITEMS.registerSimpleItem("awakened_alexandrite", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_AQUAMARINE = ITEMS.registerSimpleItem("awakened_aquamarine", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_BLOODSTONE = ITEMS.registerSimpleItem("awakened_bloodstone", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_CELESTITE = ITEMS.registerSimpleItem("awakened_celestite", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_CRYOLITE = ITEMS.registerSimpleItem("awakened_cryolite", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_GARNET = ITEMS.registerSimpleItem("awakened_garnet", new Item.Properties());
-    public static final DeferredItem<Item> AWAKENED_MOONSTONE = ITEMS.registerSimpleItem("awakened_moonstone", new Item.Properties());
+    public static final DeferredItem<Item> AWAKENED_AGATE = ITEMS.registerSimpleItem("awakened_agate", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_ALEXANDRITE = ITEMS.registerSimpleItem("awakened_alexandrite", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_AQUAMARINE = ITEMS.registerSimpleItem("awakened_aquamarine", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_BLOODSTONE = ITEMS.registerSimpleItem("awakened_bloodstone", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_CELESTITE = ITEMS.registerSimpleItem("awakened_celestite", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_CRYOLITE = ITEMS.registerSimpleItem("awakened_cryolite", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_GARNET = ITEMS.registerSimpleItem("awakened_garnet", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<Item> AWAKENED_MOONSTONE = ITEMS.registerSimpleItem("awakened_moonstone", new Item.Properties().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
 
     //UPGRADES
     public static final DeferredItem<Item> ARMAMENT_UPGRADE = ITEMS.registerSimpleItem("armament_upgrade", new Item.Properties());
@@ -142,8 +142,8 @@ public class MtaItems {
                     new Item.Properties()
                             .durability(6760)
             ));
-    public static final DeferredItem<SwordItem> COLD_SET_WEAPON = ITEMS.register("cold_set_weapon",
-            () -> new SwordItem(MTAToolTiers.CRYOLITE,
+    public static final DeferredItem<SwordItem> FREEZING_ICICLE_SPEAR = ITEMS.register("freezing_icicle_spear",
+            () -> new FreezingIcicleSpearItem(MTAToolTiers.CRYOLITE,
                     new Item.Properties()
                             .durability(6760)
             ));

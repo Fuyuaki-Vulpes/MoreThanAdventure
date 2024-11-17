@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaArmorMats;
 import com.google.common.base.Suppliers;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -16,9 +15,8 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import org.checkerframework.checker.units.qual.C;
 
-import java.util.*;
+import java.util.UUID;
 import java.util.function.Supplier;
 
 public class MTAArmor extends ArmorItem {
@@ -430,23 +428,10 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
-            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.02F,AttributeModifier.Operation.ADD_VALUE),slot);
-            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,1.0F,AttributeModifier.Operation.ADD_VALUE),slot);
-
         }else if (type == Type.CHESTPLATE){
-            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.1F,AttributeModifier.Operation.ADD_VALUE),slot);
-            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,4.0F,AttributeModifier.Operation.ADD_VALUE),slot);
-
         }else if (type == Type.LEGGINGS){
-            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.05F,AttributeModifier.Operation.ADD_VALUE),slot);
-            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,2.0F,AttributeModifier.Operation.ADD_VALUE),slot);
-
 
         }else if (type == Type.BOOTS){
-            builder.add(ALObjects.Attributes.DODGE_CHANCE,new AttributeModifier(location,0.02F,AttributeModifier.Operation.ADD_VALUE),slot);
-            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,1.0F,AttributeModifier.Operation.ADD_VALUE),slot);
-
-
         }
         builder.add(Attributes.MOVEMENT_SPEED,new AttributeModifier(location,-0.1F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
@@ -461,13 +446,10 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
-            builder.add(ALObjects.Attributes.CRIT_CHANCE,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
-            builder.add(ALObjects.Attributes.OVERHEAL,new AttributeModifier(location,0.4F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
-            builder.add(ALObjects.Attributes.CURRENT_HP_DAMAGE,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.BOOTS){
             builder.add(Attributes.STEP_HEIGHT,new AttributeModifier(location,0.5F,AttributeModifier.Operation.ADD_VALUE),slot);
@@ -504,11 +486,8 @@ public class MTAArmor extends ArmorItem {
 
 
         if (type == Type.HELMET){
-            builder.add(ALObjects.Attributes.CRIT_CHANCE, new AttributeModifier(location,0.3F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
-            builder.add(ALObjects.Attributes.CRIT_DAMAGE, new AttributeModifier(location,1.1F, AttributeModifier.Operation.ADD_VALUE),slot);
-            builder.add(ALObjects.Attributes.LIFE_STEAL, new AttributeModifier(location,0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
             builder.add(Attributes.SNEAKING_SPEED,new AttributeModifier(location,0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
@@ -574,11 +553,8 @@ public class MTAArmor extends ArmorItem {
             builder.add(Attributes.ATTACK_KNOCKBACK,new AttributeModifier(location,0.4F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
-            builder.add(ALObjects.Attributes.LIFE_STEAL,new AttributeModifier(location,0.1F,AttributeModifier.Operation.ADD_VALUE),slot);
-            builder.add(ALObjects.Attributes.GHOST_HEALTH,new AttributeModifier(location,4.0F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
-            builder.add(ALObjects.Attributes.ARMOR_SHRED,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
             builder.add(Attributes.FALL_DAMAGE_MULTIPLIER,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
         }else if (type == Type.BOOTS){

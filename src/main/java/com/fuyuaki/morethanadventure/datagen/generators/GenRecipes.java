@@ -3,26 +3,15 @@ package com.fuyuaki.morethanadventure.datagen.generators;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionContents;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
@@ -356,7 +345,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         cryoliteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.COLD_SET_CHESTPLATE.get());
         cryoliteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.COLD_SET_LEGGINGS.get());
         cryoliteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.COLD_SET_BOOTS.get());
-        cryoliteSmithing(output, MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.COLD_SET_WEAPON.get());
+        cryoliteSmithing(output, MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_SPEAR.get());
 
         garnetSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_HELMET.get());
         garnetSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get());

@@ -59,14 +59,14 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.GARNET);
         simpleItem(MtaItems.MOONSTONE);
 
-        //simpleItem(MtaItems.AWAKENED_AGATE);
-        //simpleItem(MtaItems.AWAKENED_ALEXANDRITE);
-        //simpleItem(MtaItems.AWAKENED_AQUAMARINE);
-        //simpleItem(MtaItems.AWAKENED_BLOODSTONE);
-        //simpleItem(MtaItems.AWAKENED_CELESTITE);
-        //simpleItem(MtaItems.AWAKENED_CRYOLITE);
-        //simpleItem(MtaItems.AWAKENED_GARNET);
-        //simpleItem(MtaItems.AWAKENED_MOONSTONE);
+        simpleItem(MtaItems.AWAKENED_AGATE);
+        simpleItem(MtaItems.AWAKENED_ALEXANDRITE);
+        simpleItem(MtaItems.AWAKENED_AQUAMARINE);
+        simpleItem(MtaItems.AWAKENED_BLOODSTONE);
+        simpleItem(MtaItems.AWAKENED_CELESTITE);
+        simpleItem(MtaItems.AWAKENED_CRYOLITE);
+        simpleItem(MtaItems.AWAKENED_GARNET);
+        simpleItem(MtaItems.AWAKENED_MOONSTONE);
 
         simpleItem(MtaItems.ARMAMENT_UPGRADE);
         simpleItem(MtaItems.ROYAL_UPGRADE);
@@ -128,9 +128,9 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
-        //handheldBigItem(MtaItems.SILENT_REAPERS_SCYTHE);
+        handheldBigItem(MtaItems.SILENT_REAPERS_SCYTHE);
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
-        //handheldItem(MtaItems.COLD_SET_WEAPON);
+        handheldBigItem(MtaItems.FREEZING_ICICLE_SPEAR);
         handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
 
         //TOOLS

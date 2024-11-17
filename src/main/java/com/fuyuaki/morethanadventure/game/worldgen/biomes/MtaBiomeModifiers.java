@@ -41,6 +41,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_AGATE_ORE = registerKey("agate_ore");
     public static final ResourceKey<BiomeModifier> ADD_ALEXANDRITE_ORE = registerKey("alexandrite_ore");
     public static final ResourceKey<BiomeModifier> ADD_AQUAMARINE_ORE = registerKey("aquamarine_ore");
+    public static final ResourceKey<BiomeModifier> ADD_BLOODSTONE_ORE = registerKey("bloodstone_ore");
     public static final ResourceKey<BiomeModifier> ADD_CELESTITE_ORE = registerKey("celestite_ore");
     public static final ResourceKey<BiomeModifier> ADD_CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<BiomeModifier> ADD_GARNET_ORE = registerKey("garnet_ore");
@@ -146,43 +147,48 @@ public class MtaBiomeModifiers {
         ));
 
         context.register(ADD_AGATE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BADLANDS),
+                biomes.getOrThrow(MtaTags.Biomes.AGATE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AGATE_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
         context.register(ADD_ALEXANDRITE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
+                biomes.getOrThrow(MtaTags.Biomes.ALEXANDRITE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.ALEXANDRITE_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
         context.register(ADD_AQUAMARINE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_OCEAN),
+                biomes.getOrThrow(MtaTags.Biomes.AQUAMARINE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AQUAMARINE_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
         context.register(ADD_CELESTITE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_MOUNTAIN),
+                biomes.getOrThrow(MtaTags.Biomes.CELESTITE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CELESTITE_ORE)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_BLOODSTONE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.BLOODSTONE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.BLOODSTONE_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
         context.register(ADD_CRYOLITE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_SNOWY),
+                biomes.getOrThrow(MtaTags.Biomes.CRYOLITE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CRYOLITE_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
         context.register(ADD_GARNET_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_DESERT),
+                biomes.getOrThrow(MtaTags.Biomes.GARNET),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.GARNET_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
         context.register(ADD_MOONSTONE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_FOREST),
+                biomes.getOrThrow(MtaTags.Biomes.MOONSTONE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.MOONSTONE_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));

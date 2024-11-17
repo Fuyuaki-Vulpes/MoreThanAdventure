@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_mountain",
+  "biomes": "#morethanadventure:celestite",
   "features": "morethanadventure:celestite_ore",
   "step": "underground_ores"
 }

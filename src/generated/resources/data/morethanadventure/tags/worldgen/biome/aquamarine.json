@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#c:is_wet/overworld",
+    "#c:is_ocean",
+    "#c:is_river",
+    "#c:is_aquatic"
+  ]
+}

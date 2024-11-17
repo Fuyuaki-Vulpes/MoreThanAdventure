@@ -31,6 +31,15 @@ repositories {
         url "https://maven.shadowsoffire.dev/releases"
     }
 
+    maven {
+        name "KosmX's maven"
+        url 'https://maven.kosmx.dev/'
+    }
+    maven { url 'https://api.modrinth.com/maven' }
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+    maven { url 'https://api.modrinth.com/maven' }
+
     maven { url = 'https://maven.minecraftforge.net/' }
 
     maven { url = "https://api.modrinth.com/maven" }
@@ -119,13 +128,14 @@ dependencies {
 
     implementation "net.neoforged:neoforge:${neo_version}"
 
-
-    implementation "dev.shadowsoffire:Placebo:${minecraft_version}-${placeboVersion}"
-    implementation "dev.shadowsoffire:ApothicAttributes:${minecraft_version}-${attributesLibVersion}"
     implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablenderVersion}"
 
     compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
     runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
+
+    implementation"me.shedaniel.cloth:cloth-config-neoforge:${clothConfig}"
+    implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_anim}"
+    implementation "maven.modrinth:better-combat:${betterCombat}-neoforge"
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 
@@ -149,15 +159,13 @@ tasks.withType(ProcessResources).configureEach {
             mod_version            : mod_version,
             mod_authors            : mod_authors,
             mod_description        : mod_description,
-            placeboVersion         : placeboVersion,
-            attributesLibVersion   : attributesLibVersion,
             terrablenderVersion    : terrablenderVersion,
             emi_version            : emi_version,
+            clothConfig            : clothConfig,
+            player_anim            : player_anim,
+            betterCombat            : betterCombat,
             curiosVersion     : curiosVersion,
-            placeboVersionRange         : placeboVersionRange,
-            attributesLibVersionRange   : attributesLibVersionRange,
             terrablenderVersionRange    : terrablenderVersionRange,
-            emi_versionRange            : emi_versionRange,
             curiosVersionRange     : curiosVersionRange
 
     ]

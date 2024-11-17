@@ -4,12 +4,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.Collection;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -362,7 +359,7 @@ public class MtaTabs {
                 output.accept(MtaItems.TEMPLE_ANGELS_CHESTPLATE);
                 output.accept(MtaItems.TEMPLE_ANGELS_LEGGINGS);
                 output.accept(MtaItems.TEMPLE_ANGELS_BOOTS);
-                output.accept(MtaItems.COLD_SET_WEAPON);
+                output.accept(MtaItems.FREEZING_ICICLE_SPEAR);
                 output.accept(MtaItems.COLD_SET_HELMET);
                 output.accept(MtaItems.COLD_SET_CHESTPLATE);
                 output.accept(MtaItems.COLD_SET_LEGGINGS);

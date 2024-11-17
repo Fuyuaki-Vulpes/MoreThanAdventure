@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#morethanadventure:bloodstone",
+  "features": "morethanadventure:bloodstone_ore",
+  "step": "underground_ores"
+}

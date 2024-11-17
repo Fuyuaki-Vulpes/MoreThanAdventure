@@ -130,6 +130,17 @@ public class MtaTags {
         public static final TagKey<Biome> NETHER_GEYSERS = tag("nether_geysers");
 
 
+
+        public static final TagKey<Biome> AGATE = tag("agate");
+        public static final TagKey<Biome> ALEXANDRITE = tag("alexandrite");
+        public static final TagKey<Biome> AQUAMARINE = tag("aquamarine");
+        public static final TagKey<Biome> BLOODSTONE = tag("bloodstone");
+        public static final TagKey<Biome> CELESTITE = tag("celestite");
+        public static final TagKey<Biome> CRYOLITE = tag("cryolite");
+        public static final TagKey<Biome> GARNET = tag("garnet");
+        public static final TagKey<Biome> MOONSTONE = tag("moonstone");
+
+
         public static final TagKey<Biome> HAS_PALE_WOLF = tag("has_pale_wolf");
         public static final TagKey<Biome> HAS_SPOTTED_WOLF = tag("has_spotted_wolf");
         public static final TagKey<Biome> HAS_SNOWY_WOLF = tag("has_snowy_wolf");

@@ -1,7 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 import com.google.common.base.Suppliers;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -92,26 +91,6 @@ public class RogueDaggerItem extends SwordItem {
         builder.add(
                 Attributes.ATTACK_SPEED,
                 new AttributeModifier(location, -0.9F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                Attributes.ENTITY_INTERACTION_RANGE,
-                new AttributeModifier(location, -0.5F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.ARMOR_PIERCE,
-                new AttributeModifier(location, 3, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.CRIT_CHANCE,
-                new AttributeModifier(location, 0.1F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                ALObjects.Attributes.CRIT_DAMAGE,
-                new AttributeModifier(location, 2, AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         return builder;

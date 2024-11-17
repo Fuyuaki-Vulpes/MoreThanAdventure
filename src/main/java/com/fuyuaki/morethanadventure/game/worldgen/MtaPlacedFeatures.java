@@ -53,6 +53,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> AGATE_ORE = registerKey("agate_ore");
     public static final ResourceKey<PlacedFeature> ALEXANDRITE_ORE = registerKey("alexandrite_ore");
     public static final ResourceKey<PlacedFeature> AQUAMARINE_ORE = registerKey("aquamarine_ore");
+    public static final ResourceKey<PlacedFeature> BLOODSTONE_ORE = registerKey("bloodstone_ore");
     public static final ResourceKey<PlacedFeature> CELESTITE_ORE = registerKey("celestite_ore");
     public static final ResourceKey<PlacedFeature> CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<PlacedFeature> GARNET_ORE = registerKey("garnet_ore");
@@ -267,43 +268,56 @@ public class MtaPlacedFeatures {
                 context,
                 AGATE_ORE,
                 holder(context,MtaConfigFeatures.AGATE_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(20, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 ALEXANDRITE_ORE,
                 holder(context,MtaConfigFeatures.ALEXANDRITE_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(8,
+                        HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(-8)))
         );
         register(
                 context,
                 AQUAMARINE_ORE,
                 holder(context,MtaConfigFeatures.AQUAMARINE_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(17,
+                        HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(16)))
+        );
+        register(
+                context,
+                BLOODSTONE_ORE,
+                holder(context,MtaConfigFeatures.BLOODSTONE_ORE),
+                MTAOreUtils.commonOrePlacement(25,
+                        HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(48)))
         );
         register(
                 context,
                 CELESTITE_ORE,
                 holder(context,MtaConfigFeatures.CELESTITE_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(26,
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(60), VerticalAnchor.top()))
         );
         register(
                 context,
                 CRYOLITE_ORE,
                 holder(context,MtaConfigFeatures.CRYOLITE_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(32, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
                 GARNET_ORE,
                 holder(context,MtaConfigFeatures.GARNET_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(32,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(32)))
         );
         register(
                 context,
                 MOONSTONE_ORE,
                 holder(context,MtaConfigFeatures.MOONSTONE_ORE),
-                MTAOreUtils.commonOrePlacement(8, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(17,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(12), VerticalAnchor.top()))
+
         );
         register(
                 context,

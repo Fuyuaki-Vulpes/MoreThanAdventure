@@ -68,6 +68,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> AGATE_ORE = registerKey("agate_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> ALEXANDRITE_ORE = registerKey("alexandrite_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> AQUAMARINE_ORE = registerKey("aquamarine_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> BLOODSTONE_ORE = registerKey("bloodstone_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> CELESTITE_ORE = registerKey("celestite_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> GARNET_ORE = registerKey("garnet_ore");
@@ -261,7 +262,7 @@ public class MtaConfigFeatures {
                 AGATE_ORE,
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone,MtaBlocks.AGATE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_AGATE_ORE.get()),
-                        4,
+                        8,
                         0.2F
                 )
         );
@@ -277,7 +278,15 @@ public class MtaConfigFeatures {
                 AQUAMARINE_ORE,
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone,MtaBlocks.AQUAMARINE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get()),
-                        4,
+                        7,
+                        0.2F
+                )
+        );
+        register(context,
+                BLOODSTONE_ORE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone,MtaBlocks.BLOODSTONE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get()),
+                        6,
                         0.2F
                 )
         );
@@ -285,7 +294,7 @@ public class MtaConfigFeatures {
                 CELESTITE_ORE,
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone,MtaBlocks.CELESTITE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CELESTITE_ORE.get()),
-                        4,
+                        8,
                         0.2F
                 )
         );
@@ -293,15 +302,13 @@ public class MtaConfigFeatures {
                 CRYOLITE_ORE,
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone,MtaBlocks.CRYOLITE_ORE.get(), oresDeepslate,MtaBlocks.CRYOLITE_ORE.get()),
-                        4,
-                        0.2F
-                )
+                        6)
         );
         register(context,
                 GARNET_ORE,
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone,MtaBlocks.GARNET_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_GARNET_ORE.get()),
-                        4,
+                        7,
                         0.2F
                 )
         );
@@ -309,7 +316,7 @@ public class MtaConfigFeatures {
                 MOONSTONE_ORE,
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone,MtaBlocks.MOONSTONE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()),
-                        4,
+                        6,
                         0.2F
                 )
         );

@@ -1,7 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -15,6 +14,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -103,8 +103,6 @@ public class YukiOnna extends Monster implements FlyingAnimal {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 18.0F)
                 .add(Attributes.FOLLOW_RANGE, 12.0)
-                .add(ALObjects.Attributes.ARMOR_SHRED, 1.0F)
-                .add(ALObjects.Attributes.COLD_DAMAGE, 2.0F)
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
                 .add(Attributes.FLYING_SPEED, 0.4F)
                 .add(Attributes.MOVEMENT_SPEED, 0.1F)
@@ -129,7 +127,7 @@ public class YukiOnna extends Monster implements FlyingAnimal {
     @Override
     public void tick() {
         if (this.level().isRaining() && this.level().getBiome(this.blockPosition()).is(Tags.Biomes.IS_COLD)) {
-            this.addEffect(new MobEffectInstance(ALObjects.MobEffects.REGENERATION));
+            this.addEffect(new MobEffectInstance(MobEffects.REGENERATION));
         }
         super.tick();
     }
@@ -199,7 +197,7 @@ public class YukiOnna extends Monster implements FlyingAnimal {
 
     @Override
     public boolean addEffect(MobEffectInstance pEffectInstance, @Nullable Entity pEntity) {
-        if (pEffectInstance.is(ALObjects.MobEffects.BLEEDING) || pEffectInstance.is(MtaEffects.FREEZING)){
+        if (pEffectInstance.is(MtaEffects.BLEEDING) || pEffectInstance.is(MtaEffects.FREEZING)){
             return false;
         }
         return super.addEffect(pEffectInstance, pEntity);

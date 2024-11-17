@@ -5,7 +5,6 @@ import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
@@ -392,7 +391,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(), "Mystic Mermaid's Trident");
         add(MtaItems.SILENT_REAPERS_SCYTHE.get(), "Silent Reaper's Scythe");
         add(MtaItems.TEMPLE_ANGELS_BOW.get(), "Temple Angel's Bow");
-        add(MtaItems.COLD_SET_WEAPON.get(), "Cold Set Weapon");
+        add(MtaItems.FREEZING_ICICLE_SPEAR.get(), "Cold Set Weapon");
         add(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(), "Wrathful Berserker's Battleaxe");
         add(MtaItems.SHADOW_ROGUES_DAGGER.get(), "Shadow Rogue's Dagger");
 

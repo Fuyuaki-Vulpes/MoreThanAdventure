@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.item.MTAEnchantmentProvider;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -239,7 +238,6 @@ public class WitherJuggernaut extends Monster{
                 .add(Attributes.STEP_HEIGHT,2.0F)
                 .add(Attributes.SAFE_FALL_DISTANCE,6.0F)
                 .add(Attributes.ENTITY_INTERACTION_RANGE,5.0F)
-                .add(ALObjects.Attributes.LIFE_STEAL,0.3F)
                 ;
     }
 

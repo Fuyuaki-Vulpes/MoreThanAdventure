@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "morethanadventure:awakened_cryolite"
+  },
+  "base": {
+    "item": "morethanadventure:netherite_bow"
+  },
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:freezing_icicle_spear"
+  },
+  "template": {
+    "item": "morethanadventure:freezing_upgrade"
+  }
+}
