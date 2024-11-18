@@ -1,5 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.model;
 
+import com.fuyuaki.morethanadventure.world.entity.ArmoredSkeleton;
+import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
@@ -47,6 +49,8 @@ public class MTAModelLayers {
     public static final ModelLayerLocation WITHER_JUGGERNAUT = register("wither_juggernaut");
     public static final ModelLayerLocation YUKI_ONNA = register("yuki_onna");
     public static final ModelLayerLocation ZOMBIFIED_MINER = register("zombified_miner");
+    public static final ModelLayerLocation ARMORED_SKELETON_OUTER_ARMOR = register("armored_skeleton_outer_armor");
+    public static final ModelLayerLocation ARMORED_SKELETON_INNER_ARMOR = register("armored_skeleton_inner_armor");
 
     private static ModelLayerLocation register(String name){
         return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, name), "main");
