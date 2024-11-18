@@ -48,6 +48,8 @@ public class MtaTabs {
                 output.accept(MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
                 output.accept(MtaBlocks.AQUAMARINE_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get());
+                output.accept(MtaBlocks.BLOODSTONE_ORE.get());
+                output.accept(MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get());
                 output.accept(MtaBlocks.CELESTITE_ORE.get());
                 output.accept(MtaBlocks.CRYOLITE_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_CELESTITE_ORE.get());

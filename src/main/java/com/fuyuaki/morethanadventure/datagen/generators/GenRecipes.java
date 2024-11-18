@@ -302,10 +302,10 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         upgradeTemplate(output, MtaItems.BERSERK_UPGRADE.get(), Blocks.ORANGE_TERRACOTTA, "has_berserk_upgrade");
         upgradeTemplate(output, MtaItems.FEATHERWEIGHT_UPGRADE.get(), Blocks.BLUE_TERRACOTTA, "has_featherweight_upgrade");
 
-        gemAwakening(output, MtaItems.AGATE.get(), Items.IRON_INGOT, Items.POTATO, MtaItems.AWAKENED_AGATE.get(), "has_agate");
+        gemAwakening(output, MtaItems.AGATE.get(), Items.IRON_INGOT, Items.GHAST_TEAR, MtaItems.AWAKENED_AGATE.get(), "has_agate");
         gemAwakening(output, MtaItems.ALEXANDRITE.get(), Items.STONE_SWORD, Items.GLISTERING_MELON_SLICE, MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
         gemAwakening(output, MtaItems.AQUAMARINE.get(), Items.PRISMARINE_SHARD, Items.PUFFERFISH, MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
-        gemAwakening(output, MtaItems.BLOODSTONE.get(), Items.BONE, Items.GHAST_TEAR, MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
+        gemAwakening(output, MtaItems.BLOODSTONE.get(), Items.BONE, Items.FERMENTED_SPIDER_EYE, MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
         gemAwakening(output, MtaItems.CELESTITE.get(), Items.FEATHER, Items.PHANTOM_MEMBRANE, MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
         gemAwakening(output, MtaItems.CRYOLITE.get(), Items.SNOWBALL, Items.SNOWBALL, MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
         gemAwakening(output, MtaItems.GARNET.get(), Items.STONE_AXE, Items.BLAZE_POWDER, MtaItems.AWAKENED_GARNET.get(), "has_garnet");
