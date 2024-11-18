@@ -274,7 +274,7 @@ public class MtaPlacedFeatures {
                 context,
                 ALEXANDRITE_ORE,
                 holder(context,MtaConfigFeatures.ALEXANDRITE_ORE),
-                MTAOreUtils.commonOrePlacement(8,
+                MTAOreUtils.commonOrePlacement(15,
                         HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(-8)))
         );
         register(
@@ -315,7 +315,7 @@ public class MtaPlacedFeatures {
                 context,
                 MOONSTONE_ORE,
                 holder(context,MtaConfigFeatures.MOONSTONE_ORE),
-                MTAOreUtils.commonOrePlacement(17,
+                MTAOreUtils.commonOrePlacement(28,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(12), VerticalAnchor.top()))
 
         );
