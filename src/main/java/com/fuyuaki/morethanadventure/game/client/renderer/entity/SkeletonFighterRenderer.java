@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.BlackWidowModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.SkeletonFighterModel;
+import com.fuyuaki.morethanadventure.world.entity.ArmoredSkeleton;
 import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.SkeletonFighter;
 import net.minecraft.client.model.SkeletonModel;
@@ -12,11 +13,11 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class SkeletonFighterRenderer extends HumanoidMobRenderer<SkeletonFighter, SkeletonFighterModel<SkeletonFighter>> {
+public class SkeletonFighterRenderer extends SkeletonRenderer<SkeletonFighter> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton_fighter.png");
 
     public SkeletonFighterRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new SkeletonFighterModel<>(pContext.bakeLayer(MTAModelLayers.SKELETON_FIGHTER)), .5F);
+        super(pContext,MTAModelLayers.SKELETON_FIGHTER, MTAModelLayers.SKELETON_FIGHTER_INNER_ARMOR, MTAModelLayers.SKELETON_FIGHTER_OUTER_ARMOR);
     }
 
     @Override

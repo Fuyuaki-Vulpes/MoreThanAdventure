@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class MossyZombieModel <T extends MossyZombie> extends AbstractZombieModel<T> {
+public class MossyZombieModel <T extends MossyZombie> extends ZombieModel<T> {
 //    private final ModelPart root;
 
     public MossyZombieModel(ModelPart root) {
