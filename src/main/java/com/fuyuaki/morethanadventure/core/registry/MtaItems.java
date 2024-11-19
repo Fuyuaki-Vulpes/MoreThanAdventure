@@ -192,58 +192,58 @@ public class MtaItems {
 
     // SPAWN EGGS
     public static final DeferredItem<Item> YUKI_ONNA_SPAWN_EGG =  ITEMS.register("yuki_onna_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.YUKI_ONNA::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.YUKI_ONNA::get,0xd2fcff,0x3c3a40,new Item.Properties()));
 
     public static final DeferredItem<Item> FALLEN_SAMURAI_SPAWN_EGG =  ITEMS.register("fallen_samurai_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.FALLEN_SAMURAI::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.FALLEN_SAMURAI::get,0xc3c0bc,0x3d3532,new Item.Properties()));
 
     public static final DeferredItem<Item> ICICLE_CREEPER_SPAWN_EGG =  ITEMS.register("icicle_creeper_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.ICICLE_CREEPER::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.ICICLE_CREEPER::get,0xe2f0f3,0xb5d6e2,new Item.Properties()));
 
     public static final DeferredItem<Item> BUTTERFLY_SPAWN_EGG =  ITEMS.register("butterfly_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.BUTTERFLY::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.BUTTERFLY::get,0xe5c8d1,0x362f33,new Item.Properties()));
 
     public static final DeferredItem<Item> BEARDED_DRAGON_SPAWN_EGG =  ITEMS.register("bearded_dragon_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.BEARDED_DRAGON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.BEARDED_DRAGON::get,0xe5c6af,0xb28375,new Item.Properties()));
 
     public static final DeferredItem<Item> CAPYBARA_SPAWN_EGG =  ITEMS.register("capybara_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.CAPIBARA::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.CAPIBARA::get,0x9a7666,0x896558,new Item.Properties()));
 
     public static final DeferredItem<Item> DUCK_SPAWN_EGG =  ITEMS.register("duck_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.DUCK::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.DUCK::get,0x37a73f,0xef9466,new Item.Properties()));
 
     public static final DeferredItem<Item> FERRET_SPAWN_EGG =  ITEMS.register("ferret_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.FERRET::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.FERRET::get,0xc6a69e,0x634b45,new Item.Properties()));
 
     public static final DeferredItem<Item> GREAT_WHITE_SHARK_SPAWN_EGG =  ITEMS.register("great_white_shark_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.GREAT_WHITE_SHARK::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.GREAT_WHITE_SHARK::get,0xa7adb6,0x868e9b,new Item.Properties()));
 
     public static final DeferredItem<Item> HORSESHOE_CRAB_SPAWN_EGG =  ITEMS.register("horseshoe_crab_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.HORSESHOE_CRAB::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.HORSESHOE_CRAB::get,0xa07962,0x41322c,new Item.Properties()));
 
     public static final DeferredItem<Item> JELLYFISH_SPAWN_EGG =  ITEMS.register("jellyfish_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.JELLYFISH::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.JELLYFISH::get,0xa986c2,0x779fc1,new Item.Properties()));
 
     public static final DeferredItem<Item> OCTOPUS_SPAWN_EGG =  ITEMS.register("octopus_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.OCTOPUS::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.OCTOPUS::get,0xf1936a,0xf7c1aa,new Item.Properties()));
 
     public static final DeferredItem<Item> OWL_SPAWN_EGG =  ITEMS.register("owl_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.OWL::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.OWL::get,0x715e53,0xc46e1d,new Item.Properties()));
 
     public static final DeferredItem<Item> PENGUIN_SPAWN_EGG =  ITEMS.register("penguin_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.PENGUIN::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.PENGUIN::get,0x616274,0xdf9f54,new Item.Properties()));
 
     public static final DeferredItem<Item> RACCOON_SPAWN_EGG =  ITEMS.register("raccoon_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.RACCOON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.RACCOON::get,0xb6a09b,0x685655,new Item.Properties()));
 
     public static final DeferredItem<Item> SHRIMP_SPAWN_EGG =  ITEMS.register("shrimp_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.SHRIMP::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.SHRIMP::get,0xf17f5b,0xf65641,new Item.Properties()));
 
     public static final DeferredItem<Item> TOUCAN_SPAWN_EGG =  ITEMS.register("toucan_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.TOUCAN::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.TOUCAN::get,0x292731,0xe78a43,new Item.Properties()));
 
     public static final DeferredItem<Item> WITHER_JUGGERNAUT_SPAWN_EGG =  ITEMS.register("wither_juggernaut_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.WITHER_JUGGERNAUT::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.WITHER_JUGGERNAUT::get,0x222222,0x51444e,new Item.Properties()));
 
     public static final DeferredItem<Item> ARMORED_SKELETON_SPAWN_EGG =  ITEMS.register("armored_skeleton_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.ARMORED_SKELETON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
