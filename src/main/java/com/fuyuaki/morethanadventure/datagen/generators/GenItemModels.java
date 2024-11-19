@@ -178,35 +178,35 @@ public class GenItemModels extends ItemModelProvider {
 
 
         //SPAWN EGGS
-        simpleItem(MtaItems.YUKI_ONNA_SPAWN_EGG);
-        simpleItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG);
-        simpleItem(MtaItems.ICICLE_CREEPER_SPAWN_EGG);
-        simpleItem(MtaItems.BUTTERFLY_SPAWN_EGG);
-        simpleItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
-        simpleItem(MtaItems.CAPYBARA_SPAWN_EGG);
-        simpleItem(MtaItems.DUCK_SPAWN_EGG);
-        simpleItem(MtaItems.FERRET_SPAWN_EGG);
-        simpleItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
-        simpleItem(MtaItems.HORSESHOE_CRAB_SPAWN_EGG);
-        simpleItem(MtaItems.JELLYFISH_SPAWN_EGG);
-        simpleItem(MtaItems.OCTOPUS_SPAWN_EGG);
-        simpleItem(MtaItems.OWL_SPAWN_EGG);
-        simpleItem(MtaItems.PENGUIN_SPAWN_EGG);
-        simpleItem(MtaItems.RACCOON_SPAWN_EGG);
-        simpleItem(MtaItems.SHRIMP_SPAWN_EGG);
-        simpleItem(MtaItems.TOUCAN_SPAWN_EGG);
-        simpleItem(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG);
-        //simpleItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG);
-        //simpleItem(MtaItems.BLACK_WIDOW_SPAWN_EGG);
-       // simpleItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG);
-        //simpleItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG);
-        //simpleItem(MtaItems.FROZEN_SLIME_SPAWN_EGG);
-        //simpleItem(MtaItems.GLOW_SPIDER_SPAWN_EGG);
-        //simpleItem(MtaItems.HOST_SPAWN_EGG);
-        //simpleItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG);
-        //simpleItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
-        //simpleItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
-        //simpleItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
+        spawnEggItem(MtaItems.YUKI_ONNA_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.ICICLE_CREEPER_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.BUTTERFLY_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.CAPYBARA_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.DUCK_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.FERRET_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.HORSESHOE_CRAB_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.JELLYFISH_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.OCTOPUS_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.OWL_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.PENGUIN_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.RACCOON_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.SHRIMP_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.TOUCAN_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
+       // spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.FROZEN_SLIME_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.GLOW_SPIDER_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.HOST_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get());
+        //spawnEggItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get());
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {
