@@ -5,12 +5,16 @@ import com.fuyuaki.morethanadventure.core.registry.*;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
+import com.fuyuaki.morethanadventure.game.client.particle.PoisonBubble;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.UnpoppableBubble;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
+import net.minecraft.client.model.*;
+import net.minecraft.client.model.geom.LayerDefinitions;
+import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.particle.BubbleParticle;
@@ -91,6 +95,18 @@ public class MTAClientEvents
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+
+
+        LayerDefinition humanoidModel = LayerDefinition.create(HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F), 64, 64);
+        LayerDefinition humanoidOuterArmor = LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION), 64, 32);
+        LayerDefinition humanoidInnerArmor = LayerDefinition.create(HumanoidArmorModel.createBodyLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION), 64, 32);
+        LayerDefinition skeletonLayer = SkeletonModel.createBodyLayer();
+        LayerDefinition spiderLayer = SpiderModel.createSpiderBodyLayer();
+        LayerDefinition skullLayer = SkullModel.createHumanoidHeadLayer();
+        LayerDefinition creeperLayer = CreeperModel.createBodyLayer(CubeDeformation.NONE);
+        LayerDefinition creeperArmorLayer = CreeperModel.createBodyLayer(new CubeDeformation(2.0F));
+
+
         event.registerLayerDefinition(MTAModelLayers.SPRINKLER, SprinklerRenderer::createBodyLayer);
 
 
@@ -129,6 +145,21 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, () -> LayerDefinition.create(ZombifiedMinerModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
 
+        event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.HOST_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.HOST_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_OUTER_ARMOR, () -> humanoidOuterArmor);
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_INNER_ARMOR, () -> humanoidInnerArmor);
+
     }
     @SubscribeEvent
     public static void modelEvent(ModelEvent.RegisterAdditional event) {
@@ -141,6 +172,7 @@ public class MTAClientEvents
         event.registerSpriteSet(MtaParticles.GEYSER_LAVA.get(), GeyserParticle.Lava::new);
         event.registerSpriteSet(MtaParticles.SPRINKLER.get(), SprinklerParticle.Builder::new);
         event.registerSpriteSet(MtaParticles.UNPOPPABLE_BUBBLE.get(), UnpoppableBubble.Provider::new);
+        event.registerSpriteSet(MtaParticles.POISON_BUBBLE.get(), PoisonBubble.Provider::new);
 
     }
     @SubscribeEvent

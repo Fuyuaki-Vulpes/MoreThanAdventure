@@ -197,7 +197,7 @@ public class YukiOnna extends Monster implements FlyingAnimal {
 
     @Override
     public boolean addEffect(MobEffectInstance pEffectInstance, @Nullable Entity pEntity) {
-        if (pEffectInstance.is(MtaEffects.BLEEDING) || pEffectInstance.is(MtaEffects.FREEZING)){
+        if (pEffectInstance.is(MtaEffects.FREEZING)){
             return false;
         }
         return super.addEffect(pEffectInstance, pEntity);

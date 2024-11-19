@@ -1,5 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -53,4 +55,16 @@ public class ToxicZombie extends Zombie {
             return false;
         }
     }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.level().isClientSide() && this.random.nextFloat() < 0.3F){
+            double x = this.getRandomX(0.7);
+            double y = this.getY((double) this.random.nextIntBetweenInclusive(50, 120) / 100);
+            double z = this.getRandomZ(0.7);
+            this.level().addParticle(MtaParticles.POISON_BUBBLE.get(),x,y,z,0,0,0);
+        }
+    }
+
 }
