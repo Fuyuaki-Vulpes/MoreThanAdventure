@@ -107,10 +107,10 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
         simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
-       // simpleItem(MtaItems.COLD_SET_HELMET);
-       // simpleItem(MtaItems.COLD_SET_CHESTPLATE);
-       // simpleItem(MtaItems.COLD_SET_LEGGINGS);
-       // simpleItem(MtaItems.COLD_SET_BOOTS);
+        //simpleItem(MtaItems.COLD_SET_HELMET);
+        //simpleItem(MtaItems.COLD_SET_CHESTPLATE);
+        //simpleItem(MtaItems.COLD_SET_LEGGINGS);
+        //simpleItem(MtaItems.COLD_SET_BOOTS);
 
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
@@ -196,17 +196,17 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.SHRIMP_SPAWN_EGG.get());
         spawnEggItem(MtaItems.TOUCAN_SPAWN_EGG.get());
         spawnEggItem(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
-       // spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.FROZEN_SLIME_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.GLOW_SPIDER_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.HOST_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get());
-        //spawnEggItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.FROZEN_SLIME_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.GLOW_SPIDER_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.HOST_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get());
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

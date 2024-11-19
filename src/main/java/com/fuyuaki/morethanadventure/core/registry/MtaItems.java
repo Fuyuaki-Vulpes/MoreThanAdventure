@@ -192,7 +192,7 @@ public class MtaItems {
 
     // SPAWN EGGS
     public static final DeferredItem<Item> YUKI_ONNA_SPAWN_EGG =  ITEMS.register("yuki_onna_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.YUKI_ONNA::get,0xd2fcff,0x3c3a40,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.YUKI_ONNA::get,0xfbeeee,0xd2fcff,new Item.Properties()));
 
     public static final DeferredItem<Item> FALLEN_SAMURAI_SPAWN_EGG =  ITEMS.register("fallen_samurai_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.FALLEN_SAMURAI::get,0xc3c0bc,0x3d3532,new Item.Properties()));
