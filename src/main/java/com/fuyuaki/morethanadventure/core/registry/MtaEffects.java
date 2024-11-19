@@ -19,9 +19,7 @@ public class MtaEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, MODID);
 
     public static final DeferredHolder<MobEffect, MobEffect> FREEZING = MOB_EFFECTS.register("freezing", () -> new FreezingEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(MODID,"effect.frost_slow"), -0.05F,AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
-    public static final DeferredHolder<MobEffect, MobEffect> BLEEDING = MOB_EFFECTS.register("bleeding", () -> new BleedingEffect()
-            .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(MODID,"effect.bleed_fatigue"), -0.05F,AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
-    );
+  
 
     public static final DeferredHolder<MobEffect, MobEffect> BERSERK = MOB_EFFECTS.register("berserk",
             () -> new BerserkEffect()

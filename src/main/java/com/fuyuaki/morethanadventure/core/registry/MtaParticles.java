@@ -23,6 +23,8 @@ public class MtaParticles {
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SPRINKLER = simpleParticle("sprinkler",false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> UNPOPPABLE_BUBBLE = simpleParticle("unpoppable_bubble",false);
 
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> POISON_BUBBLE = simpleParticle("poison_bubble",false);
+
 
 
     private static <I extends Block> DeferredHolder<ParticleType<?>, SimpleParticleType> simpleParticle(String name, boolean overrideLimiter) {
