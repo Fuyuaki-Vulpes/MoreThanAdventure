@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.monster.Zombie;
 
-public class ZombifiedMinerModel<T extends ZombifiedMiner> extends AbstractZombieModel<T> {
+public class ZombifiedMinerModel<T extends ZombifiedMiner> extends ZombieModel<T> {
     //private final ModelPart root;
 
     public ZombifiedMinerModel(ModelPart root) {

@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class ToxicZombieModel <T extends ToxicZombie> extends AbstractZombieModel<T> {
+public class ToxicZombieModel <T extends ToxicZombie> extends ZombieModel<T> {
     //private final ModelPart root;
 
     public ToxicZombieModel(ModelPart root) {

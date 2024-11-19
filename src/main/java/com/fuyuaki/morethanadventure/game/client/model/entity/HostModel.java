@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class HostModel <T extends Host> extends AbstractZombieModel<T> {
+public class HostModel <T extends Host> extends ZombieModel<T> {
     //private final ModelPart root;
 
     public HostModel(ModelPart root) {

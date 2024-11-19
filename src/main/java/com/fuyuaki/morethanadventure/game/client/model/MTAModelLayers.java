@@ -51,6 +51,18 @@ public class MTAModelLayers {
     public static final ModelLayerLocation ZOMBIFIED_MINER = register("zombified_miner");
     public static final ModelLayerLocation ARMORED_SKELETON_OUTER_ARMOR = register("armored_skeleton_outer_armor");
     public static final ModelLayerLocation ARMORED_SKELETON_INNER_ARMOR = register("armored_skeleton_inner_armor");
+    public static final ModelLayerLocation CHARRED_SKELETON_OUTER_ARMOR = register("charred_skeleton_outer_armor");
+    public static final ModelLayerLocation CHARRED_SKELETON_INNER_ARMOR = register("charred_skeleton_inner_armor");
+    public static final ModelLayerLocation HOST_OUTER_ARMOR = register("host_outer_armor");
+    public static final ModelLayerLocation HOST_INNER_ARMOR = register("host_inner_armor");
+    public static final ModelLayerLocation MOSSY_ZOMBIE_OUTER_ARMOR = register("mossy_zombie_outer_armor");
+    public static final ModelLayerLocation MOSSY_ZOMBIE_INNER_ARMOR = register("mossy_zombie_inner_armor");
+    public static final ModelLayerLocation SKELETON_FIGHTER_OUTER_ARMOR = register("skeleton_fighter_outer_armor");
+    public static final ModelLayerLocation SKELETON_FIGHTER_INNER_ARMOR = register("skeleton_fighter_inner_armor");
+    public static final ModelLayerLocation TOXIC_ZOMBIE_OUTER_ARMOR = register("toxic_zombie_outer_armor");
+    public static final ModelLayerLocation TOXIC_ZOMBIE_INNER_ARMOR = register("toxic_zombie_inner_armor");
+    public static final ModelLayerLocation ZOMBIFIED_MINER_OUTER_ARMOR = register("zombified_miner_outer_armor");
+    public static final ModelLayerLocation ZOMBIFIED_MINER_INNER_ARMOR = register("zombified_miner_inner_armor");
 
     private static ModelLayerLocation register(String name){
         return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, name), "main");
