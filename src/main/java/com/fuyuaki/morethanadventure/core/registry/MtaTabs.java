@@ -321,18 +321,114 @@ public class MtaTabs {
             .icon(MtaItems.NETHERSTEEL_PICKAXE.get()::getDefaultInstance)
             .displayItems((parameters, output) -> {
 
+
+                output.accept(MtaItems.WOOD_CLAW);
+                output.accept(MtaItems.WOOD_CLAYMORE);
+                output.accept(MtaItems.WOOD_CUTLASS);
+                output.accept(MtaItems.WOOD_DAGGER);
+                output.accept(MtaItems.WOOD_DOUBLE_AXE);
+                output.accept(MtaItems.WOOD_GLAIVE);
+                output.accept(MtaItems.WOOD_HALBERD);
+                output.accept(MtaItems.WOOD_KATANA);
+                output.accept(MtaItems.WOOD_SCYTHE);
+                output.accept(MtaItems.WOOD_SPEAR);
+                output.accept(MtaItems.WOOD_TWINBLADE);
+
+                output.accept(MtaItems.STONE_CLAW);
+                output.accept(MtaItems.STONE_CLAYMORE);
+                output.accept(MtaItems.STONE_CUTLASS);
+                output.accept(MtaItems.STONE_DAGGER);
+                output.accept(MtaItems.STONE_DOUBLE_AXE);
+                output.accept(MtaItems.STONE_GLAIVE);
+                output.accept(MtaItems.STONE_HALBERD);
+                output.accept(MtaItems.STONE_KATANA);
+                output.accept(MtaItems.STONE_SCYTHE);
+                output.accept(MtaItems.STONE_SPEAR);
+                output.accept(MtaItems.STONE_TWINBLADE);
+
                 output.accept(MtaItems.COPPER_SWORD);
                 output.accept(MtaItems.COPPER_PICKAXE);
                 output.accept(MtaItems.COPPER_AXE);
                 output.accept(MtaItems.COPPER_SHOVEL);
                 output.accept(MtaItems.COPPER_HOE);
+                output.accept(MtaItems.COPPER_CLAW);
+                output.accept(MtaItems.COPPER_CLAYMORE);
+                output.accept(MtaItems.COPPER_CUTLASS);
+                output.accept(MtaItems.COPPER_DAGGER);
+                output.accept(MtaItems.COPPER_DOUBLE_AXE);
+                output.accept(MtaItems.COPPER_GLAIVE);
+                output.accept(MtaItems.COPPER_HALBERD);
+                output.accept(MtaItems.COPPER_KATANA);
+                output.accept(MtaItems.COPPER_SCYTHE);
+                output.accept(MtaItems.COPPER_SPEAR);
+                output.accept(MtaItems.COPPER_TWINBLADE);
+
+                output.accept(MtaItems.IRON_CLAW);
+                output.accept(MtaItems.IRON_CLAYMORE);
+                output.accept(MtaItems.IRON_CUTLASS);
+                output.accept(MtaItems.IRON_DAGGER);
+                output.accept(MtaItems.IRON_DOUBLE_AXE);
+                output.accept(MtaItems.IRON_GLAIVE);
+                output.accept(MtaItems.IRON_HALBERD);
+                output.accept(MtaItems.IRON_KATANA);
+                output.accept(MtaItems.IRON_SCYTHE);
+                output.accept(MtaItems.IRON_SPEAR);
+                output.accept(MtaItems.IRON_TWINBLADE);
+
+                output.accept(MtaItems.GOLD_CLAW);
+                output.accept(MtaItems.GOLD_CLAYMORE);
+                output.accept(MtaItems.GOLD_CUTLASS);
+                output.accept(MtaItems.GOLD_DAGGER);
+                output.accept(MtaItems.GOLD_DOUBLE_AXE);
+                output.accept(MtaItems.GOLD_GLAIVE);
+                output.accept(MtaItems.GOLD_HALBERD);
+                output.accept(MtaItems.GOLD_KATANA);
+                output.accept(MtaItems.GOLD_SCYTHE);
+                output.accept(MtaItems.GOLD_SPEAR);
+                output.accept(MtaItems.GOLD_TWINBLADE);
+
                 output.accept(MtaItems.NETHERSTEEL_SWORD);
                 output.accept(MtaItems.NETHERSTEEL_PICKAXE);
                 output.accept(MtaItems.NETHERSTEEL_AXE);
                 output.accept(MtaItems.NETHERSTEEL_SHOVEL);
                 output.accept(MtaItems.NETHERSTEEL_HOE);
+                output.accept(MtaItems.NETHERSTEEL_CLAW);
+                output.accept(MtaItems.NETHERSTEEL_CLAYMORE);
+                output.accept(MtaItems.NETHERSTEEL_CUTLASS);
+                output.accept(MtaItems.NETHERSTEEL_DAGGER);
+                output.accept(MtaItems.NETHERSTEEL_DOUBLE_AXE);
+                output.accept(MtaItems.NETHERSTEEL_GLAIVE);
+                output.accept(MtaItems.NETHERSTEEL_HALBERD);
+                output.accept(MtaItems.NETHERSTEEL_KATANA);
+                output.accept(MtaItems.NETHERSTEEL_SCYTHE);
+                output.accept(MtaItems.NETHERSTEEL_SPEAR);
+                output.accept(MtaItems.NETHERSTEEL_TWINBLADE);
+
+                output.accept(MtaItems.DIAMOND_CLAW);
+                output.accept(MtaItems.DIAMOND_CLAYMORE);
+                output.accept(MtaItems.DIAMOND_CUTLASS);
+                output.accept(MtaItems.DIAMOND_DAGGER);
+                output.accept(MtaItems.DIAMOND_DOUBLE_AXE);
+                output.accept(MtaItems.DIAMOND_GLAIVE);
+                output.accept(MtaItems.DIAMOND_HALBERD);
+                output.accept(MtaItems.DIAMOND_KATANA);
+                output.accept(MtaItems.DIAMOND_SCYTHE);
+                output.accept(MtaItems.DIAMOND_SPEAR);
+                output.accept(MtaItems.DIAMOND_TWINBLADE);
+
                 output.accept(MtaItems.NETHERITE_TRIDENT);
                 output.accept(MtaItems.NETHERITE_BOW);
+                output.accept(MtaItems.NETHERITE_CLAW);
+                output.accept(MtaItems.NETHERITE_CLAYMORE);
+                output.accept(MtaItems.NETHERITE_CUTLASS);
+                output.accept(MtaItems.NETHERITE_DAGGER);
+                output.accept(MtaItems.NETHERITE_DOUBLE_AXE);
+                output.accept(MtaItems.NETHERITE_GLAIVE);
+                output.accept(MtaItems.NETHERITE_HALBERD);
+                output.accept(MtaItems.NETHERITE_KATANA);
+                output.accept(MtaItems.NETHERITE_SCYTHE);
+                output.accept(MtaItems.NETHERITE_SPEAR);
+                output.accept(MtaItems.NETHERITE_TWINBLADE);
 
 
 

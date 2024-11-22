@@ -110,10 +110,6 @@ public class MtaItems {
 
 
     //WEAPONS
-    public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword", () -> new SwordItem(MTAToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.COPPER, 3.0F, -2.4F))));
-    public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.register("nethersteel_sword", () -> new SwordItem(MTAToolTiers.NETHERSTEEL, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.NETHERSTEEL, 3.0F, -2.4F))));
-    public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.register("netherite_trident", () -> new NetheriteTridentItem( new Item.Properties().durability(2031).attributes(NetheriteTridentItem.createAttributes()).component(DataComponents.TOOL, NetheriteTridentItem.createToolProperties())));
-    public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.register("netherite_bow", () -> new NetheriteBowItem( new Item.Properties().durability(2031)));
 
     //SPECIAL WEAPONS
     public static final DeferredItem<SentinelsWarHammerItem> GREAT_SENTINELS_WAR_HAMMER = ITEMS.register("great_sentinels_war_hammer",
@@ -153,6 +149,373 @@ public class MtaItems {
             ));
     public static final DeferredItem<RogueDaggerItem> SHADOW_ROGUES_DAGGER = ITEMS.register("shadow_rogues_dagger",
             () -> new RogueDaggerItem(MTAToolTiers.MOONSTONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_CLAW = ITEMS.register("wood_claw",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_CLAYMORE = ITEMS.register("wood_claymore",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_CUTLASS = ITEMS.register("wood_cutlass",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_DAGGER = ITEMS.register("wood_dagger",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_DOUBLE_AXE = ITEMS.register("wood_double_axe",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_GLAIVE = ITEMS.register("wood_glaive",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_HALBERD = ITEMS.register("wood_halberd",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_KATANA = ITEMS.register("wood_katana",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_SCYTHE = ITEMS.register("wood_scythe",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_SPEAR = ITEMS.register("wood_spear",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> WOOD_TWINBLADE = ITEMS.register("wood_twinblade",
+            () -> new SwordItem(Tiers.WOOD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_CLAW = ITEMS.register("stone_claw",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_CLAYMORE = ITEMS.register("stone_claymore",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_CUTLASS = ITEMS.register("stone_cutlass",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_DAGGER = ITEMS.register("stone_dagger",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_DOUBLE_AXE = ITEMS.register("stone_double_axe",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_GLAIVE = ITEMS.register("stone_glaive",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_HALBERD = ITEMS.register("stone_halberd",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_KATANA = ITEMS.register("stone_katana",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_SCYTHE = ITEMS.register("stone_scythe",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_SPEAR = ITEMS.register("stone_spear",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> STONE_TWINBLADE = ITEMS.register("stone_twinblade",
+            () -> new SwordItem(Tiers.STONE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.COPPER, 3.0F, -2.4F))));
+
+    public static final DeferredItem<SwordItem> COPPER_CLAW = ITEMS.register("copper_claw",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_CLAYMORE = ITEMS.register("copper_claymore",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_CUTLASS = ITEMS.register("copper_cutlass",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_DAGGER = ITEMS.register("copper_dagger",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_DOUBLE_AXE = ITEMS.register("copper_double_axe",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_GLAIVE = ITEMS.register("copper_glaive",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_HALBERD = ITEMS.register("copper_halberd",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_KATANA = ITEMS.register("copper_katana",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_SCYTHE = ITEMS.register("copper_scythe",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_SPEAR = ITEMS.register("copper_spear",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> COPPER_TWINBLADE = ITEMS.register("copper_twinblade",
+            () -> new SwordItem(MTAToolTiers.COPPER,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_CLAW = ITEMS.register("iron_claw",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_CLAYMORE = ITEMS.register("iron_claymore",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_CUTLASS = ITEMS.register("iron_cutlass",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_DAGGER = ITEMS.register("iron_dagger",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_DOUBLE_AXE = ITEMS.register("iron_double_axe",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_GLAIVE = ITEMS.register("iron_glaive",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_HALBERD = ITEMS.register("iron_halberd",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_KATANA = ITEMS.register("iron_katana",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_SCYTHE = ITEMS.register("iron_scythe",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_SPEAR = ITEMS.register("iron_spear",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> IRON_TWINBLADE = ITEMS.register("iron_twinblade",
+            () -> new SwordItem(Tiers.IRON,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_CLAW = ITEMS.register("gold_claw",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_CLAYMORE = ITEMS.register("gold_claymore",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_CUTLASS = ITEMS.register("gold_cutlass",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_DAGGER = ITEMS.register("gold_dagger",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_DOUBLE_AXE = ITEMS.register("gold_double_axe",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_GLAIVE = ITEMS.register("gold_glaive",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_HALBERD = ITEMS.register("gold_halberd",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_KATANA = ITEMS.register("gold_katana",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_SCYTHE = ITEMS.register("gold_scythe",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_SPEAR = ITEMS.register("gold_spear",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> GOLD_TWINBLADE = ITEMS.register("gold_twinblade",
+            () -> new SwordItem(Tiers.GOLD,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.register("nethersteel_sword",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.NETHERSTEEL, 3.0F, -2.4F))));
+
+    public static final DeferredItem<SwordItem> NETHERSTEEL_CLAW = ITEMS.register("nethersteel_claw",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_CLAYMORE = ITEMS.register("nethersteel_claymore",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_CUTLASS = ITEMS.register("nethersteel_cutlass",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_DAGGER = ITEMS.register("nethersteel_dagger",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_DOUBLE_AXE = ITEMS.register("nethersteel_double_axe",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_GLAIVE = ITEMS.register("nethersteel_glaive",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_HALBERD = ITEMS.register("nethersteel_halberd",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_KATANA = ITEMS.register("nethersteel_katana",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_SCYTHE = ITEMS.register("nethersteel_scythe",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_SPEAR = ITEMS.register("nethersteel_spear",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERSTEEL_TWINBLADE = ITEMS.register("nethersteel_twinblade",
+            () -> new SwordItem(MTAToolTiers.NETHERSTEEL,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_CLAW = ITEMS.register("diamond_claw",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_CLAYMORE = ITEMS.register("diamond_claymore",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_CUTLASS = ITEMS.register("diamond_cutlass",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_DAGGER = ITEMS.register("diamond_dagger",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_DOUBLE_AXE = ITEMS.register("diamond_double_axe",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_GLAIVE = ITEMS.register("diamond_glaive",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_HALBERD = ITEMS.register("diamond_halberd",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_KATANA = ITEMS.register("diamond_katana",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_SCYTHE = ITEMS.register("diamond_scythe",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_SPEAR = ITEMS.register("diamond_spear",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> DIAMOND_TWINBLADE = ITEMS.register("diamond_twinblade",
+            () -> new SwordItem(Tiers.DIAMOND,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.register("netherite_trident",
+            () -> new NetheriteTridentItem(
+                    new Item.Properties().durability(2031).attributes(NetheriteTridentItem.createAttributes()).component(DataComponents.TOOL, NetheriteTridentItem.createToolProperties())));
+    public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.register("netherite_bow",
+            () -> new NetheriteBowItem(
+                    new Item.Properties().durability(2031)));
+
+    public static final DeferredItem<SwordItem> NETHERITE_CLAW = ITEMS.register("netherite_claw",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_CLAYMORE = ITEMS.register("netherite_claymore",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_CUTLASS = ITEMS.register("netherite_cutlass",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_DAGGER = ITEMS.register("netherite_dagger",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_DOUBLE_AXE = ITEMS.register("netherite_double_axe",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_GLAIVE = ITEMS.register("netherite_glaive",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_HALBERD = ITEMS.register("netherite_halberd",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_KATANA = ITEMS.register("netherite_katana",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_SCYTHE = ITEMS.register("netherite_scythe",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_SPEAR = ITEMS.register("netherite_spear",
+            () -> new SwordItem(Tiers.NETHERITE,
+                    new Item.Properties()
+            ));
+    public static final DeferredItem<SwordItem> NETHERITE_TWINBLADE = ITEMS.register("netherite_twinblade",
+            () -> new SwordItem(Tiers.NETHERITE,
                     new Item.Properties()
             ));
 
