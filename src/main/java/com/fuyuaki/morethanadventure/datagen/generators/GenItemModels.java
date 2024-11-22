@@ -125,13 +125,109 @@ public class GenItemModels extends ItemModelProvider {
 
         handheldItem(MtaItems.COPPER_SWORD);
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
+
+        /*handheldItem(MtaItems.WOOD_CLAW);
+        handheldBigItem(MtaItems.WOOD_CLAYMORE);
+        handheldItem(MtaItems.WOOD_CUTLASS);
+        handheldItem(MtaItems.WOOD_DAGGER);
+        handheldBigItem(MtaItems.WOOD_DOUBLE_AXE);
+        handheldItem(MtaItems.WOOD_GLAIVE);
+        handheldBigItem(MtaItems.WOOD_HALBERD);
+        handheldItem(MtaItems.WOOD_KATANA);
+        handheldBigItem(MtaItems.WOOD_SCYTHE);
+        handheldBigItem(MtaItems.WOOD_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.WOOD_TWINBLADE);
+
+        handheldItem(MtaItems.STONE_CLAW);
+        handheldBigItem(MtaItems.STONE_CLAYMORE);
+        handheldItem(MtaItems.STONE_CUTLASS);
+        handheldItem(MtaItems.STONE_DAGGER);
+        handheldBigItem(MtaItems.STONE_DOUBLE_AXE);
+        handheldItem(MtaItems.STONE_GLAIVE);
+        handheldBigItem(MtaItems.STONE_HALBERD);
+        handheldItem(MtaItems.STONE_KATANA);
+        handheldBigItem(MtaItems.STONE_SCYTHE);
+        handheldBigItem(MtaItems.STONE_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.STONE_TWINBLADE);
+
+        handheldItem(MtaItems.COPPER_CLAW);
+        handheldBigItem(MtaItems.COPPER_CLAYMORE);
+        handheldItem(MtaItems.COPPER_CUTLASS);
+        handheldItem(MtaItems.COPPER_DAGGER);
+        handheldBigItem(MtaItems.COPPER_DOUBLE_AXE);
+        handheldItem(MtaItems.COPPER_GLAIVE);
+        handheldBigItem(MtaItems.COPPER_HALBERD);
+        handheldItem(MtaItems.COPPER_KATANA);
+        handheldBigItem(MtaItems.COPPER_SCYTHE);
+        handheldBigItem(MtaItems.COPPER_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);
+
+        handheldItem(MtaItems.IRON_CLAW);
+        handheldBigItem(MtaItems.IRON_CLAYMORE);
+        handheldItem(MtaItems.IRON_CUTLASS);
+        handheldItem(MtaItems.IRON_DAGGER);
+        handheldBigItem(MtaItems.IRON_DOUBLE_AXE);
+        handheldItem(MtaItems.IRON_GLAIVE);
+        handheldBigItem(MtaItems.IRON_HALBERD);
+        handheldItem(MtaItems.IRON_KATANA);
+        handheldBigItem(MtaItems.IRON_SCYTHE);
+        handheldBigItem(MtaItems.IRON_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.IRON_TWINBLADE);
+
+        handheldItem(MtaItems.GOLD_CLAW);
+        handheldBigItem(MtaItems.GOLD_CLAYMORE);
+        handheldItem(MtaItems.GOLD_CUTLASS);
+        handheldItem(MtaItems.GOLD_DAGGER);
+        handheldBigItem(MtaItems.GOLD_DOUBLE_AXE);
+        handheldItem(MtaItems.GOLD_GLAIVE);
+        handheldBigItem(MtaItems.GOLD_HALBERD);
+        handheldItem(MtaItems.GOLD_KATANA);
+        handheldBigItem(MtaItems.GOLD_SCYTHE);
+        handheldBigItem(MtaItems.GOLD_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.GOLD_TWINBLADE);
+
+        handheldItem(MtaItems.NETHERSTEEL_CLAW);
+        handheldBigItem(MtaItems.NETHERSTEEL_CLAYMORE);
+        handheldItem(MtaItems.NETHERSTEEL_CUTLASS);
+        handheldItem(MtaItems.NETHERSTEEL_DAGGER);
+        handheldBigItem(MtaItems.NETHERSTEEL_DOUBLE_AXE);
+        handheldItem(MtaItems.NETHERSTEEL_GLAIVE);
+        handheldBigItem(MtaItems.NETHERSTEEL_HALBERD);
+        handheldItem(MtaItems.NETHERSTEEL_KATANA);
+        handheldBigItem(MtaItems.NETHERSTEEL_SCYTHE);
+        handheldBigItem(MtaItems.NETHERSTEEL_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.NETHERSTEEL_TWINBLADE);
+
+        handheldItem(MtaItems.DIAMOND_CLAW);
+        handheldBigItem(MtaItems.DIAMOND_CLAYMORE);
+        handheldItem(MtaItems.DIAMOND_CUTLASS);
+        handheldItem(MtaItems.DIAMOND_DAGGER);
+        handheldBigItem(MtaItems.DIAMOND_DOUBLE_AXE);
+        handheldItem(MtaItems.DIAMOND_GLAIVE);
+        handheldBigItem(MtaItems.DIAMOND_HALBERD);
+        handheldItem(MtaItems.DIAMOND_KATANA);
+        handheldBigItem(MtaItems.DIAMOND_SCYTHE);
+        handheldBigItem(MtaItems.DIAMOND_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);
+
+        handheldItem(MtaItems.NETHERITE_CLAW);
+        handheldBigItem(MtaItems.NETHERITE_CLAYMORE);
+        handheldItem(MtaItems.NETHERITE_CUTLASS);
+        handheldItem(MtaItems.NETHERITE_DAGGER);
+        handheldBigItem(MtaItems.NETHERITE_DOUBLE_AXE);
+        handheldItem(MtaItems.NETHERITE_GLAIVE);
+        handheldBigItem(MtaItems.NETHERITE_HALBERD);
+        handheldItem(MtaItems.NETHERITE_KATANA);
+        handheldBigItem(MtaItems.NETHERITE_SCYTHE);
+        handheldBigItem(MtaItems.NETHERITE_SPEAR);
+        handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
         
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
         handheldBigItemMediumHilt(MtaItems.SILENT_REAPERS_SCYTHE);
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         handheldBigItemMediumHilt(MtaItems.FREEZING_ICICLE_SPEAR);
-        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
+        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);*/
 
         //TOOLS
 

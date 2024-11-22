@@ -386,6 +386,102 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.NETHERSTEEL_SWORD.get(), "Nethersteel Sword");
         add(MtaItems.NETHERITE_TRIDENT.get(), "Netherite Trident");
         add(MtaItems.NETHERITE_BOW.get(), "Netherite Bow");
+
+        add(MtaItems.WOOD_CLAW.get(),"Wood Claw");
+        add(MtaItems.WOOD_CLAYMORE.get(),"Wood Claymore");
+        add(MtaItems.WOOD_CUTLASS.get(),"Wood Cutlass");
+        add(MtaItems.WOOD_DAGGER.get(),"Wood Dagger");
+        add(MtaItems.WOOD_DOUBLE_AXE.get(),"Wood Double Axe");
+        add(MtaItems.WOOD_GLAIVE.get(),"Wood Glaive");
+        add(MtaItems.WOOD_HALBERD.get(),"Wood Halberd");
+        add(MtaItems.WOOD_KATANA.get(),"Wood Katana");
+        add(MtaItems.WOOD_SCYTHE.get(),"Woods Scythe");
+        add(MtaItems.WOOD_SPEAR.get(),"Wood Spear");
+        add(MtaItems.WOOD_TWINBLADE.get(),"Wood Twinblade");
+
+        add(MtaItems.STONE_CLAW.get(),"Stone Claw");
+        add(MtaItems.STONE_CLAYMORE.get(),"Stone Claymore");
+        add(MtaItems.STONE_CUTLASS.get(),"Stone Cutlass");
+        add(MtaItems.STONE_DAGGER.get(),"Stone Dagger");
+        add(MtaItems.STONE_DOUBLE_AXE.get(),"Stone Double Axe");
+        add(MtaItems.STONE_GLAIVE.get(),"Stone Glaive");
+        add(MtaItems.STONE_HALBERD.get(),"Stone Halberd");
+        add(MtaItems.STONE_KATANA.get(),"Stone Katana");
+        add(MtaItems.STONE_SCYTHE.get(),"Stone Scythe");
+        add(MtaItems.STONE_SPEAR.get(),"Stone Spear");
+        add(MtaItems.STONE_TWINBLADE.get(),"Stone Twinblade");
+
+        add(MtaItems.COPPER_CLAW.get(),"Copper Claw");
+        add(MtaItems.COPPER_CLAYMORE.get(),"Copper Claymore");
+        add(MtaItems.COPPER_CUTLASS.get(),"Copper Cutlass");
+        add(MtaItems.COPPER_DAGGER.get(),"Copper Dagger");
+        add(MtaItems.COPPER_DOUBLE_AXE.get(),"Copper Double Axe");
+        add(MtaItems.COPPER_GLAIVE.get(),"Copper Glaive");
+        add(MtaItems.COPPER_HALBERD.get(),"Copper Halberd");
+        add(MtaItems.COPPER_KATANA.get(),"Copper Katana");
+        add(MtaItems.COPPER_SCYTHE.get(),"Copper Scythe");
+        add(MtaItems.COPPER_SPEAR.get(),"Copper Spear");
+        add(MtaItems.COPPER_TWINBLADE.get(),"Copper Twinblade");
+
+        add(MtaItems.IRON_CLAW.get(),"Iron Claw");
+        add(MtaItems.IRON_CLAYMORE.get(),"Iron Claymore");
+        add(MtaItems.IRON_CUTLASS.get(),"Iron Cutlass");
+        add(MtaItems.IRON_DAGGER.get(),"Iron Dagger");
+        add(MtaItems.IRON_DOUBLE_AXE.get(),"Iron Double Axe");
+        add(MtaItems.IRON_GLAIVE.get(),"Iron Glaive");
+        add(MtaItems.IRON_HALBERD.get(),"Iron Halberd");
+        add(MtaItems.IRON_KATANA.get(),"Iron Katana");
+        add(MtaItems.IRON_SCYTHE.get(),"Iron Scythe");
+        add(MtaItems.IRON_SPEAR.get(),"Iron Spear");
+        add(MtaItems.IRON_TWINBLADE.get(),"Iron Twinblade");
+
+        add(MtaItems.GOLD_CLAW.get(),"Gold Claw");
+        add(MtaItems.GOLD_CLAYMORE.get(),"Gold Claymore");
+        add(MtaItems.GOLD_CUTLASS.get(),"Gold Cutlass");
+        add(MtaItems.GOLD_DAGGER.get(),"Gold Dagger");
+        add(MtaItems.GOLD_DOUBLE_AXE.get(),"Gold Double Axe");
+        add(MtaItems.GOLD_GLAIVE.get(),"Gold Glaive");
+        add(MtaItems.GOLD_HALBERD.get(),"Gold Halberd");
+        add(MtaItems.GOLD_SCYTHE.get(),"Gold Scythe");
+        add(MtaItems.GOLD_SPEAR.get(),"Gold Spear");
+        add(MtaItems.GOLD_TWINBLADE.get(),"Gold Twinblade");
+
+        add(MtaItems.NETHERSTEEL_CLAW.get(),"Nethersteel Claw");
+        add(MtaItems.NETHERSTEEL_CLAYMORE.get(),"Nethersteel Claymore");
+        add(MtaItems.NETHERSTEEL_CUTLASS.get(),"Nethersteel Cutlass");
+        add(MtaItems.NETHERSTEEL_DAGGER.get(),"Nethersteel Dagger");
+        add(MtaItems.NETHERSTEEL_DOUBLE_AXE.get(),"Nethersteel Double Axe");
+        add(MtaItems.NETHERSTEEL_GLAIVE.get(),"Nethersteel Glaive");
+        add(MtaItems.NETHERSTEEL_HALBERD.get(),"Nethersteel Halberd");
+        add(MtaItems.NETHERSTEEL_KATANA.get(),"Nethersteel Katana");
+        add(MtaItems.NETHERSTEEL_SCYTHE.get(),"Nethersteel Scythe");
+        add(MtaItems.NETHERSTEEL_SPEAR.get(),"Nethersteel Spear");
+        add(MtaItems.NETHERSTEEL_TWINBLADE.get(),"Nethersteel Twinblade");
+
+        add(MtaItems.DIAMOND_CLAW.get(),"Diamond Claw");
+        add(MtaItems.DIAMOND_CLAYMORE.get(),"Diamond Claymore");
+        add(MtaItems.DIAMOND_CUTLASS.get(),"Diamond Cutlass");
+        add(MtaItems.DIAMOND_DAGGER.get(),"Diamond Dagger");
+        add(MtaItems.DIAMOND_DOUBLE_AXE.get(),"Diamond Double Axe");
+        add(MtaItems.DIAMOND_GLAIVE.get(),"Diamond Glaive");
+        add(MtaItems.DIAMOND_HALBERD.get(),"Diamond Halberd");
+        add(MtaItems.DIAMOND_KATANA.get(),"DIamond Katana");
+        add(MtaItems.DIAMOND_SCYTHE.get(),"Diamond Scythe");
+        add(MtaItems.DIAMOND_SPEAR.get(),"Diamond Spear");
+        add(MtaItems.DIAMOND_TWINBLADE.get(),"Diamond Twinblade");
+
+        add(MtaItems.NETHERITE_CLAW.get(),"Netherite Claw");
+        add(MtaItems.NETHERITE_CLAYMORE.get(),"Netherite Claymore");
+        add(MtaItems.NETHERITE_CUTLASS.get(),"Netherite Cutlass");
+        add(MtaItems.NETHERITE_DAGGER.get(),"Netherite Dagger");
+        add(MtaItems.NETHERITE_DOUBLE_AXE.get(),"Netherite Double Axe");
+        add(MtaItems.NETHERITE_GLAIVE.get(),"Netherite Glaive");
+        add(MtaItems.NETHERITE_HALBERD.get(),"Netherite Halberd");
+        add(MtaItems.NETHERITE_KATANA.get(),"Netherite Katana");
+        add(MtaItems.NETHERITE_SCYTHE.get(),"Netherite Scythe");
+        add(MtaItems.NETHERITE_SPEAR.get(),"Netherite Spear");
+        add(MtaItems.NETHERITE_TWINBLADE.get(),"Netherite Twinblade");
+
         add(MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(), "Great Sentinel's War Hammer");
         add(MtaItems.HOLY_KNIGHTS_GREATSWORD.get(), "Holy Knight's Greatsword");
         add(MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(), "Mystic Mermaid's Trident");
