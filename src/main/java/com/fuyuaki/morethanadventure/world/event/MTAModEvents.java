@@ -39,7 +39,7 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.BLACK_WIDOW.get(), BlackWidow.createAttributes().build());
         event.put(MtaEntityTypes.CHARRED_SKELETON.get(), CharredSkeleton.createAttributes().build());
         event.put(MtaEntityTypes.CORROSIVE_CUBE.get(), CorrosiveCube.createAttributes().build());
-        event.put(MtaEntityTypes.FROZEN_SLIME.get(), FrozenSlime.createAttributes().build());
+        event.put(MtaEntityTypes.FROSTED_SLIME.get(), FrostedSlime.createAttributes().build());
         event.put(MtaEntityTypes.GLOW_SPIDER.get(), GlowSpider.createAttributes().build());
         event.put(MtaEntityTypes.HOST.get(), Host.createAttributes().build());
         event.put(MtaEntityTypes.MOSSY_ZOMBIE.get(), MossyZombie.createAttributes().build());

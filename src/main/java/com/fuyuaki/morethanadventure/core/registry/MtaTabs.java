@@ -481,7 +481,7 @@ public class MtaTabs {
                 output.accept(MtaItems.BLACK_WIDOW_SPAWN_EGG);
                 output.accept(MtaItems.CHARRED_SKELETON_SPAWN_EGG);
                 output.accept(MtaItems.CORROSIVE_CUBE_SPAWN_EGG);
-                output.accept(MtaItems.FROZEN_SLIME_SPAWN_EGG);
+                output.accept(MtaItems.FROSTED_SLIME_SPAWN_EGG);
                 output.accept(MtaItems.GLOW_SPIDER_SPAWN_EGG);
                 output.accept(MtaItems.HOST_SPAWN_EGG);
                 output.accept(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG);

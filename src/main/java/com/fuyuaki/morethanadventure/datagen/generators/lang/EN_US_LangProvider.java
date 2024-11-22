@@ -435,7 +435,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.BLACK_WIDOW_SPAWN_EGG.get(),"Black Widow Spawn Egg");
         add(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get(),"Charred Skeleton Spawn Egg");
         add(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get(),"Corrosive Cube Spawn Egg");
-        add(MtaItems.FROZEN_SLIME_SPAWN_EGG.get(),"Frozen Slime Spawn Egg");
+        add(MtaItems.FROSTED_SLIME_SPAWN_EGG.get(),"Frosted Slime Spawn Egg");
         add(MtaItems.GLOW_SPIDER_SPAWN_EGG.get(),"Glow Spider Spawn Egg");
         add(MtaItems.HOST_SPAWN_EGG.get(),"Host Spawn Egg");
         add(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get(),"Mossy Zombie Spawn Egg");
@@ -467,7 +467,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.BLACK_WIDOW.get(),"Black Widow");
         add(MtaEntityTypes.CHARRED_SKELETON.get(),"Charred Skeleton");
         add(MtaEntityTypes.CORROSIVE_CUBE.get(),"Corrosive Cube");
-        add(MtaEntityTypes.FROZEN_SLIME.get(),"Frozen Slime");
+        add(MtaEntityTypes.FROSTED_SLIME.get(),"Frosted Slime");
         add(MtaEntityTypes.GLOW_SPIDER.get(),"Glow Spider");
         add(MtaEntityTypes.HOST.get(),"Host");
         add(MtaEntityTypes.MOSSY_ZOMBIE.get(),"Mossy Zombie");
@@ -509,6 +509,12 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("itemGroup.mtamisc","MTA: Foods, Spawns & Miscellaneous");
 
         add("mtadesc.corestone.hover","Press SHIFT to See Details");
+
+        // KEYBINDS
+        add("key.categories.morethanadventure","More Than Adventure");
+        add("key.mta.skill_use", "Use Skill");
+        add("key.mta.skill_cycle", "Cycle Skills");
+
 
     }
 

@@ -257,8 +257,8 @@ public class MtaItems {
     public static final DeferredItem<Item> CORROSIVE_CUBE_SPAWN_EGG =  ITEMS.register("corrosive_cube_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.CORROSIVE_CUBE::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
 
-    public static final DeferredItem<Item> FROZEN_SLIME_SPAWN_EGG =  ITEMS.register("frozen_slime_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.FROZEN_SLIME::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+    public static final DeferredItem<Item> FROSTED_SLIME_SPAWN_EGG =  ITEMS.register("frosted_slime_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.FROSTED_SLIME::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
 
     public static final DeferredItem<Item> GLOW_SPIDER_SPAWN_EGG =  ITEMS.register("glow_spider_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.GLOW_SPIDER::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
@@ -273,10 +273,10 @@ public class MtaItems {
             () -> new DeferredSpawnEggItem(MtaEntityTypes.SKELETON_FIGHTER::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
 
     public static final DeferredItem<Item> TOXIC_ZOMBIE_SPAWN_EGG =  ITEMS.register("toxic_zombie_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.TOXIC_ZOMBIE::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.TOXIC_ZOMBIE::get,44975,0x47a80a,new Item.Properties()));
 
     public static final DeferredItem<Item> ZOMBIFIED_MINER_SPAWN_EGG =  ITEMS.register("zombified_miner_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.ZOMBIFIED_MINER::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.ZOMBIFIED_MINER::get,44975,0x24201d,new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

@@ -1,31 +1,24 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
-import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
-import com.fuyuaki.morethanadventure.game.client.model.entity.BlackWidowModel;
-import com.fuyuaki.morethanadventure.game.client.model.entity.FrozenSlimeModel;
-import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
-import com.fuyuaki.morethanadventure.world.entity.FrozenSlime;
+import com.fuyuaki.morethanadventure.game.client.model.entity.FrostedSlimeModel;
+import com.fuyuaki.morethanadventure.world.entity.FrostedSlime;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.model.SlimeModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MagmaCubeRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.SlimeRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.monster.Slime;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class FrozenSlimeRenderer extends MobRenderer<FrozenSlime, FrozenSlimeModel<FrozenSlime>> {
+public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlimeModel<FrostedSlime>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/frozen_slime.png");
 
-    public FrozenSlimeRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new FrozenSlimeModel<>(pContext.bakeLayer(MTAModelLayers.FROZEN_SLIME)), .5F);
+    public FrostedSlimeRenderer(EntityRendererProvider.Context pContext) {
+        super(pContext,new FrostedSlimeModel<>(pContext.bakeLayer(MTAModelLayers.FROZEN_SLIME)), .5F);
     }
 
-    protected void scale(FrozenSlime livingEntity, PoseStack poseStack, float partialTickTime) {
+    protected void scale(FrostedSlime livingEntity, PoseStack poseStack, float partialTickTime) {
         float f = 0.999F;
         poseStack.scale(0.999F, 0.999F, 0.999F);
         poseStack.translate(0.0F, 0.001F, 0.0F);
@@ -36,7 +29,7 @@ public class FrozenSlimeRenderer extends MobRenderer<FrozenSlime, FrozenSlimeMod
     }
 
     @Override
-    public ResourceLocation getTextureLocation(FrozenSlime entity) {
+    public ResourceLocation getTextureLocation(FrostedSlime entity) {
         return TEXTURE;
     }
 }

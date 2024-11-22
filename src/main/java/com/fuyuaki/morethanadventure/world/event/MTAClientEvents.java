@@ -14,10 +14,8 @@ import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
-import net.minecraft.client.particle.BubbleParticle;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.level.FoliageColor;
@@ -61,7 +59,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.BLACK_WIDOW.get(), BlackWidowRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CHARRED_SKELETON.get(), CharredSkeletonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CORROSIVE_CUBE.get(), CorrosiveCubeRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.FROZEN_SLIME.get(), FrozenSlimeRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.FROSTED_SLIME.get(), FrostedSlimeRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.GLOW_SPIDER.get(), GlowSpiderRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.HOST.get(), HostRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.MOSSY_ZOMBIE.get(), MossyZombieRenderer::new);
@@ -125,7 +123,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.DUCK, DuckModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.FROZEN_SLIME, FrozenSlimeModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.FROZEN_SLIME, FrostedSlimeModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, GlowSpiderModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
@@ -213,6 +211,14 @@ public class MTAClientEvents
                 MTAItemWithoutLevelRenderer.INSTANCE
         );
     }
+
+
+    @SubscribeEvent
+    public static void registerBindings(RegisterKeyMappingsEvent event) {
+        event.register(MTAKeybinds.SKILL_USE.get());
+        event.register(MTAKeybinds.SKILL_CYCLE.get());
+    }
+
 
 
 

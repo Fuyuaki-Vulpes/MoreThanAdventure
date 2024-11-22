@@ -58,11 +58,11 @@ public class MtaEntityTypes {
                     .sized(0.6F, 1.7F)
                     .spawnDimensionsScale(4.0F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"corrosive_cube").toString()));
-    public static final DeferredHolder<EntityType<?>,EntityType<FrozenSlime>> FROZEN_SLIME = ENTITY.register("frozen_slime",
-            () -> EntityType.Builder.<FrozenSlime>of(FrozenSlime::new, MobCategory.MONSTER)
+    public static final DeferredHolder<EntityType<?>,EntityType<FrostedSlime>> FROSTED_SLIME = ENTITY.register("frosted_slime",
+            () -> EntityType.Builder.<FrostedSlime>of(FrostedSlime::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.7F)
                     .spawnDimensionsScale(4.0F)
-                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"corrosive_cube").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"frosted_slime").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<GlowSpider>> GLOW_SPIDER = ENTITY.register("glow_spider",
             () -> EntityType.Builder.<GlowSpider>of(GlowSpider::new, MobCategory.MONSTER)

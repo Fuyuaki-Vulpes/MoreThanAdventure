@@ -1,6 +1,5 @@
 package com.fuyuaki.morethanadventure.datagen.generators;
 
-import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.data.PackOutput;
@@ -128,9 +127,9 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
-        handheldBigItem(MtaItems.SILENT_REAPERS_SCYTHE);
+        handheldBigItemMediumHilt(MtaItems.SILENT_REAPERS_SCYTHE);
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
-        handheldBigItem(MtaItems.FREEZING_ICICLE_SPEAR);
+        handheldBigItemMediumHilt(MtaItems.FREEZING_ICICLE_SPEAR);
         handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
 
         //TOOLS
@@ -200,7 +199,7 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
         spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());
         spawnEggItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.FROZEN_SLIME_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.FROSTED_SLIME_SPAWN_EGG.get());
         spawnEggItem(MtaItems.GLOW_SPIDER_SPAWN_EGG.get());
         spawnEggItem(MtaItems.HOST_SPAWN_EGG.get());
         spawnEggItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get());
@@ -224,7 +223,17 @@ public class GenItemModels extends ItemModelProvider {
 
     private ItemModelBuilder handheldBigItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big_low_hilt")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    }
+    private ItemModelBuilder handheldBigItemMediumHilt(DeferredItem<?> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big_medium_hilt")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    }
+    private ItemModelBuilder handheldBigItemMiddleHilt(DeferredItem<?> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big_middle_hilt")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
     }
     private ItemModelBuilder coreStoneItem(DeferredItem<?> item) {
