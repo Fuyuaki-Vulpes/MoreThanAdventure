@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/handheld_big_low_hilt",
+  "textures": {
+    "layer0": "morethanadventure:item/wood_spear"
+  }
+}

@@ -126,7 +126,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.COPPER_SWORD);
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
 
-        /*handheldItem(MtaItems.WOOD_CLAW);
+        handheldItem(MtaItems.WOOD_CLAW);
         handheldBigItem(MtaItems.WOOD_CLAYMORE);
         handheldItem(MtaItems.WOOD_CUTLASS);
         handheldItem(MtaItems.WOOD_DAGGER);
@@ -150,7 +150,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.STONE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.STONE_TWINBLADE);
 
-        handheldItem(MtaItems.COPPER_CLAW);
+        /*handheldItem(MtaItems.COPPER_CLAW);
         handheldBigItem(MtaItems.COPPER_CLAYMORE);
         handheldItem(MtaItems.COPPER_CUTLASS);
         handheldItem(MtaItems.COPPER_DAGGER);
@@ -160,7 +160,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.COPPER_KATANA);
         handheldBigItem(MtaItems.COPPER_SCYTHE);
         handheldBigItem(MtaItems.COPPER_SPEAR);
-        handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);
+        handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);*/
 
         handheldItem(MtaItems.IRON_CLAW);
         handheldBigItem(MtaItems.IRON_CLAYMORE);
@@ -186,7 +186,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.GOLD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.GOLD_TWINBLADE);
 
-        handheldItem(MtaItems.NETHERSTEEL_CLAW);
+        /*handheldItem(MtaItems.NETHERSTEEL_CLAW);
         handheldBigItem(MtaItems.NETHERSTEEL_CLAYMORE);
         handheldItem(MtaItems.NETHERSTEEL_CUTLASS);
         handheldItem(MtaItems.NETHERSTEEL_DAGGER);
@@ -208,7 +208,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.DIAMOND_KATANA);
         handheldBigItem(MtaItems.DIAMOND_SCYTHE);
         handheldBigItem(MtaItems.DIAMOND_SPEAR);
-        handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);
+        handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);*/
 
         handheldItem(MtaItems.NETHERITE_CLAW);
         handheldBigItem(MtaItems.NETHERITE_CLAYMORE);
@@ -227,7 +227,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItemMediumHilt(MtaItems.SILENT_REAPERS_SCYTHE);
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         handheldBigItemMediumHilt(MtaItems.FREEZING_ICICLE_SPEAR);
-        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);*/
+        handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);
 
         //TOOLS
 
