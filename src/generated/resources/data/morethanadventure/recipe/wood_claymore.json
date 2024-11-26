@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": {
+      "tag": "minecraft:planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "o  ",
+    " o ",
+    "  s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:wood_claymore"
+  }
+}

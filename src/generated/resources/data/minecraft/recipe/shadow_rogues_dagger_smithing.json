@@ -4,7 +4,7 @@
     "item": "morethanadventure:awakened_moonstone"
   },
   "base": {
-    "item": "minecraft:netherite_sword"
+    "item": "morethanadventure:netherite_dagger"
   },
   "result": {
     "count": 1,

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": {
+      "item": "minecraft:iron_ingot"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " oo",
+    " so",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:iron_katana"
+  }
+}

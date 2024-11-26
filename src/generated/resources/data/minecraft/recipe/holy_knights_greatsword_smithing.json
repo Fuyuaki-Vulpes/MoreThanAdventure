@@ -4,7 +4,7 @@
     "item": "morethanadventure:awakened_alexandrite"
   },
   "base": {
-    "item": "minecraft:netherite_sword"
+    "item": "morethanadventure:netherite_claymore"
   },
   "result": {
     "count": 1,

@@ -4,7 +4,7 @@
     "item": "morethanadventure:awakened_garnet"
   },
   "base": {
-    "item": "minecraft:netherite_axe"
+    "item": "morethanadventure:netherite_double_axe"
   },
   "result": {
     "count": 1,

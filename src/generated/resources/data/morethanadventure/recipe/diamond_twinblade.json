@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": {
+      "item": "minecraft:diamond"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  o",
+    " s ",
+    "o  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:diamond_twinblade"
+  }
+}

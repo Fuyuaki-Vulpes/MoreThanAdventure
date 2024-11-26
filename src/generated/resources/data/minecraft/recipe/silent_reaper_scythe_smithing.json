@@ -4,7 +4,7 @@
     "item": "morethanadventure:awakened_bloodstone"
   },
   "base": {
-    "item": "minecraft:netherite_hoe"
+    "item": "morethanadventure:netherite_scythe"
   },
   "result": {
     "count": 1,
