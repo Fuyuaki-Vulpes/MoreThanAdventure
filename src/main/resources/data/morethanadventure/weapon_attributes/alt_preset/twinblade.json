@@ -1,5 +1,5 @@
 {
-  "parent": "bettercombat:hammer",
+  "parent": "bettercombat:twinblade",
   "attributes": {
     "attack_range": 3.0,
     "two_handed": true

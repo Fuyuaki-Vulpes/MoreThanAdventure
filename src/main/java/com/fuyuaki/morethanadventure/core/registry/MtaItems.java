@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
 import com.fuyuaki.morethanadventure.world.item.*;
+import com.fuyuaki.morethanadventure.world.item.weaponry.KatanaItem;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -504,7 +505,7 @@ public class MtaItems {
             ));
     public static final DeferredItem<SwordItem> NETHERITE_KATANA = ITEMS.register("netherite_katana",
             () -> new SwordItem(Tiers.NETHERITE,
-                    new Item.Properties()
+                    new Item.Properties().attributes(KatanaItem.createAttributes(Tiers.NETHERITE))
             ));
     public static final DeferredItem<SwordItem> NETHERITE_SCYTHE = ITEMS.register("netherite_scythe",
             () -> new SwordItem(Tiers.NETHERITE,
