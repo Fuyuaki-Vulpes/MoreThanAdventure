@@ -55,14 +55,18 @@ public class ClawItem extends SwordItem {
                 .build();
     }
 
+
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.setPos(target.position());
+        target.setDeltaMovement(0,0,0);
         return true;
     }
 
     @Override
     public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+
     }
 
     @Override
