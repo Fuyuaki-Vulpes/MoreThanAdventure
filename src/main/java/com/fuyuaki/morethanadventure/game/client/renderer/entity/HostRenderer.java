@@ -18,16 +18,11 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class HostRenderer extends AbstractZombieRenderer<Host, HostModel<Host>> {
+public class HostRenderer extends MobRenderer<Host, HostModel<Host>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/host.png");
 
     public HostRenderer(EntityRendererProvider.Context context) {
-        super(
-                context,
-                new HostModel<>(context.bakeLayer(MTAModelLayers.HOST)),
-                new HostModel<>(context.bakeLayer(MTAModelLayers.HOST_INNER_ARMOR)),
-                new HostModel<>(context.bakeLayer(MTAModelLayers.HOST_OUTER_ARMOR))
-        );
+        super(context, new HostModel<>(context.bakeLayer(MTAModelLayers.HOST)), 1F);
     }
 
     @Override

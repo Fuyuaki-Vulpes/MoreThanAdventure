@@ -127,7 +127,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, GlowSpiderModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.HOST,() -> LayerDefinition.create(HostModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
+        event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, () -> LayerDefinition.create(MossyZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
