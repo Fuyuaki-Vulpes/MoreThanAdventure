@@ -16,6 +16,8 @@
     "VanillaEnchantmentProviderMixin"
   ],
   "client": [
+    "HumanoidModelMixin",
+    "PlayerRendererMixin"
   ],
   "server": [
   ],
