@@ -20,7 +20,7 @@ public class MtaItems {
     public static final DeferredItem<Item> BIG_BOWL = ITEMS.registerSimpleItem("big_bowl");
 
     public static final DeferredItem<Item> CLEAR_QUARTZ = ITEMS.registerSimpleItem("clear_quartz");
-    public static final DeferredItem<Item> NETHERITE_FRACTURE = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
+    public static final DeferredItem<Item> NETHERITE_FRACTURE = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties().fireResistant());
 
     public static final DeferredItem<Item> HOST_HUSK = ITEMS.registerSimpleItem("host_husk", new Item.Properties());
     public static final DeferredItem<Item> SAMURAI_CLOTH = ITEMS.registerSimpleItem("samurai_cloth", new Item.Properties());
