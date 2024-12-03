@@ -325,14 +325,14 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         upgradeTemplate(output, MtaItems.BERSERK_UPGRADE.get(), Blocks.ORANGE_TERRACOTTA, "has_berserk_upgrade");
         upgradeTemplate(output, MtaItems.FEATHERWEIGHT_UPGRADE.get(), Blocks.BLUE_TERRACOTTA, "has_featherweight_upgrade");
 
-        gemAwakening(output, MtaItems.AGATE.get(), Items.IRON_INGOT, Items.GHAST_TEAR, MtaItems.AWAKENED_AGATE.get(), "has_agate");
-        gemAwakening(output, MtaItems.ALEXANDRITE.get(), Items.STONE_SWORD, Items.GLISTERING_MELON_SLICE, MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
-        gemAwakening(output, MtaItems.AQUAMARINE.get(), Items.PRISMARINE_SHARD, Items.PUFFERFISH, MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
-        gemAwakening(output, MtaItems.BLOODSTONE.get(), Items.BONE, Items.FERMENTED_SPIDER_EYE, MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
-        gemAwakening(output, MtaItems.CELESTITE.get(), Items.FEATHER, Items.PHANTOM_MEMBRANE, MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
-        gemAwakening(output, MtaItems.CRYOLITE.get(), Items.SNOWBALL, Items.SNOWBALL, MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
-        gemAwakening(output, MtaItems.GARNET.get(), Items.STONE_AXE, Items.BLAZE_POWDER, MtaItems.AWAKENED_GARNET.get(), "has_garnet");
-        gemAwakening(output, MtaItems.MOONSTONE.get(), Items.LEATHER_BOOTS, Items.SUGAR, MtaItems.AWAKENED_MOONSTONE.get(), "has_moonstone");
+        gemAwakening(output, MtaItems.AGATE.get(), MtaItems.HOST_HUSK.get(), MtaItems.AWAKENED_AGATE.get(), "has_agate");
+        gemAwakening(output, MtaItems.ALEXANDRITE.get(), MtaItems.SAMURAI_CLOTH.get(), MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
+        //gemAwakening(output, MtaItems.AQUAMARINE.get(), MtaItems.PUFFERFISH.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
+        gemAwakening(output, MtaItems.BLOODSTONE.get(), MtaItems.BLACK_WIDOW_VENOM.get(), MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
+        //gemAwakening(output, MtaItems.CELESTITE.get(), MtaItems.PHANTOM_MEMBRANE.get(), MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
+        gemAwakening(output, MtaItems.CRYOLITE.get(), MtaItems.SPIRIT_DUST.get(), MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
+        gemAwakening(output, MtaItems.GARNET.get(), MtaItems.CHARRED_BONE.get(), MtaItems.AWAKENED_GARNET.get(), "has_garnet");
+        //gemAwakening(output, MtaItems.MOONSTONE.get(), MtaItems.SUGAR.get(), MtaItems.AWAKENED_MOONSTONE.get(), "has_moonstone");
 
         agateSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_HELMET.get());
         agateSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_CHESTPLATE.get());
@@ -546,16 +546,15 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .save(output);
     }
 
-    public static void gemAwakening(RecipeOutput output, Item gem, Item key, Item potion, Item result, String unlock) {
+    public static void gemAwakening(RecipeOutput output, Item gem, Item key, Item result, String unlock) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .define('g', gem)
                 .define('k', key)
-                .define('p', potion)
                 .define('n', Items.NETHERITE_SCRAP)
                 .define('l', Items.LAPIS_LAZULI)
                 .pattern("klk")
                 .pattern("ngn")
-                .pattern("kpk")
+                .pattern("klk")
                 .unlockedBy(unlock, has(gem))
                 .save(output);
     }

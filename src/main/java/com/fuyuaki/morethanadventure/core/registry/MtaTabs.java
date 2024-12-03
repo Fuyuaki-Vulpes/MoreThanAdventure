@@ -526,6 +526,14 @@ public class MtaTabs {
 
                 output.accept(MtaItems.CLEAR_QUARTZ);
                 output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.HOST_HUSK);
+                output.accept(MtaItems.SAMURAI_CLOTH);
+                //output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.BLACK_WIDOW_VENOM);
+                //output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.SPIRIT_DUST);
+                output.accept(MtaItems.CHARRED_BONE);
+                //output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.AGATE);
                 output.accept(MtaItems.ALEXANDRITE);
                 output.accept(MtaItems.AQUAMARINE);
