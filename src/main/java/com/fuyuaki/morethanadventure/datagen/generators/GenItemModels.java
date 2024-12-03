@@ -49,6 +49,15 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.CLEAR_QUARTZ);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
 
+        simpleItem(MtaItems.HOST_HUSK);
+        simpleItem(MtaItems.SAMURAI_CLOTH);
+        //simpleItem(MtaItems.HOST_HUSK);
+        simpleItem(MtaItems.BLACK_WIDOW_VENOM);
+        //simpleItem(MtaItems.HOST_HUSK);
+        simpleItem(MtaItems.SPIRIT_DUST);
+        simpleItem(MtaItems.CHARRED_BONE);
+        //simpleItem(MtaItems.HOST_HUSK);
+
         simpleItem(MtaItems.AGATE);
         simpleItem(MtaItems.ALEXANDRITE);
         simpleItem(MtaItems.AQUAMARINE);

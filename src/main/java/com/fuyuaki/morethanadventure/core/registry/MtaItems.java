@@ -20,7 +20,16 @@ public class MtaItems {
     public static final DeferredItem<Item> BIG_BOWL = ITEMS.registerSimpleItem("big_bowl");
 
     public static final DeferredItem<Item> CLEAR_QUARTZ = ITEMS.registerSimpleItem("clear_quartz");
-    public static final DeferredItem<Item> NETHERITE_FRACTURE = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> NETHERITE_FRACTURE = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
+
+    public static final DeferredItem<Item> HOST_HUSK = ITEMS.registerSimpleItem("host_husk", new Item.Properties());
+    public static final DeferredItem<Item> SAMURAI_CLOTH = ITEMS.registerSimpleItem("samurai_cloth", new Item.Properties());
+    //public static final DeferredItem<Item> WATER_SCOURCE = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
+    public static final DeferredItem<Item> BLACK_WIDOW_VENOM = ITEMS.registerSimpleItem("black_widow_venom", new Item.Properties());
+    //public static final DeferredItem<Item> FLYING_WING = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
+    public static final DeferredItem<Item> SPIRIT_DUST = ITEMS.registerSimpleItem("spirit_dust", new Item.Properties());
+    public static final DeferredItem<Item> CHARRED_BONE = ITEMS.registerSimpleItem("charred_bone", new Item.Properties());
+    //public static final DeferredItem<Item> SPEEDY_BOI = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
 
 
     //GEMS
