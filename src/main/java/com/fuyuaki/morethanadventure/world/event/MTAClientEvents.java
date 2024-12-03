@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.*;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
+import com.fuyuaki.morethanadventure.game.client.model.player.SirenModel;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.PoisonBubble;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
@@ -11,13 +12,17 @@ import com.fuyuaki.morethanadventure.game.client.particle.UnpoppableBubble;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
+import com.fuyuaki.morethanadventure.game.client.renderer.player.SirenRenderLayer;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
@@ -158,6 +163,9 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_INNER_ARMOR, () -> humanoidInnerArmor);
 
+
+        event.registerLayerDefinition(MTAModelLayers.SIREN_LAYER, SirenModel::createBodyLayer);
+
     }
     @SubscribeEvent
     public static void modelEvent(ModelEvent.RegisterAdditional event) {
@@ -219,6 +227,15 @@ public class MTAClientEvents
         event.register(MTAKeybinds.SKILL_CYCLE.get());
     }
 
+    @SubscribeEvent
+    public static void addLayer(final EntityRenderersEvent.AddLayers event) {
+        for(PlayerSkin.Model skin : event.getSkins()) {
+            LivingEntityRenderer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> renderer = event.getSkin(skin);
+            if(renderer != null) {
+                renderer.addLayer(new SirenRenderLayer<>(renderer,event.getContext()));
+            }
+        }
+    }
 
 
 

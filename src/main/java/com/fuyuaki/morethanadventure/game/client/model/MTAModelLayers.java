@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.game.client.model;
 
-import com.fuyuaki.morethanadventure.world.entity.ArmoredSkeleton;
-import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
@@ -63,6 +61,13 @@ public class MTAModelLayers {
     public static final ModelLayerLocation TOXIC_ZOMBIE_INNER_ARMOR = register("toxic_zombie_inner_armor");
     public static final ModelLayerLocation ZOMBIFIED_MINER_OUTER_ARMOR = register("zombified_miner_outer_armor");
     public static final ModelLayerLocation ZOMBIFIED_MINER_INNER_ARMOR = register("zombified_miner_inner_armor");
+
+
+
+
+    public static final ModelLayerLocation SIREN_LAYER = register("siren_tail");
+
+
 
     private static ModelLayerLocation register(String name){
         return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, name), "main");
