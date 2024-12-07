@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "morethanadventure:block/seawood_planks",
+    "side": "morethanadventure:block/seawood_planks",
+    "top": "morethanadventure:block/seawood_planks"
+  }
+}

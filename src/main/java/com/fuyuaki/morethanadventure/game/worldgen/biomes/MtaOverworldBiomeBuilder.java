@@ -86,8 +86,8 @@ public class MtaOverworldBiomeBuilder {
                 this.addSurfaceBiome(mapper, temperature, humidity, this.islandContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, islandBiomeMTA);
             }
 
-            this.addSurfaceBiome(mapper, temperature, this.FULL_RANGE, this.deepOceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, VanillaBiomeList.OCEANS[0][i]);
-            this.addSurfaceBiome(mapper, temperature, this.FULL_RANGE, this.oceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, VanillaBiomeList.OCEANS[1][i]);
+            this.addSurfaceBiome(mapper, temperature, this.FULL_RANGE, this.deepOceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, pickOceanBiomes(0,i));
+            this.addSurfaceBiome(mapper, temperature, this.FULL_RANGE, this.oceanContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, pickOceanBiomes(1,i));
         }
     }
 
@@ -488,5 +488,9 @@ public class MtaOverworldBiomeBuilder {
         return biomeOrFallback(MtaBiomeList.MTA_EXTREME_HILLS_BIOMES[temperatureIndex][humidityIndex], this.pickExtremeHillsBiomeVanilla(temperatureIndex, humidityIndex, weirdness), VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
     }
 
+    protected ResourceKey<Biome> pickOceanBiomes(int temperatureIndex, int humidityIndex) {
 
+        return biomeOrFallback(MtaBiomeList.MTA_OCEANS[temperatureIndex][humidityIndex],VanillaBiomeList.OCEANS[temperatureIndex][humidityIndex]);
+
+    }
 }

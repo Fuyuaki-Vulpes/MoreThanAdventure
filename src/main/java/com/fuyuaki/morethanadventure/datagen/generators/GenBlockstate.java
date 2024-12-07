@@ -54,6 +54,27 @@ public class GenBlockstate extends BlockStateProvider {
         blockItem(MtaBlocks.PALM_FENCE_GATE);
         blockItem(MtaBlocks.PALM_TRAPDOOR, "_bottom");
 
+        logBlock(((RotatedPillarBlock) MtaBlocks.SEALOG.get()));
+        axisBlock(((RotatedPillarBlock) MtaBlocks.SEAWOOD.get()), blockTexture(MtaBlocks.SEALOG.get()), blockTexture(MtaBlocks.SEALOG.get()));
+        blockItem(MtaBlocks.SEALOG);
+        blockItem(MtaBlocks.SEAWOOD);
+        blockWithItem(MtaBlocks.SEAWOOD_PLANKS);
+        leavesBlock(MtaBlocks.SEAWOOD_LEAVES);
+        saplingBlock(MtaBlocks.SEAWOOD_SAPLING);
+        stairsBlock(((StairBlock) MtaBlocks.SEAWOOD_STAIRS.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
+        slabBlock(((SlabBlock) MtaBlocks.SEAWOOD_SLAB.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) MtaBlocks.SEAWOOD_PRESSURE_PLATE.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
+        buttonBlock(((ButtonBlock) MtaBlocks.SEAWOOD_BUTTON.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
+        fenceBlock(((FenceBlock) MtaBlocks.SEAWOOD_FENCE.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) MtaBlocks.SEAWOOD_FENCE_GATE.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) MtaBlocks.SEAWOOD_DOOR.get()), modLoc("block/seawood_door_bottom"), modLoc("block/seawood_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) MtaBlocks.SEAWOOD_TRAPDOOR.get()), modLoc("block/seawood_trapdoor"), true, "cutout");
+        blockItem(MtaBlocks.SEAWOOD_STAIRS);
+        blockItem(MtaBlocks.SEAWOOD_SLAB);
+        blockItem(MtaBlocks.SEAWOOD_PRESSURE_PLATE);
+        blockItem(MtaBlocks.SEAWOOD_FENCE_GATE);
+        blockItem(MtaBlocks.SEAWOOD_TRAPDOOR, "_bottom");
+
         verticalBlock(MtaBlocks.STONE_GEYSER.get(), Blocks.STONE, Blocks.STONE);
         verticalBlock(MtaBlocks.TERRACOTTA_GEYSER.get(), Blocks.TERRACOTTA, Blocks.TERRACOTTA);
         verticalBlock(MtaBlocks.NETHERRACK_GEYSER.get(), Blocks.NETHERRACK, Blocks.NETHERRACK);

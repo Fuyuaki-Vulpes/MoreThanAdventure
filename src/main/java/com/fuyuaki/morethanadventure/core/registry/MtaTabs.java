@@ -89,6 +89,19 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_DOOR.get());
                 output.accept(MtaBlocks.PALM_TRAPDOOR.get());
 
+                output.accept(MtaBlocks.SEALOG.get());
+                output.accept(MtaBlocks.SEAWOOD.get());
+                output.accept(MtaBlocks.SEAWOOD_PLANKS.get());
+                output.accept(MtaBlocks.SEAWOOD_SAPLING.get());
+                output.accept(MtaBlocks.SEAWOOD_STAIRS.get());
+                output.accept(MtaBlocks.SEAWOOD_SLAB.get());
+                output.accept(MtaBlocks.SEAWOOD_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.SEAWOOD_BUTTON.get());
+                output.accept(MtaBlocks.SEAWOOD_FENCE.get());
+                output.accept(MtaBlocks.SEAWOOD_FENCE_GATE.get());
+                output.accept(MtaBlocks.SEAWOOD_DOOR.get());
+                output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
+
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());
                 output.accept(MtaBlocks.STONE_TILES_STAIRS.get());

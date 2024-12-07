@@ -47,6 +47,7 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> GRAVELLY_RIVER = createBiome("gravelly_river");
     public static final ResourceKey<Biome> TUNDRA = createBiome("tundra");
     public static final ResourceKey<Biome> LUSH_MEADOW = createBiome("lush_meadow");
+    public static final ResourceKey<Biome> UNDERWATER_FOREST = createBiome("underwater_forest");
 
     public static final ResourceKey<Biome> CRYSTALLINE_GROTTO = createBiome("crystalline_grotto");
 
@@ -68,6 +69,7 @@ public class MtaBiomes {
         register(context,GRAVELLY_RIVER, gravelRiver(context));
         register(context,LUSH_MEADOW, lushMeadow(context));
         register(context,CRYSTALLINE_GROTTO, crystallineGrotto(context));
+        register(context,UNDERWATER_FOREST, underwaterForest(context));
     }
 
 
@@ -415,6 +417,35 @@ public class MtaBiomes {
     }
 
 
+
+
+
+    public static Biome underwaterForest(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder()
+                .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 15, 1, 3))
+                .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 4, 1, 2))
+                .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.GLOW_SQUID, 10, 2, 5));
+        BiomeDefaultFeatures.warmOceanSpawns(mobspawnsettings$builder, 20, 2);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+
+
+        biomeBuilder
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SEAWOOD_TREE);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.FREQUENT_CLAY);
+
+
+        return baseOcean(mobspawnsettings$builder, 4445678, 270131, biomeBuilder);
+    }
+
+
     private static void registerVillagerTypes() {
         registerVillagers(LUSH_MEADOW, VillagerType.PLAINS);
         registerVillagers(LUSH_RIVER, VillagerType.PLAINS);
@@ -490,7 +521,23 @@ public class MtaBiomes {
                 .generationSettings(pGenerationSettings.build())
                 .build();
     }
+    private static Biome baseOcean(MobSpawnSettings.Builder mobSpawnSettings, int waterColor, int waterFogColor, BiomeGenerationSettings.Builder generationSettings) {
+        return biome(true, 0.5F, 0.5F, waterColor, waterFogColor, null, null, mobSpawnSettings, generationSettings, NORMAL_MUSIC);
+    }
 
+
+
+    private static BiomeGenerationSettings.Builder baseOceanGeneration(BiomeGenerationSettings.Builder builder) {
+        globalOverworldGeneration(builder);
+        BiomeDefaultFeatures.addDefaultOres(builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(builder);
+        BiomeDefaultFeatures.addWaterTrees(builder);
+        BiomeDefaultFeatures.addDefaultFlowers(builder);
+        BiomeDefaultFeatures.addDefaultGrass(builder);
+        BiomeDefaultFeatures.addDefaultMushrooms(builder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(builder);
+        return builder;
+    }
 
 }
 

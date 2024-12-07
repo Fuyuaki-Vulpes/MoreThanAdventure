@@ -32,6 +32,23 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.PALM_FENCE_GATE.get(),"Palm Fence Gate");
         add(MtaBlocks.PALM_DOOR.get(),"Palm Door");
         add(MtaBlocks.PALM_TRAPDOOR.get(),"Palm Trapdoor");
+
+
+        add(MtaBlocks.SEALOG.get(),"SeaLog");
+        add(MtaBlocks.SEAWOOD.get(),"Seawood");
+        add(MtaBlocks.SEAWOOD_PLANKS.get(),"Seawood Planks");
+        add(MtaBlocks.SEAWOOD_LEAVES.get(),"Seawood Leaves");
+        add(MtaBlocks.SEAWOOD_SAPLING.get(),"Seawood Sapling");
+        add(MtaBlocks.SEAWOOD_STAIRS.get(),"Seawood Stairs");
+        add(MtaBlocks.SEAWOOD_SLAB.get(),"Seawood Slab");
+        add(MtaBlocks.SEAWOOD_PRESSURE_PLATE.get(),"Seawood Pressure Plate");
+        add(MtaBlocks.SEAWOOD_BUTTON.get(),"Seawood Button");
+        add(MtaBlocks.SEAWOOD_FENCE.get(),"Seawood Fence");
+        add(MtaBlocks.SEAWOOD_FENCE_GATE.get(),"Seawood Fence Gate");
+        add(MtaBlocks.SEAWOOD_DOOR.get(),"Seawood Door");
+        add(MtaBlocks.SEAWOOD_TRAPDOOR.get(),"Seawood Trapdoor");
+
+
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");

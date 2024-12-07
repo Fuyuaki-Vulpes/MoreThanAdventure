@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.core.registry;
 
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
+import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
@@ -18,6 +19,9 @@ public class MTAPlacers {
 
     public static final DeferredHolder<TrunkPlacerType<?>,TrunkPlacerType<PalmTrunkPlacer>> PALM_TRUNK_PLACER =
             TRUNK_PLACER.register("palm_trunk_placer",() -> new TrunkPlacerType<>(PalmTrunkPlacer.CODEC));
+
+    public static final DeferredHolder<TrunkPlacerType<?>,TrunkPlacerType<SeawoodTrunkPlacer>> SEAWOOD_TRUNK_PLACER =
+            TRUNK_PLACER.register("seawood_trunk_placer",() -> new TrunkPlacerType<>(SeawoodTrunkPlacer.CODEC));
 
 
     public static final DeferredHolder<FoliagePlacerType<?>,FoliagePlacerType<PalmFoliagePlacer>> PALM_FOLIAGE_PLACER =

@@ -26,6 +26,10 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.PALM_LOG.get(),
                 MtaBlocks.PALM_WOOD.get()
         );
+        this.tag(MtaTags.Blocks.SEAWOOD).add(
+                MtaBlocks.SEALOG.get(),
+                MtaBlocks.SEAWOOD.get()
+        );
         this.tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
                 .add(
                         MtaBlocks.SCATTERED_LEAVES.get()
@@ -40,40 +44,52 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.PALM_LOG.get(),
                 MtaBlocks.STRIPPED_PALM_LOG.get(),
                 MtaBlocks.PALM_WOOD.get(),
-                MtaBlocks.STRIPPED_PALM_WOOD.get()
+                MtaBlocks.STRIPPED_PALM_WOOD.get(),
+                MtaBlocks.SEALOG.get(),
+                MtaBlocks.SEAWOOD.get()
         );
 
         this.tag(BlockTags.PLANKS).add(
+                MtaBlocks.SEAWOOD_PLANKS.get(),
                 MtaBlocks.PALM_PLANKS.get()
         );
 
         this.tag(BlockTags.LEAVES).add(
                 MtaBlocks.PALM_LEAVES.get(),
+                MtaBlocks.SEAWOOD_LEAVES.get(),
                 MtaBlocks.SWEET_BERRY_LEAVES.get()
         );
         this.tag(BlockTags.WOODEN_STAIRS).add(
-                MtaBlocks.PALM_STAIRS.get()
+                MtaBlocks.PALM_STAIRS.get(),
+                MtaBlocks.SEAWOOD_STAIRS.get()
         );
         this.tag(BlockTags.WOODEN_SLABS).add(
-                MtaBlocks.PALM_SLAB.get()
+                MtaBlocks.PALM_SLAB.get(),
+                MtaBlocks.SEAWOOD_SLAB.get()
         );
         this.tag(BlockTags.WOODEN_BUTTONS).add(
-                MtaBlocks.PALM_BUTTON.get()
+                MtaBlocks.PALM_BUTTON.get(),
+                MtaBlocks.SEAWOOD_BUTTON.get()
         );
         this.tag(BlockTags.WOODEN_FENCES).add(
-                MtaBlocks.PALM_FENCE.get()
+                MtaBlocks.PALM_FENCE.get(),
+                MtaBlocks.SEAWOOD_FENCE.get()
         );
         this.tag(BlockTags.WOODEN_DOORS).add(
-                MtaBlocks.PALM_DOOR.get()
+                MtaBlocks.PALM_DOOR.get(),
+                MtaBlocks.SEAWOOD_DOOR.get()
         );
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(
-                MtaBlocks.PALM_TRAPDOOR.get()
+                MtaBlocks.PALM_TRAPDOOR.get(),
+                MtaBlocks.SEAWOOD_TRAPDOOR.get()
         );
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
-                MtaBlocks.PALM_PRESSURE_PLATE.get()
+                MtaBlocks.PALM_PRESSURE_PLATE.get(),
+                MtaBlocks.SEAWOOD_PRESSURE_PLATE.get()
         );
         this.tag(BlockTags.SAPLINGS).add(
-                MtaBlocks.PALM_SAPLING.get()
+                MtaBlocks.PALM_SAPLING.get(),
+                MtaBlocks.SEAWOOD_SAPLING.get()
         );
 
         this.tag(MtaTags.Blocks.NEEDS_COPPER_TOOL).add(

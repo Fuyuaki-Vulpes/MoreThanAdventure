@@ -43,6 +43,10 @@ public class GenItemModels extends ItemModelProvider {
         basicItem(MtaBlocks.PALM_DOOR.asItem());
         buttonItem(MtaBlocks.PALM_BUTTON, MtaBlocks.PALM_PLANKS);
         fenceItem(MtaBlocks.PALM_FENCE, MtaBlocks.PALM_PLANKS);
+        saplingItem(MtaBlocks.SEAWOOD_SAPLING);
+        basicItem(MtaBlocks.SEAWOOD_DOOR.asItem());
+        buttonItem(MtaBlocks.SEAWOOD_BUTTON, MtaBlocks.SEAWOOD_PLANKS);
+        fenceItem(MtaBlocks.SEAWOOD_FENCE, MtaBlocks.SEAWOOD_PLANKS);
 
         simpleItem(MtaItems.BIG_BOWL);
 

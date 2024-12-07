@@ -82,6 +82,7 @@ public class MtaTags {
 
 
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
+        public static final TagKey<Block> SEAWOOD = tag("seawood");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
         public static final TagKey<Block> NEEDS_GEM_TOOL = tag("needs_gem_tool");
 

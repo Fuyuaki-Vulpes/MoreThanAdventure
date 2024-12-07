@@ -38,6 +38,10 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(MtaBiomes.LUSH_MEADOW)
                 ;
 
+        this.tag(Tags.Biomes.IS_OCEAN)
+                .add(MtaBiomes.UNDERWATER_FOREST)
+                ;
+
         this.tag(Tags.Biomes.IS_RIVER).add(MtaBiomes.LUSH_RIVER);
 
         this.tag(Tags.Biomes.IS_SPARSE_VEGETATION)

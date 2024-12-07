@@ -129,6 +129,10 @@ public class MtaBiomeList {
             {null, null, null, null, null}
     };
 
+    public static final ResourceKey<Biome>[][] MTA_OCEANS = new ResourceKey[][]{
+            {null, null ,null, null, MtaBiomes.UNDERWATER_FOREST},
+            {null, null, null, null, null}
+    };
 
 
 
