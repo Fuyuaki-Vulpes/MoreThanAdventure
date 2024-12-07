@@ -116,6 +116,12 @@ public class GenBiomeTags  extends BiomeTagsProvider {
         this.tag(MtaTags.Biomes.HAS_TOUCAN)
                 .addTag(Tags.Biomes.IS_JUNGLE);
 
+        this.tag(MtaTags.Biomes.HAS_WISP_RARE)
+                .add(Biomes.DARK_FOREST, Biomes.TAIGA);
+
+        this.tag(MtaTags.Biomes.HAS_WISP)
+                .add(Biomes.MUSHROOM_FIELDS);
+
         this.tag(MtaTags.Biomes.HAS_PALE_WOLF)
                 .add(MtaBiomes.SPARSE_TAIGA);
 

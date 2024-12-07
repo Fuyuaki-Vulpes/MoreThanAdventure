@@ -84,6 +84,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.JELLYFISH.get(), JellyfishRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.OCTOPUS.get(), OctopusRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.OWL.get(), OwlRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.WISPFLY.get(), WispflyRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.PENGUIN.get(), PenguinRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.RACCOON.get(), RaccoonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.SHRIMP.get(), ShrimpRenderer::new);
@@ -162,15 +163,14 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.WISPFLY, WispflyModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
 
 
         event.registerLayerDefinition(MTAModelLayers.SIREN_LAYER, SirenModel::createBodyLayer);
 
     }
-    @SubscribeEvent
-    public static void modelEvent(ModelEvent.RegisterAdditional event) {
 
-    }
 
     @SubscribeEvent
     public static void particleFactory(RegisterParticleProvidersEvent event) {

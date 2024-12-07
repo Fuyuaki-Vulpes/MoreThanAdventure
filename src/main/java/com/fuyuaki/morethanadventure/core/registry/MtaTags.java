@@ -164,6 +164,8 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_RACCOON = tag("has_raccoon");
         public static final TagKey<Biome> HAS_SHRIMP = tag("has_shrimp");
         public static final TagKey<Biome> HAS_TOUCAN = tag("has_toucan");
+        public static final TagKey<Biome> HAS_WISP_RARE = tag("has_wisp_rare");
+        public static final TagKey<Biome> HAS_WISP = tag("has_wisp");
 
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
     }

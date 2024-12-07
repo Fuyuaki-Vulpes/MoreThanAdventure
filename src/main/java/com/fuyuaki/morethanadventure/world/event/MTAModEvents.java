@@ -57,6 +57,7 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.JELLYFISH.get(), Jellyfish.createAttributes().build());
         event.put(MtaEntityTypes.OCTOPUS.get(), Octopus.createAttributes().build());
         event.put(MtaEntityTypes.OWL.get(), Owl.createAttributes().build());
+        event.put(MtaEntityTypes.WISPFLY.get(), Wispfly.createAttributes().build());
         event.put(MtaEntityTypes.PENGUIN.get(), Penguin.createAttributes().build());
         event.put(MtaEntityTypes.RACCOON.get(), Raccoon.createAttributes().build());
         event.put(MtaEntityTypes.SHRIMP.get(), Shrimp.createAttributes().build());
@@ -106,6 +107,11 @@ public class MTAModEvents {
                 MTAPlacementTypes.GROUND_OR_AIR,
                 Heightmap.Types.MOTION_BLOCKING,
                 MTASpawnRules::checkBirdSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.WISPFLY.get(),
+                MTAPlacementTypes.GROUND_OR_AIR,
+                Heightmap.Types.WORLD_SURFACE,
+                Wispfly::checkWispSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.BEARDED_DRAGON.get(),
                 SpawnPlacementTypes.ON_GROUND,

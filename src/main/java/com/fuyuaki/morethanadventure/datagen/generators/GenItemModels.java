@@ -49,13 +49,12 @@ public class GenItemModels extends ItemModelProvider {
         simpleItem(MtaItems.CLEAR_QUARTZ);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
 
-        simpleItem(MtaItems.HOST_HUSK);
-        simpleItem(MtaItems.SAMURAI_CLOTH);
+        //simpleItem(MtaItems.SAMURAI_CLOTH);
         //simpleItem(MtaItems.HOST_HUSK);
-        simpleItem(MtaItems.BLACK_WIDOW_VENOM);
+        //simpleItem(MtaItems.BLACK_WIDOW_VENOM);
         //simpleItem(MtaItems.HOST_HUSK);
-        simpleItem(MtaItems.SPIRIT_DUST);
-        simpleItem(MtaItems.CHARRED_BONE);
+        //simpleItem(MtaItems.SPIRIT_DUST);
+        //simpleItem(MtaItems.CHARRED_BONE);
         //simpleItem(MtaItems.HOST_HUSK);
 
         simpleItem(MtaItems.AGATE);
@@ -312,6 +311,7 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get());
         spawnEggItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get());
         spawnEggItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.WISPFLY_SPAWN_EGG.get());
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

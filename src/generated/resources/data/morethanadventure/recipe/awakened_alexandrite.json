@@ -6,22 +6,19 @@
       "item": "morethanadventure:alexandrite"
     },
     "k": {
-      "item": "minecraft:stone_sword"
+      "item": "morethanadventure:samurai_cloth"
     },
     "l": {
       "item": "minecraft:lapis_lazuli"
     },
     "n": {
       "item": "minecraft:netherite_scrap"
-    },
-    "p": {
-      "item": "minecraft:glistering_melon_slice"
     }
   },
   "pattern": [
     "klk",
     "ngn",
-    "kpk"
+    "klk"
   ],
   "result": {
     "count": 1,

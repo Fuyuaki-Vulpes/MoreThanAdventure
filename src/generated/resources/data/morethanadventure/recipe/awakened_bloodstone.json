@@ -6,22 +6,19 @@
       "item": "morethanadventure:bloodstone"
     },
     "k": {
-      "item": "minecraft:bone"
+      "item": "morethanadventure:black_widow_venom"
     },
     "l": {
       "item": "minecraft:lapis_lazuli"
     },
     "n": {
       "item": "minecraft:netherite_scrap"
-    },
-    "p": {
-      "item": "minecraft:fermented_spider_eye"
     }
   },
   "pattern": [
     "klk",
     "ngn",
-    "kpk"
+    "klk"
   ],
   "result": {
     "count": 1,

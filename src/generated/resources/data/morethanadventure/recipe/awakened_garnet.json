@@ -6,22 +6,19 @@
       "item": "morethanadventure:garnet"
     },
     "k": {
-      "item": "minecraft:stone_axe"
+      "item": "morethanadventure:charred_bone"
     },
     "l": {
       "item": "minecraft:lapis_lazuli"
     },
     "n": {
       "item": "minecraft:netherite_scrap"
-    },
-    "p": {
-      "item": "minecraft:blaze_powder"
     }
   },
   "pattern": [
     "klk",
     "ngn",
-    "kpk"
+    "klk"
   ],
   "result": {
     "count": 1,

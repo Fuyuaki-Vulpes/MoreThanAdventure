@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_wisp",
+  "spawners": {
+    "type": "morethanadventure:wispfly",
+    "maxCount": 6,
+    "minCount": 1,
+    "weight": 25
+  }
+}

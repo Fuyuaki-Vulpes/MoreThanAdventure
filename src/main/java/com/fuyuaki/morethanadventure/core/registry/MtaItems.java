@@ -651,6 +651,9 @@ public class MtaItems {
     public static final DeferredItem<Item> ZOMBIFIED_MINER_SPAWN_EGG =  ITEMS.register("zombified_miner_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.ZOMBIFIED_MINER::get,44975,0x24201d,new Item.Properties()));
 
+    public static final DeferredItem<Item> WISPFLY_SPAWN_EGG =  ITEMS.register("wispfly_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.WISPFLY::get,44975,0x24201d,new Item.Properties()));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

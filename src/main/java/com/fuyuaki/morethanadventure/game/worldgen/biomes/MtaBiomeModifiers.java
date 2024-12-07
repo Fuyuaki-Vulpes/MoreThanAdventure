@@ -66,6 +66,9 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_SHRIMP = registerKey("add_spawns_shrimp");
     public static final ResourceKey<BiomeModifier> SPAWNS_TOUCAN = registerKey("add_spawns_toucan");
     public static final ResourceKey<BiomeModifier> SPAWNS_ICICLE_CREEPER = registerKey("add_spawns_icicle_creeper");
+    public static final ResourceKey<BiomeModifier> SPAWNS_WISPFLY = registerKey("add_spawns_wispfly");
+    public static final ResourceKey<BiomeModifier> SPAWNS_WISPFLY_RARE = registerKey("add_spawns_wispfly_rare");
+
 
 
 
@@ -279,6 +282,16 @@ public class MtaBiomeModifiers {
         context.register(SPAWNS_ICICLE_CREEPER,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.ICICLE_CREEPER.get(),25,1,2))
+        ));
+
+        context.register(SPAWNS_WISPFLY_RARE,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_WISP_RARE),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WISPFLY.get(),8,1,3))
+        ));
+
+        context.register(SPAWNS_WISPFLY,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_WISP),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WISPFLY.get(),25,1,6))
         ));
 
 

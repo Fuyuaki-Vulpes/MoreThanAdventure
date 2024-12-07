@@ -547,6 +547,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get(),"Skeleton Fighter Spawn Egg");
         add(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get(),"Toxic Zombie Spawn Egg");
         add(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get(),"Zombified Miner Spawn Egg");
+        add(MtaItems.WISPFLY_SPAWN_EGG.get(),"Wispfly Spawn Egg");
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
         add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
         add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
@@ -590,6 +591,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.JELLYFISH.get(),"Jellyfish");
         add(MtaEntityTypes.OCTOPUS.get(),"Octopus");
         add(MtaEntityTypes.OWL.get(),"Owl");
+        add(MtaEntityTypes.WISPFLY.get(),"Wispfly");
         add(MtaEntityTypes.PENGUIN.get(),"Penguin");
         add(MtaEntityTypes.RACCOON.get(),"Raccoon");
         add(MtaEntityTypes.SHRIMP.get(),"Shrimp");

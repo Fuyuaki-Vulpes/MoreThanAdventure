@@ -248,7 +248,7 @@ public class MtaBiomes {
                 0.4F,
                 0x32A598,
                 0x32A598,
-                5264131,
+                0xBFB755,
                 0xBFB755,
                 spawnBuilder,
                 biomeBuilder,

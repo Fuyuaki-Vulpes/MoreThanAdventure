@@ -592,6 +592,7 @@ public class MtaTabs {
                 output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
                 output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
                 output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
+                output.accept(MtaItems.WISPFLY_SPAWN_EGG);
 
                 //BOSS SPAWNS
                 if (parameters.hasPermissions()){

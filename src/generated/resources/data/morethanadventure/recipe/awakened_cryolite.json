@@ -6,22 +6,19 @@
       "item": "morethanadventure:cryolite"
     },
     "k": {
-      "item": "minecraft:snowball"
+      "item": "morethanadventure:spirit_dust"
     },
     "l": {
       "item": "minecraft:lapis_lazuli"
     },
     "n": {
       "item": "minecraft:netherite_scrap"
-    },
-    "p": {
-      "item": "minecraft:snowball"
     }
   },
   "pattern": [
     "klk",
     "ngn",
-    "kpk"
+    "klk"
   ],
   "result": {
     "count": 1,
