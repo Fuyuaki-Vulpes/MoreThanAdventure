@@ -38,6 +38,10 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(MtaBiomes.LUSH_MEADOW)
                 ;
 
+        this.tag(Tags.Biomes.IS_OCEAN)
+                .add(MtaBiomes.UNDERWATER_FOREST)
+                ;
+
         this.tag(Tags.Biomes.IS_RIVER).add(MtaBiomes.LUSH_RIVER);
 
         this.tag(Tags.Biomes.IS_SPARSE_VEGETATION)
@@ -115,6 +119,12 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(Biomes.LUKEWARM_OCEAN);
         this.tag(MtaTags.Biomes.HAS_TOUCAN)
                 .addTag(Tags.Biomes.IS_JUNGLE);
+
+        this.tag(MtaTags.Biomes.HAS_WISP_RARE)
+                .add(Biomes.DARK_FOREST, Biomes.TAIGA);
+
+        this.tag(MtaTags.Biomes.HAS_WISP)
+                .add(Biomes.MUSHROOM_FIELDS);
 
         this.tag(MtaTags.Biomes.HAS_PALE_WOLF)
                 .add(MtaBiomes.SPARSE_TAIGA);

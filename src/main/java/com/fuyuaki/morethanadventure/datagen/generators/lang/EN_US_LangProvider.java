@@ -32,6 +32,23 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.PALM_FENCE_GATE.get(),"Palm Fence Gate");
         add(MtaBlocks.PALM_DOOR.get(),"Palm Door");
         add(MtaBlocks.PALM_TRAPDOOR.get(),"Palm Trapdoor");
+
+
+        add(MtaBlocks.SEALOG.get(),"SeaLog");
+        add(MtaBlocks.SEAWOOD.get(),"Seawood");
+        add(MtaBlocks.SEAWOOD_PLANKS.get(),"Seawood Planks");
+        add(MtaBlocks.SEAWOOD_LEAVES.get(),"Seawood Leaves");
+        add(MtaBlocks.SEAWOOD_SAPLING.get(),"Seawood Sapling");
+        add(MtaBlocks.SEAWOOD_STAIRS.get(),"Seawood Stairs");
+        add(MtaBlocks.SEAWOOD_SLAB.get(),"Seawood Slab");
+        add(MtaBlocks.SEAWOOD_PRESSURE_PLATE.get(),"Seawood Pressure Plate");
+        add(MtaBlocks.SEAWOOD_BUTTON.get(),"Seawood Button");
+        add(MtaBlocks.SEAWOOD_FENCE.get(),"Seawood Fence");
+        add(MtaBlocks.SEAWOOD_FENCE_GATE.get(),"Seawood Fence Gate");
+        add(MtaBlocks.SEAWOOD_DOOR.get(),"Seawood Door");
+        add(MtaBlocks.SEAWOOD_TRAPDOOR.get(),"Seawood Trapdoor");
+
+
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
@@ -310,7 +327,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         add(MtaItems.HOST_HUSK.get(),"Host Husk");
         add(MtaItems.SAMURAI_CLOTH.get(),"Samurai Cloth");
-        add(MtaItems.MERLING_SCALE.get(),"Merling Scale");
+        //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
         add(MtaItems.BLACK_WIDOW_VENOM.get(),"Black WIdow Venom");
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
         add(MtaItems.SPIRIT_DUST.get(),"Spirit Dust");
@@ -547,7 +564,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get(),"Skeleton Fighter Spawn Egg");
         add(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get(),"Toxic Zombie Spawn Egg");
         add(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get(),"Zombified Miner Spawn Egg");
-        add(MtaItems.MERLING_SPAWN_EGG.get(),"Merling Spawn Egg");
+        add(MtaItems.WISPFLY_SPAWN_EGG.get(),"Wispfly Spawn Egg");
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
         add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
         add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
@@ -580,7 +597,6 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.SKELETON_FIGHTER.get(),"Skeleton Fighter");
         add(MtaEntityTypes.TOXIC_ZOMBIE.get(),"Toxic Zombie");
         add(MtaEntityTypes.ZOMBIFIED_MINER.get(),"Zombified Miner");
-        add(MtaEntityTypes.MERLING.get(),"Merling");
         add(MtaEntityTypes.WITHER_JUGGERNAUT.get(),"Wither Juggernaut");
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
         add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
@@ -592,6 +608,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.JELLYFISH.get(),"Jellyfish");
         add(MtaEntityTypes.OCTOPUS.get(),"Octopus");
         add(MtaEntityTypes.OWL.get(),"Owl");
+        add(MtaEntityTypes.WISPFLY.get(),"Wispfly");
         add(MtaEntityTypes.PENGUIN.get(),"Penguin");
         add(MtaEntityTypes.RACCOON.get(),"Raccoon");
         add(MtaEntityTypes.SHRIMP.get(),"Shrimp");

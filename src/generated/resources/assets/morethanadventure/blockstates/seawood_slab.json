@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morethanadventure:block/seawood_slab"
+    },
+    "type=double": {
+      "model": "morethanadventure:block/seawood_planks"
+    },
+    "type=top": {
+      "model": "morethanadventure:block/seawood_slab_top"
+    }
+  }
+}

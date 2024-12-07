@@ -43,15 +43,18 @@ public class GenItemModels extends ItemModelProvider {
         basicItem(MtaBlocks.PALM_DOOR.asItem());
         buttonItem(MtaBlocks.PALM_BUTTON, MtaBlocks.PALM_PLANKS);
         fenceItem(MtaBlocks.PALM_FENCE, MtaBlocks.PALM_PLANKS);
+        saplingItem(MtaBlocks.SEAWOOD_SAPLING);
+        basicItem(MtaBlocks.SEAWOOD_DOOR.asItem());
+        buttonItem(MtaBlocks.SEAWOOD_BUTTON, MtaBlocks.SEAWOOD_PLANKS);
+        fenceItem(MtaBlocks.SEAWOOD_FENCE, MtaBlocks.SEAWOOD_PLANKS);
 
         simpleItem(MtaItems.BIG_BOWL);
 
         simpleItem(MtaItems.CLEAR_QUARTZ);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
 
-        //simpleItem(MtaItems.HOST_HUSK);
         //simpleItem(MtaItems.SAMURAI_CLOTH);
-        //simpleItem(MtaItems.MERLING_SCALE);
+        //simpleItem(MtaItems.HOST_HUSK);
         //simpleItem(MtaItems.BLACK_WIDOW_VENOM);
         //simpleItem(MtaItems.HOST_HUSK);
         //simpleItem(MtaItems.SPIRIT_DUST);
@@ -312,7 +315,7 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get());
         spawnEggItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get());
         spawnEggItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.MERLING_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.WISPFLY_SPAWN_EGG.get());
     }
 
     private ItemModelBuilder simpleItem(DeferredItem<?> item) {

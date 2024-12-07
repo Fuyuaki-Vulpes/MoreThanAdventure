@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "morethanadventure:block/seawood_planks"
+  }
+}

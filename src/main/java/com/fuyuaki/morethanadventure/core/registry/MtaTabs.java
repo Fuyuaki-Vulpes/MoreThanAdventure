@@ -89,6 +89,19 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_DOOR.get());
                 output.accept(MtaBlocks.PALM_TRAPDOOR.get());
 
+                output.accept(MtaBlocks.SEALOG.get());
+                output.accept(MtaBlocks.SEAWOOD.get());
+                output.accept(MtaBlocks.SEAWOOD_PLANKS.get());
+                output.accept(MtaBlocks.SEAWOOD_SAPLING.get());
+                output.accept(MtaBlocks.SEAWOOD_STAIRS.get());
+                output.accept(MtaBlocks.SEAWOOD_SLAB.get());
+                output.accept(MtaBlocks.SEAWOOD_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.SEAWOOD_BUTTON.get());
+                output.accept(MtaBlocks.SEAWOOD_FENCE.get());
+                output.accept(MtaBlocks.SEAWOOD_FENCE_GATE.get());
+                output.accept(MtaBlocks.SEAWOOD_DOOR.get());
+                output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
+
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());
                 output.accept(MtaBlocks.STONE_TILES_STAIRS.get());
@@ -528,7 +541,7 @@ public class MtaTabs {
                 output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.HOST_HUSK);
                 output.accept(MtaItems.SAMURAI_CLOTH);
-                output.accept(MtaItems.MERLING_SCALE);
+                //output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.BLACK_WIDOW_VENOM);
                 //output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.SPIRIT_DUST);
@@ -592,7 +605,7 @@ public class MtaTabs {
                 output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
                 output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
                 output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
-                output.accept(MtaItems.MERLING_SPAWN_EGG);
+                output.accept(MtaItems.WISPFLY_SPAWN_EGG);
 
                 //BOSS SPAWNS
                 if (parameters.hasPermissions()){

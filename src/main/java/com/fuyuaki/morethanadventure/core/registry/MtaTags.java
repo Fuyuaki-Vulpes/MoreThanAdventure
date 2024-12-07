@@ -82,6 +82,7 @@ public class MtaTags {
 
 
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
+        public static final TagKey<Block> SEAWOOD = tag("seawood");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
         public static final TagKey<Block> NEEDS_GEM_TOOL = tag("needs_gem_tool");
 
@@ -104,6 +105,7 @@ public class MtaTags {
 
     public static class Items{
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
+        public static final TagKey<Item> SEAWOOD = tag("sealogs");
 
         public static final TagKey<Item> CORE_STONES = tag("core_stones");
         //public static final TagKey<Item> COSMETIC_CORE_STONES = tag("cosmetic_core_stones");
@@ -164,6 +166,8 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_RACCOON = tag("has_raccoon");
         public static final TagKey<Biome> HAS_SHRIMP = tag("has_shrimp");
         public static final TagKey<Biome> HAS_TOUCAN = tag("has_toucan");
+        public static final TagKey<Biome> HAS_WISP_RARE = tag("has_wisp_rare");
+        public static final TagKey<Biome> HAS_WISP = tag("has_wisp");
 
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
     }

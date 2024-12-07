@@ -174,6 +174,19 @@ public class MtaEntityTypes {
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"raccoon").toString()));
 
 
+
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Wispfly>> WISPFLY = ENTITY.register("wispfly",
+            () -> EntityType.Builder.<Wispfly>of(Wispfly::new, MobCategory.CREATURE)
+                    .sized(0.4f,0.4F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"wispfly").toString()));
+
+
+
+
+
+
+
     public static final DeferredHolder<EntityType<?>,EntityType<ThrownNetheriteTrident>> NETHERITE_TRIDENT = ENTITY.register("netherite_trident",
             () -> EntityType.Builder.<ThrownNetheriteTrident>of(ThrownNetheriteTrident::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"netherite_trident").toString()));

@@ -29,6 +29,7 @@ public class MtaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
     public static final ResourceKey<PlacedFeature> PALM_TREE_RARE = registerKey("palm_tree_rare");
+    public static final ResourceKey<PlacedFeature> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<PlacedFeature> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<PlacedFeature> DISK_MOSS_RARE = registerKey("disk_moss_rare");
@@ -71,17 +72,30 @@ public class MtaPlacedFeatures {
                 context,
                 PALM_TREE,
                 holder(context,MtaConfigFeatures.PALM_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
                         MtaBlocks.PALM_SAPLING.get())
         );
         register(
                 context,
                 PALM_TREE_RARE,
                 holder(context,MtaConfigFeatures.PALM_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1F, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05F, 1),
                         MtaBlocks.PALM_SAPLING.get())
 
         );
+
+        register(
+                context,
+                SEAWOOD_TREE,
+                holder(context,MtaConfigFeatures.SEAWOOD_TREE),
+                CountPlacement.of(4),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                BiomeFilter.biome(),
+                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(MtaBlocks.SEAWOOD_SAPLING.get().defaultBlockState(), BlockPos.ZERO))
+        );
+
+
         register(
                 context,
                 FREQUENT_CLAY,

@@ -110,6 +110,36 @@ public class MtaBlocks {
 
 
 
+    public static final DeferredBlock<Block> SEALOG = registerBlock("sealog", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final DeferredBlock<Block> SEAWOOD = registerBlock("seawood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+
+    public static final DeferredBlock<Block> SEAWOOD_PLANKS = registerBlock("seawood_planks", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final DeferredBlock<Block> SEAWOOD_LEAVES = registerBlock("seawood_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) );
+
+    public static final DeferredBlock<Block> SEAWOOD_SAPLING = registerBlock("seawood_sapling",
+            () -> new SeaSaplingBlock(MtaTreeGrower.SEAWOOD_TREE, BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING)));
+
+    public static final DeferredBlock<Block> SEAWOOD_STAIRS = registerBlock("seawood_stairs",
+            () -> new StairBlock(MtaBlocks.SEAWOOD_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)));
+    public static final DeferredBlock<Block> SEAWOOD_SLAB = registerBlock("seawood_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+
+    public static final DeferredBlock<Block> SEAWOOD_PRESSURE_PLATE = registerBlock("seawood_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final DeferredBlock<Block> SEAWOOD_BUTTON = registerBlock("seawood_button",
+            () -> new ButtonBlock(BlockSetType.OAK, 10, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+
+    public static final DeferredBlock<Block> SEAWOOD_FENCE = registerBlock("seawood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
+    public static final DeferredBlock<Block>SEAWOOD_FENCE_GATE = registerBlock("seawood_fence_gate",
+            () -> new FenceGateBlock(WoodType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
+
+    public static final DeferredBlock<Block> SEAWOOD_DOOR = registerBlock("seawood_door",
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR)));
+    public static final DeferredBlock<Block> SEAWOOD_TRAPDOOR = registerBlock("seawood_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR)));
+
 
 
 

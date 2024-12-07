@@ -24,7 +24,7 @@ public class MtaItems {
 
     public static final DeferredItem<Item> HOST_HUSK = ITEMS.registerSimpleItem("host_husk", new Item.Properties());
     public static final DeferredItem<Item> SAMURAI_CLOTH = ITEMS.registerSimpleItem("samurai_cloth", new Item.Properties());
-    public static final DeferredItem<Item> MERLING_SCALE = ITEMS.registerSimpleItem("merling_scale", new Item.Properties());
+    //public static final DeferredItem<Item> WATER_SCOURCE = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
     public static final DeferredItem<Item> BLACK_WIDOW_VENOM = ITEMS.registerSimpleItem("black_widow_venom", new Item.Properties());
     //public static final DeferredItem<Item> FLYING_WING = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
     public static final DeferredItem<Item> SPIRIT_DUST = ITEMS.registerSimpleItem("spirit_dust", new Item.Properties());
@@ -651,8 +651,8 @@ public class MtaItems {
     public static final DeferredItem<Item> ZOMBIFIED_MINER_SPAWN_EGG =  ITEMS.register("zombified_miner_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.ZOMBIFIED_MINER::get,44975,0x24201d,new Item.Properties()));
 
-    public static final DeferredItem<Item> MERLING_SPAWN_EGG =  ITEMS.register("merling_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.MERLING::get,44975,0x24201d,new Item.Properties()));
+    public static final DeferredItem<Item> WISPFLY_SPAWN_EGG =  ITEMS.register("wispfly_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.WISPFLY::get,44975,0x24201d,new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

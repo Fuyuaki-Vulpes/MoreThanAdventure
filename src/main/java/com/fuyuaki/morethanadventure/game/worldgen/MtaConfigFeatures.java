@@ -7,6 +7,7 @@ import com.fuyuaki.morethanadventure.world.block.SweetBerryLeavesBlock;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
+import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -29,13 +30,16 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
+import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -43,12 +47,14 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.neoforged.neoforge.common.Tags;
 
 import java.util.List;
+import java.util.OptionalInt;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class MtaConfigFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?,?>> PALM_TREE = registerKey("palm_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<ConfiguredFeature<?,?>> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_CLUSTER = registerKey("diamond_cluster");
@@ -111,6 +117,19 @@ public class MtaConfigFeatures {
                         BlockStateProvider.simple(MtaBlocks.PALM_LEAVES.get()),
                         new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+        register(
+                context,
+                SEAWOOD_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.SEALOG.get()),
+                        new SeawoodTrunkPlacer(7, 4, 3),
+                        BlockStateProvider.simple(MtaBlocks.SEAWOOD_LEAVES.get()),
+                        new DarkOakFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                        new ThreeLayersFeatureSize(1, 1, 0, 1, 2, OptionalInt.empty())
+                )
+                        .build()
         );
 
         register(

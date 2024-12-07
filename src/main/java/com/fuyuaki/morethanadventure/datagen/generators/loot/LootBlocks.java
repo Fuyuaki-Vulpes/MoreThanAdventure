@@ -57,6 +57,22 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.PALM_FENCE.get());
         dropSelf(MtaBlocks.PALM_FENCE_GATE.get());
         this.add(MtaBlocks.PALM_DOOR.get(), block -> createDoorTable(MtaBlocks.PALM_DOOR.get()));
+
+
+        dropSelf(MtaBlocks.SEALOG.get());
+        dropSelf(MtaBlocks.SEAWOOD.get());
+        dropSelf(MtaBlocks.SEAWOOD_PLANKS.get());
+        this.add(MtaBlocks.SEAWOOD_LEAVES.get(), block -> createLeavesDrops(block, MtaBlocks.SEAWOOD_SAPLING.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MtaBlocks.SEAWOOD_SAPLING.get());
+        dropSelf(MtaBlocks.SEAWOOD_STAIRS.get());
+        this.add(MtaBlocks.SEAWOOD_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SEAWOOD_SLAB.get()));
+        dropSelf(MtaBlocks.SEAWOOD_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.SEAWOOD_BUTTON.get());
+        dropSelf(MtaBlocks.SEAWOOD_FENCE.get());
+        dropSelf(MtaBlocks.SEAWOOD_FENCE_GATE.get());
+        this.add(MtaBlocks.SEAWOOD_DOOR.get(), block -> createDoorTable(MtaBlocks.SEAWOOD_DOOR.get()));
+        dropSelf(MtaBlocks.SEAWOOD_TRAPDOOR.get());
+
         dropSelf(MtaBlocks.PALM_TRAPDOOR.get());
         dropSelf(MtaBlocks.SPRINKLER.get());
         dropSelf(MtaBlocks.MOSSY_ANDESITE.get());
