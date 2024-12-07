@@ -71,6 +71,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighterRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombieRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMinerRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.MERLING.get(), MerlingRenderer::new);
 
 
         event.registerEntityRenderer(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernautRenderer::new);
@@ -135,6 +136,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.MERLING,MerlingModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, () -> LayerDefinition.create(MossyZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
         event.registerLayerDefinition(MTAModelLayers.OCTOPUS, OctopusModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.OWL, OwlModel::createBodyLayer);

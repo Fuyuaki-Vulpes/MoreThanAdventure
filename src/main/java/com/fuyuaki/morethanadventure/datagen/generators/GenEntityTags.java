@@ -40,7 +40,8 @@ public class GenEntityTags extends EntityTypeTagsProvider {
                         MtaEntityTypes.GREAT_WHITE_SHARK.get(),
                         MtaEntityTypes.JELLYFISH.get(),
                         MtaEntityTypes.OCTOPUS.get(),
-                        MtaEntityTypes.SHRIMP.get()
+                        MtaEntityTypes.SHRIMP.get(),
+                        MtaEntityTypes.MERLING.get()
                 );
     }
 }

@@ -6,22 +6,19 @@
       "item": "morethanadventure:agate"
     },
     "k": {
-      "item": "minecraft:iron_ingot"
+      "item": "morethanadventure:host_husk"
     },
     "l": {
       "item": "minecraft:lapis_lazuli"
     },
     "n": {
       "item": "minecraft:netherite_scrap"
-    },
-    "p": {
-      "item": "minecraft:ghast_tear"
     }
   },
   "pattern": [
     "klk",
     "ngn",
-    "kpk"
+    "klk"
   ],
   "result": {
     "count": 1,

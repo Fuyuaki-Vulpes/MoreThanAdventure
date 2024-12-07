@@ -310,7 +310,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         add(MtaItems.HOST_HUSK.get(),"Host Husk");
         add(MtaItems.SAMURAI_CLOTH.get(),"Samurai Cloth");
-        //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
+        add(MtaItems.MERLING_SCALE.get(),"Merling Scale");
         add(MtaItems.BLACK_WIDOW_VENOM.get(),"Black WIdow Venom");
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
         add(MtaItems.SPIRIT_DUST.get(),"Spirit Dust");
@@ -547,6 +547,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get(),"Skeleton Fighter Spawn Egg");
         add(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get(),"Toxic Zombie Spawn Egg");
         add(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get(),"Zombified Miner Spawn Egg");
+        add(MtaItems.MERLING_SPAWN_EGG.get(),"Merling Spawn Egg");
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
         add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
         add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
@@ -579,6 +580,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.SKELETON_FIGHTER.get(),"Skeleton Fighter");
         add(MtaEntityTypes.TOXIC_ZOMBIE.get(),"Toxic Zombie");
         add(MtaEntityTypes.ZOMBIFIED_MINER.get(),"Zombified Miner");
+        add(MtaEntityTypes.MERLING.get(),"Merling");
         add(MtaEntityTypes.WITHER_JUGGERNAUT.get(),"Wither Juggernaut");
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
         add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
