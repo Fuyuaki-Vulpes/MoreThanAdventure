@@ -1,6 +1,5 @@
 package com.fuyuaki.morethanadventure.datagen.generators;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
@@ -8,7 +7,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -45,6 +43,7 @@ public class GenItemTags extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.copy(MtaTags.Blocks.PALM_LOGS, MtaTags.Items.PALM_LOGS);
+        this.copy(MtaTags.Blocks.SEAWOOD, MtaTags.Items.SEAWOOD);
 
         //this.tag(MtaTags.Items.COSMETIC_CORE_STONES).add();
         //this.tag(MtaTags.Items.EFFECTIVE_CORE_STONES).add();

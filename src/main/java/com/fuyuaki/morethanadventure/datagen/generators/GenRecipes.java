@@ -31,6 +31,9 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         woodFromLogs(output,MtaBlocks.PALM_WOOD, MtaBlocks.PALM_LOG);
         planksFromLogs(output, MtaBlocks.PALM_PLANKS, MtaTags.Items.PALM_LOGS, 4);
 
+        woodFromLogs(output,MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);
+        planksFromLogs(output, MtaBlocks.SEAWOOD_PLANKS, MtaTags.Items.SEAWOOD, 4);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
                 .requires(Blocks.DIRT,2)
                 .requires(Blocks.GRASS_BLOCK,2)
