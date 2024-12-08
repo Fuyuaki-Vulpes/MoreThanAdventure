@@ -541,7 +541,7 @@ public class MtaTabs {
                 output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.HOST_HUSK);
                 output.accept(MtaItems.SAMURAI_CLOTH);
-                //output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.SIREN_SCALE);
                 output.accept(MtaItems.BLACK_WIDOW_VENOM);
                 //output.accept(MtaItems.NETHERITE_FRACTURE);
                 output.accept(MtaItems.SPIRIT_DUST);
@@ -605,6 +605,7 @@ public class MtaTabs {
                 output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
                 output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
                 output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
+                output.accept(MtaItems.SIREN_SPAWN_EGG);
                 output.accept(MtaItems.WISPFLY_SPAWN_EGG);
 
                 //BOSS SPAWNS

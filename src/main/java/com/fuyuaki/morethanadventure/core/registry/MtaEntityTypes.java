@@ -94,10 +94,10 @@ public class MtaEntityTypes {
             () -> EntityType.Builder.<ZombifiedMiner>of(ZombifiedMiner::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.7F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"zombified_miner").toString()));
-    public static final DeferredHolder<EntityType<?>,EntityType<Merling>> MERLING = ENTITY.register("merling",
-            () -> EntityType.Builder.<Merling>of(Merling::new, MobCategory.MONSTER)
+    public static final DeferredHolder<EntityType<?>,EntityType<Siren>> SIREN = ENTITY.register("siren",
+            () -> EntityType.Builder.<Siren>of(Siren::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.7F)
-                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"merling").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"siren").toString()));
 
 
 

@@ -35,7 +35,7 @@ public class MTAModelLayers {
     public static final ModelLayerLocation HOST = register("host");
     public static final ModelLayerLocation ICICLE_CREEPER = register("icicle_creeper");
     public static final ModelLayerLocation JELLYFISH = register("jellyfish");
-    public static final ModelLayerLocation MERLING = register("merling");
+    public static final ModelLayerLocation SIREN = register("siren");
     public static final ModelLayerLocation MOSSY_ZOMBIE = register("mossy_zombie");
     public static final ModelLayerLocation OCTOPUS = register("octopus");
     public static final ModelLayerLocation OWL = register("owl");

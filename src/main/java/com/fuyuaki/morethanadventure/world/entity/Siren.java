@@ -1,8 +1,5 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
-import com.electronwill.nightconfig.core.Config;
-import com.electronwill.nightconfig.core.file.FileConfig;
-import com.electronwill.nightconfig.core.file.GenericBuilder;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -10,8 +7,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
-public class Merling extends Monster{
-    public Merling(EntityType<? extends Monster> entityType, Level level) {
+public class Siren extends Monster{
+    public Siren(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": {
+      "item": "morethanadventure:palm_planks"
+    }
+  },
+  "pattern": [
+    "pp"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:palm_pressure_plate"
+  }
+}

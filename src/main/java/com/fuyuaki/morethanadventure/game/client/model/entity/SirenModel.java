@@ -3,17 +3,15 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;// Made with Bloc
 // Paste this class into your mod and generate all required imports
 
 
-import com.fuyuaki.morethanadventure.world.entity.Merling;
+import com.fuyuaki.morethanadventure.world.entity.Siren;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
 
-public class MerlingModel<T extends Merling> extends HierarchicalModel<T> {
+public class SirenModel<T extends Siren> extends HierarchicalModel<T> {
 	private final ModelPart root;
 	private final ModelPart head_fin;
 	private final ModelPart body;
@@ -28,7 +26,7 @@ public class MerlingModel<T extends Merling> extends HierarchicalModel<T> {
 	private final ModelPart tail5;
 	private final ModelPart tail6;
 
-	public MerlingModel(ModelPart main) {
+	public SirenModel(ModelPart main) {
 		this.root = main.getChild("root");
 		this.head_fin = this.root.getChild("head_fin");
 		this.body = this.root.getChild("body");

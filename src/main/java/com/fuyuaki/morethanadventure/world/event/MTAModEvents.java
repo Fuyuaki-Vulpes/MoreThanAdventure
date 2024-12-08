@@ -46,7 +46,7 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighter.createAttributes().build());
         event.put(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombie.createAttributes().build());
         event.put(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMiner.createAttributes().build());
-        event.put(MtaEntityTypes.MERLING.get(), Merling.createAttributes().build());
+        event.put(MtaEntityTypes.SIREN.get(), Siren.createAttributes().build());
         event.put(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernaut.createAttributes().build());
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());

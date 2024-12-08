@@ -4,7 +4,6 @@ import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.*;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
-import com.fuyuaki.morethanadventure.game.client.model.player.SirenModel;
 import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
 import com.fuyuaki.morethanadventure.game.client.particle.PoisonBubble;
 import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
@@ -71,7 +70,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighterRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombieRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMinerRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.MERLING.get(), MerlingRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.SIREN.get(), SirenRenderer::new);
 
 
         event.registerEntityRenderer(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernautRenderer::new);
@@ -137,7 +136,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.MERLING,MerlingModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.SIREN, SirenModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, () -> LayerDefinition.create(MossyZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
         event.registerLayerDefinition(MTAModelLayers.OCTOPUS, OctopusModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.OWL, OwlModel::createBodyLayer);
@@ -169,7 +168,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
 
 
-        event.registerLayerDefinition(MTAModelLayers.SIREN_LAYER, SirenModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.SIREN_LAYER, com.fuyuaki.morethanadventure.game.client.model.player.SirenModel::createBodyLayer);
 
     }
 

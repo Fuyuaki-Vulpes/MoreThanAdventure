@@ -28,25 +28,27 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
     @Override
     protected void buildRecipes(RecipeOutput output) {
 
-        woodFromLogs(output,MtaBlocks.PALM_WOOD, MtaBlocks.PALM_LOG);
+        woodFromLogs(output, MtaBlocks.PALM_WOOD, MtaBlocks.PALM_LOG);
         planksFromLogs(output, MtaBlocks.PALM_PLANKS, MtaTags.Items.PALM_LOGS, 4);
+        woodItems(output, MtaBlocks.PALM_PLANKS.get(), MtaBlocks.PALM_SLAB.get(), MtaBlocks.PALM_STAIRS.get(), MtaBlocks.PALM_DOOR.get(), MtaBlocks.PALM_TRAPDOOR.get(), MtaBlocks.PALM_FENCE.get(), MtaBlocks.PALM_FENCE_GATE.get(), MtaBlocks.PALM_BUTTON.get(), MtaBlocks.PALM_PRESSURE_PLATE.get(), "palm_planks");
+        woodItems(output, MtaBlocks.SEAWOOD_PLANKS.get(), MtaBlocks.SEAWOOD_SLAB.get(), MtaBlocks.SEAWOOD_STAIRS.get(), MtaBlocks.SEAWOOD_DOOR.get(), MtaBlocks.SEAWOOD_TRAPDOOR.get(), MtaBlocks.SEAWOOD_FENCE.get(), MtaBlocks.SEAWOOD_FENCE_GATE.get(), MtaBlocks.SEAWOOD_BUTTON.get(), MtaBlocks.SEAWOOD_PRESSURE_PLATE.get(), "seawood_planks");
 
-        woodFromLogs(output,MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);
+        woodFromLogs(output, MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);
         planksFromLogs(output, MtaBlocks.SEAWOOD_PLANKS, MtaTags.Items.SEAWOOD, 4);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
-                .requires(Blocks.DIRT,2)
-                .requires(Blocks.GRASS_BLOCK,2)
+                .requires(Blocks.DIRT, 2)
+                .requires(Blocks.GRASS_BLOCK, 2)
                 .unlockedBy("has_dirt", has(Blocks.DIRT))
-                .save(output,"grass_block");
+                .save(output, "grass_block");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
-                .requires(Blocks.DIRT,2)
-                .requires(Blocks.SHORT_GRASS,2)
+                .requires(Blocks.DIRT, 2)
+                .requires(Blocks.SHORT_GRASS, 2)
                 .unlockedBy("has_dirt", has(Blocks.DIRT))
-                .save(output,"short_grass");
+                .save(output, "short_grass");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.COBBLED_DIRT, 4)
-                .requires(Blocks.DIRT,2)
-                .requires(Blocks.COBBLESTONE,2)
+                .requires(Blocks.DIRT, 2)
+                .requires(Blocks.COBBLESTONE, 2)
                 .unlockedBy("has_dirt", has(Blocks.DIRT))
                 .save(output);
 
@@ -62,20 +64,20 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         cuttingStoneSetRecipe(output, MtaBlocks.DIRTY_STONE_TILES.get(), MtaBlocks.DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.DIRTY_STONE_TILES_WALL.get());
         basicStoneSetRecipe(output, MtaBlocks.VERY_DIRTY_STONE_TILES.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get(), "has_very_dirty_stone_tiles", "very_dirty_stone_tiles");
         cuttingStoneSetRecipe(output, MtaBlocks.VERY_DIRTY_STONE_TILES.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get());
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES,3)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
-                .requires(MtaBlocks.STONE_TILES,3)
-                .unlockedBy("has_stone_tiles",has(MtaBlocks.STONE_TILES))
+                .requires(MtaBlocks.STONE_TILES, 3)
+                .unlockedBy("has_stone_tiles", has(MtaBlocks.STONE_TILES))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.DIRTY_STONE_TILES,3)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
-                .requires(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES,3)
-                .unlockedBy("has_slight_dirty_stone_tiles",has(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES))
+                .requires(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
+                .unlockedBy("has_slight_dirty_stone_tiles", has(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,MtaBlocks.VERY_DIRTY_STONE_TILES,3)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.VERY_DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
-                .requires(MtaBlocks.DIRTY_STONE_TILES,3)
-                .unlockedBy("has_dirty_stone_tiles",has(MtaBlocks.DIRTY_STONE_TILES))
+                .requires(MtaBlocks.DIRTY_STONE_TILES, 3)
+                .unlockedBy("has_dirty_stone_tiles", has(MtaBlocks.DIRTY_STONE_TILES))
                 .save(output);
 
         basicStoneSetRecipe(output, Blocks.WHITE_TERRACOTTA, MtaBlocks.WHITE_TERRACOTTA_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_WALL.get(), "has_white_terracotta", "white_terracotta");
@@ -207,8 +209,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .save(output);
 
 
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,Items.NETHERITE_SCRAP)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHERITE_SCRAP)
                 .define('#', MtaItems.NETHERITE_FRACTURE.get())
                 .pattern("###")
                 .pattern("###")
@@ -238,27 +239,27 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 MtaItems.DIAMOND_DAGGER.get(), MtaItems.DIAMOND_DOUBLE_AXE.get(), MtaItems.DIAMOND_GLAIVE.get(), MtaItems.DIAMOND_HALBERD.get(),
                 MtaItems.DIAMOND_KATANA.get(), MtaItems.DIAMOND_SCYTHE.get(), MtaItems.DIAMOND_SPEAR.get(), MtaItems.DIAMOND_TWINBLADE.get(), "diamond");
 
-        smeltingResultFromBase(output, Items.LEATHER,Items.ROTTEN_FLESH);
+        smeltingResultFromBase(output, Items.LEATHER, Items.ROTTEN_FLESH);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.BIG_BOWL)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.BIG_BOWL)
                 .requires(Items.BOWL, 2)
-                .unlockedBy("has_bowl",has(Items.BOWL))
+                .unlockedBy("has_bowl", has(Items.BOWL))
                 .save(output);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,Items.BLACK_DYE,2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BLACK_DYE, 2)
                 .requires(Tags.Items.ORES_COAL)
-                .unlockedBy("has_coal",has(Tags.Items.ORES_COAL))
+                .unlockedBy("has_coal", has(Tags.Items.ORES_COAL))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(),2)
-                .requires(Blocks.ANDESITE,2)
-                .requires(Blocks.VINE,2)
-                .unlockedBy("has_andesite",has(Blocks.ANDESITE))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 2)
+                .requires(Blocks.ANDESITE, 2)
+                .requires(Blocks.VINE, 2)
+                .unlockedBy("has_andesite", has(Blocks.ANDESITE))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(),4)
-                .requires(Blocks.ANDESITE,2)
-                .requires(Blocks.MOSS_BLOCK,2)
-                .unlockedBy("has_andesite",has(Blocks.ANDESITE))
-                .save(output,"mossy_andesite_from_moss");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 4)
+                .requires(Blocks.ANDESITE, 2)
+                .requires(Blocks.MOSS_BLOCK, 2)
+                .unlockedBy("has_andesite", has(Blocks.ANDESITE))
+                .save(output, "mossy_andesite_from_moss");
 
         twoByTwoPacker(output, RecipeCategory.BUILDING_BLOCKS, Blocks.QUARTZ_BLOCK, MtaItems.CLEAR_QUARTZ);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE, 2)
@@ -311,7 +312,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .pattern("C#C")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MtaBlocks.QUARTZ_LAMP.get(),2)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MtaBlocks.QUARTZ_LAMP.get(), 2)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('#', Tags.Items.DUSTS_GLOWSTONE)
                 .pattern("Q#")
@@ -330,7 +331,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
 
         gemAwakening(output, MtaItems.AGATE.get(), MtaItems.HOST_HUSK.get(), MtaItems.AWAKENED_AGATE.get(), "has_agate");
         gemAwakening(output, MtaItems.ALEXANDRITE.get(), MtaItems.SAMURAI_CLOTH.get(), MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
-        //gemAwakening(output, MtaItems.AQUAMARINE.get(), MtaItems.PUFFERFISH.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
+        gemAwakening(output, MtaItems.AQUAMARINE.get(), MtaItems.SIREN_SCALE.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
         gemAwakening(output, MtaItems.BLOODSTONE.get(), MtaItems.BLACK_WIDOW_VENOM.get(), MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
         //gemAwakening(output, MtaItems.CELESTITE.get(), MtaItems.PHANTOM_MEMBRANE.get(), MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
         gemAwakening(output, MtaItems.CRYOLITE.get(), MtaItems.SPIRIT_DUST.get(), MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
@@ -399,43 +400,43 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         netheriteSmithing(output, MtaItems.DIAMOND_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SPEAR.get());
         netheriteSmithing(output, MtaItems.DIAMOND_TWINBLADE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_TWINBLADE.get());
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.TOMATO_SEEDS)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.TOMATO_SEEDS)
                 .requires(MtaItems.TOMATO)
-                .unlockedBy("has_tomato",has(MtaItems.TOMATO))
+                .unlockedBy("has_tomato", has(MtaItems.TOMATO))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.BELL_PEPPER_SEEDS)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.BELL_PEPPER_SEEDS)
                 .requires(MtaItems.BELL_PEPPER)
-                .unlockedBy("has_red_pepper",has(MtaItems.BELL_PEPPER))
+                .unlockedBy("has_red_pepper", has(MtaItems.BELL_PEPPER))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.CHILI_PEPPER_SEEDS)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.CHILI_PEPPER_SEEDS)
                 .requires(MtaItems.CHILI_PEPPER)
-                .unlockedBy("has_chili_pepper",has(MtaItems.CHILI_PEPPER))
+                .unlockedBy("has_chili_pepper", has(MtaItems.CHILI_PEPPER))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.COCONUT_SLICE, 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_SLICE, 2)
                 .requires(MtaItems.COCONUT)
-                .unlockedBy("has_coconut",has(MtaItems.COCONUT))
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.COCONUT_MILK)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.COBBLESTONES)
-                .unlockedBy("has_coconut",has(MtaItems.COCONUT))
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.COCONUT_MILK)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.STONES)
-                .unlockedBy("has_coconut",has(MtaItems.COCONUT))
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT))
                 .save(output, "_stones");
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,MtaItems.SPICE_MIX)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
                 .requires(MtaItems.BELL_PEPPER)
                 .requires(MtaTags.Common.FOODS_ONION)
                 .requires(Items.GLASS_BOTTLE)
-                .unlockedBy("has_glass_bottle",has(Items.GLASS_BOTTLE))
+                .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE))
                 .save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,MtaItems.ONIGIRI)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.ONIGIRI)
                 .requires(MtaTags.Common.CROPS_RICE)
                 .requires(Items.DRIED_KELP)
-                .unlockedBy("has_rice",has(MtaItems.RICE))
+                .unlockedBy("has_rice", has(MtaItems.RICE))
                 .save(output);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.SHRIMP), RecipeCategory.FOOD, MtaItems.COOKED_SHRIMP, 0.35F, 200)
                 .unlockedBy("has_shrimp", has(MtaItems.SHRIMP))
@@ -459,7 +460,6 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         CookingPotRecipeBuilder.cookingPotRecipe(MtaItems.SPICY_SHRIMP_CURRY, 1, 200, 2.0F, MtaItems.BIG_BOWL).addIngredient(Tags.Items.FOODS_VEGETABLE).addIngredient(MtaItems.SPICE_MIX).addIngredient(MtaItems.COCONUT_MILK).addIngredient(MtaItems.CHILI_PEPPER).addIngredient(MtaItems.SHRIMP).unlockedByAnyIngredient().setRecipeBookTab(CookingPotRecipeBookTab.MEALS).build(output);
 */
     }
-
 
 
     protected static void agateSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
@@ -527,7 +527,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .save(output, getConversionRecipeName(wall, ing) + "_base_stonecutting_wall");
     }
 
-    protected static void cuttingTerracottaSetRecipe(RecipeOutput output, Block ing, Block tiles, Block slab, Block tSlab , Block stair, Block tStair, Block wall, Block tWall){
+    protected static void cuttingTerracottaSetRecipe(RecipeOutput output, Block ing, Block tiles, Block slab, Block tSlab, Block stair, Block tStair, Block wall, Block tWall) {
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, tiles, ing);
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, slab, ing, 2);
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, tSlab, ing, 2);
@@ -562,96 +562,7 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
                 .save(output);
     }
 
-    public static void newWeapons(RecipeOutput output, Item ore, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rGla, Item rKat, Item rHal, Item rScy, Item rSpe, Item rTwi, String unlock){
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClaw)
-                .define('o', ore)
-                .define('s', Items.LEATHER)
-                .pattern("ooo")
-                .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClay)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("o  ")
-                .pattern(" o ")
-                .pattern("  s")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rCut)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern(" o")
-                .pattern(" o")
-                .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDag)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern(" o")
-                .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDou)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("o o")
-                .pattern("oso")
-                .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rGla)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("  o")
-                .pattern(" so")
-                .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rHal)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern(" oo")
-                .pattern(" so")
-                .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rKat)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("  o")
-                .pattern(" o ")
-                .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rScy)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("ooo")
-                .pattern(" s ")
-                .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rSpe)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("  o")
-                .pattern(" s ")
-                .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rTwi)
-                .define('o', ore)
-                .define('s', Items.STICK)
-                .pattern("  o")
-                .pattern(" s ")
-                .pattern("o  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                .save(output);
-
-    }
-    public static void newWeaponsTags(RecipeOutput output, TagKey<Item> ore, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rGla, Item rKat, Item rHal, Item rScy, Item rSpe, Item rTwi, String unlock){
+    public static void newWeapons(RecipeOutput output, Item ore, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rGla, Item rKat, Item rHal, Item rScy, Item rSpe, Item rTwi, String unlock) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClaw)
                 .define('o', ore)
                 .define('s', Items.LEATHER)
@@ -741,4 +652,145 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
 
     }
 
+    public static void newWeaponsTags(RecipeOutput output, TagKey<Item> ore, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rGla, Item rKat, Item rHal, Item rScy, Item rSpe, Item rTwi, String unlock) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClaw)
+                .define('o', ore)
+                .define('s', Items.LEATHER)
+                .pattern("ooo")
+                .pattern(" s ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClay)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("o  ")
+                .pattern(" o ")
+                .pattern("  s")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rCut)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern(" o")
+                .pattern(" o")
+                .pattern("s ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDag)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern(" o")
+                .pattern("s ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDou)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("o o")
+                .pattern("oso")
+                .pattern(" s ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rGla)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("  o")
+                .pattern(" so")
+                .pattern("s  ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rHal)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern(" oo")
+                .pattern(" so")
+                .pattern("s  ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rKat)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("  o")
+                .pattern(" o ")
+                .pattern("s  ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rScy)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("ooo")
+                .pattern(" s ")
+                .pattern("s  ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rSpe)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("  o")
+                .pattern(" s ")
+                .pattern("s  ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rTwi)
+                .define('o', ore)
+                .define('s', Items.STICK)
+                .pattern("  o")
+                .pattern(" s ")
+                .pattern("o  ")
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(output);
+
+    }
+
+    public static void woodItems(RecipeOutput output, Block planks, Block slab, Block stair, Block door, Block trap, Block fence, Block gate, Block button, Block plate, String unlock) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
+                .define('p', planks)
+                .pattern("ppp")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stair, 4)
+                .define('p', planks)
+                .pattern("p  ")
+                .pattern("pp ")
+                .pattern("ppp")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, door, 3)
+                .define('p', planks)
+                .pattern("pp")
+                .pattern("pp")
+                .pattern("pp")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, trap, 2)
+                .define('p', planks)
+                .pattern("ppp")
+                .pattern("ppp")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, fence, 3)
+                .define('p', planks)
+                .define('s', Items.STICK)
+                .pattern("psp")
+                .pattern("psp")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, gate,1)
+                .define('p', planks)
+                .define('s', Items.STICK)
+                .pattern("sps")
+                .pattern("sps")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, button,1)
+                .define('p', planks)
+                .pattern("p")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, plate,1)
+                .define('p', planks)
+                .pattern("pp")
+                .unlockedBy("has_" + unlock, has(planks))
+                .save(output);
+    }
 }

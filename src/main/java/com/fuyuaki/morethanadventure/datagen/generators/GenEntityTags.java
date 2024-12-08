@@ -41,7 +41,7 @@ public class GenEntityTags extends EntityTypeTagsProvider {
                         MtaEntityTypes.JELLYFISH.get(),
                         MtaEntityTypes.OCTOPUS.get(),
                         MtaEntityTypes.SHRIMP.get(),
-                        MtaEntityTypes.MERLING.get()
+                        MtaEntityTypes.SIREN.get()
                 );
     }
 }

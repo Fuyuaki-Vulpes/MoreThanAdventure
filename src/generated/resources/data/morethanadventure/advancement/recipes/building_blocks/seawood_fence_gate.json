@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_seawood_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "morethanadventure:seawood_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "morethanadventure:seawood_fence_gate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_seawood_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "morethanadventure:seawood_fence_gate"
+    ]
+  }
+}
