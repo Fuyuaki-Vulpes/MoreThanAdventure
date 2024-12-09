@@ -167,6 +167,17 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         cuttingStoneSetRecipe(output, Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_SLAB.get(), MtaBlocks.PINK_CONCRETE_STAIRS.get(), MtaBlocks.PINK_CONCRETE_WALL.get());
 
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,MtaItems.SIREN_TALISMAN)
+                .define('H', Items.HEART_OF_THE_SEA)
+                .define('S', MtaItems.SIREN_SCALE.get())
+                .define('G', Tags.Items.INGOTS_GOLD)
+                .define('D', Tags.Items.GEMS_DIAMOND)
+                .pattern(" H ")
+                .pattern("SHS")
+                .pattern("GDG")
+
+        ;
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MtaItems.COPPER_AXE)
                 .define('#', Items.STICK)
                 .define('X', Tags.Items.INGOTS_COPPER)
