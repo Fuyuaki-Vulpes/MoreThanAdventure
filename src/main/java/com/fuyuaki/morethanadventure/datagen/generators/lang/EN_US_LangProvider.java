@@ -334,6 +334,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.CHARRED_BONE.get(),"Charred Bone");
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
 
+
+        add(MtaItems.SIREN_TALISMAN.get(),"Siren's Talisman");
+
         add(MtaItems.AGATE.get(),"Agate");
         add(MtaItems.ALEXANDRITE.get(),"Alexandrite");
         add(MtaItems.AQUAMARINE.get(),"Aquamarine");
@@ -637,8 +640,11 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         // KEYBINDS
         add("key.categories.morethanadventure","More Than Adventure");
-        add("key.mta.skill_use", "Use Skill");
-        add("key.mta.skill_cycle", "Cycle Skills");
+
+
+        //CURIO
+        add("curios.identifier.talisman", "Talisman");
+        add("curios.modifiers.talisman", "On Wearing Talisman:");
 
 
     }

@@ -42,6 +42,7 @@ public class GenItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        curioTags();
         this.copy(MtaTags.Blocks.PALM_LOGS, MtaTags.Items.PALM_LOGS);
         this.copy(MtaTags.Blocks.SEAWOOD, MtaTags.Items.SEAWOOD);
 
@@ -307,6 +308,14 @@ public class GenItemTags extends ItemTagsProvider {
 
 
         commonTags();
+    }
+
+    private void curioTags() {
+        this.tag(MtaTags.Curios.TALISMANS)
+                .add(
+                        MtaItems.SIREN_TALISMAN.get()
+
+                );
     }
 
 }

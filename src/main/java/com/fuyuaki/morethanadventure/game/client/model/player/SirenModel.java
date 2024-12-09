@@ -159,21 +159,6 @@ public class SirenModel extends ListModel<Player> {
             tail1.xRot = tail2.xRot = tail3.xRot = tail4.xRot = tail5.xRot = tail6.xRot = angle;
         }
 
-        if (player.isCrouching()) {
-            this.waist.xRot = 0.5F;
-            this.head_fin.y = 4.2F;
-            this.waist.y = 3.2F;
-            if (!(this.attackTime <= 0.0F)) {
-                HumanoidArm humanoidarm = player.getMainArm();
-                float f = this.attackTime;
-                this.waist.yRot = Mth.sin(Mth.sqrt(f) * (float) (Math.PI * 2)) * 0.2F;
-                if (humanoidarm == HumanoidArm.LEFT) {
-                    this.waist.yRot *= -1.0F;
-                }
-            }
-
-        }
-
 
     }
 

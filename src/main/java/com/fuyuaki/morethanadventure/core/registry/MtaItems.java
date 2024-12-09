@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
 import com.fuyuaki.morethanadventure.world.item.*;
+import com.fuyuaki.morethanadventure.world.item.curio.talisman.SirenTalisman;
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
@@ -31,6 +32,12 @@ public class MtaItems {
     public static final DeferredItem<Item> CHARRED_BONE = ITEMS.registerSimpleItem("charred_bone", new Item.Properties());
     //public static final DeferredItem<Item> SPEEDY_BOI = ITEMS.registerSimpleItem("netherite_fracture", new Item.Properties());
 
+
+    //TALISMANS
+
+    public static final DeferredItem<TalismanItem> SIREN_TALISMAN = ITEMS.register("siren_talisman", () -> new SirenTalisman(
+            new Item.Properties()
+    ));
 
     //GEMS
 

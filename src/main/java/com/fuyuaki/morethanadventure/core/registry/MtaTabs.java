@@ -335,6 +335,12 @@ public class MtaTabs {
             .displayItems((parameters, output) -> {
 
 
+                output.accept(MtaItems.SIREN_TALISMAN);
+
+
+
+
+
                 output.accept(MtaItems.WOOD_CLAW);
                 output.accept(MtaItems.WOOD_CLAYMORE);
                 output.accept(MtaItems.WOOD_CUTLASS);

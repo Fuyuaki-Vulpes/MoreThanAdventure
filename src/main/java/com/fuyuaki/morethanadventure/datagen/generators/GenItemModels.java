@@ -62,6 +62,8 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.CHARRED_BONE);
         //simpleItem(MtaItems.HOST_HUSK);
 
+        simpleItem(MtaItems.SIREN_TALISMAN);
+
         simpleItem(MtaItems.AGATE);
         simpleItem(MtaItems.ALEXANDRITE);
         simpleItem(MtaItems.AQUAMARINE);

@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import top.theillusivec4.curios.api.CuriosApi;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -170,7 +171,6 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_WISP = tag("has_wisp");
 
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
-    }
 
 
         private static TagKey<Biome> tag(String name) {
@@ -179,4 +179,20 @@ public class MtaTags {
         private static TagKey<Biome> tagC(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", name));
         }
+
+    }
+
+    public class Curios {
+
+        public static final TagKey<Item> TALISMANS = tag("talisman");
+
+        private static TagKey<Item> tag(String name) {
+            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, name));
+        }
+        private static TagKey<Item> tagC(String name) {
+            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", name));
+        }
+    }
+
+
     }

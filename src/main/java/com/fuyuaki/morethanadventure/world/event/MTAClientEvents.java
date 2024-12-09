@@ -224,8 +224,6 @@ public class MTAClientEvents
 
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {
-        event.register(MTAKeybinds.SKILL_USE.get());
-        event.register(MTAKeybinds.SKILL_CYCLE.get());
     }
 
     @SubscribeEvent

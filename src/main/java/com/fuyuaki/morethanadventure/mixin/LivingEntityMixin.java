@@ -1,19 +1,18 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 
-import net.minecraft.core.BlockPos;
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.world.item.TalismanItem;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
@@ -42,11 +41,18 @@ public abstract class LivingEntityMixin extends Entity {
             }
         }
     }
-/*
-    @Inject(method = "tickDeath",at = @At("HEAD"))
-    private void tickDeathMixin(CallbackInfo ci){
 
+    @Inject(method = "isAffectedByFluids", at = @At("HEAD"), cancellable = true)
+    public void isPushedByFluid(CallbackInfoReturnable<Boolean> cir) {
+        if (TalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), thisLiving)) {
+            cir.setReturnValue(false);
+        }
+    }
+    @Inject(method = "canBreatheUnderwater", at = @At("HEAD"), cancellable = true)
+    public void canBreatheUnderwater(CallbackInfoReturnable<Boolean> cir) {
+        if (TalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), thisLiving)) {
+            cir.setReturnValue(true);
+        }
     }
 
- */
 }

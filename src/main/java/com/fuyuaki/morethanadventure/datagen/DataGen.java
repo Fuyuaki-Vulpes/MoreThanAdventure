@@ -63,6 +63,10 @@ public class DataGen {
 
         generator.addProvider(event.includeClient(),
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
+
+        generator.addProvider(event.includeClient(),
+                new GenCurioData(packOutput,existingFileHelper, datapackRegistries.getRegistryProvider()));
+
     }
 
 }

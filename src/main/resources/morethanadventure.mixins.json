@@ -8,7 +8,9 @@
     "FarmBlockMixin",
     "ItemMixin",
     "LivingEntityMixin",
+    "LocalPlayerMixin",
     "MixinMobCategory",
+    "MobEffectUtilMixin",
     "MusicMixin",
     "ServerPlayerMixin",
     "SnowballMixin",
@@ -16,7 +18,10 @@
     "VanillaEnchantmentProviderMixin"
   ],
   "client": [
+    "FogRendererMixin",
+    "GameRendererMixin",
     "HumanoidModelMixin",
+    "LightTextureMixin",
     "PlayerRendererMixin"
   ],
   "server": [

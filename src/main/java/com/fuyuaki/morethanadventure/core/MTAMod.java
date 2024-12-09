@@ -68,6 +68,7 @@ public class MTAMod
             MtaTerrablender.registerBiomes();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,MODID,MtaSurfaceRules.makeOverworld());
         });
+
     }
 
     public static void setupRenderTypes(){
