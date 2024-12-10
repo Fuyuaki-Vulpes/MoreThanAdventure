@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -175,19 +176,23 @@ public class YukiOnna extends Monster implements FlyingAnimal {
         return SoundSource.HOSTILE;
     }
 
+
+    @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.PHANTOM_AMBIENT;
+        return MtaSounds.YUKI_ONNA_AMBIENT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.PHANTOM_HURT;
+        return MtaSounds.YUKI_ONNA_HURT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.PHANTOM_DEATH;
+        return MtaSounds.YUKI_ONNA_DEATH.get();
     }
 
     @Override

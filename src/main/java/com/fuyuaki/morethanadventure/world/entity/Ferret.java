@@ -49,6 +49,7 @@ public class Ferret extends MTATameableAnimal {
                 .add(Attributes.MOVEMENT_SPEED, 0.3F);
     }
 
+
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
@@ -59,6 +60,12 @@ public class Ferret extends MTATameableAnimal {
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return MtaSounds.FERRET_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.FERRET_DEATH.get();
     }
 
     @Override

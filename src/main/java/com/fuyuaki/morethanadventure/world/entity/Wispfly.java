@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -44,6 +45,7 @@ public class Wispfly extends TamableAnimal {
         this.setPathfindingMalus(PathType.COCOA, -1.0F);
         this.setPathfindingMalus(PathType.FENCE, -1.0F);
     }
+
 
 
     @Override
@@ -175,21 +177,23 @@ public class Wispfly extends TamableAnimal {
         return 0.3F;
     }
 
-    @javax.annotation.Nullable
+
+    @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.EXPERIENCE_ORB_PICKUP;
-
+        return MtaSounds.WISPFLY_AMBIENT.get();
     }
 
+    @Nullable
     @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return SoundEvents.ALLAY_AMBIENT_WITHOUT_ITEM;
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.WISPFLY_HURT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.BUBBLE_COLUMN_BUBBLE_POP;
+        return MtaSounds.WISPFLY_DEATH.get();
     }
 
     public static boolean checkWispSpawnRules(

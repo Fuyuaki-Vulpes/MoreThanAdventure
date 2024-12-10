@@ -64,8 +64,20 @@ public class Capybara extends MTATameableAnimal {
 
     @Nullable
     @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.CAPYBARA_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return MtaSounds.CAPYBARA_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.CAPYBARA_DEATH.get();
     }
 
     @Override

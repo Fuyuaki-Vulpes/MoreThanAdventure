@@ -1,5 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
@@ -17,6 +19,7 @@ import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 public class Host extends Zombie {
@@ -32,6 +35,24 @@ public class Host extends Zombie {
                 .add(Attributes.ARMOR, 3.0)
                 .add(Attributes.MAX_HEALTH, 34F)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE, 0F);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.HOST_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.HOST_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.HOST_DEATH.get();
     }
 
     @Override

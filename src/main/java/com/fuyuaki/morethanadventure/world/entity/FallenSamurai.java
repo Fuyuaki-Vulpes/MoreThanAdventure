@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -17,6 +18,7 @@ import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 public class FallenSamurai extends Monster {
 
@@ -85,19 +87,23 @@ public class FallenSamurai extends Monster {
         return SoundSource.HOSTILE;
     }
 
+
+    @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.PHANTOM_AMBIENT;
+        return MtaSounds.FALLEN_SAMURAI_AMBIENT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.PHANTOM_HURT;
+        return MtaSounds.FALLEN_SAMURAI_HURT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.PHANTOM_DEATH;
+        return MtaSounds.FALLEN_SAMURAI_DEATH.get();
     }
 
     @Override

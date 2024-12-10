@@ -1,8 +1,11 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -32,6 +35,24 @@ public class IcicleCreeper extends AbstractCreeperVariant {
         return AbstractCreeperVariant.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.30)
                 .add(Attributes.MAX_HEALTH,15);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.ICICLE_CREEPER_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.ICICLE_CREEPER_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.ICICLE_CREEPER_DEATH.get();
     }
 
 

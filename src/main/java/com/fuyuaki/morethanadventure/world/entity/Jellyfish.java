@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,6 +16,7 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 public class Jellyfish extends WaterAnimal {
 
@@ -46,19 +48,23 @@ public class Jellyfish extends WaterAnimal {
     }
 
 
+
+    @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return null;
+        return MtaSounds.JELLYFISH_AMBIENT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return SoundEvents.SLIME_HURT_SMALL;
+        return MtaSounds.JELLYFISH_HURT.get();
     }
 
+    @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.SLIME_DEATH_SMALL;
+        return MtaSounds.JELLYFISH_DEATH.get();
     }
 
     protected SoundEvent getSquirtSound() {

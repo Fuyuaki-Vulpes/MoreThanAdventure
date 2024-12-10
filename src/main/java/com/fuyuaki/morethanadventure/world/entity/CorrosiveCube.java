@@ -1,13 +1,16 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -24,6 +27,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.dimension.DimensionType;
+import org.jetbrains.annotations.Nullable;
 
 public class CorrosiveCube extends Slime {
     public CorrosiveCube(EntityType<? extends Slime> entityType, Level level) {
@@ -73,6 +77,25 @@ public class CorrosiveCube extends Slime {
     @Override
     protected float getAttackDamage() {
         return super.getAttackDamage() + 2.0F;
+    }
+
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.CORROSIVE_CUBE_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.CORROSIVE_CUBE_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.CORROSIVE_CUBE_DEATH.get();
     }
 
 

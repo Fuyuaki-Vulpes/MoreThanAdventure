@@ -1,9 +1,12 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobSpawnType;
@@ -16,6 +19,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import org.jetbrains.annotations.Nullable;
 
 public class ZombifiedMiner extends Zombie {
     public ZombifiedMiner(EntityType<? extends Zombie> entityType, Level level) {
@@ -29,6 +33,24 @@ public class ZombifiedMiner extends Zombie {
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
                 .add(Attributes.ARMOR, 4.0)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.ZOMBIFIED_MINER_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.ZOMBIFIED_MINER_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.ZOMBIFIED_MINER_DEATH.get();
     }
 
 

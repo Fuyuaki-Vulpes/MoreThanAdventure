@@ -14,6 +14,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -63,12 +64,23 @@ public class Duck extends MTATameableAnimal implements VariantHolder<Duck.Varian
                 .add(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 
+
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-
-
         return MtaSounds.DUCK_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.DUCK_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.DUCK_DEATH.get();
     }
 
     @Override

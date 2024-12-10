@@ -75,20 +75,23 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal {
                 .add(Attributes.MOVEMENT_SPEED, 0.2F);
     }
 
+
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-
-        if (!this.level().isDay()) {
-            return MtaSounds.OWL_AMBIENT.get();
-        }
-        return null;
+        return MtaSounds.OWL_AMBIENT.get();
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
         return MtaSounds.OWL_HURT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.OWL_DEATH.get();
     }
 
     @Override

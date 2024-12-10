@@ -1,8 +1,11 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.Holder;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -52,6 +55,25 @@ public class BlackWidow extends CaveSpider {
         } else {
             return false;
         }
+    }
+
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MtaSounds.BLACK_WIDOW_AMBIENT.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return MtaSounds.BLACK_WIDOW_HURT.get();
+    }
+
+    @org.jetbrains.annotations.Nullable
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MtaSounds.BLACK_WIDOW_DEATH.get();
     }
 
     @Nullable
