@@ -25,6 +25,9 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> CAPYBARA_AMBIENT = registerSoundEvent("capybara_ambient");
     public static final Supplier<SoundEvent> CAPYBARA_HURT = registerSoundEvent("capybara_hurt");
     public static final Supplier<SoundEvent> CAPYBARA_DEATH = registerSoundEvent("capybara_death");
+    public static final Supplier<SoundEvent> DEER_AMBIENT = registerSoundEvent("deer_ambient");
+    public static final Supplier<SoundEvent> DEER_HURT = registerSoundEvent("deer_hurt");
+    public static final Supplier<SoundEvent> DEER_DEATH = registerSoundEvent("deer_death");
     public static final Supplier<SoundEvent> DUCK_AMBIENT = registerSoundEvent("duck_ambient");
     public static final Supplier<SoundEvent> DUCK_HURT = registerSoundEvent("duck_hurt");
     public static final Supplier<SoundEvent> DUCK_DEATH = registerSoundEvent("duck_death");
@@ -58,6 +61,9 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> TOUCAN_AMBIENT = registerSoundEvent("toucan_ambient");
     public static final Supplier<SoundEvent> TOUCAN_HURT = registerSoundEvent("toucan_hurt");
     public static final Supplier<SoundEvent> TOUCAN_DEATH = registerSoundEvent("toucan_death");
+    public static final Supplier<SoundEvent> TURKEY_AMBIENT = registerSoundEvent("turkey_ambient");
+    public static final Supplier<SoundEvent> TURKEY_HURT = registerSoundEvent("turkey_hurt");
+    public static final Supplier<SoundEvent> TURKEY_DEATH = registerSoundEvent("turkey_death");
     public static final Supplier<SoundEvent> WISPFLY_AMBIENT = registerSoundEvent("wispfly_ambient");
     public static final Supplier<SoundEvent> WISPFLY_HURT = registerSoundEvent("wispfly_hurt");
     public static final Supplier<SoundEvent> WISPFLY_DEATH = registerSoundEvent("wispfly_death");

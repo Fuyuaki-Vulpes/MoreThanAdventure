@@ -37,6 +37,13 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //add(MtaSounds.CAPYBARA_DEATH.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/capybara/capybara_death")).subtitle("sound.morethanadventure.capybara_death"));
 
+        //add(MtaSounds.DEER_AMBIENT.get(), SoundDefinition.definition()
+        //        .with(sound("morethanadventure:entity/deer/deer_ambient")).subtitle("sound.morethanadventure.deer_ambient"));
+        //add(MtaSounds.DEER_HURT.get(), SoundDefinition.definition()
+        //        .with(sound("morethanadventure:entity/deer/deer_hurt")).subtitle("sound.morethanadventure.deer_hurt"));
+        //add(MtaSounds.DEER_DEATH.get(), SoundDefinition.definition()
+        //        .with(sound("morethanadventure:entity/deer/deer_death")).subtitle("sound.morethanadventure.deer_death"));
+
         add(MtaSounds.DUCK_AMBIENT.get(), SoundDefinition.definition()
                 .with(sound("morethanadventure:entity/duck/duck_ambient_1"))
                 .with(sound("morethanadventure:entity/duck/duck_ambient_2"))
@@ -116,6 +123,13 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //        .with(sound("morethanadventure:entity/toucan/toucan_hurt")).subtitle("sound.morethanadventure.toucan_hurt"));
         //add(MtaSounds.TOUCAN_DEATH.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/toucan/toucan_death")).subtitle("sound.morethanadventure.toucan_death"));
+
+        //add(MtaSounds.TURKEY_AMBIENT.get(), SoundDefinition.definition()
+        //        .with(sound("morethanadventure:entity/turkey/turkey_ambient")).subtitle("sound.morethanadventure.turkey_ambient"));
+        //add(MtaSounds.TURKEY_HURT.get(), SoundDefinition.definition()
+        //        .with(sound("morethanadventure:entity/turkey/turkey_hurt")).subtitle("sound.morethanadventure.turkey_hurt"));
+        //add(MtaSounds.TURKEY_DEATH.get(), SoundDefinition.definition()
+        //        .with(sound("morethanadventure:entity/turkey/turkey_death")).subtitle("sound.morethanadventure.turkey_death"));
 
         //add(MtaSounds.WISPFLY_AMBIENT.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/wisp/wisp_ambient")).subtitle("sound.morethanadventure.wisp_ambient"));
