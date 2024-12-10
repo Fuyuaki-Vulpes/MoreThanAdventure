@@ -1,9 +1,8 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import com.fuyuaki.morethanadventure.game.client.PlayerModelOverlayUtil;
 import com.fuyuaki.morethanadventure.game.client.model.player.SirenModel;
-import com.fuyuaki.morethanadventure.world.item.TalismanItem;
+import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.model.PlayerModel;
@@ -30,7 +29,7 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
 
     @Inject(method = "setupRotations(Lnet/minecraft/client/player/AbstractClientPlayer;Lcom/mojang/blaze3d/vertex/PoseStack;FFFF)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;setupRotations(Lnet/minecraft/world/entity/LivingEntity;Lcom/mojang/blaze3d/vertex/PoseStack;FFFF)V", shift = At.Shift.AFTER, ordinal = 1), cancellable = true)
     private void onSetupRotations(AbstractClientPlayer player, PoseStack stack, float age, float yaw, float partialTicks, float i, CallbackInfo info) {
-        if (TalismanItem.shouldRenderParts( MtaItems.SIREN_TALISMAN.get(),player)) {
+        if (AttributeModifierTalismanItem.shouldRenderParts( MtaItems.SIREN_TALISMAN.get(),player)) {
             float swimAmount = player.getSwimAmount(partialTicks);
             float swimAngle = player.isInWater() ? -90 - player.getViewXRot(partialTicks) : -90;
             if (player.isInWater()) {
@@ -49,7 +48,7 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
 
     @Inject(method = "setModelProperties", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/AbstractClientPlayer;isCrouching()Z", shift = At.Shift.AFTER))
     private void onSetModelProperties(AbstractClientPlayer player, CallbackInfo info) {
-        if(player.isInWater() && !player.isInvisible() && TalismanItem.shouldRenderParts( MtaItems.SIREN_TALISMAN.get(),player)) {
+        if(player.isInWater() && !player.isInvisible() && AttributeModifierTalismanItem.shouldRenderParts( MtaItems.SIREN_TALISMAN.get(),player)) {
             PlayerModel<AbstractClientPlayer> model = this.getModel();
             model.rightLeg.visible = false;
             model.rightPants.visible = false;

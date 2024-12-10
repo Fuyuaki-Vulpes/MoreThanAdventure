@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "morethanadventure:item/handheld_claw",
   "textures": {
     "layer0": "morethanadventure:item/diamond_claw"
   }

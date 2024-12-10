@@ -2,7 +2,7 @@ package com.fuyuaki.morethanadventure.mixin;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.game.client.PlayerModelOverlayUtil;
-import com.fuyuaki.morethanadventure.world.item.TalismanItem;
+import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import com.mojang.blaze3d.shaders.FogShape;
 import net.minecraft.client.Camera;
 import net.minecraft.client.player.LocalPlayer;
@@ -29,7 +29,7 @@ public class FogRendererMixin {
         FogRenderer.FogData fogrenderer$fogdata = new FogRenderer.FogData(fogMode);
 
         if (fogtype == FogType.WATER) {
-            if (entity instanceof Player player && PlayerModelOverlayUtil.shouldRenderSirenParts(player) && TalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), player)) {
+            if (entity instanceof Player player && PlayerModelOverlayUtil.shouldRenderSirenParts(player) && AttributeModifierTalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), player)) {
 
                 float f = Mth.clamp(farPlaneDistance / 10.0F, 4.0F, 64.0F);
                 fogrenderer$fogdata.start = farPlaneDistance - f;

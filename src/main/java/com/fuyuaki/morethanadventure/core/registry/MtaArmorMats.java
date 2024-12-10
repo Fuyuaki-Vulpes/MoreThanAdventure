@@ -84,7 +84,7 @@ public class MtaArmorMats {
             2F, 0.0F
     ));
 
-    public static final Holder<ArmorMaterial> COLD_SET = ARMOR_MAT.register("cold_set", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> FREEZING_ICICLE = ARMOR_MAT.register("freezing_icicle", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 3);
                 map.put(ArmorItem.Type.LEGGINGS, 6);
@@ -92,8 +92,8 @@ public class MtaArmorMats {
                 map.put(ArmorItem.Type.HELMET, 3);
                 map.put(ArmorItem.Type.BODY, 10);
             }),
-            19, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CRYOLITE),
-            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "cold_set"))),
+            19, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(MtaItems.CRYOLITE),
+            List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "freezing_icicle"))),
             2F, 0.0F
     ));
 

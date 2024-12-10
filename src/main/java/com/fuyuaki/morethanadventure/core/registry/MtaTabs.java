@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.core.registry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -12,12 +13,14 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class MtaTabs {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+    private static final ResourceLocation TAB_TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/gui/container/creative_inventory/tab_mta.png");
 
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WORLD_GEN = TABS.register("mtaworldgen", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtagenblocks"))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .icon(MtaBlocks.SWEET_BERRY_LEAVES.get().asItem()::getDefaultInstance)
+            .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
@@ -72,6 +75,7 @@ public class MtaTabs {
             .title(Component.translatable("itemGroup.mtabuilding"))
             .withTabsBefore(MtaTabs.WORLD_GEN.getId())
             .icon(MtaBlocks.STONE_TILES.get().asItem()::getDefaultInstance)
+            .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
                 output.accept(MtaBlocks.PALM_LOG.get());
@@ -332,10 +336,13 @@ public class MtaTabs {
             .title(Component.translatable("itemGroup.mtaequip"))
             .withTabsBefore(MtaTabs.BUILDING.getId())
             .icon(MtaItems.NETHERSTEEL_PICKAXE.get()::getDefaultInstance)
+            .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
 
                 output.accept(MtaItems.SIREN_TALISMAN);
+                output.accept(MtaItems.WEIGHTED_DICE);
+                output.accept(MtaItems.TOTEM_OF_COMBATING);
 
 
 
@@ -477,10 +484,10 @@ public class MtaTabs {
                 output.accept(MtaItems.TEMPLE_ANGELS_LEGGINGS);
                 output.accept(MtaItems.TEMPLE_ANGELS_BOOTS);
                 output.accept(MtaItems.FREEZING_ICICLE_SPEAR);
-                output.accept(MtaItems.COLD_SET_HELMET);
-                output.accept(MtaItems.COLD_SET_CHESTPLATE);
-                output.accept(MtaItems.COLD_SET_LEGGINGS);
-                output.accept(MtaItems.COLD_SET_BOOTS);
+                output.accept(MtaItems.FREEZING_ICICLE_HELMET);
+                output.accept(MtaItems.FREEZING_ICICLE_CHESTPLATE);
+                output.accept(MtaItems.FREEZING_ICICLE_LEGGINGS);
+                output.accept(MtaItems.FREEZING_ICICLE_BOOTS);
                 output.accept(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
                 output.accept(MtaItems.WRATHFUL_BERSERKERS_HELMET);
                 output.accept(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
@@ -502,6 +509,7 @@ public class MtaTabs {
             .title(Component.translatable("itemGroup.mtamisc"))
             .withTabsBefore(MtaTabs.EQUIPMENTS.getId())
             .icon(MtaBlocks.SPRINKLER.get().asItem()::getDefaultInstance)
+            .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
 

@@ -1,16 +1,16 @@
 package com.fuyuaki.morethanadventure.world.item.curio.talisman;
 
-import com.fuyuaki.morethanadventure.world.item.TalismanItem;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
-public class SirenTalisman extends TalismanItem {
+public class SirenTalisman extends AttributeModifierTalismanItem {
     public SirenTalisman(Properties properties) {
-        super(properties, "siren");
+        super(properties.rarity(Rarity.EPIC), "siren");
     }
 
     @Override

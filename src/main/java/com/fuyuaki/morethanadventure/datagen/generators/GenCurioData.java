@@ -26,16 +26,16 @@ public class GenCurioData extends CuriosDataProvider {
     private void slots(){
 
         this.createSlot("talisman").icon(ResourceLocation.fromNamespaceAndPath(MODID,"slot/empty_talisman_slot"))
-                .size(1)
-                .dropRule(ICurio.DropRule.ALWAYS_KEEP)
-                .order(1)
-
+                .size(4)
+        ;
+        this.createSlot("totem").icon(ResourceLocation.fromNamespaceAndPath(MODID,"slot/empty_totem_slot"))
+                .size(2)
         ;
 
 
     }
     private void entities(){
-        this.createEntities("mta_player").addPlayer().replace(false).addSlots("talisman");
+        this.createEntities("mta_player").addPlayer().replace(false).addSlots("talisman","totem");
 
     }
 }

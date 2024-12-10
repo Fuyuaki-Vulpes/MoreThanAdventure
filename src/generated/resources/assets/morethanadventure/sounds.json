@@ -11,7 +11,30 @@
       "morethanadventure:entity/duck/duck_ambient_2",
       "morethanadventure:entity/duck/duck_laugh_1"
     ],
-    "subtitle": "sound.morethanadventure.duck_ambient_1"
+    "subtitle": "sound.morethanadventure.duck_ambient"
+  },
+  "fallen_samurai_ambient": {
+    "sounds": [
+      "morethanadventure:entity/fallen_samurai/say1",
+      "morethanadventure:entity/fallen_samurai/say2",
+      "morethanadventure:entity/fallen_samurai/say3"
+    ],
+    "subtitle": "sound.morethanadventure.fallen_samurai_ambient"
+  },
+  "fallen_samurai_death": {
+    "sounds": [
+      "morethanadventure:entity/fallen_samurai/death"
+    ],
+    "subtitle": "sound.morethanadventure.fallen_samurai_death"
+  },
+  "fallen_samurai_hurt": {
+    "sounds": [
+      "morethanadventure:entity/fallen_samurai/hurt1",
+      "morethanadventure:entity/fallen_samurai/hurt2",
+      "morethanadventure:entity/fallen_samurai/hurt3",
+      "morethanadventure:entity/fallen_samurai/hurt4"
+    ],
+    "subtitle": "sound.morethanadventure.fallen_samurai_hurt"
   },
   "ferret_ambient": {
     "sounds": [
@@ -36,5 +59,24 @@
       "morethanadventure:entity/owl/owl_hurt"
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
+  },
+  "yuki_onna_ambient": {
+    "sounds": [
+      "morethanadventure:entity/yuki_onna/ambient_1",
+      "morethanadventure:entity/yuki_onna/ambient_2"
+    ],
+    "subtitle": "sound.morethanadventure.yuki_onna_ambient"
+  },
+  "yuki_onna_death": {
+    "sounds": [
+      "morethanadventure:entity/yuki_onna/death"
+    ],
+    "subtitle": "sound.morethanadventure.yuki_onna_death"
+  },
+  "yuki_onna_hurt": {
+    "sounds": [
+      "morethanadventure:entity/yuki_onna/hurt"
+    ],
+    "subtitle": "sound.morethanadventure.yuki_onna_hurt"
   }
 }

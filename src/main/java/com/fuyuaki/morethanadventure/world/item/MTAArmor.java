@@ -26,7 +26,7 @@ public class MTAArmor extends ArmorItem {
     private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID.value();
     private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER.value();
     private static final ArmorMaterial ANGEL = MtaArmorMats.TEMPLE_ANGEL.value();
-    private static final ArmorMaterial COLD = MtaArmorMats.COLD_SET.value();
+    private static final ArmorMaterial ICICLE = MtaArmorMats.FREEZING_ICICLE.value();
     private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER.value();
     private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE.value();
 
@@ -132,12 +132,12 @@ public class MTAArmor extends ArmorItem {
                 hasChestplate && chestplate == ANGEL,
                 hasLeggings && leggings == ANGEL,
                 hasBoots && boots == ANGEL);
-        doColdEffects(entity,
+        doIcicleEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == COLD,
-                hasChestplate && chestplate == COLD,
-                hasLeggings && leggings == COLD,
-                hasBoots && boots == COLD);
+                hasHelmet && helmet == ICICLE,
+                hasChestplate && chestplate == ICICLE,
+                hasLeggings && leggings == ICICLE,
+                hasBoots && boots == ICICLE);
         doBerserkerEffects(entity,
                 level,pSlotId,
                 hasHelmet && helmet == BERSERKER,
@@ -304,7 +304,7 @@ public class MTAArmor extends ArmorItem {
     }
 
 
-    protected void doColdEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected void doIcicleEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
 
         if (head) {
 
@@ -327,7 +327,8 @@ public class MTAArmor extends ArmorItem {
         }
 
         if (head && chest && legs && feet){
-
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3, 0, false, false, false));
+            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 2, false, false, false));
         }
     }
 
@@ -408,8 +409,8 @@ public class MTAArmor extends ArmorItem {
             if ( material.value() == ANGEL){
                 return angelAttributes(type,builder);
         }else
-            if ( material.value() == COLD){
-                return coldAttributes(type,builder);
+            if ( material.value() == ICICLE){
+                return icicleAttributes(type,builder);
         }else
             if ( material.value() == BERSERKER){
                 return berserkerAttributes(type,builder);
@@ -522,20 +523,23 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder coldAttributes(Type type, ItemAttributeModifiers.Builder builder){
+    protected ItemAttributeModifiers.Builder icicleAttributes(Type type, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
 
 
 
         if (type == Type.HELMET){
+            builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.CHESTPLATE){
+            builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.LEGGINGS){
+            builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }else if (type == Type.BOOTS){
-
+            builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }
 

@@ -63,6 +63,8 @@ public class GenItemModels extends ItemModelProvider {
         //simpleItem(MtaItems.HOST_HUSK);
 
         simpleItem(MtaItems.SIREN_TALISMAN);
+        simpleItem(MtaItems.WEIGHTED_DICE);
+        simpleItem(MtaItems.TOTEM_OF_COMBATING);
 
         simpleItem(MtaItems.AGATE);
         simpleItem(MtaItems.ALEXANDRITE);
@@ -141,7 +143,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldItem(MtaItems.COPPER_SWORD);
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
 
-        handheldItem(MtaItems.WOOD_CLAW);
+        handheldClaw(MtaItems.WOOD_CLAW);
         handheldBigItem(MtaItems.WOOD_CLAYMORE);
         handheldItem(MtaItems.WOOD_CUTLASS);
         handheldItem(MtaItems.WOOD_DAGGER);
@@ -153,7 +155,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.WOOD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.WOOD_TWINBLADE);
 
-        handheldItem(MtaItems.STONE_CLAW);
+        handheldClaw(MtaItems.STONE_CLAW);
         handheldBigItem(MtaItems.STONE_CLAYMORE);
         handheldItem(MtaItems.STONE_CUTLASS);
         handheldItem(MtaItems.STONE_DAGGER);
@@ -165,7 +167,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.STONE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.STONE_TWINBLADE);
 
-        handheldItem(MtaItems.COPPER_CLAW);
+        handheldClaw(MtaItems.COPPER_CLAW);
         handheldBigItem(MtaItems.COPPER_CLAYMORE);
         handheldItem(MtaItems.COPPER_CUTLASS);
         handheldItem(MtaItems.COPPER_DAGGER);
@@ -177,7 +179,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.COPPER_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);
 
-        handheldItem(MtaItems.IRON_CLAW);
+        handheldClaw(MtaItems.IRON_CLAW);
         handheldBigItem(MtaItems.IRON_CLAYMORE);
         handheldItem(MtaItems.IRON_CUTLASS);
         handheldItem(MtaItems.IRON_DAGGER);
@@ -189,7 +191,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.IRON_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.IRON_TWINBLADE);
 
-        handheldItem(MtaItems.GOLD_CLAW);
+        handheldClaw(MtaItems.GOLD_CLAW);
         handheldBigItem(MtaItems.GOLD_CLAYMORE);
         handheldItem(MtaItems.GOLD_CUTLASS);
         handheldItem(MtaItems.GOLD_DAGGER);
@@ -201,7 +203,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.GOLD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.GOLD_TWINBLADE);
 
-        handheldItem(MtaItems.NETHERSTEEL_CLAW);
+        handheldClaw(MtaItems.NETHERSTEEL_CLAW);
         handheldBigItem(MtaItems.NETHERSTEEL_CLAYMORE);
         handheldItem(MtaItems.NETHERSTEEL_CUTLASS);
         handheldItem(MtaItems.NETHERSTEEL_DAGGER);
@@ -213,7 +215,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.NETHERSTEEL_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERSTEEL_TWINBLADE);
 
-        handheldItem(MtaItems.DIAMOND_CLAW);
+        handheldClaw(MtaItems.DIAMOND_CLAW);
         handheldBigItem(MtaItems.DIAMOND_CLAYMORE);
         handheldItem(MtaItems.DIAMOND_CUTLASS);
         handheldItem(MtaItems.DIAMOND_DAGGER);
@@ -225,7 +227,7 @@ public class GenItemModels extends ItemModelProvider {
         handheldBigItem(MtaItems.DIAMOND_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);
 
-        handheldItem(MtaItems.NETHERITE_CLAW);
+        handheldClaw(MtaItems.NETHERITE_CLAW);
         handheldBigItem(MtaItems.NETHERITE_CLAYMORE);
         handheldItem(MtaItems.NETHERITE_CUTLASS);
         handheldItem(MtaItems.NETHERITE_DAGGER);
@@ -331,6 +333,12 @@ public class GenItemModels extends ItemModelProvider {
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldClaw(DeferredItem<?> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_claw")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
     }
 

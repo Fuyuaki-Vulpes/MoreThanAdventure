@@ -4,6 +4,7 @@
   ],
   "replace": false,
   "slots": [
+    "totem",
     "talisman"
   ]
 }

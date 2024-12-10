@@ -4,11 +4,11 @@
     "item": "morethanadventure:awakened_cryolite"
   },
   "base": {
-    "item": "minecraft:netherite_boots"
+    "item": "minecraft:netherite_chestplate"
   },
   "result": {
     "count": 1,
-    "id": "morethanadventure:cold_set_boots"
+    "id": "morethanadventure:freezing_icicle_chestplate"
   },
   "template": {
     "item": "morethanadventure:freezing_upgrade"
