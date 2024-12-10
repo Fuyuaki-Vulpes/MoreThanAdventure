@@ -306,7 +306,6 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.RACCOON_SPAWN_EGG.get());
         spawnEggItem(MtaItems.SHRIMP_SPAWN_EGG.get());
         spawnEggItem(MtaItems.TOUCAN_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG.get());
         spawnEggItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get());
         spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
         spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());

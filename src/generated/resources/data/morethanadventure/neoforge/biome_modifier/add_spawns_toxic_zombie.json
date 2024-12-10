@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#c:is_swamp",
+  "spawners": {
+    "type": "morethanadventure:toxic_zombie",
+    "maxCount": 1,
+    "minCount": 1,
+    "weight": 25
+  }
+}

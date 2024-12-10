@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_host",
+  "spawners": {
+    "type": "morethanadventure:host",
+    "maxCount": 7,
+    "minCount": 1,
+    "weight": 6
+  }
+}

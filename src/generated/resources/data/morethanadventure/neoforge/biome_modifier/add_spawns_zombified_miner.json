@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#c:is_overworld",
+  "spawners": {
+    "type": "morethanadventure:zombified_miner",
+    "maxCount": 3,
+    "minCount": 1,
+    "weight": 80
+  }
+}

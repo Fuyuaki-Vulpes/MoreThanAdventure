@@ -5,14 +5,21 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 public class FrostedSlime extends Slime {
@@ -64,4 +71,25 @@ public class FrostedSlime extends Slime {
     }
 
 
+    public static boolean checkSpawnRules(
+            EntityType<? extends Slime> type, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random
+    ) {
+        return level.getDifficulty() != Difficulty.PEACEFUL
+                && (MobSpawnType.ignoresLightRequirements(spawnType) || isDarkEnoughToSpawn(level, pos, random));
+    }
+
+    public static boolean isDarkEnoughToSpawn(ServerLevelAccessor level, BlockPos pos, RandomSource random) {
+        if (level.getBrightness(LightLayer.SKY, pos) > random.nextInt(32)) {
+            return false;
+        } else {
+            DimensionType dimensiontype = level.dimensionType();
+            int i = dimensiontype.monsterSpawnBlockLightLimit();
+            if (i < 15 && level.getBrightness(LightLayer.BLOCK, pos) > i) {
+                return false;
+            } else {
+                int j = level.getLevel().isThundering() ? level.getMaxLocalRawBrightness(pos, 10) : level.getMaxLocalRawBrightness(pos);
+                return j <= dimensiontype.monsterSpawnLightTest().sample(random);
+            }
+        }
+    }
 }

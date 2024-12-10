@@ -25,11 +25,13 @@ public class MTAModelLayers {
     public static final ModelLayerLocation CAPYBARA = register("capybara");
     public static final ModelLayerLocation CHARRED_SKELETON = register("charred_skeleton");
     public static final ModelLayerLocation CORROSIVE_CUBE = register("corrosive_cube");
+    public static final ModelLayerLocation CORROSIVE_CUBE_OUTER = register("corrosive_cube_outer");
     public static final ModelLayerLocation DUCK = register("duck");
     public static final ModelLayerLocation FALLEN_SAMURAI = register("fallen_samurai");
     public static final ModelLayerLocation FERRET = register("ferret");
-    public static final ModelLayerLocation FROZEN_SLIME = register("frozen_slime");
+    public static final ModelLayerLocation FROSTED_SLIME = register("frosted_slime");
     public static final ModelLayerLocation GLOW_SPIDER = register("glow_spider");
+    public static final ModelLayerLocation GLOW_SPIDER_GLOW = register("glow_spider_glow");
     public static final ModelLayerLocation GREAT_WHITE_SHARK = register("great_white_shark");
     public static final ModelLayerLocation HORSESHOE_CRAB = register("horseshoe_crab");
     public static final ModelLayerLocation HOST = register("host");

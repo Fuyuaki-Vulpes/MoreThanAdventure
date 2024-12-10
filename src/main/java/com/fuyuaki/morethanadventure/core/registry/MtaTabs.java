@@ -614,10 +614,6 @@ public class MtaTabs {
                 output.accept(MtaItems.SIREN_SPAWN_EGG);
                 output.accept(MtaItems.WISPFLY_SPAWN_EGG);
 
-                //BOSS SPAWNS
-                if (parameters.hasPermissions()){
-                output.accept(MtaItems.WITHER_JUGGERNAUT_SPAWN_EGG);
-                }
             }).build());
 
 

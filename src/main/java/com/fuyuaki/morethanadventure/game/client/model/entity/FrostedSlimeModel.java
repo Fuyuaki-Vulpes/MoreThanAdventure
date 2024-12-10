@@ -7,41 +7,49 @@ import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
+
+import java.util.Arrays;
 
 public class FrostedSlimeModel<T extends FrostedSlime> extends HierarchicalModel<T> {
+
+    private static final int SEGMENT_COUNT = 8;
     private final ModelPart root;
+    private final ModelPart[] bodyCubes = new ModelPart[8];
 
     public FrostedSlimeModel(ModelPart root) {
-        this.root = root.getChild("root");
+        this.root = root;
+        Arrays.setAll(this.bodyCubes, p_170709_ -> root.getChild(getSegmentName(p_170709_)));
+
     }
 
+
+
+private static String getSegmentName(int index) {
+    return "cube" + index;
+}
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+        for (int i = 0; i < 8; i++) {
+            int j = 0;
+            int k = i;
+            if (i == 2) {
+                j = 24;
+                k = 10;
+            } else if (i == 3) {
+                j = 24;
+                k = 19;
+            }
 
-        PartDefinition head = root.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -1.5F, -3.0F, 2.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -2.5F, -3.0F));
+            partdefinition.addOrReplaceChild(
+                    getSegmentName(i), CubeListBuilder.create().texOffs(j, k).addBox(-4.0F, (float)(16 + i), -4.0F, 8.0F, 1.0F, 8.0F), PartPose.ZERO
+            );
+        }
 
-        PartDefinition cube_r1 = head.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(6, 0).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 0.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.5F, -2.5F, -0.7854F, 0.0F, 0.0F));
-
-        PartDefinition cheeks = head.addOrReplaceChild("cheeks", CubeListBuilder.create().texOffs(10, 1).addBox(-1.5F, -0.9F, -0.9F, 3.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -0.5F, -1.0F));
-
-        PartDefinition left_front_leg = root.addOrReplaceChild("left_front_leg", CubeListBuilder.create().texOffs(0, 5).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.5F, -2.0F, -2.0F));
-
-        PartDefinition right_front_leg = root.addOrReplaceChild("right_front_leg", CubeListBuilder.create().texOffs(0, 5).mirror().addBox(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-1.5F, -2.0F, -2.0F));
-
-        PartDefinition left_hind_leg = root.addOrReplaceChild("left_hind_leg", CubeListBuilder.create().texOffs(4, 5).addBox(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(1.5F, -2.0F, 2.0F));
-
-        PartDefinition right_hind_leg = root.addOrReplaceChild("right_hind_leg", CubeListBuilder.create().texOffs(4, 5).mirror().addBox(-0.5F, 0.0F, -0.5F, 1.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-1.5F, -2.0F, 2.0F));
-
-        PartDefinition body = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(14, 0).addBox(-1.5F, -1.0F, -3.0F, 3.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.0F, 0.0F, -0.1309F, 0.0F, 0.0F));
-
-        PartDefinition tail = body.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(4, 5).addBox(-1.0F, -0.5F, 0.0F, 2.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 3.0F));
-
-        PartDefinition tail_b = tail.addOrReplaceChild("tail_b", CubeListBuilder.create().texOffs(0, 10).addBox(0.0F, -0.5F, 0.0F, 1.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.5F, 0.0F, 4.0F, 0.1309F, 0.0F, 0.0F));
-
-        return LayerDefinition.create(meshdefinition, 32, 16);
+        partdefinition.addOrReplaceChild("inside_cube", CubeListBuilder.create().texOffs(0, 16).addBox(-2.0F, 18.0F, -2.0F, 4.0F, 4.0F, 4.0F), PartPose.ZERO);
+        return LayerDefinition.create(meshdefinition, 64, 32);
     }
 
     @Override
@@ -57,5 +65,16 @@ public class FrostedSlimeModel<T extends FrostedSlime> extends HierarchicalModel
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
+    }
+
+    public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTick) {
+        float f = Mth.lerp(partialTick, entity.oSquish, entity.squish);
+        if (f < 0.0F) {
+            f = 0.0F;
+        }
+
+        for (int i = 0; i < this.bodyCubes.length; i++) {
+            this.bodyCubes[i].y = (float)(-(4 - i)) * f * 1.7F;
+        }
     }
 }

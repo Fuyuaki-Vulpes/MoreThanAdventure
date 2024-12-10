@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#c:is_snowy",
+  "spawners": {
+    "type": "morethanadventure:frosted_slime",
+    "maxCount": 4,
+    "minCount": 1,
+    "weight": 5
+  }
+}

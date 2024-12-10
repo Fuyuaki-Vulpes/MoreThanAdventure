@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_black_widow",
+  "spawners": {
+    "type": "morethanadventure:black_widow",
+    "maxCount": 1,
+    "minCount": 1,
+    "weight": 18
+  }
+}

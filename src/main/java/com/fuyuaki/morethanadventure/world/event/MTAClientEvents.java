@@ -73,7 +73,6 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.SIREN.get(), SirenRenderer::new);
 
 
-        event.registerEntityRenderer(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernautRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.BUTTERFLY.get(), ButterflyRender::new);
         event.registerEntityRenderer(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CAPIBARA.get(), CapybaraRenderer::new);
@@ -119,18 +118,20 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT, MysticMermaidsTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON, ArmoredSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW, BlackWidowModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW, SpiderModel::createSpiderBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_PATTERN, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_OVERLAY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CAPYBARA, CapybaraModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON, CharredSkeletonModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE, CorrosiveCubeModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE, CorrosiveCubeModel::createInnerBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE_OUTER, CorrosiveCubeModel::createOuterBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.DUCK, DuckModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.FROZEN_SLIME, FrostedSlimeModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, GlowSpiderModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.FROSTED_SLIME, FrostedSlimeModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, SpiderModel::createSpiderBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, SpiderModel::createSpiderBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);
@@ -146,7 +147,6 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER, SkeletonFighterModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOUCAN, ToucanModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, () -> LayerDefinition.create(ToxicZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
-        event.registerLayerDefinition(MTAModelLayers.WITHER_JUGGERNAUT, WitherJuggernautModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, () -> LayerDefinition.create(ZombifiedMinerModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
 

@@ -1,20 +1,19 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
-import com.fuyuaki.morethanadventure.game.client.model.entity.BlackWidowModel;
-import com.fuyuaki.morethanadventure.game.client.model.entity.GlowSpiderModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.GlowSpiderLayer;
 import com.fuyuaki.morethanadventure.world.entity.GlowSpider;
-import net.minecraft.client.model.SpiderModel;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.SpiderRenderer;
+import net.minecraft.client.renderer.entity.layers.SpiderEyesLayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.MagmaCube;
+import net.minecraft.world.entity.monster.CaveSpider;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class GlowSpiderRenderer extends MobRenderer<GlowSpider,GlowSpiderModel<GlowSpider>> {
+public class GlowSpiderRenderer extends SpiderRenderer<GlowSpider> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/glow_spider.png");
 
 
@@ -23,7 +22,15 @@ public class GlowSpiderRenderer extends MobRenderer<GlowSpider,GlowSpiderModel<G
     }
 
     public GlowSpiderRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext,new GlowSpiderModel<>(pContext.bakeLayer(MTAModelLayers.GLOW_SPIDER)), .5F);
+        super(pContext,MTAModelLayers.GLOW_SPIDER);
+        this.shadowRadius *= 0.4F;
+
+        this.addLayer(new GlowSpiderLayer<>(this,pContext.getModelSet()));
+
+    }
+
+    protected void scale(GlowSpider livingEntity, PoseStack poseStack, float partialTickTime) {
+        poseStack.scale(0.4F, 0.4F, 0.4F);
     }
 
     @Override

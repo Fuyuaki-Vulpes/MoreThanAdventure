@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.core.registry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import top.theillusivec4.curios.api.CuriosApi;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
@@ -169,6 +171,16 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_TOUCAN = tag("has_toucan");
         public static final TagKey<Biome> HAS_WISP_RARE = tag("has_wisp_rare");
         public static final TagKey<Biome> HAS_WISP = tag("has_wisp");
+
+
+        public static final TagKey<Biome> HAS_BLACK_WIDOW = tag("has_black_widow");
+        public static final TagKey<Biome> HAS_CHARRED_SKELETON = tag("has_charred_skeleton");
+        public static final TagKey<Biome> HAS_GLOW_SPIDER = tag("has_glow_spider");
+        public static final TagKey<Biome> HAS_HOST = tag("has_host");
+        public static final TagKey<Biome> HAS_SIREN = tag("has_siren");
+
+
+
 
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
 

@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#morethanadventure:has_charred_skeleton",
+  "spawners": {
+    "type": "morethanadventure:charred_skeleton",
+    "maxCount": 3,
+    "minCount": 1,
+    "weight": 30
+  }
+}

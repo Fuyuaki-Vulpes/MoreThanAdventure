@@ -136,6 +136,30 @@ public class GenBiomeTags  extends BiomeTagsProvider {
                 .add(MtaBiomes.TUNDRA);
 
 
+        this.tag(MtaTags.Biomes.HAS_BLACK_WIDOW)
+                .addTag(Tags.Biomes.IS_JUNGLE)
+                .addTag(Tags.Biomes.IS_SWAMP)
+        ;
+
+        this.tag(MtaTags.Biomes.HAS_CHARRED_SKELETON)
+                .addTag(Tags.Biomes.IS_HOT_OVERWORLD)
+                .remove(Tags.Biomes.IS_WET)
+        ;
+
+        this.tag(MtaTags.Biomes.HAS_GLOW_SPIDER)
+                .addTag(Tags.Biomes.IS_LUSH)
+                .addTag(Tags.Biomes.IS_DENSE_VEGETATION_OVERWORLD)
+        ;
+
+        this.tag(MtaTags.Biomes.HAS_HOST)
+                .addTag(Tags.Biomes.IS_SPOOKY)
+                .add(Biomes.DESERT, Biomes.STONY_PEAKS, Biomes.STONY_SHORE)
+        ;
+        this.tag(MtaTags.Biomes.HAS_SIREN)
+                .add(MtaBiomes.UNDERWATER_FOREST)
+        ;
+
+
 
         this.tag(MtaTags.Biomes.AGATE)
                 .addTag(Tags.Biomes.IS_HOT_OVERWORLD)

@@ -53,7 +53,6 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombie.createAttributes().build());
         event.put(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMiner.createAttributes().build());
         event.put(MtaEntityTypes.SIREN.get(), Siren.createAttributes().build());
-        event.put(MtaEntityTypes.WITHER_JUGGERNAUT.get(), WitherJuggernaut.createAttributes().build());
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());
         event.put(MtaEntityTypes.CAPIBARA.get(), Capybara.createAttributes().build());
@@ -189,6 +188,68 @@ public class MTAModEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkDesertAnimalSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+
+
+        event.register(MtaEntityTypes.ARMORED_SKELETON.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                ArmoredSkeleton::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.BLACK_WIDOW.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                BlackWidow::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.CHARRED_SKELETON.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                IcicleCreeper::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.CORROSIVE_CUBE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                CorrosiveCube::checkSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.FROSTED_SLIME.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                FrostedSlime::checkSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.GLOW_SPIDER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                GlowSpider::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.HOST.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Host::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.MOSSY_ZOMBIE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MossyZombie::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.SKELETON_FIGHTER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                SkeletonFighter::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.TOXIC_ZOMBIE.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                ToxicZombie::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.ZOMBIFIED_MINER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                ZombifiedMiner::checkMonsterSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.SIREN.get(),
+                SpawnPlacementTypes.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Siren::checkMonsterSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
 
     }

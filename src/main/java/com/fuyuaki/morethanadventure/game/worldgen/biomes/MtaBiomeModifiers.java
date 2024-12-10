@@ -65,9 +65,22 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_RACCOON = registerKey("add_spawns_raccoon");
     public static final ResourceKey<BiomeModifier> SPAWNS_SHRIMP = registerKey("add_spawns_shrimp");
     public static final ResourceKey<BiomeModifier> SPAWNS_TOUCAN = registerKey("add_spawns_toucan");
-    public static final ResourceKey<BiomeModifier> SPAWNS_ICICLE_CREEPER = registerKey("add_spawns_icicle_creeper");
     public static final ResourceKey<BiomeModifier> SPAWNS_WISPFLY = registerKey("add_spawns_wispfly");
     public static final ResourceKey<BiomeModifier> SPAWNS_WISPFLY_RARE = registerKey("add_spawns_wispfly_rare");
+
+    public static final ResourceKey<BiomeModifier> SPAWNS_ICICLE_CREEPER = registerKey("add_spawns_icicle_creeper");
+    public static final ResourceKey<BiomeModifier> SPAWNS_ARMORED_SKELETON = registerKey("add_spawns_armored_skeleton");
+    public static final ResourceKey<BiomeModifier> SPAWNS_BLACK_WIDOW = registerKey("add_spawns_black_widow");
+    public static final ResourceKey<BiomeModifier> SPAWNS_CHARRED_SKELETON = registerKey("add_spawns_charred_skeleton");
+    public static final ResourceKey<BiomeModifier> SPAWNS_CORROSIVE_CUBE = registerKey("add_spawns_corrosive_cube");
+    public static final ResourceKey<BiomeModifier> SPAWNS_FROSTED_SLIME = registerKey("add_spawns_frosted_slime");
+    public static final ResourceKey<BiomeModifier> SPAWNS_GLOW_SPIDER = registerKey("add_spawns_glow_spider");
+    public static final ResourceKey<BiomeModifier> SPAWNS_HOST = registerKey("add_spawns_host");
+    public static final ResourceKey<BiomeModifier> SPAWNS_MOSSY_ZOMBIE = registerKey("add_spawns_mossy_zombie");
+    public static final ResourceKey<BiomeModifier> SPAWNS_SKELETON_FIGHTER = registerKey("add_spawns_skeleton_fighter");
+    public static final ResourceKey<BiomeModifier> SPAWNS_TOXIC_ZOMBIE = registerKey("add_spawns_toxic_zombie");
+    public static final ResourceKey<BiomeModifier> SPAWNS_ZOMBIFIED_MINER = registerKey("add_spawns_zombified_miner");
+    public static final ResourceKey<BiomeModifier> SPAWNS_SIREN = registerKey("add_spawns_siren");
 
 
 
@@ -279,11 +292,6 @@ public class MtaBiomeModifiers {
                 biomes.getOrThrow(MtaTags.Biomes.HAS_TOUCAN),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOUCAN.get(),40,1,5))
         ));
-        context.register(SPAWNS_ICICLE_CREEPER,new BiomeModifiers.AddSpawnsBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.ICICLE_CREEPER.get(),25,1,2))
-        ));
-
         context.register(SPAWNS_WISPFLY_RARE,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_WISP_RARE),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WISPFLY.get(),8,1,3))
@@ -293,6 +301,73 @@ public class MtaBiomeModifiers {
                 biomes.getOrThrow(MtaTags.Biomes.HAS_WISP),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WISPFLY.get(),25,1,6))
         ));
+
+
+        context.register(SPAWNS_ICICLE_CREEPER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_COLD_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.ICICLE_CREEPER.get(),35,1,1))
+        ));
+
+        context.register(SPAWNS_ARMORED_SKELETON,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.ARMORED_SKELETON.get(),30,1,2))
+        ));
+
+        context.register(SPAWNS_BLACK_WIDOW,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_BLACK_WIDOW),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.BLACK_WIDOW.get(),18,1,1))
+        ));
+
+        context.register(SPAWNS_CHARRED_SKELETON,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_CHARRED_SKELETON),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.CHARRED_SKELETON.get(),30,1,3))
+        ));
+
+        context.register(SPAWNS_CORROSIVE_CUBE,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_SWAMP),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.CORROSIVE_CUBE.get(),5,1,3))
+        ));
+
+        context.register(SPAWNS_FROSTED_SLIME,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_SNOWY),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.FROSTED_SLIME.get(),5,1,4))
+        ));
+
+        context.register(SPAWNS_GLOW_SPIDER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_GLOW_SPIDER),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.GLOW_SPIDER.get(),40,1,3))
+        ));
+
+        context.register(SPAWNS_HOST,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_HOST),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.HOST.get(),6,1,7))
+        ));
+
+        context.register(SPAWNS_MOSSY_ZOMBIE,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_JUNGLE),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.MOSSY_ZOMBIE.get(),60,1,2))
+        ));
+
+        context.register(SPAWNS_SKELETON_FIGHTER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_DRY_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.SKELETON_FIGHTER.get(),45,1,2))
+        ));
+
+        context.register(SPAWNS_TOXIC_ZOMBIE,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_SWAMP),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOXIC_ZOMBIE.get(),25,1,1))
+        ));
+
+        context.register(SPAWNS_ZOMBIFIED_MINER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.ZOMBIFIED_MINER.get(),80,1,3))
+        ));
+
+        context.register(SPAWNS_SIREN,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_SIREN),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.SIREN.get(),10,1,4))
+        ));
+
 
 
     }
