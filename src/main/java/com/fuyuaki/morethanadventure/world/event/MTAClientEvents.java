@@ -77,6 +77,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CAPIBARA.get(), CapybaraRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.DUCK.get(), DuckRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.DEER.get(), DeerRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.FERRET.get(), FerretRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.GREAT_WHITE_SHARK.get(), GreatWhiteSharkRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
@@ -88,6 +89,7 @@ public class MTAClientEvents
         event.registerEntityRenderer(MtaEntityTypes.RACCOON.get(), RaccoonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.SHRIMP.get(), ShrimpRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.TOUCAN.get(), ToucanRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.TURKEY.get(), TurkeyRenderer::new);
 
         //ITEM & BLOCK
         event.registerEntityRenderer(MtaEntityTypes.NETHERITE_TRIDENT.get(), ThrownNetheriteTridentRenderer::new);

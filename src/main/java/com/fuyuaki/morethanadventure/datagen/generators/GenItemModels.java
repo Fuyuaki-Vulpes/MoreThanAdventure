@@ -297,6 +297,7 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.BUTTERFLY_SPAWN_EGG.get());
         spawnEggItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get());
         spawnEggItem(MtaItems.CAPYBARA_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.DEER_SPAWN_EGG.get());
         spawnEggItem(MtaItems.DUCK_SPAWN_EGG.get());
         spawnEggItem(MtaItems.FERRET_SPAWN_EGG.get());
         spawnEggItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG.get());
@@ -308,6 +309,7 @@ public class GenItemModels extends ItemModelProvider {
         spawnEggItem(MtaItems.RACCOON_SPAWN_EGG.get());
         spawnEggItem(MtaItems.SHRIMP_SPAWN_EGG.get());
         spawnEggItem(MtaItems.TOUCAN_SPAWN_EGG.get());
+        spawnEggItem(MtaItems.TURKEY_SPAWN_EGG.get());
         spawnEggItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get());
         spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
         spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());

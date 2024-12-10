@@ -598,6 +598,9 @@ public class MtaItems {
     public static final DeferredItem<Item> CAPYBARA_SPAWN_EGG =  ITEMS.register("capybara_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.CAPIBARA::get,0x9a7666,0x896558,new Item.Properties()));
 
+    public static final DeferredItem<Item> DEER_SPAWN_EGG =  ITEMS.register("deer_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.DEER::get,0x9a7666,0x896558,new Item.Properties()));
+
     public static final DeferredItem<Item> DUCK_SPAWN_EGG =  ITEMS.register("duck_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.DUCK::get,0x37a73f,0xef9466,new Item.Properties()));
 
@@ -630,6 +633,9 @@ public class MtaItems {
 
     public static final DeferredItem<Item> TOUCAN_SPAWN_EGG =  ITEMS.register("toucan_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.TOUCAN::get,0x292731,0xe78a43,new Item.Properties()));
+
+    public static final DeferredItem<Item> TURKEY_SPAWN_EGG =  ITEMS.register("turkey_spawn_egg",
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.TURKEY::get,0x292731,0xe78a43,new Item.Properties()));
 
     public static final DeferredItem<Item> ARMORED_SKELETON_SPAWN_EGG =  ITEMS.register("armored_skeleton_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.ARMORED_SKELETON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));

@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 public class Turkey extends Animal {
-    protected Turkey(EntityType<? extends Animal> entityType, Level level) {
+    public Turkey(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
     }
 

@@ -577,6 +577,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.BUTTERFLY_SPAWN_EGG.get(),"Butterfly Spawn Egg");
         add(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),"Bearded Dragon Spawn Egg");
         add(MtaItems.CAPYBARA_SPAWN_EGG.get(),"Capybara Spawn Egg");
+        add(MtaItems.DEER_SPAWN_EGG.get(),"Deer Spawn Egg");
         add(MtaItems.DUCK_SPAWN_EGG.get(),"Duck Spawn Egg");
         add(MtaItems.FERRET_SPAWN_EGG.get(),"Ferret Spawn Egg");
         add(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG.get(),"Great White Shark Spawn Egg");
@@ -588,6 +589,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.RACCOON_SPAWN_EGG.get(),"Raccoon Spawn Egg");
         add(MtaItems.SHRIMP_SPAWN_EGG.get(),"Shrimp Spawn Egg");
         add(MtaItems.TOUCAN_SPAWN_EGG.get(),"Toucan Spawn Egg");
+        add(MtaItems.TURKEY_SPAWN_EGG.get(),"Turkey Spawn Egg");
 
 
         //ENTITIES
@@ -608,6 +610,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.BEARDED_DRAGON.get(),"Bearded Dragon");
         add(MtaEntityTypes.BUTTERFLY.get(),"Butterfly");
         add(MtaEntityTypes.CAPIBARA.get(),"Capybara");
+        add(MtaEntityTypes.DEER.get(),"Deer");
         add(MtaEntityTypes.DUCK.get(),"Duck");
         add(MtaEntityTypes.FERRET.get(),"Ferret");
         add(MtaEntityTypes.GREAT_WHITE_SHARK.get(),"Great White Shark");
@@ -620,6 +623,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.RACCOON.get(),"Raccoon");
         add(MtaEntityTypes.SHRIMP.get(),"Shrimp");
         add(MtaEntityTypes.TOUCAN.get(),"Toucan");
+        add(MtaEntityTypes.TURKEY.get(),"Turkey");
         add(MtaEntityTypes.MTA_ARROW.get(),"Special Arrow");
 
 

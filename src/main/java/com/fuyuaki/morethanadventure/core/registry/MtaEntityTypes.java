@@ -112,6 +112,11 @@ public class MtaEntityTypes {
                     .sized(0.8f,0.6F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"capybara").toString()));
 
+    public static final DeferredHolder<EntityType<?>,EntityType<Deer>> DEER = ENTITY.register("deer",
+            () -> EntityType.Builder.<Deer>of(Deer::new, MobCategory.CREATURE)
+                    .sized(0.8f,0.6F)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"deer").toString()));
+
     public static final DeferredHolder<EntityType<?>,EntityType<Duck>> DUCK = ENTITY.register("duck",
             () -> EntityType.Builder.<Duck>of(Duck::new, MobCategory.CREATURE)
                     .sized(0.5f,0.5F)
@@ -161,6 +166,11 @@ public class MtaEntityTypes {
             () -> EntityType.Builder.<Toucan>of(Toucan::new, MobCategory.CREATURE)
                     .sized(0.45f,0.45f)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"toucan").toString()));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Turkey>> TURKEY = ENTITY.register("turkey",
+            () -> EntityType.Builder.<Turkey>of(Turkey::new, MobCategory.CREATURE)
+                    .sized(0.45f,0.45f)
+                    .build(ResourceLocation.fromNamespaceAndPath(MODID,"turkey").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Raccoon>> RACCOON = ENTITY.register("raccoon",
             () -> EntityType.Builder.<Raccoon>of(Raccoon::new, MobCategory.CREATURE)

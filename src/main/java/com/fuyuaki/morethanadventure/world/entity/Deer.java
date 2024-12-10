@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 public class Deer extends Animal {
-    protected Deer(EntityType<? extends Animal> entityType, Level level) {
+    public Deer(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
     }
 

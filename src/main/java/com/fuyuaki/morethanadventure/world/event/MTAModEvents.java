@@ -56,6 +56,7 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.BUTTERFLY.get(), Butterfly.createAttributes().build());
         event.put(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragon.createAttributes().build());
         event.put(MtaEntityTypes.CAPIBARA.get(), Capybara.createAttributes().build());
+        event.put(MtaEntityTypes.DEER.get(), Deer.createAttributes().build());
         event.put(MtaEntityTypes.DUCK.get(), Duck.createAttributes().build());
         event.put(MtaEntityTypes.FERRET.get(), Ferret.createAttributes().build());
         event.put(MtaEntityTypes.GREAT_WHITE_SHARK.get(), GreatWhiteShark.createAttributes().build());
@@ -68,6 +69,7 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.RACCOON.get(), Raccoon.createAttributes().build());
         event.put(MtaEntityTypes.SHRIMP.get(), Shrimp.createAttributes().build());
         event.put(MtaEntityTypes.TOUCAN.get(), Toucan.createAttributes().build());
+        event.put(MtaEntityTypes.TURKEY.get(), Turkey.createAttributes().build());
     }
     @SubscribeEvent
     public static void entityAttributeModification(EntityAttributeModificationEvent event){
@@ -129,6 +131,11 @@ public class MTAModEvents {
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkLandSwimmerSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.DEER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MTASpawnRules::checkLandSwimmerSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.DUCK.get(),
                 MTAPlacementTypes.GROUND_OR_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
@@ -180,6 +187,11 @@ public class MTAModEvents {
                 MTASpawnRules::checkSeaAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.TOUCAN.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING,
+                MTASpawnRules::checkBirdSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.TURKEY.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING,
                 MTASpawnRules::checkBirdSpawnRules,

@@ -591,6 +591,7 @@ public class MtaTabs {
                 output.accept(MtaItems.BUTTERFLY_SPAWN_EGG);
                 output.accept(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
                 output.accept(MtaItems.CAPYBARA_SPAWN_EGG);
+                output.accept(MtaItems.DEER_SPAWN_EGG);
                 output.accept(MtaItems.DUCK_SPAWN_EGG);
                 output.accept(MtaItems.FERRET_SPAWN_EGG);
                 output.accept(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
@@ -602,6 +603,7 @@ public class MtaTabs {
                 output.accept(MtaItems.RACCOON_SPAWN_EGG);
                 output.accept(MtaItems.SHRIMP_SPAWN_EGG);
                 output.accept(MtaItems.TOUCAN_SPAWN_EGG);
+                output.accept(MtaItems.TURKEY_SPAWN_EGG);
 
                 //HOSTILE
 

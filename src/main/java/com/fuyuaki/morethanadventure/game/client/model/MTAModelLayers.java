@@ -26,6 +26,7 @@ public class MTAModelLayers {
     public static final ModelLayerLocation CHARRED_SKELETON = register("charred_skeleton");
     public static final ModelLayerLocation CORROSIVE_CUBE = register("corrosive_cube");
     public static final ModelLayerLocation CORROSIVE_CUBE_OUTER = register("corrosive_cube_outer");
+    public static final ModelLayerLocation DEER = register("deer");
     public static final ModelLayerLocation DUCK = register("duck");
     public static final ModelLayerLocation FALLEN_SAMURAI = register("fallen_samurai");
     public static final ModelLayerLocation FERRET = register("ferret");
@@ -47,6 +48,7 @@ public class MTAModelLayers {
     public static final ModelLayerLocation SKELETON_FIGHTER = register("skeleton_fighter");
     public static final ModelLayerLocation TOUCAN = register("toucan");
     public static final ModelLayerLocation TOXIC_ZOMBIE = register("toxic_zombie");
+    public static final ModelLayerLocation TURKEY = register("turkey");
     public static final ModelLayerLocation WITHER_JUGGERNAUT = register("wither_juggernaut");
     public static final ModelLayerLocation YUKI_ONNA = register("yuki_onna");
     public static final ModelLayerLocation ZOMBIFIED_MINER = register("zombified_miner");
