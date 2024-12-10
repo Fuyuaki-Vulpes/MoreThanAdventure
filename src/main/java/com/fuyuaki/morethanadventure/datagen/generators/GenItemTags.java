@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -195,7 +196,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_HELMET.get(),
                         MtaItems.SILENT_REAPERS_HELMET.get(),
                         MtaItems.TEMPLE_ANGELS_HELMET.get(),
-                        MtaItems.COLD_SET_HELMET.get(),
+                        MtaItems.FREEZING_ICICLE_HELMET.get(),
                         MtaItems.WRATHFUL_BERSERKERS_HELMET.get(),
                         MtaItems.SHADOW_ROGUES_HELMET.get()
                 );
@@ -206,7 +207,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get(),
                         MtaItems.SILENT_REAPERS_CHESTPLATE.get(),
                         MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(),
-                        MtaItems.COLD_SET_CHESTPLATE.get(),
+                        MtaItems.FREEZING_ICICLE_CHESTPLATE.get(),
                         MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get(),
                         MtaItems.SHADOW_ROGUES_CHESTPLATE.get()
                 );
@@ -217,7 +218,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get(),
                         MtaItems.SILENT_REAPERS_LEGGINGS.get(),
                         MtaItems.TEMPLE_ANGELS_LEGGINGS.get(),
-                        MtaItems.COLD_SET_LEGGINGS.get(),
+                        MtaItems.FREEZING_ICICLE_LEGGINGS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get(),
                         MtaItems.SHADOW_ROGUES_LEGGINGS.get()
                 );
@@ -228,7 +229,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.MYSTIC_MERMAIDS_BOOTS.get(),
                         MtaItems.SILENT_REAPERS_BOOTS.get(),
                         MtaItems.TEMPLE_ANGELS_BOOTS.get(),
-                        MtaItems.COLD_SET_BOOTS.get(),
+                        MtaItems.FREEZING_ICICLE_BOOTS.get(),
                         MtaItems.WRATHFUL_BERSERKERS_BOOTS.get(),
                         MtaItems.SHADOW_ROGUES_BOOTS.get()
                 );
@@ -313,7 +314,14 @@ public class GenItemTags extends ItemTagsProvider {
     private void curioTags() {
         this.tag(MtaTags.Curios.TALISMANS)
                 .add(
-                        MtaItems.SIREN_TALISMAN.get()
+                        MtaItems.SIREN_TALISMAN.get(),
+                        MtaItems.WEIGHTED_DICE.get()
+
+                );
+        this.tag(MtaTags.Curios.TOTEMS)
+                .add(
+                        Items.TOTEM_OF_UNDYING,
+                        MtaItems.TOTEM_OF_COMBATING.get()
 
                 );
     }

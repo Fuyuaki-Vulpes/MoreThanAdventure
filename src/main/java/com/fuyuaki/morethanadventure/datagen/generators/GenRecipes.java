@@ -379,10 +379,10 @@ public class GenRecipes  extends RecipeProvider implements IConditionBuilder {
         celestiteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOOTS.get());
         celestiteSmithing(output, MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOW.get());
 
-        cryoliteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.COLD_SET_HELMET.get());
-        cryoliteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.COLD_SET_CHESTPLATE.get());
-        cryoliteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.COLD_SET_LEGGINGS.get());
-        cryoliteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.COLD_SET_BOOTS.get());
+        cryoliteSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_HELMET.get());
+        cryoliteSmithing(output, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_CHESTPLATE.get());
+        cryoliteSmithing(output, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_LEGGINGS.get());
+        cryoliteSmithing(output, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_BOOTS.get());
         cryoliteSmithing(output, MtaItems.NETHERITE_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_SPEAR.get());
 
         garnetSmithing(output, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_HELMET.get());

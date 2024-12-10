@@ -4,7 +4,7 @@ import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.game.client.PlayerModelOverlayUtil;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.player.SirenModel;
-import com.fuyuaki.morethanadventure.world.item.TalismanItem;
+import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HumanoidModel;
@@ -35,7 +35,7 @@ public class SirenRenderLayer<T extends Player, M extends HumanoidModel<T>> exte
 
     @Override
     public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
-        if (!TalismanItem.shouldRenderParts( MtaItems.SIREN_TALISMAN.get(),livingEntity)) return;
+        if (!AttributeModifierTalismanItem.shouldRenderParts( MtaItems.SIREN_TALISMAN.get(),livingEntity)) return;
         if (PlayerModelOverlayUtil.shouldRenderSirenParts(livingEntity)) {
             poseStack.pushPose();
             VertexConsumer consumer = ItemRenderer.getFoilBufferDirect(bufferSource, RenderType.entityTranslucentCull(TEXTURE), false, false);

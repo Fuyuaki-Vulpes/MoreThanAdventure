@@ -1,7 +1,9 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
 import com.fuyuaki.morethanadventure.world.item.*;
+import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import com.fuyuaki.morethanadventure.world.item.curio.talisman.SirenTalisman;
+import com.fuyuaki.morethanadventure.world.item.curio.talisman.TalismanItem;
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
@@ -35,9 +37,16 @@ public class MtaItems {
 
     //TALISMANS
 
-    public static final DeferredItem<TalismanItem> SIREN_TALISMAN = ITEMS.register("siren_talisman", () -> new SirenTalisman(
+    public static final DeferredItem<AttributeModifierTalismanItem> SIREN_TALISMAN = ITEMS.register("siren_talisman", () -> new SirenTalisman(
             new Item.Properties()
     ));
+
+    public static final DeferredItem<TalismanItem> WEIGHTED_DICE = ITEMS.register("weighted_dice", () -> new TalismanItem(new Item.Properties()));
+
+    //TOTEMS
+    public static final DeferredItem<Item> TOTEM_OF_COMBATING = ITEMS.registerSimpleItem("totem_of_combating",new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
+
+
 
     //GEMS
 
@@ -97,10 +106,10 @@ public class MtaItems {
     public static final DeferredItem<MTAArmor> TEMPLE_ANGELS_LEGGINGS = ITEMS.register("temple_angels_leggings", () -> new MTAArmor(MtaArmorMats.TEMPLE_ANGEL, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(45))));
     public static final DeferredItem<MTAArmor> TEMPLE_ANGELS_BOOTS = ITEMS.register("temple_angels_boots", () -> new MTAArmor(MtaArmorMats.TEMPLE_ANGEL, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(45))));
 
-    public static final DeferredItem<MTAArmor> COLD_SET_HELMET = ITEMS.register("cold_set_helmet", () -> new MTAArmor(MtaArmorMats.COLD_SET, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(45))));
-    public static final DeferredItem<MTAArmor> COLD_SET_CHESTPLATE = ITEMS.register("cold_set_chestplate", () -> new MTAArmor(MtaArmorMats.COLD_SET, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(45))));
-    public static final DeferredItem<MTAArmor> COLD_SET_LEGGINGS = ITEMS.register("cold_set_leggings", () -> new MTAArmor(MtaArmorMats.COLD_SET, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(45))));
-    public static final DeferredItem<MTAArmor> COLD_SET_BOOTS = ITEMS.register("cold_set_boots", () -> new MTAArmor(MtaArmorMats.COLD_SET, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(45))));
+    public static final DeferredItem<MTAArmor> FREEZING_ICICLE_HELMET = ITEMS.register("freezing_icicle_helmet", () -> new MTAArmor(MtaArmorMats.FREEZING_ICICLE, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(45))));
+    public static final DeferredItem<MTAArmor> FREEZING_ICICLE_CHESTPLATE = ITEMS.register("freezing_icicle_chestplate", () -> new MTAArmor(MtaArmorMats.FREEZING_ICICLE, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(45))));
+    public static final DeferredItem<MTAArmor> FREEZING_ICICLE_LEGGINGS = ITEMS.register("freezing_icicle_leggings", () -> new MTAArmor(MtaArmorMats.FREEZING_ICICLE, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(45))));
+    public static final DeferredItem<MTAArmor> FREEZING_ICICLE_BOOTS = ITEMS.register("freezing_icicle_boots", () -> new MTAArmor(MtaArmorMats.FREEZING_ICICLE, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(45))));
 
     public static final DeferredItem<MTAArmor> WRATHFUL_BERSERKERS_HELMET = ITEMS.register("wrathful_berserkers_helmet", () -> new MTAArmor(MtaArmorMats.WRATHFUL_BERSERKER, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(43))));
     public static final DeferredItem<MTAArmor> WRATHFUL_BERSERKERS_CHESTPLATE = ITEMS.register("wrathful_berserkers_chestplate", () -> new MTAArmor(MtaArmorMats.WRATHFUL_BERSERKER, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(43))));

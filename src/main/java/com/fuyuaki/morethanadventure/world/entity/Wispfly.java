@@ -124,7 +124,7 @@ public class Wispfly extends TamableAnimal {
         if (!this.isTame()) {
             return false;
         } else {
-            return !(otherAnimal instanceof Wispfly wisp) ? false : wisp.isTame() && super.canMate(otherAnimal);
+            return otherAnimal instanceof Wispfly wisp && wisp.isTame() && super.canMate(otherAnimal);
         }
     }
 
@@ -152,10 +152,6 @@ public class Wispfly extends TamableAnimal {
         return interactionresult1;
     }
 
-    @Override
-    public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-        return !this.isTame() && this.tickCount > 2400;
-    }
 
     private void tryToTame(Player player) {
         if (this.random.nextInt(3) == 0 && !net.neoforged.neoforge.event.EventHooks.onAnimalTame(this, player)) {

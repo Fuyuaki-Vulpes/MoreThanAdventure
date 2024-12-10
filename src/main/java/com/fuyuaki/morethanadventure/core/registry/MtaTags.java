@@ -16,7 +16,9 @@ import top.theillusivec4.curios.api.CuriosApi;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
+
 public class MtaTags {
+    @SuppressWarnings("unused")
 
     public static class Common {
         // Blocks that are efficiently mined with a Knife.
@@ -110,11 +112,6 @@ public class MtaTags {
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Item> SEAWOOD = tag("sealogs");
 
-        public static final TagKey<Item> CORE_STONES = tag("core_stones");
-        //public static final TagKey<Item> COSMETIC_CORE_STONES = tag("cosmetic_core_stones");
-        //public static final TagKey<Item> EFFECTIVE_CORE_STONES = tag("effective_core_stones");
-
-
 
         private static TagKey<Item> tag(String name) {
             return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
@@ -197,6 +194,7 @@ public class MtaTags {
     public class Curios {
 
         public static final TagKey<Item> TALISMANS = tag("talisman");
+        public static final TagKey<Item> TOTEMS = tag("totem");
 
         private static TagKey<Item> tag(String name) {
             return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, name));

@@ -4,8 +4,11 @@ import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -336,6 +339,8 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaItems.SIREN_TALISMAN.get(),"Siren's Talisman");
+        add(MtaItems.WEIGHTED_DICE.get(),"Weighted Dice");
+        add(MtaItems.TOTEM_OF_COMBATING.get(),"Totem Of Combating");
 
         add(MtaItems.AGATE.get(),"Agate");
         add(MtaItems.ALEXANDRITE.get(),"Alexandrite");
@@ -385,10 +390,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.TEMPLE_ANGELS_CHESTPLATE.get(), "Temple Angel's Chestplate");
         add(MtaItems.TEMPLE_ANGELS_LEGGINGS.get(), "Temple Angel's Leggings");
         add(MtaItems.TEMPLE_ANGELS_BOOTS.get(), "Temple Angel's Boots");
-        add(MtaItems.COLD_SET_HELMET.get(), "Cold Set Helmet");
-        add(MtaItems.COLD_SET_CHESTPLATE.get(), "Cold Set Chestplate");
-        add(MtaItems.COLD_SET_LEGGINGS.get(), "Cold Set Leggings");
-        add(MtaItems.COLD_SET_BOOTS.get(), "Cold Set Boots");
+        add(MtaItems.FREEZING_ICICLE_HELMET.get(), "Cold Set Helmet");
+        add(MtaItems.FREEZING_ICICLE_CHESTPLATE.get(), "Cold Set Chestplate");
+        add(MtaItems.FREEZING_ICICLE_LEGGINGS.get(), "Cold Set Leggings");
+        add(MtaItems.FREEZING_ICICLE_BOOTS.get(), "Cold Set Boots");
         add(MtaItems.WRATHFUL_BERSERKERS_HELMET.get(), "Wrathful Berserker's Helmet");
         add(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get(), "Wrathful Berserker's Chestplate");
         add(MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get(), "Wrathful Berserker's Leggings");
@@ -643,7 +648,13 @@ public class EN_US_LangProvider extends LanguageProvider {
         //CURIO
         add("curios.identifier.talisman", "Talisman");
         add("curios.modifiers.talisman", "On Wearing Talisman:");
+        add("curios.identifier.totem", "Totem");
+        add("curios.modifiers.totem", "On Wearing Totem:");
+        add("mta.talisman.description.hint", "Press SHIFT to see description");
 
+        //TalismanItem
+        add(getTalismanDescriptionID(MtaItems.SIREN_TALISMAN), "When Underwater, becomes a Siren, which lets you swim faster, see better, and breathe");
+        add(getTalismanDescriptionID(MtaItems.WEIGHTED_DICE), "MTA and Vanilla enchantments and effects that have luck based aspects will have more favorable odds");
 
     }
 
@@ -653,6 +664,12 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.ferret_hurt", "Ferret Squeak");
         add("sound.morethanadventure.owl_ambient", "Owl Call");
         add("sound.morethanadventure.owl_hurt", "Owl Hurt");
+    }
+
+
+
+    private String getTalismanDescriptionID(DeferredItem<? extends Item> item){
+        return "mta.talisman.description." + BuiltInRegistries.ITEM.getKey(item.get()).getPath();
     }
 
 }

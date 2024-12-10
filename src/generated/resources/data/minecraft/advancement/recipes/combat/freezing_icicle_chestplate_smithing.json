@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cold_set_chestplate_smithing"
+        "recipe": "minecraft:freezing_icicle_chestplate_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cold_set_chestplate_smithing"
+      "minecraft:freezing_icicle_chestplate_smithing"
     ]
   }
 }

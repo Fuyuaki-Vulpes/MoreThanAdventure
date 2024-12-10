@@ -1,6 +1,4 @@
 {
-  "drop_rule": "ALWAYS_KEEP",
   "icon": "morethanadventure:slot/empty_talisman_slot",
-  "order": 1,
-  "size": 1
+  "size": 4
 }
