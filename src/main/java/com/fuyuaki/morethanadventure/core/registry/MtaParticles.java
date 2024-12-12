@@ -25,7 +25,10 @@ public class MtaParticles {
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> POISON_BUBBLE = simpleParticle("poison_bubble",false);
 
-
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SLASH_ATTACK = simpleParticle("slash_attack",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> STAB_ATTACK = simpleParticle("stab_attack",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DAGGER_ATTACK = simpleParticle("dagger_attack",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TEAR_ATTACK = simpleParticle("tear_attack",false);
 
     private static <I extends Block> DeferredHolder<ParticleType<?>, SimpleParticleType> simpleParticle(String name, boolean overrideLimiter) {
         return PARTICLES.register(name, () -> new SimpleParticleType(false));

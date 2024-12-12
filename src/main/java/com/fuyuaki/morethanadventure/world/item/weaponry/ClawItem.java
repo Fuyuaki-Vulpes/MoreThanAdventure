@@ -1,7 +1,12 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
 import com.fuyuaki.morethanadventure.world.item.ItemVariables;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -18,7 +23,7 @@ import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.List;
 
-public class ClawItem extends SwordItem {
+public class ClawItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.5F;
     protected static final int attackDamage = 6;
@@ -34,39 +39,26 @@ public class ClawItem extends SwordItem {
     }
 
     public static ItemAttributeModifiers createAttributes(Tier tier) {
-        return ItemAttributeModifiers.builder()
-                .add(
-                        Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(
-                                BASE_ATTACK_DAMAGE_ID, (double)((float)attackDamage + tier.getAttackDamageBonus()), AttributeModifier.Operation.ADD_VALUE
-                        ),
-                        EquipmentSlotGroup.MAINHAND
-                )
-                .add(
-                        Attributes.ATTACK_SPEED,
-                        new AttributeModifier(BASE_ATTACK_SPEED_ID, (double)attackSpeed, AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND
-                )
-                .add(
-                        Attributes.ATTACK_KNOCKBACK,
-                        new AttributeModifier(ItemVariables.BASE_ATTACK_KNOCKBACK_ID, (double)0.2F, AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND
-                )
-                .build();
+        return createAttributes(tier,6.0F,-2.5F,2.0F);
     }
+
+    @Override
+    public ParticleOptions getWeaponHitParticles() {
+        return MtaParticles.TEAR_ATTACK.get();
+    }
+
+    @Override
+    public SoundEvent getWeaponHitSound() {
+        return SoundEvents.PLAYER_ATTACK_SWEEP;
+    }
+
 
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         target.setPos(target.position());
         target.setDeltaMovement(0,0,0);
-        return true;
-    }
-
-    @Override
-    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-
+        return super.hurtEnemy(stack,target,attacker);
     }
 
     @Override

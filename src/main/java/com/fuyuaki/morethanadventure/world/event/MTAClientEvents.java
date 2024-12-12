@@ -4,10 +4,7 @@ import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.*;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
-import com.fuyuaki.morethanadventure.game.client.particle.GeyserParticle;
-import com.fuyuaki.morethanadventure.game.client.particle.PoisonBubble;
-import com.fuyuaki.morethanadventure.game.client.particle.SprinklerParticle;
-import com.fuyuaki.morethanadventure.game.client.particle.UnpoppableBubble;
+import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
@@ -182,6 +179,12 @@ public class MTAClientEvents
         event.registerSpriteSet(MtaParticles.SPRINKLER.get(), SprinklerParticle.Builder::new);
         event.registerSpriteSet(MtaParticles.UNPOPPABLE_BUBBLE.get(), UnpoppableBubble.Provider::new);
         event.registerSpriteSet(MtaParticles.POISON_BUBBLE.get(), PoisonBubble.Provider::new);
+
+
+        event.registerSpriteSet(MtaParticles.SLASH_ATTACK.get(), AttackParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.STAB_ATTACK.get(), AttackParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.DAGGER_ATTACK.get(), AttackParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.TEAR_ATTACK.get(), AttackParticle.Provider::new);
 
     }
     @SubscribeEvent

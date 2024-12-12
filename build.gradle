@@ -133,9 +133,7 @@ dependencies {
     compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
     runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
 
-    implementation"me.shedaniel.cloth:cloth-config-neoforge:${clothConfig}"
-    implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_anim}"
-    implementation "maven.modrinth:better-combat:${betterCombat}-neoforge"
+    //implementation"me.shedaniel.cloth:cloth-config-neoforge:${clothConfig}"
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 

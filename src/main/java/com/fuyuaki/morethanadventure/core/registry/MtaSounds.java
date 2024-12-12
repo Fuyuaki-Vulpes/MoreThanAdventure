@@ -117,6 +117,18 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> ZOMBIFIED_MINER_DEATH = registerSoundEvent("zombified_miner_death");
 
 
+
+    //WEAPONRY
+    public static final Supplier<SoundEvent> WEAPON_DEEP_SWING = registerSoundEvent("weapon_deep_swing");
+    public static final Supplier<SoundEvent> WEAPON_SWING = registerSoundEvent("weapon_swing");
+    public static final Supplier<SoundEvent> WEAPON_PUNCH = registerSoundEvent("weapon_punch");
+    public static final Supplier<SoundEvent> WEAPON_SCRAPE = registerSoundEvent("weapon_scrape");
+    public static final Supplier<SoundEvent> WEAPON_STAB_SHARP = registerSoundEvent("weapon_stab_sharp");
+    public static final Supplier<SoundEvent> WEAPON_TEAR = registerSoundEvent("weapon_tear");
+    public static final Supplier<SoundEvent> WEAPON_THROW = registerSoundEvent("weapon_throw");
+    public static final Supplier<SoundEvent> WEAPON_WHIP = registerSoundEvent("weapon_whip");
+
+
     private static Supplier<SoundEvent> registerSoundEvent (String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));

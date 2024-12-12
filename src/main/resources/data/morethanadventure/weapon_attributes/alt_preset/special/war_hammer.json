@@ -1,7 +1,0 @@
-{
-  "parent": "bettercombat:vanilla_mace",
-  "attributes": {
-    "attack_range": 4.0,
-    "two_handed": true
-  }
-}

@@ -238,5 +238,31 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
 
 
         //Other
+
+        add(MtaSounds.WEAPON_DEEP_SWING.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/deep_swing")).subtitle("sound.morethanadventure.weapons.deep_swing"));
+
+        add(MtaSounds.WEAPON_SWING.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/swing")).subtitle("sound.morethanadventure.weapons.swing"));
+
+        add(MtaSounds.WEAPON_PUNCH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/punch")).subtitle("sound.morethanadventure.weapons.punch"));
+
+        add(MtaSounds.WEAPON_SCRAPE.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/scrape")).subtitle("sound.morethanadventure.weapons.scrape"));
+
+        add(MtaSounds.WEAPON_STAB_SHARP.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/stab_sharp")).subtitle("sound.morethanadventure.weapons.stab_sharp"));
+
+        add(MtaSounds.WEAPON_TEAR.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/tear")).subtitle("sound.morethanadventure.weapons.tear"));
+
+        add(MtaSounds.WEAPON_THROW.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/throw")).subtitle("sound.morethanadventure.weapons.throw"));
+
+        add(MtaSounds.WEAPON_WHIP.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/whip")).subtitle("sound.morethanadventure.weapons.whip"));
+
+
     }
 }

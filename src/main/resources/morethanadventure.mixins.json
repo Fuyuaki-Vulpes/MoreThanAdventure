@@ -12,6 +12,7 @@
     "MixinMobCategory",
     "MobEffectUtilMixin",
     "MusicMixin",
+    "PlayerMixin",
     "ServerPlayerMixin",
     "SnowballMixin",
     "TamableAnimalMixin",

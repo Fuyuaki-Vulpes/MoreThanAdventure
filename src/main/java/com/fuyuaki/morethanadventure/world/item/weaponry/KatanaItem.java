@@ -1,6 +1,11 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -17,7 +22,7 @@ import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.List;
 
-public class KatanaItem extends SwordItem {
+public class KatanaItem extends WeaponItem {
 
     protected static final float attackSpeed = -1.6F;
     protected static final int attackDamage = 2;
@@ -33,31 +38,20 @@ public class KatanaItem extends SwordItem {
     }
 
     public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
-        return ItemAttributeModifiers.builder()
-                .add(
-                        Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(
-                                BASE_ATTACK_DAMAGE_ID, (double)((float)attackDamage + p_330371_.getAttackDamageBonus()), AttributeModifier.Operation.ADD_VALUE
-                        ),
-                        EquipmentSlotGroup.MAINHAND
-                )
-                .add(
-                        Attributes.ATTACK_SPEED,
-                        new AttributeModifier(BASE_ATTACK_SPEED_ID, (double)attackSpeed, AttributeModifier.Operation.ADD_VALUE),
-                        EquipmentSlotGroup.MAINHAND
-                )
-                .build();
+        return createAttributes(p_330371_,2.0F,-1.6F,2.5F);
+    }
+
+
+    @Override
+    public ParticleOptions getWeaponHitParticles() {
+        return MtaParticles.SLASH_ATTACK.get();
     }
 
     @Override
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
+    public SoundEvent getWeaponHitSound() {
+        return SoundEvents.PLAYER_ATTACK_SWEEP;
     }
 
-    @Override
-    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-    }
     @Override
     public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
         return WeaponAbilities.DEFAULT_KATANA_ACTIONS.contains(itemAbility);
