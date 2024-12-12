@@ -126,6 +126,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE, CorrosiveCubeModel::createInnerBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE_OUTER, CorrosiveCubeModel::createOuterBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.DUCK, DuckModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.DEER, DeerModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FROSTED_SLIME, FrostedSlimeModel::createBodyLayer);
@@ -146,6 +147,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER, SkeletonFighterModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOUCAN, ToucanModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, () -> LayerDefinition.create(ToxicZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
+        event.registerLayerDefinition(MTAModelLayers.TURKEY, TurkeyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, () -> LayerDefinition.create(ZombifiedMinerModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
 

@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
+import com.fuyuaki.morethanadventure.world.item.weaponry.ScytheItem;
 import com.google.common.base.Suppliers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -12,21 +13,13 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Supplier;
 
-public class ReaperScytheItem extends SwordItem {
+public class ReaperScytheItem extends ScytheItem {
 
-    private final Supplier<ItemAttributeModifiers> attributeModifiers;
 
 
     public ReaperScytheItem(Tier pTier, Properties pProperties) {
         super(pTier, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
-        this.attributeModifiers = Suppliers.memoize(
-                () -> {
-                    ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-                    ResourceLocation location = ResourceLocation.withDefaultNamespace("scythe");
 
-                    return createAttributeModifiers(pTier,builder).build();
-                }
-        );
     }
 
     protected ItemAttributeModifiers.Builder createAttributeModifiers(Tier pTier, ItemAttributeModifiers.Builder builder){
@@ -46,12 +39,12 @@ public class ReaperScytheItem extends SwordItem {
         return builder;
     }
 
-
-
-    @Override
-    public ItemAttributeModifiers getDefaultAttributeModifiers() {
-        return this.attributeModifiers.get();
+    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+        return createAttributes(p_330371_, 5.0F, -2.4F, 4.7F);
     }
+
+
+
 
     @Override
     public int getEnchantmentValue() {
