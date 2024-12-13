@@ -49,7 +49,6 @@ public class MTAModelLayers {
     public static final ModelLayerLocation TOUCAN = register("toucan");
     public static final ModelLayerLocation TOXIC_ZOMBIE = register("toxic_zombie");
     public static final ModelLayerLocation TURKEY = register("turkey");
-    public static final ModelLayerLocation WITHER_JUGGERNAUT = register("wither_juggernaut");
     public static final ModelLayerLocation YUKI_ONNA = register("yuki_onna");
     public static final ModelLayerLocation ZOMBIFIED_MINER = register("zombified_miner");
     public static final ModelLayerLocation ARMORED_SKELETON_OUTER_ARMOR = register("armored_skeleton_outer_armor");

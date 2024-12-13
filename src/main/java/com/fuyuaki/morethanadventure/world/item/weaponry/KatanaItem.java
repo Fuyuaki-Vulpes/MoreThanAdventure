@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
+import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -49,7 +50,7 @@ public class KatanaItem extends WeaponItem {
 
     @Override
     public SoundEvent getWeaponHitSound() {
-        return SoundEvents.PLAYER_ATTACK_SWEEP;
+        return MtaSounds.WEAPON_SWING.get();
     }
 
     @Override

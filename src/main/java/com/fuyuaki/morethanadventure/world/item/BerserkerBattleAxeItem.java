@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.world.item.weaponry.DoubleAxeItem;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -26,19 +27,12 @@ import java.util.function.Supplier;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class BerserkerBattleAxeItem extends SwordItem {
-    private final Supplier<ItemAttributeModifiers> attributeModifiers;
+public class BerserkerBattleAxeItem extends DoubleAxeItem {
 
 
     public BerserkerBattleAxeItem(Tier pTier, Properties pProperties) {
         super(pTier, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
-        this.attributeModifiers = Suppliers.memoize(
-                () -> {
-                    ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
 
-                    return createAttributeModifiers(pTier,builder).build();
-                }
-        );
     }
 
 
@@ -67,28 +61,13 @@ public class BerserkerBattleAxeItem extends SwordItem {
         return InteractionResultHolder.success(itemstack);
     }
 
-    protected ItemAttributeModifiers.Builder createAttributeModifiers(Tier pTier, ItemAttributeModifiers.Builder builder){
-        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(MODID,"battleaxe");
-
-
-        builder.add(
-                Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(location, 8 + pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                Attributes.ATTACK_SPEED,
-                new AttributeModifier(location, -2.7F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        return builder;
+    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+        return createAttributes(p_330371_, 8.0F, -2.6F, 3.7F);
     }
 
 
-    @Override
-    public ItemAttributeModifiers getDefaultAttributeModifiers() {
-        return this.attributeModifiers.get();
-    }
+
+
 
     @Override
     public int getEnchantmentValue() {

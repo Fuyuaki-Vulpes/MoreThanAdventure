@@ -60,6 +60,54 @@
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
   },
+  "weapon_deep_swing": {
+    "sounds": [
+      "morethanadventure:item/weaponry/deep_swing"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.deep_swing"
+  },
+  "weapon_punch": {
+    "sounds": [
+      "morethanadventure:item/weaponry/punch"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.punch"
+  },
+  "weapon_scrape": {
+    "sounds": [
+      "morethanadventure:item/weaponry/scrape"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.scrape"
+  },
+  "weapon_stab_sharp": {
+    "sounds": [
+      "morethanadventure:item/weaponry/stab_sharp"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.stab_sharp"
+  },
+  "weapon_swing": {
+    "sounds": [
+      "morethanadventure:item/weaponry/swing"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.swing"
+  },
+  "weapon_tear": {
+    "sounds": [
+      "morethanadventure:item/weaponry/tear"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.tear"
+  },
+  "weapon_throw": {
+    "sounds": [
+      "morethanadventure:item/weaponry/throw"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.throw"
+  },
+  "weapon_whip": {
+    "sounds": [
+      "morethanadventure:item/weaponry/whip"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.whip"
+  },
   "yuki_onna_ambient": {
     "sounds": [
       "morethanadventure:entity/yuki_onna/ambient_1",
