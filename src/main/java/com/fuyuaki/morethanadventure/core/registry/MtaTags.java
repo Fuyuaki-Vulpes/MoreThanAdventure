@@ -113,6 +113,12 @@ public class MtaTags {
         public static final TagKey<Item> SEAWOOD = tag("sealogs");
 
 
+        public static final TagKey<Item> THROWABLE = tag("weapon/throwable");
+        public static final TagKey<Item> TWO_HANDED = tag("weapon/two_handed");
+        public static final TagKey<Item> CAUSES_BLEEDING = tag("weapon/causes_bleeding");
+        public static final TagKey<Item> STUN = tag("weapon/stun");
+
+
         private static TagKey<Item> tag(String name) {
             return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
         }

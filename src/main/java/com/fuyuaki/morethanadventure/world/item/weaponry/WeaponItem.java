@@ -1,12 +1,16 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaTags;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,10 +19,13 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 
 import javax.annotation.Nullable;
+
+import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -67,7 +74,10 @@ public class WeaponItem extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-
+        if (stack.is(MtaTags.Items.TWO_HANDED) && !attacker.getItemInHand(InteractionHand.OFF_HAND).equals(ItemStack.EMPTY)){
+            System.out.println("TWOHANDED BKEH");
+            return false;
+        }
         attacker.level()
                 .playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), this.getWeaponHitSound(), attacker.getSoundSource(), 0.8F, 1.0F);
 
@@ -86,4 +96,21 @@ public class WeaponItem extends SwordItem {
 
     }
 
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        if (stack.is(MtaTags.Items.THROWABLE)) {
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.throwable").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.YELLOW));
+        }
+        if (stack.is(MtaTags.Items.TWO_HANDED)) {
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.two_handed").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.YELLOW));
+        }
+        if (stack.is(MtaTags.Items.CAUSES_BLEEDING)) {
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.causes_bleeding").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+        }
+        if (stack.is(MtaTags.Items.STUN)) {
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.stun").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+        }
+
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    }
 }

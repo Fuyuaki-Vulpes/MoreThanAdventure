@@ -1,9 +1,6 @@
 package com.fuyuaki.morethanadventure.datagen.generators.lang;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.registry.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -671,16 +668,16 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add("sound.morethanadventure.butterfly_death", "Capybara Barks");
         //add("sound.morethanadventure.capybara_ambient", "Capybara Barks");
         add("sound.morethanadventure.capybara_hurt", "Capybara Barks");
-        //add("sound.morethanadventure.capybara_death", "Capybara Barks");
+        //add("sound.morethanadventure.capybara_death", "Capybara Dies");
         //add("sound.morethanadventure.deer_ambient", "Capybara Barks");
         //add("sound.morethanadventure.deer_hurt", "Capybara Barks");
         //add("sound.morethanadventure.deer_death", "Capybara Barks");
-        add("sound.morethanadventure.duck_ambient", "Capybara Barks");
+        add("sound.morethanadventure.duck_ambient", "Duck Quacking");
         //add("sound.morethanadventure.duck_hurt", "Capybara Barks");
         //add("sound.morethanadventure.duck_death", "Capybara Barks");
         add("sound.morethanadventure.ferret_ambient", "Ferret Dooking");
         add("sound.morethanadventure.ferret_hurt", "Ferret Squeak");
-        //add("sound.morethanadventure.ferret_death", "Ferret Squeak");
+        //add("sound.morethanadventure.ferret_death", "Ferret Dies");
         //add("sound.morethanadventure.great_white_shark_ambient", "Ferret Dooking");
         //add("sound.morethanadventure.great_white_shark_hurt", "Ferret Squeak");
         //add("sound.morethanadventure.great_white_shark_death", "Ferret Squeak");
@@ -695,7 +692,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add("sound.morethanadventure.octopus_death", "Ferret Squeak");
         add("sound.morethanadventure.owl_ambient", "Owl Call");
         add("sound.morethanadventure.owl_hurt", "Owl Hurt");
-        add("sound.morethanadventure.owl_death", "Owl Hurt");
+        add("sound.morethanadventure.owl_death", "Owl Dies");
         //add("sound.morethanadventure.penguin_ambient", "Owl Call");
         //add("sound.morethanadventure.penguin_hurt", "Owl Hurt");
         //add("sound.morethanadventure.penguin_death", "Owl Hurt");
@@ -729,7 +726,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add("sound.morethanadventure.corrosive_cube_death", "Owl Hurt");
         add("sound.morethanadventure.fallen_samurai_ambient", "Owl Call");
         add("sound.morethanadventure.fallen_samurai_hurt", "Owl Hurt");
-        add("sound.morethanadventure.fallen_samurai_death", "Owl Hurt");
+        add("sound.morethanadventure.fallen_samurai_death", "Owl Dies");
         //add("sound.morethanadventure.frosted_slime_ambient", "Owl Call");
         //add("sound.morethanadventure.frosted_slime_hurt", "Owl Hurt");
         //add("sound.morethanadventure.frosted_slime_death", "Owl Hurt");
@@ -754,21 +751,33 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add("sound.morethanadventure.toxic_zombie_ambient", "Owl Call");
         //add("sound.morethanadventure.toxic_zombie_hurt", "Owl Hurt");
         //add("sound.morethanadventure.toxic_zombie_death", "Owl Hurt");
-        add("sound.morethanadventure.yuki_onna_ambient", "Owl Call");
-        add("sound.morethanadventure.yuki_onna_hurt", "Owl Hurt");
-        add("sound.morethanadventure.yuki_onna_death", "Owl Hurt");
+        add("sound.morethanadventure.yuki_onna_ambient", "Yuki Onna Moans");
+        add("sound.morethanadventure.yuki_onna_hurt", "Yuki Onna Hurt");
+        add("sound.morethanadventure.yuki_onna_death", "Yuki Onna Dies");
         //add("sound.morethanadventure.zombified_miner_ambient", "Owl Call");
         //add("sound.morethanadventure.zombified_miner_hurt", "Owl Hurt");
         //add("sound.morethanadventure.zombified_miner_death", "Owl Hurt");
 
-        add("sound.morethanadventure.weapons.deep_swing", "Owl Call");
-        add("sound.morethanadventure.weapons.swing", "Owl Call");
-        add("sound.morethanadventure.weapons.punch", "Owl Call");
-        add("sound.morethanadventure.weapons.scrape", "Owl Call");
-        add("sound.morethanadventure.weapons.stab_sharp", "Owl Call");
-        add("sound.morethanadventure.weapons.tear", "Owl Call");
-        add("sound.morethanadventure.weapons.throw", "Owl Call");
-        add("sound.morethanadventure.weapons.whip", "Owl Call");
+        add("sound.morethanadventure.weapons.deep_swing", "Heavy Swing Attack");
+        add("sound.morethanadventure.weapons.swing", "Swing Attack");
+        add("sound.morethanadventure.weapons.punch", "Punching Attack");
+        add("sound.morethanadventure.weapons.scrape", "Scraping Attack");
+        add("sound.morethanadventure.weapons.stab_sharp", "Sharp Stab Attack");
+        add("sound.morethanadventure.weapons.tear", "Tear Attack");
+        add("sound.morethanadventure.weapons.throw", "Throw Attack");
+        add("sound.morethanadventure.weapons.whip", "Whip Attack");
+
+
+
+        add("items.morethanadventure.weapons.tag.throwable", "Throwable Item");
+        add("items.morethanadventure.weapons.tag.two_handed", "Two-Handed Weapon");
+        add("items.morethanadventure.weapons.tag.causes_bleeding", "Chance to cause Bleeding on Hit");
+        add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
+
+        add(MtaTags.Items.THROWABLE, "Throwable Item");
+        add(MtaTags.Items.TWO_HANDED, "Two-Handed");
+        add(MtaTags.Items.CAUSES_BLEEDING, "Causes Bleeding");
+        add(MtaTags.Items.STUN, "Causes Stunning");
     }
 
 

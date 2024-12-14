@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class ToxicZombieRenderer extends AbstractZombieRenderer<ToxicZombie, ToxicZombieModel<ToxicZombie>> {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/toxic_zombie.png");
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/toxic_zombie.png");
 
     public ToxicZombieRenderer(EntityRendererProvider.Context context) {
         super(

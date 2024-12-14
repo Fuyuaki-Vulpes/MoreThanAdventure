@@ -14,7 +14,7 @@ import net.minecraft.world.entity.monster.CaveSpider;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class GlowSpiderRenderer extends SpiderRenderer<GlowSpider> {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/glow_spider.png");
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/spider/glow_spider.png");
 
 
     protected int getBlockLightLevel(GlowSpider entity, BlockPos pos) {

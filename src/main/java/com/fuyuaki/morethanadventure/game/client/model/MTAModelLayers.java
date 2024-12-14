@@ -17,6 +17,7 @@ public class MTAModelLayers {
 
     //ENTITIES
     public static final ModelLayerLocation ARMORED_SKELETON = register("armored_skeleton");
+    public static final ModelLayerLocation ARMORED_SKELETON_ARMOR = register("armored_skeleton_armor");
     public static final ModelLayerLocation BEARDED_DRAGON = register("bearded_dragon");
     public static final ModelLayerLocation BLACK_WIDOW = register("black_widow");
     public static final ModelLayerLocation BUTTERFLY = register("butterfly");
@@ -24,6 +25,7 @@ public class MTAModelLayers {
     public static final ModelLayerLocation BUTTERFLY_OVERLAY = register("butterfly");
     public static final ModelLayerLocation CAPYBARA = register("capybara");
     public static final ModelLayerLocation CHARRED_SKELETON = register("charred_skeleton");
+    public static final ModelLayerLocation CHARRED_SKELETON_OVERLAY = register("charred_skeleton_overlay");
     public static final ModelLayerLocation CORROSIVE_CUBE = register("corrosive_cube");
     public static final ModelLayerLocation CORROSIVE_CUBE_OUTER = register("corrosive_cube_outer");
     public static final ModelLayerLocation DEER = register("deer");

@@ -15,8 +15,7 @@
     "PlayerMixin",
     "ServerPlayerMixin",
     "SnowballMixin",
-    "TamableAnimalMixin",
-    "VanillaEnchantmentProviderMixin"
+    "TamableAnimalMixin"
   ],
   "client": [
     "FogRendererMixin",
