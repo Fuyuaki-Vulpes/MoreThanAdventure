@@ -61,6 +61,15 @@ public class CharredSkeleton extends AbstractSkeleton {
         return MtaSounds.CHARRED_SKELETON_AMBIENT.get();
     }
 
+
+    @Override
+    public boolean doHurtTarget(Entity entity) {
+        if (entity instanceof LivingEntity living){
+            living.setRemainingFireTicks(this.getRandom().nextIntBetweenInclusive(10,50));
+        }
+        return super.doHurtTarget(entity);
+    }
+
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {

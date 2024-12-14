@@ -116,6 +116,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.NETHERITE_TRIDENT, NetheriteTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT, MysticMermaidsTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON, ArmoredSkeletonModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW, SpiderModel::createSpiderBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
@@ -123,6 +124,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_OVERLAY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CAPYBARA, CapybaraModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON, CharredSkeletonModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON_OVERLAY, CharredSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE, CorrosiveCubeModel::createInnerBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.CORROSIVE_CUBE_OUTER, CorrosiveCubeModel::createOuterBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.DUCK, DuckModel::createBodyLayer);

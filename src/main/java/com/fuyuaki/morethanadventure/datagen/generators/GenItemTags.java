@@ -28,7 +28,7 @@ public class GenItemTags extends ItemTagsProvider {
                         MtaItems.ONION.get()
                 );
 
-
+        weaponTags();
         this.tag(MtaTags.Common.CROPS_ONION).add(MtaItems.ONION.get());
         this.tag(MtaTags.Common.CROPS_RICE).add(MtaItems.RICE.get());
         this.tag(MtaTags.Common.CROPS_TOMATO).add(MtaItems.TOMATO_SEEDS.get());
@@ -325,5 +325,118 @@ public class GenItemTags extends ItemTagsProvider {
 
                 );
     }
+
+
+    private void weaponTags() {
+        this.tag(MtaTags.Items.THROWABLE).add(
+                MtaItems.WOOD_DAGGER.get(),
+                MtaItems.STONE_DAGGER.get(),
+                MtaItems.COPPER_DAGGER.get(),
+                MtaItems.IRON_DAGGER.get(),
+                MtaItems.GOLD_DAGGER.get(),
+                MtaItems.NETHERSTEEL_DAGGER.get(),
+                MtaItems.DIAMOND_DAGGER.get(),
+                MtaItems.NETHERITE_DAGGER.get()
+        );
+        this.tag(MtaTags.Items.TWO_HANDED).add(
+                MtaItems.WOOD_HALBERD.get(),
+                MtaItems.STONE_HALBERD.get(),
+                MtaItems.COPPER_HALBERD.get(),
+                MtaItems.IRON_HALBERD.get(),
+                MtaItems.GOLD_HALBERD.get(),
+                MtaItems.NETHERSTEEL_HALBERD.get(),
+                MtaItems.DIAMOND_HALBERD.get(),
+                MtaItems.NETHERITE_HALBERD.get(),
+
+                MtaItems.WOOD_CLAYMORE.get(),
+                MtaItems.STONE_CLAYMORE.get(),
+                MtaItems.COPPER_CLAYMORE.get(),
+                MtaItems.IRON_CLAYMORE.get(),
+                MtaItems.GOLD_CLAYMORE.get(),
+                MtaItems.NETHERSTEEL_CLAYMORE.get(),
+                MtaItems.DIAMOND_CLAYMORE.get(),
+                MtaItems.NETHERITE_CLAYMORE.get(),
+
+                MtaItems.WOOD_SCYTHE.get(),
+                MtaItems.STONE_SCYTHE.get(),
+                MtaItems.COPPER_SCYTHE.get(),
+                MtaItems.IRON_SCYTHE.get(),
+                MtaItems.GOLD_SCYTHE.get(),
+                MtaItems.NETHERSTEEL_SCYTHE.get(),
+                MtaItems.DIAMOND_SCYTHE.get(),
+                MtaItems.NETHERITE_SCYTHE.get(),
+
+                MtaItems.WOOD_GLAIVE.get(),
+                MtaItems.STONE_GLAIVE.get(),
+                MtaItems.COPPER_GLAIVE.get(),
+                MtaItems.IRON_GLAIVE.get(),
+                MtaItems.GOLD_GLAIVE.get(),
+                MtaItems.NETHERSTEEL_GLAIVE.get(),
+                MtaItems.DIAMOND_GLAIVE.get(),
+                MtaItems.NETHERITE_GLAIVE.get()
+
+        );
+        this.tag(MtaTags.Items.CAUSES_BLEEDING).add(
+                MtaItems.WOOD_SCYTHE.get(),
+                MtaItems.STONE_SCYTHE.get(),
+                MtaItems.COPPER_SCYTHE.get(),
+                MtaItems.IRON_SCYTHE.get(),
+                MtaItems.GOLD_SCYTHE.get(),
+                MtaItems.NETHERSTEEL_SCYTHE.get(),
+                MtaItems.DIAMOND_SCYTHE.get(),
+                MtaItems.NETHERITE_SCYTHE.get(),
+
+                MtaItems.WOOD_CUTLASS.get(),
+                MtaItems.STONE_CUTLASS.get(),
+                MtaItems.COPPER_CUTLASS.get(),
+                MtaItems.IRON_CUTLASS.get(),
+                MtaItems.GOLD_CUTLASS.get(),
+                MtaItems.NETHERSTEEL_CUTLASS.get(),
+                MtaItems.DIAMOND_CUTLASS.get(),
+                MtaItems.NETHERITE_CUTLASS.get(),
+
+                MtaItems.WOOD_CLAW.get(),
+                MtaItems.STONE_CLAW.get(),
+                MtaItems.COPPER_CLAW.get(),
+                MtaItems.IRON_CLAW.get(),
+                MtaItems.GOLD_CLAW.get(),
+                MtaItems.NETHERSTEEL_CLAW.get(),
+                MtaItems.DIAMOND_CLAW.get(),
+                MtaItems.NETHERITE_CLAW.get()
+
+        );
+        this.tag(MtaTags.Items.STUN).add(
+                MtaItems.WOOD_DOUBLE_AXE.get(),
+                MtaItems.STONE_DOUBLE_AXE.get(),
+                MtaItems.COPPER_DOUBLE_AXE.get(),
+                MtaItems.IRON_DOUBLE_AXE.get(),
+                MtaItems.GOLD_DOUBLE_AXE.get(),
+                MtaItems.NETHERSTEEL_DOUBLE_AXE.get(),
+                MtaItems.DIAMOND_DOUBLE_AXE.get(),
+                MtaItems.NETHERITE_DOUBLE_AXE.get(),
+
+                MtaItems.WOOD_CLAYMORE.get(),
+                MtaItems.STONE_CLAYMORE.get(),
+                MtaItems.COPPER_CLAYMORE.get(),
+                MtaItems.IRON_CLAYMORE.get(),
+                MtaItems.GOLD_CLAYMORE.get(),
+                MtaItems.NETHERSTEEL_CLAYMORE.get(),
+                MtaItems.DIAMOND_CLAYMORE.get(),
+                MtaItems.NETHERITE_CLAYMORE.get(),
+
+                MtaItems.WOOD_SPEAR.get(),
+                MtaItems.STONE_SPEAR.get(),
+                MtaItems.COPPER_SPEAR.get(),
+                MtaItems.IRON_SPEAR.get(),
+                MtaItems.GOLD_SPEAR.get(),
+                MtaItems.NETHERSTEEL_SPEAR.get(),
+                MtaItems.DIAMOND_SPEAR.get(),
+                MtaItems.NETHERITE_SPEAR.get()
+
+        );
+
+    }
+
+
 
 }

@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class BlackWidowRenderer extends SpiderRenderer<BlackWidow> {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/black_widow.png");
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/spider/black_widow.png");
 
 
     public BlackWidowRenderer(EntityRendererProvider.Context pContext) {

@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class ZombifiedMinerRenderer extends AbstractZombieRenderer<ZombifiedMiner, ZombifiedMinerModel<ZombifiedMiner>> {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombified_miner.png");
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/zombified_miner.png");
 
     public ZombifiedMinerRenderer(EntityRendererProvider.Context context) {
         super(

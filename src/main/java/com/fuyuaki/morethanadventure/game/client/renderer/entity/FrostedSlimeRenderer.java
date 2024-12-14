@@ -15,7 +15,7 @@ import net.minecraft.world.entity.monster.MagmaCube;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlimeModel<FrostedSlime>> {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/frozen_slime.png");
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/slime/frozen_slime.png");
 
     public FrostedSlimeRenderer(EntityRendererProvider.Context pContext) {
         super(pContext,new FrostedSlimeModel<>(pContext.bakeLayer(MTAModelLayers.FROSTED_SLIME)), 0.25F);

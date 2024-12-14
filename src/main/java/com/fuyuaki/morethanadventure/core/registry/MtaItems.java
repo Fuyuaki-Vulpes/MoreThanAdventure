@@ -638,13 +638,13 @@ public class MtaItems {
             () -> new DeferredSpawnEggItem(MtaEntityTypes.TURKEY::get,0x292731,0xe78a43,new Item.Properties()));
 
     public static final DeferredItem<Item> ARMORED_SKELETON_SPAWN_EGG =  ITEMS.register("armored_skeleton_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.ARMORED_SKELETON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.ARMORED_SKELETON::get,0x1a222f,0x989fa1,new Item.Properties()));
 
     public static final DeferredItem<Item> BLACK_WIDOW_SPAWN_EGG =  ITEMS.register("black_widow_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.BLACK_WIDOW::get,0x080609,0x650618,new Item.Properties()));
 
     public static final DeferredItem<Item> CHARRED_SKELETON_SPAWN_EGG =  ITEMS.register("charred_skeleton_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.CHARRED_SKELETON::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.CHARRED_SKELETON::get,0x2f1c1c,0xf5870b,new Item.Properties()));
 
     public static final DeferredItem<Item> CORROSIVE_CUBE_SPAWN_EGG =  ITEMS.register("corrosive_cube_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.CORROSIVE_CUBE::get,0x239a0e,0xddf549,new Item.Properties()));
@@ -662,7 +662,7 @@ public class MtaItems {
             () -> new DeferredSpawnEggItem(MtaEntityTypes.MOSSY_ZOMBIE::get,0x3D7C52,0x87B05F,new Item.Properties()));
 
     public static final DeferredItem<Item> SKELETON_FIGHTER_SPAWN_EGG =  ITEMS.register("skeleton_fighter_spawn_egg",
-            () -> new DeferredSpawnEggItem(MtaEntityTypes.SKELETON_FIGHTER::get,0xFFFFFF,0xFFFFFF,new Item.Properties()));
+            () -> new DeferredSpawnEggItem(MtaEntityTypes.SKELETON_FIGHTER::get,0x8e8d8e,0x761b23,new Item.Properties()));
 
     public static final DeferredItem<Item> TOXIC_ZOMBIE_SPAWN_EGG =  ITEMS.register("toxic_zombie_spawn_egg",
             () -> new DeferredSpawnEggItem(MtaEntityTypes.TOXIC_ZOMBIE::get,44975,0x47a80a,new Item.Properties()));

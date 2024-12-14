@@ -14,7 +14,7 @@ import net.minecraft.util.Mth;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveCubeModel<CorrosiveCube>> {
-    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/corrosive_cube.png");
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/slime/corrosive_cube.png");
 
     public CorrosiveCubeRenderer(EntityRendererProvider.Context pContext) {
         super(pContext,new CorrosiveCubeModel<>(pContext.bakeLayer(MTAModelLayers.CORROSIVE_CUBE)), .5F);
