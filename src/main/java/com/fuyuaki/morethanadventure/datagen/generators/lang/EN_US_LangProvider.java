@@ -632,6 +632,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEffects.FREEZING.get(),"Freezing");
         add(MtaEffects.CHARGING.get(),"Charging Skill");
         add(MtaEffects.BERSERK.get(),"Berserk");
+        add(MtaEffects.VENOM.get(),"Venom");
 
 
         //OTHER

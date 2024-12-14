@@ -3,6 +3,7 @@ package com.fuyuaki.morethanadventure.core.registry;
 import com.fuyuaki.morethanadventure.world.mob_effect.BerserkEffect;
 import com.fuyuaki.morethanadventure.world.mob_effect.BleedingEffect;
 import com.fuyuaki.morethanadventure.world.mob_effect.FreezingEffect;
+import com.fuyuaki.morethanadventure.world.mob_effect.VenomEffect;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
@@ -34,6 +35,8 @@ public class MtaEffects {
                      .addAttributeModifier(Attributes.KNOCKBACK_RESISTANCE,ResourceLocation.fromNamespaceAndPath(MODID,"effect.charging_knockback"), 1.0F,AttributeModifier.Operation.ADD_VALUE)
                      .addAttributeModifier(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,ResourceLocation.fromNamespaceAndPath(MODID,"effect.charging_explosion"), 1.0F,AttributeModifier.Operation.ADD_VALUE));
 
+    public static final DeferredHolder<MobEffect, MobEffect> VENOM = MOB_EFFECTS.register("venom", () ->
+            new VenomEffect());
 
     public static void register(IEventBus eventBus){
         MOB_EFFECTS.register(eventBus);

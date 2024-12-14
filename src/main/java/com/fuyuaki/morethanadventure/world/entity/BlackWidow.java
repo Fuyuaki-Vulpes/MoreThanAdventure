@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
@@ -46,8 +47,7 @@ public class BlackWidow extends CaveSpider {
                 }
 
                 if (i > 0) {
-                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.POISON, i * 5, 1), this);
-                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MobEffects.WITHER, i * 5, 0), this);
+                    ((LivingEntity)entity).addEffect(new MobEffectInstance(MtaEffects.VENOM, i * 10, 1), this);
                 }
             }
 
