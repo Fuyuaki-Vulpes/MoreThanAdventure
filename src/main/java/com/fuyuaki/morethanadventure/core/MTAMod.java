@@ -43,9 +43,9 @@ public class MTAMod
         MtaBlocks.register(modEventBus);
         MTAPlacers.register(modEventBus);
         MtaItems.register(modEventBus);
+        MtaParticles.register(modEventBus);
         MtaEffects.register(modEventBus);
         MtaFeatures.register(modEventBus);
-        MtaParticles.register(modEventBus);
         MtaArmorMats.register(modEventBus);
         MtaBiomes.addBiomes();
         MtaSounds.register(modEventBus);

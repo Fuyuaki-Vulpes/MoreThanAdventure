@@ -627,9 +627,20 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         //EFFECTS
         add(MtaEffects.FREEZING.get(),"Freezing");
+        add(MtaEffects.STUN.get(),"Stunned");
+        add(MtaEffects.BLEEDING.get(),"Bleeding");
+        add(MtaEffects.VENOM.get(),"Venom");
         add(MtaEffects.CHARGING.get(),"Charging Skill");
         add(MtaEffects.BERSERK.get(),"Berserk");
-        add(MtaEffects.VENOM.get(),"Venom");
+        add(MtaEffects.TWO_HANDED_BLOCK.get(),"Improper Weapon Usage");
+
+        //DEATH
+        add("death.attack.bleed","%1$s bled out");
+        add("death.attack.venom","%1$s could not resist the venom");
+        add("death.attack.bleed.player","%1$s bled out whilst fighting %2$s");
+        add("death.attack.venom.player","%1$s could not resist the venom whilst fighting %2$s");
+
+
 
 
         //OTHER
@@ -774,6 +785,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("items.morethanadventure.weapons.tag.two_handed", "Two-Handed Weapon");
         add("items.morethanadventure.weapons.tag.causes_bleeding", "Chance to cause Bleeding on Hit");
         add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
+        add("items.morethanadventure.weapons.info.shift", "Press SHIFT to see chances");
 
         add(MtaTags.Items.THROWABLE, "Throwable Item");
         add(MtaTags.Items.TWO_HANDED, "Two-Handed");

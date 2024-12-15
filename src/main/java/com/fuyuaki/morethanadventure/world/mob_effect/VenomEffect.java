@@ -7,7 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class VenomEffect extends MobEffect {
     public VenomEffect() {
-        super(MobEffectCategory.HARMFUL, 0xCEEAED);
+        super(MobEffectCategory.HARMFUL, 0x4b990e);
     }
 
     @Override

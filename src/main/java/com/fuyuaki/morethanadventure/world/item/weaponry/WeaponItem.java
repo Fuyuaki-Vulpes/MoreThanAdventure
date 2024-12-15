@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleOptions;
@@ -11,6 +12,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,6 +25,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 
@@ -71,11 +75,19 @@ public class WeaponItem extends SwordItem {
         return SoundEvents.PLAYER_ATTACK_SWEEP;
     }
 
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        if (entity instanceof LivingEntity living) {
+            if (isSelected && living.getItemInHand(InteractionHand.MAIN_HAND).is(stack.getItem()) && !living.getItemInHand(InteractionHand.OFF_HAND).isEmpty() && stack.is(MtaTags.Items.TWO_HANDED)){
+                living.addEffect(new MobEffectInstance(MtaEffects.TWO_HANDED_BLOCK,5));
+            }
+        }
+        super.inventoryTick(stack, level, entity, slotId, isSelected);
+    }
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (stack.is(MtaTags.Items.TWO_HANDED) && !attacker.getItemInHand(InteractionHand.OFF_HAND).equals(ItemStack.EMPTY)){
-            System.out.println("TWOHANDED BKEH");
             return false;
         }
         attacker.level()
@@ -84,10 +96,30 @@ public class WeaponItem extends SwordItem {
         double d0 = (double) (-Mth.sin(attacker.getYRot() * (float) (Math.PI / 180.0)));
         double d1 = (double) Mth.cos(attacker.getYRot() * (float) (Math.PI / 180.0));
         if (attacker.level() instanceof ServerLevel) {
-            ((ServerLevel) attacker.level()).sendParticles(this.getWeaponHitParticles(), attacker.getX() + d0, attacker.getY(0.5), attacker.getZ() + d1, 0, d0, 0.0, d1, 0.0);
+            ((ServerLevel) attacker.level()).sendParticles(this.getWeaponHitParticles(), attacker.getX() + d0, attacker.getY(0.5) + (attacker.getEyeHeight()/2 - attacker.getBbHeight()/2), attacker.getZ() + d1, 0, d0, 0.0, d1, 0.0);
+        }
+        if (stack.is(MtaTags.Items.CAUSES_BLEEDING)){
+
+            if (attacker.getRandom().nextDouble() < getWeaponBleedChance()){
+                target.addEffect(new MobEffectInstance(MtaEffects.BLEEDING,target.getRandom().nextIntBetweenInclusive(20,90)),attacker);
+            }
+        }
+        if (stack.is(MtaTags.Items.STUN)){
+            if (attacker.getRandom().nextDouble() < getWeaponStunChance()){
+                target.addEffect(new MobEffectInstance(MtaEffects.STUN,target.getRandom().nextIntBetweenInclusive(10,40)),attacker);
+
+            }
         }
 
         return true;
+    }
+
+    public static double getWeaponBleedChance() {
+        return 0.35F;
+    }
+
+    public static double getWeaponStunChance() {
+        return 0.12F;
     }
 
     @Override
@@ -98,17 +130,24 @@ public class WeaponItem extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        boolean shiftDown = tooltipFlag.hasShiftDown();
         if (stack.is(MtaTags.Items.THROWABLE)) {
-            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.throwable").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.YELLOW));
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.throwable").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BLUE));
         }
         if (stack.is(MtaTags.Items.TWO_HANDED)) {
-            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.two_handed").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.YELLOW));
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.two_handed").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BLUE));
         }
         if (stack.is(MtaTags.Items.CAUSES_BLEEDING)) {
             tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.causes_bleeding").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+            if (shiftDown) tooltipComponents.add(Component.literal((getWeaponBleedChance() * 100) + "%").withStyle(ChatFormatting.GOLD));
         }
         if (stack.is(MtaTags.Items.STUN)) {
             tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.tag.stun").withStyle(ChatFormatting.ITALIC).withStyle(ChatFormatting.RED));
+            if (shiftDown) tooltipComponents.add(Component.literal(getWeaponStunChance() * 100 + "%").withStyle(ChatFormatting.GOLD));
+        }
+        if (!shiftDown && (stack.is(MtaTags.Items.STUN) || stack.is(MtaTags.Items.CAUSES_BLEEDING))){
+            tooltipComponents.add(Component.translatable("items.morethanadventure.weapons.info.shift").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.GREEN));
+
         }
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);

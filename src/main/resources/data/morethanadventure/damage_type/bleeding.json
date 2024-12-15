@@ -1,6 +1,6 @@
 {
   "message_id": "bleed",
   "exhaustion": 0.2,
-  "scaling": "never",
+  "scaling": "when_caused_by_living_non_player",
   "death_message_type": "default"
 }

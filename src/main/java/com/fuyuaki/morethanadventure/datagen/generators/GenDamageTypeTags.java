@@ -8,6 +8,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.DamageTypeTagsProvider;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageType;
 import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.common.Tags;
@@ -27,8 +28,25 @@ public class GenDamageTypeTags extends DamageTypeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(Tags.DamageTypes.IS_MAGIC).add(MTADamageTypes.BLEEDING);
+        this.tag(DamageTypeTags.BYPASSES_ARMOR).add(
+                MTADamageTypes.BLEEDING,
+                MTADamageTypes.VENOM
+        );
+        this.tag(DamageTypeTags.BYPASSES_RESISTANCE).add(
+                MTADamageTypes.BLEEDING
+        );
+
         this.tag(Tags.DamageTypes.IS_POISON).add(MTADamageTypes.VENOM);
+        this.tag(DamageTypeTags.NO_KNOCKBACK).add(
+                MTADamageTypes.VENOM,
+                MTADamageTypes.BLEEDING
+        );
+
+        this.tag(DamageTypeTags.NO_ANGER).add(
+                MTADamageTypes.VENOM,
+                MTADamageTypes.BLEEDING
+        );
+
 
     }
 }

@@ -1,7 +1,9 @@
 package com.fuyuaki.morethanadventure.world.event;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -54,6 +56,9 @@ public class MTAGameClientEvents {
             event.setNewFovModifier(fovModifier);
         }
 
+        if (event.getPlayer().hasEffect(MtaEffects.STUN)){
+            event.setNewFovModifier(1 - (Mth.abs(Mth.sin((float) event.getPlayer().tickCount / 25)) * 0.3F));
+        }
     }
 
 }

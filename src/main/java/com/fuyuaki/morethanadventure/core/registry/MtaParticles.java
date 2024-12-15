@@ -25,6 +25,8 @@ public class MtaParticles {
 
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> POISON_BUBBLE = simpleParticle("poison_bubble",false);
 
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> BLOOD = simpleParticle("blood_particle",false);
+
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SLASH_ATTACK = simpleParticle("slash_attack",false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> STAB_ATTACK = simpleParticle("stab_attack",false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DAGGER_ATTACK = simpleParticle("dagger_attack",false);
