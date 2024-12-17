@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "morethanadventure:block/cattail_bottom"
+    },
+    "half=upper": {
+      "model": "morethanadventure:block/cattail_top"
+    }
+  }
+}

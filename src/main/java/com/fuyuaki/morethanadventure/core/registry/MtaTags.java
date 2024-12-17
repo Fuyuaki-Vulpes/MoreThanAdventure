@@ -101,6 +101,7 @@ public class MtaTags {
 
         public static final TagKey<Block> ORE_CLUSTER_REPLACEABLE = tag("ore_vein_replaceable");
         public static final TagKey<Block> NETHER_CLUSTER_CLUSTER_REPLACEABLE = tag("nether_ore_vein_replaceable");
+        public static final TagKey<Block> FLOWER_PLACEABLE = tag("flower_placeable");
 
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, name));
@@ -186,6 +187,9 @@ public class MtaTags {
 
 
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
+
+        public static final TagKey<Biome> HAS_CATTAIL = tag("has_cattail");
+
 
 
         private static TagKey<Biome> tag(String name) {

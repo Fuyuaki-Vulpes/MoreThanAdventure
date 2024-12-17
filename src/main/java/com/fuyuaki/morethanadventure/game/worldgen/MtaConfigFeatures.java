@@ -8,6 +8,7 @@ import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreCluste
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +42,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProv
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.DarkOakTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -84,6 +86,8 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
     public static final ResourceKey<ConfiguredFeature<?,?>> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
+
+    public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -161,7 +165,7 @@ public class MtaConfigFeatures {
                         0.2F,
                         Blocks.DIAMOND_ORE.defaultBlockState(),
                         Blocks.CALCITE.defaultBlockState()
-                        )
+                )
         );
         register(context,
                 DEBRIS_CLUSTER,
@@ -174,7 +178,7 @@ public class MtaConfigFeatures {
                         0.1F,
                         Blocks.ANCIENT_DEBRIS.defaultBlockState(),
                         Blocks.BASALT.defaultBlockState()
-                        )
+                )
         );
         register(context,
                 STONY_ROCKS,
@@ -211,49 +215,49 @@ public class MtaConfigFeatures {
                 NETHER_IRON,
                 Feature.ORE,
                 new OreConfiguration(
-                        blockTest(oresNetherrack,MtaBlocks.NETHER_IRON_ORE.get()),
+                        blockTest(oresNetherrack, MtaBlocks.NETHER_IRON_ORE.get()),
                         9
 
-                    )
+                )
         );
         register(context,
                 NETHER_DIAMOND,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresNetherrack,MtaBlocks.NETHER_DIAMOND_ORE.get()),
+                new OreConfiguration(blockTest(oresNetherrack, MtaBlocks.NETHER_DIAMOND_ORE.get()),
                         14,
                         0.7F
 
-                    )
+                )
         );
         register(context,
                 END_LAPIS,
                 Feature.ORE,
                 new OreConfiguration(
-                        blockTest(oresEndstone,MtaBlocks.END_LAPIS_ORE.get()),
+                        blockTest(oresEndstone, MtaBlocks.END_LAPIS_ORE.get()),
                         9
 
-                    )
+                )
         );
         register(context,
                 END_EMERALD,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresEndstone,MtaBlocks.END_EMERALD_ORE.get()),
+                new OreConfiguration(blockTest(oresEndstone, MtaBlocks.END_EMERALD_ORE.get()),
                         5
-                    )
+                )
         );
         register(context,
                 CLEAR_QUARTZ_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.CLEAR_QUARTZ_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.CLEAR_QUARTZ_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()),
                         3
-                    )
+                )
         );
         register(context,
                 LARGE_CLEAR_QUARTZ_VEIN,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.CLEAR_QUARTZ_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.CLEAR_QUARTZ_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()),
                         10
-                    )
+                )
         );
         register(context,
                 CLEAR_QUARTZ_SHARD,
@@ -263,14 +267,14 @@ public class MtaConfigFeatures {
                         OreConfiguration.target(new BlockMatchTest(Blocks.DEEPSLATE), MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_GROWTH.get().defaultBlockState()),
                         OreConfiguration.target(new BlockMatchTest(Blocks.STONE), MtaBlocks.CLEAR_QUARTZ_GROWTH.get().defaultBlockState())
 
-                        )
+                )
                 )
         );
 
         register(context,
                 NETHERITIC_CRYSTAL_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresNetherrack,MtaBlocks.NETHERITIC_CRYSTAL.get()),
+                new OreConfiguration(blockTest(oresNetherrack, MtaBlocks.NETHERITIC_CRYSTAL.get()),
                         7,
                         0.8F
 
@@ -280,7 +284,7 @@ public class MtaConfigFeatures {
         register(context,
                 AGATE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.AGATE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_AGATE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.AGATE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_AGATE_ORE.get()),
                         8,
                         0.2F
                 )
@@ -288,7 +292,7 @@ public class MtaConfigFeatures {
         register(context,
                 ALEXANDRITE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.ALEXANDRITE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.ALEXANDRITE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_ALEXANDRITE_ORE.get()),
                         4,
                         0.2F
                 )
@@ -296,7 +300,7 @@ public class MtaConfigFeatures {
         register(context,
                 AQUAMARINE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.AQUAMARINE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.AQUAMARINE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_AQUAMARINE_ORE.get()),
                         7,
                         0.2F
                 )
@@ -304,7 +308,7 @@ public class MtaConfigFeatures {
         register(context,
                 BLOODSTONE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.BLOODSTONE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.BLOODSTONE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_BLOODSTONE_ORE.get()),
                         6,
                         0.2F
                 )
@@ -312,7 +316,7 @@ public class MtaConfigFeatures {
         register(context,
                 CELESTITE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.CELESTITE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_CELESTITE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.CELESTITE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_CELESTITE_ORE.get()),
                         8,
                         0.2F
                 )
@@ -320,13 +324,13 @@ public class MtaConfigFeatures {
         register(context,
                 CRYOLITE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.CRYOLITE_ORE.get(), oresDeepslate,MtaBlocks.CRYOLITE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.CRYOLITE_ORE.get(), oresDeepslate, MtaBlocks.CRYOLITE_ORE.get()),
                         6)
         );
         register(context,
                 GARNET_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.GARNET_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_GARNET_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.GARNET_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_GARNET_ORE.get()),
                         7,
                         0.2F
                 )
@@ -334,13 +338,13 @@ public class MtaConfigFeatures {
         register(context,
                 MOONSTONE_ORE,
                 Feature.ORE,
-                new OreConfiguration(blockTest(oresStone,MtaBlocks.MOONSTONE_ORE.get(), oresDeepslate,MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()),
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.MOONSTONE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()),
                         6,
                         0.2F
                 )
         );
         register(context,
-                SWEET_BERRY_LEAVES,Feature.TREE,
+                SWEET_BERRY_LEAVES, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(Blocks.SPRUCE_LOG),
                         new StraightTrunkPlacer(1, 0, 0),
@@ -350,7 +354,6 @@ public class MtaConfigFeatures {
                 )
                         .build()
         );
-
 
 
         register(
@@ -405,6 +408,16 @@ public class MtaConfigFeatures {
                         12
                 )
         );
+        register(
+                context,
+                CATTAIL_VEGETATION,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 7, 3, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.CATTAIL.get())),
+                        BlockPredicate.wouldSurvive(MtaBlocks.CATTAIL.get().defaultBlockState(), BlockPos.ZERO)
+                )
+
+                ));
 
 
     }

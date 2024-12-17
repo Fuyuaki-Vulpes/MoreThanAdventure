@@ -15,6 +15,8 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -43,6 +45,7 @@ public class LootBlocks extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.add(MtaBlocks.SCATTERED_LEAVES.get(), this.createPetalsDrops(MtaBlocks.SCATTERED_LEAVES.get()));
+        this.add(MtaBlocks.CATTAIL.get(), block ->   this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(MtaBlocks.PALM_LOG.get());
         dropSelf(MtaBlocks.PALM_WOOD.get());
         dropSelf(MtaBlocks.STRIPPED_PALM_LOG.get());

@@ -9,7 +9,6 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.SpawnData;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -82,6 +81,8 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_ZOMBIFIED_MINER = registerKey("add_spawns_zombified_miner");
     public static final ResourceKey<BiomeModifier> SPAWNS_SIREN = registerKey("add_spawns_siren");
 
+    public static final ResourceKey<BiomeModifier> ADD_CATTAIL = registerKey("cattail");
+
 
 
 
@@ -89,6 +90,13 @@ public class MtaBiomeModifiers {
 
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
+
+        context.register(ADD_CATTAIL,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_CATTAIL),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CATTAIL_VEGETATION)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+
+        ));
 
         context.register(ADD_PALM_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.BEACH)),

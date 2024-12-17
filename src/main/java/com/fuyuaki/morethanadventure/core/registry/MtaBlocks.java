@@ -1171,6 +1171,30 @@ public class MtaBlocks {
             )
     );
 
+    public static final DeferredBlock<Block> CATTAIL = registerBlock("cattail",
+            () -> new WaterloggableDoublePlant(BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .ignitedByLava()
+                            .pushReaction(PushReaction.DESTROY)
+
+            ));
+
+
+/*
+    public static final DeferredBlock<Block> TEST_VINES =  registerBlock("test_vines", () -> new VineFlowerBlock(
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)
+            )
+    );
+
+    public static final DeferredBlock<Block> TEST_WALLSHROOM =  registerBlock("test_vines", () -> new WallMushroomBlock(
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY)
+            )
+    );
+*/
 
 
 

@@ -12,6 +12,8 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.ClampedInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
@@ -65,6 +67,8 @@ public class MtaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
     public static final ResourceKey<PlacedFeature> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
+
+    public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
@@ -375,6 +379,13 @@ public class MtaPlacedFeatures {
                 context,
                 SHALLOW_GRASS_SPARSE,
                 holder(context,MtaConfigFeatures.SHALLOW_GRASS_SPARSE),VegetationPlacements.worldSurfaceSquaredWithCount(3)
+        );
+        PlacementUtils.register(
+                context,
+                CATTAIL_VEGETATION,
+                holder(context,MtaConfigFeatures.CATTAIL_VEGETATION),
+                VegetationPlacements.worldSurfaceSquaredWithCount(4)
+
         );
 
 

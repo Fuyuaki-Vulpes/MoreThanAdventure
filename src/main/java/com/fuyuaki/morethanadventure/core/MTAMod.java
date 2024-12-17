@@ -83,6 +83,7 @@ public class MTAMod
         setRenderType(MtaBlocks.PALM_LEAVES.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SWEET_BERRY_LEAVES.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SCATTERED_LEAVES.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.CATTAIL.get(), cutoutRenderType);
 
     }
     public static void setRenderType(Block block, RenderType renderType){

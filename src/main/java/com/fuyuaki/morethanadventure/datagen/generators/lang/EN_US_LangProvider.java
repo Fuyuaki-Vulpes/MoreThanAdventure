@@ -81,6 +81,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get(),"Very Dirty Stone Tiles Wall");
         add(MtaBlocks.SWEET_BERRY_LEAVES.get(),"Sweet Berry Leaves");
         add(MtaBlocks.SCATTERED_LEAVES.get(),"Scattered Leaves");
+        add(MtaBlocks.CATTAIL.get(),"Cattail");
 
         add(MtaBlocks.TERRACOTTA_TILES.get(),"Terracotta Tiles");
         add(MtaBlocks.TERRACOTTA_SLAB.get(),"Terracotta Slab");

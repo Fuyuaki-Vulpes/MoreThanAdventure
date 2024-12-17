@@ -2,16 +2,17 @@ package com.fuyuaki.morethanadventure.datagen.generators;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.world.block.MtaCrops;
-import com.fuyuaki.morethanadventure.world.block.SweetBerryLeavesBlock;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
-import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -26,6 +27,9 @@ public class GenBlockstate extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        this.createDoublePlant(MtaBlocks.CATTAIL.get());
+
+
         logBlock(((RotatedPillarBlock) MtaBlocks.PALM_LOG.get()));
         logBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_LOG.get()));
         axisBlock(((RotatedPillarBlock) MtaBlocks.PALM_WOOD.get()), blockTexture(MtaBlocks.PALM_LOG.get()), blockTexture(MtaBlocks.PALM_LOG.get()));
@@ -292,6 +296,27 @@ public class GenBlockstate extends BlockStateProvider {
 
     }
 
+    private void createDoublePlant(Block block) {
+        ResourceLocation topTexture = blockTexture(block).withSuffix("_top");
+        ResourceLocation bottomTexture = blockTexture(block).withSuffix("_bottom");
+        ModelFile modelTop = models().cross(key(block).getPath() + "_top", topTexture);
+        ModelFile modelBottom = models().cross(key(block).getPath() + "_bottom", bottomTexture);
+        VariantBlockStateBuilder builder = getVariantBuilder(block);
+
+        itemModels().getBuilder(key(block).getPath()).texture("layer0",topTexture).parent(new ModelFile.UncheckedModelFile("item/generated"));
+
+        VariantBlockStateBuilder.PartialBlockstate partialState = builder.partialState();
+
+        builder.addModels(partialState.with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER),
+                partialState.modelForState().modelFile(modelTop).build());
+
+        builder.addModels(partialState.with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER),
+                partialState.modelForState().modelFile(modelBottom).build());
+
+
+    }
+
+
     public <T extends Block> void cross(T block, ModelFile blockModel) {
         simpleBlock(block, blockModel);
     }
@@ -341,6 +366,75 @@ public class GenBlockstate extends BlockStateProvider {
                         state.getValue(((MtaCrops) block).getAgeProperty()))).renderType("cutout"));
 
         return models;
+    }
+
+    private void createVineFlowerBlock(Block block, String name) {
+
+        ConfiguredModel model = new ConfiguredModel(models()
+                .withExistingParent(name, ResourceLocation.fromNamespaceAndPath(MODID, "block/vine_flower"))
+                .texture("vine", blockTexture(block) + "_vines")
+                .texture("flowerbed", blockTexture(block) + "_flowerbed")
+                .texture("flower2", blockTexture(block) + "_side_flowers")
+                .texture("flower", blockTexture(block))
+                .renderType("cutout")
+        );
+
+
+
+        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
+
+        PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(entry -> {
+                    Direction direction = entry.getKey();
+            if (direction.getAxis().isHorizontal()) {
+                builder.part().modelFile(model.model).rotationY((((int) direction.toYRot()) + 180) % 360).uvLock(true).addModel()
+                        .condition(entry.getValue(), true);
+            } else if (direction.equals(Direction.UP)) {
+                builder.part().modelFile(model.model).rotationX(270).uvLock(true).addModel()
+                        .condition(entry.getValue(), true);
+            } else if (direction.equals(Direction.DOWN)) {
+                builder.part().modelFile(model.model).rotationX(90).uvLock(true).addModel()
+                        .condition(entry.getValue(), true);
+            }
+
+                }
+
+        );
+
+    }
+    private void createWallShroomBlock(Block block, String name) {
+
+        ConfiguredModel model = new ConfiguredModel(models()
+                .withExistingParent(name, ResourceLocation.fromNamespaceAndPath(MODID, "block/template_wall_mushroom"))
+                .texture("layer0", blockTexture(block) + "_0")
+                .texture("layer1", blockTexture(block) + "_1")
+                .texture("layer2", blockTexture(block) + "_2")
+                .texture("layer3", blockTexture(block) + "_3")
+                .texture("layer4", blockTexture(block) + "_4")
+                .texture("layer5", blockTexture(block) + "_5")
+                .renderType("cutout")
+        );
+
+
+
+        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
+
+        PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(entry -> {
+                    Direction direction = entry.getKey();
+            if (direction.getAxis().isHorizontal()) {
+                builder.part().modelFile(model.model).rotationY((((int) direction.toYRot()) + 180) % 360).uvLock(true).addModel()
+                        .condition(entry.getValue(), true);
+            } else if (direction.equals(Direction.UP)) {
+                builder.part().modelFile(model.model).rotationX(270).uvLock(true).addModel()
+                        .condition(entry.getValue(), true);
+            } else if (direction.equals(Direction.DOWN)) {
+                builder.part().modelFile(model.model).rotationX(90).uvLock(true).addModel()
+                        .condition(entry.getValue(), true);
+            }
+
+                }
+
+        );
+
     }
 
 

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#morethanadventure:has_cattail",
+  "features": "morethanadventure:cattail_vegetation",
+  "step": "vegetal_decoration"
+}

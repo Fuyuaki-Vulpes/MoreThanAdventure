@@ -618,6 +618,20 @@ public class GenBlockTags extends BlockTagsProvider {
                 .addTag(BlockTags.NETHER_CARVER_REPLACEABLES
                 );
 
+        this.tag(BlockTags.TALL_FLOWERS).add(
+                MtaBlocks.CATTAIL.get()
+        );
+
+        this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
+                MtaBlocks.CATTAIL.get()
+        );
+
+
+        this.tag(MtaTags.Blocks.FLOWER_PLACEABLE)
+                .addTag(Tags.Blocks.SANDS).add(
+                        Blocks.GRAVEL
+                );
+
         this.tag(BlockTags.ANIMALS_SPAWNABLE_ON)
                 .add(
                         MtaBlocks.GRASSY_DIRT.get(),
