@@ -13,6 +13,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.PotDecorations;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -1182,6 +1183,16 @@ public class MtaBlocks {
                             .pushReaction(PushReaction.DESTROY)
 
             ));
+    public static final DeferredBlock<Block> CORPSE_LILY = registerBlock("corpse_lily",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
+    public static final DeferredBlock<Block> POTTED_CORPSE_LILY = BLOCKS.register("potted_corpse_lily",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), CORPSE_LILY, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+    public static final DeferredBlock<Block> PITCHER_PLANT = registerBlock("pitcher_plant",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
+    public static final DeferredBlock<Block> POTTED_PITCHER_PLANT = registerBlock("potted_pitcher_plant",
+            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), PITCHER_PLANT, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+    public static final DeferredBlock<Block> VENUS_FLYTRAP = registerBlock("venus_flytrap",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK)));
 
 
 /*
