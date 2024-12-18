@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
@@ -92,4 +93,21 @@ public class GlowSpider extends Spider {
 
         return spawnGroupData;
     }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        this.level().addParticle(ParticleTypes.GLOW, this.getRandomX(0.6), this.getRandomY(), this.getRandomZ(0.6), 0.0, 0.0, 0.0);
+
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        for (int n = 0; n < random.nextIntBetweenInclusive(3,6) * amount; n++){
+            this.level().addParticle(ParticleTypes.GLOW, this.getRandomX(0.6), this.getRandomY(), this.getRandomZ(0.6), 0.0, 0.0, 0.0);
+        }
+        return super.hurt(source, amount);
+    }
+
+    
 }

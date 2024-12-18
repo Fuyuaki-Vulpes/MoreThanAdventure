@@ -88,7 +88,7 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> FROSTED_SLIME_HURT = registerSoundEvent("frosted_slime_hurt");
     public static final Supplier<SoundEvent> FROSTED_SLIME_DEATH = registerSoundEvent("frosted_slime_death");
     public static final Supplier<SoundEvent> GLOW_SPIDER_AMBIENT = registerSoundEvent("glow_spider_ambient");
-    public static final Supplier<SoundEvent> GLOW_SPIDER_HURT = registerSoundEvent("glow_spider_ambient");
+    public static final Supplier<SoundEvent> GLOW_SPIDER_HURT = registerSoundEvent("glow_spider_hurt");
     public static final Supplier<SoundEvent> GLOW_SPIDER_DEATH = registerSoundEvent("glow_spider_death");
     public static final Supplier<SoundEvent> HOST_AMBIENT = registerSoundEvent("host_ambient");
     public static final Supplier<SoundEvent> HOST_HURT = registerSoundEvent("host_hurt");

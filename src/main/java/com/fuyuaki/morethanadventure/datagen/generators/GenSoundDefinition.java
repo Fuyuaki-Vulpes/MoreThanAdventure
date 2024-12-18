@@ -153,7 +153,7 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
                 .subtitle("sound.morethanadventure.armored_skeleton_step"));
 
         add(MtaSounds.CHARRED_SKELETON_AMBIENT.get(), SoundDefinition.definition()
-                .with(sound("morethanadventure:entity/charred_skeleton/idle1"),sound("morethanadventure:entity/charred_skeleton/idle2"),sound("morethanadventure:entity/charred_skeleton/idle3"),sound("morethanadventure:entity/charred_skeleton/idle4"))
+                .with(sound("morethanadventure:entity/charred_skeleton/idle1"),sound("morethanadventure:entity/charred_skeleton/idle2"),sound("morethanadventure:entity/charred_skeleton/idle3"))
                 .subtitle("sound.morethanadventure.charred_skeleton_ambient"));
         add(MtaSounds.CHARRED_SKELETON_HURT.get(), SoundDefinition.definition()
                 .with(sound("morethanadventure:entity/charred_skeleton/hurt1"),sound("morethanadventure:entity/charred_skeleton/hurt2"),sound("morethanadventure:entity/charred_skeleton/hurt3"),sound("morethanadventure:entity/charred_skeleton/hurt4"))

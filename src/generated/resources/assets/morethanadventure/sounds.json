@@ -1,9 +1,76 @@
 {
+  "armored_skeleton_ambient": {
+    "sounds": [
+      "morethanadventure:entity/armored_skeleton/idle1",
+      "morethanadventure:entity/armored_skeleton/idle2",
+      "morethanadventure:entity/armored_skeleton/idle3",
+      "morethanadventure:entity/armored_skeleton/idle4"
+    ],
+    "subtitle": "sound.morethanadventure.armored_skeleton_ambient"
+  },
+  "armored_skeleton_death": {
+    "sounds": [
+      "morethanadventure:entity/armored_skeleton/death1",
+      "morethanadventure:entity/armored_skeleton/death2"
+    ],
+    "subtitle": "sound.morethanadventure.armored_skeleton_death"
+  },
+  "armored_skeleton_hurt": {
+    "sounds": [
+      "morethanadventure:entity/armored_skeleton/hurt1",
+      "morethanadventure:entity/armored_skeleton/hurt2",
+      "morethanadventure:entity/armored_skeleton/hurt3",
+      "morethanadventure:entity/armored_skeleton/hurt4"
+    ],
+    "subtitle": "sound.morethanadventure.armored_skeleton_hurt"
+  },
+  "armored_skeleton_step": {
+    "sounds": [
+      "morethanadventure:entity/armored_skeleton/step1",
+      "morethanadventure:entity/armored_skeleton/step2",
+      "morethanadventure:entity/armored_skeleton/step3",
+      "morethanadventure:entity/armored_skeleton/step4"
+    ],
+    "subtitle": "sound.morethanadventure.armored_skeleton_step"
+  },
   "capybara_hurt": {
     "sounds": [
       "morethanadventure:entity/capybara/capybara_hurt"
     ],
     "subtitle": "sound.morethanadventure.capybara_hurt"
+  },
+  "charred_skeleton_ambient": {
+    "sounds": [
+      "morethanadventure:entity/charred_skeleton/idle1",
+      "morethanadventure:entity/charred_skeleton/idle2",
+      "morethanadventure:entity/charred_skeleton/idle3"
+    ],
+    "subtitle": "sound.morethanadventure.charred_skeleton_ambient"
+  },
+  "charred_skeleton_death": {
+    "sounds": [
+      "morethanadventure:entity/charred_skeleton/death1",
+      "morethanadventure:entity/charred_skeleton/death2"
+    ],
+    "subtitle": "sound.morethanadventure.charred_skeleton_death"
+  },
+  "charred_skeleton_hurt": {
+    "sounds": [
+      "morethanadventure:entity/charred_skeleton/hurt1",
+      "morethanadventure:entity/charred_skeleton/hurt2",
+      "morethanadventure:entity/charred_skeleton/hurt3",
+      "morethanadventure:entity/charred_skeleton/hurt4"
+    ],
+    "subtitle": "sound.morethanadventure.charred_skeleton_hurt"
+  },
+  "charred_skeleton_step": {
+    "sounds": [
+      "morethanadventure:entity/charred_skeleton/step1",
+      "morethanadventure:entity/charred_skeleton/step2",
+      "morethanadventure:entity/charred_skeleton/step3",
+      "morethanadventure:entity/charred_skeleton/step4"
+    ],
+    "subtitle": "sound.morethanadventure.charred_skeleton_death"
   },
   "duck_ambient": {
     "sounds": [
@@ -47,6 +114,30 @@
       "morethanadventure:entity/ferret/ferret_hurt"
     ],
     "subtitle": "sound.morethanadventure.ferret_hurt"
+  },
+  "glow_spider_ambient": {
+    "sounds": [
+      "morethanadventure:entity/glow_spider/say1",
+      "morethanadventure:entity/glow_spider/say2",
+      "morethanadventure:entity/glow_spider/say3",
+      "morethanadventure:entity/glow_spider/say4"
+    ],
+    "subtitle": "sound.morethanadventure.glow_spider_ambient"
+  },
+  "glow_spider_death": {
+    "sounds": [
+      "morethanadventure:entity/glow_spider/death"
+    ],
+    "subtitle": "sound.morethanadventure.glow_spider_death"
+  },
+  "glow_spider_hurt": {
+    "sounds": [
+      "morethanadventure:entity/glow_spider/say1",
+      "morethanadventure:entity/glow_spider/say2",
+      "morethanadventure:entity/glow_spider/say3",
+      "morethanadventure:entity/glow_spider/say4"
+    ],
+    "subtitle": "sound.morethanadventure.glow_spider_hurt"
   },
   "owl_ambient": {
     "sounds": [
