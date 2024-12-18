@@ -57,25 +57,6 @@ public class BlackWidow extends CaveSpider {
         }
     }
 
-
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.BLACK_WIDOW_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.BLACK_WIDOW_HURT.get();
-    }
-
-    @org.jetbrains.annotations.Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.BLACK_WIDOW_DEATH.get();
-    }
-
     @Nullable
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {

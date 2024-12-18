@@ -6,6 +6,10 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.SoundDefinition;
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class GenSoundDefinition extends SoundDefinitionsProvider {
@@ -110,12 +114,19 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //add(MtaSounds.TOUCAN_DEATH.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/toucan/toucan_death")).subtitle("sound.morethanadventure.toucan_death"));
 
-        //add(MtaSounds.TURKEY_AMBIENT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/turkey/turkey_ambient")).subtitle("sound.morethanadventure.turkey_ambient"));
-        //add(MtaSounds.TURKEY_HURT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/turkey/turkey_hurt")).subtitle("sound.morethanadventure.turkey_hurt"));
-        //add(MtaSounds.TURKEY_DEATH.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/turkey/turkey_death")).subtitle("sound.morethanadventure.turkey_death"));
+        add(MtaSounds.TURKEY_AMBIENT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/turkey/ambient1")
+                        ,sound("morethanadventure:entity/turkey/ambient2")
+                        ,sound("morethanadventure:entity/turkey/ambient3")
+                        ,sound("morethanadventure:entity/turkey/ambient4")
+                        ,sound("morethanadventure:entity/turkey/ambient5")
+                        ,sound("morethanadventure:entity/turkey/ambient6")
+                )
+                .subtitle("sound.morethanadventure.turkey_ambient"));
+        add(MtaSounds.TURKEY_HURT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/turkey/hurt1"),sound("morethanadventure:entity/turkey/hurt2")).subtitle("sound.morethanadventure.turkey_hurt"));
+        add(MtaSounds.TURKEY_DEATH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/turkey/death")).subtitle("sound.morethanadventure.turkey_death"));
 
         //add(MtaSounds.WISPFLY_AMBIENT.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/wisp/wisp_ambient")).subtitle("sound.morethanadventure.wisp_ambient"));
@@ -128,26 +139,31 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //Monsters
 
 
-        //add(MtaSounds.ARMORED_SKELETON_AMBIENT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/armored_skeleton/armored_skeleton_ambient")).subtitle("sound.morethanadventure.armored_skeleton_ambient"));
-        //add(MtaSounds.ARMORED_SKELETON_HURT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/armored_skeleton/armored_skeleton_hurt")).subtitle("sound.morethanadventure.armored_skeleton_hurt"));
-        //add(MtaSounds.ARMORED_SKELETON_DEATH.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/armored_skeleton/armored_skeleton_death")).subtitle("sound.morethanadventure.armored_skeleton_death"));
+        add(MtaSounds.ARMORED_SKELETON_AMBIENT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/armored_skeleton/idle1"),sound("morethanadventure:entity/armored_skeleton/idle2"),sound("morethanadventure:entity/armored_skeleton/idle3"),sound("morethanadventure:entity/armored_skeleton/idle4"))
+                .subtitle("sound.morethanadventure.armored_skeleton_ambient"));
+        add(MtaSounds.ARMORED_SKELETON_HURT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/armored_skeleton/hurt1"),sound("morethanadventure:entity/armored_skeleton/hurt2"),sound("morethanadventure:entity/armored_skeleton/hurt3"),sound("morethanadventure:entity/armored_skeleton/hurt4"))
+                .subtitle("sound.morethanadventure.armored_skeleton_hurt"));
+        add(MtaSounds.ARMORED_SKELETON_DEATH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/armored_skeleton/death1"),sound("morethanadventure:entity/armored_skeleton/death2"))
+                .subtitle("sound.morethanadventure.armored_skeleton_death"));
+        add(MtaSounds.ARMORED_SKELETON_STEP.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/armored_skeleton/step1"),sound("morethanadventure:entity/armored_skeleton/step2"),sound("morethanadventure:entity/armored_skeleton/step3"),sound("morethanadventure:entity/armored_skeleton/step4"))
+                .subtitle("sound.morethanadventure.armored_skeleton_step"));
 
-        //add(MtaSounds.BLACK_WIDOW_AMBIENT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/black_widow/black_widow_ambient")).subtitle("sound.morethanadventure.black_widow_ambient"));
-        //add(MtaSounds.BLACK_WIDOW_HURT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/black_widow/black_widow_hurt")).subtitle("sound.morethanadventure.black_widow_hurt"));
-        //add(MtaSounds.BLACK_WIDOW_DEATH.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/black_widow/black_widow_death")).subtitle("sound.morethanadventure.black_widow_death"));
-
-        //add(MtaSounds.CHARRED_SKELETON_AMBIENT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/charred_skeleton/charred_skeleton_ambient")).subtitle("sound.morethanadventure.charred_skeleton_ambient"));
-        //add(MtaSounds.CHARRED_SKELETON_HURT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/charred_skeleton/charred_skeleton_hurt")).subtitle("sound.morethanadventure.charred_skeleton_hurt"));
-        //add(MtaSounds.CHARRED_SKELETON_DEATH.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/charred_skeleton/charred_skeleton_death")).subtitle("sound.morethanadventure.charred_skeleton_death"));
+        add(MtaSounds.CHARRED_SKELETON_AMBIENT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/charred_skeleton/idle1"),sound("morethanadventure:entity/charred_skeleton/idle2"),sound("morethanadventure:entity/charred_skeleton/idle3"),sound("morethanadventure:entity/charred_skeleton/idle4"))
+                .subtitle("sound.morethanadventure.charred_skeleton_ambient"));
+        add(MtaSounds.CHARRED_SKELETON_HURT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/charred_skeleton/hurt1"),sound("morethanadventure:entity/charred_skeleton/hurt2"),sound("morethanadventure:entity/charred_skeleton/hurt3"),sound("morethanadventure:entity/charred_skeleton/hurt4"))
+                .subtitle("sound.morethanadventure.charred_skeleton_hurt"));
+        add(MtaSounds.CHARRED_SKELETON_DEATH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/charred_skeleton/death1"),sound("morethanadventure:entity/charred_skeleton/death2"))
+                .subtitle("sound.morethanadventure.charred_skeleton_death"));
+        add(MtaSounds.CHARRED_SKELETON_STEP.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/charred_skeleton/step1"),sound("morethanadventure:entity/charred_skeleton/step2"),sound("morethanadventure:entity/charred_skeleton/step3"),sound("morethanadventure:entity/charred_skeleton/step4"))
+                .subtitle("sound.morethanadventure.charred_skeleton_death"));
 
         //add(MtaSounds.CORROSIVE_CUBE_AMBIENT.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/corrosive_cube/corrosive_cube_ambient")).subtitle("sound.morethanadventure.corrosive_cube_ambient"));
@@ -173,12 +189,17 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //add(MtaSounds.FROSTED_SLIME_DEATH.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/frosted_slime/frosted_slime_death")).subtitle("sound.morethanadventure.frosted_slime_death"));
 
-        //add(MtaSounds.GLOW_SPIDER_AMBIENT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/glow_spider/glow_spider_ambient")).subtitle("sound.morethanadventure.glow_spider_ambient"));
-        //add(MtaSounds.GLOW_SPIDER_HURT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/glow_spider/glow_spider_hurt")).subtitle("sound.morethanadventure.glow_spider_hurt"));
-        //add(MtaSounds.GLOW_SPIDER_DEATH.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/glow_spider/glow_spider_death")).subtitle("sound.morethanadventure.glow_spider_death"));
+        add(MtaSounds.GLOW_SPIDER_AMBIENT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/glow_spider/say1"),sound("morethanadventure:entity/glow_spider/say2"),sound("morethanadventure:entity/glow_spider/say3"),sound("morethanadventure:entity/glow_spider/say4"))
+                .subtitle("sound.morethanadventure.glow_spider_ambient"));
+
+        add(MtaSounds.GLOW_SPIDER_HURT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/glow_spider/say1"),sound("morethanadventure:entity/glow_spider/say2"),sound("morethanadventure:entity/glow_spider/say3"),sound("morethanadventure:entity/glow_spider/say4"))
+                .subtitle("sound.morethanadventure.glow_spider_hurt"));
+
+        add(MtaSounds.GLOW_SPIDER_DEATH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/glow_spider/death"))
+                .subtitle("sound.morethanadventure.glow_spider_death"));
 
         //add(MtaSounds.HOST_AMBIENT.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/host/host_ambient")).subtitle("sound.morethanadventure.host_ambient"));
@@ -263,6 +284,6 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         add(MtaSounds.WEAPON_WHIP.get(), SoundDefinition.definition()
                 .with(sound("morethanadventure:item/weaponry/whip")).subtitle("sound.morethanadventure.weapons.whip"));
 
-
     }
+
 }

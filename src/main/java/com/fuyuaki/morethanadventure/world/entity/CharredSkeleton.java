@@ -47,7 +47,7 @@ public class CharredSkeleton extends AbstractSkeleton {
 
     @Override
     protected SoundEvent getStepSound() {
-        return SoundEvents.SKELETON_STEP;
+        return MtaSounds.CHARRED_SKELETON_STEP.get();
     }
 
     @Override

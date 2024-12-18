@@ -69,7 +69,7 @@ public class GlowSpider extends Spider {
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.GLOW_SPIDER_HURT.get();
+        return MtaSounds.GLOW_SPIDER_AMBIENT.get();
     }
 
     @Nullable

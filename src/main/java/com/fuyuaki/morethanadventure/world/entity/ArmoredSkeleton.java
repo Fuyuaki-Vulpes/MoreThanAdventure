@@ -25,6 +25,7 @@ public class ArmoredSkeleton extends AbstractSkeleton {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.25F);
     }
 
+
     @Override
     protected boolean isSunBurnTick() {
         return false;
@@ -50,6 +51,6 @@ public class ArmoredSkeleton extends AbstractSkeleton {
 
     @Override
     protected SoundEvent getStepSound() {
-        return SoundEvents.SKELETON_STEP;
+        return MtaSounds.ARMORED_SKELETON_STEP.get();
     }
 }

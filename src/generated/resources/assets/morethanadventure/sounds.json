@@ -60,6 +60,30 @@
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
   },
+  "turkey_ambient": {
+    "sounds": [
+      "morethanadventure:entity/turkey/ambient1",
+      "morethanadventure:entity/turkey/ambient2",
+      "morethanadventure:entity/turkey/ambient3",
+      "morethanadventure:entity/turkey/ambient4",
+      "morethanadventure:entity/turkey/ambient5",
+      "morethanadventure:entity/turkey/ambient6"
+    ],
+    "subtitle": "sound.morethanadventure.turkey_ambient"
+  },
+  "turkey_death": {
+    "sounds": [
+      "morethanadventure:entity/turkey/death"
+    ],
+    "subtitle": "sound.morethanadventure.turkey_death"
+  },
+  "turkey_hurt": {
+    "sounds": [
+      "morethanadventure:entity/turkey/hurt1",
+      "morethanadventure:entity/turkey/hurt2"
+    ],
+    "subtitle": "sound.morethanadventure.turkey_hurt"
+  },
   "weapon_deep_swing": {
     "sounds": [
       "morethanadventure:item/weaponry/deep_swing"

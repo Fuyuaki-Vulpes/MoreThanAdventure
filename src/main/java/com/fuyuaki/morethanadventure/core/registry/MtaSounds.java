@@ -73,12 +73,11 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> ARMORED_SKELETON_AMBIENT = registerSoundEvent("armored_skeleton_ambient");
     public static final Supplier<SoundEvent> ARMORED_SKELETON_HURT = registerSoundEvent("armored_skeleton_hurt");
     public static final Supplier<SoundEvent> ARMORED_SKELETON_DEATH = registerSoundEvent("armored_skeleton_death");
-    public static final Supplier<SoundEvent> BLACK_WIDOW_AMBIENT = registerSoundEvent("black_widow_ambient");
-    public static final Supplier<SoundEvent> BLACK_WIDOW_HURT = registerSoundEvent("black_widow_hurt");
-    public static final Supplier<SoundEvent> BLACK_WIDOW_DEATH = registerSoundEvent("black_widow_death");
+    public static final Supplier<SoundEvent> ARMORED_SKELETON_STEP = registerSoundEvent("armored_skeleton_step");
     public static final Supplier<SoundEvent> CHARRED_SKELETON_AMBIENT = registerSoundEvent("charred_skeleton_ambient");
     public static final Supplier<SoundEvent> CHARRED_SKELETON_HURT = registerSoundEvent("charred_skeleton_hurt");
     public static final Supplier<SoundEvent> CHARRED_SKELETON_DEATH = registerSoundEvent("charred_skeleton_death");
+    public static final Supplier<SoundEvent> CHARRED_SKELETON_STEP = registerSoundEvent("charred_skeleton_step");
     public static final Supplier<SoundEvent> CORROSIVE_CUBE_AMBIENT = registerSoundEvent("corrosive_cube_ambient");
     public static final Supplier<SoundEvent> CORROSIVE_CUBE_HURT = registerSoundEvent("corrosive_cube_hurt");
     public static final Supplier<SoundEvent> CORROSIVE_CUBE_DEATH = registerSoundEvent("corrosive_cube_death");
@@ -89,7 +88,7 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> FROSTED_SLIME_HURT = registerSoundEvent("frosted_slime_hurt");
     public static final Supplier<SoundEvent> FROSTED_SLIME_DEATH = registerSoundEvent("frosted_slime_death");
     public static final Supplier<SoundEvent> GLOW_SPIDER_AMBIENT = registerSoundEvent("glow_spider_ambient");
-    public static final Supplier<SoundEvent> GLOW_SPIDER_HURT = registerSoundEvent("glow_spider_hurt");
+    public static final Supplier<SoundEvent> GLOW_SPIDER_HURT = registerSoundEvent("glow_spider_ambient");
     public static final Supplier<SoundEvent> GLOW_SPIDER_DEATH = registerSoundEvent("glow_spider_death");
     public static final Supplier<SoundEvent> HOST_AMBIENT = registerSoundEvent("host_ambient");
     public static final Supplier<SoundEvent> HOST_HURT = registerSoundEvent("host_hurt");

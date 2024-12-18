@@ -114,7 +114,7 @@ public class MtaEntityTypes {
 
     public static final DeferredHolder<EntityType<?>,EntityType<Deer>> DEER = ENTITY.register("deer",
             () -> EntityType.Builder.<Deer>of(Deer::new, MobCategory.CREATURE)
-                    .sized(0.8f,0.6F)
+                    .sized(0.9F, 1.6F).eyeHeight(1.35F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"deer").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Duck>> DUCK = ENTITY.register("duck",
@@ -169,7 +169,7 @@ public class MtaEntityTypes {
 
     public static final DeferredHolder<EntityType<?>,EntityType<Turkey>> TURKEY = ENTITY.register("turkey",
             () -> EntityType.Builder.<Turkey>of(Turkey::new, MobCategory.CREATURE)
-                    .sized(0.45f,0.45f)
+                    .sized(1.1f,1.35f).eyeHeight(1.25F)
                     .build(ResourceLocation.fromNamespaceAndPath(MODID,"turkey").toString()));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Raccoon>> RACCOON = ENTITY.register("raccoon",
