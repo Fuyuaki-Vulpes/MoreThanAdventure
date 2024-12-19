@@ -66,24 +66,6 @@ public class Octopus extends MTATameableAnimal {
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 2.2F);
     }
 
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.OCTOPUS_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.OCTOPUS_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.OCTOPUS_DEATH.get();
-    }
-
 
     @Override
     public boolean isFood(ItemStack pStack) {

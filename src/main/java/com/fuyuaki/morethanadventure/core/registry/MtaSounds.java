@@ -15,13 +15,6 @@ public class MtaSounds {
 
 
     //Animals
-
-    public static final Supplier<SoundEvent> BEARDED_DRAGON_AMBIENT = registerSoundEvent("bearded_dragon_ambient");
-    public static final Supplier<SoundEvent> BEARDED_DRAGON_HURT = registerSoundEvent("bearded_dragon_hurt");
-    public static final Supplier<SoundEvent> BEARDED_DRAGON_DEATH = registerSoundEvent("bearded_dragon_death");
-    public static final Supplier<SoundEvent> BUTTERFLY_AMBIENT = registerSoundEvent("butterfly_ambient");
-    public static final Supplier<SoundEvent> BUTTERFLY_HURT = registerSoundEvent("butterfly_hurt");
-    public static final Supplier<SoundEvent> BUTTERFLY_DEATH = registerSoundEvent("butterfly_death");
     public static final Supplier<SoundEvent> CAPYBARA_AMBIENT = registerSoundEvent("capybara_ambient");
     public static final Supplier<SoundEvent> CAPYBARA_HURT = registerSoundEvent("capybara_hurt");
     public static final Supplier<SoundEvent> CAPYBARA_DEATH = registerSoundEvent("capybara_death");
@@ -34,30 +27,12 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> FERRET_AMBIENT = registerSoundEvent("ferret_ambient");
     public static final Supplier<SoundEvent> FERRET_HURT = registerSoundEvent("ferret_hurt");
     public static final Supplier<SoundEvent> FERRET_DEATH = registerSoundEvent("ferret_death");
-    public static final Supplier<SoundEvent> GREAT_WHITE_SHARK_AMBIENT = registerSoundEvent("great_white_shark_ambient");
-    public static final Supplier<SoundEvent> GREAT_WHITE_SHARK_HURT = registerSoundEvent("great_white_shark_hurt");
-    public static final Supplier<SoundEvent> GREAT_WHITE_SHARK_DEATH = registerSoundEvent("great_white_shark_death");
-    public static final Supplier<SoundEvent> HORSESHOE_CRAB_AMBIENT = registerSoundEvent("horseshoe_crab_ambient");
-    public static final Supplier<SoundEvent> HORSESHOE_CRAB_HURT = registerSoundEvent("horseshoe_crab_hurt");
-    public static final Supplier<SoundEvent> HORSESHOE_CRAB_DEATH = registerSoundEvent("horseshoe_crab_death");
-    public static final Supplier<SoundEvent> JELLYFISH_AMBIENT = registerSoundEvent("jellyfish_ambient");
-    public static final Supplier<SoundEvent> JELLYFISH_HURT = registerSoundEvent("jellyfish_hurt");
-    public static final Supplier<SoundEvent> JELLYFISH_DEATH = registerSoundEvent("jellyfish_death");
-    public static final Supplier<SoundEvent> OCTOPUS_AMBIENT = registerSoundEvent("octopus_ambient");
-    public static final Supplier<SoundEvent> OCTOPUS_HURT = registerSoundEvent("octopus_hurt");
-    public static final Supplier<SoundEvent> OCTOPUS_DEATH = registerSoundEvent("octopus_death");
     public static final Supplier<SoundEvent> OWL_AMBIENT = registerSoundEvent("owl_ambient");
     public static final Supplier<SoundEvent> OWL_HURT = registerSoundEvent("owl_hurt");
     public static final Supplier<SoundEvent> OWL_DEATH = registerSoundEvent("owl_death");
-    public static final Supplier<SoundEvent> PENGUIN_AMBIENT = registerSoundEvent("penguin_ambient");
-    public static final Supplier<SoundEvent> PENGUIN_HURT = registerSoundEvent("penguin_hurt");
-    public static final Supplier<SoundEvent> PENGUIN_DEATH = registerSoundEvent("penguin_death");
     public static final Supplier<SoundEvent> RACCOON_AMBIENT = registerSoundEvent("raccoon_ambient");
     public static final Supplier<SoundEvent> RACCOON_HURT = registerSoundEvent("raccoon_hurt");
     public static final Supplier<SoundEvent> RACCOON_DEATH = registerSoundEvent("raccoon_death");
-    public static final Supplier<SoundEvent> SHRIMP_AMBIENT = registerSoundEvent("shrimp_ambient");
-    public static final Supplier<SoundEvent> SHRIMP_HURT = registerSoundEvent("shrimp_hurt");
-    public static final Supplier<SoundEvent> SHRIMP_DEATH = registerSoundEvent("shrimp_death");
     public static final Supplier<SoundEvent> TOUCAN_AMBIENT = registerSoundEvent("toucan_ambient");
     public static final Supplier<SoundEvent> TOUCAN_HURT = registerSoundEvent("toucan_hurt");
     public static final Supplier<SoundEvent> TOUCAN_DEATH = registerSoundEvent("toucan_death");

@@ -77,25 +77,6 @@ public class GreatWhiteShark extends WaterAnimal implements NeutralMob {
 
     }
 
-
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.GREAT_WHITE_SHARK_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.GREAT_WHITE_SHARK_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.GREAT_WHITE_SHARK_DEATH.get();
-    }
-
     @Override
     public int getRemainingPersistentAngerTime() {
         return this.entityData.get(DATA_REMAINING_ANGER_TIME);

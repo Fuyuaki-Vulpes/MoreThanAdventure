@@ -52,24 +52,6 @@ public class Penguin extends MTATameableAnimal {
                 .add(Attributes.MOVEMENT_SPEED, 0.05F);
     }
 
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.PENGUIN_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.PENGUIN_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.PENGUIN_DEATH.get();
-    }
-
     @Override
     public int getMaxAirSupply() {
         return 4800;

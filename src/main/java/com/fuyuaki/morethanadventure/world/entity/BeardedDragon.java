@@ -63,24 +63,6 @@ public class BeardedDragon extends MTATameableAnimal {
 
     @Nullable
     @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.BEARDED_DRAGON_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.BEARDED_DRAGON_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.BEARDED_DRAGON_DEATH.get();
-    }
-
-    @Nullable
-    @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         BeardedDragon beardedDragon = MtaEntityTypes.BEARDED_DRAGON.get().create(pLevel);
         return beardedDragon;

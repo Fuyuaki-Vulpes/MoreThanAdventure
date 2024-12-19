@@ -72,6 +72,30 @@
     ],
     "subtitle": "sound.morethanadventure.charred_skeleton_death"
   },
+  "deer_ambient": {
+    "sounds": [
+      "morethanadventure:entity/deer/idle1",
+      "morethanadventure:entity/deer/idle2",
+      "morethanadventure:entity/deer/idle3",
+      "morethanadventure:entity/deer/idle4",
+      "morethanadventure:entity/deer/idle5",
+      "morethanadventure:entity/deer/idle6"
+    ],
+    "subtitle": "sound.morethanadventure.deer_ambient"
+  },
+  "deer_death": {
+    "sounds": [
+      "morethanadventure:entity/deer/death"
+    ],
+    "subtitle": "sound.morethanadventure.deer_death"
+  },
+  "deer_hurt": {
+    "sounds": [
+      "morethanadventure:entity/deer/hurt1",
+      "morethanadventure:entity/deer/hurt2"
+    ],
+    "subtitle": "sound.morethanadventure.deer_hurt"
+  },
   "duck_ambient": {
     "sounds": [
       "morethanadventure:entity/duck/duck_ambient_1",
@@ -151,6 +175,27 @@
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
   },
+  "toucan_ambient": {
+    "sounds": [
+      "morethanadventure:entity/toucan/chirp1",
+      "morethanadventure:entity/toucan/chirp2",
+      "morethanadventure:entity/toucan/chirp3"
+    ],
+    "subtitle": "sound.morethanadventure.toucan_ambient"
+  },
+  "toucan_death": {
+    "sounds": [
+      "morethanadventure:entity/toucan/death"
+    ],
+    "subtitle": "sound.morethanadventure.toucan_death"
+  },
+  "toucan_hurt": {
+    "sounds": [
+      "morethanadventure:entity/toucan/hurt1",
+      "morethanadventure:entity/toucan/hurt2"
+    ],
+    "subtitle": "sound.morethanadventure.toucan_hurt"
+  },
   "turkey_ambient": {
     "sounds": [
       "morethanadventure:entity/turkey/ambient1",
@@ -222,6 +267,30 @@
       "morethanadventure:item/weaponry/whip"
     ],
     "subtitle": "sound.morethanadventure.weapons.whip"
+  },
+  "wispfly_ambient": {
+    "sounds": [
+      "morethanadventure:entity/wispfly/sing1",
+      "morethanadventure:entity/wispfly/sing2",
+      "morethanadventure:entity/wispfly/sing3",
+      "morethanadventure:entity/wispfly/sing4",
+      "morethanadventure:entity/wispfly/sing5",
+      "morethanadventure:entity/wispfly/sing6"
+    ],
+    "subtitle": "sound.morethanadventure.wisp_ambient"
+  },
+  "wispfly_death": {
+    "sounds": [
+      "morethanadventure:entity/wispfly/death"
+    ],
+    "subtitle": "sound.morethanadventure.wisp_death"
+  },
+  "wispfly_hurt": {
+    "sounds": [
+      "morethanadventure:entity/wispfly/hurt1",
+      "morethanadventure:entity/wispfly/hurt2"
+    ],
+    "subtitle": "sound.morethanadventure.wisp_hurt"
   },
   "yuki_onna_ambient": {
     "sounds": [

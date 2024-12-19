@@ -49,23 +49,6 @@ public class Jellyfish extends WaterAnimal {
 
 
 
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.JELLYFISH_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.JELLYFISH_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.JELLYFISH_DEATH.get();
-    }
 
     protected SoundEvent getSquirtSound() {
         return null;

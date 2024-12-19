@@ -687,9 +687,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add("sound.morethanadventure.capybara_ambient", "Capybara Barks");
         add("sound.morethanadventure.capybara_hurt", "Capybara Barks");
         //add("sound.morethanadventure.capybara_death", "Capybara Dies");
-        //add("sound.morethanadventure.deer_ambient", "Capybara Barks");
-        //add("sound.morethanadventure.deer_hurt", "Capybara Barks");
-        //add("sound.morethanadventure.deer_death", "Capybara Barks");
+        add("sound.morethanadventure.deer_ambient", "Deer Idles");
+        add("sound.morethanadventure.deer_hurt", "Deer Hurts");
+        add("sound.morethanadventure.deer_death", "Deer Dies");
         add("sound.morethanadventure.duck_ambient", "Duck Quacking");
         //add("sound.morethanadventure.duck_hurt", "Capybara Barks");
         //add("sound.morethanadventure.duck_death", "Capybara Barks");
@@ -726,9 +726,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.turkey_ambient", "Turkey Gobbles");
         add("sound.morethanadventure.turkey_hurt", "Turkey Hurts");
         add("sound.morethanadventure.turkey_death", "Turkey Dies");
-        //add("sound.morethanadventure.wispfly_ambient", "Owl Call");
-        //add("sound.morethanadventure.wispfly_hurt", "Owl Hurt");
-        //add("sound.morethanadventure.wispfly_death", "Owl Hurt");
+
+        add("sound.morethanadventure.wispfly_ambient", "Wispfly Sings");
+        add("sound.morethanadventure.wispfly_hurt", "Wispfly Hurts");
+        add("sound.morethanadventure.wispfly_death", "Wispfly Dies");
 
         add("sound.morethanadventure.armored_skeleton_ambient", "Armored Skeleton Rattles");
         add("sound.morethanadventure.armored_skeleton_hurt", "Armored Skeleton Hurts");

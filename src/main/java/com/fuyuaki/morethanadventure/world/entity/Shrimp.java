@@ -16,25 +16,6 @@ public class Shrimp extends AbstractSchoolingFish {
         super(pEntityType, pLevel);
     }
 
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.SHRIMP_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.SHRIMP_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.SHRIMP_DEATH.get();
-    }
-
-
     @Override
     protected SoundEvent getFlopSound() {
         return SoundEvents.TADPOLE_FLOP;

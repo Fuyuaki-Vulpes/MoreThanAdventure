@@ -106,23 +106,6 @@ public class Butterfly extends Animal implements FlyingAnimal {
         return baby;
     }
 
-    @Nullable
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.BUTTERFLY_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.BUTTERFLY_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.BUTTERFLY_DEATH.get();
-    }
 
     @Override
     public boolean isFlying() {

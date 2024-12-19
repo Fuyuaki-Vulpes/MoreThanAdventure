@@ -77,24 +77,6 @@ public class HorseshoeCrab extends MTATameableAnimal {
 
     @Nullable
     @Override
-    protected SoundEvent getAmbientSound() {
-        return MtaSounds.HORSESHOE_CRAB_AMBIENT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return MtaSounds.HORSESHOE_CRAB_HURT.get();
-    }
-
-    @Nullable
-    @Override
-    protected SoundEvent getDeathSound() {
-        return MtaSounds.HORSESHOE_CRAB_DEATH.get();
-    }
-
-    @Nullable
-    @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         HorseshoeCrab horseshoeCrab = MtaEntityTypes.HORSESHOE_CRAB.get().create(pLevel);
         return horseshoeCrab;
