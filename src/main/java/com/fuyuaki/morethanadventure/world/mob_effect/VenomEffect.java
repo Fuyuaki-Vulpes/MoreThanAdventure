@@ -13,7 +13,7 @@ public class VenomEffect extends MobEffect {
     @Override
     public boolean applyEffectTick(LivingEntity p_296276_, int p_296233_) {
         var dTypeReg = p_296276_.damageSources().damageTypes;
-        var dType = dTypeReg.getHolder(net.neoforged.neoforge.common.NeoForgeMod.POISON_DAMAGE).orElse(dTypeReg.getHolderOrThrow(net.minecraft.world.damagesource.DamageTypes.MAGIC));
+        var dType = dTypeReg.get(net.neoforged.neoforge.common.NeoForgeMod.POISON_DAMAGE).orElse(dTypeReg.get(net.minecraft.world.damagesource.DamageTypes.MAGIC).get());
         p_296276_.hurt(new net.minecraft.world.damagesource.DamageSource(dType), 2.0F);
         return true;
     }

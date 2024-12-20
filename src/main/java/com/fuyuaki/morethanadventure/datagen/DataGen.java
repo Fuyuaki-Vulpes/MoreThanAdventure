@@ -21,7 +21,7 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGen {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event){
+    public static void gatherData(GatherDataEvent.Client event){
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
@@ -29,42 +29,42 @@ public class DataGen {
         var datapackRegistries = new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), GenWorld.BUILDER, Set.of(MODID));
 
 
-        generator.addProvider(event.includeServer(),new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider(),existingFileHelper,
+        generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider(),existingFileHelper,
                         List.of()
                 )
         );
-        generator.addProvider(event.includeServer(), new GenRecipes(packOutput,lookupProvider));
-        generator.addProvider(event.includeServer(), GenLoot.create(packOutput,lookupProvider));
+        //generator.addProvider(true, new GenRecipes(lookupProvider,packOutput));
+        generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
 
-        generator.addProvider(event.includeClient(), new GenBlockstate(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new GenItemModels(packOutput, existingFileHelper));
+        generator.addProvider(true, new GenBlockstate(packOutput, existingFileHelper));
+        generator.addProvider(true, new GenItemModels(packOutput, existingFileHelper));
 
-        GenBlockTags blockTagGenerator = generator.addProvider(event.includeServer(),
+        GenBlockTags blockTagGenerator = generator.addProvider(true,
                 new GenBlockTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
 
-        generator.addProvider(event.includeServer(),
+        generator.addProvider(true,
                 new GenItemTags(packOutput, datapackRegistries.getRegistryProvider(), blockTagGenerator.contentsGetter(), existingFileHelper));
 
-        generator.addProvider(event.includeServer(),
+        generator.addProvider(true,
                 new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
 
-        generator.addProvider(event.includeServer(),
+        generator.addProvider(true,
                 new GenEntityTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
 
 
-        generator.addProvider(event.includeServer(),
+        generator.addProvider(true,
                 new GenWorld(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeClient(),
+        generator.addProvider(true,
                 new EN_US_LangProvider(packOutput));
 
-        generator.addProvider(event.includeClient(),
+        generator.addProvider(true,
                 new GenSoundDefinition(packOutput,existingFileHelper));
 
-        generator.addProvider(event.includeClient(),
+        generator.addProvider(true,
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
 
-        generator.addProvider(event.includeClient(),
+        generator.addProvider(true,
                 new GenCurioData(packOutput,existingFileHelper, datapackRegistries.getRegistryProvider()));
 
     }

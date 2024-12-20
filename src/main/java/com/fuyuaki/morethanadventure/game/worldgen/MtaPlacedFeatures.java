@@ -194,7 +194,7 @@ public class MtaPlacedFeatures {
                 GEYSER_OVERWORLD,
                 holder(context,MtaConfigFeatures.GEYSER_OVERWORLD),
                 PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.UP.getNormal(), Blocks.AIR)),
+                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.UP.getUnitVec3i(), Blocks.AIR)),
                 RarityFilter.onAverageOnceEvery(16),
                 BiomeFilter.biome(),
                 InSquarePlacement.spread()
@@ -204,7 +204,7 @@ public class MtaPlacedFeatures {
                 holder(context,MtaConfigFeatures.GEYSER_NETHER),
                 PlacementUtils.FULL_RANGE,
                 CountPlacement.of(8),
-                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.UP.getNormal(), Blocks.AIR)),
+                BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.UP.getUnitVec3i(), Blocks.AIR)),
                 BiomeFilter.biome(),
                 InSquarePlacement.spread()
                 );

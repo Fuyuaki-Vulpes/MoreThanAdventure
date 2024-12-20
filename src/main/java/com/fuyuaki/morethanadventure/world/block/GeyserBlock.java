@@ -83,7 +83,7 @@ public class GeyserBlock extends Block {
 
             AABB aabb = new AABB(pPos.below()).expandTowards(pPos.above(maxHeight).getCenter()).inflate(0.5F);
 
-            pLevel.getEntitiesOfClass(LivingEntity.class, aabb,livingEntity -> livingEntity.hurt(livingEntity.damageSources().hotFloor(),2.0F));
+            pLevel.getEntitiesOfClass(LivingEntity.class, aabb,livingEntity -> livingEntity.hurtServer((ServerLevel) pLevel,livingEntity.damageSources().hotFloor(),2.0F));
 
 
 

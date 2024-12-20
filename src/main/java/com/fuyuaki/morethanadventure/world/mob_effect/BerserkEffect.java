@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.world.mob_effect;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -15,13 +16,15 @@ public class BerserkEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel p_376587_, LivingEntity livingEntity, int amplifier) {
         if (amplifier > 0 && Objects.requireNonNull(livingEntity.getEffect(MtaEffects.BERSERK)).getDuration() < 5){
             livingEntity.forceAddEffect(new MobEffectInstance(MtaEffects.BERSERK, 60, amplifier - 1),livingEntity);
         }
 
-        return super.applyEffectTick(livingEntity, amplifier);
+        return super.applyEffectTick(p_376587_, livingEntity, amplifier);
     }
+
+
 
     @Override
     public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {

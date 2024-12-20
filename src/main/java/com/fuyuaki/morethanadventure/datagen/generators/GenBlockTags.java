@@ -623,10 +623,6 @@ public class GenBlockTags extends BlockTagsProvider {
                 MtaBlocks.CORPSE_LILY.get()
         );
 
-        this.tag(BlockTags.TALL_FLOWERS).add(
-                MtaBlocks.CATTAIL.get()
-        );
-
         this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
                 MtaBlocks.CATTAIL.get(),
                 MtaBlocks.CORPSE_LILY.get(),

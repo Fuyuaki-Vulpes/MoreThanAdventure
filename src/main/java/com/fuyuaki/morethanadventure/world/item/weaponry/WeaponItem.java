@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
@@ -39,18 +40,18 @@ public class WeaponItem extends SwordItem {
 
 
 
-    public WeaponItem(Tier p_tier, Properties p_properties, Tool toolComponentData) {
+    public WeaponItem(ToolMaterial p_tier, Properties p_properties, Tool toolComponentData) {
         super(p_tier, p_properties, toolComponentData);
 
     }
 
 
-    public static ItemAttributeModifiers createAttributes(Tier tier, float attackDamage, float attackSpeed, float range) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial tier, float attackDamage, float attackSpeed, float range) {
         return ItemAttributeModifiers.builder()
                 .add(
                         Attributes.ATTACK_DAMAGE,
                         new AttributeModifier(
-                                BASE_ATTACK_DAMAGE_ID, (double) ((float) attackDamage + tier.getAttackDamageBonus()), AttributeModifier.Operation.ADD_VALUE
+                                BASE_ATTACK_DAMAGE_ID, (double) ((float) attackDamage + tier.attackDamageBonus()), AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.MAINHAND
                 )

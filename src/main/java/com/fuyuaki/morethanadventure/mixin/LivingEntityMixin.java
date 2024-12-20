@@ -4,6 +4,7 @@ package com.fuyuaki.morethanadventure.mixin;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -34,9 +35,9 @@ public abstract class LivingEntityMixin extends Entity {
         super(entityType, level);
     }
 
-    @Inject(method = "hurt", at = @At("HEAD"))
-    private void hurtMixin(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (amount > thisLiving.getMaxHealth() * 1.5F) {
+    @Inject(method = "hurtServer", at = @At("HEAD"))
+    private void hurtMixin(ServerLevel p_376221_, DamageSource p_376460_, float v, CallbackInfoReturnable<Boolean> cir) {
+        if (v > thisLiving.getMaxHealth() * 1.5F) {
             thisLiving.deathTime = 19;
 
             for (int n = 0; n < 50; n++) {
