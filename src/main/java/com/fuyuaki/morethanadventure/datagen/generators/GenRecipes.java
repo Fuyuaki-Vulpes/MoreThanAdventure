@@ -11,6 +11,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -35,18 +36,18 @@ public class GenRecipes  extends RecipeProvider {
         woodItems(MtaBlocks.PALM_PLANKS.get(), MtaBlocks.PALM_SLAB.get(), MtaBlocks.PALM_STAIRS.get(), MtaBlocks.PALM_DOOR.get(), MtaBlocks.PALM_TRAPDOOR.get(), MtaBlocks.PALM_FENCE.get(), MtaBlocks.PALM_FENCE_GATE.get(), MtaBlocks.PALM_BUTTON.get(), MtaBlocks.PALM_PRESSURE_PLATE.get(), "palm_planks");
         woodItems(MtaBlocks.SEAWOOD_PLANKS.get(), MtaBlocks.SEAWOOD_SLAB.get(), MtaBlocks.SEAWOOD_STAIRS.get(), MtaBlocks.SEAWOOD_DOOR.get(), MtaBlocks.SEAWOOD_TRAPDOOR.get(), MtaBlocks.SEAWOOD_FENCE.get(), MtaBlocks.SEAWOOD_FENCE_GATE.get(), MtaBlocks.SEAWOOD_BUTTON.get(), MtaBlocks.SEAWOOD_PRESSURE_PLATE.get(), "seawood_planks");
 
-        woodFromLogs( MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);
+        woodFromLogs(MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);
         planksFromLogs(MtaBlocks.SEAWOOD_PLANKS, MtaTags.Items.SEAWOOD, 4);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT.get(), 4)
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.GRASS_BLOCK, 2)
-                .unlockedBy("has_dirt", has(Blocks.DIRT))
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
+                .unlockedBy("has_dirt", has(Blocks.DIRT));
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.SHORT_GRASS, 2)
-                .unlockedBy("has_dirt", has(Blocks.DIRT))
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.COBBLED_DIRT, 4)
+                .unlockedBy("has_dirt", has(Blocks.DIRT));
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.COBBLED_DIRT, 4)
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.COBBLESTONE, 2)
                 .unlockedBy("has_dirt", has(Blocks.DIRT))
@@ -64,121 +65,119 @@ public class GenRecipes  extends RecipeProvider {
         cuttingStoneSetRecipe(MtaBlocks.DIRTY_STONE_TILES.get(), MtaBlocks.DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.DIRTY_STONE_TILES_WALL.get());
         basicStoneSetRecipe(MtaBlocks.VERY_DIRTY_STONE_TILES.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get(), "has_very_dirty_stone_tiles", "very_dirty_stone_tiles");
         cuttingStoneSetRecipe(MtaBlocks.VERY_DIRTY_STONE_TILES.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_SLAB.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get(), MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get());
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
                 .requires(MtaBlocks.STONE_TILES, 3)
                 .unlockedBy("has_stone_tiles", has(MtaBlocks.STONE_TILES))
                 ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.DIRTY_STONE_TILES, 3)
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
                 .requires(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
                 .unlockedBy("has_slight_dirty_stone_tiles", has(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES))
                 ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.VERY_DIRTY_STONE_TILES, 3)
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.VERY_DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
                 .requires(MtaBlocks.DIRTY_STONE_TILES, 3)
                 .unlockedBy("has_dirty_stone_tiles", has(MtaBlocks.DIRTY_STONE_TILES))
                 ;
 
-        basicStoneSetRecipe(, Blocks.WHITE_TERRACOTTA, MtaBlocks.WHITE_TERRACOTTA_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_WALL.get(), "has_white_terracotta", "white_terracotta");
-        basicStoneSetRecipe(, Blocks.LIGHT_GRAY_TERRACOTTA, MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(), "has_light_gray_terracotta", "light_gray_terracotta");
-        basicStoneSetRecipe(, Blocks.GRAY_TERRACOTTA, MtaBlocks.GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_WALL.get(), "has_gray_terracotta", "gray_terracotta");
-        basicStoneSetRecipe(, Blocks.BLACK_TERRACOTTA, MtaBlocks.BLACK_TERRACOTTA_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_WALL.get(), "has_black_terracotta", "black_terracotta");
-        basicStoneSetRecipe(, Blocks.BROWN_TERRACOTTA, MtaBlocks.BROWN_TERRACOTTA_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_WALL.get(), "has_brown_terracotta", "brown_terracotta");
-        basicStoneSetRecipe(, Blocks.RED_TERRACOTTA, MtaBlocks.RED_TERRACOTTA_SLAB.get(), MtaBlocks.RED_TERRACOTTA_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_WALL.get(), "has_red_terracotta", "red_terracotta");
-        basicStoneSetRecipe(, Blocks.ORANGE_TERRACOTTA, MtaBlocks.ORANGE_TERRACOTTA_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_WALL.get(), "has_orange_terracotta", "orange_terracotta");
-        basicStoneSetRecipe(, Blocks.YELLOW_TERRACOTTA, MtaBlocks.YELLOW_TERRACOTTA_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_WALL.get(), "has_yellow_terracotta", "yellow_terracotta");
-        basicStoneSetRecipe(, Blocks.LIME_TERRACOTTA, MtaBlocks.LIME_TERRACOTTA_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_WALL.get(), "has_lime_terracotta", "lime_terracotta");
-        basicStoneSetRecipe(, Blocks.GREEN_TERRACOTTA, MtaBlocks.GREEN_TERRACOTTA_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_WALL.get(), "has_green_terracotta", "green_terracotta");
-        basicStoneSetRecipe(, Blocks.CYAN_TERRACOTTA, MtaBlocks.CYAN_TERRACOTTA_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_WALL.get(), "has_cyan_terracotta", "cyan_terracotta");
-        basicStoneSetRecipe(, Blocks.LIGHT_BLUE_TERRACOTTA, MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(), "has_light_blue_terracotta", "light_blue_terracotta");
-        basicStoneSetRecipe(, Blocks.BLUE_TERRACOTTA, MtaBlocks.BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_WALL.get(), "has_blue_terracotta", "blue_terracotta");
-        basicStoneSetRecipe(, Blocks.PURPLE_TERRACOTTA, MtaBlocks.PURPLE_TERRACOTTA_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_WALL.get(), "has_purple_terracotta", "purple_terracotta");
-        basicStoneSetRecipe(, Blocks.MAGENTA_TERRACOTTA, MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_WALL.get(), "has_magenta_terracotta", "magenta_terracotta");
-        basicStoneSetRecipe(, Blocks.PINK_TERRACOTTA, MtaBlocks.PINK_TERRACOTTA_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_WALL.get(), "has_pink_terracotta", "pink_terracotta");
+        basicStoneSetRecipe(Blocks.WHITE_TERRACOTTA, MtaBlocks.WHITE_TERRACOTTA_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_WALL.get(), "has_white_terracotta", "white_terracotta");
+        basicStoneSetRecipe(Blocks.LIGHT_GRAY_TERRACOTTA, MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(), "has_light_gray_terracotta", "light_gray_terracotta");
+        basicStoneSetRecipe(Blocks.GRAY_TERRACOTTA, MtaBlocks.GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_WALL.get(), "has_gray_terracotta", "gray_terracotta");
+        basicStoneSetRecipe(Blocks.BLACK_TERRACOTTA, MtaBlocks.BLACK_TERRACOTTA_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_WALL.get(), "has_black_terracotta", "black_terracotta");
+        basicStoneSetRecipe(Blocks.BROWN_TERRACOTTA, MtaBlocks.BROWN_TERRACOTTA_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_WALL.get(), "has_brown_terracotta", "brown_terracotta");
+        basicStoneSetRecipe(Blocks.RED_TERRACOTTA, MtaBlocks.RED_TERRACOTTA_SLAB.get(), MtaBlocks.RED_TERRACOTTA_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_WALL.get(), "has_red_terracotta", "red_terracotta");
+        basicStoneSetRecipe(Blocks.ORANGE_TERRACOTTA, MtaBlocks.ORANGE_TERRACOTTA_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_WALL.get(), "has_orange_terracotta", "orange_terracotta");
+        basicStoneSetRecipe(Blocks.YELLOW_TERRACOTTA, MtaBlocks.YELLOW_TERRACOTTA_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_WALL.get(), "has_yellow_terracotta", "yellow_terracotta");
+        basicStoneSetRecipe(Blocks.LIME_TERRACOTTA, MtaBlocks.LIME_TERRACOTTA_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_WALL.get(), "has_lime_terracotta", "lime_terracotta");
+        basicStoneSetRecipe(Blocks.GREEN_TERRACOTTA, MtaBlocks.GREEN_TERRACOTTA_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_WALL.get(), "has_green_terracotta", "green_terracotta");
+        basicStoneSetRecipe(Blocks.CYAN_TERRACOTTA, MtaBlocks.CYAN_TERRACOTTA_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_WALL.get(), "has_cyan_terracotta", "cyan_terracotta");
+        basicStoneSetRecipe(Blocks.LIGHT_BLUE_TERRACOTTA, MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(), "has_light_blue_terracotta", "light_blue_terracotta");
+        basicStoneSetRecipe(Blocks.BLUE_TERRACOTTA, MtaBlocks.BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_WALL.get(), "has_blue_terracotta", "blue_terracotta");
+        basicStoneSetRecipe(Blocks.PURPLE_TERRACOTTA, MtaBlocks.PURPLE_TERRACOTTA_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_WALL.get(), "has_purple_terracotta", "purple_terracotta");
+        basicStoneSetRecipe(Blocks.MAGENTA_TERRACOTTA, MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_WALL.get(), "has_magenta_terracotta", "magenta_terracotta");
+        basicStoneSetRecipe(Blocks.PINK_TERRACOTTA, MtaBlocks.PINK_TERRACOTTA_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_WALL.get(), "has_pink_terracotta", "pink_terracotta");
 
-        basicStoneSetRecipe(, MtaBlocks.TERRACOTTA_TILES.get(), MtaBlocks.TERRACOTTA_TILES_SLAB.get(), MtaBlocks.TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.TERRACOTTA_TILES_WALL.get(), "has_terracotta_tiles", "terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.TERRACOTTA, MtaBlocks.TERRACOTTA_TILES.get(), MtaBlocks.TERRACOTTA_SLAB.get(), MtaBlocks.TERRACOTTA_TILES_SLAB.get(), MtaBlocks.TERRACOTTA_STAIRS.get(), MtaBlocks.TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.TERRACOTTA_WALL.get(), MtaBlocks.TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.WHITE_TERRACOTTA_TILES.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get(), "has_white_terracotta_tiles", "white_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.WHITE_TERRACOTTA, MtaBlocks.WHITE_TERRACOTTA_TILES.get(), MtaBlocks.WHITE_TERRACOTTA_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_WALL.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get(), "has_light_gray_terracotta_tiles", "light_gray_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.LIGHT_GRAY_TERRACOTTA, MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.GRAY_TERRACOTTA_TILES.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get(), "has_gray_terracotta_tiles", "gray_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.GRAY_TERRACOTTA, MtaBlocks.GRAY_TERRACOTTA_TILES.get(), MtaBlocks.GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_WALL.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.BLACK_TERRACOTTA_TILES.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get(), "has_black_terracotta_tiles", "black_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.BLACK_TERRACOTTA, MtaBlocks.BLACK_TERRACOTTA_TILES.get(), MtaBlocks.BLACK_TERRACOTTA_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_WALL.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.BROWN_TERRACOTTA_TILES.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get(), "has_brown_terracotta_tiles", "brown_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.BROWN_TERRACOTTA, MtaBlocks.BROWN_TERRACOTTA_TILES.get(), MtaBlocks.BROWN_TERRACOTTA_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_WALL.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.RED_TERRACOTTA_TILES.get(), MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_TILES_WALL.get(), "has_red_terracotta_tiles", "red_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.RED_TERRACOTTA, MtaBlocks.RED_TERRACOTTA_TILES.get(), MtaBlocks.RED_TERRACOTTA_SLAB.get(), MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.RED_TERRACOTTA_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_WALL.get(), MtaBlocks.RED_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.ORANGE_TERRACOTTA_TILES.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get(), "has_orange_terracotta_tiles", "orange_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.ORANGE_TERRACOTTA, MtaBlocks.ORANGE_TERRACOTTA_TILES.get(), MtaBlocks.ORANGE_TERRACOTTA_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_WALL.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.YELLOW_TERRACOTTA_TILES.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get(), "has_yellow_terracotta_tiles", "yellow_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.YELLOW_TERRACOTTA, MtaBlocks.YELLOW_TERRACOTTA_TILES.get(), MtaBlocks.YELLOW_TERRACOTTA_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_WALL.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.LIME_TERRACOTTA_TILES.get(), MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get(), "has_lime_terracotta_tiles", "lime_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.LIME_TERRACOTTA, MtaBlocks.LIME_TERRACOTTA_TILES.get(), MtaBlocks.LIME_TERRACOTTA_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_WALL.get(), MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.GREEN_TERRACOTTA_TILES.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get(), "has_green_terracotta_tiles", "green_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.GREEN_TERRACOTTA, MtaBlocks.GREEN_TERRACOTTA_TILES.get(), MtaBlocks.GREEN_TERRACOTTA_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_WALL.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.CYAN_TERRACOTTA_TILES.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get(), "has_cyan_terracotta_tiles", "cyan_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.CYAN_TERRACOTTA, MtaBlocks.CYAN_TERRACOTTA_TILES.get(), MtaBlocks.CYAN_TERRACOTTA_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_WALL.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get(), "has_light_blue_terracotta_tiles", "light_blue_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.LIGHT_BLUE_TERRACOTTA, MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.BLUE_TERRACOTTA_TILES.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get(), "has_blue_terracotta_tiles", "blue_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.BLUE_TERRACOTTA, MtaBlocks.BLUE_TERRACOTTA_TILES.get(), MtaBlocks.BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_WALL.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.PURPLE_TERRACOTTA_TILES.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get(), "has_purple_terracotta_tiles", "purple_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.PURPLE_TERRACOTTA, MtaBlocks.PURPLE_TERRACOTTA_TILES.get(), MtaBlocks.PURPLE_TERRACOTTA_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_WALL.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.MAGENTA_TERRACOTTA_TILES.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get(), "has_magenta_terracotta_tiles", "magenta_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.MAGENTA_TERRACOTTA, MtaBlocks.MAGENTA_TERRACOTTA_TILES.get(), MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_WALL.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get());
-        basicStoneSetRecipe(, MtaBlocks.PINK_TERRACOTTA_TILES.get(), MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get(), "has_pink_terracotta_tiles", "pink_terracotta_tiles");
-        cuttingTerracottaSetRecipe(, Blocks.PINK_TERRACOTTA, MtaBlocks.PINK_TERRACOTTA_TILES.get(), MtaBlocks.PINK_TERRACOTTA_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_WALL.get(), MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.TERRACOTTA_TILES.get(), MtaBlocks.TERRACOTTA_TILES_SLAB.get(), MtaBlocks.TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.TERRACOTTA_TILES_WALL.get(), "has_terracotta_tiles", "terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.TERRACOTTA, MtaBlocks.TERRACOTTA_TILES.get(), MtaBlocks.TERRACOTTA_SLAB.get(), MtaBlocks.TERRACOTTA_TILES_SLAB.get(), MtaBlocks.TERRACOTTA_STAIRS.get(), MtaBlocks.TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.TERRACOTTA_WALL.get(), MtaBlocks.TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.WHITE_TERRACOTTA_TILES.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get(), "has_white_terracotta_tiles", "white_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.WHITE_TERRACOTTA, MtaBlocks.WHITE_TERRACOTTA_TILES.get(), MtaBlocks.WHITE_TERRACOTTA_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.WHITE_TERRACOTTA_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.WHITE_TERRACOTTA_WALL.get(), MtaBlocks.WHITE_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get(), "has_light_gray_terracotta_tiles", "light_gray_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.LIGHT_GRAY_TERRACOTTA, MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get(), MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.GRAY_TERRACOTTA_TILES.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get(), "has_gray_terracotta_tiles", "gray_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.GRAY_TERRACOTTA, MtaBlocks.GRAY_TERRACOTTA_TILES.get(), MtaBlocks.GRAY_TERRACOTTA_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GRAY_TERRACOTTA_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GRAY_TERRACOTTA_WALL.get(), MtaBlocks.GRAY_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.BLACK_TERRACOTTA_TILES.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get(), "has_black_terracotta_tiles", "black_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.BLACK_TERRACOTTA, MtaBlocks.BLACK_TERRACOTTA_TILES.get(), MtaBlocks.BLACK_TERRACOTTA_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLACK_TERRACOTTA_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLACK_TERRACOTTA_WALL.get(), MtaBlocks.BLACK_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.BROWN_TERRACOTTA_TILES.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get(), "has_brown_terracotta_tiles", "brown_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.BROWN_TERRACOTTA, MtaBlocks.BROWN_TERRACOTTA_TILES.get(), MtaBlocks.BROWN_TERRACOTTA_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BROWN_TERRACOTTA_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BROWN_TERRACOTTA_WALL.get(), MtaBlocks.BROWN_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.RED_TERRACOTTA_TILES.get(), MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_TILES_WALL.get(), "has_red_terracotta_tiles", "red_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.RED_TERRACOTTA, MtaBlocks.RED_TERRACOTTA_TILES.get(), MtaBlocks.RED_TERRACOTTA_SLAB.get(), MtaBlocks.RED_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.RED_TERRACOTTA_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.RED_TERRACOTTA_WALL.get(), MtaBlocks.RED_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.ORANGE_TERRACOTTA_TILES.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get(), "has_orange_terracotta_tiles", "orange_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.ORANGE_TERRACOTTA, MtaBlocks.ORANGE_TERRACOTTA_TILES.get(), MtaBlocks.ORANGE_TERRACOTTA_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.ORANGE_TERRACOTTA_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.ORANGE_TERRACOTTA_WALL.get(), MtaBlocks.ORANGE_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.YELLOW_TERRACOTTA_TILES.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get(), "has_yellow_terracotta_tiles", "yellow_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.YELLOW_TERRACOTTA, MtaBlocks.YELLOW_TERRACOTTA_TILES.get(), MtaBlocks.YELLOW_TERRACOTTA_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.YELLOW_TERRACOTTA_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.YELLOW_TERRACOTTA_WALL.get(), MtaBlocks.YELLOW_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.LIME_TERRACOTTA_TILES.get(), MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get(), "has_lime_terracotta_tiles", "lime_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.LIME_TERRACOTTA, MtaBlocks.LIME_TERRACOTTA_TILES.get(), MtaBlocks.LIME_TERRACOTTA_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIME_TERRACOTTA_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIME_TERRACOTTA_WALL.get(), MtaBlocks.LIME_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.GREEN_TERRACOTTA_TILES.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get(), "has_green_terracotta_tiles", "green_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.GREEN_TERRACOTTA, MtaBlocks.GREEN_TERRACOTTA_TILES.get(), MtaBlocks.GREEN_TERRACOTTA_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.GREEN_TERRACOTTA_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.GREEN_TERRACOTTA_WALL.get(), MtaBlocks.GREEN_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.CYAN_TERRACOTTA_TILES.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get(), "has_cyan_terracotta_tiles", "cyan_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.CYAN_TERRACOTTA, MtaBlocks.CYAN_TERRACOTTA_TILES.get(), MtaBlocks.CYAN_TERRACOTTA_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.CYAN_TERRACOTTA_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.CYAN_TERRACOTTA_WALL.get(), MtaBlocks.CYAN_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get(), "has_light_blue_terracotta_tiles", "light_blue_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.LIGHT_BLUE_TERRACOTTA, MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get(), MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.BLUE_TERRACOTTA_TILES.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get(), "has_blue_terracotta_tiles", "blue_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.BLUE_TERRACOTTA, MtaBlocks.BLUE_TERRACOTTA_TILES.get(), MtaBlocks.BLUE_TERRACOTTA_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.BLUE_TERRACOTTA_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.BLUE_TERRACOTTA_WALL.get(), MtaBlocks.BLUE_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.PURPLE_TERRACOTTA_TILES.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get(), "has_purple_terracotta_tiles", "purple_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.PURPLE_TERRACOTTA, MtaBlocks.PURPLE_TERRACOTTA_TILES.get(), MtaBlocks.PURPLE_TERRACOTTA_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PURPLE_TERRACOTTA_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PURPLE_TERRACOTTA_WALL.get(), MtaBlocks.PURPLE_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.MAGENTA_TERRACOTTA_TILES.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get(), "has_magenta_terracotta_tiles", "magenta_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.MAGENTA_TERRACOTTA, MtaBlocks.MAGENTA_TERRACOTTA_TILES.get(), MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.MAGENTA_TERRACOTTA_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.MAGENTA_TERRACOTTA_WALL.get(), MtaBlocks.MAGENTA_TERRACOTTA_TILES_WALL.get());
+        basicStoneSetRecipe(MtaBlocks.PINK_TERRACOTTA_TILES.get(), MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get(), "has_pink_terracotta_tiles", "pink_terracotta_tiles");
+        cuttingTerracottaSetRecipe(Blocks.PINK_TERRACOTTA, MtaBlocks.PINK_TERRACOTTA_TILES.get(), MtaBlocks.PINK_TERRACOTTA_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_TILES_SLAB.get(), MtaBlocks.PINK_TERRACOTTA_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_TILES_STAIRS.get(), MtaBlocks.PINK_TERRACOTTA_WALL.get(), MtaBlocks.PINK_TERRACOTTA_TILES_WALL.get());
 
-        basicStoneSetRecipe(, Blocks.WHITE_CONCRETE, MtaBlocks.WHITE_CONCRETE_SLAB.get(), MtaBlocks.WHITE_CONCRETE_STAIRS.get(), MtaBlocks.WHITE_CONCRETE_WALL.get(), "has_white_concrete", "white_concrete");
-        basicStoneSetRecipe(, Blocks.LIGHT_GRAY_CONCRETE, MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get(), "has_light_gray_concrete", "light_gray_concrete");
-        basicStoneSetRecipe(, Blocks.GRAY_CONCRETE, MtaBlocks.GRAY_CONCRETE_SLAB.get(), MtaBlocks.GRAY_CONCRETE_STAIRS.get(), MtaBlocks.GRAY_CONCRETE_WALL.get(), "has_gray_concrete", "gray_concrete");
-        basicStoneSetRecipe(, Blocks.BLACK_CONCRETE, MtaBlocks.BLACK_CONCRETE_SLAB.get(), MtaBlocks.BLACK_CONCRETE_STAIRS.get(), MtaBlocks.BLACK_CONCRETE_WALL.get(), "has_black_concrete", "black_concrete");
-        basicStoneSetRecipe(, Blocks.BROWN_CONCRETE, MtaBlocks.BROWN_CONCRETE_SLAB.get(), MtaBlocks.BROWN_CONCRETE_STAIRS.get(), MtaBlocks.BROWN_CONCRETE_WALL.get(), "has_brown_concrete", "brown_concrete");
-        basicStoneSetRecipe(, Blocks.RED_CONCRETE, MtaBlocks.RED_CONCRETE_SLAB.get(), MtaBlocks.RED_CONCRETE_STAIRS.get(), MtaBlocks.RED_CONCRETE_WALL.get(), "has_red_concrete", "red_concrete");
-        basicStoneSetRecipe(, Blocks.ORANGE_CONCRETE, MtaBlocks.ORANGE_CONCRETE_SLAB.get(), MtaBlocks.ORANGE_CONCRETE_STAIRS.get(), MtaBlocks.ORANGE_CONCRETE_WALL.get(), "has_orange_concrete", "orange_concrete");
-        basicStoneSetRecipe(, Blocks.YELLOW_CONCRETE, MtaBlocks.YELLOW_CONCRETE_SLAB.get(), MtaBlocks.YELLOW_CONCRETE_STAIRS.get(), MtaBlocks.YELLOW_CONCRETE_WALL.get(), "has_yellow_concrete", "yellow_concrete");
-        basicStoneSetRecipe(, Blocks.LIME_CONCRETE, MtaBlocks.LIME_CONCRETE_SLAB.get(), MtaBlocks.LIME_CONCRETE_STAIRS.get(), MtaBlocks.LIME_CONCRETE_WALL.get(), "has_lime_concrete", "lime_concrete");
-        basicStoneSetRecipe(, Blocks.GREEN_CONCRETE, MtaBlocks.GREEN_CONCRETE_SLAB.get(), MtaBlocks.GREEN_CONCRETE_STAIRS.get(), MtaBlocks.GREEN_CONCRETE_WALL.get(), "has_green_concrete", "green_concrete");
-        basicStoneSetRecipe(, Blocks.CYAN_CONCRETE, MtaBlocks.CYAN_CONCRETE_SLAB.get(), MtaBlocks.CYAN_CONCRETE_STAIRS.get(), MtaBlocks.CYAN_CONCRETE_WALL.get(), "has_cyan_concrete", "cyan_concrete");
-        basicStoneSetRecipe(, Blocks.LIGHT_BLUE_CONCRETE, MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get(), "has_light_blue_concrete", "light_blue_concrete");
-        basicStoneSetRecipe(, Blocks.BLUE_CONCRETE, MtaBlocks.BLUE_CONCRETE_SLAB.get(), MtaBlocks.BLUE_CONCRETE_STAIRS.get(), MtaBlocks.BLUE_CONCRETE_WALL.get(), "has_blue_concrete", "blue_concrete");
-        basicStoneSetRecipe(, Blocks.PURPLE_CONCRETE, MtaBlocks.PURPLE_CONCRETE_SLAB.get(), MtaBlocks.PURPLE_CONCRETE_STAIRS.get(), MtaBlocks.PURPLE_CONCRETE_WALL.get(), "has_purple_concrete", "purple_concrete");
-        basicStoneSetRecipe(, Blocks.MAGENTA_CONCRETE, MtaBlocks.MAGENTA_CONCRETE_SLAB.get(), MtaBlocks.MAGENTA_CONCRETE_STAIRS.get(), MtaBlocks.MAGENTA_CONCRETE_WALL.get(), "has_magenta_concrete", "magenta_concrete");
-        basicStoneSetRecipe(, Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_SLAB.get(), MtaBlocks.PINK_CONCRETE_STAIRS.get(), MtaBlocks.PINK_CONCRETE_WALL.get(), "has_pink_concrete", "pink_concrete");
+        basicStoneSetRecipe(Blocks.WHITE_CONCRETE, MtaBlocks.WHITE_CONCRETE_SLAB.get(), MtaBlocks.WHITE_CONCRETE_STAIRS.get(), MtaBlocks.WHITE_CONCRETE_WALL.get(), "has_white_concrete", "white_concrete");
+        basicStoneSetRecipe(Blocks.LIGHT_GRAY_CONCRETE, MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get(), "has_light_gray_concrete", "light_gray_concrete");
+        basicStoneSetRecipe(Blocks.GRAY_CONCRETE, MtaBlocks.GRAY_CONCRETE_SLAB.get(), MtaBlocks.GRAY_CONCRETE_STAIRS.get(), MtaBlocks.GRAY_CONCRETE_WALL.get(), "has_gray_concrete", "gray_concrete");
+        basicStoneSetRecipe(Blocks.BLACK_CONCRETE, MtaBlocks.BLACK_CONCRETE_SLAB.get(), MtaBlocks.BLACK_CONCRETE_STAIRS.get(), MtaBlocks.BLACK_CONCRETE_WALL.get(), "has_black_concrete", "black_concrete");
+        basicStoneSetRecipe(Blocks.BROWN_CONCRETE, MtaBlocks.BROWN_CONCRETE_SLAB.get(), MtaBlocks.BROWN_CONCRETE_STAIRS.get(), MtaBlocks.BROWN_CONCRETE_WALL.get(), "has_brown_concrete", "brown_concrete");
+        basicStoneSetRecipe(Blocks.RED_CONCRETE, MtaBlocks.RED_CONCRETE_SLAB.get(), MtaBlocks.RED_CONCRETE_STAIRS.get(), MtaBlocks.RED_CONCRETE_WALL.get(), "has_red_concrete", "red_concrete");
+        basicStoneSetRecipe(Blocks.ORANGE_CONCRETE, MtaBlocks.ORANGE_CONCRETE_SLAB.get(), MtaBlocks.ORANGE_CONCRETE_STAIRS.get(), MtaBlocks.ORANGE_CONCRETE_WALL.get(), "has_orange_concrete", "orange_concrete");
+        basicStoneSetRecipe(Blocks.YELLOW_CONCRETE, MtaBlocks.YELLOW_CONCRETE_SLAB.get(), MtaBlocks.YELLOW_CONCRETE_STAIRS.get(), MtaBlocks.YELLOW_CONCRETE_WALL.get(), "has_yellow_concrete", "yellow_concrete");
+        basicStoneSetRecipe(Blocks.LIME_CONCRETE, MtaBlocks.LIME_CONCRETE_SLAB.get(), MtaBlocks.LIME_CONCRETE_STAIRS.get(), MtaBlocks.LIME_CONCRETE_WALL.get(), "has_lime_concrete", "lime_concrete");
+        basicStoneSetRecipe(Blocks.GREEN_CONCRETE, MtaBlocks.GREEN_CONCRETE_SLAB.get(), MtaBlocks.GREEN_CONCRETE_STAIRS.get(), MtaBlocks.GREEN_CONCRETE_WALL.get(), "has_green_concrete", "green_concrete");
+        basicStoneSetRecipe(Blocks.CYAN_CONCRETE, MtaBlocks.CYAN_CONCRETE_SLAB.get(), MtaBlocks.CYAN_CONCRETE_STAIRS.get(), MtaBlocks.CYAN_CONCRETE_WALL.get(), "has_cyan_concrete", "cyan_concrete");
+        basicStoneSetRecipe(Blocks.LIGHT_BLUE_CONCRETE, MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get(), "has_light_blue_concrete", "light_blue_concrete");
+        basicStoneSetRecipe(Blocks.BLUE_CONCRETE, MtaBlocks.BLUE_CONCRETE_SLAB.get(), MtaBlocks.BLUE_CONCRETE_STAIRS.get(), MtaBlocks.BLUE_CONCRETE_WALL.get(), "has_blue_concrete", "blue_concrete");
+        basicStoneSetRecipe(Blocks.PURPLE_CONCRETE, MtaBlocks.PURPLE_CONCRETE_SLAB.get(), MtaBlocks.PURPLE_CONCRETE_STAIRS.get(), MtaBlocks.PURPLE_CONCRETE_WALL.get(), "has_purple_concrete", "purple_concrete");
+        basicStoneSetRecipe(Blocks.MAGENTA_CONCRETE, MtaBlocks.MAGENTA_CONCRETE_SLAB.get(), MtaBlocks.MAGENTA_CONCRETE_STAIRS.get(), MtaBlocks.MAGENTA_CONCRETE_WALL.get(), "has_magenta_concrete", "magenta_concrete");
+        basicStoneSetRecipe(Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_SLAB.get(), MtaBlocks.PINK_CONCRETE_STAIRS.get(), MtaBlocks.PINK_CONCRETE_WALL.get(), "has_pink_concrete", "pink_concrete");
 
-        cuttingStoneSetRecipe(, Blocks.WHITE_CONCRETE, MtaBlocks.WHITE_CONCRETE_SLAB.get(), MtaBlocks.WHITE_CONCRETE_STAIRS.get(), MtaBlocks.WHITE_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.LIGHT_GRAY_CONCRETE, MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.GRAY_CONCRETE, MtaBlocks.GRAY_CONCRETE_SLAB.get(), MtaBlocks.GRAY_CONCRETE_STAIRS.get(), MtaBlocks.GRAY_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.BLACK_CONCRETE, MtaBlocks.BLACK_CONCRETE_SLAB.get(), MtaBlocks.BLACK_CONCRETE_STAIRS.get(), MtaBlocks.BLACK_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.BROWN_CONCRETE, MtaBlocks.BROWN_CONCRETE_SLAB.get(), MtaBlocks.BROWN_CONCRETE_STAIRS.get(), MtaBlocks.BROWN_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.RED_CONCRETE, MtaBlocks.RED_CONCRETE_SLAB.get(), MtaBlocks.RED_CONCRETE_STAIRS.get(), MtaBlocks.RED_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.ORANGE_CONCRETE, MtaBlocks.ORANGE_CONCRETE_SLAB.get(), MtaBlocks.ORANGE_CONCRETE_STAIRS.get(), MtaBlocks.ORANGE_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.YELLOW_CONCRETE, MtaBlocks.YELLOW_CONCRETE_SLAB.get(), MtaBlocks.YELLOW_CONCRETE_STAIRS.get(), MtaBlocks.YELLOW_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.LIME_CONCRETE, MtaBlocks.LIME_CONCRETE_SLAB.get(), MtaBlocks.LIME_CONCRETE_STAIRS.get(), MtaBlocks.LIME_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.GREEN_CONCRETE, MtaBlocks.GREEN_CONCRETE_SLAB.get(), MtaBlocks.GREEN_CONCRETE_STAIRS.get(), MtaBlocks.GREEN_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.CYAN_CONCRETE, MtaBlocks.CYAN_CONCRETE_SLAB.get(), MtaBlocks.CYAN_CONCRETE_STAIRS.get(), MtaBlocks.CYAN_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.LIGHT_BLUE_CONCRETE, MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.BLUE_CONCRETE, MtaBlocks.BLUE_CONCRETE_SLAB.get(), MtaBlocks.BLUE_CONCRETE_STAIRS.get(), MtaBlocks.BLUE_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.PURPLE_CONCRETE, MtaBlocks.PURPLE_CONCRETE_SLAB.get(), MtaBlocks.PURPLE_CONCRETE_STAIRS.get(), MtaBlocks.PURPLE_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.MAGENTA_CONCRETE, MtaBlocks.MAGENTA_CONCRETE_SLAB.get(), MtaBlocks.MAGENTA_CONCRETE_STAIRS.get(), MtaBlocks.MAGENTA_CONCRETE_WALL.get());
-        cuttingStoneSetRecipe(, Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_SLAB.get(), MtaBlocks.PINK_CONCRETE_STAIRS.get(), MtaBlocks.PINK_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.WHITE_CONCRETE, MtaBlocks.WHITE_CONCRETE_SLAB.get(), MtaBlocks.WHITE_CONCRETE_STAIRS.get(), MtaBlocks.WHITE_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.LIGHT_GRAY_CONCRETE, MtaBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_GRAY_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.GRAY_CONCRETE, MtaBlocks.GRAY_CONCRETE_SLAB.get(), MtaBlocks.GRAY_CONCRETE_STAIRS.get(), MtaBlocks.GRAY_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.BLACK_CONCRETE, MtaBlocks.BLACK_CONCRETE_SLAB.get(), MtaBlocks.BLACK_CONCRETE_STAIRS.get(), MtaBlocks.BLACK_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.BROWN_CONCRETE, MtaBlocks.BROWN_CONCRETE_SLAB.get(), MtaBlocks.BROWN_CONCRETE_STAIRS.get(), MtaBlocks.BROWN_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.RED_CONCRETE, MtaBlocks.RED_CONCRETE_SLAB.get(), MtaBlocks.RED_CONCRETE_STAIRS.get(), MtaBlocks.RED_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.ORANGE_CONCRETE, MtaBlocks.ORANGE_CONCRETE_SLAB.get(), MtaBlocks.ORANGE_CONCRETE_STAIRS.get(), MtaBlocks.ORANGE_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.YELLOW_CONCRETE, MtaBlocks.YELLOW_CONCRETE_SLAB.get(), MtaBlocks.YELLOW_CONCRETE_STAIRS.get(), MtaBlocks.YELLOW_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.LIME_CONCRETE, MtaBlocks.LIME_CONCRETE_SLAB.get(), MtaBlocks.LIME_CONCRETE_STAIRS.get(), MtaBlocks.LIME_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.GREEN_CONCRETE, MtaBlocks.GREEN_CONCRETE_SLAB.get(), MtaBlocks.GREEN_CONCRETE_STAIRS.get(), MtaBlocks.GREEN_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.CYAN_CONCRETE, MtaBlocks.CYAN_CONCRETE_SLAB.get(), MtaBlocks.CYAN_CONCRETE_STAIRS.get(), MtaBlocks.CYAN_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.LIGHT_BLUE_CONCRETE, MtaBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(), MtaBlocks.LIGHT_BLUE_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.BLUE_CONCRETE, MtaBlocks.BLUE_CONCRETE_SLAB.get(), MtaBlocks.BLUE_CONCRETE_STAIRS.get(), MtaBlocks.BLUE_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.PURPLE_CONCRETE, MtaBlocks.PURPLE_CONCRETE_SLAB.get(), MtaBlocks.PURPLE_CONCRETE_STAIRS.get(), MtaBlocks.PURPLE_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.MAGENTA_CONCRETE, MtaBlocks.MAGENTA_CONCRETE_SLAB.get(), MtaBlocks.MAGENTA_CONCRETE_STAIRS.get(), MtaBlocks.MAGENTA_CONCRETE_WALL.get());
+        cuttingStoneSetRecipe(Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_SLAB.get(), MtaBlocks.PINK_CONCRETE_STAIRS.get(), MtaBlocks.PINK_CONCRETE_WALL.get());
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,MtaItems.SIREN_TALISMAN)
+        shaped(RecipeCategory.MISC,MtaItems.SIREN_TALISMAN)
                 .define('H', Items.HEART_OF_THE_SEA)
                 .define('S', MtaItems.SIREN_SCALE.get())
                 .define('G', Tags.Items.INGOTS_GOLD)
                 .define('D', Tags.Items.GEMS_DIAMOND)
                 .pattern(" H ")
                 .pattern("SHS")
-                .pattern("GDG")
+                .pattern("GDG");
 
-        ;
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MtaItems.COPPER_AXE)
+        shaped(RecipeCategory.TOOLS, MtaItems.COPPER_AXE)
                 .define('#', Items.STICK)
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("XX")
@@ -186,7 +185,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" #")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MtaItems.COPPER_HOE)
+        shaped(RecipeCategory.TOOLS, MtaItems.COPPER_HOE)
                 .define('#', Items.STICK)
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("XX")
@@ -194,7 +193,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" #")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MtaItems.COPPER_PICKAXE)
+        shaped(RecipeCategory.TOOLS, MtaItems.COPPER_PICKAXE)
                 .define('#', Items.STICK)
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("XXX")
@@ -202,7 +201,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" # ")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MtaItems.COPPER_SHOVEL)
+        shaped(RecipeCategory.TOOLS, MtaItems.COPPER_SHOVEL)
                 .define('#', Items.STICK)
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("X")
@@ -210,7 +209,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("#")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, MtaItems.COPPER_SWORD)
+        shaped(RecipeCategory.COMBAT, MtaItems.COPPER_SWORD)
                 .define('#', Items.STICK)
                 .define('X', Tags.Items.INGOTS_COPPER)
                 .pattern("X")
@@ -220,7 +219,7 @@ public class GenRecipes  extends RecipeProvider {
                 ;
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHERITE_SCRAP)
+        shaped(RecipeCategory.MISC, Items.NETHERITE_SCRAP)
                 .define('#', MtaItems.NETHERITE_FRACTURE.get())
                 .pattern("###")
                 .pattern("###")
@@ -228,64 +227,63 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_scrap_facture", has(MtaItems.NETHERITE_FRACTURE.get()))
                 , MODID);
 
-        newWeaponsTags(, ItemTags.PLANKS, MtaItems.WOOD_CLAW.get(), MtaItems.WOOD_CLAYMORE.get(), MtaItems.WOOD_CUTLASS.get(),
+        newWeaponsTags(ItemTags.PLANKS, MtaItems.WOOD_CLAW.get(), MtaItems.WOOD_CLAYMORE.get(), MtaItems.WOOD_CUTLASS.get(),
                 MtaItems.WOOD_DAGGER.get(), MtaItems.WOOD_DOUBLE_AXE.get(), MtaItems.WOOD_GLAIVE.get(), MtaItems.WOOD_HALBERD.get(),
                 MtaItems.WOOD_KATANA.get(), MtaItems.WOOD_SCYTHE.get(), MtaItems.WOOD_SPEAR.get(), MtaItems.WOOD_TWINBLADE.get(), "planks");
-        newWeaponsTags(, ItemTags.STONE_TOOL_MATERIALS, MtaItems.STONE_CLAW.get(), MtaItems.STONE_CLAYMORE.get(), MtaItems.STONE_CUTLASS.get(),
+        newWeaponsTags(ItemTags.STONE_TOOL_MATERIALS, MtaItems.STONE_CLAW.get(), MtaItems.STONE_CLAYMORE.get(), MtaItems.STONE_CUTLASS.get(),
                 MtaItems.STONE_DAGGER.get(), MtaItems.STONE_DOUBLE_AXE.get(), MtaItems.STONE_GLAIVE.get(), MtaItems.STONE_HALBERD.get(),
                 MtaItems.STONE_KATANA.get(), MtaItems.STONE_SCYTHE.get(), MtaItems.STONE_SPEAR.get(), MtaItems.STONE_TWINBLADE.get(), "cobblestone");
-        newWeapons(, Items.COPPER_INGOT, MtaItems.COPPER_CLAW.get(), MtaItems.COPPER_CLAYMORE.get(), MtaItems.COPPER_CUTLASS.get(),
+        newWeapons(Items.COPPER_INGOT, MtaItems.COPPER_CLAW.get(), MtaItems.COPPER_CLAYMORE.get(), MtaItems.COPPER_CUTLASS.get(),
                 MtaItems.COPPER_DAGGER.get(), MtaItems.COPPER_DOUBLE_AXE.get(), MtaItems.COPPER_GLAIVE.get(), MtaItems.COPPER_HALBERD.get(),
                 MtaItems.COPPER_KATANA.get(), MtaItems.COPPER_SCYTHE.get(), MtaItems.COPPER_SPEAR.get(), MtaItems.COPPER_TWINBLADE.get(), "copper_ingot");
-        newWeapons(, Items.IRON_INGOT, MtaItems.IRON_CLAW.get(), MtaItems.IRON_CLAYMORE.get(), MtaItems.IRON_CUTLASS.get(),
+        newWeapons(Items.IRON_INGOT, MtaItems.IRON_CLAW.get(), MtaItems.IRON_CLAYMORE.get(), MtaItems.IRON_CUTLASS.get(),
                 MtaItems.IRON_DAGGER.get(), MtaItems.IRON_DOUBLE_AXE.get(), MtaItems.IRON_GLAIVE.get(), MtaItems.IRON_HALBERD.get(),
                 MtaItems.IRON_KATANA.get(), MtaItems.IRON_SCYTHE.get(), MtaItems.IRON_SPEAR.get(), MtaItems.IRON_TWINBLADE.get(), "iron_ingot");
-        newWeapons(, Items.GOLD_INGOT, MtaItems.GOLD_CLAW.get(), MtaItems.GOLD_CLAYMORE.get(), MtaItems.GOLD_CUTLASS.get(),
+        newWeapons(Items.GOLD_INGOT, MtaItems.GOLD_CLAW.get(), MtaItems.GOLD_CLAYMORE.get(), MtaItems.GOLD_CUTLASS.get(),
                 MtaItems.GOLD_DAGGER.get(), MtaItems.GOLD_DOUBLE_AXE.get(), MtaItems.GOLD_GLAIVE.get(), MtaItems.GOLD_HALBERD.get(),
                 MtaItems.GOLD_KATANA.get(), MtaItems.GOLD_SCYTHE.get(), MtaItems.GOLD_SPEAR.get(), MtaItems.GOLD_TWINBLADE.get(), "gold_ingot");
-        //newWeapons(, MtaItems.NETHERSTEEL_INGOT, MtaItems.NETHERSTEEL_CLAW.get(), MtaItems.NETHERSTEEL_CLAYMORE.get(), MtaItems.NETHERSTEEL_CUTLASS.get(),
+        //newWeapons(MtaItems.NETHERSTEEL_INGOT, MtaItems.NETHERSTEEL_CLAW.get(), MtaItems.NETHERSTEEL_CLAYMORE.get(), MtaItems.NETHERSTEEL_CUTLASS.get(),
         //        MtaItems.NETHERSTEEL_DAGGER.get(), MtaItems.NETHERSTEEL_DOUBLE_AXE.get(), MtaItems.NETHERSTEEL_GLAIVE.get(), MtaItems.NETHERSTEEL_HALBERD.get(),
         //        MtaItems.NETHERSTEEL_KATANA.get(), MtaItems.NETHERSTEEL_SCYTHE.get(), MtaItems.NETHERSTEEL_SPEAR.get(), MtaItems.NETHERSTEEL_TWINBLADE.get(), "nethersteel_ingot");
-        newWeapons(, Items.DIAMOND, MtaItems.DIAMOND_CLAW.get(), MtaItems.DIAMOND_CLAYMORE.get(), MtaItems.DIAMOND_CUTLASS.get(),
+        newWeapons(Items.DIAMOND, MtaItems.DIAMOND_CLAW.get(), MtaItems.DIAMOND_CLAYMORE.get(), MtaItems.DIAMOND_CUTLASS.get(),
                 MtaItems.DIAMOND_DAGGER.get(), MtaItems.DIAMOND_DOUBLE_AXE.get(), MtaItems.DIAMOND_GLAIVE.get(), MtaItems.DIAMOND_HALBERD.get(),
                 MtaItems.DIAMOND_KATANA.get(), MtaItems.DIAMOND_SCYTHE.get(), MtaItems.DIAMOND_SPEAR.get(), MtaItems.DIAMOND_TWINBLADE.get(), "diamond");
 
-        smeltingResultFromBase(, Items.LEATHER, Items.ROTTEN_FLESH);
+        smeltingResultFromBase(Items.LEATHER, Items.ROTTEN_FLESH);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.BIG_BOWL)
+        shapeless(RecipeCategory.MISC, MtaItems.BIG_BOWL)
                 .requires(Items.BOWL, 2)
-                .unlockedBy("has_bowl", has(Items.BOWL))
-                ;
+                .unlockedBy("has_bowl", has(Items.BOWL));
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BLACK_DYE, 2)
+        shapeless(RecipeCategory.MISC, Items.BLACK_DYE, 2)
                 .requires(Tags.Items.ORES_COAL)
-                .unlockedBy("has_coal", has(Tags.Items.ORES_COAL))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 2)
+                .unlockedBy("has_coal", has(Tags.Items.ORES_COAL));
+
+        shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 2)
                 .requires(Blocks.ANDESITE, 2)
                 .requires(Blocks.VINE, 2)
-                .unlockedBy("has_andesite", has(Blocks.ANDESITE))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 4)
+                .unlockedBy("has_andesite", has(Blocks.ANDESITE));
+
+        shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 4)
                 .requires(Blocks.ANDESITE, 2)
                 .requires(Blocks.MOSS_BLOCK, 2)
                 .unlockedBy("has_andesite", has(Blocks.ANDESITE))
                 , "mossy_andesite_from_moss");
 
-        twoByTwoPacker(, RecipeCategory.BUILDING_BLOCKS, Blocks.QUARTZ_BLOCK, MtaItems.CLEAR_QUARTZ);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE, 2)
+        twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, Blocks.QUARTZ_BLOCK, MtaItems.CLEAR_QUARTZ);
+        shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE, 2)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('C', Blocks.COBBLESTONE)
                 .pattern("CQ")
                 .pattern("QC")
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.GRANITE)
+        shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.GRANITE)
                 .requires(Blocks.DIORITE)
                 .requires(MtaItems.CLEAR_QUARTZ)
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.COMPARATOR)
+        shaped(RecipeCategory.REDSTONE, Blocks.COMPARATOR)
                 .define('#', Blocks.REDSTONE_TORCH)
                 .define('X', MtaItems.CLEAR_QUARTZ)
                 .define('I', Blocks.STONE)
@@ -294,7 +292,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("III")
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.DAYLIGHT_DETECTOR)
+        shaped(RecipeCategory.REDSTONE, Blocks.DAYLIGHT_DETECTOR)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('G', Blocks.GLASS)
                 .define('W', Ingredient.of(ItemTags.WOODEN_SLABS))
@@ -303,7 +301,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("WWW")
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, Blocks.OBSERVER)
+        shaped(RecipeCategory.REDSTONE, Blocks.OBSERVER)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('R', Items.REDSTONE)
                 .define('#', Blocks.COBBLESTONE)
@@ -314,7 +312,7 @@ public class GenRecipes  extends RecipeProvider {
                 ;
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, MtaBlocks.SPRINKLER.get())
+        shaped(RecipeCategory.REDSTONE, MtaBlocks.SPRINKLER.get())
                 .define('C', Tags.Items.INGOTS_COPPER)
                 .define('N', Tags.Items.NUGGETS_IRON)
                 .define('#', ItemTags.PLANKS)
@@ -323,7 +321,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("C#C")
                 .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
                 ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MtaBlocks.QUARTZ_LAMP.get(), 2)
+        shaped(RecipeCategory.DECORATIONS, MtaBlocks.QUARTZ_LAMP.get(), 2)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('#', Tags.Items.DUSTS_GLOWSTONE)
                 .pattern("Q#")
@@ -331,118 +329,113 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
                 ;
 
-        upgradeTemplate(, MtaItems.ARMAMENT_UPGRADE.get(), Blocks.RED_TERRACOTTA, "has_armament_upgrade");
-        upgradeTemplate(, MtaItems.ROYAL_UPGRADE.get(), Blocks.PINK_TERRACOTTA, "has_royal_upgrade");
-        upgradeTemplate(, MtaItems.AQUATIC_UPGRADE.get(), Blocks.CYAN_TERRACOTTA, "has_aquatic_upgrade");
-        upgradeTemplate(, MtaItems.DEATHLY_UPGRADE.get(), Blocks.BROWN_TERRACOTTA, "has_deathly_upgrade");
-        upgradeTemplate(, MtaItems.ANGELIC_UPGRADE.get(), Blocks.LIGHT_GRAY_TERRACOTTA, "has_angelic_upgrade");
-        upgradeTemplate(, MtaItems.FREEZING_UPGRADE.get(), Blocks.WHITE_TERRACOTTA, "has_freezing_upgrade");
-        upgradeTemplate(, MtaItems.BERSERK_UPGRADE.get(), Blocks.ORANGE_TERRACOTTA, "has_berserk_upgrade");
-        upgradeTemplate(, MtaItems.FEATHERWEIGHT_UPGRADE.get(), Blocks.BLUE_TERRACOTTA, "has_featherweight_upgrade");
+        upgradeTemplate(MtaItems.ARMAMENT_UPGRADE.get(), Blocks.RED_TERRACOTTA, "has_armament_upgrade");
+        upgradeTemplate(MtaItems.ROYAL_UPGRADE.get(), Blocks.PINK_TERRACOTTA, "has_royal_upgrade");
+        upgradeTemplate(MtaItems.AQUATIC_UPGRADE.get(), Blocks.CYAN_TERRACOTTA, "has_aquatic_upgrade");
+        upgradeTemplate(MtaItems.DEATHLY_UPGRADE.get(), Blocks.BROWN_TERRACOTTA, "has_deathly_upgrade");
+        upgradeTemplate(MtaItems.ANGELIC_UPGRADE.get(), Blocks.LIGHT_GRAY_TERRACOTTA, "has_angelic_upgrade");
+        upgradeTemplate(MtaItems.FREEZING_UPGRADE.get(), Blocks.WHITE_TERRACOTTA, "has_freezing_upgrade");
+        upgradeTemplate(MtaItems.BERSERK_UPGRADE.get(), Blocks.ORANGE_TERRACOTTA, "has_berserk_upgrade");
+        upgradeTemplate(MtaItems.FEATHERWEIGHT_UPGRADE.get(), Blocks.BLUE_TERRACOTTA, "has_featherweight_upgrade");
 
-        gemAwakening(, MtaItems.AGATE.get(), MtaItems.HOST_HUSK.get(), MtaItems.AWAKENED_AGATE.get(), "has_agate");
-        gemAwakening(, MtaItems.ALEXANDRITE.get(), MtaItems.SAMURAI_CLOTH.get(), MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
-        gemAwakening(, MtaItems.AQUAMARINE.get(), MtaItems.SIREN_SCALE.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
-        gemAwakening(, MtaItems.BLOODSTONE.get(), MtaItems.BLACK_WIDOW_VENOM.get(), MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
-        //gemAwakening(, MtaItems.CELESTITE.get(), MtaItems.PHANTOM_MEMBRANE.get(), MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
-        gemAwakening(, MtaItems.CRYOLITE.get(), MtaItems.SPIRIT_DUST.get(), MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
-        gemAwakening(, MtaItems.GARNET.get(), MtaItems.CHARRED_BONE.get(), MtaItems.AWAKENED_GARNET.get(), "has_garnet");
-        //gemAwakening(, MtaItems.MOONSTONE.get(), MtaItems.SUGAR.get(), MtaItems.AWAKENED_MOONSTONE.get(), "has_moonstone");
+        gemAwakening(MtaItems.AGATE.get(), MtaItems.HOST_HUSK.get(), MtaItems.AWAKENED_AGATE.get(), "has_agate");
+        gemAwakening(MtaItems.ALEXANDRITE.get(), MtaItems.SAMURAI_CLOTH.get(), MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
+        gemAwakening(MtaItems.AQUAMARINE.get(), MtaItems.SIREN_SCALE.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
+        gemAwakening(MtaItems.BLOODSTONE.get(), MtaItems.BLACK_WIDOW_VENOM.get(), MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
+        //gemAwakening(MtaItems.CELESTITE.get(), MtaItems.PHANTOM_MEMBRANE.get(), MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
+        gemAwakening(MtaItems.CRYOLITE.get(), MtaItems.SPIRIT_DUST.get(), MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
+        gemAwakening(MtaItems.GARNET.get(), MtaItems.CHARRED_BONE.get(), MtaItems.AWAKENED_GARNET.get(), "has_garnet");
+        //gemAwakening(MtaItems.MOONSTONE.get(), MtaItems.SUGAR.get(), MtaItems.AWAKENED_MOONSTONE.get(), "has_moonstone");
 
-        agateSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_HELMET.get());
-        agateSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_CHESTPLATE.get());
-        agateSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_LEGGINGS.get());
-        agateSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_BOOTS.get());
-        agateSmithing(, Items.MACE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_WAR_HAMMER.get());
+        agateSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_HELMET.get());
+        agateSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_CHESTPLATE.get());
+        agateSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_LEGGINGS.get());
+        agateSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_BOOTS.get());
+        agateSmithing(Items.MACE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_WAR_HAMMER.get());
 
-        alexandriteSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_HELMET.get());
-        alexandriteSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_CHESTPLATE.get());
-        alexandriteSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_LEGGINGS.get());
-        alexandriteSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_BOOTS.get());
-        alexandriteSmithing(, MtaItems.NETHERITE_CLAYMORE.get(), RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_GREATSWORD.get());
+        alexandriteSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_HELMET.get());
+        alexandriteSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_CHESTPLATE.get());
+        alexandriteSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_LEGGINGS.get());
+        alexandriteSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_BOOTS.get());
+        alexandriteSmithing(MtaItems.NETHERITE_CLAYMORE.get(), RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_GREATSWORD.get());
 
-        aquamarineSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_HELMET.get());
-        aquamarineSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get());
-        aquamarineSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get());
-        aquamarineSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_BOOTS.get());
-        aquamarineSmithing(, MtaItems.NETHERITE_TRIDENT.get(), RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_TRIDENT.get());
+        aquamarineSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_HELMET.get());
+        aquamarineSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_CHESTPLATE.get());
+        aquamarineSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_LEGGINGS.get());
+        aquamarineSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_BOOTS.get());
+        aquamarineSmithing(MtaItems.NETHERITE_TRIDENT.get(), RecipeCategory.COMBAT, MtaItems.MYSTIC_MERMAIDS_TRIDENT.get());
 
-        bloodstoneSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_HELMET.get());
-        bloodstoneSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_CHESTPLATE.get());
-        bloodstoneSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_LEGGINGS.get());
-        bloodstoneSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_BOOTS.get());
-        bloodstoneSmithing(, MtaItems.NETHERITE_SCYTHE.get(), RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_SCYTHE.get());
+        bloodstoneSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_HELMET.get());
+        bloodstoneSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_CHESTPLATE.get());
+        bloodstoneSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_LEGGINGS.get());
+        bloodstoneSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_BOOTS.get());
+        bloodstoneSmithing(MtaItems.NETHERITE_SCYTHE.get(), RecipeCategory.COMBAT, MtaItems.SILENT_REAPERS_SCYTHE.get());
 
-        celestiteSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_HELMET.get());
-        celestiteSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_CHESTPLATE.get());
-        celestiteSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_LEGGINGS.get());
-        celestiteSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOOTS.get());
-        celestiteSmithing(, MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOW.get());
+        celestiteSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_HELMET.get());
+        celestiteSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_CHESTPLATE.get());
+        celestiteSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_LEGGINGS.get());
+        celestiteSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOOTS.get());
+        celestiteSmithing(MtaItems.NETHERITE_BOW.get(), RecipeCategory.COMBAT, MtaItems.TEMPLE_ANGELS_BOW.get());
 
-        cryoliteSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_HELMET.get());
-        cryoliteSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_CHESTPLATE.get());
-        cryoliteSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_LEGGINGS.get());
-        cryoliteSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_BOOTS.get());
-        cryoliteSmithing(, MtaItems.NETHERITE_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_SPEAR.get());
+        cryoliteSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_HELMET.get());
+        cryoliteSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_CHESTPLATE.get());
+        cryoliteSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_LEGGINGS.get());
+        cryoliteSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_BOOTS.get());
+        cryoliteSmithing(MtaItems.NETHERITE_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.FREEZING_ICICLE_SPEAR.get());
 
-        garnetSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_HELMET.get());
-        garnetSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get());
-        garnetSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get());
-        garnetSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BOOTS.get());
-        garnetSmithing(, MtaItems.NETHERITE_DOUBLE_AXE.get(), RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get());
+        garnetSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_HELMET.get());
+        garnetSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE.get());
+        garnetSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_LEGGINGS.get());
+        garnetSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BOOTS.get());
+        garnetSmithing(MtaItems.NETHERITE_DOUBLE_AXE.get(), RecipeCategory.COMBAT, MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get());
 
-        moonstoneSmithing(, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_HELMET.get());
-        moonstoneSmithing(, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_CHESTPLATE.get());
-        moonstoneSmithing(, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_LEGGINGS.get());
-        moonstoneSmithing(, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_BOOTS.get());
-        moonstoneSmithing(, MtaItems.NETHERITE_DAGGER.get(), RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_DAGGER.get());
+        moonstoneSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_HELMET.get());
+        moonstoneSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_CHESTPLATE.get());
+        moonstoneSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_LEGGINGS.get());
+        moonstoneSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_BOOTS.get());
+        moonstoneSmithing(MtaItems.NETHERITE_DAGGER.get(), RecipeCategory.COMBAT, MtaItems.SHADOW_ROGUES_DAGGER.get());
 
-        netheriteSmithing(, Items.TRIDENT, RecipeCategory.COMBAT, MtaItems.NETHERITE_TRIDENT.get());
-        netheriteSmithing(, Items.BOW, RecipeCategory.COMBAT, MtaItems.NETHERITE_BOW.get());
-        netheriteSmithing(, MtaItems.DIAMOND_CLAW.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_CLAW.get());
-        netheriteSmithing(, MtaItems.DIAMOND_CLAYMORE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_CLAYMORE.get());
-        netheriteSmithing(, MtaItems.DIAMOND_CUTLASS.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_CUTLASS.get());
-        netheriteSmithing(, MtaItems.DIAMOND_DAGGER.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_DAGGER.get());
-        netheriteSmithing(, MtaItems.DIAMOND_DOUBLE_AXE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_DOUBLE_AXE.get());
-        netheriteSmithing(, MtaItems.DIAMOND_GLAIVE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_GLAIVE.get());
-        netheriteSmithing(, MtaItems.DIAMOND_HALBERD.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_HALBERD.get());
-        netheriteSmithing(, MtaItems.DIAMOND_KATANA.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_KATANA.get());
-        netheriteSmithing(, MtaItems.DIAMOND_SCYTHE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SCYTHE.get());
-        netheriteSmithing(, MtaItems.DIAMOND_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SPEAR.get());
-        netheriteSmithing(, MtaItems.DIAMOND_TWINBLADE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_TWINBLADE.get());
+        netheriteSmithing(Items.TRIDENT, RecipeCategory.COMBAT, MtaItems.NETHERITE_TRIDENT.get());
+        netheriteSmithing(Items.BOW, RecipeCategory.COMBAT, MtaItems.NETHERITE_BOW.get());
+        netheriteSmithing(MtaItems.DIAMOND_CLAW.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_CLAW.get());
+        netheriteSmithing(MtaItems.DIAMOND_CLAYMORE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_CLAYMORE.get());
+        netheriteSmithing(MtaItems.DIAMOND_CUTLASS.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_CUTLASS.get());
+        netheriteSmithing(MtaItems.DIAMOND_DAGGER.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_DAGGER.get());
+        netheriteSmithing(MtaItems.DIAMOND_DOUBLE_AXE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_DOUBLE_AXE.get());
+        netheriteSmithing(MtaItems.DIAMOND_GLAIVE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_GLAIVE.get());
+        netheriteSmithing(MtaItems.DIAMOND_HALBERD.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_HALBERD.get());
+        netheriteSmithing(MtaItems.DIAMOND_KATANA.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_KATANA.get());
+        netheriteSmithing(MtaItems.DIAMOND_SCYTHE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SCYTHE.get());
+        netheriteSmithing(MtaItems.DIAMOND_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SPEAR.get());
+        netheriteSmithing(MtaItems.DIAMOND_TWINBLADE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_TWINBLADE.get());
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.TOMATO_SEEDS)
+        shapeless(RecipeCategory.MISC, MtaItems.TOMATO_SEEDS)
                 .requires(MtaItems.TOMATO)
-                .unlockedBy("has_tomato", has(MtaItems.TOMATO))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.BELL_PEPPER_SEEDS)
+                .unlockedBy("has_tomato", has(MtaItems.TOMATO));
+        shapeless(RecipeCategory.MISC, MtaItems.BELL_PEPPER_SEEDS)
                 .requires(MtaItems.BELL_PEPPER)
-                .unlockedBy("has_red_pepper", has(MtaItems.BELL_PEPPER))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.CHILI_PEPPER_SEEDS)
+                .unlockedBy("has_red_pepper", has(MtaItems.BELL_PEPPER));
+        shapeless(RecipeCategory.MISC, MtaItems.CHILI_PEPPER_SEEDS)
                 .requires(MtaItems.CHILI_PEPPER)
-                .unlockedBy("has_chili_pepper", has(MtaItems.CHILI_PEPPER))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_SLICE, 2)
+                .unlockedBy("has_chili_pepper", has(MtaItems.CHILI_PEPPER));
+        shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_SLICE, 2)
                 .requires(MtaItems.COCONUT)
-                .unlockedBy("has_coconut", has(MtaItems.COCONUT))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT));
+        shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.COBBLESTONES)
-                .unlockedBy("has_coconut", has(MtaItems.COCONUT))
-                ;
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT));
+        shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.STONES)
                 .unlockedBy("has_coconut", has(MtaItems.COCONUT));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MtaItems.SPICE_MIX)
+        shapeless(RecipeCategory.MISC, MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
                 .requires(MtaItems.BELL_PEPPER)
                 .requires(MtaTags.Common.FOODS_ONION)
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE));
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, MtaItems.ONIGIRI)
+        shapeless(RecipeCategory.FOOD, MtaItems.ONIGIRI)
                 .requires(MtaTags.Common.CROPS_RICE)
                 .requires(Items.DRIED_KELP)
                 .unlockedBy("has_rice", has(MtaItems.RICE));
@@ -502,18 +495,18 @@ public class GenRecipes  extends RecipeProvider {
     }
 
     protected void basicStoneSetRecipe( Block ing, Block resultSlab, Block resultStair, Block resultWall, String unlock, String save) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, resultSlab, 6)
+        shaped(RecipeCategory.BUILDING_BLOCKS, resultSlab, 6)
                 .define('X', ing)
                 .pattern("XXX")
                 .unlockedBy(unlock, has(ing))
                 , "shaped_" + save + "_slab");
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, resultStair, 4)
+        shaped(RecipeCategory.BUILDING_BLOCKS, resultStair, 4)
                 .define('X', ing)
                 .pattern("X  ")
                 .pattern("XX ")
                 .pattern("XXX")
                 .unlockedBy(unlock, has(ing));
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, resultWall, 6)
+        shaped(RecipeCategory.DECORATIONS, resultWall, 6)
                 .define('X', ing)
                 .pattern("XXX")
                 .pattern("XXX")
@@ -543,19 +536,18 @@ public class GenRecipes  extends RecipeProvider {
     }
 
     public void upgradeTemplate(Item template, Block frame, String unlock) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, template, 2)
+        shaped(RecipeCategory.MISC, template, 2)
                 .define('X', template)
                 .define('O', frame)
                 .define('D', Items.DIAMOND)
                 .pattern("DOD")
                 .pattern("DXD")
                 .pattern("DDD")
-                .unlockedBy(unlock, has(template))
-                ;
+                .unlockedBy(unlock, has(template));
     }
 
     public void gemAwakening(Item gem, Item key, Item result, String unlock) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+        shaped(RecipeCategory.MISC, result)
                 .define('g', gem)
                 .define('k', key)
                 .define('n', Items.NETHERITE_SCRAP)
@@ -568,230 +560,206 @@ public class GenRecipes  extends RecipeProvider {
     }
 
     public void newWeapons(Item ore, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rGla, Item rKat, Item rHal, Item rScy, Item rSpe, Item rTwi, String unlock) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClaw)
+        shaped(RecipeCategory.COMBAT, rClaw)
                 .define('o', ore)
                 .define('s', Items.LEATHER)
                 .pattern("ooo")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClay)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rClay)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o  ")
                 .pattern(" o ")
                 .pattern("  s")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rCut)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rCut)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDag)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rDag)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDou)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rDou)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o o")
                 .pattern("oso")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rGla)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rGla)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" so")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rHal)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rHal)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" oo")
                 .pattern(" so")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rKat)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rKat)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rScy)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rScy)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("ooo")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rSpe)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rSpe)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rTwi)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rTwi)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("o  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
+                .unlockedBy("has_" + unlock, has(ore));
 
     }
 
     public void newWeaponsTags(TagKey<Item> ore, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rGla, Item rKat, Item rHal, Item rScy, Item rSpe, Item rTwi, String unlock) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClaw)
+        shaped(RecipeCategory.COMBAT, rClaw)
                 .define('o', ore)
                 .define('s', Items.LEATHER)
                 .pattern("ooo")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rClay)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rClay)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o  ")
                 .pattern(" o ")
                 .pattern("  s")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rCut)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rCut)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDag)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rDag)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rDou)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rDou)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o o")
                 .pattern("oso")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rGla)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rGla)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" so")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rHal)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rHal)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" oo")
                 .pattern(" so")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rKat)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rKat)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rScy)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rScy)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("ooo")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rSpe)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rSpe)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, rTwi)
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rTwi)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("o  ")
-                .unlockedBy("has_" + unlock, has(ore))
-                ;
+                .unlockedBy("has_" + unlock, has(ore));
 
     }
 
     public void woodItems(Block planks, Block slab, Block stair, Block door, Block trap, Block fence, Block gate, Block button, Block plate, String unlock) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
+        shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
                 .define('p', planks)
                 .pattern("ppp")
                 .unlockedBy("has_" + unlock, has(planks));
-      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stair, 4)
+        shaped(RecipeCategory.BUILDING_BLOCKS, stair, 4)
                 .define('p', planks)
                 .pattern("p  ")
                 .pattern("pp ")
                 .pattern("ppp")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
-      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, door, 3)
+                .unlockedBy("has_" + unlock, has(planks));
+        shaped(RecipeCategory.BUILDING_BLOCKS, door, 3)
                 .define('p', planks)
                 .pattern("pp")
                 .pattern("pp")
                 .pattern("pp")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
-      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, trap, 2)
+                .unlockedBy("has_" + unlock, has(planks));
+        shaped(RecipeCategory.BUILDING_BLOCKS, trap, 2)
                 .define('p', planks)
                 .pattern("ppp")
                 .pattern("ppp")
                 .unlockedBy("has_" + unlock, has(planks))
                 ;
-      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, fence, 3)
+        shaped(RecipeCategory.BUILDING_BLOCKS, fence, 3)
                 .define('p', planks)
                 .define('s', Items.STICK)
                 .pattern("psp")
                 .pattern("psp")
                 .unlockedBy("has_" + unlock, has(planks))
                 ;
-      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, gate,1)
+        shaped(RecipeCategory.BUILDING_BLOCKS, gate,1)
                 .define('p', planks)
                 .define('s', Items.STICK)
                 .pattern("sps")
                 .pattern("sps")
                 .unlockedBy("has_" + unlock, has(planks))
                 ;
-      ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, button,1)
+        shaped(RecipeCategory.BUILDING_BLOCKS, button,1)
                 .define('p', planks)
                 .pattern("p")
                 .unlockedBy("has_" + unlock, has(planks))
                 ;
-     ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, plate,1)
+        shaped(RecipeCategory.BUILDING_BLOCKS, plate,1)
                 .define('p', planks)
                 .pattern("pp")
                 .unlockedBy("has_" + unlock, has(planks))
