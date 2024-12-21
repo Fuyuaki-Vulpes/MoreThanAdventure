@@ -26,7 +26,7 @@ import java.util.function.Supplier;
 public class RogueDaggerItem extends DaggerItem {
 
 
-    public RogueDaggerItem(Tier pTier, Properties pProperties) {
+    public RogueDaggerItem(ToolMaterial pTier, Properties pProperties) {
         super(pTier, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
 
     }
@@ -72,7 +72,7 @@ public class RogueDaggerItem extends DaggerItem {
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
-    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
         return createAttributes(p_330371_, 3.0F, -0.8F, 2.5F);
     }
 

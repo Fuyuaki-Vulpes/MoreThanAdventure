@@ -31,7 +31,7 @@ public class ClawItem extends WeaponItem {
     protected static final int attackDamage = 6;
 // RANGE = 2.0
 
-    public ClawItem(Tier tier, Properties properties) {
+    public ClawItem(ToolMaterial tier, Properties properties) {
         super(tier, properties,createToolProperties());
     }
 

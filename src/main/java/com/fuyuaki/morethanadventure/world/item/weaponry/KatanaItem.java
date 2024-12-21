@@ -16,6 +16,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.block.Blocks;
@@ -29,7 +30,7 @@ public class KatanaItem extends WeaponItem {
     protected static final int attackDamage = 2;
 // RANGE = 2.5
 
-    public KatanaItem(Tier tier, Properties properties) {
+    public KatanaItem(ToolMaterial tier, Properties properties) {
         super(tier, properties,createToolProperties());
     }
 
@@ -38,7 +39,7 @@ public class KatanaItem extends WeaponItem {
         return new Tool(List.of(Tool.Rule.minesAndDrops(List.of(Blocks.COBWEB), 15.0F), Tool.Rule.overrideSpeed(BlockTags.SWORD_EFFICIENT, 1.5F)), 1.0F, 2);
     }
 
-    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
         return createAttributes(p_330371_,2.0F,-1.6F,2.5F);
     }
 

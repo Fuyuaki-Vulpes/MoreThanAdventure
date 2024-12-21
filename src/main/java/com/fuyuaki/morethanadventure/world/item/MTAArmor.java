@@ -13,6 +13,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
@@ -36,7 +37,7 @@ public class MTAArmor extends ArmorItem {
 
 
 
-    public MTAArmor(Holder<ArmorMaterial> pMaterial, Type pType, Properties pProperties) {
+    public MTAArmor(Holder<ArmorMaterial> pMaterial, ArmorType pType, Properties pProperties) {
         super(pMaterial, pType, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
         this.attributeModifiers = Suppliers.memoize(
                 () -> {

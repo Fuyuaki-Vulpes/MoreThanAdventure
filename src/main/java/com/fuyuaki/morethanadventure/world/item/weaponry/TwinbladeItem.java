@@ -14,6 +14,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.block.Blocks;
@@ -27,7 +28,7 @@ public class TwinbladeItem extends WeaponItem {
     protected static final int attackDamage = 2;
 // RANGE = 3.0
 
-    public TwinbladeItem(Tier tier, Properties properties) {
+    public TwinbladeItem(ToolMaterial tier, Properties properties) {
         super(tier, properties,createToolProperties());
     }
 
@@ -36,7 +37,7 @@ public class TwinbladeItem extends WeaponItem {
         return new Tool(List.of(Tool.Rule.minesAndDrops(List.of(Blocks.COBWEB), 15.0F), Tool.Rule.overrideSpeed(BlockTags.SWORD_EFFICIENT, 1.5F)), 1.0F, 2);
     }
 
-    public static ItemAttributeModifiers createAttributes(Tier tier) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial tier) {
         return createAttributes(tier,2.0F,-2.0F,3.0F);
     }
 

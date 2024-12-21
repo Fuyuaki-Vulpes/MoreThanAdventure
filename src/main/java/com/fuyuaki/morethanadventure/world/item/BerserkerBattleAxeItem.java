@@ -20,6 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 
@@ -30,7 +31,7 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 public class BerserkerBattleAxeItem extends DoubleAxeItem {
 
 
-    public BerserkerBattleAxeItem(Tier pTier, Properties pProperties) {
+    public BerserkerBattleAxeItem(ToolMaterial pTier, Properties pProperties) {
         super(pTier, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
 
     }
@@ -61,7 +62,7 @@ public class BerserkerBattleAxeItem extends DoubleAxeItem {
         return InteractionResultHolder.success(itemstack);
     }
 
-    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
         return createAttributes(p_330371_, 8.0F, -2.6F, 3.7F);
     }
 

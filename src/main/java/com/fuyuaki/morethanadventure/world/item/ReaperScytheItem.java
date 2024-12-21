@@ -9,6 +9,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Supplier;
@@ -17,12 +18,12 @@ public class ReaperScytheItem extends ScytheItem {
 
 
 
-    public ReaperScytheItem(Tier pTier, Properties pProperties) {
+    public ReaperScytheItem(ToolMaterial pTier, Properties pProperties) {
         super(pTier, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
 
     }
 
-    protected ItemAttributeModifiers.Builder createAttributeModifiers(Tier pTier, ItemAttributeModifiers.Builder builder){
+    protected ItemAttributeModifiers.Builder createAttributeModifiers(ToolMaterial pTier, ItemAttributeModifiers.Builder builder){
         ResourceLocation location = ResourceLocation.withDefaultNamespace("scythe");
 
 
@@ -39,7 +40,7 @@ public class ReaperScytheItem extends ScytheItem {
         return builder;
     }
 
-    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
         return createAttributes(p_330371_, 5.0F, -2.4F, 4.7F);
     }
 

@@ -29,7 +29,7 @@ public class KnightGreatswordItem extends ClaymoreItem {
 
 
 
-    public KnightGreatswordItem(Tier pTier, Properties pProperties) {
+    public KnightGreatswordItem(ToolMaterial pTier, Properties pProperties) {
         super(pTier, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
 
     }

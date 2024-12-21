@@ -113,6 +113,17 @@ public class MtaTags {
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Item> SEAWOOD = tag("sealogs");
 
+        public static final TagKey<Item> AGATE_TOOL_MATERIALS = tag("agate_tool_materials");
+        public static final TagKey<Item> ALEXANDRITE_TOOL_MATERIALS = tag("alexandrite_tool_materials");
+        public static final TagKey<Item> AQUAMARINE_TOOL_MATERIALS = tag("aquamarine_tool_materials");
+        public static final TagKey<Item> BLOODSTONE_TOOL_MATERIALS = tag("bloodstone_tool_materials");
+        public static final TagKey<Item> CELESTITE_TOOL_MATERIALS = tag("celestite_tool_materials");
+        public static final TagKey<Item> CRYOLITE_TOOL_MATERIALS = tag("cryolite_tool_materials");
+        public static final TagKey<Item> GARNET_TOOL_MATERIALS = tag("garnet_tool_materials");
+        public static final TagKey<Item> MOONSTONE_TOOL_MATERIALS = tag("moonstone_tool_materials");
+        public static final TagKey<Item> NETHERSTEEL_TOOL_MATERIALS = tag("nethersteel_tool_materials");
+        public static final TagKey<Item> COPPER_TOOL_MATERIALS = tag("copper_tool_materials");
+
 
         public static final TagKey<Item> THROWABLE = tag("weapon/throwable");
         public static final TagKey<Item> TWO_HANDED = tag("weapon/two_handed");
