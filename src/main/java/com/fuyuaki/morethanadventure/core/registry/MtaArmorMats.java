@@ -8,6 +8,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -20,25 +22,25 @@ public class MtaArmorMats {
     public static final DeferredRegister<ArmorMaterial> ARMOR_MAT = DeferredRegister.create(Registries.ARMOR_MATERIAL, MODID);
 
     public static final Holder<ArmorMaterial> GREAT_SENTINEL = ARMOR_MAT.register("great_sentinel", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                        map.put(ArmorItem.Type.BOOTS, 4);
-                        map.put(ArmorItem.Type.LEGGINGS, 7);
-                        map.put(ArmorItem.Type.CHESTPLATE, 10);
-                        map.put(ArmorItem.Type.HELMET, 4);
-                        map.put(ArmorItem.Type.BODY, 13);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                        map.put(ArmorType.BOOTS, 4);
+                        map.put(ArmorType.LEGGINGS, 7);
+                        map.put(ArmorType.CHESTPLATE, 10);
+                        map.put(ArmorType.HELMET, 4);
+                        map.put(ArmorType.BODY, 13);
                     }),
-                    10, SoundEvents.ARMOR_EQUIP_NETHERITE, () -> Ingredient.of(MtaItems.AGATE),
+                    10, SoundEvents.ARMOR_EQUIP_NETHERITE,
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "great_sentinel"))),
-                    5F, 0.25F
+                    5F, 0.25F, Ingredient.of(MtaItems.AGATE)
             ));
 
     public static final Holder<ArmorMaterial> HOLY_KNIGHT = ARMOR_MAT.register("holy_knight", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 3);
-                map.put(ArmorItem.Type.LEGGINGS, 7);
-                map.put(ArmorItem.Type.CHESTPLATE, 9);
-                map.put(ArmorItem.Type.HELMET, 4);
-                map.put(ArmorItem.Type.BODY, 12);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 3);
+                map.put(ArmorType.LEGGINGS, 7);
+                map.put(ArmorType.CHESTPLATE, 9);
+                map.put(ArmorType.HELMET, 4);
+                map.put(ArmorType.BODY, 12);
             }),
             28, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(MtaItems.ALEXANDRITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "holy_knight"))),
@@ -46,12 +48,12 @@ public class MtaArmorMats {
     ));
 
     public static final Holder<ArmorMaterial> MYSTIC_MERMAID = ARMOR_MAT.register("mystic_mermaid", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 3);
-                map.put(ArmorItem.Type.LEGGINGS, 6);
-                map.put(ArmorItem.Type.CHESTPLATE, 8);
-                map.put(ArmorItem.Type.HELMET, 3);
-                map.put(ArmorItem.Type.BODY, 11);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 3);
+                map.put(ArmorType.LEGGINGS, 6);
+                map.put(ArmorType.CHESTPLATE, 8);
+                map.put(ArmorType.HELMET, 3);
+                map.put(ArmorType.BODY, 11);
             }),
             19, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.AQUAMARINE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "mystic_mermaid"))),
@@ -59,12 +61,12 @@ public class MtaArmorMats {
     ));
 
     public static final Holder<ArmorMaterial> SILENT_REAPER = ARMOR_MAT.register("silent_reaper", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 3);
-                map.put(ArmorItem.Type.LEGGINGS, 6);
-                map.put(ArmorItem.Type.CHESTPLATE, 8);
-                map.put(ArmorItem.Type.HELMET, 3);
-                map.put(ArmorItem.Type.BODY, 11);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 3);
+                map.put(ArmorType.LEGGINGS, 6);
+                map.put(ArmorType.CHESTPLATE, 8);
+                map.put(ArmorType.HELMET, 3);
+                map.put(ArmorType.BODY, 11);
             }),
             23, SoundEvents.ARMOR_EQUIP_GENERIC, () -> Ingredient.of(MtaItems.BLOODSTONE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "silent_reaper"))),
@@ -72,12 +74,12 @@ public class MtaArmorMats {
     ));
 
     public static final Holder<ArmorMaterial> TEMPLE_ANGEL = ARMOR_MAT.register("temple_angel", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 3);
-                map.put(ArmorItem.Type.LEGGINGS, 6);
-                map.put(ArmorItem.Type.CHESTPLATE, 8);
-                map.put(ArmorItem.Type.HELMET, 3);
-                map.put(ArmorItem.Type.BODY, 10);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 3);
+                map.put(ArmorType.LEGGINGS, 6);
+                map.put(ArmorType.CHESTPLATE, 8);
+                map.put(ArmorType.HELMET, 3);
+                map.put(ArmorType.BODY, 10);
             }),
             19, SoundEvents.ARMOR_EQUIP_CHAIN, () -> Ingredient.of(MtaItems.CELESTITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "temple_angel"))),
@@ -85,12 +87,12 @@ public class MtaArmorMats {
     ));
 
     public static final Holder<ArmorMaterial> FREEZING_ICICLE = ARMOR_MAT.register("freezing_icicle", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 3);
-                map.put(ArmorItem.Type.LEGGINGS, 6);
-                map.put(ArmorItem.Type.CHESTPLATE, 8);
-                map.put(ArmorItem.Type.HELMET, 3);
-                map.put(ArmorItem.Type.BODY, 10);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 3);
+                map.put(ArmorType.LEGGINGS, 6);
+                map.put(ArmorType.CHESTPLATE, 8);
+                map.put(ArmorType.HELMET, 3);
+                map.put(ArmorType.BODY, 10);
             }),
             19, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(MtaItems.CRYOLITE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "freezing_icicle"))),
@@ -99,12 +101,12 @@ public class MtaArmorMats {
 
     public static final Holder<ArmorMaterial> WRATHFUL_BERSERKER =
             ARMOR_MAT.register("wrathful_berserker", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 4);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 9);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 2);
+                map.put(ArmorType.LEGGINGS, 4);
+                map.put(ArmorType.CHESTPLATE, 6);
+                map.put(ArmorType.HELMET, 2);
+                map.put(ArmorType.BODY, 9);
             }),
             17, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.GARNET.get()),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "wrathful_berserker"))),
@@ -112,12 +114,12 @@ public class MtaArmorMats {
     ));
 
     public static final Holder<ArmorMaterial> SHADOW_ROGUE = ARMOR_MAT.register("shadow_rogue", () -> new ArmorMaterial(
-            Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
-                map.put(ArmorItem.Type.CHESTPLATE, 7);
-                map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 11);
+            Util.make(new EnumMap<>(ArmorType.class), map -> {
+                map.put(ArmorType.BOOTS, 2);
+                map.put(ArmorType.LEGGINGS, 5);
+                map.put(ArmorType.CHESTPLATE, 7);
+                map.put(ArmorType.HELMET, 2);
+                map.put(ArmorType.BODY, 11);
             }),
             25, SoundEvents.ARMOR_EQUIP_LEATHER, () -> Ingredient.of(MtaItems.MOONSTONE),
             List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(MODID, "shadow_rogue"))),
