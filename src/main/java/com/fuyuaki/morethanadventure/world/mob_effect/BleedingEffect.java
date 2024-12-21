@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.core.registry.MTADamageTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,7 +21,7 @@ public class BleedingEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel level, LivingEntity livingEntity, int amplifier) {
         livingEntity.hurt(livingEntity.damageSources().source(MTADamageTypes.BLEEDING),2.0F + amplifier * 2);
 
         return true;

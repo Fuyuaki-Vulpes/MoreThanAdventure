@@ -51,6 +51,8 @@ public class SentinelsWarHammerItem extends MaceItem {
         );
     }
 
+    
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
         ItemStack itemstack = player.getItemInHand(usedHand);

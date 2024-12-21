@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.mob_effect;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -12,7 +13,7 @@ public class StunEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel level, LivingEntity livingEntity, int amplifier) {
         livingEntity.setDeltaMovement(Vec3.ZERO);
         livingEntity.stopRiding();
         livingEntity.stopSleeping();

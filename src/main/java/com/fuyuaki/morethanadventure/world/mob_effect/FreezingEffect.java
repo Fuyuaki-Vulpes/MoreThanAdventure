@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.mob_effect;
 
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -13,7 +14,7 @@ public class FreezingEffect extends MobEffect {
 
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
         if (entity.getTicksFrozen() < 200){
             entity.setTicksFrozen(entity.getTicksFrozen() + 10 + (10 * amplifier));
         }

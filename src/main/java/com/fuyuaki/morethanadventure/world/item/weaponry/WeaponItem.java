@@ -21,14 +21,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.Level;
-
-import javax.annotation.Nullable;
 
 import java.util.List;
 
@@ -40,8 +36,8 @@ public class WeaponItem extends SwordItem {
 
 
 
-    public WeaponItem(ToolMaterial p_tier, Properties p_properties, Tool toolComponentData) {
-        super(p_tier, p_properties, toolComponentData);
+    public WeaponItem(ToolMaterial p_tier,float attack, float speed, Properties p_properties) {
+        super(p_tier, attack, speed, p_properties);
 
     }
 
