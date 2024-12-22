@@ -8,7 +8,6 @@ import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
-import com.fuyuaki.morethanadventure.game.client.renderer.player.SirenRenderLayer;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -203,8 +202,8 @@ public class MTAClientEvents
     }
 
     @SubscribeEvent
-    public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
-        event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.PALM_LEAVES);
+    public static void registerColoredItems(RegisterColorHandlersEvent.ItemTintSources event) {
+        event.register((pStack, pTintIndex) -> FoliageColor.(), MtaBlocks.PALM_LEAVES);
         event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES);
         event.register((pStack, pTintIndex) -> FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES);
         event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT);

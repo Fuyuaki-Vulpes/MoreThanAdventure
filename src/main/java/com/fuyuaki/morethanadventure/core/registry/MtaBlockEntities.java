@@ -13,7 +13,7 @@ public class MtaBlockEntities {
         public static final DeferredRegister<BlockEntityType<?>> BL_ENTITY = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MODID);
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SprinklerEntity>> SPRINKLER =
-            BL_ENTITY.register("sprinkler", () -> BlockEntityType.Builder.of(SprinklerEntity::new, MtaBlocks.SPRINKLER.get()).build(null));
+            BL_ENTITY.register("sprinkler", () -> new BlockEntityType<>(SprinklerEntity::new, MtaBlocks.SPRINKLER.get()));
 
 
 

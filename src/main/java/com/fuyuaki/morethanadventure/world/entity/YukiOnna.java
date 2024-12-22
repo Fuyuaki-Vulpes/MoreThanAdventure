@@ -149,12 +149,15 @@ public class YukiOnna extends Monster implements FlyingAnimal {
         return false;
     }
 
+
     @Override
-    public boolean hurt(DamageSource pSource, float pAmount) {
-        if (pSource.is(DamageTypeTags.IS_FIRE)) {
-            pAmount = pAmount * 2;
+    public boolean hurtServer(ServerLevel p_376221_, DamageSource source, float amount) {
+
+        if (source.is(DamageTypeTags.IS_FIRE)) {
+            amount = amount * 2;
         }
-        return super.hurt(pSource, pAmount);
+
+        return super.hurtServer(p_376221_, source, amount);
     }
 
     @Override
@@ -214,7 +217,7 @@ public class YukiOnna extends Monster implements FlyingAnimal {
     }
 
 
-    public static boolean canSpawn(EntityType<YukiOnna> pType, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+    public static boolean canSpawn(EntityType<YukiOnna> pType, ServerLevelAccessor pLevel, EntitySpawnReason pSpawnType, BlockPos pPos, RandomSource pRandom) {
         return checkMobSpawnRules(pType,pLevel,pSpawnType,pPos,pRandom)
                 && pLevel.canSeeSky(pPos.above().above())
                 && pLevel.getBiome(pPos).is(Tags.Biomes.IS_SNOWY)

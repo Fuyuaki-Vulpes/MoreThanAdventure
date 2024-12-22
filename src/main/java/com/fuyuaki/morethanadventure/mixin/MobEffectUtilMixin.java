@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import com.fuyuaki.morethanadventure.game.client.PlayerModelOverlayUtil;
 import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,7 +14,7 @@ public class MobEffectUtilMixin {
 
     @Inject(method = "hasWaterBreathing",at = @At("RETURN"), cancellable = true)
     private static void hasWaterBreathing(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (PlayerModelOverlayUtil.shouldRenderSirenParts(entity) && AttributeModifierTalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(),entity)){
+        if (AttributeModifierTalismanItem.enableScubaGearEffects(entity)){
             cir.setReturnValue(true);
 
         }

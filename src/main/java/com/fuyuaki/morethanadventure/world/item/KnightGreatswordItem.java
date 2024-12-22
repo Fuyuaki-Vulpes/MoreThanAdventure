@@ -2,28 +2,24 @@ package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.world.item.weaponry.ClaymoreItem;
-import com.google.common.base.Suppliers;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 public class KnightGreatswordItem extends ClaymoreItem {
 
@@ -51,12 +47,12 @@ public class KnightGreatswordItem extends ClaymoreItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+    public InteractionResult use(Level level, Player player, InteractionHand usedHand) {
         ItemStack itemstack = player.getItemInHand(usedHand);
-        if (usedHand.equals(InteractionHand.OFF_HAND)) return InteractionResultHolder.fail(itemstack);
+        if (usedHand.equals(InteractionHand.OFF_HAND)) return InteractionResult.FAIL;
 
         player.startUsingItem(usedHand);
-        return InteractionResultHolder.consume(itemstack);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -82,7 +78,7 @@ public class KnightGreatswordItem extends ClaymoreItem {
     }
 
     @Override
-    public void releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int timeCharged) {
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity livingEntity, int timeCharged) {
         livingEntity.playSound(SoundEvents.EXPERIENCE_ORB_PICKUP);
         livingEntity.playSound(SoundEvents.WARDEN_SONIC_BOOM);
         List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class,livingEntity.getBoundingBox().inflate(3,2,3));
@@ -98,15 +94,12 @@ public class KnightGreatswordItem extends ClaymoreItem {
         if (livingEntity.hasEffect(MobEffects.LEVITATION)){
             livingEntity.removeEffect(MobEffects.LEVITATION);
         }
+        return true;
 
     }
 
-    public static ItemAttributeModifiers createAttributes(Tier p_330371_) {
+    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
         return createAttributes(p_330371_, 5.0F, -2.8F, 4.0F);
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 28;
-    }
 }

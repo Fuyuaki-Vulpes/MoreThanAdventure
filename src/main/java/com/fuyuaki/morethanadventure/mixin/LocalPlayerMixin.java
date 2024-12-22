@@ -24,7 +24,7 @@ public abstract class LocalPlayerMixin extends AbstractClientPlayer{
     }
     @Inject(method = "getWaterVision",at = @At("HEAD"), cancellable = true)
     protected void waterVisionMixin(CallbackInfoReturnable<Float> cir){
-        if (thisPlayer.isEyeInFluidType(NeoForgeMod.WATER_TYPE.value()) && AttributeModifierTalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), thisPlayer)) {
+        if (thisPlayer.isEyeInFluidType(NeoForgeMod.WATER_TYPE.value()) && AttributeModifierTalismanItem.enableScubaGearEffects(thisPlayer)) {
             cir.setReturnValue(1.0F);
         }
     }

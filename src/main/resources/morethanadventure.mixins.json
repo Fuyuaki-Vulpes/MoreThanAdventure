@@ -6,7 +6,6 @@
   "mixins": [
     "BlocksMixin",
     "FarmBlockMixin",
-    "ItemMixin",
     "LivingEntityMixin",
     "LocalPlayerMixin",
     "MixinMobCategory",
@@ -20,9 +19,8 @@
   "client": [
     "FogRendererMixin",
     "GameRendererMixin",
-    "HumanoidModelMixin",
-    "LightTextureMixin",
-    "PlayerRendererMixin"
+    "GUIMixin",
+    "LightTextureMixin"
   ],
   "server": [
   ],

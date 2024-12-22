@@ -1,18 +1,13 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.world.item.weaponry.ScytheItem;
-import com.google.common.base.Suppliers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-
-import java.util.function.Supplier;
 
 public class ReaperScytheItem extends ScytheItem {
 
@@ -29,7 +24,7 @@ public class ReaperScytheItem extends ScytheItem {
 
         builder.add(
                 Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(location, 5 + pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
+                new AttributeModifier(location, 5 + pTier.attackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
                 EquipmentSlotGroup.MAINHAND
         );
         builder.add(
@@ -45,10 +40,4 @@ public class ReaperScytheItem extends ScytheItem {
     }
 
 
-
-
-    @Override
-    public int getEnchantmentValue() {
-        return 21;
-    }
 }

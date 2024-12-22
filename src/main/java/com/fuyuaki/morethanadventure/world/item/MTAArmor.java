@@ -3,6 +3,7 @@ package com.fuyuaki.morethanadventure.world.item;
 import com.fuyuaki.morethanadventure.core.registry.MtaArmorMats;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -13,6 +14,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.equipment.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.NeoForgeMod;
@@ -22,7 +25,7 @@ import java.util.function.Supplier;
 
 public class MTAArmor extends ArmorItem {
     protected final UUID FULL_SET_UUID = UUID.fromString("78f6b05d-a0ff-4b5e-86dc-9b397d5b7878");
-    private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL.value();
+    private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL.;
     private static final ArmorMaterial KNIGHT = MtaArmorMats.HOLY_KNIGHT.value();
     private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID.value();
     private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER.value();
@@ -37,15 +40,15 @@ public class MTAArmor extends ArmorItem {
 
 
 
-    public MTAArmor(Holder<ArmorMaterial> pMaterial, ArmorType pType, Properties pProperties) {
-        super(pMaterial, pType, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
+    public MTAArmor(ArmorMaterial pMaterial, ArmorType pArmorType, Properties pProperties) {
+        super(pMaterial, pArmorType, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
         this.attributeModifiers = Suppliers.memoize(
                 () -> {
-                    int i = pMaterial.value().getDefense(pType);
-                    float f = pMaterial.value().toughness();
+                    int i = pMaterial.defense().get(pArmorType);
+                    float f = pMaterial.toughness();
                     ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-                    EquipmentSlotGroup equipmentslotgroup = EquipmentSlotGroup.bySlot(pType.getSlot());
-                    ResourceLocation resourcelocation = ResourceLocation.withDefaultNamespace("armor." + pType.getName());
+                    EquipmentSlotGroup equipmentslotgroup = EquipmentSlotGroup.bySlot(pArmorType.getSlot());
+                    ResourceLocation resourcelocation = ResourceLocation.withDefaultNamespace("armor." + pArmorType.getName());
                     builder.add(
                             Attributes.ARMOR, new AttributeModifier(resourcelocation, (double)i, AttributeModifier.Operation.ADD_VALUE), equipmentslotgroup
                     );
@@ -61,7 +64,7 @@ public class MTAArmor extends ArmorItem {
                                 equipmentslotgroup
                         );
                     }
-                    return resolveAttributeModifiers(pMaterial,pType,builder).build();
+                    return resolveAttributeModifiers(pMaterial,pArmorType,builder).build();
                 }
         );
     }
@@ -86,21 +89,21 @@ public class MTAArmor extends ArmorItem {
     }
 
     protected void estimateEffects(LivingEntity entity, Level level, int pSlotId){
-        boolean hasHelmet = entity.getItemBySlot(Type.HELMET.getSlot()).getItem() instanceof ArmorItem;
-        boolean hasChestplate = entity.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem() instanceof ArmorItem;
-        boolean hasLeggings = entity.getItemBySlot(Type.LEGGINGS.getSlot()).getItem() instanceof ArmorItem;
-        boolean hasBoots = entity.getItemBySlot(Type.BOOTS.getSlot()).getItem() instanceof ArmorItem;
+        boolean hasHelmet = entity.getItemBySlot(ArmorType.HELMET.getSlot()).getItem() instanceof ArmorItem;
+        boolean hasChestplate = entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()).getItem() instanceof ArmorItem;
+        boolean hasLeggings = entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()).getItem() instanceof ArmorItem;
+        boolean hasBoots = entity.getItemBySlot(ArmorType.BOOTS.getSlot()).getItem() instanceof ArmorItem;
 
         //USED ARMADILLO SO IT DOESN'T BREAK FROM NULL!!!
-        ArmorMaterial helmet = ArmorMaterials.ARMADILLO.value();
-        ArmorMaterial chestplate = ArmorMaterials.ARMADILLO.value();
-        ArmorMaterial leggings = ArmorMaterials.ARMADILLO.value();
-        ArmorMaterial boots = ArmorMaterials.ARMADILLO.value();
+        ArmorMaterial helmet = ArmorMaterials.ARMADILLO_SCUTE;
+        ArmorMaterial chestplate = ArmorMaterials.ARMADILLO_SCUTE;
+        ArmorMaterial leggings = ArmorMaterials.ARMADILLO_SCUTE;
+        ArmorMaterial boots = ArmorMaterials.ARMADILLO_SCUTE;
 
-        if (hasHelmet) helmet = ((ArmorItem)entity.getItemBySlot(Type.HELMET.getSlot()).getItem()).getMaterial().value();
-        if (hasChestplate) chestplate = ((ArmorItem)entity.getItemBySlot(Type.CHESTPLATE.getSlot()).getItem()).getMaterial().value();
-        if (hasLeggings) leggings = ((ArmorItem)entity.getItemBySlot(Type.LEGGINGS.getSlot()).getItem()).getMaterial().value();
-        if (hasBoots) boots = ((ArmorItem)entity.getItemBySlot(Type.BOOTS.getSlot()).getItem()).getMaterial().value();
+        if (hasHelmet) helmet = (entity.getItemBySlot(ArmorType.HELMET.getSlot()).get(DataComponents.EQUIPPABLE).assetId()).;
+        if (hasChestplate) chestplate = (entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()).getItem()).getMaterial().value();
+        if (hasLeggings) leggings = (entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()).getItem()).getMaterial().value();
+        if (hasBoots) boots = (entity.getItemBySlot(ArmorType.BOOTS.getSlot()).getItem()).getMaterial().value();
 
         
         doSentinelEffects(entity,
@@ -394,46 +397,46 @@ public class MTAArmor extends ArmorItem {
 
     //ATTRIBUTES
 
-    protected ItemAttributeModifiers.Builder resolveAttributeModifiers(Holder<ArmorMaterial> material, Type type, ItemAttributeModifiers.Builder builder){
+    protected ItemAttributeModifiers.Builder resolveAttributeModifiers(Holder<ArmorMaterial> material, ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         if ( material.value() == SENTINEL){
-            return sentinelAttributes(type,builder);
+            return sentinelAttributes(ArmorType,builder);
         }else
             if ( material.value() == KNIGHT){
-                return knightAttributes(type,builder);
+                return knightAttributes(ArmorType,builder);
         }else
             if ( material.value() == MERMAID){
-                return mermaidAttributes(type,builder);
+                return mermaidAttributes(ArmorType,builder);
         }else
             if ( material.value() == REAPER){
-                return reaperAttributes(type,builder);
+                return reaperAttributes(ArmorType,builder);
         }else
             if ( material.value() == ANGEL){
-                return angelAttributes(type,builder);
+                return angelAttributes(ArmorType,builder);
         }else
             if ( material.value() == ICICLE){
-                return icicleAttributes(type,builder);
+                return icicleAttributes(ArmorType,builder);
         }else
             if ( material.value() == BERSERKER){
-                return berserkerAttributes(type,builder);
+                return berserkerAttributes(ArmorType,builder);
         }else
             if ( material.value() == ROGUE){
-                return rogueAttributes(type,builder);
+                return rogueAttributes(ArmorType,builder);
         }
         return builder;
     }
 
 
-    protected ItemAttributeModifiers.Builder sentinelAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder sentinelAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
 
-        if (type == Type.HELMET){
-        }else if (type == Type.CHESTPLATE){
-        }else if (type == Type.LEGGINGS){
+        if (ArmorType == ArmorType.HELMET){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
+        }else if (ArmorType == ArmorType.LEGGINGS){
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
         }
         builder.add(Attributes.MOVEMENT_SPEED,new AttributeModifier(location,-0.1F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
@@ -441,19 +444,19 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder knightAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder knightAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.STEP_HEIGHT,new AttributeModifier(location,0.5F,AttributeModifier.Operation.ADD_VALUE),slot);
 
         }
@@ -461,60 +464,60 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder mermaidAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder mermaidAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
             builder.add(Attributes.OXYGEN_BONUS, new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
             builder.add(Attributes.SUBMERGED_MINING_SPEED, new AttributeModifier(location,3.0F, AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
             builder.add(NeoForgeMod.SWIM_SPEED,new AttributeModifier(location,0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.WATER_MOVEMENT_EFFICIENCY,new AttributeModifier(location,0.1F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
         }
 
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder reaperAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder reaperAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
             builder.add(Attributes.SNEAKING_SPEED,new AttributeModifier(location,0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),slot);
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.SAFE_FALL_DISTANCE,new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
         }
 
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder angelAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder angelAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
             builder.add(Attributes.GRAVITY, new AttributeModifier(location,-0.4F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.FALL_DAMAGE_MULTIPLIER, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
             builder.add(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(location,4.0F, AttributeModifier.Operation.ADD_VALUE),slot);
 
@@ -524,22 +527,22 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder icicleAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder icicleAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
             builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
             builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
             builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.BURNING_TIME, new AttributeModifier(location,-0.2F, AttributeModifier.Operation.ADD_VALUE),slot);
 
         }
@@ -547,22 +550,22 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder berserkerAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder berserkerAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
             builder.add(Attributes.ATTACK_DAMAGE,new AttributeModifier(location,2.4F,AttributeModifier.Operation.ADD_VALUE),slot);
             builder.add(Attributes.ATTACK_KNOCKBACK,new AttributeModifier(location,0.4F,AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
             builder.add(Attributes.FALL_DAMAGE_MULTIPLIER,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,new AttributeModifier(location,0.1F,AttributeModifier.Operation.ADD_VALUE),slot);
             builder.add(Attributes.SWEEPING_DAMAGE_RATIO,new AttributeModifier(location,0.7F,AttributeModifier.Operation.ADD_VALUE),slot);
             builder.add(Attributes.MOVEMENT_EFFICIENCY,new AttributeModifier(location,0.3F,AttributeModifier.Operation.ADD_VALUE),slot);
@@ -573,23 +576,23 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder rogueAttributes(Type type, ItemAttributeModifiers.Builder builder){
-        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(type.getSlot());
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+    protected ItemAttributeModifiers.Builder rogueAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
+        ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
 
 
-        if (type == Type.HELMET){
+        if (ArmorType == ArmorType.HELMET){
             builder.add(Attributes.BLOCK_INTERACTION_RANGE,new AttributeModifier(location,0.35F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
-        }else if (type == Type.CHESTPLATE){
+        }else if (ArmorType == ArmorType.CHESTPLATE){
             builder.add(Attributes.ATTACK_SPEED,new AttributeModifier(location,0.2F,AttributeModifier.Operation.ADD_VALUE),slot);
 
-        }else if (type == Type.LEGGINGS){
+        }else if (ArmorType == ArmorType.LEGGINGS){
             builder.add(Attributes.JUMP_STRENGTH,new AttributeModifier(location,0.6F,AttributeModifier.Operation.ADD_VALUE),slot);
             builder.add(Attributes.FALL_DAMAGE_MULTIPLIER,new AttributeModifier(location,-0.5F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
 
-        }else if (type == Type.BOOTS){
+        }else if (ArmorType == ArmorType.BOOTS){
             builder.add(Attributes.SAFE_FALL_DISTANCE,new AttributeModifier(location,6.0F,AttributeModifier.Operation.ADD_VALUE),slot);
             builder.add(Attributes.GRAVITY,new AttributeModifier(location,-0.4F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);
             builder.add(Attributes.SNEAKING_SPEED,new AttributeModifier(location,0.3F,AttributeModifier.Operation.ADD_MULTIPLIED_BASE),slot);

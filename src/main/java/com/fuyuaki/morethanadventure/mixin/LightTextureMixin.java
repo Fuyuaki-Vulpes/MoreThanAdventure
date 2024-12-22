@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import com.fuyuaki.morethanadventure.game.client.PlayerModelOverlayUtil;
 import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
@@ -18,7 +16,7 @@ public class LightTextureMixin {
     private float f5Change(float x){
         Player player = Minecraft.getInstance().player;
         if (player == null)return x;
-        if (PlayerModelOverlayUtil.shouldRenderSirenParts(player) && AttributeModifierTalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(),player)){
+        if (AttributeModifierTalismanItem.enableScubaGearEffects(player)){
             return 1.0F;
         }
         return x;

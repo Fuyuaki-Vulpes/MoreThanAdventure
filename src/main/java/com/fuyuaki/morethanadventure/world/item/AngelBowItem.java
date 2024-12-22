@@ -8,10 +8,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -43,8 +41,8 @@ public class AngelBowItem extends BowItem {
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack pStack) {
-        return UseAnim.BOW;
+    public ItemUseAnimation getUseAnimation(ItemStack pStack) {
+        return ItemUseAnimation.BOW;
     }
 
 
@@ -54,19 +52,19 @@ public class AngelBowItem extends BowItem {
         return builder;
     }
 
-    @Override
+
     public ItemAttributeModifiers getDefaultAttributeModifiers() {
         return this.attributeModifiers.get();
     }
 
     @Override
-    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
+    public boolean releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
         if (pEntityLiving instanceof Player player) {
             int i = this.getUseDuration(pStack, pEntityLiving) - pTimeLeft;
 
             i = net.neoforged.neoforge.event.EventHooks.onArrowLoose(pStack, pLevel, player, i,true);
 
-            if (i < 0) return;
+            if (i < 0) return false;
             float f = getPowerForTime(i);
             if (!((double) f < 0.1)) {
                 List<ItemStack> list = draw(pStack, Items.ARROW.getDefaultInstance(), player);
@@ -87,6 +85,7 @@ public class AngelBowItem extends BowItem {
                 player.awardStat(Stats.ITEM_USED.get(this));
             }
         }
+        return true;
     }
 
     @Override
@@ -104,10 +103,6 @@ public class AngelBowItem extends BowItem {
         return customArrow(abstractarrow, pAmmo, pWeapon);
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 19;
-    }
 
 
     @Override
@@ -118,14 +113,14 @@ public class AngelBowItem extends BowItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+    public InteractionResult use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
 
-        InteractionResultHolder<ItemStack> ret = net.neoforged.neoforge.event.EventHooks.onArrowNock(itemstack, pLevel, pPlayer, pHand, true);
+        InteractionResult ret = net.neoforged.neoforge.event.EventHooks.onArrowNock(itemstack, pLevel, pPlayer, pHand, true);
         if (ret != null) return ret;
 
         pPlayer.startUsingItem(pHand);
-        return InteractionResultHolder.consume(itemstack);
+        return InteractionResult.CONSUME;
 
     }
 

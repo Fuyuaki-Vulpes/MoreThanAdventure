@@ -35,7 +35,6 @@ public class NetheriteBowItem extends BowItem {
         return builder;
     }
 
-    @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers() {
         return this.attributeModifiers.get();
     }

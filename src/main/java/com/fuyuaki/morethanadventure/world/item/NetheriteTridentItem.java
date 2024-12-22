@@ -46,13 +46,9 @@ public class NetheriteTridentItem extends TridentItem{
                 .build();
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 15;
-    }
 
     @Override
-    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
+    public boolean releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
         if (pEntityLiving instanceof Player player) {
             int i = this.getUseDuration(pStack, pEntityLiving) - pTimeLeft;
             if (i >= 10) {
@@ -102,6 +98,7 @@ public class NetheriteTridentItem extends TridentItem{
                 }
             }
         }
+        return true;
     }
 
     @Override

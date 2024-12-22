@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -51,14 +51,14 @@ public class SentinelsWarHammerItem extends MaceItem {
         );
     }
 
-    
+
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
+    public InteractionResult use(Level level, Player player, InteractionHand usedHand) {
         ItemStack itemstack = player.getItemInHand(usedHand);
         player.playSound(SoundEvents.ANVIL_HIT);
         player.playSound(SoundEvents.GENERIC_EXPLODE.value());
-        player.getCooldowns().addCooldown(itemstack.getItem(),1000);
+        player.getCooldowns().addCooldown(itemstack,1000);
 
         List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class,player.getBoundingBox().inflate(10.0));
         list.removeIf(player::isAlliedTo);
@@ -69,7 +69,7 @@ public class SentinelsWarHammerItem extends MaceItem {
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN,200,1));
 
         });
-        return InteractionResultHolder.success(itemstack);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -115,13 +115,8 @@ public class SentinelsWarHammerItem extends MaceItem {
                 enchantment.is(Enchantments.UNBREAKING);
     }
 
-    @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers() {
         return this.attributeModifiers.get();
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 10;
-    }
 }

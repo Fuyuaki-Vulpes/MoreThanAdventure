@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item.curio.talisman;
 
+import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.Holder;
@@ -8,13 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.SlotResult;
-import top.theillusivec4.curios.api.type.capability.ICurioItem;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import java.util.List;
@@ -45,13 +43,11 @@ public class AttributeModifierTalismanItem extends TalismanItem{
     }
 
 
-    public static boolean shouldRenderParts(AttributeModifierTalismanItem item, LivingEntity player) {
+    public static boolean enableScubaGearEffects(LivingEntity player) {
         if (CuriosApi.getCuriosInventory(player).isEmpty())
             return false;
         ICuriosItemHandler handler = CuriosApi.getCuriosInventory(player).get();
 
-        List<SlotResult> slotResults = handler.findCurios("talisman");
-
-        return slotResults.stream().anyMatch(slot -> slot.stack().is(item));
+        return handler.isEquipped(MtaItems.SIREN_TALISMAN.get()) &&  player.isInWater();
     }
 }

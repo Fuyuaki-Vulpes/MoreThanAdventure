@@ -16,7 +16,7 @@ import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 public class StunRenderer {
     private static final ResourceLocation STUN_LOCATION = ResourceLocation.fromNamespaceAndPath(MODID,"textures/misc/stun.png");
 
-    public static void render(Minecraft minecraft, RenderBuffers renderBuffers, GuiGraphics guiGraphics, float partialTick) {
+    public static void render(Minecraft minecraft, GuiGraphics guiGraphics, float partialTick) {
         assert minecraft.player != null;
 
         float p = (minecraft.player.tickCount + partialTick) / 300;

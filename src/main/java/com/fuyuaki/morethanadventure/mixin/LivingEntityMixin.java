@@ -54,14 +54,14 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(method = "isAffectedByFluids", at = @At("HEAD"), cancellable = true)
     public void isPushedByFluid(CallbackInfoReturnable<Boolean> cir) {
-        if (AttributeModifierTalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), thisLiving)) {
+        if (AttributeModifierTalismanItem.enableScubaGearEffects(thisLiving)) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(method = "canBreatheUnderwater", at = @At("HEAD"), cancellable = true)
     public void canBreatheUnderwater(CallbackInfoReturnable<Boolean> cir) {
-        if (AttributeModifierTalismanItem.shouldRenderParts(MtaItems.SIREN_TALISMAN.get(), thisLiving)) {
+        if (AttributeModifierTalismanItem.enableScubaGearEffects(thisLiving)) {
             cir.setReturnValue(true);
         }
     }

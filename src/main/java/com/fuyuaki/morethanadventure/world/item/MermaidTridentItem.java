@@ -16,8 +16,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -55,12 +54,12 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
-        if (player.isCrouching() && !player.getCooldowns().isOnCooldown(itemstack.getItem())) {
+        if (player.isCrouching() && !player.getCooldowns().isOnCooldown(itemstack)) {
             player.startUsingItem(hand);
             this.wasCharging = true;
-            return InteractionResultHolder.consume(itemstack);
+            return InteractionResult.CONSUME;
         }
         return super.use(level, player, hand);
     }
@@ -105,7 +104,7 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                             level.addParticle(MtaParticles.UNPOPPABLE_BUBBLE.get(), living.getRandomX(0.8F), living.getY() + 0.5F, living.getRandomZ(0.8), 0, 0.5, 0);
                         }
                         living.hurt(player.damageSources().magic(), Math.min(Math.max(living.getMaxHealth() / 5, 15), 80));
-                        player.getCooldowns().addCooldown(stack.getItem(),200);
+                        player.getCooldowns().addCooldown(stack,200);
                         player.stopUsingItem();
 
                     }else {
@@ -186,11 +185,11 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
     }
 
     @Override
-    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
+    public boolean releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
         if (this.wasCharging) {
             this.startedUsingTick = 0;
             this.wasCharging = false;
-            return;
+            return false;
         }
 
         if (pEntityLiving instanceof Player player) {
@@ -242,6 +241,7 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
                 }
             }
         }
+        return true;
     }
 
     private static boolean isTooDamagedToUse(ItemStack pStack) {
@@ -255,8 +255,4 @@ public class MermaidTridentItem extends TridentItem implements ProjectileItem {
         return throwntrident;
     }
 
-    @Override
-    public int getEnchantmentValue() {
-        return 19;
-    }
 }

@@ -42,65 +42,21 @@ public class MtaFoods {
             .nutrition(3)
             .saturationModifier(0.6F)
             .build();
-    public static final FoodProperties SWEET_BEEF_CURRY = new FoodProperties.Builder()
+     public static final FoodProperties BEEF_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
             .build();
-    public static final FoodProperties SWEET_PORK_CURRY = new FoodProperties.Builder()
+     public static final FoodProperties PORK_CURRY = new FoodProperties.Builder()
             .nutrition(10)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
             .build();
-    public static final FoodProperties SWEET_CHICKEN_CURRY = new FoodProperties.Builder()
+     public static final FoodProperties CHICKEN_CURRY = new FoodProperties.Builder()
             .nutrition(8)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
             .build();
-    public static final FoodProperties SWEET_SHRIMP_CURRY = new FoodProperties.Builder()
+     public static final FoodProperties SHRIMP_CURRY = new FoodProperties.Builder()
             .nutrition(7)
             .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600, 1), 1.0F)
-            .build();
-    public static final FoodProperties MILD_BEEF_CURRY = new FoodProperties.Builder()
-            .nutrition(10)
-            .saturationModifier(1.3F)
-            .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
-            .build();
-     public static final FoodProperties MILD_PORK_CURRY = new FoodProperties.Builder()
-            .nutrition(10)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
-             .build();
-     public static final FoodProperties MILD_CHICKEN_CURRY = new FoodProperties.Builder()
-            .nutrition(8)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
-             .build();
-     public static final FoodProperties MILD_SHRIMP_CURRY = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 1), 1.0F)
-            .build();
-     public static final FoodProperties SPICY_BEEF_CURRY = new FoodProperties.Builder()
-            .nutrition(10)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
-            .build();
-     public static final FoodProperties SPICY_PORK_CURRY = new FoodProperties.Builder()
-            .nutrition(10)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
-            .build();
-     public static final FoodProperties SPICY_CHICKEN_CURRY = new FoodProperties.Builder()
-            .nutrition(8)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
-            .build();
-     public static final FoodProperties SPICY_SHRIMP_CURRY = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(1.3F)
-             .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 1), 1.0F)
             .build();
 
 }
