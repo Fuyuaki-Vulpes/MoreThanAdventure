@@ -1,17 +1,19 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
-import com.fuyuaki.morethanadventure.world.entity.CorrosiveCube;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.client.renderer.entity.state.SlimeRenderState;
 
-public class CorrosiveCubeModel<T extends CorrosiveCube> extends HierarchicalModel<T> {
+public class CorrosiveCubeModel<T extends SlimeRenderState> extends EntityModel<T> {
     private final ModelPart root;
 
     public CorrosiveCubeModel(ModelPart root) {
+        super(root);
         this.root = root;
     }
 
@@ -32,17 +34,6 @@ public class CorrosiveCubeModel<T extends CorrosiveCube> extends HierarchicalMod
         partdefinition.addOrReplaceChild("mouth", CubeListBuilder.create().texOffs(32, 8).addBox(0.0F, 21.0F, -3.5F, 1.0F, 1.0F, 1.0F), PartPose.ZERO);
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-    @Override
-    public ModelPart root() {
-        return null;
-    }
 
-    @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
-    }
 }

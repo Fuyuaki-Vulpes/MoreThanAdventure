@@ -38,6 +38,7 @@ public class MTAMod
         modEventBus.addListener(this::commonSetup);
 
         MTAComponents.register(modEventBus);
+        MTAAttachments.register(modEventBus);
         MtaEntityTypes.register(modEventBus);
         MtaBlockEntities.register(modEventBus);
         MtaBlocks.register(modEventBus);

@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity.layers;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.ButterflyModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ButterflyRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Butterfly;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,52 +18,43 @@ import net.minecraft.world.entity.animal.Cat;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 
-public class ButterflyOverlayLayer extends RenderLayer<Butterfly,ButterflyModel<Butterfly>> {
+public class ButterflyOverlayLayer extends RenderLayer<ButterflyRenderState,ButterflyModel<ButterflyRenderState>> {
 
     private static final ResourceLocation OVERLAY_A = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_a.png");
     private static final ResourceLocation OVERLAY_B = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_b.png");
     private static final ResourceLocation OVERLAY_C = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_c.png");
     private static final ResourceLocation OVERLAY_D = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/overlay_d.png");
-    private final ButterflyModel<Butterfly> modelLayer;
+    private final ButterflyModel<ButterflyRenderState> modelLayer;
 
-    public ButterflyOverlayLayer(RenderLayerParent<Butterfly,ButterflyModel<Butterfly>> renderer, EntityModelSet modelSet) {
+    public ButterflyOverlayLayer(RenderLayerParent<ButterflyRenderState,ButterflyModel<ButterflyRenderState>> renderer, EntityModelSet modelSet) {
         super(renderer);
         this.modelLayer = new ButterflyModel<>(modelSet.bakeLayer(MTAModelLayers.BUTTERFLY_OVERLAY));
 
     }
 
-    @Override
-    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, Butterfly livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
-        int i = livingEntity.getOverlayColor().getTextureDiffuseColor();
-        coloredCutoutModelCopyLayerRender(
-                this.getParentModel(),
-                this.modelLayer,
-                this.getOverlay(livingEntity),
-                poseStack,
-                bufferSource,
-                packedLight,
-                livingEntity,
-                limbSwing,
-                limbSwingAmount,
-                ageInTicks,
-                netHeadYaw,
-                headPitch,
-                partialTick,
-                i);
-    }
+    protected ResourceLocation getOverlay(int overlay) {
 
 
-    protected ResourceLocation getOverlay(Butterfly animatable) {
-
-
-        return switch (animatable.getOverlay()) {
+        return switch (overlay) {
             case 0 -> OVERLAY_A;
             case 1 -> OVERLAY_B;
             case 2 -> OVERLAY_C;
             case 3 -> OVERLAY_D;
-            default -> throw new IllegalStateException("Unexpected value: " + animatable.getOverlay());
+            default -> throw new IllegalStateException("Unexpected value: " + overlay);
         };
     }
 
 
+    @Override
+    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, ButterflyRenderState p_361554_, float p_117353_, float p_117354_) {
+        int i = p_361554_.overlayColor.getTextureDiffuseColor();
+        coloredCutoutModelCopyLayerRender(
+                this.getParentModel(),
+                this.getOverlay(p_361554_.overlayId),
+                poseStack,
+                bufferSource,
+                packedLight,
+                p_361554_,
+                i);
+    }
 }

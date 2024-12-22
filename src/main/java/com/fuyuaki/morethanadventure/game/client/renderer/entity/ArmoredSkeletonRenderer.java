@@ -5,19 +5,18 @@ import com.fuyuaki.morethanadventure.game.client.model.entity.ArmoredSkeletonMod
 import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.FakeArmorLayer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.SkeletonGlowLayer;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ArmoredSkeletonRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ArmoredSkeleton;
 import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
-import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.SkeletonRenderer;
+import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.Skeleton;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ArmoredSkeletonRenderer extends SkeletonRenderer<ArmoredSkeleton> {
+public class ArmoredSkeletonRenderer extends AbstractSkeletonRenderer<ArmoredSkeleton, ArmoredSkeletonRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton/armored_skeleton.png");
     public static final ResourceLocation ARMOR_TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton/armored_skeleton_overlay.png");
 
@@ -27,9 +26,12 @@ public class ArmoredSkeletonRenderer extends SkeletonRenderer<ArmoredSkeleton> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(ArmoredSkeleton entity) {
-        return TEXTURE;
+    public ArmoredSkeletonRenderState createRenderState() {
+        return new ArmoredSkeletonRenderState();
     }
 
-
+    @Override
+    public ResourceLocation getTextureLocation(ArmoredSkeletonRenderState p_368654_) {
+        return TEXTURE;
+    }
 }
