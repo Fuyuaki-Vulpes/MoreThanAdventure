@@ -8,6 +8,7 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -79,7 +80,7 @@ public class Raccoon extends MTATameableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        Raccoon raccoon = MtaEntityTypes.RACCOON.get().create(pLevel);
+        Raccoon raccoon = MtaEntityTypes.RACCOON.get().create(pLevel, EntitySpawnReason.BREEDING);
         return raccoon;
     }
 }

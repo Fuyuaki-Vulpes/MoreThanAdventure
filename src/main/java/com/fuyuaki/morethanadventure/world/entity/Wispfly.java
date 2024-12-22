@@ -62,7 +62,7 @@ public class Wispfly extends TamableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        return MtaEntityTypes.WISPFLY.get().create(level);
+        return MtaEntityTypes.WISPFLY.get().create(level, EntitySpawnReason.BREEDING);
     }
 
     @Override
@@ -110,7 +110,6 @@ public class Wispfly extends TamableAnimal {
     };
         flyingpathnavigation.setCanOpenDoors(false);
         flyingpathnavigation.setCanFloat(true);
-        flyingpathnavigation.setCanPassDoors(true);
         return flyingpathnavigation;
     }
 
@@ -140,7 +139,7 @@ public class Wispfly extends TamableAnimal {
                     this.setPersistenceRequired();
                 }
 
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
+                return InteractionResult.SUCCESS;
             }
         }
 
@@ -193,8 +192,8 @@ public class Wispfly extends TamableAnimal {
     }
 
     public static boolean checkWispSpawnRules(
-            EntityType<? extends Animal> animal, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random
+            EntityType<? extends Animal> animal, LevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random
     ) {
-        return MobSpawnType.ignoresLightRequirements(spawnType) || isBrightEnoughToSpawn(level, pos);
+        return level.getBlockState(pos).isAir();
     }
 }

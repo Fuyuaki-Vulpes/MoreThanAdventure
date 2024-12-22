@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -64,7 +65,7 @@ public class BeardedDragon extends MTATameableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        BeardedDragon beardedDragon = MtaEntityTypes.BEARDED_DRAGON.get().create(pLevel);
+        BeardedDragon beardedDragon = MtaEntityTypes.BEARDED_DRAGON.get().create(pLevel, EntitySpawnReason.BREEDING);
         return beardedDragon;
     }
 }

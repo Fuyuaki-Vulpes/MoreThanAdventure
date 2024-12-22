@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -30,18 +31,18 @@ public abstract class MTATameableAnimal extends TamableAnimal {
             if (this.isOwnedBy(pPlayer)) {
                 if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
                     if (!this.level().isClientSide()) {
-                        FoodProperties foodproperties = itemstack.getFoodProperties(this);
+                        FoodProperties foodproperties = itemstack.get(DataComponents.FOOD);
                         this.heal(foodproperties != null ? (float)foodproperties.nutrition() : 1.0F);
                         this.usePlayerItem(pPlayer, pHand, itemstack);
                     }
 
-                    return InteractionResult.sidedSuccess(this.level().isClientSide());
+                    return InteractionResult.SUCCESS;
                 }
 
                 InteractionResult interactionresult = super.mobInteract(pPlayer, pHand);
                 if (!interactionresult.consumesAction()) {
                     this.setOrderedToSit(!this.isOrderedToSit());
-                    return InteractionResult.sidedSuccess(this.level().isClientSide());
+                    return InteractionResult.SUCCESS;
                 }
 
                 return interactionresult;
@@ -53,7 +54,7 @@ public abstract class MTATameableAnimal extends TamableAnimal {
                 this.setPersistenceRequired();
             }
 
-            return InteractionResult.sidedSuccess(this.level().isClientSide());
+            return InteractionResult.SUCCESS;
         }
 
         InteractionResult interactionresult1 = super.mobInteract(pPlayer, pHand);

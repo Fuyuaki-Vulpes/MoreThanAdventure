@@ -4,12 +4,14 @@ import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -50,7 +52,7 @@ public class FrostedSlime extends Slime {
                 this.hurt(this.damageSources().onFire(), 1.0F);
             }
 
-            if (!net.neoforged.neoforge.event.EventHooks.canEntityGrief(this.level(), this)) {
+            if (!net.neoforged.neoforge.event.EventHooks.canEntityGrief((ServerLevel) this.level(), this)) {
                 return;
             }
 
@@ -94,10 +96,10 @@ public class FrostedSlime extends Slime {
     }
 
     public static boolean checkSpawnRules(
-            EntityType<? extends Slime> type, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random
+            EntityType<? extends Slime> type, ServerLevelAccessor level, EntitySpawnReason spawnType, BlockPos pos, RandomSource random
     ) {
         return level.getDifficulty() != Difficulty.PEACEFUL
-                && (MobSpawnType.ignoresLightRequirements(spawnType) || isDarkEnoughToSpawn(level, pos, random));
+                && (EntitySpawnReason.ignoresLightRequirements(spawnType) || isDarkEnoughToSpawn(level, pos, random));
     }
 
     public static boolean isDarkEnoughToSpawn(ServerLevelAccessor level, BlockPos pos, RandomSource random) {

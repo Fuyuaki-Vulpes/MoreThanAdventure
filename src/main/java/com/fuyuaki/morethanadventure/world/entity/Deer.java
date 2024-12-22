@@ -68,7 +68,7 @@ public class Deer extends Animal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        Deer deer = MtaEntityTypes.DEER.get().create(level);
+        Deer deer = MtaEntityTypes.DEER.get().create(level, EntitySpawnReason.BREEDING);
         deer.setAge(-24000);
         return deer;
     }

@@ -66,7 +66,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(2, new Butterfly.ButterflyWanderGoal(this, 1.0F));
         this.goalSelector.addGoal(3, new FollowMobGoal(this, 1.0, 1.0F, 7.0F));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(ItemTags.FLOWERS), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, p_335831_ -> p_335831_.is(ItemTags.SMALL_FLOWERS), false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
         this.goalSelector.addGoal(9, new FloatGoal(this));
 
@@ -87,7 +87,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return pStack.is(ItemTags.FLOWERS);
+        return pStack.is(ItemTags.SMALL_FLOWERS);
     }
 
 
@@ -95,7 +95,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
         Butterfly otherParent = (Butterfly) pOtherParent;
-        Butterfly baby = MtaEntityTypes.BUTTERFLY.get().create(pLevel);
+        Butterfly baby = MtaEntityTypes.BUTTERFLY.get().create(pLevel, EntitySpawnReason.BREEDING);
         if (baby == null) return null;
         int pattern = pLevel.getRandom().nextBoolean() ? this.getPattern() : otherParent.getPattern();
         int overlay = pLevel.getRandom().nextBoolean() ? this.getOverlay() : otherParent.getOverlay();
@@ -118,7 +118,6 @@ public class Butterfly extends Animal implements FlyingAnimal {
 
         flyingpathnavigation.setCanOpenDoors(false);
         flyingpathnavigation.setCanFloat(false);
-        flyingpathnavigation.setCanPassDoors(true);
         return flyingpathnavigation;
     }
 
@@ -195,7 +194,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
 
     @javax.annotation.Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pSpawnType, @javax.annotation.Nullable SpawnGroupData pSpawnGroupData) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, EntitySpawnReason pSpawnType, @javax.annotation.Nullable SpawnGroupData pSpawnGroupData) {
         RandomSource randomsource = pLevel.getRandom();
         DyeColor[] adyecolor = DyeColor.values();
         DyeColor dyecolor = Util.getRandom(adyecolor, randomsource);

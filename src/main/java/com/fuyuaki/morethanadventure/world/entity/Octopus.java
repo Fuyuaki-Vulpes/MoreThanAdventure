@@ -7,10 +7,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -75,7 +72,7 @@ public class Octopus extends MTATameableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        Octopus octopus = MtaEntityTypes.OCTOPUS.get().create(pLevel);
+        Octopus octopus = MtaEntityTypes.OCTOPUS.get().create(pLevel, EntitySpawnReason.BREEDING);
         return octopus;
     }
 
@@ -126,7 +123,7 @@ public class Octopus extends MTATameableAnimal {
     }
 
     @Override
-    protected int getBaseExperienceReward() {
+    protected int getBaseExperienceReward(ServerLevel level) {
         return 1 + this.level().random.nextInt(3);
     }
 

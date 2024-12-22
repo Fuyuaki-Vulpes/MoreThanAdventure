@@ -11,6 +11,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.TamableAnimal;
@@ -88,15 +89,15 @@ public class Capybara extends MTATameableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        Capybara capybara = MtaEntityTypes.CAPIBARA.get().create(pLevel);
+        Capybara capybara = MtaEntityTypes.CAPIBARA.get().create(pLevel, EntitySpawnReason.BREEDING);
         return capybara;
     }
 
 
     public static boolean checkAnimalSpawnRules(
-            EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom
+            EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, EntitySpawnReason pSpawnType, BlockPos pPos, RandomSource pRandom
     ) {
-        boolean flag = MobSpawnType.ignoresLightRequirements(pSpawnType) || isBrightEnoughToSpawn(pLevel, pPos);
+        boolean flag = EntitySpawnReason.ignoresLightRequirements(pSpawnType) || isBrightEnoughToSpawn(pLevel, pPos);
         return Animal.checkAnimalSpawnRules(pAnimal,pLevel,pSpawnType,pPos,pRandom) || pLevel.getBlockState(pPos.below()).is(BlockTags.AXOLOTLS_SPAWNABLE_ON) && flag ;
     }
 }

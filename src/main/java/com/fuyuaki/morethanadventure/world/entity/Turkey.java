@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -151,7 +152,7 @@ public class Turkey extends Animal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        Turkey turkey = MtaEntityTypes.TURKEY.get().create(level);
+        Turkey turkey = MtaEntityTypes.TURKEY.get().create(level, EntitySpawnReason.BREEDING);
         turkey.setAge(-24000);
         return turkey;
     }

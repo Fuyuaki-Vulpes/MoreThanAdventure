@@ -3,13 +3,12 @@ package com.fuyuaki.morethanadventure.world.entity.Arrows;
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.FastColor;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -24,8 +23,6 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-
-import java.util.Arrays;
 
 public class MTAArrowEntity extends AbstractArrow {
 
@@ -75,14 +72,14 @@ public class MTAArrowEntity extends AbstractArrow {
     public void tick() {
         super.tick();
         if (this.level().isClientSide) {
-            if (this.inGround) {
+            if (this.isInGround()) {
                 if (this.inGroundTime % 5 == 0) {
                     this.makeParticle(1);
                 }
             } else {
                 this.makeParticle(2);
             }
-        } else if (this.inGround && this.inGroundTime != 0 && this.inGroundTime >= 600) {
+        } else if (this.isInGround() && this.inGroundTime != 0 && this.inGroundTime >= 600) {
             this.level().broadcastEntityEvent(this, (byte)0);
             this.setPickupItemStack(new ItemStack(Items.ARROW));
         }
@@ -93,7 +90,7 @@ public class MTAArrowEntity extends AbstractArrow {
             for (int j = 0; j < pParticleAmount; j++) {
                 this.level()
                         .addParticle(
-                                ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, FastColor.ARGB32.color(255,0x32EAFF) ),
+                                ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, ARGB.color(255,0x32EAFF) ),
                                 this.getRandomX(0.5),
                                 this.getRandomY(),
                                 this.getRandomZ(0.5),
@@ -151,7 +148,7 @@ public class MTAArrowEntity extends AbstractArrow {
             entity.igniteForSeconds(5.0F);
         }
 
-        if (entity.hurt(damagesource, (float)j)) {
+        if (entity.hurtServer((ServerLevel) this.level(),damagesource, (float)j)) {
             if (flag) {
                 return;
             }
@@ -175,13 +172,6 @@ public class MTAArrowEntity extends AbstractArrow {
                     this.piercedAndKilledEntities.add(livingentity);
                 }
 
-                if (!this.level().isClientSide && entity1 instanceof ServerPlayer serverplayer) {
-                    if (this.piercedAndKilledEntities != null && this.shotFromCrossbow()) {
-                        CriteriaTriggers.KILLED_BY_CROSSBOW.trigger(serverplayer, this.piercedAndKilledEntities);
-                    } else if (!entity.isAlive() && this.shotFromCrossbow()) {
-                        CriteriaTriggers.KILLED_BY_CROSSBOW.trigger(serverplayer, Arrays.asList(entity));
-                    }
-                }
             }
 
             this.playSound(this.soundEvent, 1.0F, 1.5F / (this.random.nextFloat() * 0.2F + 0.9F));
@@ -194,7 +184,7 @@ public class MTAArrowEntity extends AbstractArrow {
             this.setDeltaMovement(this.getDeltaMovement().scale(this.movementScalar));
             if (!this.level().isClientSide && this.getDeltaMovement().lengthSqr() < 1.0E-7) {
                 if (this.pickup == AbstractArrow.Pickup.ALLOWED) {
-                    this.spawnAtLocation(this.getPickupItem(), 0.1F);
+                    this.spawnAtLocation((ServerLevel) this.level(),this.getPickupItem(), 0.1F);
                 }
 
                 this.discard();

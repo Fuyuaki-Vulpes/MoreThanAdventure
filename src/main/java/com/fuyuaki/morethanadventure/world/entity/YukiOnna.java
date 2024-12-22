@@ -58,7 +58,6 @@ public class YukiOnna extends Monster implements FlyingAnimal {
         FlyingPathNavigation flyingpathnavigation = new FlyingPathNavigation(this, pLevel);
         flyingpathnavigation.setCanOpenDoors(false);
         flyingpathnavigation.setCanFloat(true);
-        flyingpathnavigation.setCanPassDoors(true);
         return flyingpathnavigation;
     }
 
@@ -116,13 +115,13 @@ public class YukiOnna extends Monster implements FlyingAnimal {
 
 
     @Override
-    public boolean doHurtTarget(Entity pEntity) {
+    public boolean doHurtTarget(ServerLevel level, Entity pEntity) {
         pEntity.setTicksFrozen(pEntity.getTicksFrozen() + 100);
         if (pEntity instanceof LivingEntity living) {
             living.addEffect(new MobEffectInstance(MtaEffects.FREEZING, 40));
         }
 
-        return super.doHurtTarget(pEntity);
+        return super.doHurtTarget(level,pEntity);
     }
 
     @Override

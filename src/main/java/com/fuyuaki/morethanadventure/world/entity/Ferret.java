@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -76,7 +77,7 @@ public class Ferret extends MTATameableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        Ferret ferret = MtaEntityTypes.FERRET.get().create(pLevel);
+        Ferret ferret = MtaEntityTypes.FERRET.get().create(pLevel, EntitySpawnReason.BREEDING);
         return ferret;
     }
 

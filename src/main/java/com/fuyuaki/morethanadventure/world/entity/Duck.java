@@ -91,7 +91,7 @@ public class Duck extends MTATameableAnimal implements VariantHolder<Duck.Varian
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        Duck duck = MtaEntityTypes.DUCK.get().create(pLevel);
+        Duck duck = MtaEntityTypes.DUCK.get().create(pLevel, EntitySpawnReason.BREEDING);
         return duck;
     }
 
@@ -126,7 +126,7 @@ public class Duck extends MTATameableAnimal implements VariantHolder<Duck.Varian
     }
 
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, EntitySpawnReason pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
         Variant varient = Util.getRandom(Variant.values(), this.random);
         this.setVariant(varient);
         return super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);

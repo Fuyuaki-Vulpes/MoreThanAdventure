@@ -1,11 +1,13 @@
 package com.fuyuaki.morethanadventure.world.event;
 
 import com.fuyuaki.morethanadventure.core.MTAMod;
-import com.fuyuaki.morethanadventure.core.registry.*;
+import com.fuyuaki.morethanadventure.core.registry.MtaBlockEntities;
+import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.*;
-import com.fuyuaki.morethanadventure.game.client.renderer.MTAItemWithoutLevelRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
@@ -13,21 +15,17 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
-import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.jarjar.nio.util.Lazy;
-import net.neoforged.neoforge.client.event.*;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -193,57 +191,48 @@ public class MTAClientEvents
     }
     @SubscribeEvent
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), MtaBlocks.PALM_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PALM_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.SCATTERED_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_EVERGREEN, MtaBlocks.SWEET_BERRY_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.SHALLOW_GRASS.get());
     }
+//
+//    @SubscribeEvent
+//    public static void registerColoredItems(RegisterColorHandlersEvent.ItemTintSources event) {
+//        event.register((pStack, pTintIndex) -> FoliageColor.(), MtaBlocks.PALM_LEAVES);
+//        event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES);
+//        event.register((pStack, pTintIndex) -> FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES);
+//        event.register(ItemTintSources., MtaBlocks.GRASSY_DIRT);
+//        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS);
+//        event.register((pStack, pTintIndex) -> GrassColor::getDefaultColor, MtaBlocks.SHALLOW_GRASS);
+//    }
 
-    @SubscribeEvent
-    public static void registerColoredItems(RegisterColorHandlersEvent.ItemTintSources event) {
-        event.register((pStack, pTintIndex) -> FoliageColor.(), MtaBlocks.PALM_LEAVES);
-        event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES);
-        event.register((pStack, pTintIndex) -> FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES);
-        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT);
-        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS);
-        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.SHALLOW_GRASS);
-    }
-
-
-    @SubscribeEvent
-    public static void clientExtensionEvent(RegisterClientExtensionsEvent event) {
-        event.registerItem(new IClientItemExtensions() {
-            private final Lazy<BlockEntityWithoutLevelRenderer> ister = Lazy.of(() -> MTAItemWithoutLevelRenderer.INSTANCE);
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return ister.get();
-            }
-        }, MtaItems.NETHERITE_TRIDENT.get(), MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
-                );
-    }
-    @SubscribeEvent
-    public static void clientReloadListenersEvent(RegisterClientReloadListenersEvent event) {
-        event.registerReloadListener(
-                MTAItemWithoutLevelRenderer.INSTANCE
-        );
-    }
+//
+//    @SubscribeEvent
+//    public static void clientExtensionEvent(RegisterClientExtensionsEvent event) {
+//        event.registerItem(new IClientItemExtensions() {
+//            private final Lazy<BlockEntityWithoutLevelRenderer> ister = Lazy.of(() -> MTAItemWithoutLevelRenderer.INSTANCE);
+//            @Override
+//            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+//                return ister.get();
+//            }
+//        }, MtaItems.NETHERITE_TRIDENT.get(), MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
+//                );
+//    }
+//    @SubscribeEvent
+//    public static void clientReloadListenersEvent(RegisterClientReloadListenersEvent event) {
+//        event.registerReloadListener(
+//                MTAItemWithoutLevelRenderer.INSTANCE
+//        );
+//    }
 
 
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {
     }
 
-    @SubscribeEvent
-    public static void addLayer(final EntityRenderersEvent.AddLayers event) {
-        for(PlayerSkin.Model skin : event.getSkins()) {
-            LivingEntityRenderer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> renderer = event.getSkin(skin);
-            if(renderer != null) {
-                renderer.addLayer(new SirenRenderLayer<>(renderer,event.getContext()));
-            }
-        }
-    }
 
 
 

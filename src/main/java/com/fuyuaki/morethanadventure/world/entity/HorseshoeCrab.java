@@ -7,10 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -78,7 +75,7 @@ public class HorseshoeCrab extends MTATameableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        HorseshoeCrab horseshoeCrab = MtaEntityTypes.HORSESHOE_CRAB.get().create(pLevel);
+        HorseshoeCrab horseshoeCrab = MtaEntityTypes.HORSESHOE_CRAB.get().create(pLevel, EntitySpawnReason.BREEDING);
         return horseshoeCrab;
     }
 

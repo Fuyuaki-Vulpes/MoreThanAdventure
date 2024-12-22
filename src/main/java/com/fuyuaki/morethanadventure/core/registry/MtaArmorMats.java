@@ -29,7 +29,7 @@ public class MtaArmorMats {
                     5F, 0.25F, Ingredient.of(MtaItems.AGATE)
             );
 
-    public static final Holder<ArmorMaterial> HOLY_KNIGHT = new ArmorMaterial("holy_knight",
+    public static final ArmorMaterial HOLY_KNIGHT = new ArmorMaterial("holy_knight",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 3);
                 map.put(ArmorType.LEGGINGS, 7);
@@ -42,7 +42,7 @@ public class MtaArmorMats {
             3F, 0.11F
     ));
 
-    public static final Holder<ArmorMaterial> MYSTIC_MERMAID = new ArmorMaterial("mystic_mermaid",
+    public static final ArmorMaterial MYSTIC_MERMAID = new ArmorMaterial("mystic_mermaid",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 3);
                 map.put(ArmorType.LEGGINGS, 6);
@@ -55,7 +55,7 @@ public class MtaArmorMats {
             3F, 0.1F
     ));
 
-    public static final Holder<ArmorMaterial> SILENT_REAPER = new ArmorMaterial("silent_reaper",
+    public static final ArmorMaterial SILENT_REAPER = new ArmorMaterial("silent_reaper",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 3);
                 map.put(ArmorType.LEGGINGS, 6);
@@ -68,7 +68,7 @@ public class MtaArmorMats {
             1.5F, 0.01F
     ));
 
-    public static final Holder<ArmorMaterial> TEMPLE_ANGEL = new ArmorMaterial("temple_angel",
+    public static final ArmorMaterial TEMPLE_ANGEL = new ArmorMaterial("temple_angel",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 3);
                 map.put(ArmorType.LEGGINGS, 6);
@@ -81,7 +81,7 @@ public class MtaArmorMats {
             2F, 0.0F
     ));
 
-    public static final Holder<ArmorMaterial> FREEZING_ICICLE = new ArmorMaterial("freezing_icicle",
+    public static final ArmorMaterial FREEZING_ICICLE = new ArmorMaterial("freezing_icicle",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 3);
                 map.put(ArmorType.LEGGINGS, 6);
@@ -94,7 +94,7 @@ public class MtaArmorMats {
             2F, 0.0F
     ));
 
-    public static final Holder<ArmorMaterial> WRATHFUL_BERSERKER =
+    public static final ArmorMaterial WRATHFUL_BERSERKER =
             new ArmorMaterial("wrathful_berserker",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 2);
@@ -108,7 +108,7 @@ public class MtaArmorMats {
             1F, 0.05F
     ));
 
-    public static final Holder<ArmorMaterial> SHADOW_ROGUE = new ArmorMaterial("shadow_rogue",
+    public static final ArmorMaterial SHADOW_ROGUE = new ArmorMaterial("shadow_rogue",
             Util.make(new EnumMap<>(ArmorType.class), map -> {
                 map.put(ArmorType.BOOTS, 2);
                 map.put(ArmorType.LEGGINGS, 5);

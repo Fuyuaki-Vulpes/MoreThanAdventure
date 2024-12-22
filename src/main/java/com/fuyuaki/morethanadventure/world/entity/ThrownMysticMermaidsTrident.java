@@ -67,7 +67,7 @@ public class ThrownMysticMermaidsTrident extends AbstractArrow {
         if (i > 0 && (this.dealtDamage || this.isNoPhysics()) && entity != null) {
             if (!this.isAcceptibleReturnOwner()) {
                 if (!this.level().isClientSide && this.pickup == Pickup.ALLOWED) {
-                    this.spawnAtLocation(this.getPickupItem(), 0.1F);
+                    this.spawnAtLocation((ServerLevel) this.level(),this.getPickupItem(), 0.1F);
                 }
 
                 this.discard();
@@ -124,7 +124,7 @@ public class ThrownMysticMermaidsTrident extends AbstractArrow {
         }
 
         this.dealtDamage = true;
-        if (entity.hurt(damagesource, f)) {
+        if (entity.hurtServer((ServerLevel) this.level(),damagesource, f)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }
@@ -158,7 +158,7 @@ public class ThrownMysticMermaidsTrident extends AbstractArrow {
                 null,
                 vec3,
                 pLevel.getBlockState(pHitResult.getBlockPos()),
-                p_348680_ -> this.kill()
+                p_348680_ -> this.kill(pLevel)
         );
     }
 

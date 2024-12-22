@@ -25,14 +25,14 @@ import java.util.function.Supplier;
 
 public class MTAArmor extends ArmorItem {
     protected final UUID FULL_SET_UUID = UUID.fromString("78f6b05d-a0ff-4b5e-86dc-9b397d5b7878");
-    private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL.;
-    private static final ArmorMaterial KNIGHT = MtaArmorMats.HOLY_KNIGHT.value();
-    private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID.value();
-    private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER.value();
-    private static final ArmorMaterial ANGEL = MtaArmorMats.TEMPLE_ANGEL.value();
-    private static final ArmorMaterial ICICLE = MtaArmorMats.FREEZING_ICICLE.value();
-    private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER.value();
-    private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE.value();
+    private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL;
+    private static final ArmorMaterial KNIGHT = MtaArmorMats.HOLY_KNIGHT;
+    private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID;
+    private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER;
+    private static final ArmorMaterial ANGEL = MtaArmorMats.TEMPLE_ANGEL;
+    private static final ArmorMaterial ICICLE = MtaArmorMats.FREEZING_ICICLE;
+    private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER;
+    private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE;
 
     //ATTRIBUTES
 
@@ -56,7 +56,7 @@ public class MTAArmor extends ArmorItem {
                             Attributes.ARMOR_TOUGHNESS, new AttributeModifier(resourcelocation, (double)f, AttributeModifier.Operation.ADD_VALUE), equipmentslotgroup
                     );
 
-                    float f1 = pMaterial.value().knockbackResistance();
+                    float f1 = pMaterial.knockbackResistance();
                     if (f1 > 0.0F) {
                         builder.add(
                                 Attributes.KNOCKBACK_RESISTANCE,
@@ -100,10 +100,10 @@ public class MTAArmor extends ArmorItem {
         ArmorMaterial leggings = ArmorMaterials.ARMADILLO_SCUTE;
         ArmorMaterial boots = ArmorMaterials.ARMADILLO_SCUTE;
 
-        if (hasHelmet) helmet = (entity.getItemBySlot(ArmorType.HELMET.getSlot()).get(DataComponents.EQUIPPABLE).assetId()).;
-        if (hasChestplate) chestplate = (entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()).getItem()).getMaterial().value();
-        if (hasLeggings) leggings = (entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()).getItem()).getMaterial().value();
-        if (hasBoots) boots = (entity.getItemBySlot(ArmorType.BOOTS.getSlot()).getItem()).getMaterial().value();
+        if (hasHelmet) helmet = (entity.getItemBySlot(ArmorType.HELMET.getSlot()).get(DataComponents.EQUIPPABLE).assetId());
+        if (hasChestplate) chestplate = (entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()).getItem());
+        if (hasLeggings) leggings = (entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()).getItem());
+        if (hasBoots) boots = (entity.getItemBySlot(ArmorType.BOOTS.getSlot()).getItem());
 
         
         doSentinelEffects(entity,
@@ -397,29 +397,29 @@ public class MTAArmor extends ArmorItem {
 
     //ATTRIBUTES
 
-    protected ItemAttributeModifiers.Builder resolveAttributeModifiers(Holder<ArmorMaterial> material, ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
-        if ( material.value() == SENTINEL){
+    protected ItemAttributeModifiers.Builder resolveAttributeModifiers(ArmorMaterial material, ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+        if ( material == SENTINEL){
             return sentinelAttributes(ArmorType,builder);
         }else
-            if ( material.value() == KNIGHT){
+            if ( material == KNIGHT){
                 return knightAttributes(ArmorType,builder);
         }else
-            if ( material.value() == MERMAID){
+            if ( material == MERMAID){
                 return mermaidAttributes(ArmorType,builder);
         }else
-            if ( material.value() == REAPER){
+            if ( material == REAPER){
                 return reaperAttributes(ArmorType,builder);
         }else
-            if ( material.value() == ANGEL){
+            if ( material == ANGEL){
                 return angelAttributes(ArmorType,builder);
         }else
-            if ( material.value() == ICICLE){
+            if ( material == ICICLE){
                 return icicleAttributes(ArmorType,builder);
         }else
-            if ( material.value() == BERSERKER){
+            if ( material == BERSERKER){
                 return berserkerAttributes(ArmorType,builder);
         }else
-            if ( material.value() == ROGUE){
+            if ( material == ROGUE){
                 return rogueAttributes(ArmorType,builder);
         }
         return builder;
