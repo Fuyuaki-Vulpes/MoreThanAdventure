@@ -4,22 +4,15 @@ import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.data.Pack;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.conditions.IConditionBuilder;
-
-import java.util.concurrent.CompletableFuture;
-
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class GenRecipes  extends RecipeProvider {
 
@@ -224,8 +217,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .unlockedBy("has_scrap_facture", has(MtaItems.NETHERITE_FRACTURE.get()))
-                , MODID);
+                .unlockedBy("has_scrap_facture", has(MtaItems.NETHERITE_FRACTURE.get()));
 
         newWeaponsTags(ItemTags.PLANKS, MtaItems.WOOD_CLAW.get(), MtaItems.WOOD_CLAYMORE.get(), MtaItems.WOOD_CUTLASS.get(),
                 MtaItems.WOOD_DAGGER.get(), MtaItems.WOOD_DOUBLE_AXE.get(), MtaItems.WOOD_GLAIVE.get(), MtaItems.WOOD_HALBERD.get(),
@@ -267,8 +259,7 @@ public class GenRecipes  extends RecipeProvider {
         shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 4)
                 .requires(Blocks.ANDESITE, 2)
                 .requires(Blocks.MOSS_BLOCK, 2)
-                .unlockedBy("has_andesite", has(Blocks.ANDESITE))
-                , "mossy_andesite_from_moss");
+                .unlockedBy("has_andesite", has(Blocks.ANDESITE));
 
         twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, Blocks.QUARTZ_BLOCK, MtaItems.CLEAR_QUARTZ);
         shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE, 2)
@@ -295,7 +286,7 @@ public class GenRecipes  extends RecipeProvider {
         shaped(RecipeCategory.REDSTONE, Blocks.DAYLIGHT_DETECTOR)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('G', Blocks.GLASS)
-                .define('W', Ingredient.of(ItemTags.WOODEN_SLABS))
+                .define('W', ItemTags.WOODEN_SLABS)
                 .pattern("GGG")
                 .pattern("QQQ")
                 .pattern("WWW")
@@ -463,43 +454,42 @@ public class GenRecipes  extends RecipeProvider {
 
 
     protected void agateSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ARMAMENT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AGATE), pCategory, pResultItem).unlocks("has_awakened_agate", has(MtaItems.AWAKENED_AGATE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ARMAMENT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AGATE), pCategory, pResultItem).unlocks("has_awakened_agate", has(MtaItems.AWAKENED_AGATE));
     }
 
     protected void alexandriteSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ROYAL_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_ALEXANDRITE), pCategory, pResultItem).unlocks("has_awakened_alexandrite", has(MtaItems.AWAKENED_ALEXANDRITE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ROYAL_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_ALEXANDRITE), pCategory, pResultItem).unlocks("has_awakened_alexandrite", has(MtaItems.AWAKENED_ALEXANDRITE));
     }
 
     protected void aquamarineSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.AQUATIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AQUAMARINE), pCategory, pResultItem).unlocks("has_awakened_aquamarine", has(MtaItems.AWAKENED_AQUAMARINE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.AQUATIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AQUAMARINE), pCategory, pResultItem).unlocks("has_awakened_aquamarine", has(MtaItems.AWAKENED_AQUAMARINE));
     }
 
     protected void bloodstoneSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.DEATHLY_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_BLOODSTONE), pCategory, pResultItem).unlocks("has_awakened_bloodstone", has(MtaItems.AWAKENED_BLOODSTONE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.DEATHLY_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_BLOODSTONE), pCategory, pResultItem).unlocks("has_awakened_bloodstone", has(MtaItems.AWAKENED_BLOODSTONE));
     }
 
     protected void celestiteSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ANGELIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CELESTITE), pCategory, pResultItem).unlocks("has_awakened_celestite", has(MtaItems.AWAKENED_CELESTITE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ANGELIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CELESTITE), pCategory, pResultItem).unlocks("has_awakened_celestite", has(MtaItems.AWAKENED_CELESTITE));
     }
 
     protected void cryoliteSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FREEZING_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CRYOLITE), pCategory, pResultItem).unlocks("has_awakened_cryolite", has(MtaItems.AWAKENED_CRYOLITE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FREEZING_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CRYOLITE), pCategory, pResultItem).unlocks("has_awakened_cryolite", has(MtaItems.AWAKENED_CRYOLITE));
     }
 
     protected void garnetSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.BERSERK_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_GARNET), pCategory, pResultItem).unlocks("has_awakened_garnet", has(MtaItems.AWAKENED_GARNET)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.BERSERK_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_GARNET), pCategory, pResultItem).unlocks("has_awakened_garnet", has(MtaItems.AWAKENED_GARNET));
     }
 
     protected void moonstoneSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FEATHERWEIGHT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_MOONSTONE), pCategory, pResultItem).unlocks("has_awakened_moonstone", has(MtaItems.AWAKENED_MOONSTONE)).save(pRecipe, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FEATHERWEIGHT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_MOONSTONE), pCategory, pResultItem).unlocks("has_awakened_moonstone", has(MtaItems.AWAKENED_MOONSTONE));
     }
 
     protected void basicStoneSetRecipe( Block ing, Block resultSlab, Block resultStair, Block resultWall, String unlock, String save) {
         shaped(RecipeCategory.BUILDING_BLOCKS, resultSlab, 6)
                 .define('X', ing)
                 .pattern("XXX")
-                .unlockedBy(unlock, has(ing))
-                , "shaped_" + save + "_slab");
+                .unlockedBy(unlock, has(ing));
         shaped(RecipeCategory.BUILDING_BLOCKS, resultStair, 4)
                 .define('X', ing)
                 .pattern("X  ")
@@ -515,14 +505,11 @@ public class GenRecipes  extends RecipeProvider {
 
     protected void cuttingStoneSetRecipe(Block ing, Block slab, Block stair, Block wall) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ing), RecipeCategory.BUILDING_BLOCKS, slab, 2)
-                .unlockedBy(getHasName(ing), has(ing))
-                , getConversionRecipeName(slab, ing) + "_base_stonecutting_slab");
+                .unlockedBy(getHasName(ing), has(ing));
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ing), RecipeCategory.BUILDING_BLOCKS, stair)
-                .unlockedBy(getHasName(ing), has(ing))
-                , getConversionRecipeName(stair, ing) + "_base_stonecutting_stairs");
+                .unlockedBy(getHasName(ing), has(ing));
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ing), RecipeCategory.BUILDING_BLOCKS, wall)
-                .unlockedBy(getHasName(ing), has(ing))
-                , getConversionRecipeName(wall, ing) + "_base_stonecutting_wall");
+                .unlockedBy(getHasName(ing), has(ing));
     }
 
     protected void cuttingTerracottaSetRecipe(Block ing, Block tiles, Block slab, Block tSlab, Block stair, Block tStair, Block wall, Block tWall) {
