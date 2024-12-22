@@ -1,18 +1,21 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ButterflyRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Butterfly;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class ButterflyModel <T extends Butterfly> extends HierarchicalModel<T> {
+public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel<T> {
     private final ModelPart root;
     private final ModelPart left_wing;
     private final ModelPart right_wing;
 
     public ButterflyModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.left_wing = this.root.getChild("left_wing");
         this.right_wing = this.root.getChild("right_wing");
