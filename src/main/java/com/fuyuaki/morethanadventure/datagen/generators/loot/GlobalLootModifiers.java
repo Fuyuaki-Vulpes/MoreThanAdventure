@@ -4,8 +4,12 @@ import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.loot.MtaAddItemModifier;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.neoforged.neoforge.common.Tags;
@@ -24,7 +28,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.SHORT_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.ONION.get(), 1));
 
@@ -32,7 +36,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.TALL_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.ONION.get(), 1));
 
@@ -40,7 +44,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.SHORT_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.TOMATO_SEEDS.get(), 1));
 
@@ -48,7 +52,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.TALL_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.TOMATO_SEEDS.get(), 1));
 
@@ -56,7 +60,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.SHORT_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.BELL_PEPPER_SEEDS.get(), 1));
 
@@ -64,7 +68,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.TALL_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.BELL_PEPPER_SEEDS.get(), 1));
 
@@ -72,7 +76,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.SHORT_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.CHILI_PEPPER_SEEDS.get(), 1));
 
@@ -80,7 +84,7 @@ public class GlobalLootModifiers extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.0125f).build(),
                 LootItemBlockStatePropertyCondition.hasBlockStateProperties(Blocks.TALL_GRASS).build(),
                 new InvertedLootItemCondition(
-                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.TOOLS_SHEAR)).build()
+                        MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM),Tags.Items.TOOLS_SHEAR)).build()
                 )
         }, MtaItems.CHILI_PEPPER_SEEDS.get(), 1));
     }
