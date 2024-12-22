@@ -1,20 +1,11 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
 import net.minecraft.Util;
-import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
-import net.minecraft.world.item.equipment.EquipmentAsset;
-import net.neoforged.bus.api.IEventBus;
 
 import java.util.EnumMap;
-import java.util.List;
-
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class MtaArmorMats {
 
