@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.ButterflyModel;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.ButterflyOverlayLayer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.ButterflyWingLayer;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ButterflyRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Butterfly;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -14,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ButterflyRender extends MobRenderer<Butterfly,ButterflyModel<Butterfly>> {
+public class ButterflyRender extends MobRenderer<Butterfly, ButterflyRenderState, ButterflyModel<ButterflyRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/butterfly/body.png");
 
     public ButterflyRender(EntityRendererProvider.Context renderManager) {
@@ -25,20 +26,21 @@ public class ButterflyRender extends MobRenderer<Butterfly,ButterflyModel<Butter
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Butterfly entity) {
-        return TEXTURE;
+    public ButterflyRenderState createRenderState() {
+        return null;
     }
-
 
 
     @Override
-    public void render(Butterfly entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-
-        if(entity.isBaby()) {
+    public void render(ButterflyRenderState entity, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+        if(entity.isBaby) {
             poseStack.scale(0.45f,0.45f,0.45f);
         }
-
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+        super.render(entity, poseStack, bufferSource, packedLight);
     }
 
+    @Override
+    public ResourceLocation getTextureLocation(ButterflyRenderState renderState) {
+        return TEXTURE;
+    }
 }

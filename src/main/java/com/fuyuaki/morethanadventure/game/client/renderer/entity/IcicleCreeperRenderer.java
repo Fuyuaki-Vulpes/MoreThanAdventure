@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.IcicleCreeperModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.IcicleCreeperRenderState;
 import com.fuyuaki.morethanadventure.world.entity.IcicleCreeper;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -9,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCreeperModel<IcicleCreeper>> {
+public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCreeperRenderState, IcicleCreeperModel<IcicleCreeperRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/icicle_creeper.png");
 
     public IcicleCreeperRenderer(EntityRendererProvider.Context pContext) {
@@ -18,9 +19,14 @@ public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCree
 
     }
 
+    @Override
+    public IcicleCreeperRenderState createRenderState() {
+        return null;
+    }
+
 
     @Override
-    public ResourceLocation getTextureLocation(IcicleCreeper pEntity) {
+    public ResourceLocation getTextureLocation(IcicleCreeperRenderState renderState) {
         return TEXTURE;
     }
 

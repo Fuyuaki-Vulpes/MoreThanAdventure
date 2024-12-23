@@ -2,6 +2,8 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.ToucanModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.DuckRenderState;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ToucanRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Toucan;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -11,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ToucanRenderer extends MobRenderer<Toucan, ToucanModel<Toucan>> {
+public class ToucanRenderer extends MobRenderer<Toucan, ToucanRenderState, ToucanModel<ToucanRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/toucan.png");
 
     public ToucanRenderer(EntityRendererProvider.Context pContext) {
@@ -20,18 +22,21 @@ public class ToucanRenderer extends MobRenderer<Toucan, ToucanModel<Toucan>> {
 
 
     @Override
-    public ResourceLocation getTextureLocation(Toucan pEntity) {
+    public ResourceLocation getTextureLocation(ToucanRenderState renderState) {
         return TEXTURE;
     }
 
-
     @Override
-    public void render(Toucan entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(ToucanRenderState renderState, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
 
-        if(entity.isBaby()) {
+        if(renderState.isBaby) {
             poseStack.scale(0.45f,0.45f,0.45f);
         }
+        super.render(renderState, poseStack, bufferSource, packedLight);
+    }
 
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+    @Override
+    public ToucanRenderState createRenderState() {
+        return null;
     }
 }

@@ -2,6 +2,8 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.PenguinModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.DuckRenderState;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.PenguinRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Penguin;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -11,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class PenguinRenderer extends MobRenderer<Penguin, PenguinModel<Penguin>> {
+public class PenguinRenderer extends MobRenderer<Penguin, PenguinRenderState, PenguinModel<PenguinRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/penguin.png");
 
     public PenguinRenderer(EntityRendererProvider.Context pContext) {
@@ -20,18 +22,22 @@ public class PenguinRenderer extends MobRenderer<Penguin, PenguinModel<Penguin>>
 
 
     @Override
-    public ResourceLocation getTextureLocation(Penguin pEntity) {
+    public ResourceLocation getTextureLocation(PenguinRenderState renderState) {
         return TEXTURE;
     }
 
 
     @Override
-    public void render(Penguin entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(PenguinRenderState renderState, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
 
-        if(entity.isBaby()) {
+        if(renderState.isBaby) {
             poseStack.scale(0.45f,0.45f,0.45f);
         }
+        super.render(renderState, poseStack, bufferSource, packedLight);
+    }
 
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
+    @Override
+    public PenguinRenderState createRenderState() {
+        return null;
     }
 }
