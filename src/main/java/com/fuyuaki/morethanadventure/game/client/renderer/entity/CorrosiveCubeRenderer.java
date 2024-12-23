@@ -3,23 +3,30 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.CorrosiveCubeModel;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.CorrosiveCubeOuterLayer;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.CorrosiveCubeRenderState;
 import com.fuyuaki.morethanadventure.world.entity.CorrosiveCube;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.state.SlimeRenderState;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveCubeModel<CorrosiveCube>> {
+public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveCubeRenderState, CorrosiveCubeModel<CorrosiveCubeRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/slime/corrosive_cube.png");
 
     public CorrosiveCubeRenderer(EntityRendererProvider.Context pContext) {
         super(pContext,new CorrosiveCubeModel<>(pContext.bakeLayer(MTAModelLayers.CORROSIVE_CUBE)), .5F);
         this.addLayer(new CorrosiveCubeOuterLayer<>(this, pContext.getModelSet()));
 
+    }
+
+    @Override
+    public CorrosiveCubeRenderState createRenderState() {
+        return null;
     }
 
     @Override
@@ -42,6 +49,11 @@ public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveC
 
     @Override
     public ResourceLocation getTextureLocation(CorrosiveCube entity) {
+        return TEXTURE;
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(CorrosiveCubeRenderState p_368654_) {
         return TEXTURE;
     }
 }

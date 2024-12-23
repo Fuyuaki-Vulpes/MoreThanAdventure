@@ -1,16 +1,18 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.GreatWhiteSharkRenderState;
 import com.fuyuaki.morethanadventure.world.entity.GreatWhiteShark;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
-public class GreatWhiteSharkModel <T extends GreatWhiteShark> extends HierarchicalModel<T> {
+public class GreatWhiteSharkModel <T extends GreatWhiteSharkRenderState> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart root;
     private final ModelPart torso;

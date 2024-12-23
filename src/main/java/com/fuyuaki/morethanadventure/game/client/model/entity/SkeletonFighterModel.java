@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.SkeletonFighterRenderState;
 import com.fuyuaki.morethanadventure.world.entity.SkeletonFighter;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,7 +11,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class SkeletonFighterModel <T extends SkeletonFighter> extends SkeletonModel<T> {
+public class SkeletonFighterModel <T extends SkeletonFighterRenderState> extends SkeletonModel<T> {
     //private final ModelPart root;
 
     public SkeletonFighterModel(ModelPart root) {

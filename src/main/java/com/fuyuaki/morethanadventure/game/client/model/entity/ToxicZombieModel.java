@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ToxicZombieRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ToxicZombie;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -11,7 +12,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class ToxicZombieModel <T extends ToxicZombie> extends ZombieModel<T> {
+public class ToxicZombieModel <T extends ToxicZombieRenderState> extends ZombieModel<T> {
     //private final ModelPart root;
 
     public ToxicZombieModel(ModelPart root) {

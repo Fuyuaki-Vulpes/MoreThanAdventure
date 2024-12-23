@@ -1,16 +1,18 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.OctopusRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Octopus;
 import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class OctopusModel <T extends Octopus> extends HierarchicalModel<T> {
+public class OctopusModel <T extends OctopusRenderState> extends EntityModel<T> {
     private final ModelPart root;
     private final ModelPart head;
     private final ModelPart mantle;

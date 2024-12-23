@@ -3,15 +3,17 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 import com.fuyuaki.morethanadventure.world.entity.FrostedSlime;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.renderer.entity.state.SlimeRenderState;
 import net.minecraft.util.Mth;
 
 import java.util.Arrays;
 
-public class FrostedSlimeModel<T extends FrostedSlime> extends HierarchicalModel<T> {
+public class FrostedSlimeModel<T extends SlimeRenderState> extends EntityModel<T> {
 
     private static final int SEGMENT_COUNT = 8;
     private final ModelPart root;

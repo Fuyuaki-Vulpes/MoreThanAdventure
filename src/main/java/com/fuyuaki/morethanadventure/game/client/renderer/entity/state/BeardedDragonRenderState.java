@@ -4,4 +4,6 @@ import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 
 public class BeardedDragonRenderState extends LivingEntityRenderState {
 
+
+    public boolean isBaby;
 }

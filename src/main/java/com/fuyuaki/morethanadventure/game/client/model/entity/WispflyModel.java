@@ -1,8 +1,10 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.WispflyRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Wispfly;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -17,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-public class WispflyModel<T extends Wispfly> extends HierarchicalModel<T> {
+public class WispflyModel<T extends WispflyRenderState> extends EntityModel<T> {
     private final ModelPart root;
     private final ModelPart left_wing;
     private final ModelPart right_wing;

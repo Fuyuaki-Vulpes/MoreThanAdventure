@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ZombifiedMinerRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ZombifiedMiner;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -11,7 +12,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.monster.Zombie;
 
-public class ZombifiedMinerModel<T extends ZombifiedMiner> extends ZombieModel<T> {
+public class ZombifiedMinerModel<T extends ZombifiedMinerRenderState> extends ZombieModel<T> {
     //private final ModelPart root;
 
     public ZombifiedMinerModel(ModelPart root) {
