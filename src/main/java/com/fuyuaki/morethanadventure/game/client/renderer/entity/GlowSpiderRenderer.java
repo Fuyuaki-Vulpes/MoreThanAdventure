@@ -4,9 +4,11 @@ import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.GlowSpiderLayer;
 import com.fuyuaki.morethanadventure.world.entity.GlowSpider;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.model.SpiderModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.SpiderRenderer;
 import net.minecraft.client.renderer.entity.layers.SpiderEyesLayer;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.CaveSpider;
@@ -25,16 +27,12 @@ public class GlowSpiderRenderer extends SpiderRenderer<GlowSpider> {
         super(pContext,MTAModelLayers.GLOW_SPIDER);
         this.shadowRadius *= 0.4F;
 
-        this.addLayer(new GlowSpiderLayer<>(this,pContext.getModelSet()));
+        this.addLayer(new GlowSpiderLayer<>(this, new SpiderModel(pContext.bakeLayer(MTAModelLayers.GLOW_SPIDER_GLOW))));
 
-    }
-
-    protected void scale(GlowSpider livingEntity, PoseStack poseStack, float partialTickTime) {
-        poseStack.scale(0.4F, 0.4F, 0.4F);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(GlowSpider entity) {
+    public ResourceLocation getTextureLocation(LivingEntityRenderState entity) {
         return TEXTURE;
     }
 }

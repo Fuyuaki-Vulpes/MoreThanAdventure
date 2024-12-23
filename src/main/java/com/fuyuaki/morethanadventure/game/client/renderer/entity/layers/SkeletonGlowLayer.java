@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity.layers;
 
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.CorrosiveCubeRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
@@ -12,10 +13,11 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 
-public class SkeletonGlowLayer <T extends AbstractSkeleton, M extends SkeletonModel<T>> extends RenderLayer<T, M> {
+public class SkeletonGlowLayer <T extends SkeletonRenderState, M extends SkeletonModel<T>> extends RenderLayer<T, M> {
     private final EntityModel<T> model;
     private final ResourceLocation textureLocation;
 
@@ -27,23 +29,18 @@ public class SkeletonGlowLayer <T extends AbstractSkeleton, M extends SkeletonMo
     }
 
     @Override
-    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
-        Minecraft minecraft = Minecraft.getInstance();
-
-        boolean flag = minecraft.shouldEntityAppearGlowing(livingEntity) && livingEntity.isInvisible();
-        if (!livingEntity.isInvisible() || flag) {
+    public void render(PoseStack p_117349_, MultiBufferSource p_117350_, int p_117351_, T p_361554_, float p_117353_, float p_117354_) {
+        boolean flag = p_361554_.appearsGlowing && p_361554_.isInvisible;
+        if (!p_361554_.isInvisible || flag) {
             VertexConsumer vertexconsumer;
             if (flag) {
-                vertexconsumer = bufferSource.getBuffer(RenderType.outline(textureLocation));
+                vertexconsumer = p_117350_.getBuffer(RenderType.outline(textureLocation));
             } else {
-                vertexconsumer = bufferSource.getBuffer(RenderType.entityTranslucentEmissive(textureLocation));
+                vertexconsumer = p_117350_.getBuffer(RenderType.entityTranslucentEmissive(textureLocation));
             }
 
-
-            this.getParentModel().copyPropertiesTo(this.model);
-            this.model.prepareMobModel(livingEntity, limbSwing, limbSwingAmount, partialTick);
-            this.model.setupAnim(livingEntity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, LivingEntityRenderer.getOverlayCoords(livingEntity, 0.0F));
+            this.model.setupAnim(p_361554_);
+            this.model.renderToBuffer(p_117349_, vertexconsumer, p_117351_, LivingEntityRenderer.getOverlayCoords(p_361554_, 0.0F));
         }
     }
 }

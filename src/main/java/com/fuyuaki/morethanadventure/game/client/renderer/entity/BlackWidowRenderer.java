@@ -19,11 +19,6 @@ public class BlackWidowRenderer extends SpiderRenderer<BlackWidow> {
     }
 
 
-
-    protected void scale(BlackWidow livingEntity, PoseStack poseStack, float partialTickTime) {
-        poseStack.scale(0.8F, 0.8F, 0.8F);
-    }
-
     @Override
     public ResourceLocation getTextureLocation(LivingEntityRenderState renderState) {
         return TEXTURE;

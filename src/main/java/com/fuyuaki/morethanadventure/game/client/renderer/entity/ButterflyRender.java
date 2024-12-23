@@ -27,7 +27,7 @@ public class ButterflyRender extends MobRenderer<Butterfly, ButterflyRenderState
 
     @Override
     public ButterflyRenderState createRenderState() {
-        return null;
+        return new ButterflyRenderState();
     }
 
 

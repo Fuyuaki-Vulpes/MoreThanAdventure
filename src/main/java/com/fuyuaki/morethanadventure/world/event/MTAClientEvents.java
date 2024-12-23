@@ -15,6 +15,7 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
@@ -115,7 +116,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON, ArmoredSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW, SpiderModel::createSpiderBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW,  () ->  SpiderModel.createSpiderBodyLayer().apply(MeshTransformer.scaling(0.8F)));
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_PATTERN, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_OVERLAY, ButterflyModel::createBodyLayer);
@@ -129,8 +130,8 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FROSTED_SLIME, FrostedSlimeModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, SpiderModel::createSpiderBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, SpiderModel::createSpiderBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER,  () ->  SpiderModel.createSpiderBodyLayer().apply(MeshTransformer.scaling(0.4F)));
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, () ->  SpiderModel.createSpiderBodyLayer().apply(MeshTransformer.scaling(0.4F)));
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);

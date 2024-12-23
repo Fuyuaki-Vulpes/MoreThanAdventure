@@ -1,6 +1,9 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity.layers;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.CorrosiveCubeRenderer;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.GlowSpiderRenderer;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.GlowSpiderRenderState;
 import com.fuyuaki.morethanadventure.world.entity.GlowSpider;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,36 +16,31 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 
-public class GlowSpiderLayer <T extends GlowSpider, M extends SpiderModel<T>> extends RenderLayer<T, M> {
-    private final EntityModel<T> model;
+public class GlowSpiderLayer <T extends LivingEntityRenderState, M extends SpiderModel> extends RenderLayer<T, M> {
+    private M model;
 
-    public GlowSpiderLayer(RenderLayerParent<T, M> renderer, EntityModelSet modelSet) {
+    public GlowSpiderLayer(RenderLayerParent<T, M> renderer, M model) {
         super(renderer);
-        this.model = new SpiderModel<>(modelSet.bakeLayer(MTAModelLayers.GLOW_SPIDER_GLOW));
+        this.model = model;
 
     }
 
     @Override
-    public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
-        Minecraft minecraft = Minecraft.getInstance();
-
-        boolean flag = minecraft.shouldEntityAppearGlowing(livingEntity) && livingEntity.isInvisible();
-        if (!livingEntity.isInvisible() || flag) {
+    public void render(PoseStack p_117349_, MultiBufferSource p_117350_, int p_117351_, T p_361554_, float p_117353_, float p_117354_) {
+        boolean flag = p_361554_.appearsGlowing && p_361554_.isInvisible;
+        if (!p_361554_.isInvisible || flag) {
             VertexConsumer vertexconsumer;
             if (flag) {
-                vertexconsumer = bufferSource.getBuffer(RenderType.outline(this.getTextureLocation(livingEntity)));
+                vertexconsumer = p_117350_.getBuffer(RenderType.outline(GlowSpiderRenderer.TEXTURE));
             } else {
-                vertexconsumer = bufferSource.getBuffer(RenderType.entityTranslucentEmissive(this.getTextureLocation(livingEntity)));
+                vertexconsumer = p_117350_.getBuffer(RenderType.entityTranslucentEmissive(GlowSpiderRenderer.TEXTURE));
             }
 
-
-            this.getParentModel().copyPropertiesTo(this.model);
-            this.model.prepareMobModel(livingEntity, limbSwing, limbSwingAmount, partialTick);
-            this.model.setupAnim(livingEntity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, LivingEntityRenderer.getOverlayCoords(livingEntity, 0.0F));
+            this.model.setupAnim(p_361554_);
+            this.model.renderToBuffer(p_117349_, vertexconsumer, p_117351_, LivingEntityRenderer.getOverlayCoords(p_361554_, 0.0F));
         }
     }
-
 
 }
