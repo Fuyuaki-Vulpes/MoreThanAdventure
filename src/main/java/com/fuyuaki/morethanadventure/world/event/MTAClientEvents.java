@@ -154,15 +154,23 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.CHARRED_SKELETON_INNER_ARMOR, () -> humanoidInnerArmor);
         event.registerLayerDefinition(MTAModelLayers.HOST_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.HOST_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_BABY, () -> humanoidModel.apply(MossyZombieModel.BABY_TRANSFORMER));
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
-        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_BABY_OUTER_ARMOR, () -> humanoidOuterArmor.apply(MossyZombieModel.BABY_TRANSFORMER));
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_BABY_INNER_ARMOR, () -> humanoidInnerArmor.apply(MossyZombieModel.BABY_TRANSFORMER));
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_BABY, () -> humanoidModel.apply(ToxicZombieModel.BABY_TRANSFORMER));
         event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_BABY_OUTER_ARMOR, () -> humanoidOuterArmor.apply(ToxicZombieModel.BABY_TRANSFORMER));
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_BABY_INNER_ARMOR, () -> humanoidInnerArmor.apply(ToxicZombieModel.BABY_TRANSFORMER));
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_BABY, () -> humanoidModel.apply(MossyZombieModel.BABY_TRANSFORMER));
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_BABY_OUTER_ARMOR, () -> humanoidOuterArmor.apply(ZombifiedMinerModel.BABY_TRANSFORMER));
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_BABY_INNER_ARMOR, () -> humanoidInnerArmor.apply(ZombifiedMinerModel.BABY_TRANSFORMER));
         event.registerLayerDefinition(MTAModelLayers.WISPFLY, WispflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
 
