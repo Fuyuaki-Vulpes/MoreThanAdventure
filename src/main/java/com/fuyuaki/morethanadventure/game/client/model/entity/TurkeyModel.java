@@ -2,13 +2,10 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.TurkeyRenderState;
-import com.fuyuaki.morethanadventure.world.entity.BeardedDragon;
 import com.fuyuaki.morethanadventure.world.entity.Turkey;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.ChickenModel;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -30,7 +27,7 @@ public class TurkeyModel <T extends TurkeyRenderState> extends EntityModel<T> {
     private final ModelPart right_leg;
 
     public TurkeyModel(ModelPart main) {
-
+        super(main);
         this.root = main.getChild("root");
         this.torso = this.root.getChild("torso");
         this.neck = this.torso.getChild("neck");
@@ -95,17 +92,7 @@ public class TurkeyModel <T extends TurkeyRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return this.root;
-    }
-
-    @Override
-    public void setupAnim(Turkey entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(TurkeyRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.neck,netHeadYaw/2,headPitch/2);
         AnimUtils.adjustHead(this.head,netHeadYaw/2,headPitch/2);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,1.5F,false);

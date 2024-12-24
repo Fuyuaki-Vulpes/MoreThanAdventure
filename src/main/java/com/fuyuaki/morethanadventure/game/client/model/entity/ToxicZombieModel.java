@@ -1,16 +1,8 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ToxicZombieRenderState;
-import com.fuyuaki.morethanadventure.world.entity.ToxicZombie;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.AbstractZombieModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
 
 public class ToxicZombieModel <T extends ToxicZombieRenderState> extends ZombieModel<T> {
     //private final ModelPart root;
@@ -55,20 +47,8 @@ public class ToxicZombieModel <T extends ToxicZombieRenderState> extends ZombieM
         return LayerDefinition.create(meshdefinition, 32, 16);
     }
 
-
-    /*
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return null;
-    }
-
-    @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
 

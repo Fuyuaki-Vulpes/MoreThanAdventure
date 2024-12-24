@@ -1,14 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
-import com.fuyuaki.morethanadventure.world.entity.CharredSkeleton;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
 
 public class CharredSkeletonModel <T extends SkeletonRenderState> extends SkeletonModel<T> {
@@ -49,12 +42,7 @@ public class CharredSkeletonModel <T extends SkeletonRenderState> extends Skelet
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        //root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
     */

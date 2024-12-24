@@ -2,11 +2,9 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.GreatWhiteSharkRenderState;
 import com.fuyuaki.morethanadventure.world.entity.GreatWhiteShark;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -25,6 +23,7 @@ public class GreatWhiteSharkModel <T extends GreatWhiteSharkRenderState> extends
     private final ModelPart fin;
 
     public GreatWhiteSharkModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.torso = this.root.getChild("torso");
         this.head = this.torso.getChild("head");
@@ -80,29 +79,19 @@ public class GreatWhiteSharkModel <T extends GreatWhiteSharkRenderState> extends
     }
 
     @Override
-    public void setupAnim(GreatWhiteShark entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(GreatWhiteSharkRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.torso.xRot = headPitch * (float) (Math.PI / 180.0);
         this.torso.yRot = netHeadYaw * (float) (Math.PI / 180.0);
 
         this.torso_back.xRot = headPitch * (float) (Math.PI / 180.0);
         this.torso_back.yRot = netHeadYaw * (float) (Math.PI / 180.0);
 
-        if (entity.getDeltaMovement().horizontalDistanceSqr() > 1.0E-7) {
+        if (renderState.getDeltaMovement().horizontalDistanceSqr() > 1.0E-7) {
             this.torso.xRot = this.torso.xRot + (-0.05F - 0.05F * Mth.cos(ageInTicks * 0.3F));
             this.torso_back.xRot = this.torso_back.xRot + (-0.05F - 0.05F * Mth.cos(ageInTicks * 0.3F));
 
             this.tail.xRot = -0.1F * Mth.cos(ageInTicks * 0.3F);
             this.fin.xRot = -0.2F * Mth.cos(ageInTicks * 0.3F);
         }
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
     }
 }

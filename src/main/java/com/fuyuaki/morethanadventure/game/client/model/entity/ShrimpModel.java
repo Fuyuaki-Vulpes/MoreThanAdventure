@@ -5,7 +5,6 @@ import com.fuyuaki.morethanadventure.world.entity.Shrimp;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -19,6 +18,7 @@ public class ShrimpModel<T extends ShrimpRenderState> extends EntityModel<T> {
     private final ModelPart right_claw;
 
     public ShrimpModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.body = this.root.getChild("body");
         this.tail = this.body.getChild("tail");
@@ -54,17 +54,6 @@ public class ShrimpModel<T extends ShrimpRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(Shrimp entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
+    public void setupAnim(T renderState) {
     }
 }

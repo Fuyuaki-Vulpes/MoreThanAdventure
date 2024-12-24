@@ -3,11 +3,9 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ToucanRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Toucan;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -24,6 +22,7 @@ public class ToucanModel <T extends ToucanRenderState> extends EntityModel<T> {
     private final ModelPart right_leg;
 
     public ToucanModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.body = this.root.getChild("body");
         this.head = this.body.getChild("head");
@@ -62,19 +61,9 @@ public class ToucanModel <T extends ToucanRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(Toucan entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(ToucanRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,0.8F,true);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
     }
 }

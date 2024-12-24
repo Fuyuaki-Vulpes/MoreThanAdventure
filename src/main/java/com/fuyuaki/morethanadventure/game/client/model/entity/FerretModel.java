@@ -3,11 +3,9 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.FerretRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Ferret;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -25,6 +23,7 @@ public class FerretModel<T extends FerretRenderState> extends EntityModel<T> {
     private final ModelPart tail;
 
     public FerretModel(ModelPart main) {
+        super (main);
         this.root = main.getChild("root");
         this.body_front = this.root.getChild("body_front");
         this.head = this.body_front.getChild("head");
@@ -66,22 +65,12 @@ public class FerretModel<T extends FerretRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(Ferret entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(FerretRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,0.8F,true);
         AnimUtils.animateWalkRot(this.left_back_leg,limbSwing,limbSwingAmount,0.8F,true);
         AnimUtils.animateWalkRot(this.right_back_leg,limbSwing,limbSwingAmount,0.8F,false);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
     }
 }

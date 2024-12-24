@@ -1,15 +1,8 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.SkeletonFighterRenderState;
-import com.fuyuaki.morethanadventure.world.entity.SkeletonFighter;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
 
 public class SkeletonFighterModel <T extends SkeletonFighterRenderState> extends SkeletonModel<T> {
     //private final ModelPart root;
@@ -46,15 +39,6 @@ public class SkeletonFighterModel <T extends SkeletonFighterRenderState> extends
         PartDefinition tail_b = tail.addOrReplaceChild("tail_b", CubeListBuilder.create().texOffs(0, 10).addBox(0.0F, -0.5F, 0.0F, 1.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.5F, 0.0F, 4.0F, 0.1309F, 0.0F, 0.0F));
 
         return LayerDefinition.create(meshdefinition, 32, 16);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-    @Override
-    public ModelPart root() {
-        return null;
     }
 
     @Override

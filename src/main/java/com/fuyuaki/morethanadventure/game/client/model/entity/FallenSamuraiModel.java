@@ -27,6 +27,7 @@ public class FallenSamuraiModel <T extends FallenSamuraiRenderState> extends Ent
     private final ModelPart right_leg;
 
     public FallenSamuraiModel(ModelPart main) {
+        super (main);
         this.root = main.getChild("root");
         this.head = this.root.getChild("head");
         this.hat = this.head.getChild("hat");
@@ -77,22 +78,12 @@ public class FallenSamuraiModel <T extends FallenSamuraiRenderState> extends Ent
     }
 
     @Override
-    public void setupAnim(FallenSamurai entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(FallenSamuraiRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,1.0F,false);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,1.0F,true);
         AnimUtils.animateWalkRot(this.right_arm,limbSwing,limbSwingAmount,1.0F,true);
         AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,1.0F,false);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
     }
 }

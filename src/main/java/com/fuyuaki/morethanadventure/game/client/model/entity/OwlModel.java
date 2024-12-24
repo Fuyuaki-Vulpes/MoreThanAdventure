@@ -3,11 +3,9 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.OwlRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Owl;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -26,6 +24,7 @@ public class OwlModel <T extends OwlRenderState> extends EntityModel<T> {
     private final ModelPart tail;
 
     public OwlModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.head = this.root.getChild("head");
         this.left_feather = this.head.getChild("left_feather");
@@ -67,20 +66,10 @@ public class OwlModel <T extends OwlRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(Owl entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(OwlRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_foot,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_foot,limbSwing,limbSwingAmount,0.8F,true);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
     }
 }

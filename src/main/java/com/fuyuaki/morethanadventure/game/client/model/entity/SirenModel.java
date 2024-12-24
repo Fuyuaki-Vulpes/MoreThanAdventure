@@ -4,11 +4,9 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;// Made with Bloc
 
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.SirenRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Siren;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -29,6 +27,7 @@ public class SirenModel<T extends SirenRenderState> extends EntityModel<T> {
 	private final ModelPart tail6;
 
 	public SirenModel(ModelPart main) {
+		super(main);
 		this.root = main.getChild("root");
 		this.head_fin = this.root.getChild("head_fin");
 		this.body = this.root.getChild("body");
@@ -91,17 +90,6 @@ public class SirenModel<T extends SirenRenderState> extends EntityModel<T> {
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-	}
-
-	@Override
-	public ModelPart root() {
-		return root;
-	}
-
-	@Override
-	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+	public void setupAnim(T renderState){
 	}
 }

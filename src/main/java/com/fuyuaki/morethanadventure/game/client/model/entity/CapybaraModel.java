@@ -2,12 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.CapybaraRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Capybara;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -22,6 +17,7 @@ public class CapybaraModel <T extends CapybaraRenderState> extends EntityModel<T
     private final ModelPart left_hind_leg;
 
     public CapybaraModel(ModelPart main) {
+        super (main);
         this.root = main.getChild("root");
         this.head = this.root.getChild("head");
         this.right_front_leg = this.root.getChild("right_front_leg");
@@ -54,19 +50,8 @@ public class CapybaraModel <T extends CapybaraRenderState> extends EntityModel<T
         return LayerDefinition.create(meshdefinition, 32, 32);
     }
 
-
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
-    }
-
-    @Override
-    public void setupAnim(Capybara entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(CapybaraRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,0.8F,false);

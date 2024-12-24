@@ -153,7 +153,6 @@ public class MtaItems {
             () -> new MermaidTridentItem(
                     new Item.Properties()
                             .durability(7108)
-                            .attributes(MermaidTridentItem.createAttributes())
             ));
     public static final DeferredItem<ReaperScytheItem> SILENT_REAPERS_SCYTHE = ITEMS.register("silent_reaper_scythe",
             () -> new ReaperScytheItem(MTAToolMaterials.BLOODSTONE,
@@ -179,91 +178,91 @@ public class MtaItems {
             ));
     public static final DeferredItem<ClawItem> WOOD_CLAW = ITEMS.register("wood_claw",
             () -> new ClawItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(ClawItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> WOOD_CLAYMORE = ITEMS.register("wood_claymore",
             () -> new ClaymoreItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> WOOD_CUTLASS = ITEMS.register("wood_cutlass",
             () -> new CutlassItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> WOOD_DAGGER = ITEMS.register("wood_dagger",
             () -> new DaggerItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> WOOD_DOUBLE_AXE = ITEMS.register("wood_double_axe",
             () -> new DoubleAxeItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> WOOD_GLAIVE = ITEMS.register("wood_glaive",
             () -> new GlaiveItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> WOOD_HALBERD = ITEMS.register("wood_halberd",
             () -> new HalberdItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> WOOD_KATANA = ITEMS.register("wood_katana",
             () -> new KatanaItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> WOOD_SCYTHE = ITEMS.register("wood_scythe",
             () -> new ScytheItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> WOOD_SPEAR = ITEMS.register("wood_spear",
             () -> new SpearItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(SpearItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> WOOD_TWINBLADE = ITEMS.register("wood_twinblade",
             () -> new TwinbladeItem(ToolMaterial.WOOD,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(ToolMaterial.WOOD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClawItem> STONE_CLAW = ITEMS.register("stone_claw",
             () -> new ClawItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(ClawItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> STONE_CLAYMORE = ITEMS.register("stone_claymore",
             () -> new ClaymoreItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> STONE_CUTLASS = ITEMS.register("stone_cutlass",
             () -> new CutlassItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> STONE_DAGGER = ITEMS.register("stone_dagger",
             () -> new DaggerItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> STONE_DOUBLE_AXE = ITEMS.register("stone_double_axe",
             () -> new DoubleAxeItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> STONE_GLAIVE = ITEMS.register("stone_glaive",
             () -> new GlaiveItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> STONE_HALBERD = ITEMS.register("stone_halberd",
             () -> new HalberdItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> STONE_KATANA = ITEMS.register("stone_katana",
             () -> new KatanaItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> STONE_SCYTHE = ITEMS.register("stone_scythe",
             () -> new ScytheItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> STONE_SPEAR = ITEMS.register("stone_spear",
             () -> new SpearItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(SpearItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> STONE_TWINBLADE = ITEMS.register("stone_twinblade",
             () -> new TwinbladeItem(ToolMaterial.STONE,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(ToolMaterial.STONE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SwordItem> COPPER_SWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(MTAToolMaterials.COPPER, 3.0F, -2.4F,
@@ -271,135 +270,135 @@ public class MtaItems {
 
     public static final DeferredItem<ClawItem> COPPER_CLAW = ITEMS.register("copper_claw",
             () -> new ClawItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(ClawItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> COPPER_CLAYMORE = ITEMS.register("copper_claymore",
             () -> new ClaymoreItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> COPPER_CUTLASS = ITEMS.register("copper_cutlass",
             () -> new CutlassItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> COPPER_DAGGER = ITEMS.register("copper_dagger",
             () -> new DaggerItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> COPPER_DOUBLE_AXE = ITEMS.register("copper_double_axe",
             () -> new DoubleAxeItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> COPPER_GLAIVE = ITEMS.register("copper_glaive",
             () -> new GlaiveItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> COPPER_HALBERD = ITEMS.register("copper_halberd",
             () -> new HalberdItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> COPPER_KATANA = ITEMS.register("copper_katana",
             () -> new KatanaItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> COPPER_SCYTHE = ITEMS.register("copper_scythe",
             () -> new ScytheItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> COPPER_SPEAR = ITEMS.register("copper_spear",
             () -> new SpearItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(SpearItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> COPPER_TWINBLADE = ITEMS.register("copper_twinblade",
             () -> new TwinbladeItem(MTAToolMaterials.COPPER,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(MTAToolMaterials.COPPER))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClawItem> IRON_CLAW = ITEMS.register("iron_claw",
             () -> new ClawItem(ToolMaterial.IRON,
-                new Item.Properties().attributes(ClawItem.createAttributes(ToolMaterial.IRON))
+                new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> IRON_CLAYMORE = ITEMS.register("iron_claymore",
             () -> new ClaymoreItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> IRON_CUTLASS = ITEMS.register("iron_cutlass",
             () -> new CutlassItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> IRON_DAGGER = ITEMS.register("iron_dagger",
             () -> new DaggerItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> IRON_DOUBLE_AXE = ITEMS.register("iron_double_axe",
             () -> new DoubleAxeItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> IRON_GLAIVE = ITEMS.register("iron_glaive",
             () -> new GlaiveItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> IRON_HALBERD = ITEMS.register("iron_halberd",
             () -> new HalberdItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> IRON_KATANA = ITEMS.register("iron_katana",
             () -> new KatanaItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> IRON_SCYTHE = ITEMS.register("iron_scythe",
             () -> new ScytheItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> IRON_SPEAR = ITEMS.register("iron_spear",
             () -> new SpearItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(SpearItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> IRON_TWINBLADE = ITEMS.register("iron_twinblade",
             () -> new TwinbladeItem(ToolMaterial.IRON,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(ToolMaterial.IRON))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClawItem> GOLD_CLAW = ITEMS.register("gold_claw",
             () -> new ClawItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(ClawItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> GOLD_CLAYMORE = ITEMS.register("gold_claymore",
             () -> new ClaymoreItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> GOLD_CUTLASS = ITEMS.register("gold_cutlass",
             () -> new CutlassItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> GOLD_DAGGER = ITEMS.register("gold_dagger",
             () -> new DaggerItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> GOLD_DOUBLE_AXE = ITEMS.register("gold_double_axe",
             () -> new DoubleAxeItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> GOLD_GLAIVE = ITEMS.register("gold_glaive",
             () -> new GlaiveItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> GOLD_HALBERD = ITEMS.register("gold_halberd",
             () -> new HalberdItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> GOLD_KATANA = ITEMS.register("gold_katana",
             () -> new KatanaItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> GOLD_SCYTHE = ITEMS.register("gold_scythe",
             () -> new ScytheItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> GOLD_SPEAR = ITEMS.register("gold_spear",
             () -> new SpearItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(SpearItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> GOLD_TWINBLADE = ITEMS.register("gold_twinblade",
             () -> new TwinbladeItem(ToolMaterial.GOLD,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(ToolMaterial.GOLD))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.register("nethersteel_sword",
             () -> new SwordItem(MTAToolMaterials.NETHERSTEEL, 3.0F, -2.4F,
@@ -407,142 +406,142 @@ public class MtaItems {
 
     public static final DeferredItem<ClawItem> NETHERSTEEL_CLAW = ITEMS.register("nethersteel_claw",
             () -> new ClawItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(ClawItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> NETHERSTEEL_CLAYMORE = ITEMS.register("nethersteel_claymore",
             () -> new ClaymoreItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> NETHERSTEEL_CUTLASS = ITEMS.register("nethersteel_cutlass",
             () -> new CutlassItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> NETHERSTEEL_DAGGER = ITEMS.register("nethersteel_dagger",
             () -> new DaggerItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> NETHERSTEEL_DOUBLE_AXE = ITEMS.register("nethersteel_double_axe",
             () -> new DoubleAxeItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> NETHERSTEEL_GLAIVE = ITEMS.register("nethersteel_glaive",
             () -> new GlaiveItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> NETHERSTEEL_HALBERD = ITEMS.register("nethersteel_halberd",
             () -> new HalberdItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> NETHERSTEEL_KATANA = ITEMS.register("nethersteel_katana",
             () -> new KatanaItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> NETHERSTEEL_SCYTHE = ITEMS.register("nethersteel_scythe",
             () -> new ScytheItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> NETHERSTEEL_SPEAR = ITEMS.register("nethersteel_spear",
             () -> new SpearItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(SpearItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> NETHERSTEEL_TWINBLADE = ITEMS.register("nethersteel_twinblade",
             () -> new TwinbladeItem(MTAToolMaterials.NETHERSTEEL,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(MTAToolMaterials.NETHERSTEEL))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClawItem> DIAMOND_CLAW = ITEMS.register("diamond_claw",
             () -> new ClawItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(ClawItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> DIAMOND_CLAYMORE = ITEMS.register("diamond_claymore",
             () -> new ClaymoreItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> DIAMOND_CUTLASS = ITEMS.register("diamond_cutlass",
             () -> new CutlassItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> DIAMOND_DAGGER = ITEMS.register("diamond_dagger",
             () -> new DaggerItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> DIAMOND_DOUBLE_AXE = ITEMS.register("diamond_double_axe",
             () -> new DoubleAxeItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> DIAMOND_GLAIVE = ITEMS.register("diamond_glaive",
             () -> new GlaiveItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> DIAMOND_HALBERD = ITEMS.register("diamond_halberd",
             () -> new HalberdItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> DIAMOND_KATANA = ITEMS.register("diamond_katana",
             () -> new KatanaItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> DIAMOND_SCYTHE = ITEMS.register("diamond_scythe",
             () -> new ScytheItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> DIAMOND_SPEAR = ITEMS.register("diamond_spear",
             () -> new SpearItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(SpearItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> DIAMOND_TWINBLADE = ITEMS.register("diamond_twinblade",
             () -> new TwinbladeItem(ToolMaterial.DIAMOND,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(ToolMaterial.DIAMOND))
+                    new Item.Properties()
             ));
     public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.register("netherite_trident",
             () -> new NetheriteTridentItem(
-                    new Item.Properties().durability(2031).attributes(NetheriteTridentItem.createAttributes()).component(DataComponents.TOOL, NetheriteTridentItem.createToolProperties())));
+                    new Item.Properties().durability(2031).component(DataComponents.TOOL, NetheriteTridentItem.createToolProperties())));
     public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.register("netherite_bow",
             () -> new NetheriteBowItem(
                     new Item.Properties().durability(2031)));
 
     public static final DeferredItem<ClawItem> NETHERITE_CLAW = ITEMS.register("netherite_claw",
             () -> new ClawItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(ClawItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ClaymoreItem> NETHERITE_CLAYMORE = ITEMS.register("netherite_claymore",
             () -> new ClaymoreItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(ClaymoreItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<CutlassItem> NETHERITE_CUTLASS = ITEMS.register("netherite_cutlass",
             () -> new CutlassItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(CutlassItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DaggerItem> NETHERITE_DAGGER = ITEMS.register("netherite_dagger",
             () -> new DaggerItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(DaggerItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<DoubleAxeItem> NETHERITE_DOUBLE_AXE = ITEMS.register("netherite_double_axe",
             () -> new DoubleAxeItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(DoubleAxeItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<GlaiveItem> NETHERITE_GLAIVE = ITEMS.register("netherite_glaive",
             () -> new GlaiveItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(GlaiveItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<HalberdItem> NETHERITE_HALBERD = ITEMS.register("netherite_halberd",
             () -> new HalberdItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(HalberdItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<KatanaItem> NETHERITE_KATANA = ITEMS.register("netherite_katana",
             () -> new KatanaItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(KatanaItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<ScytheItem> NETHERITE_SCYTHE = ITEMS.register("netherite_scythe",
             () -> new ScytheItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(ScytheItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<SpearItem> NETHERITE_SPEAR = ITEMS.register("netherite_spear",
             () -> new SpearItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(SpearItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
     public static final DeferredItem<TwinbladeItem> NETHERITE_TWINBLADE = ITEMS.register("netherite_twinblade",
             () -> new TwinbladeItem(ToolMaterial.NETHERITE,
-                    new Item.Properties().attributes(TwinbladeItem.createAttributes(ToolMaterial.NETHERITE))
+                    new Item.Properties()
             ));
 
 
@@ -691,12 +690,12 @@ public class MtaItems {
     public static final DeferredItem<MTAArmor> PLACEHOLDER_LEGGINGS = ITEMS.register("placeholder_leggings", () -> new MTAArmor(MtaArmorMats.PLACEHOLDER, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(DURABILITY))));
     public static final DeferredItem<MTAArmor> PLACEHOLDER_BOOTS = ITEMS.register("placeholder_boots", () -> new MTAArmor(MtaArmorMats.PLACEHOLDER, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(DURABILITY))));
 
-    public static final DeferredItem<PickaxeItem> PLACEHOLDER_PICKAXE = ITEMS.register("placeholder_pickaxe", () -> new PickaxeItem(MTAToolTiers.PLACEHOLDER, new Item.Properties().attributes(PickaxeItem.createAttributes(MTAToolTiers.PLACEHOLDER, 1.0F, -2.8F))));
-    public static final DeferredItem<AxeItem> PLACEHOLDER_AXE = ITEMS.register("placeholder_axe", () -> new AxeItem(MTAToolTiers.PLACEHOLDER, new Item.Properties().fireResistant().rarity(Rarity.EPIC).attributes(AxeItem.createAttributes(MTAToolTiers.PLACEHOLDER, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> PLACEHOLDER_SHOVEL = ITEMS.register("placeholder_shovel", () -> new ShovelItem(MTAToolTiers.PLACEHOLDER, new Item.Properties().attributes(ShovelItem.createAttributes(MTAToolTiers.PLACEHOLDER, 1.5F, -3F))));
-    public static final DeferredItem<HoeItem> PLACEHOLDER_HOE = ITEMS.register("placeholder_hoe", () -> new HoeItem(MTAToolTiers.PLACEHOLDER, new Item.Properties().attributes(HoeItem.createAttributes(MTAToolTiers.PLACEHOLDER, 1.5F, -3F))));
+    public static final DeferredItem<PickaxeItem> PLACEHOLDER_PICKAXE = ITEMS.register("placeholder_pickaxe", () -> new PickaxeItem(MTAToolTiers.PLACEHOLDER, new Item.Properties()));
+    public static final DeferredItem<AxeItem> PLACEHOLDER_AXE = ITEMS.register("placeholder_axe", () -> new AxeItem(MTAToolTiers.PLACEHOLDER, new Item.Properties().fireResistant().rarity(Rarity.EPIC)));
+    public static final DeferredItem<ShovelItem> PLACEHOLDER_SHOVEL = ITEMS.register("placeholder_shovel", () -> new ShovelItem(MTAToolTiers.PLACEHOLDER, new Item.Properties()));
+    public static final DeferredItem<HoeItem> PLACEHOLDER_HOE = ITEMS.register("placeholder_hoe", () -> new HoeItem(MTAToolTiers.PLACEHOLDER, new Item.Properties()));
 
-    public static final DeferredItem<SwordItem> PLACEHOLDER_SWORD = ITEMS.register("placeholder_sword", () -> new SwordItem(MTAToolTiers.PLACEHOLDER, new Item.Properties().attributes(SwordItem.createAttributes(MTAToolTiers.PLACEHOLDER, 3.0F, -2.4F))));
+    public static final DeferredItem<SwordItem> PLACEHOLDER_SWORD = ITEMS.register("placeholder_sword", () -> new SwordItem(MTAToolTiers.PLACEHOLDER, new Item.Properties()));
 
     public static final DeferredItem<Item> PLACEHOLDER_INGOT = ITEMS.registerSimpleItem("placeholder_ingot");
     public static final DeferredItem<Item> RAW_PLACEHOLDER = ITEMS.registerSimpleItem("raw_placeholder");

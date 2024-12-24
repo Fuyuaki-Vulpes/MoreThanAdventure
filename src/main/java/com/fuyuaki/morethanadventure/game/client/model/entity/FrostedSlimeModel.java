@@ -20,6 +20,7 @@ public class FrostedSlimeModel<T extends SlimeRenderState> extends EntityModel<T
     private final ModelPart[] bodyCubes = new ModelPart[8];
 
     public FrostedSlimeModel(ModelPart root) {
+        super (root);
         this.root = root;
         Arrays.setAll(this.bodyCubes, p_170709_ -> root.getChild(getSegmentName(p_170709_)));
 
@@ -53,19 +54,8 @@ private static String getSegmentName(int index) {
         partdefinition.addOrReplaceChild("inside_cube", CubeListBuilder.create().texOffs(0, 16).addBox(-2.0F, 18.0F, -2.0F, 4.0F, 4.0F, 4.0F), PartPose.ZERO);
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
-
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
-    }
-
-    @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
 

@@ -47,12 +47,7 @@ public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel
 
 
     @Override
-    public void setupAnim(Butterfly entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(ButterflyRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
-    }
-
-    @Override
-    public ModelPart root() {
-        return this.root;
     }
 }

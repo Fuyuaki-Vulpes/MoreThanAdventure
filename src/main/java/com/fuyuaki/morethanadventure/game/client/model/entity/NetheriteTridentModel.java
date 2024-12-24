@@ -40,9 +40,4 @@ public class NetheriteTridentModel extends Model {
         );
         return LayerDefinition.create(meshdefinition, 32, 32);
     }
-
-    @Override
-    public void renderToBuffer(PoseStack pPoseStack, VertexConsumer pBuffer, int pPackedLight, int pPackedOverlay, int pColor) {
-        this.root.render(pPoseStack, pBuffer, pPackedLight, pPackedOverlay, pColor);
-    }
 }

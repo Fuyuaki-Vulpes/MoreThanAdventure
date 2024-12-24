@@ -1,12 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.JellyfishRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Jellyfish;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -45,6 +40,7 @@ public class JellyfishModel <T extends JellyfishRenderState> extends EntityModel
     private final ModelPart tentacle_h3;
 
     public JellyfishModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.head = this.root.getChild("head");
         this.head_b = this.head.getChild("head_b");
@@ -147,17 +143,8 @@ public class JellyfishModel <T extends JellyfishRenderState> extends EntityModel
     }
 
     @Override
-    public void setupAnim(Jellyfish entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(JellyfishRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
     }
 
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
-    }
 }

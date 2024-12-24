@@ -1,12 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.HorseshoeCrabRenderState;
-import com.fuyuaki.morethanadventure.world.entity.HorseshoeCrab;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
@@ -19,6 +14,7 @@ public class HorseshoeCrabModel <T extends HorseshoeCrabRenderState> extends Ent
     private final ModelPart tail;
 
     public HorseshoeCrabModel(ModelPart main) {
+        super(main);
         this.root = main.getChild("root");
         this.front = this.root.getChild("front");
         this.back = this.root.getChild("back");
@@ -49,17 +45,7 @@ public class HorseshoeCrabModel <T extends HorseshoeCrabRenderState> extends Ent
     }
 
     @Override
-    public void setupAnim(HorseshoeCrab entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(HorseshoeCrabRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
     }
 }

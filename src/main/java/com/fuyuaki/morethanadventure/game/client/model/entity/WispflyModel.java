@@ -1,23 +1,11 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.WispflyRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Wispfly;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
 public class WispflyModel<T extends WispflyRenderState> extends EntityModel<T> {
     private final ModelPart root;
@@ -26,6 +14,7 @@ public class WispflyModel<T extends WispflyRenderState> extends EntityModel<T> {
     private final ModelPart body;
 
     public WispflyModel(ModelPart root) {
+        super(root);
         this.root = root.getChild("root");
         this.left_wing = this.root.getChild("left_wing");
         this.right_wing = this.root.getChild("right_wing");
@@ -47,21 +36,11 @@ public class WispflyModel<T extends WispflyRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(Wispfly entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(WispflyRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         float flySpeed = 0.8F;
         float offset = 1.2F;
         this.left_wing.yRot = Mth.cos(ageInTicks * flySpeed + offset);
         this.right_wing.yRot = - Mth.cos(ageInTicks * flySpeed + offset);
-    }
-
-    @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
-        root.render(poseStack, buffer, packedLight, packedOverlay, color);
-    }
-
-    @Override
-    public ModelPart root() {
-        return this.root;
     }
 
     public static LayerDefinition createOuterLayer() {

@@ -2,19 +2,13 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.HostRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Host;
-import com.fuyuaki.morethanadventure.world.entity.YukiOnna;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.AbstractZombieModel;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.Entity;
 
 public class HostModel<T extends HostRenderState> extends EntityModel<T> {
     private final ModelPart root;
@@ -26,6 +20,7 @@ public class HostModel<T extends HostRenderState> extends EntityModel<T> {
     private final ModelPart left_leg;
 
     public HostModel(ModelPart root) {
+        super(root);
         this.root = root.getChild("root");
         this.body = this.root.getChild("body");
         this.head = this.body.getChild("head");
@@ -72,27 +67,15 @@ public class HostModel<T extends HostRenderState> extends EntityModel<T> {
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
 
-
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay,  int color) {
-        root.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
-
-    }
-
-    @Override
-    public ModelPart root() {
-        return root;
-    }
-
-    @Override
-    public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,1.0F,false);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,1.0F,true);
         AnimUtils.animateWalkRot(this.right_arm,limbSwing,limbSwingAmount,1.0F,true);
         AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,1.0F,false);
-        AnimationUtils.animateZombieArms(this.left_arm, this.right_arm, this.isAggressive(entity), this.attackTime, ageInTicks);
+        AnimationUtils.animateZombieArms(this.left_arm, this.right_arm, this.isAggressive(renderState), this.attackTime, ageInTicks);
 
     }
 
