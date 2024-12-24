@@ -344,7 +344,6 @@ public class MtaTabs {
             .displayItems((parameters, output) -> {
 
 
-                output.accept(MtaItems.SIREN_TALISMAN);
                 output.accept(MtaItems.WEIGHTED_DICE);
                 output.accept(MtaItems.TOTEM_OF_COMBATING);
 

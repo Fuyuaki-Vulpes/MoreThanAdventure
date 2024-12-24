@@ -6,10 +6,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FenceGateBlock;
@@ -42,17 +39,23 @@ public class MTAPathBlock extends Block {
                 : super.getStateForPlacement(p_153131_);
     }
 
-
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-
-        if (pDirection == Direction.UP && !pState.canSurvive(pLevel, pPos)) {
-            pLevel.scheduleTick(pPos, this, 1);
+    protected BlockState updateShape(
+            BlockState p_153152_,
+            LevelReader p_374225_,
+            ScheduledTickAccess p_374127_,
+            BlockPos p_153156_,
+            Direction p_153153_,
+            BlockPos p_153157_,
+            BlockState p_153154_,
+            RandomSource p_374236_
+    ) {
+        if (p_153153_ == Direction.UP && !p_153152_.canSurvive(p_374225_, p_153156_)) {
+            p_374127_.scheduleTick(p_153156_, this, 1);
         }
 
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+        return super.updateShape(p_153152_, p_374225_, p_374127_, p_153156_, p_153153_, p_153157_, p_153154_, p_374236_);
     }
-
     @Override
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
         if (!pState.canSurvive(pLevel, pPos)) {

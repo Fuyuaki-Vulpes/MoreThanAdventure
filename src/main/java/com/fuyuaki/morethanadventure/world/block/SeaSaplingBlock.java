@@ -2,10 +2,12 @@ package com.fuyuaki.morethanadventure.world.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -51,16 +53,26 @@ public class SeaSaplingBlock extends SaplingBlock implements SimpleWaterloggedBl
 
     @Override
     protected BlockState updateShape(
-            BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos
-    ) {
-        if (state.getValue(WATERLOGGED)) {
-            level.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            BlockState p_221477_,
+            LevelReader p_374145_,
+            ScheduledTickAccess p_374362_,
+            BlockPos p_221481_,
+            Direction p_221478_,
+            BlockPos p_221482_,
+            BlockState p_221479_,
+            RandomSource p_374203_) {
+
+
+        if (p_221477_.getValue(WATERLOGGED)) {
+            p_374362_.scheduleTick(p_221481_, Fluids.WATER, Fluids.WATER.getTickDelay(p_374145_));
         }
 
-        return facing == Direction.UP && !state.canSurvive(level, currentPos)
+        return p_221478_ == Direction.UP && !p_221477_.canSurvive(p_374145_, p_221481_)
                 ? Blocks.AIR.defaultBlockState()
-                : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+                : super.updateShape(p_221477_, p_374145_, p_374362_, p_221481_, p_221478_, p_221482_, p_221479_, p_374203_);
     }
+
+
 
     @Override
     protected FluidState getFluidState(BlockState state) {

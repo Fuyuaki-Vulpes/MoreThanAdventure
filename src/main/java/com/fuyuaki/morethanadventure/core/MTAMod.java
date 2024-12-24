@@ -69,24 +69,6 @@ public class MTAMod
 
     }
 
-    public static void setupRenderTypes(){
-        RenderType transparentRenderType = RenderType.cutoutMipped();
-        RenderType cutoutRenderType = RenderType.cutout();
-        RenderType translucentRenderType = RenderType.translucent();
-
-        setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.GRASSY_DIRT.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.PERMAFROST_GRASS.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.SHALLOW_GRASS.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.PALM_LEAVES.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.SWEET_BERRY_LEAVES.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.SCATTERED_LEAVES.get(), cutoutRenderType);
-        setRenderType(MtaBlocks.CATTAIL.get(), cutoutRenderType);
-
-    }
-    public static void setRenderType(Block block, RenderType renderType){
-        ItemBlockRenderTypes.setRenderLayer(block, renderType);
-    }
 
 
 

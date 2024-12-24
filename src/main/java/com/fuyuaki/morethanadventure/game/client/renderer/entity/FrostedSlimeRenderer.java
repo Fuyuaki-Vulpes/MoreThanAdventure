@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.FrostedSlimeModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.CorrosiveCubeRenderState;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.FrostedSlimeRenderState;
 import com.fuyuaki.morethanadventure.world.entity.FrostedSlime;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -32,17 +33,21 @@ public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlime
     }
 
     @Override
-    public void render(FrostedSlimeRenderState renderState, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        this.shadowRadius = 0.25F * (float)renderState.getSize;
-        super.render(renderState, poseStack, bufferSource, packedLight);
+    protected float getShadowRadius(FrostedSlimeRenderState p_365066_) {
+        return (float)p_365066_.size * 0.25F;
     }
 
-    protected void scale(FrostedSlime livingEntity, PoseStack poseStack, float partialTickTime) {
-        int i = livingEntity.getSize();
-        float f = Mth.lerp(partialTickTime, livingEntity.oSquish, livingEntity.squish) / ((float)i * 0.5F + 1.0F);
+
+
+    @Override
+    protected void scale(FrostedSlimeRenderState state, PoseStack poseStack) {
+        int i = state.size;
+        float f = Mth.lerp(state.ageInTicks, state.squish, state.squish) / ((float)i * 0.5F + 1.0F);
         float f1 = 1.0F / (f + 1.0F);
         poseStack.scale(f1 * (float)i, 1.0F / f1 * (float)i, f1 * (float)i);
+        super.scale(state, poseStack);
     }
+
 
     @Override
     public ResourceLocation getTextureLocation(FrostedSlimeRenderState p_368654_) {

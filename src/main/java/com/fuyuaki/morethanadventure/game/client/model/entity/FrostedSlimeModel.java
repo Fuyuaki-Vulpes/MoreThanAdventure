@@ -1,15 +1,13 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
-import com.fuyuaki.morethanadventure.world.entity.FrostedSlime;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.client.model.geom.builders.MeshDefinition;
+import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.entity.state.SlimeRenderState;
-import net.minecraft.util.Mth;
 
 import java.util.Arrays;
 
@@ -57,17 +55,11 @@ private static String getSegmentName(int index) {
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-
-    }
-
-    public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTick) {
-        float f = Mth.lerp(partialTick, entity.oSquish, entity.squish);
-        if (f < 0.0F) {
-            f = 0.0F;
-        }
+        float f = Math.max(0.0F, state.squish);
 
         for (int i = 0; i < this.bodyCubes.length; i++) {
             this.bodyCubes[i].y = (float)(-(4 - i)) * f * 1.7F;
         }
     }
+
 }

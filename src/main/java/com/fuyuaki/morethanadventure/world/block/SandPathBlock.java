@@ -8,10 +8,7 @@ import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -42,14 +39,13 @@ public class SandPathBlock extends ColoredFallingBlock {
 
 
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-
-        if (pDirection == Direction.UP && !pState.canSurvive(pLevel, pPos)) {
-            pLevel.scheduleTick(pPos, this, 1);
+    protected BlockState updateShape(BlockState p_53226_, LevelReader p_374327_, ScheduledTickAccess p_374521_, BlockPos p_53230_, Direction p_53227_, BlockPos p_53231_, BlockState p_53228_, RandomSource p_374287_) {
+        if (p_53227_ == Direction.UP && !p_53226_.canSurvive(p_374327_, p_53230_)) {
+            p_374521_.scheduleTick(p_53230_, this, 1);
         }
-
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+        return super.updateShape(p_53226_, p_374327_, p_374521_, p_53230_, p_53227_, p_53231_, p_53228_, p_374287_);
     }
+
 
     @Override
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {

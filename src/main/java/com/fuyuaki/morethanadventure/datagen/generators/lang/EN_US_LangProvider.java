@@ -341,7 +341,6 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
 
 
-        add(MtaItems.SIREN_TALISMAN.get(),"Siren's Talisman");
         add(MtaItems.WEIGHTED_DICE.get(),"Weighted Dice");
         add(MtaItems.TOTEM_OF_COMBATING.get(),"Totem Of Combating");
 
@@ -373,6 +372,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.FEATHERWEIGHT_UPGRADE.get(),"Featherweight Upgrade");
 
         //ARMOR
+
         add(MtaItems.GREAT_SENTINELS_HELMET.get(), "Great Sentinel's Helmet");
         add(MtaItems.GREAT_SENTINELS_CHESTPLATE.get(), "Great Sentinel's Chestplate");
         add(MtaItems.GREAT_SENTINELS_LEGGINGS.get(), "Great Sentinel's Leggings");
@@ -672,7 +672,6 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("mta.talisman.description.hint", "Press SHIFT to see description");
 
         //TalismanItem
-        add(getTalismanDescriptionID(MtaItems.SIREN_TALISMAN), "When Underwater, becomes a Siren, which lets you swim faster, see better, and breathe");
         add(getTalismanDescriptionID(MtaItems.WEIGHTED_DICE), "MTA and Vanilla enchantments and effects that have luck based aspects will have more favorable odds");
 
     }

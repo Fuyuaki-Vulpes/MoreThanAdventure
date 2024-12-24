@@ -112,8 +112,4 @@ public class Sprinkler extends BaseEntityBlock {
         return MtaBlockEntities.SPRINKLER.get().create(pos, state);
     }
 
-    @Override
-    public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
-    }
 }

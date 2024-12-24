@@ -8,7 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -42,6 +42,18 @@ public class StoneTilesBlock extends Block {
     }
 
     @Override
+    protected InteractionResult useItemOn(ItemStack pStack, BlockState p_316362_, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand p_316595_, BlockHitResult p_316140_) {
+        if (pStack.canPerformAction(ItemAbilities.SHOVEL_FLATTEN) && this.dirtiness > 0){
+
+            pLevel.playSound(pPlayer, pPos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 0.3F);
+            pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, MtaBlocks.SAND_PATH.get().defaultBlockState()));
+            pLevel.setBlockAndUpdate(pPos, getStoneTilesByDirtiness(this.dirtiness - 1));
+        }
+        return super.useItemOn(pStack, p_316362_, pLevel, pPos, pPlayer, p_316595_, p_316140_);
+    }
+
+    /*
+    @Override
     protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (pStack.canPerformAction(ItemAbilities.SHOVEL_FLATTEN) && this.dirtiness > 0){
 
@@ -50,7 +62,7 @@ public class StoneTilesBlock extends Block {
             pLevel.setBlockAndUpdate(pPos, getStoneTilesByDirtiness(this.dirtiness - 1));
         }
         return super.useItemOn(pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult);
-    }
+    }*/
 
     private BlockState getStoneTilesByDirtiness(int dirtiness) {
         return switch (dirtiness){

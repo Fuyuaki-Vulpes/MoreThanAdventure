@@ -22,7 +22,7 @@ public class NetheriteTridentModel extends Model {
     private final ModelPart root;
 
     public NetheriteTridentModel(ModelPart pRoot) {
-        super(RenderType::entitySolid);
+        super(pRoot,RenderType::entitySolid);
         this.root = pRoot;
     }
 

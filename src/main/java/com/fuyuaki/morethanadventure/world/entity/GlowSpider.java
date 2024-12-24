@@ -103,12 +103,13 @@ public class GlowSpider extends Spider {
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
-        for (int n = 0; n < random.nextIntBetweenInclusive(3,6) * amount; n++){
+    public boolean hurtServer(ServerLevel p_376221_, DamageSource p_376460_, float p_376610_) {
+        for (int n = 0; n < random.nextIntBetweenInclusive(3,6) * p_376610_; n++){
             this.level().addParticle(ParticleTypes.GLOW, this.getRandomX(0.6), this.getRandomY(), this.getRandomZ(0.6), 0.0, 0.0, 0.0);
         }
-        return super.hurt(source, amount);
+        return super.hurtServer(p_376221_, p_376460_, p_376610_);
     }
+
 
     
 }

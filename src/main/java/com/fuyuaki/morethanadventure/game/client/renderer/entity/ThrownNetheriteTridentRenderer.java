@@ -2,7 +2,9 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ThrownMysticMermaidsTridentRenderState;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ThrownNetheriteTridentRenderState;
+import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import com.fuyuaki.morethanadventure.world.entity.ThrownNetheriteTrident;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -31,21 +33,22 @@ public class ThrownNetheriteTridentRenderer extends EntityRenderer<ThrownNetheri
         return new ThrownNetheriteTridentRenderState();
     }
 
-
-    public void render(ThrownNetheriteTrident pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
-        pPoseStack.pushPose();
-        pPoseStack.mulPose(Axis.YP.rotationDegrees(Mth.lerp(pPartialTicks, pEntity.yRotO, pEntity.getYRot()) - 90.0F));
-        pPoseStack.mulPose(Axis.ZP.rotationDegrees(Mth.lerp(pPartialTicks, pEntity.xRotO, pEntity.getXRot()) + 90.0F));
-        VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(
-                pBuffer, this.model.renderType(this.getTextureLocation(pEntity)), false, pEntity.isFoil()
-        );
-        this.model.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY);
-        pPoseStack.popPose();
-        super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
+    @Override
+    public void render(ThrownNetheriteTridentRenderState p_361109_, PoseStack p_116114_, MultiBufferSource p_116115_, int p_116116_) {
+        p_116114_.pushPose();
+        p_116114_.mulPose(Axis.YP.rotationDegrees(p_361109_.yRot - 90.0F));
+        p_116114_.mulPose(Axis.ZP.rotationDegrees(p_361109_.xRot + 90.0F));
+        VertexConsumer vertexconsumer = ItemRenderer.getFoilBuffer(p_116115_, this.model.renderType(TEXTURE), false, p_361109_.isFoil);
+        this.model.renderToBuffer(p_116114_, vertexconsumer, p_116116_, OverlayTexture.NO_OVERLAY);
+        p_116114_.popPose();
+        super.render(p_361109_, p_116114_, p_116115_, p_116116_);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(ThrownNetheriteTridentRenderState renderState) {
-        return TEXTURE;
+    public void extractRenderState(ThrownNetheriteTrident p_362162_, ThrownNetheriteTridentRenderState p_360843_, float p_361066_) {
+        super.extractRenderState(p_362162_, p_360843_, p_361066_);
+        p_360843_.yRot = p_362162_.getYRot(p_361066_);
+        p_360843_.xRot = p_362162_.getXRot(p_361066_);
+        p_360843_.isFoil = p_362162_.isFoil();
     }
 }

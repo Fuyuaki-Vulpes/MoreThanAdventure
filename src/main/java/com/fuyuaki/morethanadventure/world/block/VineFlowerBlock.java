@@ -6,16 +6,14 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.MultifaceBlock;
+import net.minecraft.world.level.block.MultifaceSpreadeableBlock;
 import net.minecraft.world.level.block.MultifaceSpreader;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class VineFlowerBlock extends MultifaceBlock implements BonemealableBlock {
+public class VineFlowerBlock extends MultifaceSpreadeableBlock implements BonemealableBlock {
     public static final MapCodec<VineFlowerBlock> CODEC = simpleCodec(VineFlowerBlock::new);
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
@@ -24,16 +22,9 @@ public class VineFlowerBlock extends MultifaceBlock implements BonemealableBlock
     }
 
     @Override
-    protected MapCodec<? extends MultifaceBlock> codec() {
+    public MapCodec<? extends MultifaceSpreadeableBlock> codec() {
         return CODEC;
-    }
 
-    @Override
-    protected BlockState updateShape(
-            BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos
-    ) {
-
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 
     @Override
@@ -64,9 +55,10 @@ public class VineFlowerBlock extends MultifaceBlock implements BonemealableBlock
     }
 
     @Override
-    protected boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
+    protected boolean propagatesSkylightDown(BlockState state) {
         return state.getFluidState().isEmpty();
     }
+
 
 
 }
