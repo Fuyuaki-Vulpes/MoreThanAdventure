@@ -80,9 +80,12 @@ public class YukiOnnaModel<T extends YukiOnnaRenderState> extends EntityModel<T>
     }
 
     @Override
-    public void setupAnim(YukiOnnaRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
-        AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,0.7F,false);
-        AnimUtils.animateWalkRot(this.right_arm,limbSwing,limbSwingAmount,0.7F,true);
+    public void setupAnim(T state) {
+        super.setupAnim(state);
+        //AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
+        //AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,0.7F,false);
+        AnimUtils.animateWalkRot(this.left_arm,state.walkAnimationPos, state.walkAnimationSpeed,0.7F,false);
+        AnimUtils.animateWalkRot(this.right_arm,state.walkAnimationPos, state.walkAnimationSpeed, 0.7F,true);
     }
 }

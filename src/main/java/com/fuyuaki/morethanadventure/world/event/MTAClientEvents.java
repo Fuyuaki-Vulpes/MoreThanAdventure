@@ -169,7 +169,6 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
 
 
-        event.registerLayerDefinition(MTAModelLayers.SIREN_LAYER, com.fuyuaki.morethanadventure.game.client.model.player.SirenModel::createBodyLayer);
 
     }
 

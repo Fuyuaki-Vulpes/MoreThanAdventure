@@ -43,4 +43,13 @@ public class ButterflyRender extends MobRenderer<Butterfly, ButterflyRenderState
     public ResourceLocation getTextureLocation(ButterflyRenderState renderState) {
         return TEXTURE;
     }
+
+    @Override
+    public void extractRenderState(Butterfly entity, ButterflyRenderState state, float partialTick) {
+        state.patternColor = entity.getColor();
+        state.patternId = entity.getPattern();
+        state.overlayColor = entity.getOverlayColor();
+        state.overlayId = entity.getOverlay();
+        super.extractRenderState(entity, state, partialTick);
+    }
 }

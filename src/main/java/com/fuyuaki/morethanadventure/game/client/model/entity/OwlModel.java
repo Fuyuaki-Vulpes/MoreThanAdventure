@@ -66,7 +66,8 @@ public class OwlModel <T extends OwlRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(OwlRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_foot,limbSwing,limbSwingAmount,0.8F,false);

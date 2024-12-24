@@ -65,7 +65,8 @@ public class FerretModel<T extends FerretRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(FerretRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,0.8F,false);

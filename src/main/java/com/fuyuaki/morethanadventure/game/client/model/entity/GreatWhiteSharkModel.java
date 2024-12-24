@@ -79,7 +79,8 @@ public class GreatWhiteSharkModel <T extends GreatWhiteSharkRenderState> extends
     }
 
     @Override
-    public void setupAnim(GreatWhiteSharkRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
         this.torso.xRot = headPitch * (float) (Math.PI / 180.0);
         this.torso.yRot = netHeadYaw * (float) (Math.PI / 180.0);
 

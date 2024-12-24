@@ -73,8 +73,6 @@ public class MTAModelLayers {
 
 
 
-    public static final ModelLayerLocation SIREN_LAYER = register("siren_tail");
-
 
 
     private static ModelLayerLocation register(String name){

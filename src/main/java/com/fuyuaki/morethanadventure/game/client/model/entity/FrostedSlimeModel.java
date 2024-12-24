@@ -55,7 +55,8 @@ private static String getSegmentName(int index) {
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
     @Override
-    public void setupAnim(T renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
 
     }
 

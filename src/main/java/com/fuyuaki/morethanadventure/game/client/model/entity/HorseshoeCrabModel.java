@@ -45,7 +45,8 @@ public class HorseshoeCrabModel <T extends HorseshoeCrabRenderState> extends Ent
     }
 
     @Override
-    public void setupAnim(HorseshoeCrabRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
 
     }
 }

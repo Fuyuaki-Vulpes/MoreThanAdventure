@@ -82,7 +82,8 @@ public class OctopusModel <T extends OctopusRenderState> extends EntityModel<T> 
     }
 
     @Override
-    public void setupAnim(OctopusRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
 
     }
 }

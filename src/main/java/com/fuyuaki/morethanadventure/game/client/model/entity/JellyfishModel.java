@@ -143,7 +143,8 @@ public class JellyfishModel <T extends JellyfishRenderState> extends EntityModel
     }
 
     @Override
-    public void setupAnim(JellyfishRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
 
     }
 

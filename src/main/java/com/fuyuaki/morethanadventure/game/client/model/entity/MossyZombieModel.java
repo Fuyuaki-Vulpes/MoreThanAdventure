@@ -12,10 +12,6 @@ public class MossyZombieModel <T extends MossyZombieRenderState> extends ZombieM
         //this.root = root.getChild("root");
     }
 
-    public boolean isAggressive(T entity) {
-        return entity.isAggressive();
-    }
-
 
 /*
     public static LayerDefinition createBodyLayer() {

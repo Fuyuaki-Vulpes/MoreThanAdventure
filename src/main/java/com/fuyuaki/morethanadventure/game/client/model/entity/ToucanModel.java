@@ -61,8 +61,9 @@ public class ToucanModel <T extends ToucanRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(ToucanRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
+    public void setupAnim(T state) {
+        super.setupAnim(state);
+        AnimUtils.adjustHead(this.head,state.yRot,headPitch);
         AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,0.8F,false);
         AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,0.8F,true);
     }

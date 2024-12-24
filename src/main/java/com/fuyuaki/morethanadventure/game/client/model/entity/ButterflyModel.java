@@ -6,6 +6,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel<T> {
     private final ModelPart root;
@@ -47,6 +48,9 @@ public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel
 
     @Override
     public void setupAnim(T state) {
+        this.root.y = Mth.sin(state.ageInTicks) * 0.1F;
+        this.left_wing.zRot = (state.walkAnimationPos + 1.0F) * 0.5F;
+        this.right_wing.zRot = - (state.walkAnimationPos + 1.0F) * 0.5F;
         super.setupAnim(state);
     }
 }

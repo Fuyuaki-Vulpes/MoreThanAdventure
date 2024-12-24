@@ -36,11 +36,12 @@ public class WispflyModel<T extends WispflyRenderState> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(WispflyRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
         float flySpeed = 0.8F;
         float offset = 1.2F;
-        this.left_wing.yRot = Mth.cos(ageInTicks * flySpeed + offset);
-        this.right_wing.yRot = - Mth.cos(ageInTicks * flySpeed + offset);
+        this.left_wing.yRot = Mth.cos(state.ageInTicks * flySpeed + offset);
+        this.right_wing.yRot = - Mth.cos(state.ageInTicks * flySpeed + offset);
     }
 
     public static LayerDefinition createOuterLayer() {

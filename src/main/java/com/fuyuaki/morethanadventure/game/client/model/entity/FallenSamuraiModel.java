@@ -78,7 +78,8 @@ public class FallenSamuraiModel <T extends FallenSamuraiRenderState> extends Ent
     }
 
     @Override
-    public void setupAnim(FallenSamuraiRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(T state) {
+        super.setupAnim(state);
         AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
 
         AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,1.0F,false);
