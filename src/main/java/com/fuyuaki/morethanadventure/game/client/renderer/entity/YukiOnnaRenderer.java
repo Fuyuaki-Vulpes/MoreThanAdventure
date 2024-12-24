@@ -28,5 +28,9 @@ public class YukiOnnaRenderer extends MobRenderer<YukiOnna, YukiOnnaRenderState,
         return TEXTURE;
     }
 
-
+    @Override
+    public void extractRenderState(YukiOnna onna, YukiOnnaRenderState state, float p_361157_) {
+        state.isAggressive = onna.isAggressive();
+        super.extractRenderState(onna, state, p_361157_);
+    }
 }

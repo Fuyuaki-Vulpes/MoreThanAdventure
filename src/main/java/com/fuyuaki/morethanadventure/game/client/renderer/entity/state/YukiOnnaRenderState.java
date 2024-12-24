@@ -4,5 +4,6 @@ import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 
 public class YukiOnnaRenderState extends HumanoidRenderState {
+    public boolean isAggressive;
 
 }
