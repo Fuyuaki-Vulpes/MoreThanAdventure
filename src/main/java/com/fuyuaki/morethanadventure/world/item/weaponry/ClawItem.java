@@ -18,7 +18,7 @@ public class ClawItem extends WeaponItem {
 // RANGE = 2.0
 
     public ClawItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
+        super(tier, attackDamage, attackSpeed,2.0F ,properties);
     }
 
 

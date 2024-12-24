@@ -1,13 +1,15 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.SkeletonFighterRenderState;
 import com.fuyuaki.morethanadventure.world.entity.SkeletonFighter;
-import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.AbstractSkeletonRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class SkeletonFighterRenderer extends SkeletonRenderer<SkeletonFighter> {
+public class SkeletonFighterRenderer extends AbstractSkeletonRenderer<SkeletonFighter, SkeletonFighterRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton/skeleton_fighter.png");
 
     public SkeletonFighterRenderer(EntityRendererProvider.Context pContext) {
@@ -15,7 +17,13 @@ public class SkeletonFighterRenderer extends SkeletonRenderer<SkeletonFighter> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SkeletonFighter entity) {
+    public SkeletonFighterRenderState createRenderState() {
+        return new SkeletonFighterRenderState();
+    }
+
+
+    @Override
+    public ResourceLocation getTextureLocation(SkeletonFighterRenderState p_368654_) {
         return TEXTURE;
     }
 }

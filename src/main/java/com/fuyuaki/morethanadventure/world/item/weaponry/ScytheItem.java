@@ -14,16 +14,12 @@ public class ScytheItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.6F;
     protected static final int attackDamage = 5;
-// RANGE = 4.0
+    protected static final float range = 4.0F;
 
     public ScytheItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage,attackSpeed, properties);
+        super(tier, attackDamage,attackSpeed,range, properties);
     }
 
-
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_,5.0F,-2.6F,4.0F);
-    }
 
     @Override
     public ParticleOptions getWeaponHitParticles() {

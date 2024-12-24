@@ -3,6 +3,7 @@ package com.fuyuaki.morethanadventure.world.item.weaponry;
 import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -19,28 +20,32 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.ToolMaterial;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class WeaponItem extends SwordItem {
+public class WeaponItem extends Item {
 
     public static final ResourceLocation BASE_RANGE_ID = ResourceLocation.fromNamespaceAndPath(MODID, "base_range_speed");
 
 
 
-    public WeaponItem(ToolMaterial p_tier,float attack, float speed, Properties p_properties) {
-        super(p_tier, attack, speed, p_properties);
+    public WeaponItem(ToolMaterial p_tier,float attack, float range, float speed, Properties p_properties) {
+        super(p_properties.attributes(createAttributes(p_tier,attack,speed,range)));
 
     }
 
+
+    @Override
+    public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
+        return !player.isCreative();
+    }
 
     public static ItemAttributeModifiers createAttributes(ToolMaterial tier, float attackDamage, float attackSpeed, float range) {
         return ItemAttributeModifiers.builder()

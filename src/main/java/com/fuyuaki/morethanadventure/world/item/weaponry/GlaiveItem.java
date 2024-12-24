@@ -14,16 +14,12 @@ public class GlaiveItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.8F;
     protected static final int attackDamage = 3;
-// RANGE = 4.5
-
+    protected static final float range = 4.5F;
     public GlaiveItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage,attackSpeed, properties);
+        super(tier, attackDamage,attackSpeed,range, properties);
     }
 
 
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_,3.0F,-2.8F,4.5F);
-    }
 
     @Override
     public ParticleOptions getWeaponHitParticles() {

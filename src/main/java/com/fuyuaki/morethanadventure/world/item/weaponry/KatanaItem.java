@@ -14,15 +14,11 @@ public class KatanaItem extends WeaponItem {
 
     protected static final float attackSpeed = -1.6F;
     protected static final int attackDamage = 2;
+    protected static final float range = 2.5F;
 // RANGE = 2.5
 
     public KatanaItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
-    }
-
-
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_,2.0F,-1.6F,2.5F);
+        super(tier, attackDamage, attackSpeed,range, properties);
     }
 
 

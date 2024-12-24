@@ -14,10 +14,11 @@ public class ClaymoreItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.9F;
     protected static final int attackDamage = 5;
-// RANGE = 3.5
+    protected static final float range = 3.5F;
+
 
     public ClaymoreItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
+        super(tier, attackDamage, attackSpeed, range, properties);
     }
 
 

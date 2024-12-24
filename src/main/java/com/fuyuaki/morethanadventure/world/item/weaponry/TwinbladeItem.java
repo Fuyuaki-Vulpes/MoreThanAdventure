@@ -14,17 +14,12 @@ public class TwinbladeItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.0F;
     protected static final int attackDamage = 2;
-// RANGE = 3.0
+    protected static final float range = 3.0F;
 
     public TwinbladeItem(ToolMaterial tier, Properties properties) {
-        super(tier,attackDamage,attackSpeed, properties);
+        super(tier,attackDamage,attackSpeed,range, properties);
     }
 
-
-
-    public static ItemAttributeModifiers createAttributes(ToolMaterial tier) {
-        return createAttributes(tier,2.0F,-2.0F,3.0F);
-    }
 
     @Override
     public ParticleOptions getWeaponHitParticles() {

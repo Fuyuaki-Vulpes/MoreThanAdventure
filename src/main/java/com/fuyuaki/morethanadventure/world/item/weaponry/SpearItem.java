@@ -14,15 +14,10 @@ public class SpearItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.7F;
     protected static final int attackDamage = 3;
-// RANGE = 4.5
+    protected static final float range = 4.5F;
 
     public SpearItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage,attackSpeed, properties);
-    }
-
-
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_,3.0F,-2.7F,4.5F);
+        super(tier, attackDamage,attackSpeed,range, properties);
     }
 
     @Override

@@ -12,9 +12,6 @@ public class ZombifiedMinerModel<T extends ZombifiedMinerRenderState> extends Zo
         //this.root = root.getChild("root");
     }
 
-    public boolean isAggressive(T entity) {
-        return entity.isAggressive();
-    }
 
     /*
     public static LayerDefinition createBodyLayer() {

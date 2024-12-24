@@ -45,9 +45,8 @@ public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel
         return LayerDefinition.create(meshdefinition, 16, 16);
     }
 
-
     @Override
-    public void setupAnim(ButterflyRenderState renderState, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+    public void setupAnim(T state) {
+        super.setupAnim(state);
     }
 }

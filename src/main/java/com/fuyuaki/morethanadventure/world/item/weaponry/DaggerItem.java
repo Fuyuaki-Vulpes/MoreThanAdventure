@@ -14,17 +14,14 @@ public class DaggerItem extends WeaponItem {
 
     protected static final float attackSpeed = -1.8F;
     protected static final int attackDamage = 3;
-// RANGE = 2.0
+    protected static final float range = 2.0F;
 
     public DaggerItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage,attackSpeed,properties);
+        super(tier, attackDamage,attackSpeed,range,properties);
     }
 
 
 
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_,3.0F,-1.8F,2.0F);
-    }
 
     @Override
     public ParticleOptions getWeaponHitParticles() {

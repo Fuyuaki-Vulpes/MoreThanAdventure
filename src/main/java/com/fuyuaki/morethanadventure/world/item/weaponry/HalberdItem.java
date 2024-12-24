@@ -14,16 +14,12 @@ public class HalberdItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.9F;
     protected static final int attackDamage = 4;
-// RANGE = 4.0
+    protected static final float range = 4.0F;
 
     public HalberdItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
+        super(tier, attackDamage, attackSpeed, range, properties);
     }
 
-
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_,4.0F,-2.9F,4.0F);
-    }
 
 
     @Override
