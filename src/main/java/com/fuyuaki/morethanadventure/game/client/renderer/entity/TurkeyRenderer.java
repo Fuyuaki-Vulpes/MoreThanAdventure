@@ -38,6 +38,6 @@ public class TurkeyRenderer extends MobRenderer<Turkey, TurkeyRenderState, Turke
 
     @Override
     public TurkeyRenderState createRenderState() {
-        return null;
+        return new TurkeyRenderState();
     }
 }

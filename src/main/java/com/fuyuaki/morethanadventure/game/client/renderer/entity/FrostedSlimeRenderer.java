@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.FrostedSlimeModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.FrostedSlimeRenderState;
 import com.fuyuaki.morethanadventure.world.entity.FrostedSlime;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -15,10 +16,16 @@ import net.minecraft.world.entity.monster.MagmaCube;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlimeModel<FrostedSlime>> {
+public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlimeRenderState, FrostedSlimeModel<FrostedSlimeRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/slime/frozen_slime.png");
 
     public FrostedSlimeRenderer(EntityRendererProvider.Context pContext) {
         super(pContext,new FrostedSlimeModel<>(pContext.bakeLayer(MTAModelLayers.FROSTED_SLIME)), 0.25F);
+    }
+
+    @Override
+    public FrostedSlimeRenderState createRenderState() {
+        return new FrostedSlimeRenderState();
     }
 
     protected int getBlockLightLevel(MagmaCube entity, BlockPos pos) {
@@ -29,6 +36,9 @@ public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlime
     public void render(FrostedSlime entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         this.shadowRadius = 0.25F * (float)entity.getSize();
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+    public void render(FrostedSlimeRenderState renderState, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+        this.shadowRadius = 0.25F * (float)renderState.getSize;
+        super.render(renderState, poseStack, bufferSource, packedLight);
     }
 
     protected void scale(FrostedSlime livingEntity, PoseStack poseStack, float partialTickTime) {
@@ -40,6 +50,7 @@ public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlime
 
     @Override
     public ResourceLocation getTextureLocation(FrostedSlime entity) {
+    public ResourceLocation getTextureLocation(FrostedSlimeRenderState p_368654_) {
         return TEXTURE;
     }
 }

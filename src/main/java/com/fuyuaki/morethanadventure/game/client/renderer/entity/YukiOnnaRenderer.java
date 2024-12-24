@@ -19,7 +19,7 @@ public class YukiOnnaRenderer extends MobRenderer<YukiOnna, YukiOnnaRenderState,
 
     @Override
     public YukiOnnaRenderState createRenderState() {
-        return null;
+        return new YukiOnnaRenderState();
     }
 
 

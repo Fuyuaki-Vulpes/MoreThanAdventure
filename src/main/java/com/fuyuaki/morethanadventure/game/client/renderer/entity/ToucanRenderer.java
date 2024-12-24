@@ -37,6 +37,6 @@ public class ToucanRenderer extends MobRenderer<Toucan, ToucanRenderState, Touca
 
     @Override
     public ToucanRenderState createRenderState() {
-        return null;
+        return new ToucanRenderState();
     }
 }

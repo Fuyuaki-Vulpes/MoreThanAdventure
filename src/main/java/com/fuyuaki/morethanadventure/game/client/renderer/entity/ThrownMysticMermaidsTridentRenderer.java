@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.MysticMermaidsTridentModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ThrownMysticMermaidsTridentRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -16,7 +17,7 @@ import net.minecraft.util.Mth;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ThrownMysticMermaidsTridentRenderer extends EntityRenderer<ThrownMysticMermaidsTrident> {
+public class ThrownMysticMermaidsTridentRenderer extends EntityRenderer<ThrownMysticMermaidsTrident, ThrownMysticMermaidsTridentRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/mystic_mermaids_trident.png");
     private final MysticMermaidsTridentModel model;
 
@@ -26,6 +27,10 @@ public class ThrownMysticMermaidsTridentRenderer extends EntityRenderer<ThrownMy
         this.model = new MysticMermaidsTridentModel(pContext.bakeLayer(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT));
     }
 
+    @Override
+    public ThrownMysticMermaidsTridentRenderState createRenderState() {
+        return new ThrownMysticMermaidsTridentRenderState();
+    }
 
 
     public void render(ThrownMysticMermaidsTrident pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
@@ -41,7 +46,7 @@ public class ThrownMysticMermaidsTridentRenderer extends EntityRenderer<ThrownMy
     }
 
     @Override
-    public ResourceLocation getTextureLocation(ThrownMysticMermaidsTrident pEntity) {
+    public ResourceLocation getTextureLocation(ThrownMysticMermaidsTridentRenderState renderState) {
         return TEXTURE;
     }
 }

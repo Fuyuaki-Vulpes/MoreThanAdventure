@@ -9,7 +9,15 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
+<<<<<<< Updated upstream
 public class SkeletonFighterRenderer extends AbstractSkeletonRenderer<SkeletonFighter, SkeletonFighterRenderState> {
+=======
+<<<<<<< HEAD
+public class SkeletonFighterRenderer extends SkeletonRenderer<SkeletonFighter, SkeletonFighterRenderState> {
+=======
+public class SkeletonFighterRenderer extends AbstractSkeletonRenderer<SkeletonFighter, SkeletonFighterRenderState> {
+>>>>>>> c9d8bd9ff694e0cb5b641aa7a884f988e45fa373
+>>>>>>> Stashed changes
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton/skeleton_fighter.png");
 
     public SkeletonFighterRenderer(EntityRendererProvider.Context pContext) {
@@ -17,6 +25,12 @@ public class SkeletonFighterRenderer extends AbstractSkeletonRenderer<SkeletonFi
     }
 
     @Override
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    public ResourceLocation getTextureLocation(SkeletonFighterRenderState renderState) {
+=======
+>>>>>>> Stashed changes
     public SkeletonFighterRenderState createRenderState() {
         return new SkeletonFighterRenderState();
     }
@@ -24,6 +38,10 @@ public class SkeletonFighterRenderer extends AbstractSkeletonRenderer<SkeletonFi
 
     @Override
     public ResourceLocation getTextureLocation(SkeletonFighterRenderState p_368654_) {
+<<<<<<< Updated upstream
+=======
+>>>>>>> c9d8bd9ff694e0cb5b641aa7a884f988e45fa373
+>>>>>>> Stashed changes
         return TEXTURE;
     }
 }

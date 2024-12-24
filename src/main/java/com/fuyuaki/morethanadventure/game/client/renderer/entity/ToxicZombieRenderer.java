@@ -2,13 +2,14 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.ToxicZombieModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ToxicZombieRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ToxicZombie;
 import net.minecraft.client.renderer.entity.*;
 import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ToxicZombieRenderer extends AbstractZombieRenderer<ToxicZombie, ToxicZombieModel<ToxicZombie>> {
+public class ToxicZombieRenderer extends AbstractZombieRenderer<ToxicZombie, ToxicZombieRenderState, ToxicZombieModel<ToxicZombie,ToxicZombieRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/toxic_zombie.png");
 
     public ToxicZombieRenderer(EntityRendererProvider.Context context) {
@@ -21,7 +22,12 @@ public class ToxicZombieRenderer extends AbstractZombieRenderer<ToxicZombie, Tox
     }
 
     @Override
-    public ResourceLocation getTextureLocation(ToxicZombie entity) {
+    public ToxicZombieRenderState createRenderState() {
+        return new ToxicZombieRenderState();
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(ToxicZombieRenderState entity) {
         return TEXTURE;
     }
 }

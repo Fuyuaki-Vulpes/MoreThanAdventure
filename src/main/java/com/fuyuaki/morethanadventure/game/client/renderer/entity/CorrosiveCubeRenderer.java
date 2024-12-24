@@ -27,6 +27,7 @@ public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveC
     @Override
     public CorrosiveCubeRenderState createRenderState() {
         return null;
+        return new CorrosiveCubeRenderState();
     }
 
     @Override

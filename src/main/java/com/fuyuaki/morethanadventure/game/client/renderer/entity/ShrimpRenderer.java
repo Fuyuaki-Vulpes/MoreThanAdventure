@@ -19,7 +19,7 @@ public class ShrimpRenderer extends MobRenderer<Shrimp, ShrimpRenderState, Shrim
 
     @Override
     public ShrimpRenderState createRenderState() {
-        return null;
+        return new ShrimpRenderState();
     }
 
 

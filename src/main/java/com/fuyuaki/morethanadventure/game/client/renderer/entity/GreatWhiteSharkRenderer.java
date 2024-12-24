@@ -20,6 +20,7 @@ public class GreatWhiteSharkRenderer extends MobRenderer<GreatWhiteShark, GreatW
     @Override
     public GreatWhiteSharkRenderState createRenderState() {
         return null;
+        return new GreatWhiteSharkRenderState();
     }
 
 

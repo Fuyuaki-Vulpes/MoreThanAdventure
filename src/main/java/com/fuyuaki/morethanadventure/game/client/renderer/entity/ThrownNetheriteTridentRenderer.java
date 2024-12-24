@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ThrownNetheriteTridentRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ThrownNetheriteTrident;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -16,7 +17,7 @@ import net.minecraft.util.Mth;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ThrownNetheriteTridentRenderer extends EntityRenderer<ThrownNetheriteTrident> {
+public class ThrownNetheriteTridentRenderer extends EntityRenderer<ThrownNetheriteTrident, ThrownNetheriteTridentRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/netherite_trident.png");
     private final NetheriteTridentModel model;
 
@@ -25,6 +26,10 @@ public class ThrownNetheriteTridentRenderer extends EntityRenderer<ThrownNetheri
         this.model = new NetheriteTridentModel(pContext.bakeLayer(MTAModelLayers.NETHERITE_TRIDENT));
     }
 
+    @Override
+    public ThrownNetheriteTridentRenderState createRenderState() {
+        return new ThrownNetheriteTridentRenderState();
+    }
 
 
     public void render(ThrownNetheriteTrident pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
@@ -40,7 +45,7 @@ public class ThrownNetheriteTridentRenderer extends EntityRenderer<ThrownNetheri
     }
 
     @Override
-    public ResourceLocation getTextureLocation(ThrownNetheriteTrident pEntity) {
+    public ResourceLocation getTextureLocation(ThrownNetheriteTridentRenderState renderState) {
         return TEXTURE;
     }
 }

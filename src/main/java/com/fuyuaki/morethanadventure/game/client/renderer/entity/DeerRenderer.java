@@ -24,6 +24,7 @@ public class DeerRenderer extends MobRenderer<Deer, DeerRenderState, DeerModel<D
     @Override
     public DeerRenderState createRenderState() {
         return null;
+        return new DeerRenderState();
     }
 
     @Override

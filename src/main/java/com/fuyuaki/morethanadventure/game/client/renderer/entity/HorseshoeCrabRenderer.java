@@ -20,6 +20,7 @@ public class HorseshoeCrabRenderer extends MobRenderer<HorseshoeCrab, HorseshoeC
     @Override
     public HorseshoeCrabRenderState createRenderState() {
         return null;
+        return new HorseshoeCrabRenderState();
     }
 
 

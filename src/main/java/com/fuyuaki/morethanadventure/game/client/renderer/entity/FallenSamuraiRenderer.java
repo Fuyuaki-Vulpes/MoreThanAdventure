@@ -20,6 +20,7 @@ public class FallenSamuraiRenderer extends MobRenderer<FallenSamurai, FallenSamu
     @Override
     public FallenSamuraiRenderState createRenderState() {
         return null;
+        return new FallenSamuraiRenderState();
     }
 
     @Override

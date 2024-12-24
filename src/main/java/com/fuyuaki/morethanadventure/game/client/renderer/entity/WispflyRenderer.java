@@ -23,7 +23,7 @@ public class WispflyRenderer<T extends Wispfly> extends MobRenderer<T, WispflyRe
 
     @Override
     public WispflyRenderState createRenderState() {
-        return null;
+        return new WispflyRenderState();
     }
 
 

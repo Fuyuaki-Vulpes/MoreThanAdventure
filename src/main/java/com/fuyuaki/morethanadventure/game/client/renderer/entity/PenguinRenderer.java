@@ -39,5 +39,6 @@ public class PenguinRenderer extends MobRenderer<Penguin, PenguinRenderState, Pe
     @Override
     public PenguinRenderState createRenderState() {
         return null;
+        return new PenguinRenderState();
     }
 }

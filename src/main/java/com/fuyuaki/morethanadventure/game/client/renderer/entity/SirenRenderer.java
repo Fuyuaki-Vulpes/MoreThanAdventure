@@ -19,7 +19,7 @@ public class SirenRenderer extends MobRenderer<Siren, SirenRenderState, SirenMod
 
     @Override
     public SirenRenderState createRenderState() {
-        return null;
+        return new SirenRenderState();
     }
 
     @Override

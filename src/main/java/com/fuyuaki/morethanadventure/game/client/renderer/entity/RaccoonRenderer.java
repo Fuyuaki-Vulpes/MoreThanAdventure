@@ -39,5 +39,6 @@ public class RaccoonRenderer extends MobRenderer<Raccoon, RaccoonRenderState, Ra
     @Override
     public RaccoonRenderState createRenderState() {
         return null;
+        return new RaccoonRenderState();
     }
 }
