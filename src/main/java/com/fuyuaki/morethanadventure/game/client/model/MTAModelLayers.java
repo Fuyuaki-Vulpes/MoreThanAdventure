@@ -59,14 +59,23 @@ public class MTAModelLayers {
     public static final ModelLayerLocation CHARRED_SKELETON_INNER_ARMOR = register("charred_skeleton_inner_armor");
     public static final ModelLayerLocation HOST_OUTER_ARMOR = register("host_outer_armor");
     public static final ModelLayerLocation HOST_INNER_ARMOR = register("host_inner_armor");
+    public static final ModelLayerLocation MOSSY_ZOMBIE_BABY = register("mossy_zombie_baby");
     public static final ModelLayerLocation MOSSY_ZOMBIE_OUTER_ARMOR = register("mossy_zombie_outer_armor");
     public static final ModelLayerLocation MOSSY_ZOMBIE_INNER_ARMOR = register("mossy_zombie_inner_armor");
+    public static final ModelLayerLocation MOSSY_ZOMBIE_BABY_OUTER_ARMOR = register("mossy_zombie_baby_outer_armor");
+    public static final ModelLayerLocation MOSSY_ZOMBIE_BABY_INNER_ARMOR = register("mossy_zombie_baby_inner_armor");
     public static final ModelLayerLocation SKELETON_FIGHTER_OUTER_ARMOR = register("skeleton_fighter_outer_armor");
     public static final ModelLayerLocation SKELETON_FIGHTER_INNER_ARMOR = register("skeleton_fighter_inner_armor");
+    public static final ModelLayerLocation TOXIC_ZOMBIE_BABY = register("toxic_zombie_baby");
     public static final ModelLayerLocation TOXIC_ZOMBIE_OUTER_ARMOR = register("toxic_zombie_outer_armor");
     public static final ModelLayerLocation TOXIC_ZOMBIE_INNER_ARMOR = register("toxic_zombie_inner_armor");
+    public static final ModelLayerLocation TOXIC_ZOMBIE_BABY_OUTER_ARMOR = register("toxic_zombie_baby_outer_armor");
+    public static final ModelLayerLocation TOXIC_ZOMBIE_BABY_INNER_ARMOR = register("toxic_zombie_baby_inner_armor");
+    public static final ModelLayerLocation ZOMBIFIED_MINER_BABY = register("zombified_miner_baby");
     public static final ModelLayerLocation ZOMBIFIED_MINER_OUTER_ARMOR = register("zombified_miner_outer_armor");
     public static final ModelLayerLocation ZOMBIFIED_MINER_INNER_ARMOR = register("zombified_miner_inner_armor");
+    public static final ModelLayerLocation ZOMBIFIED_MINER_BABY_OUTER_ARMOR = register("zombified_miner_baby_outer_armor");
+    public static final ModelLayerLocation ZOMBIFIED_MINER_BABY_INNER_ARMOR = register("zombified_miner_baby_inner_armor");
     public static final ModelLayerLocation WISPFLY = register("wispfly");
     public static final ModelLayerLocation WISPFLY_OUTER_LAYER = register("wispfly_outer_layer");
 

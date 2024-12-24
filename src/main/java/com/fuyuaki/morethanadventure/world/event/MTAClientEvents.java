@@ -159,6 +159,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.HOST_INNER_ARMOR, () -> humanoidInnerArmor);
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE_INNER_ARMOR, () -> humanoidInnerArmor);
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER_INNER_ARMOR, () -> humanoidInnerArmor);
         event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE_OUTER_ARMOR, () -> humanoidOuterArmor);

@@ -10,15 +10,18 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class ZombifiedMinerRenderer extends AbstractZombieRenderer<ZombifiedMiner, ZombifiedMinerRenderState, ZombifiedMinerModel<ZombifiedMiner, ZombifiedMinerRenderState>> {
+public class ZombifiedMinerRenderer extends AbstractZombieRenderer<ZombifiedMiner, ZombifiedMinerRenderState, ZombifiedMinerModel<ZombifiedMinerRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/zombified_miner.png");
 
     public ZombifiedMinerRenderer(EntityRendererProvider.Context context) {
         super(
                 context,
                 new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER)),
+                new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER_BABY)),
                 new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER_INNER_ARMOR)),
-                new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER_OUTER_ARMOR))
+                new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER_OUTER_ARMOR)),
+                new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER_BABY_INNER_ARMOR)),
+                new ZombifiedMinerModel<>(context.bakeLayer(MTAModelLayers.ZOMBIFIED_MINER_BABY_OUTER_ARMOR))
         );
     }
 

@@ -18,8 +18,11 @@ public class MossyZombieRenderer extends AbstractZombieRenderer<MossyZombie, Mos
         super(
             context,
             new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE)),
+            new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE_BABY)),
             new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE_INNER_ARMOR)),
-            new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE_OUTER_ARMOR))
+            new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE_OUTER_ARMOR)),
+            new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE_BABY_INNER_ARMOR)),
+            new MossyZombieModel<>(context.bakeLayer(MTAModelLayers.MOSSY_ZOMBIE_BABY_OUTER_ARMOR))
     );
 
     }
