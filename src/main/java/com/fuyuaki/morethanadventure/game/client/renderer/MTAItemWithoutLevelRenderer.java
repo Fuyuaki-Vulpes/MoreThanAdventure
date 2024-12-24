@@ -8,7 +8,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -21,7 +20,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 
-public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer {
+public class MTAItemWithoutLevelRenderer  {
 
 
     private static final Minecraft minecraft = Minecraft.getInstance();
@@ -34,13 +33,11 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
 
 
     public MTAItemWithoutLevelRenderer(BlockEntityRenderDispatcher pBlockEntityRenderDispatcher, EntityModelSet pEntityModelSet) {
-        super(pBlockEntityRenderDispatcher, pEntityModelSet);
         this.entityModelSet = pEntityModelSet;
 
 
     }
 
-    @Override
     public void onResourceManagerReload(ResourceManager pResourceManager) {
 
         this.netheriteTrident = new NetheriteTridentModel(this.entityModelSet.bakeLayer(MTAModelLayers.NETHERITE_TRIDENT));
@@ -50,7 +47,6 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
 
     }
 
-    @Override
     public void renderByItem(ItemStack pStack, ItemDisplayContext pDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
         Item item = pStack.getItem();
 
@@ -59,7 +55,7 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
         if (pStack.is(MtaItems.NETHERITE_TRIDENT)) {
             pPoseStack.pushPose();
             pPoseStack.scale(1.0F, -1.0F, -1.0F);
-            VertexConsumer vertexconsumer1 = ItemRenderer.getFoilBufferDirect(
+            VertexConsumer vertexconsumer1 = ItemRenderer.getFoilBuffer(
                     pBuffer, this.netheriteTrident.renderType(NetheriteTridentModel.TEXTURE), false, pStack.hasFoil()
             );
             this.netheriteTrident.renderToBuffer(pPoseStack, vertexconsumer1, pPackedLight, pPackedOverlay);
@@ -67,7 +63,7 @@ public class MTAItemWithoutLevelRenderer extends BlockEntityWithoutLevelRenderer
         }else if (pStack.is(MtaItems.MYSTIC_MERMAIDS_TRIDENT)) {
             pPoseStack.pushPose();
             pPoseStack.scale(1.0F, -1.0F, -1.0F);
-            VertexConsumer vertexconsumer1 = ItemRenderer.getFoilBufferDirect(
+            VertexConsumer vertexconsumer1 = ItemRenderer.getFoilBuffer(
                     pBuffer, this.mysticMermaidsTrident.renderType(MysticMermaidsTridentModel.TEXTURE), false, pStack.hasFoil()
             );
             this.mysticMermaidsTrident.renderToBuffer(pPoseStack, vertexconsumer1, pPackedLight, pPackedOverlay);

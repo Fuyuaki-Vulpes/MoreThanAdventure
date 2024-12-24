@@ -130,8 +130,9 @@ dependencies {
 
     implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablenderVersion}"
 
-    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
-    runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
+
+//    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
+//    runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
 
     implementation "top.theillusivec4.curios:curios-neoforge:${curiosVersion}"
 
