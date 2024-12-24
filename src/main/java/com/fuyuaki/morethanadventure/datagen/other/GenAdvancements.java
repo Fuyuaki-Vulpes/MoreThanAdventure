@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.other;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

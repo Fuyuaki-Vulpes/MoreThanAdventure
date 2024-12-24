@@ -1,21 +1,20 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.tags;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.EntityTypeTagsProvider;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class GenEntityTags extends EntityTypeTagsProvider {
-    public GenEntityTags(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(pOutput, pProvider, MODID, existingFileHelper);
+public class GenEntityTags extends IntrinsicHolderTagsProvider<EntityType<?>> {
+    public GenEntityTags(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider) {
+        super(pOutput, Registries.ENTITY_TYPE, pProvider, entityType -> entityType.builtInRegistryHolder().key(),MODID,null);
     }
 
     @Override

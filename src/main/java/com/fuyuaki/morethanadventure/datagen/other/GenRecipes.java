@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.other;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;

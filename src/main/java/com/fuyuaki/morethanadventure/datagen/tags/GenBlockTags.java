@@ -1,23 +1,23 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.tags;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class GenBlockTags extends BlockTagsProvider {
-    public GenBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, MODID, existingFileHelper);
+public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
+    public GenBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, Registries.BLOCK, lookupProvider, block -> block.builtInRegistryHolder().key(),MODID,null);
     }
 
     @Override

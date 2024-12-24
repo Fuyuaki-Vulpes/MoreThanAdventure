@@ -1,26 +1,33 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import net.minecraft.data.PackOutput;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.ItemModelOutput;
+import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelInstance;
+import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
-import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.LinkedHashMap;
+import java.util.function.BiConsumer;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+public class GenItemModels extends ItemModelGenerators {
 
-public class GenItemModels extends ItemModelProvider {
-    public GenItemModels(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, MODID, existingFileHelper);
+    private final ItemModelOutput itemModelOutput;
+    private final BiConsumer<ResourceLocation, ModelInstance> modelOutput;
+
+
+    public GenItemModels(ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
+        super(itemModelOutput, modelOutput);
+        this.itemModelOutput = itemModelOutput;
+        this.modelOutput = modelOutput;
     }
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
@@ -40,11 +47,11 @@ public class GenItemModels extends ItemModelProvider {
     @Override
     protected void registerModels() {
         saplingItem(MtaBlocks.PALM_SAPLING);
-        basicItem(MtaBlocks.PALM_DOOR.asItem());
+        this.generateFlatItem(MtaBlocks.PALM_DOOR.asItem(), ModelTemplates.FLAT_ITEM);
         buttonItem(MtaBlocks.PALM_BUTTON, MtaBlocks.PALM_PLANKS);
         fenceItem(MtaBlocks.PALM_FENCE, MtaBlocks.PALM_PLANKS);
         saplingItem(MtaBlocks.SEAWOOD_SAPLING);
-        basicItem(MtaBlocks.SEAWOOD_DOOR.asItem());
+        this.generateFlatItem(MtaBlocks.SEAWOOD_DOOR.asItem(), ModelTemplates.FLAT_ITEM);
         buttonItem(MtaBlocks.SEAWOOD_BUTTON, MtaBlocks.SEAWOOD_PLANKS);
         fenceItem(MtaBlocks.SEAWOOD_FENCE, MtaBlocks.SEAWOOD_PLANKS);
 
@@ -290,111 +297,89 @@ public class GenItemModels extends ItemModelProvider {
 
 
         //SPAWN EGGS
-        spawnEggItem(MtaItems.YUKI_ONNA_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.ICICLE_CREEPER_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.BUTTERFLY_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.CAPYBARA_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.DEER_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.DUCK_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.FERRET_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.HORSESHOE_CRAB_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.JELLYFISH_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.OCTOPUS_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.OWL_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.PENGUIN_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.RACCOON_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.SHRIMP_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.TOUCAN_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.TURKEY_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.BLACK_WIDOW_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.FROSTED_SLIME_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.GLOW_SPIDER_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.HOST_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.SIREN_SPAWN_EGG.get());
-        spawnEggItem(MtaItems.WISPFLY_SPAWN_EGG.get());
-    }
-
-    private ItemModelBuilder simpleItem(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+        this.generateSpawnEgg(MtaItems.YUKI_ONNA_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.FALLEN_SAMURAI_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.ICICLE_CREEPER_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.BUTTERFLY_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.BEARDED_DRAGON_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.CAPYBARA_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.DEER_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.DUCK_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.FERRET_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.HORSESHOE_CRAB_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.JELLYFISH_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.OCTOPUS_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.OWL_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.PENGUIN_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.RACCOON_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.SHRIMP_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.TOUCAN_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.TURKEY_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.BLACK_WIDOW_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.FROSTED_SLIME_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.GLOW_SPIDER_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.HOST_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.SIREN_SPAWN_EGG.get(),11366765,11366765);
+        this.generateSpawnEgg(MtaItems.WISPFLY_SPAWN_EGG.get(),11366765,11366765);
     }
 
 
-    private ItemModelBuilder handheldItem(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.parse("item/handheld")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+
+    private void handheldItem(DeferredItem<?> item) {
+        this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), ModelTemplates.FLAT_HANDHELD_ITEM)));
+
     }
 
-    private ItemModelBuilder handheldClaw(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_claw")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    private void handheldClaw(DeferredItem<?> item) {
+        this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), MTAModelTemplates.CLAW)));
+
     }
 
-    private ItemModelBuilder handheldBigItem(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big_low_hilt")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    private void handheldBigItem(DeferredItem<?> item) {
+        this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), MTAModelTemplates.BIG_HANDHELD_LOW_HILT)));
+
     }
-    private ItemModelBuilder handheldBigItemMediumHilt(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big_medium_hilt")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    private void handheldBigItemMediumHilt(DeferredItem<?> item) {
+        this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), MTAModelTemplates.BIG_HANDHELD_MEDIUM_HILT)));
     }
-    private ItemModelBuilder handheldBigItemMiddleHilt(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/handheld_big_middle_hilt")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
-    }
-    private ItemModelBuilder coreStoneItem(DeferredItem<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/template_core_stone"));
+    private void handheldBigItemMiddleHilt(DeferredItem<?> item) {
+        this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), MTAModelTemplates.BIG_HANDHELD_MIDDLE_HILT)));
     }
 
-    private ItemModelBuilder simpleBlockItem(DeferredBlock<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("item/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"item/" + item.getId().getPath()));
+    private void simpleBlockItem(DeferredBlock<?> item) {
+
     }
 
-    private  ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
-        return  withExistingParent(item.getId().getPath(),
-                ResourceLocation.parse("item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(MODID, "block/" + item.getId().getPath()));
+    private  void saplingItem(DeferredBlock<Block> item) {
+
     }
 
-    private ItemModelBuilder slabItem(DeferredBlock<?> item) {
-        return withExistingParent(item.getId().getPath(),
-                ResourceLocation.withDefaultNamespace("block/generated")).texture("layer0",
-                ResourceLocation.fromNamespaceAndPath(MODID,"block/" + item.getId().getPath()));
+    private void slabItem(DeferredBlock<?> item) {
+
     }
 
     public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
-        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(MODID,
-                        "block/" + baseBlock.getId().getPath()));
+
     }
 
     public void fenceItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
-        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(MODID,
-                        "block/" + baseBlock.getId().getPath()));
+
     }
 
     public void wallItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
-        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall",  ResourceLocation.fromNamespaceAndPath(MODID,
-                        "block/" + baseBlock.getId().getPath()));
+
+    }
+
+
+    public void simpleItem(DeferredItem<?> item) {
+        this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), ModelTemplates.FLAT_ITEM)));
     }
 }

@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.other;
 
 import com.fuyuaki.morethanadventure.game.worldgen.MTANoises;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomeModifiers;

@@ -1,28 +1,28 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.tags;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class GenBiomeTags  extends BiomeTagsProvider {
+public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
 
 
-    public GenBiomeTags(PackOutput p_255800_, CompletableFuture<HolderLookup.Provider> p_256205_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_255800_, p_256205_, MODID, existingFileHelper);
+    public GenBiomeTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
+        super(output, Registries.BIOME, provider, biome -> ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,biome.toString())),MODID,null);
     }
 
     @Override

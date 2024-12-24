@@ -1,26 +1,40 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.world.block.MtaCrops;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelOutput;
+import net.minecraft.client.data.models.blockstates.BlockStateGenerator;
+import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.neoforged.neoforge.client.model.generators.*;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class GenBlockstate extends BlockStateProvider {
-    public GenBlockstate(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, MODID, exFileHelper);
+public class GenBlockModels extends BlockModelGenerators {
+
+    final Consumer<BlockStateGenerator> blockStateOutput;
+    final BiConsumer<ResourceLocation, ModelInstance> modelOutput;
+
+    public GenBlockModels(Consumer<BlockStateGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
+        super(blockStateOutput, itemModelOutput, modelOutput);
+        this.blockStateOutput = blockStateOutput;
+        this.modelOutput = modelOutput;
+    }
+
+    @Override
+    public void run() {
+        super.run();
     }
 
     @Override

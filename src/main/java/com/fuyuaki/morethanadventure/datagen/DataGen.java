@@ -1,8 +1,14 @@
 package com.fuyuaki.morethanadventure.datagen;
 
-import com.fuyuaki.morethanadventure.datagen.generators.*;
-import com.fuyuaki.morethanadventure.datagen.generators.lang.EN_US_LangProvider;
-import com.fuyuaki.morethanadventure.datagen.generators.loot.GlobalLootModifiers;
+import com.fuyuaki.morethanadventure.datagen.other.*;
+import com.fuyuaki.morethanadventure.datagen.lang.EN_US_LangProvider;
+import com.fuyuaki.morethanadventure.datagen.loot.GlobalLootModifiers;
+import com.fuyuaki.morethanadventure.datagen.model.GenBlockModels;
+import com.fuyuaki.morethanadventure.datagen.model.GenItemModels;
+import com.fuyuaki.morethanadventure.datagen.tags.GenBiomeTags;
+import com.fuyuaki.morethanadventure.datagen.tags.GenBlockTags;
+import com.fuyuaki.morethanadventure.datagen.tags.GenEntityTags;
+import com.fuyuaki.morethanadventure.datagen.tags.GenItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -36,20 +42,20 @@ public class DataGen {
         //generator.addProvider(true, new GenRecipes(lookupProvider,packOutput));
         generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
 
-        generator.addProvider(true, new GenBlockstate(packOutput, existingFileHelper));
-        generator.addProvider(true, new GenItemModels(packOutput, existingFileHelper));
+        generator.addProvider(true, new GenBlockModels(packOutput));
+        generator.addProvider(true, new GenItemModels(packOutput));
 
         GenBlockTags blockTagGenerator = generator.addProvider(true,
-                new GenBlockTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
+                new GenBlockTags(packOutput, datapackRegistries.getRegistryProvider()));
 
         generator.addProvider(true,
-                new GenItemTags(packOutput, datapackRegistries.getRegistryProvider(), blockTagGenerator.contentsGetter(), existingFileHelper));
+                new GenItemTags(packOutput, datapackRegistries.getRegistryProvider()));
 
         generator.addProvider(true,
-                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
+                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider()));
 
         generator.addProvider(true,
-                new GenEntityTags(packOutput, datapackRegistries.getRegistryProvider(), existingFileHelper));
+                new GenEntityTags(packOutput, datapackRegistries.getRegistryProvider()));
 
 
         generator.addProvider(true,

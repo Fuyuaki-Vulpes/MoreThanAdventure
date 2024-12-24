@@ -1,7 +1,6 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.tags;
 
 import com.fuyuaki.morethanadventure.core.MTAMod;
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

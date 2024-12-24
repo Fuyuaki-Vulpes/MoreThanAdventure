@@ -1,6 +1,6 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.other;
 
-import com.fuyuaki.morethanadventure.datagen.generators.loot.LootBlocks;
+import com.fuyuaki.morethanadventure.datagen.loot.LootBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;

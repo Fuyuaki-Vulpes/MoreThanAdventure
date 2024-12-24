@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.datagen.generators.lang;
+package com.fuyuaki.morethanadventure.datagen.lang;
 
 import com.fuyuaki.morethanadventure.core.registry.*;
 import net.minecraft.core.registries.BuiltInRegistries;

@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.datagen.generators;
+package com.fuyuaki.morethanadventure.datagen.other;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
 import net.minecraft.data.PackOutput;
@@ -6,10 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.SoundDefinition;
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 

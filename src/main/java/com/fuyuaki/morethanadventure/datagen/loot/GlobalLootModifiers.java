@@ -1,15 +1,12 @@
-package com.fuyuaki.morethanadventure.datagen.generators.loot;
+package com.fuyuaki.morethanadventure.datagen.loot;
 
 import com.fuyuaki.morethanadventure.core.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.loot.MtaAddItemModifier;
 import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.predicates.*;
 import net.neoforged.neoforge.common.Tags;
