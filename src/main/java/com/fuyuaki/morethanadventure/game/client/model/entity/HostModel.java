@@ -70,12 +70,12 @@ public class HostModel<T extends HostRenderState> extends EntityModel<T> {
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
 
-        AnimUtils.animateWalkRot(this.left_arm,limbSwing,limbSwingAmount,1.0F,false);
-        AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,1.0F,true);
-        AnimUtils.animateWalkRot(this.right_arm,limbSwing,limbSwingAmount,1.0F,true);
-        AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,1.0F,false);
+        AnimUtils.animateWalkRot(this.left_arm,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,false);
+        AnimUtils.animateWalkRot(this.left_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,true);
+        AnimUtils.animateWalkRot(this.right_arm,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,true);
+        AnimUtils.animateWalkRot(this.right_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,false);
         AnimationUtils.animateZombieArms(this.left_arm, this.right_arm, this.isAggressive(renderState), this.attackTime, ageInTicks);
 
     }

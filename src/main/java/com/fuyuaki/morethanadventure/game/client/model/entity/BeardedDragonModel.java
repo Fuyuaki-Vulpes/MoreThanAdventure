@@ -66,11 +66,11 @@ public class BeardedDragonModel<T extends BeardedDragonRenderState> extends Enti
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
-        AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,1.5F,false);
-        AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,1.5F,true);
-        AnimUtils.animateWalkRot(this.left_hind_leg,limbSwing,limbSwingAmount,1.5F,true);
-        AnimUtils.animateWalkRot(this.right_hind_leg,limbSwing,limbSwingAmount,1.5F,false);
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
+        AnimUtils.animateWalkRot(this.left_front_leg, state.walkAnimationPos, state.walkAnimationSpeed, 1.5F,false);
+        AnimUtils.animateWalkRot(this.right_front_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.5F,true);
+        AnimUtils.animateWalkRot(this.left_hind_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.5F,true);
+        AnimUtils.animateWalkRot(this.right_hind_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.5F,false);
 
     }
 }

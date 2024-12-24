@@ -58,10 +58,10 @@ public class RaccoonModel <T extends RaccoonRenderState> extends EntityModel<T> 
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
-        AnimUtils.animateWalkRot(this.left_front_leg,limbSwing,limbSwingAmount,0.8F,false);
-        AnimUtils.animateWalkRot(this.right_front_leg,limbSwing,limbSwingAmount,0.8F,true);
-        AnimUtils.animateWalkRot(this.left_back_leg,limbSwing,limbSwingAmount,0.8F,true);
-        AnimUtils.animateWalkRot(this.right_back_leg,limbSwing,limbSwingAmount,0.8F,false);
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
+        AnimUtils.animateWalkRot(this.left_front_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
+        AnimUtils.animateWalkRot(this.right_front_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
+        AnimUtils.animateWalkRot(this.left_back_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
+        AnimUtils.animateWalkRot(this.right_back_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
     }
 }

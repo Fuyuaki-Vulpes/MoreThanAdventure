@@ -53,12 +53,12 @@ public class IcicleCreeperModel <T extends IcicleCreeperRenderState> extends Ent
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
 
-        AnimUtils.animateWalkRot(this.leg1,limbSwing,limbSwingAmount,0.8F,false);
-        AnimUtils.animateWalkRot(this.leg2,limbSwing,limbSwingAmount,0.8F,true);
-        AnimUtils.animateWalkRot(this.leg3,limbSwing,limbSwingAmount,0.8F,true);
-        AnimUtils.animateWalkRot(this.leg4,limbSwing,limbSwingAmount,0.8F,false);
+        AnimUtils.animateWalkRot(this.leg1,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
+        AnimUtils.animateWalkRot(this.leg2,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
+        AnimUtils.animateWalkRot(this.leg3,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
+        AnimUtils.animateWalkRot(this.leg4,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
 
     }
 }

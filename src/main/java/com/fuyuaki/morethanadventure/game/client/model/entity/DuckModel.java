@@ -55,9 +55,9 @@ public class DuckModel <T extends DuckRenderState> extends EntityModel<T> {
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-        AnimUtils.adjustHead(this.head,netHeadYaw,headPitch);
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
 
-        AnimUtils.animateWalkRot(this.left_leg,limbSwing,limbSwingAmount,0.8F,false);
-        AnimUtils.animateWalkRot(this.right_leg,limbSwing,limbSwingAmount,0.8F,true);
+        AnimUtils.animateWalkRot(this.left_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
+        AnimUtils.animateWalkRot(this.right_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
     }
 }
