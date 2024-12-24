@@ -76,11 +76,11 @@ public class HostModel<T extends HostRenderState> extends EntityModel<T> {
         AnimUtils.animateWalkRot(this.left_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,true);
         AnimUtils.animateWalkRot(this.right_arm,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,true);
         AnimUtils.animateWalkRot(this.right_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.0F,false);
-        AnimationUtils.animateZombieArms(this.left_arm, this.right_arm, this.isAggressive(renderState), this.attackTime, ageInTicks);
+        AnimationUtils.animateZombieArms(this.left_arm, this.right_arm, this.isAggressive(state), state.attackTime, state.ageInTicks);
 
     }
 
     public boolean isAggressive(T entity) {
-        return entity.isAggressive();
+        return entity.isAggressive;
     }
 }

@@ -6,7 +6,10 @@ import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.GreatWhit
 import com.fuyuaki.morethanadventure.world.entity.GreatWhiteShark;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.state.DolphinRenderState;
+import net.minecraft.client.renderer.entity.state.HoldingEntityRenderState;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.animal.Dolphin;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
@@ -20,6 +23,11 @@ public class GreatWhiteSharkRenderer extends MobRenderer<GreatWhiteShark, GreatW
     @Override
     public GreatWhiteSharkRenderState createRenderState() {
         return new GreatWhiteSharkRenderState();
+    }
+
+    public void extractRenderState(GreatWhiteShark entity, GreatWhiteSharkRenderState renderState, float p_361483_) {
+        super.extractRenderState(entity, renderState, p_361483_);
+        renderState.isMoving = entity.getDeltaMovement().horizontalDistanceSqr() > 1.0E-7;
     }
 
 
