@@ -19,7 +19,6 @@ public class JellyfishRenderer extends MobRenderer<Jellyfish, JellyfishRenderSta
 
     @Override
     public JellyfishRenderState createRenderState() {
-        return null;
         return new JellyfishRenderState();
     }
 

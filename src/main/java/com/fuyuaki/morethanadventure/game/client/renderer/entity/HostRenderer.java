@@ -18,7 +18,6 @@ public class HostRenderer extends MobRenderer<Host, HostRenderState, HostModel<H
 
     @Override
     public HostRenderState createRenderState() {
-        return null;
         return new HostRenderState();
     }
 

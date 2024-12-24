@@ -11,7 +11,6 @@ import net.neoforged.api.distmarker.OnlyIn;
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
 @OnlyIn(Dist.CLIENT)
-public class MTAArrowRenderer extends ArrowRenderer<MTAArrowEntity> {
 public class MTAArrowRenderer extends ArrowRenderer<MTAArrowEntity, MTAArrowRenderState> {
     public static final ResourceLocation RESOURCE_LOCATION = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/projectiles/special_arrow.png");
 
@@ -27,7 +26,6 @@ public class MTAArrowRenderer extends ArrowRenderer<MTAArrowEntity, MTAArrowRend
     /**
      * Returns the location of an entity's texture.
      */
-    public ResourceLocation getTextureLocation(MTAArrowEntity pEntity) {
     @Override
     protected ResourceLocation getTextureLocation(MTAArrowRenderState renderState) {
         return RESOURCE_LOCATION;

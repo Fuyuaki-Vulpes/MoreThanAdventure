@@ -21,7 +21,6 @@ public class IcicleCreeperRenderer extends MobRenderer<IcicleCreeper, IcicleCree
 
     @Override
     public IcicleCreeperRenderState createRenderState() {
-        return null;
         return new IcicleCreeperRenderState();
     }
 

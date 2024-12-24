@@ -21,7 +21,6 @@ public class BeardedDragonRenderer extends MobRenderer<BeardedDragon, BeardedDra
 
     @Override
     public BeardedDragonRenderState createRenderState() {
-        return null;
         return new BeardedDragonRenderState();
     }
 

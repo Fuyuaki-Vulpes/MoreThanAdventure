@@ -21,7 +21,6 @@ public class CapybaraRenderer extends MobRenderer<Capybara, CapybaraRenderState,
 
     @Override
     public CapybaraRenderState createRenderState() {
-        return null;
         return new CapybaraRenderState();
     }
     @Override

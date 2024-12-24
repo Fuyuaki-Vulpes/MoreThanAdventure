@@ -34,7 +34,6 @@ public class DuckRenderer extends MobRenderer<Duck, DuckRenderState, DuckModel<D
 
     @Override
     public DuckRenderState createRenderState() {
-        return null;
         return new DuckRenderState();
     }
 

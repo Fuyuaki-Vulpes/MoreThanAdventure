@@ -37,7 +37,6 @@ public class FerretRenderer extends MobRenderer<Ferret, FerretRenderState, Ferre
 
     @Override
     public FerretRenderState createRenderState() {
-        return null;
         return new FerretRenderState();
     }
 }

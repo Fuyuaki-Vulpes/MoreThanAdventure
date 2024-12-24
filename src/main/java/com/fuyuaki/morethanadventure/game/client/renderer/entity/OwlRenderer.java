@@ -38,7 +38,6 @@ public class OwlRenderer extends MobRenderer<Owl, OwlRenderState, OwlModel<OwlRe
 
     @Override
     public OwlRenderState createRenderState() {
-        return null;
         return new OwlRenderState();
     }
 }

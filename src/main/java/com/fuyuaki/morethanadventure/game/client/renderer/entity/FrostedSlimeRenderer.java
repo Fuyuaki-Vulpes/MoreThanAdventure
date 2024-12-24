@@ -15,7 +15,6 @@ import net.minecraft.world.entity.monster.MagmaCube;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlimeModel<FrostedSlime>> {
 public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlimeRenderState, FrostedSlimeModel<FrostedSlimeRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/slime/frozen_slime.png");
 
@@ -33,9 +32,6 @@ public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlime
     }
 
     @Override
-    public void render(FrostedSlime entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-        this.shadowRadius = 0.25F * (float)entity.getSize();
-        super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     public void render(FrostedSlimeRenderState renderState, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
         this.shadowRadius = 0.25F * (float)renderState.getSize;
         super.render(renderState, poseStack, bufferSource, packedLight);
@@ -49,7 +45,6 @@ public class FrostedSlimeRenderer extends MobRenderer<FrostedSlime, FrostedSlime
     }
 
     @Override
-    public ResourceLocation getTextureLocation(FrostedSlime entity) {
     public ResourceLocation getTextureLocation(FrostedSlimeRenderState p_368654_) {
         return TEXTURE;
     }

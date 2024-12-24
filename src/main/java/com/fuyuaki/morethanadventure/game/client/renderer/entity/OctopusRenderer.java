@@ -19,7 +19,6 @@ public class OctopusRenderer extends MobRenderer<Octopus, OctopusRenderState, Oc
 
     @Override
     public OctopusRenderState createRenderState() {
-        return null;
         return new OctopusRenderState();
     }
 

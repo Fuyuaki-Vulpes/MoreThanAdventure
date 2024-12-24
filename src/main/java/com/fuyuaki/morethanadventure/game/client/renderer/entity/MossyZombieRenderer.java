@@ -11,7 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 
 import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
 
-public class MossyZombieRenderer extends AbstractZombieRenderer<MossyZombie, MossyZombieModel<MossyZombie>> {
 public class MossyZombieRenderer extends AbstractZombieRenderer<MossyZombie, MossyZombieRenderState, MossyZombieModel<MossyZombieRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/mossy_zombie.png");
 
@@ -26,7 +25,6 @@ public class MossyZombieRenderer extends AbstractZombieRenderer<MossyZombie, Mos
     }
 
     @Override
-    public ResourceLocation getTextureLocation(MossyZombie entity) {
     public MossyZombieRenderState createRenderState() {
         return new MossyZombieRenderState();
     }
