@@ -29,6 +29,7 @@ public class GenItemModels extends ItemModelGenerators {
         this.itemModelOutput = itemModelOutput;
         this.modelOutput = modelOutput;
     }
+
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
@@ -45,7 +46,8 @@ public class GenItemModels extends ItemModelGenerators {
 
 
     @Override
-    protected void registerModels() {
+    public void run() {
+
         saplingItem(MtaBlocks.PALM_SAPLING);
         this.generateFlatItem(MtaBlocks.PALM_DOOR.asItem(), ModelTemplates.FLAT_ITEM);
         buttonItem(MtaBlocks.PALM_BUTTON, MtaBlocks.PALM_PLANKS);
@@ -244,7 +246,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldBigItem(MtaItems.NETHERITE_SCYTHE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
-        
+
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
         handheldBigItemMediumHilt(MtaItems.SILENT_REAPERS_SCYTHE);
@@ -329,8 +331,9 @@ public class GenItemModels extends ItemModelGenerators {
         this.generateSpawnEgg(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get(),11366765,11366765);
         this.generateSpawnEgg(MtaItems.SIREN_SPAWN_EGG.get(),11366765,11366765);
         this.generateSpawnEgg(MtaItems.WISPFLY_SPAWN_EGG.get(),11366765,11366765);
-    }
 
+
+    }
 
 
     private void handheldItem(DeferredItem<?> item) {

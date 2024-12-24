@@ -39,11 +39,11 @@ public class DataGen {
                         List.of()
                 )
         );
+
+
         //generator.addProvider(true, new GenRecipes(lookupProvider,packOutput));
         generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
 
-        generator.addProvider(true, new GenBlockModels(packOutput));
-        generator.addProvider(true, new GenItemModels(packOutput));
 
         GenBlockTags blockTagGenerator = generator.addProvider(true,
                 new GenBlockTags(packOutput, datapackRegistries.getRegistryProvider()));

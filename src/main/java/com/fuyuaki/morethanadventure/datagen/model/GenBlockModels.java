@@ -1,14 +1,19 @@
 package com.fuyuaki.morethanadventure.datagen.model;
 
+import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.world.block.MtaCrops;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.BlockStateGenerator;
 import net.minecraft.client.data.models.model.ModelInstance;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.BlockFamilies;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -34,67 +39,36 @@ public class GenBlockModels extends BlockModelGenerators {
 
     @Override
     public void run() {
-        super.run();
-    }
+        MTAFamilies.getAllFamilies()
+                .filter(BlockFamily::shouldGenerateModel)
+                .forEach(p_386718_ -> this.family(p_386718_.getBaseBlock()).generateFor(p_386718_));
 
-    @Override
-    protected void registerStatesAndModels() {
-        this.createDoublePlant(MtaBlocks.CATTAIL.get());
+        this.createDoublePlantWithDefaultItem(MtaBlocks.CATTAIL.get(),PlantType.NOT_TINTED);
         //simpleBlock(MtaBlocks.CORPSE_LILY.get(), models().cross(blockTexture(MtaBlocks.CORPSE_LILY.get()).getPath(), blockTexture(MtaBlocks.CORPSE_LILY.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.POTTED_CORPSE_LILY.get(), models().singleTexture("potted_corpse_lily", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(MtaBlocks.CORPSE_LILY.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.PITCHER_PLANT.get(), models().cross(blockTexture(MtaBlocks.PITCHER_PLANT.get()).getPath(), blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.POTTED_PITCHER_PLANT.get(), models().singleTexture("potted_pitcher_plant", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //blockItem(MtaBlocks.VENUS_FLYTRAP);
+        this.woodProvider(MtaBlocks.PALM_LOG.get()).logWithHorizontal(MtaBlocks.PALM_LOG.get()).wood(MtaBlocks.PALM_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_PALM_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_PALM_LOG.get()).wood(MtaBlocks.STRIPPED_PALM_WOOD.get());
 
-
-        logBlock(((RotatedPillarBlock) MtaBlocks.PALM_LOG.get()));
-        logBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_LOG.get()));
-        axisBlock(((RotatedPillarBlock) MtaBlocks.PALM_WOOD.get()), blockTexture(MtaBlocks.PALM_LOG.get()), blockTexture(MtaBlocks.PALM_LOG.get()));
-        axisBlock(((RotatedPillarBlock) MtaBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()), blockTexture(MtaBlocks.STRIPPED_PALM_LOG.get()));
-        blockItem(MtaBlocks.PALM_LOG);
         blockWithItem(MtaBlocks.PERMAFROST_DIRT);
 
         blockWithItem(MtaBlocks.PERMAFROST_STONE);
-        blockItem(MtaBlocks.STRIPPED_PALM_LOG);
-        blockItem(MtaBlocks.PALM_WOOD);
-        blockItem(MtaBlocks.STRIPPED_PALM_WOOD);
-        blockWithItem(MtaBlocks.PALM_PLANKS);
-        leavesBlock(MtaBlocks.PALM_LEAVES);
-        saplingBlock(MtaBlocks.PALM_SAPLING);
-        stairsBlock(((StairBlock) MtaBlocks.PALM_STAIRS.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
-        slabBlock(((SlabBlock) MtaBlocks.PALM_SLAB.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
-        pressurePlateBlock(((PressurePlateBlock) MtaBlocks.PALM_PRESSURE_PLATE.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
-        buttonBlock(((ButtonBlock) MtaBlocks.PALM_BUTTON.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
-        fenceBlock(((FenceBlock) MtaBlocks.PALM_FENCE.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
-        fenceGateBlock(((FenceGateBlock) MtaBlocks.PALM_FENCE_GATE.get()), blockTexture(MtaBlocks.PALM_PLANKS.get()));
-        doorBlockWithRenderType(((DoorBlock) MtaBlocks.PALM_DOOR.get()), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
-        trapdoorBlockWithRenderType(((TrapDoorBlock) MtaBlocks.PALM_TRAPDOOR.get()), modLoc("block/palm_trapdoor"), true, "cutout");
-        blockItem(MtaBlocks.PALM_STAIRS);
-        blockItem(MtaBlocks.PALM_SLAB);
-        blockItem(MtaBlocks.PALM_PRESSURE_PLATE);
-        blockItem(MtaBlocks.PALM_FENCE_GATE);
-        blockItem(MtaBlocks.PALM_TRAPDOOR, "_bottom");
 
-        logBlock(((RotatedPillarBlock) MtaBlocks.SEALOG.get()));
-        axisBlock(((RotatedPillarBlock) MtaBlocks.SEAWOOD.get()), blockTexture(MtaBlocks.SEALOG.get()), blockTexture(MtaBlocks.SEALOG.get()));
+        blockWithItem(MtaBlocks.PALM_PLANKS);
+
+        createTintedLeaves(MtaBlocks.PALM_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
+        //MAKE POTTED VERSIONS
+        this.createPlantWithDefaultItem(MtaBlocks.PALM_SAPLING.get(),MtaBlocks.PALM_SAPLING.get(),PlantType.NOT_TINTED);
+        this.woodProvider(MtaBlocks.SEALOG.get()).logWithHorizontal(MtaBlocks.SEALOG.get()).wood(MtaBlocks.SEAWOOD.get());
+
         blockItem(MtaBlocks.SEALOG);
         blockItem(MtaBlocks.SEAWOOD);
         blockWithItem(MtaBlocks.SEAWOOD_PLANKS);
-        leavesBlock(MtaBlocks.SEAWOOD_LEAVES);
+        createTintedLeaves(MtaBlocks.SEAWOOD_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_EVERGREEN);
         saplingBlock(MtaBlocks.SEAWOOD_SAPLING);
-        stairsBlock(((StairBlock) MtaBlocks.SEAWOOD_STAIRS.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
-        slabBlock(((SlabBlock) MtaBlocks.SEAWOOD_SLAB.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
-        pressurePlateBlock(((PressurePlateBlock) MtaBlocks.SEAWOOD_PRESSURE_PLATE.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
-        buttonBlock(((ButtonBlock) MtaBlocks.SEAWOOD_BUTTON.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
-        fenceBlock(((FenceBlock) MtaBlocks.SEAWOOD_FENCE.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
-        fenceGateBlock(((FenceGateBlock) MtaBlocks.SEAWOOD_FENCE_GATE.get()), blockTexture(MtaBlocks.SEAWOOD_PLANKS.get()));
-        doorBlockWithRenderType(((DoorBlock) MtaBlocks.SEAWOOD_DOOR.get()), modLoc("block/seawood_door_bottom"), modLoc("block/seawood_door_top"), "cutout");
-        trapdoorBlockWithRenderType(((TrapDoorBlock) MtaBlocks.SEAWOOD_TRAPDOOR.get()), modLoc("block/seawood_trapdoor"), true, "cutout");
-        blockItem(MtaBlocks.SEAWOOD_STAIRS);
-        blockItem(MtaBlocks.SEAWOOD_SLAB);
-        blockItem(MtaBlocks.SEAWOOD_PRESSURE_PLATE);
-        blockItem(MtaBlocks.SEAWOOD_FENCE_GATE);
-        blockItem(MtaBlocks.SEAWOOD_TRAPDOOR, "_bottom");
+
 
         verticalBlock(MtaBlocks.STONE_GEYSER.get(), Blocks.STONE, Blocks.STONE);
         verticalBlock(MtaBlocks.TERRACOTTA_GEYSER.get(), Blocks.TERRACOTTA, Blocks.TERRACOTTA);
@@ -214,243 +188,10 @@ public class GenBlockModels extends BlockModelGenerators {
         makeStoneSet(Blocks.PINK_CONCRETE, MtaBlocks.PINK_CONCRETE_STAIRS, MtaBlocks.PINK_CONCRETE_WALL, MtaBlocks.PINK_CONCRETE_SLAB);
 
 
-
-        makeCrop((MtaCrops) MtaBlocks.ONION_CROP.get(), "onion_stage", "onion_stage");
-        makeCrop((MtaCrops) MtaBlocks.TOMATO_CROP.get(), "tomato_stage", "tomato_stage");
-        makeCrop((MtaCrops) MtaBlocks.BELL_PEPPER_CROP.get(), "bell_pepper_stage", "bell_pepper_stage");
-        makeCrop((MtaCrops) MtaBlocks.CHILI_PEPPER_CROP.get(), "chili_stage", "chili_stage");
-
-
-    }
-
-    private void blockWithItem(DeferredBlock<? extends Block> deferredBlock) {
-        simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
-
-    }
-
-
-    private <T extends Block> void makeStoneSet(DeferredBlock<T> texture, DeferredBlock<T> stairs, DeferredBlock<T> wall, DeferredBlock<T> slab) {
-        makeStairs(stairs, texture);
-        makeSlab(slab, texture, texture);
-        makeWall(wall, texture);
-    }
-
-    private <T extends Block> void makeStoneSet(Block texture, DeferredBlock<T> stairs, DeferredBlock<T> wall, DeferredBlock<T> slab) {
-        makeStairs(stairs, texture);
-        makeSlab(slab, texture, texture);
-        makeWall(wall, texture);
-    }
-
-    private <T extends Block> void makeStairs(DeferredBlock<T> deferredBlock, DeferredBlock<T> texture) {
-        stairsBlock(((StairBlock) deferredBlock.get()), blockTexture(texture.get()));
-        simpleBlockItem(deferredBlock.get(), models().stairs(name(deferredBlock.get()), blockTexture(texture.get()), blockTexture(texture.get()), blockTexture(texture.get())));
-
-    }
-
-    private <T extends Block> void makeStairs(DeferredBlock<T> deferredBlock, Block texture) {
-        stairsBlock(((StairBlock) deferredBlock.get()), blockTexture(texture));
-        simpleBlockItem(deferredBlock.get(), models().stairs(name(deferredBlock.get()), blockTexture(texture), blockTexture(texture), blockTexture(texture)));
-
-    }
-
-    private <T extends Block> void makeSlab(DeferredBlock<T> deferredBlock, DeferredBlock<T> doubleSlab, DeferredBlock<T> halfSlab) {
-        slabBlock(((SlabBlock) deferredBlock.get()), blockTexture(doubleSlab.get()), blockTexture(halfSlab.get()));
-        simpleBlockItem(deferredBlock.get(), models().slab(name(deferredBlock.get()), blockTexture(doubleSlab.get()), blockTexture(halfSlab.get()), blockTexture(halfSlab.get())));
-
-    }
-
-    private <T extends Block> void makeSlab(DeferredBlock<T> deferredBlock, Block doubleSlab, Block halfSlab) {
-        slabBlock(((SlabBlock) deferredBlock.get()), blockTexture(doubleSlab), blockTexture(halfSlab));
-        simpleBlockItem(deferredBlock.get(), models().slab(name(deferredBlock.get()), blockTexture(doubleSlab), blockTexture(halfSlab), blockTexture(halfSlab)));
-
-    }
-
-    private <T extends Block> void makeWall(DeferredBlock<T> deferredBlock, DeferredBlock<T> texture) {
-        wallBlock(((WallBlock) deferredBlock.get()), blockTexture(texture.get()));
-        simpleBlockItem(deferredBlock.get(), models().wallInventory(name(deferredBlock.get()) + "_inventory", blockTexture(texture.get())));
-
-    }
-
-    private <T extends Block> void makeWall(DeferredBlock<T> deferredBlock, Block texture) {
-        wallBlock(((WallBlock) deferredBlock.get()), blockTexture(texture));
-        simpleBlockItem(deferredBlock.get(), models().wallInventory(name(deferredBlock.get()) + "_inventory", blockTexture(texture)));
-
-    }
-
-    private <T extends Block> void makeFence(DeferredBlock<? extends FenceBlock> deferredBlock, DeferredBlock<T> texture) {
-        fenceBlock(((FenceBlock) deferredBlock.get()), blockTexture(texture.get()));
-
-    }
-
-    private <T extends Block> void blockItem(DeferredBlock<T> deferredBlock) {
-        simpleBlockItem(deferredBlock.get(), models().getExistingFile(ResourceLocation.fromNamespaceAndPath(MODID, name(deferredBlock.get()))));
-
-    }
-
-    private <T extends Block> void blockItem(DeferredBlock<T> deferredBlock, String appendix) {
-        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("morethanadventure:block/" + deferredBlock.getId().getPath() + appendix));
-    }
-
-    private void leavesBlock(DeferredBlock<Block> deferredBlock) {
-        simpleBlockWithItem(deferredBlock.get(),
-                models().singleTexture(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
-                        "all", blockTexture(deferredBlock.get())).renderType(("cutout")));
-    }
-
-    private void saplingBlock(DeferredBlock<Block> deferredBlock) {
-        simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
-    }
-
-    public <T extends Block> void plantBlock(T block, T potBLock, ResourceLocation texture) {
-        ModelFile sign = models().cross(name(block), texture);
-        models().getBuilder(key(potBLock).getPath()).texture("plant", texture).parent(models().getExistingFile(ResourceLocation.withDefaultNamespace("block/flower_pot_cross")));
-        cross(block, sign);
-    }
-
-    public <T extends Block> void cross(T block, ResourceLocation texture) {
-        ModelFile blockModel = models().cross(name(block), texture);
-        cross(block, blockModel);
-
-    }
-
-    private void createDoublePlant(Block block) {
-        ResourceLocation topTexture = blockTexture(block).withSuffix("_top");
-        ResourceLocation bottomTexture = blockTexture(block).withSuffix("_bottom");
-        ModelFile modelTop = models().cross(key(block).getPath() + "_top", topTexture);
-        ModelFile modelBottom = models().cross(key(block).getPath() + "_bottom", bottomTexture);
-        VariantBlockStateBuilder builder = getVariantBuilder(block);
-
-        itemModels().getBuilder(key(block).getPath()).texture("layer0",topTexture).parent(new ModelFile.UncheckedModelFile("item/generated"));
-
-        VariantBlockStateBuilder.PartialBlockstate partialState = builder.partialState();
-
-        builder.addModels(partialState.with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER),
-                partialState.modelForState().modelFile(modelTop).build());
-
-        builder.addModels(partialState.with(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER),
-                partialState.modelForState().modelFile(modelBottom).build());
-
-
-    }
-
-
-    public <T extends Block> void cross(T block, ModelFile blockModel) {
-        simpleBlock(block, blockModel);
-    }
-
-
-    private <T extends Block> String name(T block) {
-        return key(block).getPath();
-    }
-
-
-    private <T extends Block> ResourceLocation key(T block) {
-        return BuiltInRegistries.BLOCK.getKey(block);
-    }
-
-
-    public <T extends Block> void verticalBlock(T block, ResourceLocation side_texture, ResourceLocation bottom_texture) {
-        ModelFile blockModel = models().cube(name(block), bottom_texture, blockTexture(block), side_texture, side_texture, side_texture, side_texture)
-                .texture("particle", blockTexture(block));
-        ;
-        simpleBlock(block, blockModel);
-        simpleBlockItem(block, blockModel);
-    }
-
-    public <T extends Block> void verticalBlock(T block, T side_texture, T bottom_texture) {
-        ModelFile blockModel = models().cube(name(block),
-                        blockTexture(bottom_texture),
-                        blockTexture(block),
-                        blockTexture(side_texture),
-                        blockTexture(side_texture),
-                        blockTexture(side_texture),
-                        blockTexture(side_texture))
-                .texture("particle", blockTexture(block));
-        simpleBlock(block, blockModel);
-        simpleBlockItem(block, blockModel);
-    }
-
-    public void makeCrop(CropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> statesForCrop(state, block, modelName, textureName);
-
-        getVariantBuilder(block).forAllStates(function);
-    }
-
-    private ConfiguredModel[] statesForCrop(BlockState state, CropBlock block, String modelName, String textureName) {
-        ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((MtaCrops) block).getAgeProperty()),
-                ResourceLocation.fromNamespaceAndPath(MODID, "block/" + textureName +
-                        state.getValue(((MtaCrops) block).getAgeProperty()))).renderType("cutout"));
-
-        return models;
-    }
-
-    private void createVineFlowerBlock(Block block, String name) {
-
-        ConfiguredModel model = new ConfiguredModel(models()
-                .withExistingParent(name, ResourceLocation.fromNamespaceAndPath(MODID, "block/vine_flower"))
-                .texture("vine", blockTexture(block) + "_vines")
-                .texture("flowerbed", blockTexture(block) + "_flowerbed")
-                .texture("flower2", blockTexture(block) + "_side_flowers")
-                .texture("flower", blockTexture(block))
-                .renderType("cutout")
-        );
-
-
-
-        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
-
-        PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(entry -> {
-                    Direction direction = entry.getKey();
-            if (direction.getAxis().isHorizontal()) {
-                builder.part().modelFile(model.model).rotationY((((int) direction.toYRot()) + 180) % 360).uvLock(true).addModel()
-                        .condition(entry.getValue(), true);
-            } else if (direction.equals(Direction.UP)) {
-                builder.part().modelFile(model.model).rotationX(270).uvLock(true).addModel()
-                        .condition(entry.getValue(), true);
-            } else if (direction.equals(Direction.DOWN)) {
-                builder.part().modelFile(model.model).rotationX(90).uvLock(true).addModel()
-                        .condition(entry.getValue(), true);
-            }
-
-                }
-
-        );
-
-    }
-    private void createWallShroomBlock(Block block, String name) {
-
-        ConfiguredModel model = new ConfiguredModel(models()
-                .withExistingParent(name, ResourceLocation.fromNamespaceAndPath(MODID, "block/template_wall_mushroom"))
-                .texture("layer0", blockTexture(block) + "_0")
-                .texture("layer1", blockTexture(block) + "_1")
-                .texture("layer2", blockTexture(block) + "_2")
-                .texture("layer3", blockTexture(block) + "_3")
-                .texture("layer4", blockTexture(block) + "_4")
-                .texture("layer5", blockTexture(block) + "_5")
-                .renderType("cutout")
-        );
-
-
-
-        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
-
-        PipeBlock.PROPERTY_BY_DIRECTION.entrySet().forEach(entry -> {
-                    Direction direction = entry.getKey();
-            if (direction.getAxis().isHorizontal()) {
-                builder.part().modelFile(model.model).rotationY((((int) direction.toYRot()) + 180) % 360).uvLock(true).addModel()
-                        .condition(entry.getValue(), true);
-            } else if (direction.equals(Direction.UP)) {
-                builder.part().modelFile(model.model).rotationX(270).uvLock(true).addModel()
-                        .condition(entry.getValue(), true);
-            } else if (direction.equals(Direction.DOWN)) {
-                builder.part().modelFile(model.model).rotationX(90).uvLock(true).addModel()
-                        .condition(entry.getValue(), true);
-            }
-
-                }
-
-        );
+        this.createCropBlock(MtaBlocks.ONION_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        this.createCropBlock(MtaBlocks.TOMATO_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        this.createCropBlock(MtaBlocks.BELL_PEPPER_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+        this.createCropBlock(MtaBlocks.CHILI_PEPPER_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
 
     }
 

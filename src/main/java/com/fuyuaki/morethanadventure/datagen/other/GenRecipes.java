@@ -1,12 +1,17 @@
 package com.fuyuaki.morethanadventure.datagen.other;
 
+import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.BlockFamilies;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -23,11 +28,10 @@ public class GenRecipes  extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
+        this.generateForEnabledBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA));
 
         woodFromLogs(MtaBlocks.PALM_WOOD, MtaBlocks.PALM_LOG);
         planksFromLogs(MtaBlocks.PALM_PLANKS, MtaTags.Items.PALM_LOGS, 4);
-        woodItems(MtaBlocks.PALM_PLANKS.get(), MtaBlocks.PALM_SLAB.get(), MtaBlocks.PALM_STAIRS.get(), MtaBlocks.PALM_DOOR.get(), MtaBlocks.PALM_TRAPDOOR.get(), MtaBlocks.PALM_FENCE.get(), MtaBlocks.PALM_FENCE_GATE.get(), MtaBlocks.PALM_BUTTON.get(), MtaBlocks.PALM_PRESSURE_PLATE.get(), "palm_planks");
-        woodItems(MtaBlocks.SEAWOOD_PLANKS.get(), MtaBlocks.SEAWOOD_SLAB.get(), MtaBlocks.SEAWOOD_STAIRS.get(), MtaBlocks.SEAWOOD_DOOR.get(), MtaBlocks.SEAWOOD_TRAPDOOR.get(), MtaBlocks.SEAWOOD_FENCE.get(), MtaBlocks.SEAWOOD_FENCE_GATE.get(), MtaBlocks.SEAWOOD_BUTTON.get(), MtaBlocks.SEAWOOD_PRESSURE_PLATE.get(), "seawood_planks");
 
         woodFromLogs(MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);
         planksFromLogs(MtaBlocks.SEAWOOD_PLANKS, MtaTags.Items.SEAWOOD, 4);
@@ -695,54 +699,9 @@ public class GenRecipes  extends RecipeProvider {
 
     }
 
-    public void woodItems(Block planks, Block slab, Block stair, Block door, Block trap, Block fence, Block gate, Block button, Block plate, String unlock) {
-        shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
-                .define('p', planks)
-                .pattern("ppp")
-                .unlockedBy("has_" + unlock, has(planks));
-        shaped(RecipeCategory.BUILDING_BLOCKS, stair, 4)
-                .define('p', planks)
-                .pattern("p  ")
-                .pattern("pp ")
-                .pattern("ppp")
-                .unlockedBy("has_" + unlock, has(planks));
-        shaped(RecipeCategory.BUILDING_BLOCKS, door, 3)
-                .define('p', planks)
-                .pattern("pp")
-                .pattern("pp")
-                .pattern("pp")
-                .unlockedBy("has_" + unlock, has(planks));
-        shaped(RecipeCategory.BUILDING_BLOCKS, trap, 2)
-                .define('p', planks)
-                .pattern("ppp")
-                .pattern("ppp")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
-        shaped(RecipeCategory.BUILDING_BLOCKS, fence, 3)
-                .define('p', planks)
-                .define('s', Items.STICK)
-                .pattern("psp")
-                .pattern("psp")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
-        shaped(RecipeCategory.BUILDING_BLOCKS, gate,1)
-                .define('p', planks)
-                .define('s', Items.STICK)
-                .pattern("sps")
-                .pattern("sps")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
-        shaped(RecipeCategory.BUILDING_BLOCKS, button,1)
-                .define('p', planks)
-                .pattern("p")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
-        shaped(RecipeCategory.BUILDING_BLOCKS, plate,1)
-                .define('p', planks)
-                .pattern("pp")
-                .unlockedBy("has_" + unlock, has(planks))
-                ;
+
+    @Override
+    protected void generateForEnabledBlockFamilies(FeatureFlagSet enabledFeatures) {
+        MTAFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach(p_359455_ -> this.generateRecipes(p_359455_, enabledFeatures));
     }
-
-
 }
