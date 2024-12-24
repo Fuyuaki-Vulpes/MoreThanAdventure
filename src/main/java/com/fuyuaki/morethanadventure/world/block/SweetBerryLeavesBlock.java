@@ -9,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -55,15 +54,14 @@ public class SweetBerryLeavesBlock extends LeavesBlock implements BonemealableBl
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(
-            ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult
-    ) {
+    protected InteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+
         int i = pState.getValue(AGE);
         boolean flag = i == 3;
         return !flag && pStack.is(Items.BONE_MEAL)
-                ? ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION
-                : super.useItemOn(pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult);
-    }
+                ? InteractionResult.PASS
+                : super.useItemOn(pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult);    }
+
 
     @Override
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
@@ -77,7 +75,7 @@ public class SweetBerryLeavesBlock extends LeavesBlock implements BonemealableBl
             BlockState blockstate = pState.setValue(AGE, Integer.valueOf(0));
             pLevel.setBlock(pPos, blockstate, 2);
             pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
-            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+            return InteractionResult.SUCCESS;
         } else {
             return super.useWithoutItem(pState, pLevel, pPos, pPlayer, pHitResult);
         }

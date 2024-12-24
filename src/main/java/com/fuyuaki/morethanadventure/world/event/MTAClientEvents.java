@@ -10,7 +10,6 @@ import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
-import com.fuyuaki.morethanadventure.world.item.MtaItemProperties;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -38,8 +37,6 @@ public class MTAClientEvents
     public static void onClientSetup(FMLClientSetupEvent event) {
 
         event.enqueueWork(() -> {
-            MTAMod.setupRenderTypes();
-            MtaItemProperties.addCustomItemProperties();
 
         });
 
@@ -116,7 +113,7 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON, ArmoredSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW,  () ->  SpiderModel.createSpiderBodyLayer().apply(MeshTransformer.scaling(0.8F)));
+        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW,  () ->  spiderLayer.apply(MeshTransformer.scaling(0.8F)));
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_PATTERN, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_OVERLAY, ButterflyModel::createBodyLayer);
@@ -130,8 +127,8 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FROSTED_SLIME, FrostedSlimeModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER,  () ->  SpiderModel.createSpiderBodyLayer().apply(MeshTransformer.scaling(0.4F)));
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, () ->  SpiderModel.createSpiderBodyLayer().apply(MeshTransformer.scaling(0.4F)));
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER,  () ->  spiderLayer.apply(MeshTransformer.scaling(0.4F)));
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, () ->  spiderLayer.apply(MeshTransformer.scaling(0.4F)));
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);

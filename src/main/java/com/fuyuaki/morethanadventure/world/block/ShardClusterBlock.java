@@ -2,17 +2,19 @@ package com.fuyuaki.morethanadventure.world.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -23,7 +25,8 @@ import javax.annotation.Nullable;
 public class ShardClusterBlock extends DropExperienceBlock implements SimpleWaterloggedBlock {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
+
     protected final VoxelShape northAabb = Block.box(3, 3, 4, 13, 13, 16);
     protected final VoxelShape southAabb = Block.box(3, 3, 0, 13, 13, 12);
     protected final VoxelShape eastAabb = Block.box(0, 3, 3, 12, 13, 13);
@@ -62,19 +65,24 @@ public class ShardClusterBlock extends DropExperienceBlock implements SimpleWate
         BlockPos blockpos = pPos.relative(direction.getOpposite());
         return pLevel.getBlockState(blockpos).isFaceSturdy(pLevel, blockpos, direction);
     }
-
-
     @Override
     protected BlockState updateShape(
-            BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos
+            BlockState p_152036_,
+            LevelReader p_374202_,
+            ScheduledTickAccess p_374490_,
+            BlockPos p_152040_,
+            Direction p_152037_,
+            BlockPos p_152041_,
+            BlockState p_152038_,
+            RandomSource p_374353_
     ) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+        if (p_152036_.getValue(WATERLOGGED)) {
+            p_374490_.scheduleTick(p_152040_, Fluids.WATER, Fluids.WATER.getTickDelay(p_374202_));
         }
 
-        return pDirection == pState.getValue(FACING).getOpposite() && !pState.canSurvive(pLevel, pPos)
+        return p_152037_ == p_152036_.getValue(FACING).getOpposite() && !p_152036_.canSurvive(p_374202_, p_152040_)
                 ? Blocks.AIR.defaultBlockState()
-                : super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+                : super.updateShape(p_152036_, p_374202_, p_374490_, p_152040_, p_152037_, p_152041_, p_152038_, p_374353_);
     }
 
     @Nullable

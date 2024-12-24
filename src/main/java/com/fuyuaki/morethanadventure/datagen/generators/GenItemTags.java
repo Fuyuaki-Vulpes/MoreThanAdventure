@@ -314,7 +314,6 @@ public class GenItemTags extends ItemTagsProvider {
     private void curioTags() {
         this.tag(MtaTags.Curios.TALISMANS)
                 .add(
-                        MtaItems.SIREN_TALISMAN.get(),
                         MtaItems.WEIGHTED_DICE.get()
 
                 );

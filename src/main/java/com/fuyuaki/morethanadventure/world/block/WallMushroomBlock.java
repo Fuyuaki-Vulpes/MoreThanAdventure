@@ -7,10 +7,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public class WallMushroomBlock extends MultifaceBlock implements SimpleWaterloggedBlock, BonemealableBlock {
+public class WallMushroomBlock extends MultifaceSpreadeableBlock implements SimpleWaterloggedBlock, BonemealableBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private final boolean canWaterlog;
     public static final MapCodec<WallMushroomBlock> CODEC = simpleCodec(WallMushroomBlock::new);
@@ -43,16 +43,15 @@ public class WallMushroomBlock extends MultifaceBlock implements SimpleWaterlogg
         return super.canSurvive(state, level, pos);
     }
 
-    @Override
-    protected BlockState updateShape(
-            BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos
-    ) {
-        if (state.getValue(WATERLOGGED) && this.canWaterlog) {
-            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        }
 
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    @Override
+    protected BlockState updateShape(BlockState p_153904_, LevelReader p_374463_, ScheduledTickAccess p_374073_, BlockPos p_153908_, Direction p_153905_, BlockPos p_153909_, BlockState p_153906_, RandomSource p_374390_) {
+        if (p_153904_.getValue(WATERLOGGED)) {
+            p_374073_.scheduleTick(p_153908_, Fluids.WATER, Fluids.WATER.getTickDelay(p_374463_));
+        }
+        return super.updateShape(p_153904_, p_374463_, p_374073_, p_153908_, p_153905_, p_153909_, p_153906_, p_374390_);
     }
+
     @Override
     protected boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
         return !useContext.getItemInHand().is(this.asItem()) || super.canBeReplaced(state, useContext);
@@ -68,10 +67,9 @@ public class WallMushroomBlock extends MultifaceBlock implements SimpleWaterlogg
     }
 
     @Override
-    protected MapCodec<? extends MultifaceBlock> codec() {
+    public MapCodec<? extends MultifaceSpreadeableBlock> codec() {
         return CODEC;
     }
-
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -104,9 +102,11 @@ public class WallMushroomBlock extends MultifaceBlock implements SimpleWaterlogg
 
 
     @Override
-    protected boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.getFluidState().isEmpty();
+    protected boolean propagatesSkylightDown(BlockState p_320652_) {
+        return p_320652_.getFluidState().isEmpty();
     }
+
+
 
 
 }

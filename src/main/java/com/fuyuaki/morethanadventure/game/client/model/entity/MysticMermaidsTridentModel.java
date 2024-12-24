@@ -16,7 +16,7 @@ public class MysticMermaidsTridentModel extends Model {
     private final ModelPart root;
 
     public MysticMermaidsTridentModel(ModelPart pRoot) {
-        super(RenderType::entitySolid);
+        super(pRoot,RenderType::entitySolid);
         this.root = pRoot;
     }
 

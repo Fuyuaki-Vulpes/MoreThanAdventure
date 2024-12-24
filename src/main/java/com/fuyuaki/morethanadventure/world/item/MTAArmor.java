@@ -1,8 +1,9 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 
-import com.google.common.base.Suppliers;
+import com.fuyuaki.morethanadventure.core.registry.MtaArmorMats;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -15,16 +16,15 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.equipment.ArmorMaterial;
-import net.minecraft.world.item.equipment.ArmorMaterials;
-import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.*;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.NeoForgeMod;
 
+import java.util.List;
 import java.util.UUID;
-import java.util.function.Supplier;
 
 public class MTAArmor extends ArmorItem {
+
     protected final UUID FULL_SET_UUID = UUID.fromString("78f6b05d-a0ff-4b5e-86dc-9b397d5b7878");
     private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL;
     private static final ArmorMaterial KNIGHT = MtaArmorMats.HOLY_KNIGHT;
@@ -35,46 +35,47 @@ public class MTAArmor extends ArmorItem {
     private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER;
     private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE;
 
-    //ATTRIBUTES
-
-    private final Supplier<ItemAttributeModifiers> attributeModifiers;
 
 
 
     public MTAArmor(ArmorMaterial pMaterial, ArmorType pArmorType, Properties pProperties) {
-        super(pMaterial, pArmorType, pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
-        this.attributeModifiers = Suppliers.memoize(
-                () -> {
-                    int i = pMaterial.defense().get(pArmorType);
-                    float f = pMaterial.toughness();
-                    ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-                    EquipmentSlotGroup equipmentslotgroup = EquipmentSlotGroup.bySlot(pArmorType.getSlot());
-                    ResourceLocation resourcelocation = ResourceLocation.withDefaultNamespace("armor." + pArmorType.getName());
-                    builder.add(
-                            Attributes.ARMOR, new AttributeModifier(resourcelocation, (double)i, AttributeModifier.Operation.ADD_VALUE), equipmentslotgroup
-                    );
-                    builder.add(
-                            Attributes.ARMOR_TOUGHNESS, new AttributeModifier(resourcelocation, (double)f, AttributeModifier.Operation.ADD_VALUE), equipmentslotgroup
-                    );
-
-                    float f1 = pMaterial.knockbackResistance();
-                    if (f1 > 0.0F) {
-                        builder.add(
-                                Attributes.KNOCKBACK_RESISTANCE,
-                                new AttributeModifier(resourcelocation, (double)f1, AttributeModifier.Operation.ADD_VALUE),
-                                equipmentslotgroup
-                        );
-                    }
-                    return resolveAttributeModifiers(pMaterial,pArmorType,builder).build();
-                }
+        super(pMaterial, pArmorType,
+                pProperties
+                        .stacksTo(1)
+                        .fireResistant()
+                        .rarity(Rarity.EPIC)
+                        .attributes(createAttributes(pArmorType,pMaterial))
+                        .enchantable(pMaterial.enchantmentValue())
+                        .component(DataComponents.EQUIPPABLE, Equippable.builder(pArmorType.getSlot()).setEquipSound(pMaterial.equipSound()).setAsset(pMaterial.assetId()).build())
+                        .repairable(pMaterial.repairIngredient())
         );
+
+
     }
 
-    @Override
-    public ItemAttributeModifiers getDefaultAttributeModifiers() {
-        return this.attributeModifiers.get();
-    }
+    private static ItemAttributeModifiers createAttributes(ArmorType type, ArmorMaterial material) {
+        int i = material.defense().getOrDefault(type, 0);
+        ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
+        EquipmentSlotGroup equipmentslotgroup = EquipmentSlotGroup.bySlot(type.getSlot());
+        ResourceLocation resourcelocation = ResourceLocation.withDefaultNamespace("armor." + type.getName());
+        builder.add(
+                Attributes.ARMOR, new AttributeModifier(resourcelocation, (double)i, AttributeModifier.Operation.ADD_VALUE), equipmentslotgroup
+        );
+        builder.add(
+                Attributes.ARMOR_TOUGHNESS,
+                new AttributeModifier(resourcelocation, (double)material.toughness(), AttributeModifier.Operation.ADD_VALUE),
+                equipmentslotgroup
+        );
+        if (material.knockbackResistance() > 0.0F) {
+            builder.add(
+                    Attributes.KNOCKBACK_RESISTANCE,
+                    new AttributeModifier(resourcelocation, (double)material.knockbackResistance(), AttributeModifier.Operation.ADD_VALUE),
+                    equipmentslotgroup
+            );
+        }
 
+        return resolveAttributeModifiers(material,type,builder).build();
+    }
 
     //MOB EFFECTS
 
@@ -89,160 +90,173 @@ public class MTAArmor extends ArmorItem {
 
     }
 
-    protected void estimateEffects(LivingEntity entity, Level level, int pSlotId){
+    protected static void estimateEffects(LivingEntity entity, Level level, int pSlotId){
         boolean hasHelmet = entity.getItemBySlot(ArmorType.HELMET.getSlot()).getItem() instanceof ArmorItem;
         boolean hasChestplate = entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()).getItem() instanceof ArmorItem;
         boolean hasLeggings = entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()).getItem() instanceof ArmorItem;
         boolean hasBoots = entity.getItemBySlot(ArmorType.BOOTS.getSlot()).getItem() instanceof ArmorItem;
 
-        //USED ARMADILLO SO IT DOESN'T BREAK FROM NULL!!!
-        ArmorMaterial helmet = ArmorMaterials.ARMADILLO_SCUTE;
-        ArmorMaterial chestplate = ArmorMaterials.ARMADILLO_SCUTE;
-        ArmorMaterial leggings = ArmorMaterials.ARMADILLO_SCUTE;
-        ArmorMaterial boots = ArmorMaterials.ARMADILLO_SCUTE;
+        ResourceKey<EquipmentAsset> helmet = ArmorMaterials.ARMADILLO_SCUTE.assetId();
+        ResourceKey<EquipmentAsset> chestplate = ArmorMaterials.ARMADILLO_SCUTE.assetId();
+        ResourceKey<EquipmentAsset> leggings = ArmorMaterials.ARMADILLO_SCUTE.assetId();
+        ResourceKey<EquipmentAsset> boots = ArmorMaterials.ARMADILLO_SCUTE.assetId();
 
-        if (hasHelmet) helmet = (entity.getItemBySlot(ArmorType.HELMET.getSlot()).get(DataComponents.EQUIPPABLE).assetId());
-        if (hasChestplate) chestplate = (entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()).getItem());
-        if (hasLeggings) leggings = (entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()).getItem());
-        if (hasBoots) boots = (entity.getItemBySlot(ArmorType.BOOTS.getSlot()).getItem());
+        ItemStack helmetItem = (entity.getItemBySlot(ArmorType.HELMET.getSlot()));
+        ItemStack chestItem = (entity.getItemBySlot(ArmorType.CHESTPLATE.getSlot()));
+        ItemStack legItem = (entity.getItemBySlot(ArmorType.LEGGINGS.getSlot()));
+        ItemStack bootItem =  (entity.getItemBySlot(ArmorType.BOOTS.getSlot()));
 
-        
-        doSentinelEffects(entity,
+        if (hasHelmet) helmet = helmetItem.get(DataComponents.EQUIPPABLE).assetId().get();
+        if (hasChestplate) chestplate = chestItem.get(DataComponents.EQUIPPABLE).assetId().get();
+        if (hasLeggings) leggings = legItem.get(DataComponents.EQUIPPABLE).assetId().get();
+        if (hasBoots) boots = bootItem.get(DataComponents.EQUIPPABLE).assetId().get();
+
+        List<ResourceKey<EquipmentAsset>> equipments = List.of(helmet,chestplate,leggings,boots);
+
+        if(equipments.contains(SENTINEL.assetId())) doSentinelEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == SENTINEL,
-                hasChestplate && chestplate == SENTINEL,
-                hasLeggings && leggings == SENTINEL,
-                hasBoots && boots == SENTINEL);
-        doKnightEffects(entity,
+                hasHelmet && helmet == SENTINEL.assetId(),
+                hasChestplate && chestplate == SENTINEL.assetId(),
+                hasLeggings && leggings == SENTINEL.assetId(),
+                hasBoots && boots == SENTINEL.assetId());
+
+        if(equipments.contains(KNIGHT.assetId())) doKnightEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == KNIGHT,
-                hasChestplate && chestplate == KNIGHT,
-                hasLeggings && leggings == KNIGHT,
-                hasBoots && boots == KNIGHT);
-        doMermaidEffects(entity,
+                hasHelmet && helmet == KNIGHT.assetId(),
+                hasChestplate && chestplate == KNIGHT.assetId(),
+                hasLeggings && leggings == KNIGHT.assetId(),
+                hasBoots && boots == KNIGHT.assetId());
+
+        if(equipments.contains(MERMAID.assetId())) doMermaidEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == MERMAID,
-                hasChestplate && chestplate == MERMAID,
-                hasLeggings && leggings == MERMAID,
-                hasBoots && boots == MERMAID);
-        doReaperEffects(entity,
+                hasHelmet && helmet == MERMAID.assetId(),
+                hasChestplate && chestplate == MERMAID.assetId(),
+                hasLeggings && leggings == MERMAID.assetId(),
+                hasBoots && boots == MERMAID.assetId());
+
+        if(equipments.contains(REAPER.assetId())) doReaperEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == REAPER,
-                hasChestplate && chestplate == REAPER,
-                hasLeggings && leggings == REAPER,
-                hasBoots && boots == REAPER);
-        doAngelEffects(entity,
+                hasHelmet && helmet == REAPER.assetId(),
+                hasChestplate && chestplate == REAPER.assetId(),
+                hasLeggings && leggings == REAPER.assetId(),
+                hasBoots && boots == REAPER.assetId());
+
+        if(equipments.contains(ANGEL.assetId())) doAngelEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == ANGEL,
-                hasChestplate && chestplate == ANGEL,
-                hasLeggings && leggings == ANGEL,
-                hasBoots && boots == ANGEL);
-        doIcicleEffects(entity,
+                hasHelmet && helmet == ANGEL.assetId(),
+                hasChestplate && chestplate == ANGEL.assetId(),
+                hasLeggings && leggings == ANGEL.assetId(),
+                hasBoots && boots == ANGEL.assetId());
+
+        if(equipments.contains(ICICLE.assetId())) doIcicleEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == ICICLE,
-                hasChestplate && chestplate == ICICLE,
-                hasLeggings && leggings == ICICLE,
-                hasBoots && boots == ICICLE);
-        doBerserkerEffects(entity,
+                hasHelmet && helmet == ICICLE.assetId(),
+                hasChestplate && chestplate == ICICLE.assetId(),
+                hasLeggings && leggings == ICICLE.assetId(),
+                hasBoots && boots == ICICLE.assetId());
+
+        if(equipments.contains(BERSERKER.assetId())) doBerserkerEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == BERSERKER,
-                hasChestplate && chestplate == BERSERKER,
-                hasLeggings && leggings == BERSERKER,
-                hasBoots && boots == BERSERKER);
-        doRogueEffects(entity,
+                hasHelmet && helmet == BERSERKER.assetId(),
+                hasChestplate && chestplate == BERSERKER.assetId(),
+                hasLeggings && leggings == BERSERKER.assetId(),
+                hasBoots && boots == BERSERKER.assetId());
+
+        if(equipments.contains(ROGUE.assetId())) doRogueEffects(entity,
                 level,pSlotId,
-                hasHelmet && helmet == ROGUE,
-                hasChestplate && chestplate == ROGUE,
-                hasLeggings && leggings == ROGUE,
-                hasBoots && boots == ROGUE);
+                hasHelmet && helmet == ROGUE.assetId(),
+                hasChestplate && chestplate == ROGUE.assetId(),
+                hasLeggings && leggings == ROGUE.assetId(),
+                hasBoots && boots == ROGUE.assetId());
 
     }
 
-    /*
-    3 -> Boots
-    2 -> Chestplate
-    1 -> Leggings
-    0 -> Boots
-     */
-
-
-    protected void doSentinelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected static void doSentinelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
         if (head) {
+            i++;
 
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
+            i++;
 
         }
 
-        if (head || chest || legs || feet){
-            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 0, false, false, false));
-
-        }
         if (head && chest && legs && feet){
             entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 3, 4, false, false, false));
             entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 2, false, false, false));
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3, 0, false, false, false));
-
-
         }
+
+        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, Math.min(i,2), false, false, false));
+
     }
 
-    protected void doKnightEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected static void doKnightEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
+
         if (head) {
+            i++;
 
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
+            i++;
 
         }
 
-        if (head || chest || legs || feet){
-            entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 3, 1, false, false, false));
-
-        }
         if (head && chest && legs && feet){
             entity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 3, 0, false, false, false));
 
         }
+        entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 3, 1, false, false, false));
+
     }
 
-    protected void doMermaidEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected static void doMermaidEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
+
         if (head) {
+            i++;
 
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
+            i++;
 
         }
 
-        if (head || chest || legs || feet){
-
-        }
 
 
         if (head && chest && legs && feet){
@@ -251,26 +265,29 @@ public class MTAArmor extends ArmorItem {
         }
     }
 
-    protected void doReaperEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected static void doReaperEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
+
         if (head) {
+            i++;
 
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
+            i++;
 
         }
 
-        if (head || chest || legs || feet){
-
-        }
 
 
         if (head && chest && legs && feet){
@@ -278,127 +295,139 @@ public class MTAArmor extends ArmorItem {
         }
     }
 
-    protected void doAngelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected static void doAngelEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
+
 
         if (head) {
+            i++;
 
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
+            i++;
 
         }
 
-        if (head || chest || legs || feet){
-            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 3, false, false, false));
-
-        }
 
         if (head && chest && legs && feet){
             entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 3, 0, false, false, false));
-            entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, 5, false, false, false));
 
         }
+        entity.addEffect(new MobEffectInstance(MobEffects.JUMP, 3, i + 1, false, false, false));
+
     }
 
 
-    protected void doIcicleEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
-
+    protected static void doIcicleEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
         if (head) {
-
+            i++;
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
+            i++;
 
         }
 
-        if (head || chest || legs || feet){
+
+        if (head && chest && legs && feet){
+
+        }
+
+        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, i, false, false, false));
+
+    }
+
+    protected static void doBerserkerEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+        int i = 0;
+        if (head) {
+            i++;
+
+        }
+
+        if (chest) {
+            i++;
+
+        }
+
+        if (legs) {
+            i++;
+
+        }
+
+        if (feet) {
+            i++;
 
         }
 
         if (head && chest && legs && feet){
-            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 3, 0, false, false, false));
-            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3, 2, false, false, false));
+
         }
+
+        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, i, false, false, false));
+
     }
 
-    protected void doBerserkerEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet){
+    protected static void doRogueEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet) {
+        int i = 0;
+
         if (head) {
+            i++;
 
         }
 
         if (chest) {
+            i++;
 
         }
 
         if (legs) {
+            i++;
 
         }
 
         if (feet) {
-
-        }
-
-        if (head || chest || legs || feet){
-            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 0, false, false, false));
-
-        }
-
-        if (head && chest && legs && feet){
-            entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3, 2, false, false, false));
-
-        }
-    }
-
-    protected void doRogueEffects(LivingEntity entity, Level level, int pSlotId, boolean head, boolean chest, boolean legs, boolean feet) {
-        if (head) {
-
-        }
-
-        if (chest) {
-
-        }
-
-        if (legs) {
-
-        }
-
-        if (feet) {
+            i++;
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 1, false, false, false));
 
         }
 
-
-        if (head || chest || legs || feet) {
-        }
         if (head && chest && legs && feet) {
             if (entity.isCrouching()) {
                 entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 3, 0, false, false, false));
             }
-            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 2, false, false, false));
-
         }
+
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3, 2, false, false, false));
+
+
     }
 
 
     //ATTRIBUTES
 
-    protected ItemAttributeModifiers.Builder resolveAttributeModifiers(ArmorMaterial material, ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder resolveAttributeModifiers(ArmorMaterial material, ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         if ( material == SENTINEL){
             return sentinelAttributes(ArmorType,builder);
         }else
@@ -427,7 +456,7 @@ public class MTAArmor extends ArmorItem {
     }
 
 
-    protected ItemAttributeModifiers.Builder sentinelAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder sentinelAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -445,7 +474,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder knightAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder knightAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -465,7 +494,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder mermaidAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder mermaidAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -486,7 +515,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder reaperAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder reaperAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -505,7 +534,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder angelAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder angelAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -528,7 +557,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder icicleAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder icicleAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -551,7 +580,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder berserkerAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder berserkerAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
@@ -577,7 +606,7 @@ public class MTAArmor extends ArmorItem {
         return builder;
     }
 
-    protected ItemAttributeModifiers.Builder rogueAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
+    protected static ItemAttributeModifiers.Builder rogueAttributes(ArmorType ArmorType, ItemAttributeModifiers.Builder builder){
         EquipmentSlotGroup slot = EquipmentSlotGroup.bySlot(ArmorType.getSlot());
         ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + ArmorType.getName());
 
