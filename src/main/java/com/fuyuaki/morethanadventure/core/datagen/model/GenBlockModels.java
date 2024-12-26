@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
-import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.BlockStateGenerator;

@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.world.item.curio.talisman;
 
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
-import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
@@ -9,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class AttributeModifierTalismanItem extends TalismanItem{

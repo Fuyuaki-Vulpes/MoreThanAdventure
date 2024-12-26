@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import net.minecraft.sounds.Music;
-import net.minecraft.sounds.Musics;
 import net.minecraft.world.entity.MobCategory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

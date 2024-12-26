@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.game.client.model.animation;
 
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
 
 public class AnimUtils {
 

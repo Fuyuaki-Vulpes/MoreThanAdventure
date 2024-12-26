@@ -2,13 +2,10 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity.layers;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.WispflyModel;
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.GlowSpiderRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.WispflyRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.WispflyRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Wispfly;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;

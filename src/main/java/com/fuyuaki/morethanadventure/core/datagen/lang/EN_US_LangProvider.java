@@ -4,7 +4,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
-import com.fuyuaki.morethanadventure.core.registry.*;
+import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;

@@ -1,9 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity.layers;
 
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.CorrosiveCubeRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.SkeletonModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -15,7 +13,6 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.AbstractSkeleton;
 
 public class SkeletonGlowLayer <T extends SkeletonRenderState, M extends SkeletonModel<T>> extends RenderLayer<T, M> {
     private final EntityModel<T> model;

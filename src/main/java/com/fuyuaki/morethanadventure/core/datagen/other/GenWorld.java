@@ -1,9 +1,9 @@
 package com.fuyuaki.morethanadventure.core.datagen.other;
 
 import com.fuyuaki.morethanadventure.game.worldgen.MTANoises;
-import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomeModifiers;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaConfigFeatures;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
+import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomeModifiers;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;

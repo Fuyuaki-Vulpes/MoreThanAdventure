@@ -4,8 +4,6 @@ package com.fuyuaki.morethanadventure.game.client.model.entity;// Made with Bloc
 
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.SirenRenderState;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

@@ -1,16 +1,9 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity.layers;
 
-import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.CorrosiveCubeRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.GlowSpiderRenderer;
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.GlowSpiderRenderState;
-import com.fuyuaki.morethanadventure.world.entity.GlowSpider;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.SpiderModel;
-import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;

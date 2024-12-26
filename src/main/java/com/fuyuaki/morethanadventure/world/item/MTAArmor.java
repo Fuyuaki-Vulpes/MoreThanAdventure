@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 
-import com.fuyuaki.morethanadventure.core.registry.MtaArmorMats;
+import com.fuyuaki.morethanadventure.core.registry.MTAArmorMats;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -26,14 +26,14 @@ import java.util.UUID;
 public class MTAArmor extends ArmorItem {
 
     protected final UUID FULL_SET_UUID = UUID.fromString("78f6b05d-a0ff-4b5e-86dc-9b397d5b7878");
-    private static final ArmorMaterial SENTINEL = MtaArmorMats.GREAT_SENTINEL;
-    private static final ArmorMaterial KNIGHT = MtaArmorMats.HOLY_KNIGHT;
-    private static final ArmorMaterial MERMAID = MtaArmorMats.MYSTIC_MERMAID;
-    private static final ArmorMaterial REAPER = MtaArmorMats.SILENT_REAPER;
-    private static final ArmorMaterial ANGEL = MtaArmorMats.TEMPLE_ANGEL;
-    private static final ArmorMaterial ICICLE = MtaArmorMats.FREEZING_ICICLE;
-    private static final ArmorMaterial BERSERKER = MtaArmorMats.WRATHFUL_BERSERKER;
-    private static final ArmorMaterial ROGUE = MtaArmorMats.SHADOW_ROGUE;
+    private static final ArmorMaterial SENTINEL = MTAArmorMats.GREAT_SENTINEL;
+    private static final ArmorMaterial KNIGHT = MTAArmorMats.HOLY_KNIGHT;
+    private static final ArmorMaterial MERMAID = MTAArmorMats.MYSTIC_MERMAID;
+    private static final ArmorMaterial REAPER = MTAArmorMats.SILENT_REAPER;
+    private static final ArmorMaterial ANGEL = MTAArmorMats.TEMPLE_ANGEL;
+    private static final ArmorMaterial ICICLE = MTAArmorMats.FREEZING_ICICLE;
+    private static final ArmorMaterial BERSERKER = MTAArmorMats.WRATHFUL_BERSERKER;
+    private static final ArmorMaterial ROGUE = MTAArmorMats.SHADOW_ROGUE;
 
 
 

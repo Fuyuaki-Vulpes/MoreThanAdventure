@@ -1,8 +1,8 @@
 package com.fuyuaki.morethanadventure.core.datagen.other;
 
-import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.BlockFamily;

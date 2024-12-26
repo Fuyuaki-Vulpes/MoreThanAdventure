@@ -348,7 +348,7 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> WHITE_TERRACOTTA_WALL = registerWall("white_terracotta_wall", Blocks.WHITE_TERRACOTTA);
     public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_SLAB = registerSlab("light_gray_terracotta_slab", Blocks.LIGHT_GRAY_TERRACOTTA);
     public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_STAIRS = registerStair("light_gray_terracotta_stairs", Blocks.LIGHT_GRAY_TERRACOTTA);
-    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_WALL = registerWall("light_gray_terracottas_wall", Blocks.LIGHT_GRAY_TERRACOTTA);
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_WALL = registerWall("light_gray_terracotta_wall", Blocks.LIGHT_GRAY_TERRACOTTA);
     public static final DeferredBlock<Block> GRAY_TERRACOTTA_SLAB = registerSlab("gray_terracotta_slab", Blocks.GRAY_TERRACOTTA);
     public static final DeferredBlock<Block> GRAY_TERRACOTTA_STAIRS = registerStair("gray_terracotta_stairs", Blocks.GRAY_TERRACOTTA);
     public static final DeferredBlock<Block> GRAY_TERRACOTTA_WALL = registerWall("gray_terracotta_wall", Blocks.GRAY_TERRACOTTA);
@@ -386,7 +386,7 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> PURPLE_TERRACOTTA_STAIRS = registerStair("purple_terracotta_stairs", Blocks.PURPLE_TERRACOTTA);
     public static final DeferredBlock<Block> PURPLE_TERRACOTTA_WALL = registerWall("purple_terracotta_wall", Blocks.PURPLE_TERRACOTTA);
     public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_SLAB = registerSlab("magenta_terracotta_slab", Blocks.MAGENTA_TERRACOTTA);
-    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_STAIRS = registerStair("magenta_terracottastairs", Blocks.MAGENTA_TERRACOTTA);
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_STAIRS = registerStair("magenta_terracotta_stairs", Blocks.MAGENTA_TERRACOTTA);
     public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_WALL = registerWall("magenta_terracotta_wall", Blocks.MAGENTA_TERRACOTTA);
     public static final DeferredBlock<Block> PINK_TERRACOTTA_SLAB = registerSlab("pink_terracotta_slab", Blocks.PINK_TERRACOTTA);
     public static final DeferredBlock<Block> PINK_TERRACOTTA_STAIRS = registerStair("pink_terracotta_stairs", Blocks.PINK_TERRACOTTA);

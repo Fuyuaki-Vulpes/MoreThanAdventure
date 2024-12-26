@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.core.datagen.loot;
 
-import com.fuyuaki.morethanadventure.core.mod.MTAMod;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.core.mod.MTAMod;
 import com.fuyuaki.morethanadventure.world.loot.MtaAddItemModifier;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;

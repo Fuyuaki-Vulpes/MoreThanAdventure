@@ -7,7 +7,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.EnumMap;
 
-public class MtaArmorMats {
+public class MTAArmorMats {
 
     public static final ArmorMaterial GREAT_SENTINEL = new ArmorMaterial(59,
             Util.make(new EnumMap<>(ArmorType.class), map -> {

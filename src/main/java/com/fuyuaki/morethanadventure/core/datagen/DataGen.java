@@ -1,8 +1,10 @@
 package com.fuyuaki.morethanadventure.core.datagen;
 
-import com.fuyuaki.morethanadventure.core.datagen.other.*;
 import com.fuyuaki.morethanadventure.core.datagen.lang.EN_US_LangProvider;
 import com.fuyuaki.morethanadventure.core.datagen.loot.GlobalLootModifiers;
+import com.fuyuaki.morethanadventure.core.datagen.other.GenAdvancements;
+import com.fuyuaki.morethanadventure.core.datagen.other.GenSoundDefinition;
+import com.fuyuaki.morethanadventure.core.datagen.other.GenWorld;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenBiomeTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenBlockTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenEntityTags;
