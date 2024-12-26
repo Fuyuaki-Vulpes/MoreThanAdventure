@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.world.event;
 
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -18,7 +18,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class MTACommonEvents {

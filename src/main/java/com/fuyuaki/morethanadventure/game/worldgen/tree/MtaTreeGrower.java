@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.game.worldgen.tree;
 
-import com.fuyuaki.morethanadventure.core.MTAMod;
+import com.fuyuaki.morethanadventure.core.mod.MTAMod;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaConfigFeatures;
 import net.minecraft.world.level.block.grower.TreeGrower;
 

@@ -1,17 +1,14 @@
 package com.fuyuaki.morethanadventure.world.event;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import net.minecraft.client.Minecraft;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.CalculatePlayerTurnEvent;
 import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class MTAGameClientEvents {

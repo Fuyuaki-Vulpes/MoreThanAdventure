@@ -11,13 +11,10 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.entity.state.ThrownTridentRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.projectile.ThrownTrident;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class ThrownMysticMermaidsTridentRenderer extends EntityRenderer<ThrownMysticMermaidsTrident, ThrownMysticMermaidsTridentRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/mystic_mermaids_trident.png");

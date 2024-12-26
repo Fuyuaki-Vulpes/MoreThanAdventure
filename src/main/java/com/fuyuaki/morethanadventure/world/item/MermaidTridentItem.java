@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;

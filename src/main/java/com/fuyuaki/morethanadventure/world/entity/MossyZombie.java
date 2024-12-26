@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;

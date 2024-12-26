@@ -2,9 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ThrownMysticMermaidsTridentRenderState;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ThrownNetheriteTridentRenderState;
-import com.fuyuaki.morethanadventure.world.entity.ThrownMysticMermaidsTrident;
 import com.fuyuaki.morethanadventure.world.entity.ThrownNetheriteTrident;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -15,9 +13,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class ThrownNetheriteTridentRenderer extends EntityRenderer<ThrownNetheriteTrident, ThrownNetheriteTridentRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/netherite_trident.png");

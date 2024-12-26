@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.block;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +10,6 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowLayerBlock;
-import net.minecraft.world.level.block.SnowyDirtBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LightEngine;
 

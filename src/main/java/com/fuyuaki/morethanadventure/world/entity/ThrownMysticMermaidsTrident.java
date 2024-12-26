@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;

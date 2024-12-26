@@ -1,12 +1,9 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
-import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;

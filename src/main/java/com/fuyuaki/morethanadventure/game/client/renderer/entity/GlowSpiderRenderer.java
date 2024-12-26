@@ -3,17 +3,14 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.GlowSpiderLayer;
 import com.fuyuaki.morethanadventure.world.entity.GlowSpider;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.SpiderModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.SpiderRenderer;
-import net.minecraft.client.renderer.entity.layers.SpiderEyesLayer;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.CaveSpider;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GlowSpiderRenderer extends SpiderRenderer<GlowSpider> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/spider/glow_spider.png");

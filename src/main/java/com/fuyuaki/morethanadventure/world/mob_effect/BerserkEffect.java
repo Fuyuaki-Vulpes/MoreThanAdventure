@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.mob_effect;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;

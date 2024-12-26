@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;

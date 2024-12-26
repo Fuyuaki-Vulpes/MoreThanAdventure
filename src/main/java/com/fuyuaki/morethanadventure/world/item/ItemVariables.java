@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
-import com.fuyuaki.morethanadventure.core.MTAMod;
+import com.fuyuaki.morethanadventure.core.mod.MTAMod;
 import net.minecraft.resources.ResourceLocation;
 
 public class ItemVariables {

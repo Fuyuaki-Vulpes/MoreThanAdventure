@@ -5,11 +5,9 @@ import com.fuyuaki.morethanadventure.game.client.model.entity.MossyZombieModel;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.MossyZombieRenderState;
 import com.fuyuaki.morethanadventure.world.entity.MossyZombie;
 import net.minecraft.client.renderer.entity.*;
-import net.minecraft.client.renderer.entity.state.EntityRenderState;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.resources.ResourceLocation;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MossyZombieRenderer extends AbstractZombieRenderer<MossyZombie, MossyZombieRenderState, MossyZombieModel<MossyZombieRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/mossy_zombie.png");

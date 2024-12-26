@@ -1,8 +1,7 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
-import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
-import net.minecraft.core.particles.ParticleTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.Difficulty;

@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import com.fuyuaki.morethanadventure.world.mob_effect.renderer.StunRenderer;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;

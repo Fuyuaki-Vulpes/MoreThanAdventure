@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;

@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.entity.AbstractSkeletonRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class SkeletonFighterRenderer extends AbstractSkeletonRenderer<SkeletonFighter, SkeletonFighterRenderState> {
 

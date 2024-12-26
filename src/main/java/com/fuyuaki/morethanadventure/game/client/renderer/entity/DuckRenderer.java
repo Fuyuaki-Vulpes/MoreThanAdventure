@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import java.util.Map;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class DuckRenderer extends MobRenderer<Duck, DuckRenderState, DuckModel<DuckRenderState>> {
 

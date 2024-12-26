@@ -1,9 +1,8 @@
 package com.fuyuaki.morethanadventure.world.block;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;

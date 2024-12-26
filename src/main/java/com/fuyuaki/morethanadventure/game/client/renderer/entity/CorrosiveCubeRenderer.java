@@ -6,14 +6,11 @@ import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.Corrosiv
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.CorrosiveCubeRenderState;
 import com.fuyuaki.morethanadventure.world.entity.CorrosiveCube;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.state.SlimeRenderState;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class CorrosiveCubeRenderer extends MobRenderer<CorrosiveCube, CorrosiveCubeRenderState, CorrosiveCubeModel<CorrosiveCubeRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/slime/corrosive_cube.png");

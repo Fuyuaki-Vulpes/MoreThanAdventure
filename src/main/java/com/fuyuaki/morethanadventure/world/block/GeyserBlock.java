@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.block;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.AABB;
 
 import javax.annotation.Nullable;

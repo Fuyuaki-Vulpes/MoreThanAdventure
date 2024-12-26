@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.google.common.collect.Maps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;

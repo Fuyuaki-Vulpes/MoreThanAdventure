@@ -5,16 +5,12 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.TriState;
-import org.spongepowered.asm.mixin.Shadow;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
-import static net.minecraft.client.renderer.RenderStateShard.NAUSEA_OVERLAY_TRANSPARENCY;
-import static net.minecraft.client.renderer.RenderStateShard.POSITION_TEXTURE_COLOR_SHADER;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public abstract class MTARenderTypes extends RenderType {
 

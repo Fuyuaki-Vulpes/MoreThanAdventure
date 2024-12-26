@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.game.worldgen.biomes.surface;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.game.worldgen.MTANoises;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.world.level.block.Block;

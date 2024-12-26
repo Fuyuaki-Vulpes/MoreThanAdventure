@@ -1,10 +1,9 @@
 package com.fuyuaki.morethanadventure.world.event;
 
-import com.fuyuaki.morethanadventure.core.MTAMod;
-import com.fuyuaki.morethanadventure.core.registry.MtaBlockEntities;
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
-import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlockEntities;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.*;
@@ -27,7 +26,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

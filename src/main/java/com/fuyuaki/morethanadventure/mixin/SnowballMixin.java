@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

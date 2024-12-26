@@ -1,13 +1,12 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaParticles;
-import com.fuyuaki.morethanadventure.core.registry.MtaSounds;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.neoforge.common.ItemAbility;
 
 public class SpearItem extends WeaponItem {

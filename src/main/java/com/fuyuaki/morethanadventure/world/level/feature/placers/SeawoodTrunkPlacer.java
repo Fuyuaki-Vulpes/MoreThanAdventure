@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.level.feature.placers;
 
-import com.fuyuaki.morethanadventure.core.registry.MTAPlacers;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTAPlacers;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

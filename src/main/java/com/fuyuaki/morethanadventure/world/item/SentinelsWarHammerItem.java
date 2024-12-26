@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;

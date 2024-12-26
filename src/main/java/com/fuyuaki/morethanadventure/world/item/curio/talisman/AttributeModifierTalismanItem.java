@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item.curio.talisman;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.Holder;
@@ -9,15 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.ItemStack;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.SlotResult;
-import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
-
-import java.util.List;
-
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class AttributeModifierTalismanItem extends TalismanItem{
     public final ResourceLocation location;
@@ -29,12 +21,12 @@ public class AttributeModifierTalismanItem extends TalismanItem{
 
     }
 
-
-    @Override
-    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
-        Multimap<Holder<Attribute>, AttributeModifier> map = LinkedHashMultimap.create();
-        return this.talismanModifiers(map);
-    }
+//
+//    @Override
+//    public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
+//        Multimap<Holder<Attribute>, AttributeModifier> map = LinkedHashMultimap.create();
+//        return this.talismanModifiers(map);
+//    }
 
     protected Multimap<Holder<Attribute>, AttributeModifier> talismanModifiers(Multimap<Holder<Attribute>, AttributeModifier> map) {
 
@@ -44,10 +36,11 @@ public class AttributeModifierTalismanItem extends TalismanItem{
 
 
     public static boolean enableScubaGearEffects(LivingEntity player) {
-        if (CuriosApi.getCuriosInventory(player).isEmpty())
-            return false;
-        ICuriosItemHandler handler = CuriosApi.getCuriosInventory(player).get();
-
-        return handler.isEquipped(MtaItems.SIREN_TALISMAN.get()) &&  player.isInWater();
+//        if (CuriosApi.getCuriosInventory(player).isEmpty())
+//            return false;
+//        ICuriosItemHandler handler = CuriosApi.getCuriosInventory(player).get();
+//
+//        return handler.isEquipped(MtaItems.SIREN_TALISMAN.get()) &&  player.isInWater();
+        return false;
     }
 }

@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 @OnlyIn(Dist.CLIENT)
 public class MTAArrowRenderer extends ArrowRenderer<MTAArrowEntity, MTAArrowRenderState> {

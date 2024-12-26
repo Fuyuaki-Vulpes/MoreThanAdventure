@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.game.worldgen;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.game.worldgen.util.MTAOreUtils;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
@@ -12,8 +12,6 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.valueproviders.ClampedInt;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
@@ -25,7 +23,7 @@ import net.minecraft.world.level.material.Fluids;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaPlacedFeatures {
 

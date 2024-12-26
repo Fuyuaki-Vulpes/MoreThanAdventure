@@ -1,7 +1,5 @@
 package com.fuyuaki.morethanadventure.world.block;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;

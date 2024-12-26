@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.block;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

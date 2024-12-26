@@ -7,7 +7,7 @@ import com.fuyuaki.morethanadventure.world.entity.ToxicZombie;
 import net.minecraft.client.renderer.entity.*;
 import net.minecraft.resources.ResourceLocation;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class ToxicZombieRenderer extends AbstractZombieRenderer<ToxicZombie, ToxicZombieRenderState, ToxicZombieModel<ToxicZombieRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/zombie/toxic_zombie.png");

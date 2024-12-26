@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.entity.Arrows;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import net.minecraft.core.particles.ColorParticleOption;

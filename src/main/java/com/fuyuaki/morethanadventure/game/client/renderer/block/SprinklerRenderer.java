@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.block;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaBlocks;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import com.fuyuaki.morethanadventure.world.block.entity.SprinklerEntity;
@@ -19,7 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class SprinklerRenderer<T extends SprinklerEntity> implements BlockEntityRenderer<T> {
     private final ModelPart root;

@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.game.client.renderer;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.MysticMermaidsTridentModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.NetheriteTridentModel;

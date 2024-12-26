@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.game.worldgen.biomes;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
 import net.minecraft.core.HolderSet;
@@ -19,7 +19,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.List;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaBiomeModifiers {
 

@@ -1,29 +1,20 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotResult;
-import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
-
-import java.util.List;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
@@ -70,7 +61,7 @@ public abstract class LivingEntityMixin extends Entity {
     public void totemCheck(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
         if (damageSource != null && damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             cir.setReturnValue(false);
-        } else {
+        }/* else {
             ItemStack itemstack = null;
             if (CuriosApi.getCuriosInventory(thisLiving).isEmpty()) {
 
@@ -92,7 +83,7 @@ public abstract class LivingEntityMixin extends Entity {
                 }
             }
 
-        }
+        }*/
     }
 
 }

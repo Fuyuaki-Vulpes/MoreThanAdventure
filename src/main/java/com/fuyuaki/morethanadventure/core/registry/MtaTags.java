@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.core.registry;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -11,10 +10,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.Tags;
-import top.theillusivec4.curios.api.CuriosApi;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 
 public class MtaTags {
@@ -63,7 +60,6 @@ public class MtaTags {
         public static final TagKey<Item> TOOLS_KNIFE = commonItemTag("tools/knife");
 
 
-
         private static TagKey<Block> commonBlockTag(String path) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", path));
         }
@@ -82,8 +78,6 @@ public class MtaTags {
         public static final TagKey<Block> SNOW_ANIMAL_SPAWNABLE_ON = tag("mountain_animal_spawnable_on");
 
         public static final TagKey<Block> DIRTIES_STONE_TILES = tag("dirties_stone_tiles");
-
-
 
 
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
@@ -109,7 +103,7 @@ public class MtaTags {
 
     }
 
-    public static class Items{
+    public static class Items {
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Item> SEAWOOD = tag("sealogs");
 
@@ -148,7 +142,6 @@ public class MtaTags {
     public static class Biomes {
         public static final TagKey<Biome> OVERWORLD_GEYSERS = tag("overworld_geysers");
         public static final TagKey<Biome> NETHER_GEYSERS = tag("nether_geysers");
-
 
 
         public static final TagKey<Biome> AGATE = tag("agate");
@@ -195,35 +188,20 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_SIREN = tag("has_siren");
 
 
-
-
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
 
         public static final TagKey<Biome> HAS_CATTAIL = tag("has_cattail");
 
 
-
         private static TagKey<Biome> tag(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID, name));
         }
+
         private static TagKey<Biome> tagC(String name) {
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", name));
         }
 
     }
 
-    public class Curios {
 
-        public static final TagKey<Item> TALISMANS = tag("talisman");
-        public static final TagKey<Item> TOTEMS = tag("totem");
-
-        private static TagKey<Item> tag(String name) {
-            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(CuriosApi.MODID, name));
-        }
-        private static TagKey<Item> tagC(String name) {
-            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", name));
-        }
-    }
-
-
-    }
+}

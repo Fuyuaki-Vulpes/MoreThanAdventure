@@ -1,20 +1,13 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
-import com.fuyuaki.morethanadventure.game.client.model.entity.ArmoredSkeletonModel;
-import com.fuyuaki.morethanadventure.game.client.model.entity.BeardedDragonModel;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.FakeArmorLayer;
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.layers.SkeletonGlowLayer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ArmoredSkeletonRenderState;
 import com.fuyuaki.morethanadventure.world.entity.ArmoredSkeleton;
-import net.minecraft.client.model.SkeletonModel;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.*;
-import net.minecraft.client.renderer.entity.state.SkeletonRenderState;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.monster.Skeleton;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class ArmoredSkeletonRenderer extends AbstractSkeletonRenderer<ArmoredSkeleton, ArmoredSkeletonRenderState> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/skeleton/armored_skeleton.png");

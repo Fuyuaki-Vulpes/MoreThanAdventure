@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.entity.ToucanModel;
-import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.DuckRenderState;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.ToucanRenderState;
 import com.fuyuaki.morethanadventure.world.entity.Toucan;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -11,7 +10,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class ToucanRenderer extends MobRenderer<Toucan, ToucanRenderState, ToucanModel<ToucanRenderState>> {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/toucan.png");

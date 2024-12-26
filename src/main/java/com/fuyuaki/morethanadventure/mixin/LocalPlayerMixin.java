@@ -1,6 +1,5 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaItems;
 import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.multiplayer.ClientLevel;

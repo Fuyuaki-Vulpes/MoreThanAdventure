@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import com.fuyuaki.morethanadventure.world.item.weaponry.DoubleAxeItem;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;

@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
-import com.fuyuaki.morethanadventure.core.registry.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -28,7 +28,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
-import static com.fuyuaki.morethanadventure.core.MTAMod.MODID;
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class WeaponItem extends Item {
 
