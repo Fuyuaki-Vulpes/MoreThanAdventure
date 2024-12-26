@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class BellPepperCropBlock extends MtaCrops {
     public static final int MAX_AGE = 7;
-    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
     public BellPepperCropBlock(Properties properties) {
         super(properties);
     }
@@ -19,10 +18,6 @@ public class BellPepperCropBlock extends MtaCrops {
         return MtaItems.BELL_PEPPER_SEEDS;
     }
 
-    @Override
-    public IntegerProperty getAgeProperty() {
-        return AGE;
-    }
 
     @Override
     public int getMaxAge() {
@@ -31,8 +26,4 @@ public class BellPepperCropBlock extends MtaCrops {
 
     }
 
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(AGE);
-    }
 }

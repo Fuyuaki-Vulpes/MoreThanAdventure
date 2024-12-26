@@ -54,7 +54,7 @@ public class Capybara extends MTATameableAnimal {
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 12.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)

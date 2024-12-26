@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "morethanadventure:block/blue_terracotta_tiles",
-    "side": "morethanadventure:block/blue_terracotta_tiles",
-    "top": "morethanadventure:block/blue_terracotta_tiles"
-  }
-}

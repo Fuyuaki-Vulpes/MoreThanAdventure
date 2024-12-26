@@ -126,7 +126,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 4.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.FLYING_SPEED,0.5)

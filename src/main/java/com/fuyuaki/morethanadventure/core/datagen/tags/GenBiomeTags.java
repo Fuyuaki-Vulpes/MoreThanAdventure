@@ -13,6 +13,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,9 +22,8 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
 
-
-    public GenBiomeTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-        super(output, Registries.BIOME, provider, biome -> ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,biome.toString())),MODID,null);
+    public GenBiomeTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, Registries.BIOME, provider, biome -> ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,biome.toString())),MODID,existingFileHelper);
     }
 
     @Override

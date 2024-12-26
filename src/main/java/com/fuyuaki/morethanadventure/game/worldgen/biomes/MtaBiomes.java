@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.worldgen.biomes;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -20,6 +21,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import javax.annotation.Nullable;
 
@@ -59,15 +62,18 @@ public class MtaBiomes {
 
     public static void bootstrap(BootstrapContext<Biome> context){
 
-        register(context,LUSH_RIVER, lushRiver(context));
-        register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(context));
-        register(context,SPARSE_TAIGA, sparseTaiga(context));
-        register(context,OASIS, oasis(context));
-        register(context,TUNDRA, tundra(context));
-        register(context,GRAVELLY_RIVER, gravelRiver(context));
-        register(context,LUSH_MEADOW, lushMeadow(context));
-        register(context,CRYSTALLINE_GROTTO, crystallineGrotto(context));
-        register(context,UNDERWATER_FOREST, underwaterForest(context));
+        HolderGetter<PlacedFeature> placedFeatureHolder = context.lookup(Registries.PLACED_FEATURE);
+        HolderGetter<ConfiguredWorldCarver<?>> configuredCarverHolder = context.lookup(Registries.CONFIGURED_CARVER);
+
+        register(context,LUSH_RIVER, lushRiver(placedFeatureHolder,configuredCarverHolder));
+        register(context,SPARSE_CHERRY_GROVE, sparseCherryGrove(placedFeatureHolder,configuredCarverHolder));
+        register(context,SPARSE_TAIGA, sparseTaiga(placedFeatureHolder,configuredCarverHolder));
+        register(context,OASIS, oasis(placedFeatureHolder,configuredCarverHolder));
+        register(context,TUNDRA, tundra(placedFeatureHolder,configuredCarverHolder));
+        register(context,GRAVELLY_RIVER, gravelRiver(placedFeatureHolder,configuredCarverHolder));
+        register(context,LUSH_MEADOW, lushMeadow(placedFeatureHolder,configuredCarverHolder));
+        register(context,CRYSTALLINE_GROTTO, crystallineGrotto(placedFeatureHolder,configuredCarverHolder));
+        register(context,UNDERWATER_FOREST, underwaterForest(placedFeatureHolder,configuredCarverHolder));
     }
 
 
@@ -83,7 +89,7 @@ public class MtaBiomes {
 
 
 
-    private static Biome lushRiver(BootstrapContext<Biome> context) {
+    private static Biome lushRiver(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
 
@@ -96,7 +102,7 @@ public class MtaBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
         globalOverworldGeneration(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MtaPlacedFeatures.MOSSY_ROCKS);
@@ -136,7 +142,7 @@ public class MtaBiomes {
 
     }
 
-    private static Biome sparseCherryGrove(BootstrapContext<Biome> context){
+    private static Biome sparseCherryGrove(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers){
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PIG, 1, 1, 2))
@@ -145,7 +151,7 @@ public class MtaBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
         globalOverworldGeneration(biomeBuilder);
 
@@ -174,7 +180,7 @@ public class MtaBiomes {
                 MAGICAL_MUSIC);
     }
 
-    private static Biome sparseTaiga(BootstrapContext<Biome> context) {
+    private static Biome sparseTaiga(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
 
@@ -186,7 +192,7 @@ public class MtaBiomes {
 
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
         globalOverworldGeneration(biomeBuilder);
 
@@ -212,7 +218,7 @@ public class MtaBiomes {
                 NORMAL_MUSIC);
     }
 
-    private static Biome oasis(BootstrapContext<Biome> context) {
+    private static Biome oasis(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
 
@@ -221,7 +227,7 @@ public class MtaBiomes {
 
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
 
         BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
@@ -255,7 +261,7 @@ public class MtaBiomes {
                 DESERT_MUSIC);
     }
 
-    private static Biome gravelRiver(BootstrapContext<Biome> context) {
+    private static Biome gravelRiver(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
 
@@ -266,7 +272,7 @@ public class MtaBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
@@ -296,7 +302,7 @@ public class MtaBiomes {
 
     }
 
-    private static Biome lushMeadow(BootstrapContext<Biome> context){
+    private static Biome lushMeadow(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers){
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 2))
@@ -306,7 +312,7 @@ public class MtaBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
         globalOverworldGeneration(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_FOREST_FLOWERS);
@@ -346,7 +352,7 @@ public class MtaBiomes {
     }
 
 
-    private static Biome crystallineGrotto(BootstrapContext<Biome> context){
+    private static Biome crystallineGrotto(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers){
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
 
@@ -360,7 +366,7 @@ public class MtaBiomes {
 
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
@@ -382,14 +388,14 @@ public class MtaBiomes {
     }
 
 
-    private static Biome tundra(BootstrapContext<Biome> context) {
+    private static Biome tundra(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 2, 4));
 
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
         BiomeDefaultFeatures.snowySpawns(spawnBuilder);
 
         globalOverworldGeneration(biomeBuilder);
@@ -418,7 +424,7 @@ public class MtaBiomes {
 
 
 
-    public static Biome underwaterForest(BootstrapContext<Biome> context) {
+    public static Biome underwaterForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder()
                 .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 15, 1, 3))
                 .addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.AXOLOTL, 4, 1, 2))
@@ -426,7 +432,7 @@ public class MtaBiomes {
         BiomeDefaultFeatures.warmOceanSpawns(mobspawnsettings$builder, 20, 2);
 
         BiomeGenerationSettings.Builder biomeBuilder =
-                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
 
 

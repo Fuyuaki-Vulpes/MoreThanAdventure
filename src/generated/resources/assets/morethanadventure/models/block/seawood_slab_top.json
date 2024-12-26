@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "morethanadventure:block/seawood_planks",
-    "side": "morethanadventure:block/seawood_planks",
-    "top": "morethanadventure:block/seawood_planks"
-  }
-}

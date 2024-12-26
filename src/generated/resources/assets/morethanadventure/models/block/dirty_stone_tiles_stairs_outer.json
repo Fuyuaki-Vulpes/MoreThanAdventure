@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "morethanadventure:block/dirty_stone_tiles",
-    "side": "morethanadventure:block/dirty_stone_tiles",
-    "top": "morethanadventure:block/dirty_stone_tiles"
-  }
-}

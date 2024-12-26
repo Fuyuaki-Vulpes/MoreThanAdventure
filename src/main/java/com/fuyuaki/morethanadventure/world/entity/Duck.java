@@ -58,7 +58,7 @@ public class Duck extends MTATameableAnimal implements VariantHolder<Duck.Varian
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 6.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.2F);

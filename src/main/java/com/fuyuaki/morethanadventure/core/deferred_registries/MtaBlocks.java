@@ -5,12 +5,14 @@ import com.fuyuaki.morethanadventure.game.worldgen.tree.MtaTreeGrower;
 import com.fuyuaki.morethanadventure.world.block.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -27,7 +29,6 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
@@ -147,108 +148,67 @@ public class MtaBlocks {
 
 
     public static final DeferredBlock<GeyserBlock> STONE_GEYSER = registerBlock("stone_geyser", properties -> new  GeyserBlock(properties,false),
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STONE));
+            copy(Blocks.STONE));
 
     public static final DeferredBlock<GeyserBlock> TERRACOTTA_GEYSER = registerBlock("terracotta_geyser",properties -> new GeyserBlock(properties,false),
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.TERRACOTTA));
+            copy(Blocks.TERRACOTTA));
 
     public static final DeferredBlock<GeyserBlock> NETHERRACK_GEYSER = registerBlock("netherrack_geyser", properties -> new GeyserBlock(properties,true),
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.NETHERRACK)
-                    .strength(1.25F, 4.2F));
+            copy(Blocks.NETHERRACK).strength(1.25F, 4.2F));
 
     public static final DeferredBlock<GeyserBlock> BASALT_GEYSER = registerBlock("basalt_geyser", properties -> new GeyserBlock(properties,true),
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.BASALT));
+            copy(Blocks.BASALT));
 
     public static final DeferredBlock<ShardClusterBlock> CLEAR_QUARTZ_CLUSTER = registerBlock("clear_quartz_cluster", ShardClusterBlock::new,
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER)
-            );
+                    copy(Blocks.AMETHYST_CLUSTER));
 
 
 
 
     public static final DeferredBlock<Block> MOSSY_ANDESITE = registerBlock("mossy_andesite", BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE));
 
-    public static final DeferredBlock<ShardGrowthBlock> CALCITE_CLEAR_QUARTZ_GROWTH = registerBlock("calcite_clear_quartz_growth",
-             ShardGrowthBlock(Blocks.CALCITE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),
+    public static final DeferredBlock<Block> CALCITE_CLEAR_QUARTZ_GROWTH = registerBlock("calcite_clear_quartz_growth",
+             properties -> new ShardGrowthBlock(Blocks.CALCITE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE).strength(12.0F).randomTicks()
-            ));
-    public static final DeferredBlock<ShardGrowthBlock> DEEPSLATE_CLEAR_QUARTZ_GROWTH = registerBlock("deepslate_clear_quartz_growth",
-             ShardGrowthBlock(Blocks.DEEPSLATE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(12.0F).randomTicks()
-            ));
-    public static final DeferredBlock<ShardGrowthBlock> CLEAR_QUARTZ_GROWTH = registerBlock("clear_quartz_growth",
-             ShardGrowthBlock(Blocks.STONE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(12.0F).randomTicks()
-            ));
+            );
+    public static final DeferredBlock<Block> DEEPSLATE_CLEAR_QUARTZ_GROWTH = registerBlock("deepslate_clear_quartz_growth",
+            properties -> new ShardGrowthBlock(Blocks.DEEPSLATE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), properties),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).strength(12.0F).randomTicks()
+            );
+    public static final DeferredBlock<Block> CLEAR_QUARTZ_GROWTH = registerBlock("clear_quartz_growth",
+            properties -> new ShardGrowthBlock(Blocks.STONE,MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), properties),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).strength(12.0F).randomTicks()
+            );
 
 
-    public static final DeferredBlock<DropExperienceBlock> CLEAR_QUARTZ_ORE = registerBlock("clear_quartz_ore",
-             DropExperienceBlock(
-                    UniformInt.of(4, 6),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_CLEAR_QUARTZ_ORE = registerBlock("deepslate_clear_quartz_ore",
-             DropExperienceBlock(
-                    UniformInt.of(5, 7),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
-            ));
+    public static final DeferredBlock<Block> CLEAR_QUARTZ_ORE = oreBlock("clear_quartz_ore",4, 6,copy(Blocks.STONE));
+    public static final DeferredBlock<Block> DEEPSLATE_CLEAR_QUARTZ_ORE = oreBlock("deepslate_clear_quartz_ore",5, 7,copy(Blocks.DEEPSLATE_IRON_ORE));
 
-    public static final DeferredBlock<DropExperienceBlock> NETHER_IRON_ORE = registerBlock("nether_iron_ore",
-             DropExperienceBlock(ConstantInt.of(0),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> NETHER_DIAMOND_ORE = registerBlock("nether_diamond_ore",
-             DropExperienceBlock(
-                    UniformInt.of(3, 8),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
-            ));
+    public static final DeferredBlock<Block> NETHER_IRON_ORE = oreBlock("nether_iron_ore",0,copy(Blocks.NETHER_QUARTZ_ORE));
+    public static final DeferredBlock<Block> NETHER_DIAMOND_ORE = oreBlock("nether_diamond_ore",3, 8,copy(Blocks.NETHER_QUARTZ_ORE));
 
-    public static final DeferredBlock<DropExperienceBlock> END_LAPIS_ORE = registerBlock("end_lapis_ore",
-             DropExperienceBlock(
-                    UniformInt.of(6, 10),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> END_EMERALD_ORE = registerBlock("end_emerald_ore",
-             DropExperienceBlock(
-                    UniformInt.of(6, 14),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)
-            ));
+    public static final DeferredBlock<Block> END_LAPIS_ORE = oreBlock("end_lapis_ore",6, 10,copy(Blocks.END_STONE));
+    public static final DeferredBlock<Block> END_EMERALD_ORE = oreBlock("end_emerald_ore",6, 14,copy(Blocks.END_STONE));
 
 
-    public static final DeferredBlock<DropExperienceBlock> NETHERITIC_CRYSTAL = registerBlock("netheritic_crystal",
-             DropExperienceBlock(
-                    UniformInt.of(1, 35),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_QUARTZ_ORE)
-                            .strength(5.0F, 32.0F)
-
-            ));
+    public static final DeferredBlock<Block> NETHERITIC_CRYSTAL = oreBlock("netheritic_crystal",
+             1, 35,copy(Blocks.NETHER_QUARTZ_ORE).strength(5.0F, 32.0F));
 
 
-    public static final DeferredBlock<SandPathBlock> SAND_PATH = registerBlock("sand_path", SandPathBlock::new,
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.DIRT_PATH)
+    public static final DeferredBlock<Block> SAND_PATH = registerBlock("sand_path", SandPathBlock::new,
+            copy(Blocks.DIRT_PATH)
     );
 
     public static final DeferredBlock<Block> GRASSY_DIRT = registerBlock("grassy_dirt",
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.DIRT)
+            copy(Blocks.DIRT)
     );
 
     public static final DeferredBlock<Block> COBBLED_DIRT = registerBlock("cobbled_dirt",
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.DIRT)
+            copy(Blocks.DIRT)
                     .strength(1.0F,3.0F)
     );
 
-    public static final DeferredBlock<Block> COARSE_DIRT_PATH = registerBlock("coarse_dirt_path", MTAPathBlock(
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.COARSE_DIRT)
-            , Blocks.DIRT)
-    );
+    public static final DeferredBlock<Block> COARSE_DIRT_PATH = registerPath("coarse_dirt_path", Blocks.COARSE_DIRT, Blocks.DIRT);
 
 
     public static final DeferredBlock<Block> SHALLOW_GRASS = registerBlock("shallow_grass",
@@ -287,69 +247,41 @@ public class MtaBlocks {
 
     );
 
-    public static final DeferredBlock<Block> STONE_TILES = registerBlock("stone_tiles", properties -> new StoneTilesBlock(properties,0),
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.STONE_BRICKS)
-    );
-    public static final DeferredBlock<Block> STONE_TILES_STAIRS = registerBlock("stone_tiles_stairs",
-            properties -> new StairBlock(MtaBlocks.STONE_TILES.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS)));
-    public static final DeferredBlock<Block> STONE_TILES_SLAB = registerBlock("stone_tiles_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+    public static final DeferredBlock<Block> STONE_TILES = registerTiles("stone_tiles",0, Blocks.STONE_BRICKS);
+    public static final DeferredBlock<Block> STONE_TILES_STAIRS = registerStair("stone_tiles_stairs", Blocks.STONE_BRICK_STAIRS);
+    public static final DeferredBlock<Block> STONE_TILES_SLAB = registerSlab("stone_tiles_slab",Blocks.STONE_BRICK_SLAB);
 
-    public static final DeferredBlock<Block> STONE_TILES_WALL = registerBlock("stone_tiles_wall",
-             WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+    public static final DeferredBlock<Block> STONE_TILES_WALL = registerWall("stone_tiles_wall",Blocks.STONE_BRICK_WALL);
 
-    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES = registerBlock("slightly_dirty_stone_tiles",properties -> new StoneTilesBlock(
-            BlockBehaviour.Properties
-                    .ofFullCopy(MtaBlocks.STONE_TILES.get()) ,1)
-    );
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES = registerTiles("slightly_dirty_stone_tiles",1, Blocks.STONE_BRICKS);
 
-    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_STAIRS = registerBlock("slightly_dirty_stone_tiles_stairs",
-            properties -> new StairBlock(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.STONE_TILES_STAIRS.get()))
-    );
-    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_SLAB = registerBlock("slightly_dirty_stone_tiles_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(MtaBlocks.STONE_TILES_SLAB.get())
-    );
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_STAIRS = registerStair("slightly_dirty_stone_tiles_stairs",
+            Blocks.STONE_BRICK_STAIRS);
 
-    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_WALL = registerBlock("sightly_dirty_stone_tiles_wall",
-             WallBlock::new, BlockBehaviour.Properties.ofFullCopy(MtaBlocks.STONE_TILES_WALL.get())
-    );
-    public static final DeferredBlock<Block> DIRTY_STONE_TILES = registerBlock("dirty_stone_tiles",
-            properties -> new StoneTilesBlock(
-            BlockBehaviour.Properties
-                    .ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES.get()) ,2)
-    );
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_SLAB = registerSlab("slightly_dirty_stone_tiles_slab",
+            Blocks.STONE_BRICK_STAIRS);
 
-    public static final DeferredBlock<Block> DIRTY_STONE_TILES_STAIRS = registerBlock("dirty_stone_tiles_stairs",
-            properties -> new StairBlock(MtaBlocks.DIRTY_STONE_TILES.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_STAIRS.get()))
-    );
-    public static final DeferredBlock<Block> DIRTY_STONE_TILES_SLAB = registerBlock("dirty_stone_tiles_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get())
-    );
+    public static final DeferredBlock<Block> SLIGHTLY_DIRTY_STONE_TILES_WALL = registerWall("sightly_dirty_stone_tiles_wall",
+            Blocks.STONE_BRICK_WALL);
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES = registerTiles("dirty_stone_tiles",2, Blocks.STONE_BRICKS);
 
-    public static final DeferredBlock<Block> DIRTY_STONE_TILES_WALL = registerBlock("dirty_stone_tiles_wall",
-             WallBlock::new, BlockBehaviour.Properties.ofFullCopy(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_WALL.get())
-    );
-    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES = registerBlock("very_dirty_stone_tiles",
-            properties -> new StoneTilesBlock(
-            BlockBehaviour.Properties
-                    .ofFullCopy(MtaBlocks.DIRTY_STONE_TILES.get()), 3)
-    );
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES_STAIRS = registerStair("dirty_stone_tiles_stairs",
+            Blocks.STONE_BRICK_STAIRS);
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES_SLAB = registerSlab("dirty_stone_tiles_slab",
+            Blocks.STONE_BRICK_SLAB);
 
-    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_STAIRS = registerBlock("very_dirty_stone_tiles_stairs",
-            properties -> new StairBlock(MtaBlocks.VERY_DIRTY_STONE_TILES.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(MtaBlocks.DIRTY_STONE_TILES_STAIRS.get()))
-    );
-    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_SLAB = registerBlock("very_dirty_stone_tiles_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(MtaBlocks.DIRTY_STONE_TILES_SLAB.get())
-    );
+    public static final DeferredBlock<Block> DIRTY_STONE_TILES_WALL = registerWall("dirty_stone_tiles_wall",
+            Blocks.STONE_BRICK_WALL);
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES = registerTiles("very_dirty_stone_tiles",3, Blocks.STONE_BRICKS);
 
-    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_WALL = registerBlock("very_dirty_stone_tiles_wall",
-             WallBlock::new, BlockBehaviour.Properties.ofFullCopy(MtaBlocks.DIRTY_STONE_TILES_WALL.get())
-    );
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_STAIRS = registerStair("very_dirty_stone_tiles_stairs",
+            Blocks.STONE_BRICK_STAIRS);
+
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_SLAB = registerSlab("very_dirty_stone_tiles_slab",
+            Blocks.STONE_BRICK_SLAB);
+
+    public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_WALL = registerWall("very_dirty_stone_tiles_wall",
+            Blocks.STONE_BRICK_WALL);
 
     public static final DeferredBlock<Block> SWEET_BERRY_LEAVES = registerBlock("sweet_berry_leaves",  SweetBerryLeavesBlock::new,
             BlockBehaviour.Properties
@@ -358,87 +290,53 @@ public class MtaBlocks {
     );
 
 
-    public static final DeferredBlock<DropExperienceBlock> AGATE_ORE = registerBlock("agate_ore",
-            properties -> new DropExperienceBlock(
-                    UniformInt.of(2, 16),properties),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            );
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_AGATE_ORE = registerBlock("deepslate_agate_ore",
-            properties -> new DropExperienceBlock(
-                    UniformInt.of(2, 16),properties),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            );
+    public static final DeferredBlock<Block> AGATE_ORE = oreBlock("agate_ore",
+        2, 16,stoneOreProperties());
 
-    public static final DeferredBlock<DropExperienceBlock> ALEXANDRITE_ORE = registerBlock("alexandrite_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_ALEXANDRITE_ORE = registerBlock("deepslate_alexandrite_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            ));
+    public static final DeferredBlock<Block> DEEPSLATE_AGATE_ORE = oreBlock("deepslate_agate_ore",
+            2,16,deepslateOreProperties());
 
-    public static final DeferredBlock<DropExperienceBlock> AQUAMARINE_ORE = registerBlock("aquamarine_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_AQUAMARINE_ORE = registerBlock("deepslate_aquamarine_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            ));
 
-    public static final DeferredBlock<DropExperienceBlock> BLOODSTONE_ORE = registerBlock("bloodstone_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_BLOODSTONE_ORE = registerBlock("deepslate_bloodstone_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            ));
+    public static final DeferredBlock<Block> ALEXANDRITE_ORE = oreBlock("alexandrite_ore",
+            2, 16,stoneOreProperties());
 
-    public static final DeferredBlock<DropExperienceBlock> CELESTITE_ORE = registerBlock("celestite_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> CRYOLITE_ORE = registerBlock("cryolite_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE).sound(SoundType.GLASS).lightLevel(l -> 4).friction(0.5F)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_CELESTITE_ORE = registerBlock("deepslate_celestite_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            ));
+    public static final DeferredBlock<Block> DEEPSLATE_ALEXANDRITE_ORE = oreBlock("deepslate_alexandrite_ore",
+            2,16,deepslateOreProperties());
 
-    public static final DeferredBlock<DropExperienceBlock> GARNET_ORE = registerBlock("garnet_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_GARNET_ORE = registerBlock("deepslate_garnet_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            ));
 
-    public static final DeferredBlock<DropExperienceBlock> MOONSTONE_ORE = registerBlock("moonstone_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
-            ));
-    public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_MOONSTONE_ORE = registerBlock("deepslate_moonstone_ore",
-             DropExperienceBlock(
-                    UniformInt.of(2, 16),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
-            ));
+    public static final DeferredBlock<Block> AQUAMARINE_ORE = oreBlock("aquamarine_ore",
+            2, 16,stoneOreProperties());
+
+    public static final DeferredBlock<Block> DEEPSLATE_AQUAMARINE_ORE = oreBlock("deepslate_aquamarine_ore",
+            2,16,deepslateOreProperties());
+
+    public static final DeferredBlock<Block> BLOODSTONE_ORE = oreBlock("bloodstone_ore",
+            2, 16,stoneOreProperties());
+
+    public static final DeferredBlock<Block> DEEPSLATE_BLOODSTONE_ORE = oreBlock("deepslate_bloodstone_ore",
+            2,16,deepslateOreProperties());
+
+    public static final DeferredBlock<Block> CELESTITE_ORE = oreBlock("celestite_ore",
+            2, 16,stoneOreProperties());
+
+    public static final DeferredBlock<Block> CRYOLITE_ORE = oreBlock("cryolite_ore",
+            2,16,
+            stoneOreProperties().sound(SoundType.GLASS).lightLevel(l -> 4).friction(0.5F)
+    );
+
+    public static final DeferredBlock<Block> DEEPSLATE_CELESTITE_ORE = oreBlock("deepslate_celestite_ore",
+             2,16,deepslateOreProperties().sound(SoundType.GLASS).lightLevel(l -> 4).friction(0.5F));
+
+    public static final DeferredBlock<Block> GARNET_ORE = oreBlock("garnet_ore",
+            2,16,stoneOreProperties());
+    public static final DeferredBlock<Block> DEEPSLATE_GARNET_ORE = oreBlock("deepslate_garnet_ore",
+            2,16,deepslateOreProperties());
+
+
+    public static final DeferredBlock<Block> MOONSTONE_ORE = oreBlock("moonstone_ore",
+            2,16,stoneOreProperties());
+    public static final DeferredBlock<Block> DEEPSLATE_MOONSTONE_ORE = oreBlock("deepslate_moonstone_ore",
+            2,16,deepslateOreProperties());
 
     //Terracotta
 
@@ -494,73 +392,73 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> PINK_TERRACOTTA_STAIRS = registerStair("pink_terracotta_stairs", Blocks.PINK_TERRACOTTA);
     public static final DeferredBlock<Block> PINK_TERRACOTTA_WALL = registerWall("pink_terracotta_wall", Blocks.PINK_TERRACOTTA);
     public static final DeferredBlock<Block> TERRACOTTA_TILES = registerBlock("terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA));
-    public static final DeferredBlock<Block> TERRACOTTA_TILES_SLAB = registerSlab("terracotta_tiles_slab", MtaBlocks.TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> TERRACOTTA_TILES_STAIRS = registerStair("terracotta_tiles_stairs", MtaBlocks.TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> TERRACOTTA_TILES_WALL = registerWall("terracotta_tiles_wall", MtaBlocks.TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> TERRACOTTA_TILES_SLAB = registerSlab("terracotta_tiles_slab", Blocks.TERRACOTTA);
+    public static final DeferredBlock<Block> TERRACOTTA_TILES_STAIRS = registerStair("terracotta_tiles_stairs", Blocks.TERRACOTTA);
+    public static final DeferredBlock<Block> TERRACOTTA_TILES_WALL = registerWall("terracotta_tiles_wall", Blocks.TERRACOTTA);
     public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES = registerBlock("white_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_TERRACOTTA));
-    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_SLAB = registerSlab("white_terracotta_tiles_slab", MtaBlocks.WHITE_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_STAIRS = registerStair("white_terracotta_tiles_stairs", MtaBlocks.WHITE_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_WALL = registerWall("white_terracotta_tiles_wall", MtaBlocks.WHITE_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_SLAB = registerSlab("white_terracotta_tiles_slab", Blocks.WHITE_TERRACOTTA);
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_STAIRS = registerStair("white_terracotta_tiles_stairs", Blocks.WHITE_TERRACOTTA);
+    public static final DeferredBlock<Block> WHITE_TERRACOTTA_TILES_WALL = registerWall("white_terracotta_tiles_wall", Blocks.WHITE_TERRACOTTA);
     public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES = registerBlock("light_gray_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_TERRACOTTA));
-    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_SLAB = registerSlab("light_gray_terracotta_tiles_slab", MtaBlocks.LIGHT_GRAY_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_STAIRS = registerStair("light_gray_terracotta_tiles_stairs", MtaBlocks.LIGHT_GRAY_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_WALL = registerWall("light_gray_terracottas_tiles_wall", (MtaBlocks.LIGHT_GRAY_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_SLAB = registerSlab("light_gray_terracotta_tiles_slab", Blocks.LIGHT_GRAY_TERRACOTTA);
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_STAIRS = registerStair("light_gray_terracotta_tiles_stairs", Blocks.LIGHT_GRAY_TERRACOTTA);
+    public static final DeferredBlock<Block> LIGHT_GRAY_TERRACOTTA_TILES_WALL = registerWall("light_gray_terracottas_tiles_wall", Blocks.LIGHT_GRAY_TERRACOTTA);
     public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES = registerBlock("gray_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_TERRACOTTA));
-    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_SLAB = registerSlab("gray_terracotta_tiles_slab", MtaBlocks.GRAY_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_STAIRS = registerStair("gray_terracotta_tiles_stairs", MtaBlocks.GRAY_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_WALL = registerWall("gray_terracotta_tiles_wall", MtaBlocks.GRAY_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_SLAB = registerSlab("gray_terracotta_tiles_slab", Blocks.GRAY_TERRACOTTA);
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_STAIRS = registerStair("gray_terracotta_tiles_stairs", Blocks.GRAY_TERRACOTTA);
+    public static final DeferredBlock<Block> GRAY_TERRACOTTA_TILES_WALL = registerWall("gray_terracotta_tiles_wall", Blocks.GRAY_TERRACOTTA);
     public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES = registerBlock("black_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_TERRACOTTA));
-    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_SLAB = registerSlab("black_terracotta_tiles_slab", MtaBlocks.BLACK_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_STAIRS = registerStair("black_terracotta_tiles_stairs", MtaBlocks.BLACK_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_WALL = registerWall("black_terracotta_tiles_wall", MtaBlocks.BLACK_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_SLAB = registerSlab("black_terracotta_tiles_slab", Blocks.BLACK_TERRACOTTA);
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_STAIRS = registerStair("black_terracotta_tiles_stairs", Blocks.BLACK_TERRACOTTA);
+    public static final DeferredBlock<Block> BLACK_TERRACOTTA_TILES_WALL = registerWall("black_terracotta_tiles_wall", Blocks.BLACK_TERRACOTTA);
     public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES = registerBlock("brown_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_TERRACOTTA));
-    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_SLAB = registerSlab("brown_terracotta_tiles_slab", MtaBlocks.BROWN_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_STAIRS = registerStair("brown_terracotta_tiles_stairs", MtaBlocks.BROWN_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_WALL = registerWall("brown_terracotta_tiles_wall", MtaBlocks.BROWN_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_SLAB = registerSlab("brown_terracotta_tiles_slab", Blocks.BROWN_TERRACOTTA);
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_STAIRS = registerStair("brown_terracotta_tiles_stairs", Blocks.BROWN_TERRACOTTA);
+    public static final DeferredBlock<Block> BROWN_TERRACOTTA_TILES_WALL = registerWall("brown_terracotta_tiles_wall", Blocks.BROWN_TERRACOTTA);
     public static final DeferredBlock<Block> RED_TERRACOTTA_TILES = registerBlock("red_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.RED_TERRACOTTA));
-    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_SLAB = registerSlab("red_terracotta_tiles_slab", MtaBlocks.RED_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_STAIRS = registerStair("red_terracotta_tiles_stairs", MtaBlocks.RED_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_WALL = registerWall("red_terracotta_tiles_wall", MtaBlocks.RED_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_SLAB = registerSlab("red_terracotta_tiles_slab", Blocks.RED_TERRACOTTA);
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_STAIRS = registerStair("red_terracotta_tiles_stairs", Blocks.RED_TERRACOTTA);
+    public static final DeferredBlock<Block> RED_TERRACOTTA_TILES_WALL = registerWall("red_terracotta_tiles_wall", Blocks.RED_TERRACOTTA);
     public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES = registerBlock("orange_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_TERRACOTTA));
-    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_SLAB = registerSlab("orange_terracotta_tiles_slab", MtaBlocks.ORANGE_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_STAIRS = registerStair("orange_terracotta_tiles_stairs", MtaBlocks.ORANGE_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_WALL = registerWall("orange_terracotta_tiles_wall", MtaBlocks.ORANGE_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_SLAB = registerSlab("orange_terracotta_tiles_slab", Blocks.ORANGE_TERRACOTTA);
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_STAIRS = registerStair("orange_terracotta_tiles_stairs", Blocks.ORANGE_TERRACOTTA);
+    public static final DeferredBlock<Block> ORANGE_TERRACOTTA_TILES_WALL = registerWall("orange_terracotta_tiles_wall", Blocks.ORANGE_TERRACOTTA);
     public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES = registerBlock("yellow_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_TERRACOTTA));
-    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_SLAB = registerSlab("yellow_terracotta_tiles_slab", MtaBlocks.YELLOW_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_STAIRS = registerStair("yellow_terracotta_tiles_stairs", MtaBlocks.YELLOW_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_WALL = registerWall("yellow_terracotta_tiles_wall", MtaBlocks.YELLOW_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_SLAB = registerSlab("yellow_terracotta_tiles_slab", Blocks.YELLOW_TERRACOTTA);
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_STAIRS = registerStair("yellow_terracotta_tiles_stairs", Blocks.YELLOW_TERRACOTTA);
+    public static final DeferredBlock<Block> YELLOW_TERRACOTTA_TILES_WALL = registerWall("yellow_terracotta_tiles_wall", Blocks.YELLOW_TERRACOTTA);
     public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES = registerBlock("lime_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_TERRACOTTA));
-    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_SLAB = registerSlab("lime_terracotta_tiles_slab", MtaBlocks.LIME_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_STAIRS = registerStair("lime_terracotta_tiles_stairs", MtaBlocks.LIME_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_WALL = registerWall("lime_terracotta_tiles_wall", MtaBlocks.LIME_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_SLAB = registerSlab("lime_terracotta_tiles_slab", Blocks.LIME_TERRACOTTA);
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_STAIRS = registerStair("lime_terracotta_tiles_stairs", Blocks.LIME_TERRACOTTA);
+    public static final DeferredBlock<Block> LIME_TERRACOTTA_TILES_WALL = registerWall("lime_terracotta_tiles_wall", Blocks.LIME_TERRACOTTA);
     public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES = registerBlock("green_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_TERRACOTTA));
-    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_SLAB = registerSlab("green_terracotta_tiles_slab", MtaBlocks.GREEN_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_STAIRS = registerStair("green_terracotta_tiles_stairs", MtaBlocks.GREEN_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_WALL = registerWall("green_terracotta_tiles_wall", MtaBlocks.GREEN_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_SLAB = registerSlab("green_terracotta_tiles_slab", Blocks.GREEN_TERRACOTTA);
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_STAIRS = registerStair("green_terracotta_tiles_stairs", Blocks.GREEN_TERRACOTTA);
+    public static final DeferredBlock<Block> GREEN_TERRACOTTA_TILES_WALL = registerWall("green_terracotta_tiles_wall", Blocks.GREEN_TERRACOTTA);
     public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES = registerBlock("cyan_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_TERRACOTTA));
-    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_SLAB = registerSlab("cyan_terracotta_tiles_slab", MtaBlocks.CYAN_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_STAIRS = registerStair("cyan_terracotta_tiles_stairs", MtaBlocks.CYAN_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_WALL = registerWall("cyan_terracotta_tileswall", MtaBlocks.CYAN_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_SLAB = registerSlab("cyan_terracotta_tiles_slab", Blocks.CYAN_TERRACOTTA);
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_STAIRS = registerStair("cyan_terracotta_tiles_stairs", Blocks.CYAN_TERRACOTTA);
+    public static final DeferredBlock<Block> CYAN_TERRACOTTA_TILES_WALL = registerWall("cyan_terracotta_tileswall", Blocks.CYAN_TERRACOTTA);
     public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES = registerBlock("light_blue_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_TERRACOTTA));
-    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_SLAB = registerSlab("light_blue_terracotta_tiles_slab", MtaBlocks.LIGHT_BLUE_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_STAIRS = registerStair("light_blue_terracotta_tiles_stairs", MtaBlocks.LIGHT_BLUE_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_WALL = registerWall("light_blue_terracotta_tiles_wall", MtaBlocks.LIGHT_BLUE_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_SLAB = registerSlab("light_blue_terracotta_tiles_slab", Blocks.LIGHT_BLUE_TERRACOTTA);
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_STAIRS = registerStair("light_blue_terracotta_tiles_stairs", Blocks.LIGHT_BLUE_TERRACOTTA);
+    public static final DeferredBlock<Block> LIGHT_BLUE_TERRACOTTA_TILES_WALL = registerWall("light_blue_terracotta_tiles_wall", Blocks.LIGHT_BLUE_TERRACOTTA);
     public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES = registerBlock("blue_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_TERRACOTTA));
-    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_SLAB = registerSlab("blue_terracotta_tiles_slab", MtaBlocks.BLUE_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_STAIRS = registerStair("blue_terracotta_tiles_stairs", MtaBlocks.BLUE_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_WALL = registerWall("blue_terracotta_tiles_wall", MtaBlocks.BLUE_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_SLAB = registerSlab("blue_terracotta_tiles_slab", Blocks.BLUE_TERRACOTTA);
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_STAIRS = registerStair("blue_terracotta_tiles_stairs", Blocks.BLUE_TERRACOTTA);
+    public static final DeferredBlock<Block> BLUE_TERRACOTTA_TILES_WALL = registerWall("blue_terracotta_tiles_wall", Blocks.BLUE_TERRACOTTA);
     public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES = registerBlock("purple_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_TERRACOTTA));
-    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_SLAB = registerSlab("purple_terracotta_tiles_slab", MtaBlocks.PURPLE_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_STAIRS = registerStair("purple_terracotta_tiles_stairs", MtaBlocks.PURPLE_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_WALL = registerWall("purple_terracotta_tiles_wall", MtaBlocks.PURPLE_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_SLAB = registerSlab("purple_terracotta_tiles_slab", Blocks.PURPLE_TERRACOTTA);
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_STAIRS = registerStair("purple_terracotta_tiles_stairs", Blocks.PURPLE_TERRACOTTA);
+    public static final DeferredBlock<Block> PURPLE_TERRACOTTA_TILES_WALL = registerWall("purple_terracotta_tiles_wall", Blocks.PURPLE_TERRACOTTA);
     public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES = registerBlock("magenta_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_TERRACOTTA));
-    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_SLAB = registerSlab("magenta_terracotta_tiles_slab", MtaBlocks.MAGENTA_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_STAIRS = registerStair("magenta_terracotta_tiles_stairs", MtaBlocks.MAGENTA_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_WALL = registerWall("magenta_terracotta_tiles_wall", MtaBlocks.MAGENTA_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_SLAB = registerSlab("magenta_terracotta_tiles_slab", Blocks.MAGENTA_TERRACOTTA);
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_STAIRS = registerStair("magenta_terracotta_tiles_stairs", Blocks.MAGENTA_TERRACOTTA);
+    public static final DeferredBlock<Block> MAGENTA_TERRACOTTA_TILES_WALL = registerWall("magenta_terracotta_tiles_wall", Blocks.MAGENTA_TERRACOTTA);
     public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES = registerBlock("pink_terracotta_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA));
-    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_SLAB = registerSlab("pink_terracotta_tiles_slab", MtaBlocks.PINK_TERRACOTTA_SLAB.get());
-    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_STAIRS = registerStair("pink_terracotta_tiles_stairs", MtaBlocks.PINK_TERRACOTTA_TILES.get());
-    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_WALL = registerWall("pink_terracotta_tiles_wall", MtaBlocks.PINK_TERRACOTTA_WALL.get());
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_SLAB = registerSlab("pink_terracotta_tiles_slab", Blocks.PINK_TERRACOTTA);
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_STAIRS = registerStair("pink_terracotta_tiles_stairs", Blocks.PINK_TERRACOTTA);
+    public static final DeferredBlock<Block> PINK_TERRACOTTA_TILES_WALL = registerWall("pink_terracotta_tiles_wall", Blocks.PINK_TERRACOTTA);
     public static final DeferredBlock<Block> WHITE_CONCRETE_SLAB = registerSlab("white_concrete_slab", Blocks.WHITE_CONCRETE);
     public static final DeferredBlock<Block> WHITE_CONCRETE_STAIRS = registerStair("white_concrete_stairs", Blocks.WHITE_CONCRETE);
     public static final DeferredBlock<Block> WHITE_CONCRETE_WALL = registerWall("white_concrete_wall", Blocks.WHITE_CONCRETE);
@@ -615,10 +513,10 @@ public class MtaBlocks {
 
     public static final DeferredBlock<Block> QUARTZ_LAMP = registerBlock("quartz_lamp",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SEA_LANTERN));
 
-    public static final DeferredBlock<Block> ONION_CROP = BLOCKS.registerBlock("onion_crop",  OnionCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
-    public static final DeferredBlock<Block> TOMATO_CROP = BLOCKS.registerBlock("tomato_crop",  TomatoCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
-    public static final DeferredBlock<Block> BELL_PEPPER_CROP = BLOCKS.registerBlock("bell_pepper_crop",  BellPepperCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
-    public static final DeferredBlock<Block> CHILI_PEPPER_CROP = BLOCKS.registerBlock("chili_pepper_crop",  ChiliPepperCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
+    public static final DeferredBlock<Block> ONION_CROP = registerNoItemBlock("onion_crop",  OnionCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
+    public static final DeferredBlock<Block> TOMATO_CROP = registerNoItemBlock("tomato_crop",  TomatoCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
+    public static final DeferredBlock<Block> BELL_PEPPER_CROP = registerNoItemBlock("bell_pepper_crop",  BellPepperCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
+    public static final DeferredBlock<Block> CHILI_PEPPER_CROP = registerNoItemBlock("chili_pepper_crop",  ChiliPepperCropBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
 
 
 
@@ -627,22 +525,17 @@ public class MtaBlocks {
     );
 
     public static final DeferredBlock<Block> CATTAIL = registerBlock("cattail",
-             WaterloggableDoublePlant::new, BlockBehaviour.Properties.of()
-                            .mapColor(MapColor.PLANT)
-                            .noCollission()
-                            .instabreak()
-                            .sound(SoundType.GRASS)
-                            .offsetType( BlockBehaviour.OffsetType.XZ)
-                            .ignitedByLava()
-                            .pushReaction(PushReaction.DESTROY)
+             WaterloggableDoublePlant::new, plantProperties());
 
-            ));
-    public static final DeferredBlock<Block> CORPSE_LILY = registerBlock("corpse_lily",
-             Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY));
+    public static final DeferredBlock<Block> CORPSE_FLOWER = registerBlock("corpse_flower",
+             properties -> new FlowerBlock(MobEffects.POISON,5.0F,properties), plantProperties());
+
     public static final DeferredBlock<Block> PITCHER_PLANT = registerBlock("pitcher_plant",
-             Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY));
-    public static final DeferredBlock<Block> POTTED_PITCHER_PLANT = registerBlock("potted_pitcher_plant",
-             FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), PITCHER_PLANT, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_POPPY)));
+            properties -> new FlowerBlock(MtaEffects.VENOM,5.0F,properties), plantProperties());
+
+    public static final DeferredBlock<Block> POTTED_PITCHER_PLANT = registerBlock("potted_pitcher_plant",(properties) ->
+            new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), PITCHER_PLANT,properties),flowerPotProperties());
+
     public static final DeferredBlock<Block> VENUS_FLYTRAP = registerBlock("venus_flytrap",
              Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK));
 
@@ -754,6 +647,17 @@ public class MtaBlocks {
         return BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
     }
 
+    private static BlockBehaviour.Properties plantProperties() {
+        return BlockBehaviour.Properties.of()
+                .mapColor(MapColor.PLANT)
+                .noCollission()
+                .instabreak()
+                .sound(SoundType.GRASS)
+                .offsetType( BlockBehaviour.OffsetType.XZ)
+                .ignitedByLava()
+                .pushReaction(PushReaction.DESTROY);
+    }
+
     private static BlockBehaviour.Properties leavesProperties(SoundType sound) {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
@@ -768,24 +672,70 @@ public class MtaBlocks {
                 .pushReaction(PushReaction.DESTROY)
                 .isRedstoneConductor(MtaBlocks::never);
     }
-
-    private static BlockBehaviour.Properties copy(Block block) {
-        return BlockBehaviour.Properties.ofFullCopy(block);
-    }
-
     public static DeferredBlock<Block> registerSlab(String name, Block baseBlock) {
-        return BLOCKS.registerBlock(name, SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(baseBlock));
+        return registerBlock(name, SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(baseBlock));
 }
 
     private static DeferredBlock<Block> registerStair(String name, Block baseBlock) {
-        return BLOCKS.registerBlock(name,
+        return registerBlock(name,
                 properties -> new StairBlock(baseBlock.defaultBlockState(), properties),
                 BlockBehaviour.Properties.ofFullCopy(baseBlock));
     }
 
     public static DeferredBlock<Block> registerWall(String name, Block baseBlock){
-        return BLOCKS.registerBlock(name, WallBlock::new, BlockBehaviour.Properties.ofFullCopy(baseBlock));
-}
+        return registerBlock(name, WallBlock::new, BlockBehaviour.Properties.ofFullCopy(baseBlock));
+    }
+    public static DeferredBlock<Block> oreBlock(String name, int min, int max, BlockBehaviour.Properties block) {
+        return registerBlock(name, properties -> new DropExperienceBlock(
+                UniformInt.of(min, max), properties), block
+        );
+    }
+    public static DeferredBlock<Block> oreBlock(String name, int count, BlockBehaviour.Properties block){
+        return registerBlock(name, properties -> new DropExperienceBlock(
+                ConstantInt.of(count),properties),block
+        );
+    }
+
+    public static DeferredBlock<Block> registerTiles(String name, int dirtiness,Block base){
+        return registerBlock(name, properties -> new StoneTilesBlock(properties,dirtiness) , copy(base));
+    }
+
+    public static DeferredBlock<Block> registerPath(String name, Block turnTo,Block copy){
+        return registerBlock(name, properties -> new MTAPathBlock(properties,turnTo) , copy(copy));
+    }
+
+    public static BlockBehaviour.Properties oreProperties(Block copyFrom){
+        return BlockBehaviour.Properties.ofFullCopy(copyFrom);
+    }
+    public static BlockBehaviour.Properties oreProperties(SoundType soundType,MapColor mapColor,NoteBlockInstrument instrument, float destroyTime, float explosionResistance){
+        return BlockBehaviour.Properties.of().mapColor(mapColor).instrument(instrument).requiresCorrectToolForDrops().strength(destroyTime, explosionResistance).sound(soundType);
+    }
+
+
+    public static BlockBehaviour.Properties stoneOreProperties(float destroyTime, float explosionResistance){
+        return BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(destroyTime, explosionResistance).sound(SoundType.STONE);
+    }
+    public static BlockBehaviour.Properties deepslateOreProperties(float destroyTime, float explosionResistance){
+        return BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(destroyTime, explosionResistance).sound(SoundType.DEEPSLATE);
+    }
+    public static BlockBehaviour.Properties stoneOreProperties(){
+        return BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.STONE);
+    }
+    public static BlockBehaviour.Properties deepslateOreProperties(){
+        return BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE);
+    }
+
+
+
+    private static BlockBehaviour.Properties copy(Block block) {
+        return BlockBehaviour.Properties.ofFullCopy(block);
+    }
+
+
+    private static BlockBehaviour.Properties copy(DeferredBlock<? extends Block> block) {
+        return BlockBehaviour.Properties.ofFullCopy(block.get()).setId(ResourceKey.create(Registries.BLOCK,block.getId()));
+    }
+
 
 
 

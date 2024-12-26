@@ -78,7 +78,7 @@ public class Wispfly extends TamableAnimal {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 4.0)
                 .add(Attributes.FLYING_SPEED, 0.9F)
                 .add(Attributes.MOVEMENT_SPEED, 0.4F)

@@ -46,11 +46,12 @@ public class HorseshoeCrab extends MTATameableAnimal {
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 8.0F)
                 .add(Attributes.FOLLOW_RANGE, 12.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.2F)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 2.2F)
+                .add(Attributes.TEMPT_RANGE)
                 .add(Attributes.ARMOR, 3);
     }
 

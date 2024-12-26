@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "morethanadventure:block/slightly_dirty_stone_tiles",
-    "side": "morethanadventure:block/slightly_dirty_stone_tiles",
-    "top": "morethanadventure:block/slightly_dirty_stone_tiles"
-  }
-}

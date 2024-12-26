@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "morethanadventure:item/coconut_slice"
-  }
-}

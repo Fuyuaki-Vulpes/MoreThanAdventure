@@ -12,58 +12,40 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 // Demonstrates how to use Neo's config APIs
 public class MTAConfigs
 {
-    @EventBusSubscriber(modid = MTAMod.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public class Client {
+    public static class Client {
         private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
 
-        private static final ModConfigSpec.BooleanValue REVAMPED_RAIN = BUILDER
+        public static final ModConfigSpec.BooleanValue REVAMPED_RAIN = BUILDER
                 .comment("If rain and thunder should have unique effects")
                 .define("revamped_rain",false);
 
 
 
-        public static boolean revampedRain;
 
 
         static final ModConfigSpec SPEC = BUILDER.build();
 
-        @SubscribeEvent
-        static void onLoad(final ModConfigEvent event)
-        {
-            revampedRain = REVAMPED_RAIN.get();
 
-
-        }
     }
 
 
-    @EventBusSubscriber(modid = MTAMod.MODID, bus = EventBusSubscriber.Bus.MOD)
-    public class Common {
+    public static class Common {
 
         private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-        private static final ModConfigSpec.IntValue SPRINKLER_RANGE = BUILDER
+        public static final ModConfigSpec.IntValue SPRINKLER_RANGE = BUILDER
                 .comment("Range of effect of the Sprinkler")
                 .defineInRange("sprinkler_range", 8, 1, 16);
 
 
         static final ModConfigSpec SPEC = BUILDER.build();
 
-        public static int sprinklerRange;
 
-        private static boolean validateItemName(final Object obj)
-        {
+        private static boolean validateItemName(final Object obj){
             return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
         }
 
-        @SubscribeEvent
-        static void onLoad(final ModConfigEvent event)
-        {
-
-            sprinklerRange = SPRINKLER_RANGE.get();
-
-        }
     }
 
 }

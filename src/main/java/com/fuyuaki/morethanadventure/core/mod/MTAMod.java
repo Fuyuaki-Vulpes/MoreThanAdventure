@@ -51,7 +51,8 @@ public class MTAMod
 
         NeoForge.EVENT_BUS.register(this);
 
-        //modContainer.registerConfig(ModConfig.Type.COMMON, MTACommonConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, MTAConfigs.Common.SPEC);
+        modContainer.registerConfig(ModConfig.Type.CLIENT, MTAConfigs.Client.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

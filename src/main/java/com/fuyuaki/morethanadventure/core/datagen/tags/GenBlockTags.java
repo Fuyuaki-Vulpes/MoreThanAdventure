@@ -625,12 +625,12 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
 
         this.tag(BlockTags.FLOWERS).add(
                 MtaBlocks.PITCHER_PLANT.get(),
-                MtaBlocks.CORPSE_LILY.get()
+                MtaBlocks.CORPSE_FLOWER.get()
         );
 
         this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
                 MtaBlocks.CATTAIL.get(),
-                MtaBlocks.CORPSE_LILY.get(),
+                MtaBlocks.CORPSE_FLOWER.get(),
                 MtaBlocks.PITCHER_PLANT.get()
         );
 

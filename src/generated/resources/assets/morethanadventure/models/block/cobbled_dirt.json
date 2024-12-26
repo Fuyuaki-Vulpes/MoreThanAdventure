@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "morethanadventure:block/cobbled_dirt"
-  }
-}

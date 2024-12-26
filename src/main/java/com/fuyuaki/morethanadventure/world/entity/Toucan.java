@@ -64,7 +64,7 @@ public class Toucan extends MTATameableAnimal implements FlyingAnimal {
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 5.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.FLYING_SPEED,0.4)

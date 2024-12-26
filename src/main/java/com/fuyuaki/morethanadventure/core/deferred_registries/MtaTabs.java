@@ -28,7 +28,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
                 output.accept(MtaBlocks.SCATTERED_LEAVES.get());
                 output.accept(MtaBlocks.CATTAIL.get());
-                output.accept(MtaBlocks.CORPSE_LILY.get());
+                output.accept(MtaBlocks.CORPSE_FLOWER.get());
                 output.accept(MtaBlocks.PITCHER_PLANT.get());
                 output.accept(MtaBlocks.VENUS_FLYTRAP.get());
 

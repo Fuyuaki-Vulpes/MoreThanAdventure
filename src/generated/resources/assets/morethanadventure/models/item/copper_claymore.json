@@ -1,6 +1,0 @@
-{
-  "parent": "morethanadventure:item/handheld_big_low_hilt",
-  "textures": {
-    "layer0": "morethanadventure:item/copper_claymore"
-  }
-}

@@ -42,7 +42,7 @@ public class LootBlocks extends BlockLootSubProvider {
     protected void generate() {
         this.add(MtaBlocks.SCATTERED_LEAVES.get(), this.createPetalsDrops(MtaBlocks.SCATTERED_LEAVES.get()));
         this.add(MtaBlocks.CATTAIL.get(), block ->   this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-        dropSelf(MtaBlocks.CORPSE_LILY.get());
+        dropSelf(MtaBlocks.CORPSE_FLOWER.get());
         dropSelf(MtaBlocks.PITCHER_PLANT.get());
         this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
         dropSelf(MtaBlocks.VENUS_FLYTRAP.get());

@@ -21,7 +21,7 @@ public abstract class FarmBlockMixin extends Block {
 
     @Inject(method= "isNearWater(Lnet/minecraft/world/level/LevelReader;Lnet/minecraft/core/BlockPos;)Z", at=@At(value="TAIL"), cancellable = true)
     private static void isNearWater(LevelReader pLevel, BlockPos pPos, CallbackInfoReturnable<Boolean> cir){
-        int range = MTAConfigs.Common.sprinklerRange > 1 ? MTAConfigs.Common.sprinklerRange : 8;
+        int range = MTAConfigs.Common.SPRINKLER_RANGE.get() > 1 ? MTAConfigs.Common.SPRINKLER_RANGE.get() : 8;
         for (BlockPos blockpos : BlockPos.betweenClosed(pPos.offset(-range, -1, -range), pPos.offset(range, 2, range))) {
             BlockState blockState = pLevel.getBlockState(blockpos);
 

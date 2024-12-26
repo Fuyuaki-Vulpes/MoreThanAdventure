@@ -47,7 +47,7 @@ public class BeardedDragon extends MTATameableAnimal {
 
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Animal.createMobAttributes()
+        return Animal.createAnimalAttributes()
                 .add(Attributes.MAX_HEALTH, 8.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.4F);

@@ -35,7 +35,7 @@
   },
   "capybara_hurt": {
     "sounds": [
-      "morethanadventure:entity/capybara/capybara_hurt"
+      "morethanadventure:entity/capybara/hurt"
     ],
     "subtitle": "sound.morethanadventure.capybara_hurt"
   },
@@ -98,9 +98,9 @@
   },
   "duck_ambient": {
     "sounds": [
-      "morethanadventure:entity/duck/duck_ambient_1",
-      "morethanadventure:entity/duck/duck_ambient_2",
-      "morethanadventure:entity/duck/duck_laugh_1"
+      "morethanadventure:entity/duck/idle1",
+      "morethanadventure:entity/duck/idle2",
+      "morethanadventure:entity/duck/laugh"
     ],
     "subtitle": "sound.morethanadventure.duck_ambient"
   },
@@ -129,13 +129,13 @@
   },
   "ferret_ambient": {
     "sounds": [
-      "morethanadventure:entity/ferret/ferret_ambient"
+      "morethanadventure:entity/ferret/idle"
     ],
     "subtitle": "sound.morethanadventure.ferret_ambient"
   },
   "ferret_hurt": {
     "sounds": [
-      "morethanadventure:entity/ferret/ferret_hurt"
+      "morethanadventure:entity/ferret/hurt"
     ],
     "subtitle": "sound.morethanadventure.ferret_hurt"
   },
@@ -165,13 +165,13 @@
   },
   "owl_ambient": {
     "sounds": [
-      "morethanadventure:entity/owl/owl_ambient"
+      "morethanadventure:entity/owl/idle"
     ],
     "subtitle": "sound.morethanadventure.owl_ambient"
   },
   "owl_hurt": {
     "sounds": [
-      "morethanadventure:entity/owl/owl_hurt"
+      "morethanadventure:entity/owl/hurt"
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
   },
@@ -198,12 +198,12 @@
   },
   "turkey_ambient": {
     "sounds": [
-      "morethanadventure:entity/turkey/ambient1",
-      "morethanadventure:entity/turkey/ambient2",
-      "morethanadventure:entity/turkey/ambient3",
-      "morethanadventure:entity/turkey/ambient4",
-      "morethanadventure:entity/turkey/ambient5",
-      "morethanadventure:entity/turkey/ambient6"
+      "morethanadventure:entity/turkey/idle1",
+      "morethanadventure:entity/turkey/idle2",
+      "morethanadventure:entity/turkey/idle3",
+      "morethanadventure:entity/turkey/idle4",
+      "morethanadventure:entity/turkey/idle5",
+      "morethanadventure:entity/turkey/idle6"
     ],
     "subtitle": "sound.morethanadventure.turkey_ambient"
   },
@@ -294,7 +294,7 @@
   },
   "yuki_onna_ambient": {
     "sounds": [
-      "morethanadventure:entity/yuki_onna/ambient_1",
+      "morethanadventure:entity/yuki_onna/idle1",
       "morethanadventure:entity/yuki_onna/ambient_2"
     ],
     "subtitle": "sound.morethanadventure.yuki_onna_ambient"

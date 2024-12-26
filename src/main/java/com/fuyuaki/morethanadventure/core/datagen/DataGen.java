@@ -30,7 +30,6 @@ public class DataGen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         var datapackRegistries = new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), GenWorld.BUILDER, Set.of(MODID));
 
-/*
 
         generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider(),
                         List.of()
@@ -39,12 +38,12 @@ public class DataGen {
 
 
         //generator.addProvider(true, new GenRecipes(lookupProvider,packOutput));
-        generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
+        //generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
 
         event.createBlockAndItemTags(GenBlockTags::new,GenItemTags::new);
 
         generator.addProvider(true,
-                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider()));
+                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider(), event.getExistingFileHelper()));
 
         generator.addProvider(true,
                 new GenEntityTags(packOutput, datapackRegistries.getRegistryProvider()));
@@ -57,11 +56,11 @@ public class DataGen {
                 new EN_US_LangProvider(packOutput));
 
         generator.addProvider(true,
-                new GenSoundDefinition(packOutput,existingFileHelper));
+                new GenSoundDefinition(packOutput,event.getExistingFileHelper()));
 
         generator.addProvider(true,
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
-*/
+
 
     }
 

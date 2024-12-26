@@ -31,7 +31,6 @@
 			}
 		},
 		{
-			"name": "post",
 			"from": [6, 0, 6],
 			"to": [10, 16, 10],
 			"faces": {
@@ -87,20 +86,6 @@
 				"east": {"uv": [11, 10, 14, 12], "texture": "#lantern"},
 				"west": {"uv": [14, 10, 11, 12], "texture": "#lantern"}
 			}
-		}
-	],
-	"groups": [
-		{
-			"name": "group",
-			"origin": [0, 0, 0],
-			"color": 0,
-			"children": [0, 1, 2]
-		},
-		{
-			"name": "group",
-			"origin": [8, -2, -4],
-			"color": 0,
-			"children": [3, 4, 5, 6]
 		}
 	]
 }

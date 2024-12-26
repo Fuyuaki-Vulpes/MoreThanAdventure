@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "morethanadventure:block/slightly_dirty_stone_tiles"
-  }
-}

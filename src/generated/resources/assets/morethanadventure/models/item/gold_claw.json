@@ -1,6 +1,0 @@
-{
-  "parent": "morethanadventure:item/handheld_claw",
-  "textures": {
-    "layer0": "morethanadventure:item/gold_claw"
-  }
-}

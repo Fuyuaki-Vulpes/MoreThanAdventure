@@ -87,7 +87,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SWEET_BERRY_LEAVES.get(),"Sweet Berry Leaves");
         add(MtaBlocks.SCATTERED_LEAVES.get(),"Scattered Leaves");
         add(MtaBlocks.CATTAIL.get(),"Cattail");
-        add(MtaBlocks.CORPSE_LILY.get(),"Corpse Lily");
+        add(MtaBlocks.CORPSE_FLOWER.get(),"Corpse Lily");
         add(MtaBlocks.PITCHER_PLANT.get(),"Pitcher Plant");
         add(MtaBlocks.POTTED_PITCHER_PLANT.get(),"Potted Pitcher Plant");
         add(MtaBlocks.VENUS_FLYTRAP.get(),"Venus Flytrap");

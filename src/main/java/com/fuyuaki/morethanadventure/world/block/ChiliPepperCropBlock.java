@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
 public class ChiliPepperCropBlock extends MtaCrops {
     public static final int MAX_AGE = 7;
-    public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
+
     public ChiliPepperCropBlock(Properties properties) {
         super(properties);
     }
@@ -19,21 +19,13 @@ public class ChiliPepperCropBlock extends MtaCrops {
         return MtaItems.CHILI_PEPPER_SEEDS;
     }
 
-    @Override
-    public IntegerProperty getAgeProperty() {
-        return AGE;
-    }
+
 
     @Override
     public int getMaxAge() {
         return MAX_AGE;
 
 
-    }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(AGE);
     }
 }
 
