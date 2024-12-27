@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morethanadventure:block/very_dirty_stone_tiles_slab"
+    },
+    "type=double": {
+      "model": "morethanadventure:block/very_dirty_stone_tiles"
+    },
+    "type=top": {
+      "model": "morethanadventure:block/very_dirty_stone_tiles_slab_top"
+    }
+  }
+}

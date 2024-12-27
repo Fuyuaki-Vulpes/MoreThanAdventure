@@ -4,13 +4,18 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -23,7 +28,10 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
@@ -36,8 +44,22 @@ public class WeaponItem extends Item {
 
 
 
-    public WeaponItem(ToolMaterial p_tier,float attack, float range, float speed, Properties p_properties) {
-        super(p_properties.attributes(createAttributes(p_tier,attack,speed,range)));
+    public WeaponItem(ToolMaterial p_tier,float attack, float speed, float range, Properties p_properties) {
+        super(p_properties.attributes(createAttributes(p_tier,attack,speed,range))
+                .durability(p_tier.durability())
+                .repairable(p_tier.repairItems())
+                .enchantable(p_tier.enchantmentValue())
+                .component(
+                        DataComponents.TOOL,
+                        new Tool(
+                                List.of(
+                                        Tool.Rule.minesAndDrops(HolderSet.direct(Blocks.COBWEB.builtInRegistryHolder()), 15.0F),
+                                        Tool.Rule.overrideSpeed(BuiltInRegistries.acquireBootstrapRegistrationLookup(BuiltInRegistries.BLOCK).getOrThrow(BlockTags.SWORD_EFFICIENT), 1.5F)
+                                ),
+                                1.0F,
+                                2
+                        )
+                ));
 
     }
 
@@ -89,7 +111,7 @@ public class WeaponItem extends Item {
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (stack.is(MtaTags.Items.TWO_HANDED) && !attacker.getItemInHand(InteractionHand.OFF_HAND).equals(ItemStack.EMPTY)){
+        if (stack.is(MtaTags.Items.TWO_HANDED) && !attacker.getItemInHand(InteractionHand.OFF_HAND).isEmpty()){
             return false;
         }
         attacker.level()
@@ -98,7 +120,7 @@ public class WeaponItem extends Item {
         double d0 = (double) (-Mth.sin(attacker.getYRot() * (float) (Math.PI / 180.0)));
         double d1 = (double) Mth.cos(attacker.getYRot() * (float) (Math.PI / 180.0));
         if (attacker.level() instanceof ServerLevel) {
-            ((ServerLevel) attacker.level()).sendParticles(this.getWeaponHitParticles(), attacker.getX() + d0, attacker.getY(0.5) + (attacker.getEyeHeight()/2 - attacker.getBbHeight()/2), attacker.getZ() + d1, 0, d0, 0.0, d1, 0.0);
+            ((ServerLevel) attacker.level()).sendParticles(this.getWeaponHitParticles(), attacker.getX() + d0, attacker.getY(0.80), attacker.getZ() + d1, 0, d0, 0.0, d1, 0.0);
         }
         if (stack.is(MtaTags.Items.CAUSES_BLEEDING)){
 
@@ -154,4 +176,6 @@ public class WeaponItem extends Item {
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
+
+
 }

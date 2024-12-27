@@ -2,13 +2,14 @@ package com.fuyuaki.morethanadventure.core.datagen;
 
 import com.fuyuaki.morethanadventure.core.datagen.lang.EN_US_LangProvider;
 import com.fuyuaki.morethanadventure.core.datagen.loot.GlobalLootModifiers;
-import com.fuyuaki.morethanadventure.core.datagen.other.GenAdvancements;
-import com.fuyuaki.morethanadventure.core.datagen.other.GenSoundDefinition;
-import com.fuyuaki.morethanadventure.core.datagen.other.GenWorld;
+import com.fuyuaki.morethanadventure.core.datagen.model.GenBlockModels;
+import com.fuyuaki.morethanadventure.core.datagen.model.MTAModelProvider;
+import com.fuyuaki.morethanadventure.core.datagen.other.*;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenBiomeTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenBlockTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenEntityTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenItemTags;
+import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -38,9 +39,12 @@ public class DataGen {
                 )
         );
 
+        event.createProvider(GenRecipes.Runner::new);
 
-        //generator.addProvider(true, new GenRecipes(lookupProvider,packOutput));
-        //generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
+        generator.addProvider(true, GenLoot.create(packOutput,lookupProvider));
+
+
+        generator.addProvider(true,new MTAModelProvider(packOutput));
 
         event.createBlockAndItemTags(GenBlockTags::new,GenItemTags::new);
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "morethanadventure:block/purple_terracotta_tiles",
+    "side": "morethanadventure:block/purple_terracotta_tiles",
+    "top": "morethanadventure:block/purple_terracotta_tiles"
+  }
+}

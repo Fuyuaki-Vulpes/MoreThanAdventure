@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "morethanadventure:item/holy_knights_helmet"
+  }
+}

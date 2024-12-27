@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "morethanadventure:block/green_terracotta_tiles"
+  }
+}

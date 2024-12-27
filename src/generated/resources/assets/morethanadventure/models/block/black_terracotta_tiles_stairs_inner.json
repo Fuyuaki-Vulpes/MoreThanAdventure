@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "morethanadventure:block/black_terracotta_tiles",
+    "side": "morethanadventure:block/black_terracotta_tiles",
+    "top": "morethanadventure:block/black_terracotta_tiles"
+  }
+}

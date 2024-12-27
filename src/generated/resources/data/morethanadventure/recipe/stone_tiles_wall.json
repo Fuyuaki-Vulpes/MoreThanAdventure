@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "stone_wall",
+  "key": {
+    "#": "morethanadventure:stone_tiles"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "morethanadventure:stone_tiles_wall"
+  }
+}

@@ -48,15 +48,6 @@ public class GenItemModels extends ItemModelGenerators {
     @Override
     public void run() {
 
-        saplingItem(MtaBlocks.PALM_SAPLING);
-        this.generateFlatItem(MtaBlocks.PALM_DOOR.asItem(), ModelTemplates.FLAT_ITEM);
-        buttonItem(MtaBlocks.PALM_BUTTON, MtaBlocks.PALM_PLANKS);
-        fenceItem(MtaBlocks.PALM_FENCE, MtaBlocks.PALM_PLANKS);
-        saplingItem(MtaBlocks.SEAWOOD_SAPLING);
-        this.generateFlatItem(MtaBlocks.SEAWOOD_DOOR.asItem(), ModelTemplates.FLAT_ITEM);
-        buttonItem(MtaBlocks.SEAWOOD_BUTTON, MtaBlocks.SEAWOOD_PLANKS);
-        fenceItem(MtaBlocks.SEAWOOD_FENCE, MtaBlocks.SEAWOOD_PLANKS);
-
         simpleItem(MtaItems.BIG_BOWL);
 
         simpleItem(MtaItems.CLEAR_QUARTZ);
@@ -269,15 +260,15 @@ public class GenItemModels extends ItemModelGenerators {
 
         //FOODS
 
-        simpleItem(MtaItems.ONION);
+        //simpleItem(MtaItems.ONION);
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.COOKED_SHRIMP);
         simpleItem(MtaItems.TOMATO);
-        simpleItem(MtaItems.TOMATO_SEEDS);
+        //simpleItem(MtaItems.TOMATO_SEEDS);
         simpleItem(MtaItems.BELL_PEPPER);
-        simpleItem(MtaItems.BELL_PEPPER_SEEDS);
+        //simpleItem(MtaItems.BELL_PEPPER_SEEDS);
         simpleItem(MtaItems.CHILI_PEPPER);
-        simpleItem(MtaItems.CHILI_PEPPER_SEEDS);
+        //simpleItem(MtaItems.CHILI_PEPPER_SEEDS);
         simpleItem(MtaItems.RICE);
         simpleItem(MtaItems.ONIGIRI);
         simpleItem(MtaItems.COCONUT);
@@ -355,30 +346,6 @@ public class GenItemModels extends ItemModelGenerators {
     }
     private void handheldBigItemMiddleHilt(DeferredItem<?> item) {
         this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), MTAModelTemplates.BIG_HANDHELD_MIDDLE_HILT)));
-    }
-
-    private void simpleBlockItem(DeferredBlock<?> item) {
-
-    }
-
-    private  void saplingItem(DeferredBlock<Block> item) {
-
-    }
-
-    private void slabItem(DeferredBlock<?> item) {
-
-    }
-
-    public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
-
-    }
-
-    public void fenceItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
-
-    }
-
-    public void wallItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
-
     }
 
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "morethanadventure:block/cattail_bottom"
+  }
+}

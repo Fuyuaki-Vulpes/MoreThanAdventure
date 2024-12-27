@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
+import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
@@ -103,7 +104,7 @@ public class MTAClientEvents
         LayerDefinition creeperArmorLayer = CreeperModel.createBodyLayer(new CubeDeformation(2.0F));
 
 
-        event.registerLayerDefinition(MTAModelLayers.SPRINKLER, SprinklerRenderer::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.SPRINKLER, SprinklerModel::createBodyLayer);
 
 
 

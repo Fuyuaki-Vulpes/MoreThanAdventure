@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/handheld_big_medium_hilt",
+  "textures": {
+    "layer0": "morethanadventure:item/freezing_icicle_spear"
+  }
+}

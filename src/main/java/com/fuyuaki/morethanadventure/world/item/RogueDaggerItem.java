@@ -68,8 +68,5 @@ public class RogueDaggerItem extends DaggerItem {
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_, 3.0F, -0.8F, 2.5F);
-    }
 }
 

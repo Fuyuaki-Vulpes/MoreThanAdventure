@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "morethanadventure:light_gray_terracotta_tiles"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "morethanadventure:light_gray_terracottas_tiles_wall"
+  }
+}

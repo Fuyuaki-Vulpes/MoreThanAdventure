@@ -18,26 +18,5 @@ public class ReaperScytheItem extends ScytheItem {
 
     }
 
-    protected ItemAttributeModifiers.Builder createAttributeModifiers(ToolMaterial pTier, ItemAttributeModifiers.Builder builder){
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("scythe");
-
-
-        builder.add(
-                Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(location, 5 + pTier.attackDamageBonus(), AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        builder.add(
-                Attributes.ATTACK_SPEED,
-                new AttributeModifier(location, -2.5F, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-        );
-        return builder;
-    }
-
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_, 5.0F, -2.4F, 4.7F);
-    }
-
 
 }

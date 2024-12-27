@@ -90,6 +90,9 @@ public class MtaBlocks {
                 }
             }, BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_SAPLING));
 
+    public static final DeferredBlock<Block> POTTED_PALM_SAPLING = registerBlock("potted_palm_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, PALM_SAPLING::value, properties),flowerPotProperties());
+
     public static final DeferredBlock<Block> PALM_STAIRS = registerBlock("palm_stairs",
             properties -> new StairBlock(MtaBlocks.PALM_PLANKS.get().defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));

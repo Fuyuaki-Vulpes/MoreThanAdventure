@@ -51,10 +51,6 @@ public class BerserkerBattleAxeItem extends DoubleAxeItem {
         return InteractionResult.SUCCESS;
     }
 
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_, 8.0F, -2.6F, 3.7F);
-    }
-
 
 
 

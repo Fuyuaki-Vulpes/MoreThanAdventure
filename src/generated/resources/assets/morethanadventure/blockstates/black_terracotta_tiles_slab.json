@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morethanadventure:block/black_terracotta_tiles_slab"
+    },
+    "type=double": {
+      "model": "morethanadventure:block/black_terracotta_tiles"
+    },
+    "type=top": {
+      "model": "morethanadventure:block/black_terracotta_tiles_slab_top"
+    }
+  }
+}
