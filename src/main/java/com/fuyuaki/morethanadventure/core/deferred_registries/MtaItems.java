@@ -892,13 +892,13 @@ public class MtaItems {
     >>>>TEMPLATES<<<<
 
     // PLACEHOLDER GEAR
-    public static final DeferredItem<MTAArmor> PLACEHOLDER_HELMET = ITEMS.registerItem("placeholder_helmet", properties -> new MTAArmor(MtaArmorMats.PLACEHOLDER, ArmorItem.Type.HELMET, properties
+    public static final DeferredItem<MTAArmor> PLACEHOLDER_HELMET = ITEMS.registerItem("placeholder_helmet", properties -> new MTAArmor(MTAArmorMats.PLACEHOLDER, ArmorItem.Type.HELMET, properties
     .durability(ArmorItem.Type.HELMET.getDurability(DURABILITY))));
-    public static final DeferredItem<MTAArmor> PLACEHOLDER_CHESTPLATE = ITEMS.registerItem("placeholder_chestplate", properties -> new MTAArmor(MtaArmorMats.PLACEHOLDER, ArmorItem.Type.CHESTPLATE, properties
+    public static final DeferredItem<MTAArmor> PLACEHOLDER_CHESTPLATE = ITEMS.registerItem("placeholder_chestplate", properties -> new MTAArmor(MTAArmorMats.PLACEHOLDER, ArmorItem.Type.CHESTPLATE, properties
     .durability(ArmorItem.Type.CHESTPLATE.getDurability(DURABILITY))));
-    public static final DeferredItem<MTAArmor> PLACEHOLDER_LEGGINGS = ITEMS.registerItem("placeholder_leggings", properties -> new MTAArmor(MtaArmorMats.PLACEHOLDER, ArmorItem.Type.LEGGINGS, properties
+    public static final DeferredItem<MTAArmor> PLACEHOLDER_LEGGINGS = ITEMS.registerItem("placeholder_leggings", properties -> new MTAArmor(MTAArmorMats.PLACEHOLDER, ArmorItem.Type.LEGGINGS, properties
     .durability(ArmorItem.Type.LEGGINGS.getDurability(DURABILITY))));
-    public static final DeferredItem<MTAArmor> PLACEHOLDER_BOOTS = ITEMS.registerItem("placeholder_boots", properties -> new MTAArmor(MtaArmorMats.PLACEHOLDER, ArmorItem.Type.BOOTS, properties
+    public static final DeferredItem<MTAArmor> PLACEHOLDER_BOOTS = ITEMS.registerItem("placeholder_boots", properties -> new MTAArmor(MTAArmorMats.PLACEHOLDER, ArmorItem.Type.BOOTS, properties
     .durability(ArmorItem.Type.BOOTS.getDurability(DURABILITY))));
 
     public static final DeferredItem<PickaxeItem> PLACEHOLDER_PICKAXE = ITEMS.registerItem("placeholder_pickaxe", properties -> new PickaxeItem(MTAToolTiers.PLACEHOLDER, properties

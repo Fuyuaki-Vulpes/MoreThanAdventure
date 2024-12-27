@@ -46,7 +46,7 @@ public class GenBlockModels extends BlockModelGenerators {
 
         createTintedLeaves(MtaBlocks.PALM_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
         //MAKE POTTED VERSIONS
-        this.createPlantWithDefaultItem(MtaBlocks.PALM_SAPLING.get(),MtaBlocks.PALM_SAPLING.get(),PlantType.NOT_TINTED);
+        this.createPlantWithDefaultItem(MtaBlocks.PALM_SAPLING.get(),MtaBlocks.POTTED_PALM_SAPLING.get(),PlantType.NOT_TINTED);
         this.woodProvider(MtaBlocks.SEALOG.get()).logWithHorizontal(MtaBlocks.SEALOG.get()).wood(MtaBlocks.SEAWOOD.get());
 //
 //        blockItem(MtaBlocks.SEALOG);

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "morethanadventure:block/tomato_crop_stage6"
+  }
+}

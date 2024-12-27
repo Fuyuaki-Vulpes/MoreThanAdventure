@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "morethanadventure:block/sealog_top",
+    "side": "morethanadventure:block/sealog"
+  }
+}

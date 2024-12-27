@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#minecraft:netherite_tool_materials",
+  "base": "morethanadventure:diamond_spear",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:netherite_spear"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/handheld_big_middle_hilt",
+  "textures": {
+    "layer0": "morethanadventure:item/nethersteel_twinblade"
+  }
+}

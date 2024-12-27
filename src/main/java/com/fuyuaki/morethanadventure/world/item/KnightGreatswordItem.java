@@ -98,8 +98,5 @@ public class KnightGreatswordItem extends ClaymoreItem {
 
     }
 
-    public static ItemAttributeModifiers createAttributes(ToolMaterial p_330371_) {
-        return createAttributes(p_330371_, 5.0F, -2.8F, 4.0F);
-    }
 
 }

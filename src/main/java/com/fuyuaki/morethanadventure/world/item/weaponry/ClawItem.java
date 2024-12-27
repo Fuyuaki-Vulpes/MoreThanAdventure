@@ -15,7 +15,7 @@ public class ClawItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.5F;
     protected static final int attackDamage = 6;
-// RANGE = 2.0
+    protected static final float range = 2.0F;
 
     public ClawItem(ToolMaterial tier, Properties properties) {
         super(tier, attackDamage, attackSpeed,2.0F ,properties);
