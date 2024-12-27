@@ -246,6 +246,8 @@ public class GenItemModels extends ItemModelGenerators {
         handheldBigItem(MtaItems.NETHERITE_SCYTHE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
+        generateTrident(MtaItems.NETHERITE_TRIDENT.get());
+        generateBow(MtaItems.NETHERITE_BOW.get());
 
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
