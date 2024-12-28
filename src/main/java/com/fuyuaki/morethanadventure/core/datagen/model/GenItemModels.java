@@ -314,6 +314,9 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.MANGO);
         simpleItem(MtaItems.MANGO_SLICE);
         simpleItem(MtaItems.STRAWBERRY);
+        simpleItem(MtaItems.ICE_CUBES);
+        simpleItem(MtaItems.SMOOTHIE);
+        simpleItem(MtaItems.JUICE);
 
 
 
