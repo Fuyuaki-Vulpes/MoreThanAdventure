@@ -147,34 +147,34 @@ public class MtaBlocks {
             properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
 
 
-    public static final DeferredBlock<Block> AVOCADO_LOG = registerBlock("mango_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
-    public static final DeferredBlock<Block> AVOCADO_WOOD = registerBlock("mango_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+    public static final DeferredBlock<Block> AVOCADO_LOG = registerBlock("avocado_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> AVOCADO_WOOD = registerBlock("avocado_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
-    public static final DeferredBlock<Block> AVOCADO_PLANKS = registerBlock("mango_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    public static final DeferredBlock<Block> AVOCADO_LEAVES = registerBlock("mango_leaves",  LeavesBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+    public static final DeferredBlock<Block> AVOCADO_PLANKS = registerBlock("avocado_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+    public static final DeferredBlock<Block> AVOCADO_LEAVES = registerBlock("avocado_leaves",  LeavesBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
 
     //public static final DeferredBlock<Block> AVOCADO_SAPLING = registerBlock("mango_sapling",
     //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
 
-    public static final DeferredBlock<Block> AVOCADO_STAIRS = registerBlock("mango_stairs",
+    public static final DeferredBlock<Block> AVOCADO_STAIRS = registerBlock("avocado_stairs",
             properties -> new StairBlock(MtaBlocks.AVOCADO_PLANKS.get().defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
-    public static final DeferredBlock<Block> AVOCADO_SLAB = registerBlock("mango_slab",
+    public static final DeferredBlock<Block> AVOCADO_SLAB = registerBlock("avocado_slab",
              SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
 
-    public static final DeferredBlock<Block> AVOCADO_PRESSURE_PLATE = registerBlock("mango_pressure_plate",
+    public static final DeferredBlock<Block> AVOCADO_PRESSURE_PLATE = registerBlock("avocado_pressure_plate",
             properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
-    public static final DeferredBlock<Block> AVOCADO_BUTTON = registerBlock("mango_button",
+    public static final DeferredBlock<Block> AVOCADO_BUTTON = registerBlock("avocado_button",
             properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
 
-    public static final DeferredBlock<Block> AVOCADO_FENCE = registerBlock("mango_fence",
+    public static final DeferredBlock<Block> AVOCADO_FENCE = registerBlock("avocado_fence",
             FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
-    public static final DeferredBlock<Block>AVOCADO_FENCE_GATE = registerBlock("mango_fence_gate",
+    public static final DeferredBlock<Block>AVOCADO_FENCE_GATE = registerBlock("avocado_fence_gate",
             properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
 
-    public static final DeferredBlock<Block> AVOCADO_DOOR = registerBlock("mango_door",
+    public static final DeferredBlock<Block> AVOCADO_DOOR = registerBlock("avocado_door",
             properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
-    public static final DeferredBlock<Block> AVOCADO_TRAPDOOR = registerBlock("mango_trapdoor",
+    public static final DeferredBlock<Block> AVOCADO_TRAPDOOR = registerBlock("avocado_trapdoor",
             properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
 
 

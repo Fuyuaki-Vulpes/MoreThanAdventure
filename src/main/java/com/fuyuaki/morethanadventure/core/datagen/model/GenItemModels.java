@@ -59,6 +59,22 @@ public class GenItemModels extends ItemModelGenerators {
         //simpleItem(MtaItems.CHARRED_BONE);
         //simpleItem(MtaItems.HOST_HUSK);
 
+        simpleItem(MtaItems.APPLE_SLICE);
+        simpleItem(MtaItems.AVOCADO);
+        simpleItem(MtaItems.AVOCADO_SLICE);
+        simpleItem(MtaItems.BANANA);
+        simpleItem(MtaItems.CABBAGE);
+        simpleItem(MtaItems.COFFEE);
+        simpleItem(MtaItems.COFFEE_BEANS);
+        simpleItem(MtaItems.GRAPES);
+        simpleItem(MtaItems.MANGO);
+        simpleItem(MtaItems.MANGO_SLICE);
+        simpleItem(MtaItems.STRAWBERRY);
+        simpleItem(MtaItems.TEA_LEAVES);
+        simpleItem(MtaItems.TEA);
+        simpleItem(MtaItems.ICE_CUBES);
+
+
         simpleItem(MtaItems.WEIGHTED_DICE);
         simpleItem(MtaItems.TOTEM_OF_COMBATING);
 

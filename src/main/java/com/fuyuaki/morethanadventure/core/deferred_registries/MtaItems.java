@@ -775,17 +775,11 @@ public class MtaItems {
     public static final DeferredItem<Item> TEA = ITEMS.registerSimpleItem("tea", new Item.Properties()
             .food(MtaFoods.TEA).stacksTo(1));
     public static final DeferredItem<Item> ICE_CUBES = ITEMS.registerSimpleItem("ice_cubes", new Item.Properties());
-    public static final DeferredItem<Item> APPLE_SMOOTHIE = ITEMS.registerSimpleItem("apple_smoothie", new Item.Properties()
-            .food(MtaFoods.APPLE_SMOOTHIE).stacksTo(1));
-    public static final DeferredItem<Item> BANANA_SMOOTHIE = ITEMS.registerSimpleItem("banana_smoothie", new Item.Properties()
-            .food(MtaFoods.BANANA_SMOOTHIE).stacksTo(1));
-    public static final DeferredItem<Item> GRAPE_SMOOTHIE = ITEMS.registerSimpleItem("grape_smoothie", new Item.Properties()
-            .food(MtaFoods.GRAPE_SMOOTHIE).stacksTo(1));
-    public static final DeferredItem<Item> MANGO_SMOOTHIE = ITEMS.registerSimpleItem("mango_smoothie", new Item.Properties()
-            .food(MtaFoods.MANGO_SMOOTHIE).stacksTo(1));
-    public static final DeferredItem<Item> STRAWBERRY_SMOOTIE = ITEMS.registerSimpleItem("strawberry_smoothie", new Item.Properties()
-            .food(MtaFoods.STRAWBERRY_SMOOTHIE).stacksTo(1));
 
+    public static final DeferredItem<Item> SMOOTHIE = ITEMS.registerSimpleItem("smoothie", new Item.Properties()
+            .food(MtaFoods.APPLE_SMOOTHIE).stacksTo(1));
+
+    public static final DeferredItem<Item> JUICE = ITEMS.registerSimpleItem("juice", new Item.Properties().stacksTo(1));
 
 
 

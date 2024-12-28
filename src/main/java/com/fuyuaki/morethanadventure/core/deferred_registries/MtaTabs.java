@@ -590,11 +590,8 @@ public class MtaTabs {
                 output.accept(MtaItems.TEA_LEAVES);
                 output.accept(MtaItems.TEA);
                 output.accept(MtaItems.ICE_CUBES);
-                output.accept(MtaItems.APPLE_SMOOTHIE);
-                output.accept(MtaItems.BANANA_SMOOTHIE);
-                output.accept(MtaItems.GRAPE_SMOOTHIE);
-                output.accept(MtaItems.MANGO_SMOOTHIE);
-                output.accept(MtaItems.STRAWBERRY_SMOOTIE);
+                output.accept(MtaItems.SMOOTHIE);
+                output.accept(MtaItems.JUICE);
 
                 output.accept(MtaBlocks.SPRINKLER.get());
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
