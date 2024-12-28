@@ -56,5 +56,73 @@ public class MtaFoods {
             .nutrition(7)
             .saturationModifier(1.3F)
             .build();
+     public static final FoodProperties APPLE_SLICE = new FoodProperties.Builder()
+            .nutrition(1)
+            .saturationModifier(0.3F)
+            .build();
+     public static final FoodProperties AVOCADO = new FoodProperties.Builder()
+            .nutrition(4)
+            .saturationModifier(0.6F)
+            .build();
+     public static final FoodProperties AVOCADO_SLICE = new FoodProperties.Builder()
+            .nutrition(2)
+            .saturationModifier(0.6F)
+            .build();
+     public static final FoodProperties BANANA = new FoodProperties.Builder()
+            .nutrition(3)
+            .saturationModifier(1.0F)
+            .build();
+     public static final FoodProperties CABBAGE = new FoodProperties.Builder()
+            .nutrition(3)
+            .saturationModifier(0.3F)
+            .build();
+     public static final FoodProperties COFFEE_BEANS = new FoodProperties.Builder()
+            .nutrition(1)
+            .saturationModifier(1.0F)
+            .build();
+     public static final FoodProperties COFFEE = new FoodProperties.Builder()
+            .nutrition(4)
+            .saturationModifier(0.75F)
+            .build();
+     public static final FoodProperties GRAPES = new FoodProperties.Builder()
+            .nutrition(2)
+            .saturationModifier(0.5F)
+            .build();
+     public static final FoodProperties MANGO = new FoodProperties.Builder()
+            .nutrition(4)
+            .saturationModifier(0.5F)
+            .build();
+     public static final FoodProperties MANGO_SLICE = new FoodProperties.Builder()
+            .nutrition(1)
+            .saturationModifier(0.3F)
+            .build();
+     public static final FoodProperties STRAWBERRY = new FoodProperties.Builder()
+            .nutrition(2)
+            .saturationModifier(0.5F)
+            .build();
+     public static final FoodProperties TEA = new FoodProperties.Builder()
+            .nutrition(4)
+            .saturationModifier(0.75F)
+            .build();
+     public static final FoodProperties APPLE_SMOOTHIE = new FoodProperties.Builder()
+            .nutrition(7)
+            .saturationModifier(1.3F)
+            .build();
+     public static final FoodProperties BANANA_SMOOTHIE = new FoodProperties.Builder()
+            .nutrition(7)
+            .saturationModifier(1.3F)
+            .build();
+     public static final FoodProperties GRAPE_SMOOTHIE = new FoodProperties.Builder()
+            .nutrition(7)
+            .saturationModifier(1.3F)
+            .build();
+     public static final FoodProperties MANGO_SMOOTHIE = new FoodProperties.Builder()
+            .nutrition(7)
+            .saturationModifier(1.3F)
+            .build();
+     public static final FoodProperties STRAWBERRY_SMOOTHIE = new FoodProperties.Builder()
+            .nutrition(7)
+            .saturationModifier(1.3F)
+            .build();
 
 }

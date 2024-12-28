@@ -43,6 +43,34 @@ public class MTAFamilies {
             .recipeUnlockedBy("has_planks")
             .getFamily();
 
+    public static final BlockFamily MANGO_PLANKS = familyBuilder(MtaBlocks.MANGO_PLANKS.get())
+            .button(MtaBlocks.MANGO_BUTTON.get())
+            .fence(MtaBlocks.MANGO_FENCE.get())
+            .fenceGate(MtaBlocks.MANGO_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.MANGO_PRESSURE_PLATE.get())
+            //.sign(MtaBlocks.MANGO_SIGN.get(), Blocks.MANGO_WALL_SIGN.get())
+            .slab(MtaBlocks.MANGO_SLAB.get())
+            .stairs(MtaBlocks.MANGO_STAIRS.get())
+            .door(MtaBlocks.MANGO_DOOR.get())
+            .trapdoor(MtaBlocks.MANGO_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
+    public static final BlockFamily AVOCADO_PLANKS = familyBuilder(MtaBlocks.AVOCADO_PLANKS.get())
+            .button(MtaBlocks.AVOCADO_BUTTON.get())
+            .fence(MtaBlocks.AVOCADO_FENCE.get())
+            .fenceGate(MtaBlocks.AVOCADO_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.AVOCADO_PRESSURE_PLATE.get())
+            //.sign(MtaBlocks.AVOCADO_SIGN.get(), Blocks.AVOCADO_WALL_SIGN.get())
+            .slab(MtaBlocks.AVOCADO_SLAB.get())
+            .stairs(MtaBlocks.AVOCADO_STAIRS.get())
+            .door(MtaBlocks.AVOCADO_DOOR.get())
+            .trapdoor(MtaBlocks.AVOCADO_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
     public static final BlockFamily STONE_TILES = familyBuilder(MtaBlocks.STONE_TILES.get())
             .slab(MtaBlocks.STONE_TILES_SLAB.get())
             .stairs(MtaBlocks.STONE_TILES_STAIRS.get())
@@ -70,6 +98,13 @@ public class MTAFamilies {
             .stairs(MtaBlocks.VERY_DIRTY_STONE_TILES_STAIRS.get())
             .wall(MtaBlocks.VERY_DIRTY_STONE_TILES_WALL.get())
             .recipeUnlockedBy("has_very_dirty_stone_tiles")
+            .getFamily();
+
+    public static final BlockFamily TERRACOTTA = familyBuilder(MtaBlocks.TERRACOTTA_TILES.get())
+            .slab(MtaBlocks.TERRACOTTA_SLAB.get())
+            .stairs(MtaBlocks.TERRACOTTA_STAIRS.get())
+            .wall(MtaBlocks.TERRACOTTA_WALL.get())
+            .recipeUnlockedBy("has_terracotta")
             .getFamily();
 
     public static final BlockFamily TERRACOTTA_TILES = familyBuilder(MtaBlocks.TERRACOTTA_TILES.get())

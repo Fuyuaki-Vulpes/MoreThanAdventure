@@ -53,6 +53,36 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SEAWOOD_TRAPDOOR.get(),"Seawood Trapdoor");
 
 
+        add(MtaBlocks.AVOCADO_LOG.get(),"Avocado Log");
+        add(MtaBlocks.AVOCADO_WOOD.get(),"Avocado Wood");
+        add(MtaBlocks.AVOCADO_PLANKS.get(),"Avocado Planks");
+        add(MtaBlocks.AVOCADO_LEAVES.get(),"Avocado Leaves");
+        //add(MtaBlocks.AVOCADO_SAPLING.get(),"Avocado Sapling");
+        add(MtaBlocks.AVOCADO_STAIRS.get(),"Avocado Stairs");
+        add(MtaBlocks.AVOCADO_SLAB.get(),"Avocado Slab");
+        add(MtaBlocks.AVOCADO_PRESSURE_PLATE.get(),"Avocado Pressure Plate");
+        add(MtaBlocks.AVOCADO_BUTTON.get(),"Avocado Button");
+        add(MtaBlocks.AVOCADO_FENCE.get(),"Avocado Fence");
+        add(MtaBlocks.AVOCADO_FENCE_GATE.get(),"Avocado Fence Gate");
+        add(MtaBlocks.AVOCADO_DOOR.get(),"Avocado Door");
+        add(MtaBlocks.AVOCADO_TRAPDOOR.get(),"Avocado Trapdoor");
+
+
+        add(MtaBlocks.MANGO_LOG.get(),"Mango Log");
+        add(MtaBlocks.MANGO_WOOD.get(),"Mango Wood");
+        add(MtaBlocks.MANGO_PLANKS.get(),"Mango Planks");
+        add(MtaBlocks.MANGO_LEAVES.get(),"Mango Leaves");
+        //add(MtaBlocks.MANGO_SAPLING.get(),"Mango Sapling");
+        add(MtaBlocks.MANGO_STAIRS.get(),"Mango Stairs");
+        add(MtaBlocks.MANGO_SLAB.get(),"Mango Slab");
+        add(MtaBlocks.MANGO_PRESSURE_PLATE.get(),"Mango Pressure Plate");
+        add(MtaBlocks.MANGO_BUTTON.get(),"Mango Button");
+        add(MtaBlocks.MANGO_FENCE.get(),"Mango Fence");
+        add(MtaBlocks.MANGO_FENCE_GATE.get(),"Mango Fence Gate");
+        add(MtaBlocks.MANGO_DOOR.get(),"Mango Door");
+        add(MtaBlocks.MANGO_TRAPDOOR.get(),"Mango Trapdoor");
+
+
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
@@ -562,6 +592,25 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.SPICY_PORK_CURRY.get(),"Spicy Pork Curry");
         add(MtaItems.SPICY_CHICKEN_CURRY.get(),"Spicy Chicken Curry");
         add(MtaItems.SPICY_SHRIMP_CURRY.get(),"Spicy Shrimp Curry");
+        add(MtaItems.APPLE_SLICE.get(), "Apple Slice");
+        add(MtaItems.AVOCADO.get(), "Avocado");
+        add(MtaItems.AVOCADO_SLICE.get(), "Avocado Slice");
+        add(MtaItems.BANANA.get(), "Banana");
+        add(MtaItems.CABBAGE.get(), "Cabbage");
+        add(MtaItems.COFFEE_BEANS.get(), "Coffee Beans");
+        add(MtaItems.COFFEE.get(), "Coffee");
+        add(MtaItems.GRAPES.get(), "Grapes");
+        add(MtaItems.MANGO.get(), "Mango");
+        add(MtaItems.MANGO_SLICE.get(), "Mango Slice");
+        add(MtaItems.STRAWBERRY.get(), "Strawberry");
+        add(MtaItems.TEA_LEAVES.get(), "Tea Leaves");
+        add(MtaItems.TEA.get(), "Tea");
+        add(MtaItems.ICE_CUBES.get(), "Ice Cubes");
+        add(MtaItems.APPLE_SMOOTHIE.get(), "Apple Smootie");
+        add(MtaItems.BANANA_SMOOTHIE.get(), "Banana Smoothie");
+        add(MtaItems.GRAPE_SMOOTHIE.get(), "Grape Smootie");
+        add(MtaItems.MANGO_SMOOTHIE.get(), "Mango Smoothie");
+        add(MtaItems.STRAWBERRY_SMOOTIE.get(), "Strawberry Smootie");
 
         //SPAWN EGGS
 

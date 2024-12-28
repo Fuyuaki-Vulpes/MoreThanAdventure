@@ -1,6 +1,5 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
@@ -11,8 +10,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.LinkedHashMap;
@@ -237,12 +234,14 @@ public class GenItemModels extends ItemModelGenerators {
         handheldBigItem(MtaItems.NETHERITE_SCYTHE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
-        generateTrident(MtaItems.NETHERITE_TRIDENT.get());
-        generateBow(MtaItems.NETHERITE_BOW.get());
+        this.generateTrident(MtaItems.NETHERITE_TRIDENT.get());
+        this.generateBow(MtaItems.NETHERITE_BOW.get());
 
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
+        this.generateTrident(MtaItems.MYSTIC_MERMAIDS_TRIDENT.get());
         handheldBigItemMediumHilt(MtaItems.SILENT_REAPERS_SCYTHE);
+        this.generateBow(MtaItems.TEMPLE_ANGELS_BOW.get());
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
         handheldBigItemMediumHilt(MtaItems.FREEZING_ICICLE_SPEAR);
         handheldItem(MtaItems.SHADOW_ROGUES_DAGGER);

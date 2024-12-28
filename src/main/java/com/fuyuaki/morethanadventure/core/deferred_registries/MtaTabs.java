@@ -110,6 +110,32 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SEAWOOD_DOOR.get());
                 output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
 
+                output.accept(MtaBlocks.AVOCADO_LOG.get());
+                output.accept(MtaBlocks.AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.AVOCADO_PLANKS.get());
+                //output.accept(MtaBlocks.AVOCADO_SAPLING.get());
+                output.accept(MtaBlocks.AVOCADO_STAIRS.get());
+                output.accept(MtaBlocks.AVOCADO_SLAB.get());
+                output.accept(MtaBlocks.AVOCADO_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.AVOCADO_BUTTON.get());
+                output.accept(MtaBlocks.AVOCADO_FENCE.get());
+                output.accept(MtaBlocks.AVOCADO_FENCE_GATE.get());
+                output.accept(MtaBlocks.AVOCADO_DOOR.get());
+                output.accept(MtaBlocks.AVOCADO_TRAPDOOR.get());
+
+                output.accept(MtaBlocks.MANGO_LOG.get());
+                output.accept(MtaBlocks.MANGO_WOOD.get());
+                output.accept(MtaBlocks.MANGO_PLANKS.get());
+                //output.accept(MtaBlocks.MANGO_SAPLING.get());
+                output.accept(MtaBlocks.MANGO_STAIRS.get());
+                output.accept(MtaBlocks.MANGO_SLAB.get());
+                output.accept(MtaBlocks.MANGO_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.MANGO_BUTTON.get());
+                output.accept(MtaBlocks.MANGO_FENCE.get());
+                output.accept(MtaBlocks.MANGO_FENCE_GATE.get());
+                output.accept(MtaBlocks.MANGO_DOOR.get());
+                output.accept(MtaBlocks.MANGO_TRAPDOOR.get());
+
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());
                 output.accept(MtaBlocks.STONE_TILES_STAIRS.get());
@@ -549,6 +575,26 @@ public class MtaTabs {
                 output.accept(MtaItems.SPICY_PORK_CURRY);
                 output.accept(MtaItems.SPICY_CHICKEN_CURRY);
                 output.accept(MtaItems.SPICY_SHRIMP_CURRY);
+
+                output.accept(MtaItems.APPLE_SLICE);
+                output.accept(MtaItems.AVOCADO);
+                output.accept(MtaItems.AVOCADO_SLICE);
+                output.accept(MtaItems.BANANA);
+                output.accept(MtaItems.CABBAGE);
+                output.accept(MtaItems.COFFEE_BEANS);
+                output.accept(MtaItems.COFFEE);
+                output.accept(MtaItems.GRAPES);
+                output.accept(MtaItems.MANGO);
+                output.accept(MtaItems.MANGO_SLICE);
+                output.accept(MtaItems.STRAWBERRY);
+                output.accept(MtaItems.TEA_LEAVES);
+                output.accept(MtaItems.TEA);
+                output.accept(MtaItems.ICE_CUBES);
+                output.accept(MtaItems.APPLE_SMOOTHIE);
+                output.accept(MtaItems.BANANA_SMOOTHIE);
+                output.accept(MtaItems.GRAPE_SMOOTHIE);
+                output.accept(MtaItems.MANGO_SMOOTHIE);
+                output.accept(MtaItems.STRAWBERRY_SMOOTIE);
 
                 output.accept(MtaBlocks.SPRINKLER.get());
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
