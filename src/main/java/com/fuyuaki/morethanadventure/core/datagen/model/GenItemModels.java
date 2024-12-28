@@ -304,6 +304,20 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.SPICY_PORK_CURRY);
         simpleItem(MtaItems.SPICY_CHICKEN_CURRY);
         simpleItem(MtaItems.SPICY_SHRIMP_CURRY);
+        simpleItem(MtaItems.APPLE_SLICE);
+        simpleItem(MtaItems.AVOCADO);
+        simpleItem(MtaItems.BANANA);
+        simpleItem(MtaItems.CABBAGE);
+        simpleItem(MtaItems.COFFEE_BEANS);
+        simpleItem(MtaItems.COFFEE);
+        simpleItem(MtaItems.GRAPES);
+        simpleItem(MtaItems.MANGO);
+        simpleItem(MtaItems.MANGO_SLICE);
+        simpleItem(MtaItems.STRAWBERRY);
+        simpleItem(MtaItems.ICE_CUBES);
+        simpleItem(MtaItems.SMOOTHIE);
+        simpleItem(MtaItems.JUICE);
+
 
 
         //SPAWN EGGS
