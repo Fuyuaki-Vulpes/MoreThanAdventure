@@ -371,6 +371,13 @@ public class MtaTabs {
 
 
                 output.accept(MtaItems.WEIGHTED_DICE);
+                output.accept(MtaItems.CAT_MASK);
+                output.accept(MtaItems.CLIMBING_CLAWS);
+                output.accept(MtaItems.PISTON_BOOTS);
+                output.accept(MtaItems.REGENERATIVE_TALISMAN);
+                output.accept(MtaItems.SLEEPING_KIT);
+                output.accept(MtaItems.STRIDER_BOOTS);
+
                 output.accept(MtaItems.TOTEM_OF_COMBATING);
 
 

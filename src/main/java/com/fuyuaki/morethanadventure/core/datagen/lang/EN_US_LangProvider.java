@@ -376,6 +376,12 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaItems.WEIGHTED_DICE.get(),"Weighted Dice");
+        add(MtaItems.CAT_MASK.get(),"Cat Mask");
+        add(MtaItems.CLIMBING_CLAWS.get(),"Climbing Claws");
+        add(MtaItems.PISTON_BOOTS.get(),"Piston Boots");
+        add(MtaItems.REGENERATIVE_TALISMAN.get(),"Regenerative Talisman");
+        add(MtaItems.SLEEPING_KIT.get(),"Sleeping Kit");
+        add(MtaItems.STRIDER_BOOTS.get(),"Strider Boots");
         add(MtaItems.TOTEM_OF_COMBATING.get(),"Totem Of Combating");
 
         add(MtaItems.AGATE.get(),"Agate");
@@ -723,6 +729,12 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         //TalismanItem
         add(getTalismanDescriptionID(MtaItems.WEIGHTED_DICE), "MTA and Vanilla enchantments and effects that have luck based aspects will have more favorable odds");
+        add(getTalismanDescriptionID(MtaItems.CAT_MASK), "Creepers become afraid of you as if you were a cat");
+        add(getTalismanDescriptionID(MtaItems.CLIMBING_CLAWS), "Become able to climb up walls");
+        add(getTalismanDescriptionID(MtaItems.PISTON_BOOTS), "Increases jump height");
+        add(getTalismanDescriptionID(MtaItems.REGENERATIVE_TALISMAN), "Crouch and heal surrounding players and pets");
+        add(getTalismanDescriptionID(MtaItems.SLEEPING_KIT), "Be able to sleep anywhere at a press of a button");
+        add(getTalismanDescriptionID(MtaItems.STRIDER_BOOTS), "Walk over lava like a Strider would");
 
     }
 
