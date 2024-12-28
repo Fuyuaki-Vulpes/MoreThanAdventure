@@ -845,6 +845,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
         add("items.morethanadventure.weapons.info.shift", "Press SHIFT to see chances");
 
+
+
+        add("mta.drink.tooltip", "Mix of:");
+
         add(MtaTags.Items.THROWABLE, "Throwable Item");
         add(MtaTags.Items.TWO_HANDED, "Two-Handed");
         add(MtaTags.Items.CAUSES_BLEEDING, "Causes Bleeding");
