@@ -606,11 +606,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.TEA_LEAVES.get(), "Tea Leaves");
         add(MtaItems.TEA.get(), "Tea");
         add(MtaItems.ICE_CUBES.get(), "Ice Cubes");
-        add(MtaItems.APPLE_SMOOTHIE.get(), "Apple Smootie");
-        add(MtaItems.BANANA_SMOOTHIE.get(), "Banana Smoothie");
-        add(MtaItems.GRAPE_SMOOTHIE.get(), "Grape Smootie");
-        add(MtaItems.MANGO_SMOOTHIE.get(), "Mango Smoothie");
-        add(MtaItems.STRAWBERRY_SMOOTIE.get(), "Strawberry Smootie");
+        add(MtaItems.SMOOTHIE.get(), "Smoothie");
+        add(MtaItems.JUICE.get(), "Juice");
 
         //SPAWN EGGS
 

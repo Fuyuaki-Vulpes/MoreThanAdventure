@@ -100,7 +100,7 @@ public class MTAFamilies {
             .recipeUnlockedBy("has_very_dirty_stone_tiles")
             .getFamily();
 
-    public static final BlockFamily TERRACOTTA = familyBuilder(MtaBlocks.TERRACOTTA_TILES.get())
+    public static final BlockFamily TERRACOTTA = familyBuilder(Blocks.TERRACOTTA)
             .slab(MtaBlocks.TERRACOTTA_SLAB.get())
             .stairs(MtaBlocks.TERRACOTTA_STAIRS.get())
             .wall(MtaBlocks.TERRACOTTA_WALL.get())
