@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "morethanadventure:block/mango_planks",
+    "side": "morethanadventure:block/mango_planks",
+    "top": "morethanadventure:block/mango_planks"
+  }
+}

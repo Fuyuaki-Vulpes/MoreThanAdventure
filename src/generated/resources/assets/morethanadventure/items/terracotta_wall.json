@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "morethanadventure:block/terracotta_wall"
+    "model": "morethanadventure:block/terracotta_wall_inventory"
   }
 }

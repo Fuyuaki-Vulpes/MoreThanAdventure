@@ -1,7 +1,7 @@
 {
 	"textures": {
 		"particle": "#texture",
-		"lantern": "block/lantern",
+		"lantern": "block/lantern"
 	},
 	"elements": [
 		{

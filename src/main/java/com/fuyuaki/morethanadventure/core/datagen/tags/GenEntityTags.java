@@ -14,7 +14,7 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenEntityTags extends IntrinsicHolderTagsProvider<EntityType<?>> {
     public GenEntityTags(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider) {
-        super(pOutput, Registries.ENTITY_TYPE, pProvider, entityType -> entityType.builtInRegistryHolder().key(),MODID,null);
+        super(pOutput, Registries.ENTITY_TYPE, pProvider, entityType -> entityType.builtInRegistryHolder().key(),MODID);
     }
 
     @Override

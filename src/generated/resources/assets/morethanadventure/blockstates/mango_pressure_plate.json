@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "morethanadventure:block/mango_pressure_plate"
+    },
+    "powered=true": {
+      "model": "morethanadventure:block/mango_pressure_plate_down"
+    }
+  }
+}

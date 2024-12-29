@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "morethanadventure:block/seawood_sapling"
+    "model": "morethanadventure:item/seawood_sapling"
   }
 }

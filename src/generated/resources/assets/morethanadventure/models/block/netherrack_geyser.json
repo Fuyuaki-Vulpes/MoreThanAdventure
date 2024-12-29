@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "minecraft:block/netherrack",
+    "side": "morethanadventure:block/netherrack_geyser",
+    "top": "minecraft:block/netherrack"
+  }
+}

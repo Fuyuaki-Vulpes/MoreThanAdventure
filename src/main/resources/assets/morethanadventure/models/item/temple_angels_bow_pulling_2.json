@@ -1,6 +1,0 @@
-{
-  "parent": "morethanadventure:item/temple_angels_bow",
-  "textures": {
-    "layer0": "morethanadventure:item/temple_angels_bow_pulling_2"
-  }
-}

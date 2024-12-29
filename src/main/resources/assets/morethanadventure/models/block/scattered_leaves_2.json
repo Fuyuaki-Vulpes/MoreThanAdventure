@@ -1,5 +1,7 @@
 {
   "parent": "morethanadventure:block/flowerbed_2",
+  "render_type": "cutout",
+
   "textures": {
     "flowerbed": "morethanadventure:block/scattered_leaves",
     "stem": "morethanadventure:block/scattered_leaves_stem"

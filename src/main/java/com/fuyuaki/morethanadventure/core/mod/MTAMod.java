@@ -5,6 +5,9 @@ import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -54,6 +57,22 @@ public class MTAMod
         modContainer.registerConfig(ModConfig.Type.COMMON, MTAConfigs.Common.SPEC);
         modContainer.registerConfig(ModConfig.Type.CLIENT, MTAConfigs.Client.SPEC);
     }
+
+    public static void setupRenderTypes() {
+        RenderType transparentRenderType = RenderType.cutoutMipped();
+        RenderType cutoutRenderType = RenderType.cutout();
+        RenderType translucentRenderType = RenderType.translucent();
+        //setRenderType(MtaBlocks.SCATTERED_LEAVES.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.SHALLOW_GRASS.get(), cutoutRenderType);
+
+    }
+
+    private static void setRenderType(Block block, RenderType type) {
+        ItemBlockRenderTypes.setRenderLayer(block,type);
+
+    }
+
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {

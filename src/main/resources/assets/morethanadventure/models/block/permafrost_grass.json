@@ -3,7 +3,7 @@
         "particle": "morethanadventure:block/permafrost_dirt",
         "top": "block/grass_block_top",
         "all": "morethanadventure:block/permafrost_dirt",
-        "overlay": "morethanadventure:block/permafrost_grass_block"
+        "overlay": "morethanadventure:block/permafrost_grass_overlay"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

@@ -1,7 +1,7 @@
 {   "parent": "block/block",
   "textures": {
     "particle": "block/sand",
-    "top": "morethanadventure:block/sand_path",
+    "top": "morethanadventure:block/sand_path_top",
     "other": "block/sand"
   },
   "elements": [

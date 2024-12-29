@@ -712,9 +712,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("itemGroup.mtagenblocks","MTA: World Gen");
         add("itemGroup.mtabuilding","MTA: Building Blocks");
         add("itemGroup.mtaequip","MTA: Equipments");
-        add("itemGroup.mtamisc","MTA: Foods, Spawns & Miscellaneous");
+        add("itemGroup.mtautil","MTA: Items & Utilities");
+        add("itemGroup.mtafoods","MTA: Food");
+        add("itemGroup.mtaspawn","MTA: Spawns Eggs");
 
-        add("mtadesc.corestone.hover","Press SHIFT to See Details");
 
         // KEYBINDS
         add("key.categories.morethanadventure","More Than Adventure");
@@ -730,11 +731,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         //TalismanItem
         add(getTalismanDescriptionID(MtaItems.WEIGHTED_DICE), "MTA and Vanilla enchantments and effects that have luck based aspects will have more favorable odds");
         add(getTalismanDescriptionID(MtaItems.CAT_MASK), "Creepers become afraid of you as if you were a cat");
-        add(getTalismanDescriptionID(MtaItems.CLIMBING_CLAWS), "Become able to climb up walls");
+        add(getTalismanDescriptionID(MtaItems.CLIMBING_CLAWS), "Becomes capable of climbing up walls");
         add(getTalismanDescriptionID(MtaItems.PISTON_BOOTS), "Increases jump height");
-        add(getTalismanDescriptionID(MtaItems.REGENERATIVE_TALISMAN), "Crouch and heal surrounding players and pets");
-        add(getTalismanDescriptionID(MtaItems.SLEEPING_KIT), "Be able to sleep anywhere at a press of a button");
-        add(getTalismanDescriptionID(MtaItems.STRIDER_BOOTS), "Walk over lava like a Strider would");
+        add(getTalismanDescriptionID(MtaItems.REGENERATIVE_TALISMAN), "Crouching heals you, allies, and pets in an area");
+        add(getTalismanDescriptionID(MtaItems.SLEEPING_KIT), "Press \"Use Talisman\" key to sleep");
+        add(getTalismanDescriptionID(MtaItems.STRIDER_BOOTS), "Boots made of Strider skin that allow you to walk on Lava");
 
     }
 

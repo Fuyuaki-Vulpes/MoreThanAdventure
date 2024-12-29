@@ -14,7 +14,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,14 +29,10 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
 
 
     public GenItemTags(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> blockTags) {
-        super(pOutput, Registries.ITEM, pLookupProvider, item -> item.builtInRegistryHolder().key(),MODID,null);
+        super(pOutput, Registries.ITEM, pLookupProvider, item -> item.builtInRegistryHolder().key(),MODID);
         this.blockTags = blockTags;
     }
 
-    public GenItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture, CompletableFuture<TagLookup<Block>> tagLookupCompletableFuture, ExistingFileHelper existingFileHelper) {
-        super(output, Registries.ITEM, completableFuture, item -> item.builtInRegistryHolder().key(),MODID,existingFileHelper);
-        this.blockTags = tagLookupCompletableFuture;
-    }
     private void commonTags() {
         this.tag(Tags.Items.FOODS_VEGETABLE)
                 .add(

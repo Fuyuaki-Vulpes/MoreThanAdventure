@@ -15,7 +15,7 @@ public class SprinklerParticle extends TextureSheetParticle {
         this.xd *= 2.6F * this.random.nextFloat();
         this.yd *= 0.4F;
         this.zd *= 2.6F * this.random.nextFloat();
-        this.yd = (double)(this.random.nextFloat() * 1.1F + 0.05F);
+        this.yd = (double)(this.random.nextFloat() * 0.8F + 0.05F);
         this.xd = (double)(this.random.nextFloat() * UniformFloat.of(-1.75F,1.75F).sample(this.random) + 0.05F);
         this.zd = (double)(this.random.nextFloat() * UniformFloat.of(-1.75F,1.75F).sample(this.random) + 0.05F);
         this.quadSize = this.quadSize * (this.random.nextFloat() * 4.0F + 0.2F);
@@ -29,7 +29,33 @@ public class SprinklerParticle extends TextureSheetParticle {
         return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
     }
 
+    @Override
+    public void tick() {
 
+        boolean still = (this.xd > -0.05 && this.xd < 0.05F) || (this.zd > -0.05 && this.zd < 0.05F);
+        this.xo = this.x;
+        this.yo = this.y;
+        this.zo = this.z;
+        if (this.age++ >= this.lifetime) {
+            this.remove();
+        } else {
+
+            this.yd = this.yd - 0.25 * (double)this.gravity;
+
+            this.move(this.xd, this.yd, this.zd);
+            if (this.speedUpWhenYMotionIsBlocked && this.y == this.yo) {
+                this.xd *= 1.1;
+                this.zd *= 1.1;
+            }
+//            this.xd = this.xd * (double)this.friction;
+//            this.yd = this.yd * (double)this.friction;
+//            this.zd = this.zd * (double)this.friction;
+            if (this.onGround) {
+                this.remove();
+
+            }
+        }
+    }
 
     @Override
     public float getQuadSize(float pScaleFactor) {

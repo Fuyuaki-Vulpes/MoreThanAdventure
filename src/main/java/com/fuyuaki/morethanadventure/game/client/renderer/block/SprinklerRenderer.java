@@ -8,6 +8,7 @@ import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import com.fuyuaki.morethanadventure.world.block.entity.SprinklerEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -41,7 +42,7 @@ public class SprinklerRenderer<T extends SprinklerEntity> implements BlockEntity
         boolean flag = level != null;
         BlockState blockstate = flag ? blockEntity.getBlockState() : MtaBlocks.SPRINKLER.get().defaultBlockState();
         VertexConsumer vertexconsumer = MTASheets.createSprinklerMaterial().buffer(bufferSource, RenderType::entityCutout);
-
+        //poseStack.translate(0.5F, -0.5F, 0.5F);
         this.sprinklerModel.setupAnim(blockstate.getValue(Sprinkler.ON));
         this.sprinklerModel.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
     }

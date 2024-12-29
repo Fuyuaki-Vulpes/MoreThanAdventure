@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "morethanadventure:block/avocado_planks"
+  }
+}

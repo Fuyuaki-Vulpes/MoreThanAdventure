@@ -3,15 +3,14 @@ package com.fuyuaki.morethanadventure.core.datagen.other;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.common.data.SoundDefinition;
 import net.neoforged.neoforge.common.data.SoundDefinitionsProvider;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenSoundDefinition extends SoundDefinitionsProvider {
-    public GenSoundDefinition(PackOutput output, ExistingFileHelper helper) {
-        super(output, MODID, helper);
+    public GenSoundDefinition(PackOutput output) {
+        super(output, MODID);
     }
 
     @Override

@@ -4,28 +4,31 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlockEntities;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
+import com.fuyuaki.morethanadventure.core.mod.MTAMod;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.*;
+import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
-import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.*;
+
+import java.util.Map;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -37,7 +40,7 @@ public class MTAClientEvents
     public static void onClientSetup(FMLClientSetupEvent event) {
 
         event.enqueueWork(() -> {
-
+            MTAMod.setupRenderTypes();
         });
 
     }
@@ -178,8 +181,18 @@ public class MTAClientEvents
 
     }
 
+    @SubscribeEvent
+    public static void registerSpecialRenderers(RegisterSpecialModelRendererEvent event) {
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID,"sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
+    }
+
 
     @SubscribeEvent
+    public static void registerAtlases(RegisterMaterialAtlasesEvent event) {
+        event.register(MTASheets.SPRINKLER_SHEETS,ResourceLocation.fromNamespaceAndPath(MODID,"sprinkler"));
+    }
+
+        @SubscribeEvent
     public static void particleFactory(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(MtaParticles.GEYSER_WATER.get(), GeyserParticle.Water::new);
         event.registerSpriteSet(MtaParticles.GEYSER_LAVA.get(), GeyserParticle.Lava::new);
@@ -204,36 +217,6 @@ public class MTAClientEvents
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.SHALLOW_GRASS.get());
     }
-//
-//    @SubscribeEvent
-//    public static void registerColoredItems(RegisterColorHandlersEvent.ItemTintSources event) {
-//        event.register((pStack, pTintIndex) -> FoliageColor.(), MtaBlocks.PALM_LEAVES);
-//        event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), MtaBlocks.SCATTERED_LEAVES);
-//        event.register((pStack, pTintIndex) -> FoliageColor.getEvergreenColor(), MtaBlocks.SWEET_BERRY_LEAVES);
-//        event.register(ItemTintSources., MtaBlocks.GRASSY_DIRT);
-//        event.register((pStack, pTintIndex) -> GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS);
-//        event.register((pStack, pTintIndex) -> GrassColor::getDefaultColor, MtaBlocks.SHALLOW_GRASS);
-//    }
-
-//
-//    @SubscribeEvent
-//    public static void clientExtensionEvent(RegisterClientExtensionsEvent event) {
-//        event.registerItem(new IClientItemExtensions() {
-//            private final Lazy<BlockEntityWithoutLevelRenderer> ister = Lazy.of(() -> MTAItemWithoutLevelRenderer.INSTANCE);
-//            @Override
-//            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-//                return ister.get();
-//            }
-//        }, MtaItems.NETHERITE_TRIDENT.get(), MtaItems.MYSTIC_MERMAIDS_TRIDENT.get()
-//                );
-//    }
-//    @SubscribeEvent
-//    public static void clientReloadListenersEvent(RegisterClientReloadListenersEvent event) {
-//        event.registerReloadListener(
-//                MTAItemWithoutLevelRenderer.INSTANCE
-//        );
-//    }
-
 
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {

@@ -25,7 +25,7 @@ public class SprinklerEntity extends BlockEntity {
 
 
     public static void particleTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
-        for (int p = 0; p < 4; p++){
+        for (int p = 0; p < 8; p++){
             level.addParticle(MtaParticles.SPRINKLER.get(), blockPos.getX() + 0.5,blockPos.above().above().getY(),blockPos.getZ() + 0.5,0,0,0);
         }
         for (int k = 0; k < 10; k++ ) {

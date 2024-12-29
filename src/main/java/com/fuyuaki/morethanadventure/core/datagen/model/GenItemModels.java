@@ -5,9 +5,11 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelInstance;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -59,20 +61,9 @@ public class GenItemModels extends ItemModelGenerators {
         //simpleItem(MtaItems.CHARRED_BONE);
         //simpleItem(MtaItems.HOST_HUSK);
 
-        simpleItem(MtaItems.APPLE_SLICE);
-        simpleItem(MtaItems.AVOCADO);
         simpleItem(MtaItems.AVOCADO_SLICE);
-        simpleItem(MtaItems.BANANA);
-        simpleItem(MtaItems.CABBAGE);
-        simpleItem(MtaItems.COFFEE);
-        simpleItem(MtaItems.COFFEE_BEANS);
-        simpleItem(MtaItems.GRAPES);
-        simpleItem(MtaItems.MANGO);
-        simpleItem(MtaItems.MANGO_SLICE);
-        simpleItem(MtaItems.STRAWBERRY);
         simpleItem(MtaItems.TEA_LEAVES);
         simpleItem(MtaItems.TEA);
-        simpleItem(MtaItems.ICE_CUBES);
 
 
         simpleItem(MtaItems.WEIGHTED_DICE);
@@ -321,8 +312,8 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.MANGO_SLICE);
         simpleItem(MtaItems.STRAWBERRY);
         simpleItem(MtaItems.ICE_CUBES);
-        simpleItem(MtaItems.SMOOTHIE);
-        simpleItem(MtaItems.JUICE);
+        generateDrink(MtaItems.SMOOTHIE.get());
+        generateDrink(MtaItems.JUICE.get());
 
 
 
@@ -388,5 +379,11 @@ public class GenItemModels extends ItemModelGenerators {
 
     public void simpleItem(DeferredItem<?> item) {
         this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), ModelTemplates.FLAT_ITEM)));
+    }
+
+
+
+    public void generateDrink(Item drink) {
+
     }
 }

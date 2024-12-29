@@ -541,10 +541,62 @@ public class MtaTabs {
             }).build());
 
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MISC = TABS.register("mtamisc", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.mtamisc"))
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ITEMS_UTILITIES = TABS.register("mtautil", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtautil"))
             .withTabsBefore(MtaTabs.EQUIPMENTS.getId())
             .icon(MtaBlocks.SPRINKLER.get().asItem()::getDefaultInstance)
+            .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
+            .displayItems((parameters, output) -> {
+
+
+
+
+                output.accept(MtaBlocks.SPRINKLER.get());
+                output.accept(MtaBlocks.QUARTZ_LAMP.get());
+
+
+                output.accept(MtaItems.CLEAR_QUARTZ);
+                output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.HOST_HUSK);
+                output.accept(MtaItems.SAMURAI_CLOTH);
+                output.accept(MtaItems.SIREN_SCALE);
+                output.accept(MtaItems.BLACK_WIDOW_VENOM);
+                //output.accept(MtaItems.NETHERITE_FRACTURE);
+                output.accept(MtaItems.SPIRIT_DUST);
+                output.accept(MtaItems.CHARRED_BONE);
+                //output.accept(MtaItems.NETHERITE_FRACTURE);
+
+                output.accept(MtaItems.AGATE);
+                output.accept(MtaItems.ALEXANDRITE);
+                output.accept(MtaItems.AQUAMARINE);
+                output.accept(MtaItems.BLOODSTONE);
+                output.accept(MtaItems.CELESTITE);
+                output.accept(MtaItems.CRYOLITE);
+                output.accept(MtaItems.GARNET);
+                output.accept(MtaItems.MOONSTONE);
+                output.accept(MtaItems.AWAKENED_AGATE);
+                output.accept(MtaItems.AWAKENED_ALEXANDRITE);
+                output.accept(MtaItems.AWAKENED_AQUAMARINE);
+                output.accept(MtaItems.AWAKENED_BLOODSTONE);
+                output.accept(MtaItems.AWAKENED_CELESTITE);
+                output.accept(MtaItems.AWAKENED_CRYOLITE);
+                output.accept(MtaItems.AWAKENED_GARNET);
+                output.accept(MtaItems.AWAKENED_MOONSTONE);
+                output.accept(MtaItems.ROYAL_UPGRADE);
+                output.accept(MtaItems.AQUATIC_UPGRADE);
+                output.accept(MtaItems.DEATHLY_UPGRADE);
+                output.accept(MtaItems.ANGELIC_UPGRADE);
+                output.accept(MtaItems.FREEZING_UPGRADE);
+                output.accept(MtaItems.BERSERK_UPGRADE);
+                output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
+
+            }).build());
+
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> FOODS = TABS.register("mtafoods", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtafoods"))
+            .withTabsBefore(MtaTabs.ITEMS_UTILITIES.getId())
+            .icon(MtaItems.MILD_BEEF_CURRY.get().asItem()::getDefaultInstance)
             .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
@@ -600,43 +652,17 @@ public class MtaTabs {
                 output.accept(MtaItems.SMOOTHIE);
                 output.accept(MtaItems.JUICE);
 
-                output.accept(MtaBlocks.SPRINKLER.get());
-                output.accept(MtaBlocks.QUARTZ_LAMP.get());
+            }).build());
 
 
-                output.accept(MtaItems.CLEAR_QUARTZ);
-                output.accept(MtaItems.NETHERITE_FRACTURE);
-                output.accept(MtaItems.HOST_HUSK);
-                output.accept(MtaItems.SAMURAI_CLOTH);
-                output.accept(MtaItems.SIREN_SCALE);
-                output.accept(MtaItems.BLACK_WIDOW_VENOM);
-                //output.accept(MtaItems.NETHERITE_FRACTURE);
-                output.accept(MtaItems.SPIRIT_DUST);
-                output.accept(MtaItems.CHARRED_BONE);
-                //output.accept(MtaItems.NETHERITE_FRACTURE);
-                output.accept(MtaItems.AGATE);
-                output.accept(MtaItems.ALEXANDRITE);
-                output.accept(MtaItems.AQUAMARINE);
-                output.accept(MtaItems.BLOODSTONE);
-                output.accept(MtaItems.CELESTITE);
-                output.accept(MtaItems.CRYOLITE);
-                output.accept(MtaItems.GARNET);
-                output.accept(MtaItems.MOONSTONE);
-                output.accept(MtaItems.AWAKENED_AGATE);
-                output.accept(MtaItems.AWAKENED_ALEXANDRITE);
-                output.accept(MtaItems.AWAKENED_AQUAMARINE);
-                output.accept(MtaItems.AWAKENED_BLOODSTONE);
-                output.accept(MtaItems.AWAKENED_CELESTITE);
-                output.accept(MtaItems.AWAKENED_CRYOLITE);
-                output.accept(MtaItems.AWAKENED_GARNET);
-                output.accept(MtaItems.AWAKENED_MOONSTONE);
-                output.accept(MtaItems.ROYAL_UPGRADE);
-                output.accept(MtaItems.AQUATIC_UPGRADE);
-                output.accept(MtaItems.DEATHLY_UPGRADE);
-                output.accept(MtaItems.ANGELIC_UPGRADE);
-                output.accept(MtaItems.FREEZING_UPGRADE);
-                output.accept(MtaItems.BERSERK_UPGRADE);
-                output.accept(MtaItems.FEATHERWEIGHT_UPGRADE);
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SPAWNS = TABS.register("mtaspawn", () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.mtaspawn"))
+            .withTabsBefore(MtaTabs.FOODS.getId())
+            .icon(MtaItems.YUKI_ONNA_SPAWN_EGG.get().asItem()::getDefaultInstance)
+            .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
+            .displayItems((parameters, output) -> {
+
 
 
                 //SPAWNS

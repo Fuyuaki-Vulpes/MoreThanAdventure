@@ -10,19 +10,15 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
-    public GenBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
-        super(output, Registries.BLOCK, lookupProvider, block -> block.builtInRegistryHolder().key(),MODID,null);
-    }
 
-    public GenBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture, ExistingFileHelper existingFileHelper) {
-        super(output, Registries.BLOCK, completableFuture, block -> block.builtInRegistryHolder().key(),MODID,existingFileHelper);
+    public GenBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, Registries.BLOCK, lookupProvider, block -> block.builtInRegistryHolder().key(),MODID);
     }
 
     @Override

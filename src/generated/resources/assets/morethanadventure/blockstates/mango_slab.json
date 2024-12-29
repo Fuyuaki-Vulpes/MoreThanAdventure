@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morethanadventure:block/mango_slab"
+    },
+    "type=double": {
+      "model": "morethanadventure:block/mango_planks"
+    },
+    "type=top": {
+      "model": "morethanadventure:block/mango_slab_top"
+    }
+  }
+}

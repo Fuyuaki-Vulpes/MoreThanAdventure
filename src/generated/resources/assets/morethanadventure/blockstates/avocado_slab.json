@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morethanadventure:block/avocado_slab"
+    },
+    "type=double": {
+      "model": "morethanadventure:block/avocado_planks"
+    },
+    "type=top": {
+      "model": "morethanadventure:block/avocado_slab_top"
+    }
+  }
+}

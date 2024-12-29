@@ -1,15 +1,13 @@
 package com.fuyuaki.morethanadventure.core.datagen;
 
 import com.fuyuaki.morethanadventure.core.datagen.lang.EN_US_LangProvider;
-import com.fuyuaki.morethanadventure.core.datagen.loot.GlobalLootModifiers;
-import com.fuyuaki.morethanadventure.core.datagen.model.GenBlockModels;
+import com.fuyuaki.morethanadventure.core.datagen.other.loot.GlobalLootModifiers;
 import com.fuyuaki.morethanadventure.core.datagen.model.MTAModelProvider;
 import com.fuyuaki.morethanadventure.core.datagen.other.*;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenBiomeTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenBlockTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenEntityTags;
 import com.fuyuaki.morethanadventure.core.datagen.tags.GenItemTags;
-import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -18,7 +16,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
@@ -34,8 +31,7 @@ public class DataGen {
         var datapackRegistries = new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), GenWorld.BUILDER, Set.of(MODID));
 
 
-        generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider(),
-                        List.of()
+        generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider()
                 )
         );
 
@@ -49,7 +45,7 @@ public class DataGen {
         event.createBlockAndItemTags(GenBlockTags::new,GenItemTags::new);
 
         generator.addProvider(true,
-                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider(), event.getExistingFileHelper()));
+                new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider()));
 
         generator.addProvider(true,
                 new GenEntityTags(packOutput, datapackRegistries.getRegistryProvider()));
@@ -62,7 +58,7 @@ public class DataGen {
                 new EN_US_LangProvider(packOutput));
 
         generator.addProvider(true,
-                new GenSoundDefinition(packOutput,event.getExistingFileHelper()));
+                new GenSoundDefinition(packOutput));
 
         generator.addProvider(true,
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
