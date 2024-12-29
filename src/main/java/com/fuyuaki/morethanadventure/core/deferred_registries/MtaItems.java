@@ -42,6 +42,13 @@ public class MtaItems {
     public static final DeferredItem<AttributeModifierTalismanItem> SIREN_TALISMAN = ITEMS.registerItem("siren_talisman", SirenTalisman::new);
 
     public static final DeferredItem<TalismanItem> WEIGHTED_DICE = ITEMS.registerItem("weighted_dice", TalismanItem::new);
+    public static final DeferredItem<TalismanItem> CAT_MASK = ITEMS.registerItem("cat_mask", TalismanItem::new);
+    public static final DeferredItem<TalismanItem> CLIMBING_CLAWS = ITEMS.registerItem("climbing_claws", TalismanItem::new);
+    public static final DeferredItem<TalismanItem> PISTON_BOOTS = ITEMS.registerItem("piston_boots", TalismanItem::new);
+    public static final DeferredItem<TalismanItem> REGENERATIVE_TALISMAN = ITEMS.registerItem("regenerative_talisman", TalismanItem::new);
+    public static final DeferredItem<TalismanItem> SLEEPING_KIT = ITEMS.registerItem("sleeping_kit", TalismanItem::new);
+    public static final DeferredItem<TalismanItem> STRIDER_BOOTS = ITEMS.registerItem("strider_boots", TalismanItem::new);
+
 
     //TOTEMS
     public static final DeferredItem<Item> TOTEM_OF_COMBATING = ITEMS.registerSimpleItem("totem_of_combating",new Item.Properties()
