@@ -17,9 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 public abstract class MTATameableAnimal extends TamableAnimal {
-    private static final int MAX_STATES = 1;
     public final float health;
-    private static final EntityDataAccessor<Integer> COMMANDED_STATE = SynchedEntityData.defineId(MTATameableAnimal.class, EntityDataSerializers.INT);
 
     protected MTATameableAnimal(float tameableHP,EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -45,8 +43,7 @@ public abstract class MTATameableAnimal extends TamableAnimal {
 
                 InteractionResult interactionresult = super.mobInteract(pPlayer, pHand);
                 if (!interactionresult.consumesAction()) {
-                    this.setOrderedToSit(getCommandedState() == 1);
-                    cycleState();
+                    this.setOrderedToSit(this.isOrderedToSit());
                     this.jumping = false;
                     this.navigation.stop();
                     this.setTarget((LivingEntity)null);
@@ -78,7 +75,6 @@ public abstract class MTATameableAnimal extends TamableAnimal {
         if (this.random.nextInt(3) == 0 && !net.neoforged.neoforge.event.EventHooks.onAnimalTame(this, pPlayer)) {
             this.tame(pPlayer);
             this.setOrderedToSit(true);
-            setCommandedState(1);
             this.getAttribute(Attributes.MAX_HEALTH).setBaseValue(health);
             this.level().broadcastEntityEvent(this, (byte)7);
         } else {
@@ -87,38 +83,6 @@ public abstract class MTATameableAnimal extends TamableAnimal {
     }
 
 
-    public int getCommandedState(){
-        return this.entityData.get(COMMANDED_STATE);
-    }
-
-    public void setCommandedState(int state){
-         this.entityData.set(COMMANDED_STATE, state);
-
-    }
 
 
-    public void cycleState(){
-        int state = getCommandedState() +1;
-        if (state > MAX_STATES) state = 0;
-        this.entityData.set(COMMANDED_STATE, state);
-
-    }
-
-    @Override
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData(builder);
-        builder.define(COMMANDED_STATE,0);
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
-        compound.putInt("commandState",getCommandedState());
-        super.readAdditionalSaveData(compound);
-    }
-
-    @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        setCommandedState(compound.getInt("commandState"));
-        super.addAdditionalSaveData(compound);
-    }
 }

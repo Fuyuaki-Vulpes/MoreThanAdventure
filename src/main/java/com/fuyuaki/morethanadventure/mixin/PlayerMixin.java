@@ -1,6 +1,9 @@
 package com.fuyuaki.morethanadventure.mixin;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
+import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
 import com.fuyuaki.morethanadventure.world.item.weaponry.WeaponItem;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -29,6 +32,17 @@ public abstract class PlayerMixin extends LivingEntity{
 
         if (itemstack1.getItem() instanceof WeaponItem) {
             cir.cancel();
+        }
+    }
+
+
+
+    @Inject(method = "tick",at = @At(value = "HEAD"))
+    protected void tick(CallbackInfo ci){
+        if (thisPlayer.level().getDayTime() % 24000L == 1000 && !this.level().isClientSide()) {
+            RespawnablePetsAttachment attachment = thisPlayer.getData(MTAAttachments.PETS_TO_RESPAWN.get());
+            attachment.respawnPets(this.level(),thisPlayer);
+            this.setData(MTAAttachments.PETS_TO_RESPAWN, attachment);
         }
     }
 

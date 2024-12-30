@@ -858,6 +858,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add("mta.drink.tooltip", "Mix of:");
+        add("respawn.mta.pet", "%1$s respawned at %2$s");
 
         add(MtaTags.Items.THROWABLE, "Throwable Item");
         add(MtaTags.Items.TWO_HANDED, "Two-Handed");

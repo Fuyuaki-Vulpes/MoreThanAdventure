@@ -611,6 +611,7 @@
   "mta.talisman.description.sleeping_kit": "Press \"Use Talisman\" key to sleep",
   "mta.talisman.description.strider_boots": "Boots made of Strider skin that allow you to walk on Lava",
   "mta.talisman.description.weighted_dice": "MTA and Vanilla enchantments and effects that have luck based aspects will have more favorable odds",
+  "respawn.mta.pet": "%1$s respawned at %2$s",
   "sound.morethanadventure.armored_skeleton_ambient": "Armored Skeleton Rattles",
   "sound.morethanadventure.armored_skeleton_death": "Armored Skeleton Dies",
   "sound.morethanadventure.armored_skeleton_hurt": "Armored Skeleton Hurts",

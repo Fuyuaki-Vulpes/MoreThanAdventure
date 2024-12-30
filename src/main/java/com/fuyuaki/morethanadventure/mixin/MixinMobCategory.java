@@ -14,7 +14,7 @@ public class MixinMobCategory {
     private final MobCategory moreThanAdventure$category = (MobCategory)(Object)this;
 
     @Inject(method = "getMaxInstancesPerChunk", at = @At("RETURN"), cancellable = true)
-    public void getMinDelay(CallbackInfoReturnable<Integer> cir) {
+    public void getMaxInstancesPerChunk(CallbackInfoReturnable<Integer> cir) {
         if (moreThanAdventure$category == MobCategory.CREATURE) {
             cir.setReturnValue(30);
         }
