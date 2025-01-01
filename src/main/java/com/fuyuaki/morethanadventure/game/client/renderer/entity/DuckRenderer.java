@@ -48,6 +48,12 @@ public class DuckRenderer extends MobRenderer<Duck, DuckRenderState, DuckModel<D
 
     @Override
     public ResourceLocation getTextureLocation(DuckRenderState renderState) {
-        return LOCATION_BY_VARIANT.get(renderState);
+        return LOCATION_BY_VARIANT.get(renderState.variant);
+    }
+
+    @Override
+    public void extractRenderState(Duck duck, DuckRenderState state, float v) {
+        state.variant = duck.getVariant();
+        super.extractRenderState(duck, state, v);
     }
 }

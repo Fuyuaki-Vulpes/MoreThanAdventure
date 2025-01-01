@@ -1,6 +1,5 @@
 {
   "parent": "morethanadventure:block/flowerbed_4",
-  "render_type": "cutout",
 
   "textures": {
     "flowerbed": "morethanadventure:block/scattered_leaves",

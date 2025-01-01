@@ -1,4 +1,5 @@
 {   "parent": "block/block",
+  "render_type": "cutout",
   "textures": {
     "particle": "block/spruce_leaves",
     "all": "block/spruce_leaves"

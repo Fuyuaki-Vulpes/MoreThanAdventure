@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"textures": {
 		"particle": "morethanadventure:block/turret_sensor_bottom",
 		"top": "morethanadventure:block/turret_sensor_top",
