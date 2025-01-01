@@ -2,9 +2,9 @@ package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MTAArmorMats;
 import com.fuyuaki.morethanadventure.world.item.*;
-import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
-import com.fuyuaki.morethanadventure.world.item.curio.talisman.SirenTalisman;
-import com.fuyuaki.morethanadventure.world.item.curio.talisman.TalismanItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.AttributeModifierTalismanItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.ScubaGearTalisman;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.TalismanItem;
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
@@ -39,15 +39,15 @@ public class MtaItems {
 
     //TALISMANS
 
-    public static final DeferredItem<AttributeModifierTalismanItem> SIREN_TALISMAN = ITEMS.registerItem("siren_talisman", SirenTalisman::new);
+    public static final DeferredItem<Item> SCUBA_GEAR = ITEMS.registerItem("scuba_gear", ScubaGearTalisman::new);
 
-    public static final DeferredItem<TalismanItem> WEIGHTED_DICE = ITEMS.registerItem("weighted_dice", TalismanItem::new);
-    public static final DeferredItem<TalismanItem> CAT_MASK = ITEMS.registerItem("cat_mask", TalismanItem::new);
-    public static final DeferredItem<TalismanItem> CLIMBING_CLAWS = ITEMS.registerItem("climbing_claws", TalismanItem::new);
-    public static final DeferredItem<TalismanItem> PISTON_BOOTS = ITEMS.registerItem("piston_boots", TalismanItem::new);
-    public static final DeferredItem<TalismanItem> REGENERATIVE_TALISMAN = ITEMS.registerItem("regenerative_talisman", TalismanItem::new);
-    public static final DeferredItem<TalismanItem> SLEEPING_KIT = ITEMS.registerItem("sleeping_kit", TalismanItem::new);
-    public static final DeferredItem<TalismanItem> STRIDER_BOOTS = ITEMS.registerItem("strider_boots", TalismanItem::new);
+    public static final DeferredItem<Item> WEIGHTED_DICE = ITEMS.registerItem("weighted_dice", TalismanItem::new);
+    public static final DeferredItem<Item> CAT_MASK = ITEMS.registerItem("cat_mask", TalismanItem::new);
+    public static final DeferredItem<Item> CLIMBING_CLAWS = ITEMS.registerItem("climbing_claws", TalismanItem::new);
+    public static final DeferredItem<Item> PISTON_BOOTS = ITEMS.registerItem("piston_boots", TalismanItem::new);
+    public static final DeferredItem<Item> REGENERATIVE_TALISMAN = ITEMS.registerItem("regenerative_talisman", TalismanItem::new);
+    public static final DeferredItem<Item> SLEEPING_KIT = ITEMS.registerItem("sleeping_kit", TalismanItem::new);
+    public static final DeferredItem<Item> STRIDER_BOOTS = ITEMS.registerItem("strider_boots", TalismanItem::new);
 
 
     //TOTEMS

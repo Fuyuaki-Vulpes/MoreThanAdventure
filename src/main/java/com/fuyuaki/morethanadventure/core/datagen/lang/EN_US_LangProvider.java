@@ -375,6 +375,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
 
 
+        add(MtaItems.SCUBA_GEAR.get(),"Weighted Dice");
         add(MtaItems.WEIGHTED_DICE.get(),"Weighted Dice");
         add(MtaItems.CAT_MASK.get(),"Cat Mask");
         add(MtaItems.CLIMBING_CLAWS.get(),"Climbing Claws");

@@ -18,6 +18,18 @@ public class MixinMobCategory {
         if (moreThanAdventure$category == MobCategory.CREATURE) {
             cir.setReturnValue(30);
         }
+        if (moreThanAdventure$category == MobCategory.AMBIENT) {
+            cir.setReturnValue(20);
+        }
+        if (moreThanAdventure$category == MobCategory.WATER_CREATURE) {
+            cir.setReturnValue(15);
+        }
+        if (moreThanAdventure$category == MobCategory.WATER_AMBIENT) {
+            cir.setReturnValue(20);
+        }
+        if (moreThanAdventure$category == MobCategory.UNDERGROUND_WATER_CREATURE) {
+            cir.setReturnValue(9);
+        }
     }
 
 

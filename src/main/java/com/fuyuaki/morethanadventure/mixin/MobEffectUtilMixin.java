@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.AttributeModifierTalismanItem;
 import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;

@@ -52,6 +52,7 @@ public class MtaBiomeModifiers {
 
 
     public static final ResourceKey<BiomeModifier> SPAWNS_BEARDED_DRAGON = registerKey("add_spawns_bearded_dragon");
+    public static final ResourceKey<BiomeModifier> SPAWNS_BUTTERFLY = registerKey("add_spawns_butterfly");
     public static final ResourceKey<BiomeModifier> SPAWNS_CAPYBARA = registerKey("add_spawns_capybara");
     public static final ResourceKey<BiomeModifier> SPAWNS_DUCK = registerKey("add_spawns_duck");
     public static final ResourceKey<BiomeModifier> SPAWNS_FERRET = registerKey("add_spawns_ferret");
@@ -70,6 +71,8 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_ICICLE_CREEPER = registerKey("add_spawns_icicle_creeper");
     public static final ResourceKey<BiomeModifier> SPAWNS_ARMORED_SKELETON = registerKey("add_spawns_armored_skeleton");
     public static final ResourceKey<BiomeModifier> SPAWNS_BLACK_WIDOW = registerKey("add_spawns_black_widow");
+    public static final ResourceKey<BiomeModifier> SPAWNS_FALLEN_SAMURAI = registerKey("add_spawns_fallen_samurai");
+    public static final ResourceKey<BiomeModifier> SPAWNS_YUKI_ONNA = registerKey("add_spawns_yuki_onna");
     public static final ResourceKey<BiomeModifier> SPAWNS_CHARRED_SKELETON = registerKey("add_spawns_charred_skeleton");
     public static final ResourceKey<BiomeModifier> SPAWNS_CORROSIVE_CUBE = registerKey("add_spawns_corrosive_cube");
     public static final ResourceKey<BiomeModifier> SPAWNS_FROSTED_SLIME = registerKey("add_spawns_frosted_slime");
@@ -252,6 +255,10 @@ public class MtaBiomeModifiers {
                 biomes.getOrThrow(MtaTags.Biomes.HAS_BEARDED_DRAGON),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.BEARDED_DRAGON.get(),10,1,2))
         ));
+        context.register(SPAWNS_BUTTERFLY,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_BUTTERFLY),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.BUTTERFLY.get(),8,2,9))
+        ));
         context.register(SPAWNS_CAPYBARA,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_CAPYBARA),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.CAPIBARA.get(),10,1,7))
@@ -324,6 +331,15 @@ public class MtaBiomeModifiers {
         context.register(SPAWNS_BLACK_WIDOW,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_BLACK_WIDOW),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.BLACK_WIDOW.get(),18,1,1))
+        ));
+
+        context.register(SPAWNS_FALLEN_SAMURAI,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.FALLEN_SAMURAI.get(),30,1,4))
+        ));
+        context.register(SPAWNS_YUKI_ONNA,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_YUKI_ONNA),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.YUKI_ONNA.get(),20,1,2))
         ));
 
         context.register(SPAWNS_CHARRED_SKELETON,new BiomeModifiers.AddSpawnsBiomeModifier(

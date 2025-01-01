@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.mixin;
 
-import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.AttributeModifierTalismanItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.world.entity.player.Player;

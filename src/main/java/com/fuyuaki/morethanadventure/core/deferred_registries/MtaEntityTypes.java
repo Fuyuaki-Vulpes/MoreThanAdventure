@@ -99,7 +99,7 @@ public class MtaEntityTypes {
 
 
     public static final DeferredHolder<EntityType<?>,EntityType<Butterfly>> BUTTERFLY = ENTITY.register("butterfly",
-            () -> EntityType.Builder.<Butterfly>of(Butterfly::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.<Butterfly>of(Butterfly::new, MobCategory.AMBIENT)
                     .sized(0.3f,0.3F)
                     .build(entityKey("butterfly")));
 

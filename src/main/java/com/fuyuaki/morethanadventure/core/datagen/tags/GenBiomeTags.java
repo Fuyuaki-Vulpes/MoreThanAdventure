@@ -85,6 +85,11 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         this.tag(MtaTags.Biomes.HAS_BEARDED_DRAGON)
                 .addTag(Tags.Biomes.IS_SAVANNA)
                 .addTag(Tags.Biomes.IS_DESERT);
+        this.tag(MtaTags.Biomes.HAS_BUTTERFLY)
+                .addTag(Tags.Biomes.IS_PLAINS)
+                .addTag(BiomeTags.IS_FOREST);
+
+
         this.tag(MtaTags.Biomes.HAS_CAPYBARA)
                 .add(MtaBiomes.LUSH_RIVER)
                 .addTag(Tags.Biomes.IS_SWAMP)
@@ -144,6 +149,10 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         this.tag(MtaTags.Biomes.HAS_BLACK_WIDOW)
                 .addTag(Tags.Biomes.IS_JUNGLE)
                 .addTag(Tags.Biomes.IS_SWAMP)
+        ;
+
+        this.tag(MtaTags.Biomes.HAS_YUKI_ONNA)
+                .addTag(Tags.Biomes.IS_COLD_OVERWORLD)
         ;
 
         this.tag(MtaTags.Biomes.HAS_CHARRED_SKELETON)

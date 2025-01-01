@@ -66,6 +66,7 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.TEA);
 
 
+        simpleItem(MtaItems.SCUBA_GEAR);
         simpleItem(MtaItems.WEIGHTED_DICE);
         simpleItem(MtaItems.CAT_MASK);
         simpleItem(MtaItems.CLIMBING_CLAWS);

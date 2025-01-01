@@ -165,6 +165,7 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_STRIPED_WOLF = tag("has_striped_wolf");
 
         public static final TagKey<Biome> HAS_BEARDED_DRAGON = tag("has_bearded_dragon");
+        public static final TagKey<Biome> HAS_BUTTERFLY = tag("has_butterfly");
         public static final TagKey<Biome> HAS_CAPYBARA = tag("has_capybara");
         public static final TagKey<Biome> HAS_DUCK = tag("has_duck");
         public static final TagKey<Biome> HAS_FERRET = tag("has_ferret");
@@ -182,6 +183,7 @@ public class MtaTags {
 
 
         public static final TagKey<Biome> HAS_BLACK_WIDOW = tag("has_black_widow");
+        public static final TagKey<Biome> HAS_YUKI_ONNA = tag("has_yuki_onna");
         public static final TagKey<Biome> HAS_CHARRED_SKELETON = tag("has_charred_skeleton");
         public static final TagKey<Biome> HAS_GLOW_SPIDER = tag("has_glow_spider");
         public static final TagKey<Biome> HAS_HOST = tag("has_host");

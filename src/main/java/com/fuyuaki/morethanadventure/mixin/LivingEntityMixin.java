@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 
-import com.fuyuaki.morethanadventure.world.item.curio.talisman.AttributeModifierTalismanItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.AttributeModifierTalismanItem;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
