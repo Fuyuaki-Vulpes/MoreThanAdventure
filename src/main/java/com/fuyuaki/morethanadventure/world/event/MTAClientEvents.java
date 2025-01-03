@@ -28,8 +28,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.*;
 
-import java.util.Map;
-
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 
@@ -49,44 +47,50 @@ public class MTAClientEvents
 
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(MtaBlockEntities.SPRINKLER.get(), SprinklerRenderer::new);
 
-        event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamuraiRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.ICICLE_CREEPER.get(), IcicleCreeperRenderer::new);
+        //MOBS
+
+        event.registerEntityRenderer(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragonRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.CAPIBARA.get(), CapybaraRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.DUCK.get(), DuckRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.FERRET.get(), FerretRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.OCTOPUS.get(), OctopusRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.OWL.get(), OwlRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.PENGUIN.get(), PenguinRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.RACCOON.get(), RaccoonRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.TOUCAN.get(), ToucanRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.WISPFLY.get(), WispflyRenderer::new);
+
+        event.registerEntityRenderer(MtaEntityTypes.BUTTERFLY.get(), ButterflyRender::new);
+        event.registerEntityRenderer(MtaEntityTypes.DEER.get(), DeerRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.JELLYFISH.get(), JellyfishRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.SHRIMP.get(), ShrimpRenderer::new);
+
+        event.registerEntityRenderer(MtaEntityTypes.GREAT_WHITE_SHARK.get(), GreatWhiteSharkRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.TURKEY.get(), TurkeyRenderer::new);
+
         event.registerEntityRenderer(MtaEntityTypes.ARMORED_SKELETON.get(), ArmoredSkeletonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.BLACK_WIDOW.get(), BlackWidowRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CHARRED_SKELETON.get(), CharredSkeletonRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.CORROSIVE_CUBE.get(), CorrosiveCubeRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.FALLEN_SAMURAI.get(), FallenSamuraiRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.FROSTED_SLIME.get(), FrostedSlimeRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.GLOW_SPIDER.get(), GlowSpiderRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.HOST.get(), HostRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.ICICLE_CREEPER.get(), IcicleCreeperRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.MOSSY_ZOMBIE.get(), MossyZombieRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.SIREN.get(), SirenRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighterRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombieRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMinerRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.SIREN.get(), SirenRenderer::new);
 
-
-        event.registerEntityRenderer(MtaEntityTypes.BUTTERFLY.get(), ButterflyRender::new);
-        event.registerEntityRenderer(MtaEntityTypes.BEARDED_DRAGON.get(), BeardedDragonRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.CAPIBARA.get(), CapybaraRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.DUCK.get(), DuckRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.DEER.get(), DeerRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.FERRET.get(), FerretRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.GREAT_WHITE_SHARK.get(), GreatWhiteSharkRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.JELLYFISH.get(), JellyfishRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.OCTOPUS.get(), OctopusRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.OWL.get(), OwlRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.WISPFLY.get(), WispflyRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.PENGUIN.get(), PenguinRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.RACCOON.get(), RaccoonRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.SHRIMP.get(), ShrimpRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.TOUCAN.get(), ToucanRenderer::new);
-        event.registerEntityRenderer(MtaEntityTypes.TURKEY.get(), TurkeyRenderer::new);
 
         //ITEM & BLOCK
+
+        event.registerBlockEntityRenderer(MtaBlockEntities.SPRINKLER.get(), SprinklerRenderer::new);
+
         event.registerEntityRenderer(MtaEntityTypes.NETHERITE_TRIDENT.get(), ThrownNetheriteTridentRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.MYSTIC_MERMAIDS_TRIDENT.get(), ThrownMysticMermaidsTridentRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.MTA_ARROW.get(), MTAArrowRenderer::new);

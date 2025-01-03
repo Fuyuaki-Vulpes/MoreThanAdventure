@@ -97,11 +97,6 @@ public class MtaEntityTypes {
                     .sized(0.4f,0.35F)
                     .build(entityKey("shrimp")));
 
-    public static final DeferredHolder<EntityType<?>,EntityType<Turkey>> TURKEY = ENTITY.register("turkey",
-            () -> EntityType.Builder.<Turkey>of(Turkey::new, MobCategory.CREATURE)
-                    .sized(1.1f,1.35f).eyeHeight(1.25F)
-                    .build(entityKey("turkey")));
-
 
 //Neutral
 
@@ -111,8 +106,13 @@ public class MtaEntityTypes {
                     .sized(3.5f,1.3F)
                     .build(entityKey("great_white_shark")));
 
-    
-//Aggressive
+    public static final DeferredHolder<EntityType<?>,EntityType<Turkey>> TURKEY = ENTITY.register("turkey",
+            () -> EntityType.Builder.<Turkey>of(Turkey::new, MobCategory.CREATURE)
+                    .sized(1.1f,1.35f).eyeHeight(1.25F)
+                    .build(entityKey("turkey")));
+
+
+//Hostile
 
 
     public static final DeferredHolder<EntityType<?>,EntityType<FallenSamurai>> FALLEN_SAMURAI = ENTITY.register("fallen_samurai",

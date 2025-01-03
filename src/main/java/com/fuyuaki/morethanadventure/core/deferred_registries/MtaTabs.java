@@ -667,21 +667,29 @@ public class MtaTabs {
 
                 //SPAWNS
 
-                output.accept(MtaItems.BUTTERFLY_SPAWN_EGG);
+                //TAMABLE
+
                 output.accept(MtaItems.BEARDED_DRAGON_SPAWN_EGG);
                 output.accept(MtaItems.CAPYBARA_SPAWN_EGG);
-                output.accept(MtaItems.DEER_SPAWN_EGG);
                 output.accept(MtaItems.DUCK_SPAWN_EGG);
                 output.accept(MtaItems.FERRET_SPAWN_EGG);
-                output.accept(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
                 output.accept(MtaItems.HORSESHOE_CRAB_SPAWN_EGG);
-                output.accept(MtaItems.JELLYFISH_SPAWN_EGG);
                 output.accept(MtaItems.OCTOPUS_SPAWN_EGG);
                 output.accept(MtaItems.OWL_SPAWN_EGG);
                 output.accept(MtaItems.PENGUIN_SPAWN_EGG);
                 output.accept(MtaItems.RACCOON_SPAWN_EGG);
-                output.accept(MtaItems.SHRIMP_SPAWN_EGG);
                 output.accept(MtaItems.TOUCAN_SPAWN_EGG);
+
+                //PASSIVE
+
+                output.accept(MtaItems.BUTTERFLY_SPAWN_EGG);
+                output.accept(MtaItems.DEER_SPAWN_EGG);
+                output.accept(MtaItems.JELLYFISH_SPAWN_EGG);
+                output.accept(MtaItems.SHRIMP_SPAWN_EGG);
+
+                //NEUTRAL
+
+                output.accept(MtaItems.GREAT_WHITE_SHARK_SPAWN_EGG);
                 output.accept(MtaItems.TURKEY_SPAWN_EGG);
 
                 //HOSTILE

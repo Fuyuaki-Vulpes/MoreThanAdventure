@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MTAArmorMats;
 import com.fuyuaki.morethanadventure.world.item.*;
-import com.fuyuaki.morethanadventure.world.item.accessories.talisman.AttributeModifierTalismanItem;
 import com.fuyuaki.morethanadventure.world.item.accessories.talisman.ScubaGearTalisman;
 import com.fuyuaki.morethanadventure.world.item.accessories.talisman.TalismanItem;
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
@@ -794,21 +793,10 @@ public class MtaItems {
 
 
     // SPAWN EGGS
-    public static final DeferredItem<Item> YUKI_ONNA_SPAWN_EGG =  ITEMS.registerItem("yuki_onna_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.YUKI_ONNA.get(), properties
-            ));
 
-    public static final DeferredItem<Item> FALLEN_SAMURAI_SPAWN_EGG =  ITEMS.registerItem("fallen_samurai_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.FALLEN_SAMURAI.get(), properties
-            ));
 
-    public static final DeferredItem<Item> ICICLE_CREEPER_SPAWN_EGG =  ITEMS.registerItem("icicle_creeper_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.ICICLE_CREEPER.get(), properties
-            ));
+    //TAMABLE
 
-    public static final DeferredItem<Item> BUTTERFLY_SPAWN_EGG =  ITEMS.registerItem("butterfly_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.BUTTERFLY.get(), properties
-            ));
 
     public static final DeferredItem<Item> BEARDED_DRAGON_SPAWN_EGG =  ITEMS.registerItem("bearded_dragon_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.BEARDED_DRAGON.get(), properties
@@ -816,10 +804,6 @@ public class MtaItems {
 
     public static final DeferredItem<Item> CAPYBARA_SPAWN_EGG =  ITEMS.registerItem("capybara_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.CAPIBARA.get(), properties
-            ));
-
-    public static final DeferredItem<Item> DEER_SPAWN_EGG =  ITEMS.registerItem("deer_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.DEER.get(), properties
             ));
 
     public static final DeferredItem<Item> DUCK_SPAWN_EGG =  ITEMS.registerItem("duck_spawn_egg",
@@ -830,16 +814,8 @@ public class MtaItems {
             properties -> new SpawnEggItem(MtaEntityTypes.FERRET.get(), properties
             ));
 
-    public static final DeferredItem<Item> GREAT_WHITE_SHARK_SPAWN_EGG =  ITEMS.registerItem("great_white_shark_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.GREAT_WHITE_SHARK.get(), properties
-            ));
-
     public static final DeferredItem<Item> HORSESHOE_CRAB_SPAWN_EGG =  ITEMS.registerItem("horseshoe_crab_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.HORSESHOE_CRAB.get(), properties
-            ));
-
-    public static final DeferredItem<Item> JELLYFISH_SPAWN_EGG =  ITEMS.registerItem("jellyfish_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.JELLYFISH.get(), properties
             ));
 
     public static final DeferredItem<Item> OCTOPUS_SPAWN_EGG =  ITEMS.registerItem("octopus_spawn_egg",
@@ -858,17 +834,71 @@ public class MtaItems {
             properties -> new SpawnEggItem(MtaEntityTypes.RACCOON.get(), properties
             ));
 
+    public static final DeferredItem<Item> TOUCAN_SPAWN_EGG =  ITEMS.registerItem("toucan_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.TOUCAN.get(), properties
+            ));
+
+    public static final DeferredItem<Item> WISPFLY_SPAWN_EGG =  ITEMS.registerItem("wispfly_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.WISPFLY.get(), properties
+            ));
+
+
+    //PASSIVE
+
+
+    public static final DeferredItem<Item> BUTTERFLY_SPAWN_EGG =  ITEMS.registerItem("butterfly_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.BUTTERFLY.get(), properties
+            ));
+
+    public static final DeferredItem<Item> DEER_SPAWN_EGG =  ITEMS.registerItem("deer_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.DEER.get(), properties
+            ));
+
+    public static final DeferredItem<Item> JELLYFISH_SPAWN_EGG =  ITEMS.registerItem("jellyfish_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.JELLYFISH.get(), properties
+            ));
+
     public static final DeferredItem<Item> SHRIMP_SPAWN_EGG =  ITEMS.registerItem("shrimp_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.SHRIMP.get(), properties
             ));
 
-    public static final DeferredItem<Item> TOUCAN_SPAWN_EGG =  ITEMS.registerItem("toucan_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.TOUCAN.get(), properties
+    //NEUTRAL
+
+
+    public static final DeferredItem<Item> GREAT_WHITE_SHARK_SPAWN_EGG =  ITEMS.registerItem("great_white_shark_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.GREAT_WHITE_SHARK.get(), properties
             ));
 
     public static final DeferredItem<Item> TURKEY_SPAWN_EGG =  ITEMS.registerItem("turkey_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.TURKEY.get(), properties
             ));
+
+
+    //HOSTILE
+
+
+    public static final DeferredItem<Item> YUKI_ONNA_SPAWN_EGG =  ITEMS.registerItem("yuki_onna_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.YUKI_ONNA.get(), properties
+            ));
+
+    public static final DeferredItem<Item> FALLEN_SAMURAI_SPAWN_EGG =  ITEMS.registerItem("fallen_samurai_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.FALLEN_SAMURAI.get(), properties
+            ));
+
+    public static final DeferredItem<Item> ICICLE_CREEPER_SPAWN_EGG =  ITEMS.registerItem("icicle_creeper_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.ICICLE_CREEPER.get(), properties
+            ));
+
+
+
+
+
+
+
+
+
+
+
 
     public static final DeferredItem<Item> ARMORED_SKELETON_SPAWN_EGG =  ITEMS.registerItem("armored_skeleton_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.ARMORED_SKELETON.get(), properties
@@ -916,10 +946,6 @@ public class MtaItems {
 
     public static final DeferredItem<Item> SIREN_SPAWN_EGG =  ITEMS.registerItem("siren_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.SIREN.get(), properties
-            ));
-
-    public static final DeferredItem<Item> WISPFLY_SPAWN_EGG =  ITEMS.registerItem("wispfly_spawn_egg",
-            properties -> new SpawnEggItem(MtaEntityTypes.WISPFLY.get(), properties
             ));
 
     public static void register(IEventBus eventBus){
