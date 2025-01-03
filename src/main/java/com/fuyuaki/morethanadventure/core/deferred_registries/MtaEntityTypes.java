@@ -16,6 +16,104 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 public class MtaEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);
 
+// Tamable
+
+    public static final DeferredHolder<EntityType<?>,EntityType<BeardedDragon>> BEARDED_DRAGON = ENTITY.register("bearded_dragon",
+            () -> EntityType.Builder.<BeardedDragon>of(BeardedDragon::new, MobCategory.CREATURE)
+                    .sized(0.6f,0.30F)
+                    .build(entityKey("bearded_dragon")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Capybara>> CAPIBARA = ENTITY.register("capybara",
+            () -> EntityType.Builder.<Capybara>of(Capybara::new, MobCategory.CREATURE)
+                    .sized(0.8f,0.6F)
+                    .build(entityKey("capybara")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Duck>> DUCK = ENTITY.register("duck",
+            () -> EntityType.Builder.<Duck>of(Duck::new, MobCategory.CREATURE)
+                    .sized(0.5f,0.5F)
+                    .build(entityKey("duck")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Ferret>> FERRET = ENTITY.register("ferret",
+            () -> EntityType.Builder.<Ferret>of(Ferret::new, MobCategory.CREATURE)
+                    .sized(0.8f,0.33F)
+                    .build(entityKey("ferret")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<HorseshoeCrab>> HORSESHOE_CRAB = ENTITY.register("horseshoe_crab",
+            () -> EntityType.Builder.<HorseshoeCrab>of(HorseshoeCrab::new, MobCategory.WATER_CREATURE)
+                    .sized(0.7f,0.25F)
+                    .build(entityKey("horseshoe_crab")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Octopus>> OCTOPUS = ENTITY.register("octopus",
+            () -> EntityType.Builder.<Octopus>of(Octopus::new, MobCategory.WATER_CREATURE)
+                    .sized(1.5f,0.6F)
+                    .build(entityKey("octopus")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Owl>> OWL = ENTITY.register("owl",
+            () -> EntityType.Builder.<Owl>of(Owl::new, MobCategory.CREATURE)
+                    .sized(0.7f,0.7F)
+                    .build(entityKey("owl")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Penguin>> PENGUIN = ENTITY.register("penguin",
+            () -> EntityType.Builder.<Penguin>of(Penguin::new, MobCategory.CREATURE)
+                    .sized(0.55f,0.95F)
+                    .build(entityKey("penguin")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Raccoon>> RACCOON = ENTITY.register("raccoon",
+            () -> EntityType.Builder.<Raccoon>of(Raccoon::new, MobCategory.CREATURE)
+                    .sized(0.9f,0.62F)
+                    .build(entityKey("raccoon")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Toucan>> TOUCAN = ENTITY.register("toucan",
+            () -> EntityType.Builder.<Toucan>of(Toucan::new, MobCategory.CREATURE)
+                    .sized(0.45f,0.45f)
+                    .build(entityKey("toucan")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Wispfly>> WISPFLY = ENTITY.register("wispfly",
+            () -> EntityType.Builder.<Wispfly>of(Wispfly::new, MobCategory.CREATURE)
+                    .sized(0.4f,0.4F)
+                    .build(entityKey("wispfly")));
+
+
+// Passive
+
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Butterfly>> BUTTERFLY = ENTITY.register("butterfly",
+            () -> EntityType.Builder.<Butterfly>of(Butterfly::new, MobCategory.AMBIENT)
+                    .sized(0.3f,0.3F)
+                    .build(entityKey("butterfly")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Deer>> DEER = ENTITY.register("deer",
+            () -> EntityType.Builder.<Deer>of(Deer::new, MobCategory.CREATURE)
+                    .sized(0.9F, 1.6F).eyeHeight(1.35F)
+                    .build(entityKey("deer")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Jellyfish>> JELLYFISH = ENTITY.register("jellyfish",
+            () -> EntityType.Builder.<Jellyfish>of(Jellyfish::new, MobCategory.WATER_CREATURE)
+                    .sized(0.8f,0.5F)
+                    .build(entityKey("jellyfish")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Shrimp>> SHRIMP = ENTITY.register("shirmp",
+            () -> EntityType.Builder.<Shrimp>of(Shrimp::new, MobCategory.WATER_CREATURE)
+                    .sized(0.4f,0.35F)
+                    .build(entityKey("shrimp")));
+
+    public static final DeferredHolder<EntityType<?>,EntityType<Turkey>> TURKEY = ENTITY.register("turkey",
+            () -> EntityType.Builder.<Turkey>of(Turkey::new, MobCategory.CREATURE)
+                    .sized(1.1f,1.35f).eyeHeight(1.25F)
+                    .build(entityKey("turkey")));
+
+
+//Neutral
+
+
+    public static final DeferredHolder<EntityType<?>,EntityType<GreatWhiteShark>> GREAT_WHITE_SHARK = ENTITY.register("great_white_shark",
+            () -> EntityType.Builder.<GreatWhiteShark>of(GreatWhiteShark::new, MobCategory.WATER_CREATURE)
+                    .sized(3.5f,1.3F)
+                    .build(entityKey("great_white_shark")));
+
+    
+//Aggressive
+
 
     public static final DeferredHolder<EntityType<?>,EntityType<FallenSamurai>> FALLEN_SAMURAI = ENTITY.register("fallen_samurai",
             () -> EntityType.Builder.<FallenSamurai>of(FallenSamurai::new, MobCategory.MONSTER)
@@ -94,101 +192,7 @@ public class MtaEntityTypes {
                     .sized(0.85F, 2.0F)
                     .build(entityKey("siren")));
 
-
-
-
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Butterfly>> BUTTERFLY = ENTITY.register("butterfly",
-            () -> EntityType.Builder.<Butterfly>of(Butterfly::new, MobCategory.AMBIENT)
-                    .sized(0.3f,0.3F)
-                    .build(entityKey("butterfly")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<BeardedDragon>> BEARDED_DRAGON = ENTITY.register("bearded_dragon",
-            () -> EntityType.Builder.<BeardedDragon>of(BeardedDragon::new, MobCategory.CREATURE)
-                    .sized(0.6f,0.30F)
-                    .build(entityKey("bearded_dragon")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Capybara>> CAPIBARA = ENTITY.register("capybara",
-            () -> EntityType.Builder.<Capybara>of(Capybara::new, MobCategory.CREATURE)
-                    .sized(0.8f,0.6F)
-                    .build(entityKey("capybara")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Deer>> DEER = ENTITY.register("deer",
-            () -> EntityType.Builder.<Deer>of(Deer::new, MobCategory.CREATURE)
-                    .sized(0.9F, 1.6F).eyeHeight(1.35F)
-                    .build(entityKey("deer")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Duck>> DUCK = ENTITY.register("duck",
-            () -> EntityType.Builder.<Duck>of(Duck::new, MobCategory.CREATURE)
-                    .sized(0.5f,0.5F)
-                    .build(entityKey("duck")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Ferret>> FERRET = ENTITY.register("ferret",
-            () -> EntityType.Builder.<Ferret>of(Ferret::new, MobCategory.CREATURE)
-                    .sized(0.8f,0.33F)
-                    .build(entityKey("ferret")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<HorseshoeCrab>> HORSESHOE_CRAB = ENTITY.register("horseshoe_crab",
-            () -> EntityType.Builder.<HorseshoeCrab>of(HorseshoeCrab::new, MobCategory.WATER_CREATURE)
-                    .sized(0.7f,0.25F)
-                    .build(entityKey("horseshoe_crab")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Jellyfish>> JELLYFISH = ENTITY.register("jellyfish",
-            () -> EntityType.Builder.<Jellyfish>of(Jellyfish::new, MobCategory.WATER_CREATURE)
-                    .sized(0.8f,0.5F)
-                    .build(entityKey("jellyfish")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Octopus>> OCTOPUS = ENTITY.register("octopus",
-            () -> EntityType.Builder.<Octopus>of(Octopus::new, MobCategory.WATER_CREATURE)
-                    .sized(1.5f,0.6F)
-                    .build(entityKey("octopus")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Owl>> OWL = ENTITY.register("owl",
-            () -> EntityType.Builder.<Owl>of(Owl::new, MobCategory.CREATURE)
-                    .sized(0.7f,0.7F)
-                    .build(entityKey("owl")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Penguin>> PENGUIN = ENTITY.register("penguin",
-            () -> EntityType.Builder.<Penguin>of(Penguin::new, MobCategory.CREATURE)
-                    .sized(0.55f,0.95F)
-                    .build(entityKey("penguin")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<GreatWhiteShark>> GREAT_WHITE_SHARK = ENTITY.register("great_white_shark",
-            () -> EntityType.Builder.<GreatWhiteShark>of(GreatWhiteShark::new, MobCategory.WATER_CREATURE)
-                    .sized(3.5f,1.3F)
-                    .build(entityKey("great_white_shark")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Shrimp>> SHRIMP = ENTITY.register("shirmp",
-            () -> EntityType.Builder.<Shrimp>of(Shrimp::new, MobCategory.WATER_CREATURE)
-                    .sized(0.4f,0.35F)
-                    .build(entityKey("shrimp")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Toucan>> TOUCAN = ENTITY.register("toucan",
-            () -> EntityType.Builder.<Toucan>of(Toucan::new, MobCategory.CREATURE)
-                    .sized(0.45f,0.45f)
-                    .build(entityKey("toucan")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Turkey>> TURKEY = ENTITY.register("turkey",
-            () -> EntityType.Builder.<Turkey>of(Turkey::new, MobCategory.CREATURE)
-                    .sized(1.1f,1.35f).eyeHeight(1.25F)
-                    .build(entityKey("turkey")));
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Raccoon>> RACCOON = ENTITY.register("raccoon",
-            () -> EntityType.Builder.<Raccoon>of(Raccoon::new, MobCategory.CREATURE)
-                    .sized(0.9f,0.62F)
-                    .build(entityKey("raccoon")));
-
-
-
-
-    public static final DeferredHolder<EntityType<?>,EntityType<Wispfly>> WISPFLY = ENTITY.register("wispfly",
-            () -> EntityType.Builder.<Wispfly>of(Wispfly::new, MobCategory.CREATURE)
-                    .sized(0.4f,0.4F)
-                    .build(entityKey("wispfly")));
-
-
-
-
+//Objects
 
 
 
