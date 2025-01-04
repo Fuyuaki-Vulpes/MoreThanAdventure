@@ -156,7 +156,8 @@ public class MTAModEvents {
                 MTAPlacementTypes.GROUND_OR_AIR,
                 Heightmap.Types.MOTION_BLOCKING,
                 MTASpawnRules::checkBirdSpawnRules,
-                RegisterSpawnPlacementsEvent.Operation.OR);event.register(MtaEntityTypes.DEER.get(),
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.DEER.get(),
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MTASpawnRules::checkLandSwimmerSpawnRules,
