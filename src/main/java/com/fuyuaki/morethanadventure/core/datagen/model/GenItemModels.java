@@ -1,12 +1,15 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.renderer.item.SpecialModelWrapper;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -16,6 +19,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.LinkedHashMap;
 import java.util.function.BiConsumer;
+
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenItemModels extends ItemModelGenerators {
 
@@ -46,6 +51,7 @@ public class GenItemModels extends ItemModelGenerators {
 
     @Override
     public void run() {
+
 
         simpleItem(MtaItems.BIG_BOWL);
 

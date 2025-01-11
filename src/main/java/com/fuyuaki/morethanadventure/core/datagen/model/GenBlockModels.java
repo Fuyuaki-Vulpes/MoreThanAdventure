@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
+
 public class GenBlockModels extends BlockModelGenerators {
 
     final Consumer<BlockStateGenerator> blockStateOutput;
@@ -208,8 +210,8 @@ public class GenBlockModels extends BlockModelGenerators {
     public void createSprinkler(Block block, Block particleBlock){
         this.createParticleOnlyBlock(block, particleBlock);
         Item item = block.asItem();
-        ResourceLocation resourcelocation = MTAModelTemplates.SPRINKLER_INVENTORY.create(item, TextureMapping.particle(particleBlock), this.modelOutput);
-        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.specialModel(resourcelocation, new SprinklerSpecialRenderer.Unbaked());
+        ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(MODID,"item/sprinkler");
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.specialModel(resourcelocation, new SprinklerSpecialRenderer.Unbaked(false));
 
             this.itemModelOutput.accept(item, itemmodel$unbaked);
 

@@ -39,6 +39,10 @@ public class RespawnablePetsAttachment implements INBTSerializable<CompoundTag> 
     public RespawnablePetsAttachment() {
     }
 
+    public RespawnablePetsAttachment(List<Pets> petsList) {
+        this.pets  = petsList;
+    }
+
     public void add(Entity pet){
         this.pets.add(Pets.of(pet));
     }
