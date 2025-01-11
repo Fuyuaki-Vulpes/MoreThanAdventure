@@ -210,7 +210,7 @@ public class GenBlockModels extends BlockModelGenerators {
     public void createSprinkler(Block block, Block particleBlock){
         this.createParticleOnlyBlock(block, particleBlock);
         Item item = block.asItem();
-        ResourceLocation resourcelocation = ResourceLocation.fromNamespaceAndPath(MODID,"item/sprinkler");
+        ResourceLocation resourcelocation = MTAModelTemplates.SPRINKLER_INVENTORY.create(item, TextureMapping.particle(particleBlock), this.modelOutput);
         ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.specialModel(resourcelocation, new SprinklerSpecialRenderer.Unbaked(false));
 
             this.itemModelOutput.accept(item, itemmodel$unbaked);

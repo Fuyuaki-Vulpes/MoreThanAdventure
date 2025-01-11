@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#c:is_overworld",
+  "spawners": {
+    "type": "morethanadventure:fallen_samurai",
+    "maxCount": 4,
+    "minCount": 1,
+    "weight": 30
+  }
+}

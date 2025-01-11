@@ -154,7 +154,6 @@ tasks.withType(ProcessResources).configureEach {
 
     ]
     inputs.properties replaceProperties
-    expand replaceProperties
     filesMatching(['META-INF/neoforge.mods.toml']) {
         expand replaceProperties
     }

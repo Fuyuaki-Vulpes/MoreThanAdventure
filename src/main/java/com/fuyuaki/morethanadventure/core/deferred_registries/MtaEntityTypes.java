@@ -198,16 +198,16 @@ public class MtaEntityTypes {
 
     public static final DeferredHolder<EntityType<?>,EntityType<ThrownNetheriteTrident>> NETHERITE_TRIDENT = ENTITY.register("netherite_trident",
             () -> EntityType.Builder.<ThrownNetheriteTrident>of(ThrownNetheriteTrident::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
-                    .build(entityKey("netherite_trident")));
+                    .noLootTable().build(entityKey("netherite_trident")));
 
     public static final DeferredHolder<EntityType<?>,EntityType<ThrownMysticMermaidsTrident>> MYSTIC_MERMAIDS_TRIDENT = ENTITY.register("mystic_mermaids_trident",
             () -> EntityType.Builder.<ThrownMysticMermaidsTrident>of(ThrownMysticMermaidsTrident::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
-                    .build(entityKey("mystic_mermaids_trident")));
+                    .noLootTable().build(entityKey("mystic_mermaids_trident")));
 
 
     public static final DeferredHolder<EntityType<?>,EntityType<MTAArrowEntity>> MTA_ARROW = ENTITY.register("mta_arrow",
             () -> EntityType.Builder.<MTAArrowEntity>of(MTAArrowEntity::new, MobCategory.MISC).sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20)
-                    .build(entityKey("mta_arrow")));
+                    .noLootTable().build(entityKey("mta_arrow")));
 
 
     public static void register(IEventBus eventBus){

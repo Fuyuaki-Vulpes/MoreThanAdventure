@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.client.renderer.special;
 
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
+import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -35,10 +36,9 @@ public class SprinklerSpecialRenderer implements NoDataSpecialModelRenderer {
 
     @Override
     public void render(ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, boolean hasFoilType) {
-        VertexConsumer vertexconsumer = bufferSource.getBuffer(RenderType.entityCutout(LOCATION));
+        VertexConsumer vertexconsumer = MTASheets.createSprinklerMaterial().buffer(bufferSource,RenderType::entityCutout);
         poseStack.pushPose();
         this.model.setupAnim(this.turnedOn);
-        //poseStack.translate(0.5F, -0.5F, 0.5F);
         this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
         poseStack.popPose();
     }
