@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.entity.Arrows;
+package com.fuyuaki.morethanadventure.world.entity.arrows;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.google.common.collect.Lists;

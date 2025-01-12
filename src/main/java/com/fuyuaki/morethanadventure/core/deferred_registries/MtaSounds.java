@@ -39,9 +39,9 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> TURKEY_AMBIENT = registerSoundEvent("turkey_ambient");
     public static final Supplier<SoundEvent> TURKEY_HURT = registerSoundEvent("turkey_hurt");
     public static final Supplier<SoundEvent> TURKEY_DEATH = registerSoundEvent("turkey_death");
-    public static final Supplier<SoundEvent> WISPFLY_AMBIENT = registerSoundEvent("wispfly_ambient");
-    public static final Supplier<SoundEvent> WISPFLY_HURT = registerSoundEvent("wispfly_hurt");
-    public static final Supplier<SoundEvent> WISPFLY_DEATH = registerSoundEvent("wispfly_death");
+    public static final Supplier<SoundEvent> WISPFLY_AMBIENT = registerSoundEvent("wisp_ambient");
+    public static final Supplier<SoundEvent> WISPFLY_HURT = registerSoundEvent("wisp_hurt");
+    public static final Supplier<SoundEvent> WISPFLY_DEATH = registerSoundEvent("wisp_death");
 
     //Monsters
 
@@ -101,6 +101,10 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> WEAPON_TEAR = registerSoundEvent("weapon_tear");
     public static final Supplier<SoundEvent> WEAPON_THROW = registerSoundEvent("weapon_throw");
     public static final Supplier<SoundEvent> WEAPON_WHIP = registerSoundEvent("weapon_whip");
+
+
+    public static final Supplier<SoundEvent> LIGHTNING_BOLT_THUNDER_FAR = registerSoundEvent("thunder_far");
+    public static final Supplier<SoundEvent> LIGHTNING_BOLT_THUNDER_VERY_FAR = registerSoundEvent("thunder_very_far");
 
 
     private static Supplier<SoundEvent> registerSoundEvent (String name) {

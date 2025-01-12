@@ -790,9 +790,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.turkey_hurt", "Turkey Hurts");
         add("sound.morethanadventure.turkey_death", "Turkey Dies");
 
-        add("sound.morethanadventure.wispfly_ambient", "Wispfly Sings");
-        add("sound.morethanadventure.wispfly_hurt", "Wispfly Hurts");
-        add("sound.morethanadventure.wispfly_death", "Wispfly Dies");
+        add("sound.morethanadventure.wisp_ambient", "Wispfly Sings");
+        add("sound.morethanadventure.wisp_hurt", "Wispfly Hurts");
+        add("sound.morethanadventure.wisp_death", "Wispfly Dies");
 
         add("sound.morethanadventure.armored_skeleton_ambient", "Armored Skeleton Rattles");
         add("sound.morethanadventure.armored_skeleton_hurt", "Armored Skeleton Hurts");
@@ -847,6 +847,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.weapons.tear", "Tear Attack");
         add("sound.morethanadventure.weapons.throw", "Throw Attack");
         add("sound.morethanadventure.weapons.whip", "Whip Attack");
+
+        add("sound.morethanadventure.lightning_bolt.far", "Thunder roars");
+        add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
 
 
 

@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -20,7 +21,7 @@ public class DeerRenderer extends MobRenderer<Deer, DeerRenderState, DeerModel<D
     }
 
     @Override
-    public DeerRenderState createRenderState() {
+    public @NotNull DeerRenderState createRenderState() {
         return new DeerRenderState();
     }
 
@@ -34,9 +35,9 @@ public class DeerRenderer extends MobRenderer<Deer, DeerRenderState, DeerModel<D
         super.render(renderState, poseStack, bufferSource, packedLight);
     }
 
-
     @Override
-    public ResourceLocation getTextureLocation(DeerRenderState p_368654_) {
-        return null;
+    public ResourceLocation getTextureLocation(DeerRenderState renderState) {
+        return TEXTURE;
     }
+
 }

@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
-import com.fuyuaki.morethanadventure.world.entity.Arrows.MTAArrowEntity;
+import com.fuyuaki.morethanadventure.world.entity.arrows.MTAArrowEntity;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

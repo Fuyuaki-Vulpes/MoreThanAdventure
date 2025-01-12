@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.game.client.renderer.entity;
 
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.MTAArrowRenderState;
-import com.fuyuaki.morethanadventure.world.entity.Arrows.MTAArrowEntity;
+import com.fuyuaki.morethanadventure.world.entity.arrows.MTAArrowEntity;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;

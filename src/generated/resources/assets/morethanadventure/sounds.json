@@ -175,6 +175,23 @@
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
   },
+  "thunder_far": {
+    "sounds": [
+      "morethanadventure:weather/misc/thunder/far1",
+      "morethanadventure:weather/misc/thunder/far2",
+      "morethanadventure:weather/misc/thunder/far3"
+    ],
+    "subtitle": "sound.morethanadventure.lightning_bolt.far"
+  },
+  "thunder_very_far": {
+    "sounds": [
+      "morethanadventure:weather/misc/thunder/very_far1",
+      "morethanadventure:weather/misc/thunder/very_far2",
+      "morethanadventure:weather/misc/thunder/very_far3",
+      "morethanadventure:weather/misc/thunder/very_far4"
+    ],
+    "subtitle": "sound.morethanadventure.lightning_bolt.very_far"
+  },
   "toucan_ambient": {
     "sounds": [
       "morethanadventure:entity/toucan/chirp1",
@@ -268,7 +285,7 @@
     ],
     "subtitle": "sound.morethanadventure.weapons.whip"
   },
-  "wispfly_ambient": {
+  "wisp_ambient": {
     "sounds": [
       "morethanadventure:entity/wispfly/sing1",
       "morethanadventure:entity/wispfly/sing2",
@@ -279,13 +296,13 @@
     ],
     "subtitle": "sound.morethanadventure.wisp_ambient"
   },
-  "wispfly_death": {
+  "wisp_death": {
     "sounds": [
       "morethanadventure:entity/wispfly/death"
     ],
     "subtitle": "sound.morethanadventure.wisp_death"
   },
-  "wispfly_hurt": {
+  "wisp_hurt": {
     "sounds": [
       "morethanadventure:entity/wispfly/hurt1",
       "morethanadventure:entity/wispfly/hurt2"

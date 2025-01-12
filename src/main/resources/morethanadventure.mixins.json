@@ -7,6 +7,7 @@
     "BlocksMixin",
     "FarmBlockMixin",
     "InventoryMixin",
+    "LightningBoltMixin",
     "LivingEntityMixin",
     "LocalPlayerMixin",
     "MixinMobCategory",

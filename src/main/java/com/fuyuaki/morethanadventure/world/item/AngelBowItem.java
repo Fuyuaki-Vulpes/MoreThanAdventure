@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item;
 
-import com.fuyuaki.morethanadventure.world.entity.Arrows.MTAArrowEntity;
+import com.fuyuaki.morethanadventure.world.entity.arrows.MTAArrowEntity;
 import com.google.common.base.Suppliers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;

@@ -1,30 +1,20 @@
 package com.fuyuaki.morethanadventure.world.entity.attachments;
 
-import com.fuyuaki.morethanadventure.mixin.TamableAnimalMixin;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BeehiveBlockEntity;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.attachment.IAttachmentHolder;
-import net.neoforged.neoforge.attachment.IAttachmentSerializer;
 import net.neoforged.neoforge.common.util.INBTSerializable;
 import org.jetbrains.annotations.UnknownNullability;
 
@@ -51,7 +41,6 @@ public class RespawnablePetsAttachment implements INBTSerializable<CompoundTag> 
 
     @Override
     public @UnknownNullability CompoundTag serializeNBT(HolderLookup.Provider provider) {
-        System.out.println("Serializing");
         if (this.pets.isEmpty()) return new CompoundTag();
         ListTag nbtTagList = new ListTag();
         for (Pets pet : this.pets) {
@@ -59,15 +48,13 @@ public class RespawnablePetsAttachment implements INBTSerializable<CompoundTag> 
         }
         CompoundTag nbt = new CompoundTag();
         nbt.put("Pets", nbtTagList);
-        return null;
+        return nbt;
     }
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-
         ListTag tagList = nbt.getList("Pets", Tag.TAG_LIST);
         if (tagList.isEmpty()) {
-            System.out.println("List is empty");
             return;
         }
 
@@ -105,7 +92,7 @@ public class RespawnablePetsAttachment implements INBTSerializable<CompoundTag> 
         this.pets.clear();
     }
 
-    public static record Pets(CustomData entityData) {
+    public record Pets(CustomData entityData) {
         public static final Codec<Pets> CODEC = RecordCodecBuilder.create(
                 p_337984_ -> p_337984_.group(
                                 CustomData.CODEC.optionalFieldOf("entity_data", CustomData.EMPTY).forGetter(Pets::entityData)

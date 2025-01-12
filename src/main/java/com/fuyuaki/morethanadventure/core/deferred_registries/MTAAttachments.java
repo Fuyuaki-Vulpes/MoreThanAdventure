@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
+import io.wispforest.owo.serialization.CodecUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredHolder;

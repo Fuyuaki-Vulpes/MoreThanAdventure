@@ -59,13 +59,11 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.NETHERITE_FRACTURE);
 
         simpleItem(MtaItems.HOST_HUSK);
-        //simpleItem(MtaItems.SAMURAI_CLOTH);
+        simpleItem(MtaItems.SAMURAI_CLOTH);
         simpleItem(MtaItems.SIREN_SCALE);
-        //simpleItem(MtaItems.BLACK_WIDOW_VENOM);
-        //simpleItem(MtaItems.HOST_HUSK);
-        //simpleItem(MtaItems.SPIRIT_DUST);
-        //simpleItem(MtaItems.CHARRED_BONE);
-        //simpleItem(MtaItems.HOST_HUSK);
+        simpleItem(MtaItems.BLACK_WIDOW_VENOM);
+        simpleItem(MtaItems.SPIRIT_DUST);
+        simpleItem(MtaItems.CHARRED_BONE);
 
         simpleItem(MtaItems.AVOCADO_SLICE);
         simpleItem(MtaItems.TEA_LEAVES);
@@ -281,15 +279,11 @@ public class GenItemModels extends ItemModelGenerators {
 
         //FOODS
 
-        //simpleItem(MtaItems.ONION);
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.COOKED_SHRIMP);
         simpleItem(MtaItems.TOMATO);
-        //simpleItem(MtaItems.TOMATO_SEEDS);
         simpleItem(MtaItems.BELL_PEPPER);
-        //simpleItem(MtaItems.BELL_PEPPER_SEEDS);
         simpleItem(MtaItems.CHILI_PEPPER);
-        //simpleItem(MtaItems.CHILI_PEPPER_SEEDS);
         simpleItem(MtaItems.RICE);
         simpleItem(MtaItems.ONIGIRI);
         simpleItem(MtaItems.COCONUT);

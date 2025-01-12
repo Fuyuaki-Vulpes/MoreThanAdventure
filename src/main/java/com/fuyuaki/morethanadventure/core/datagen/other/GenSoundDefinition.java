@@ -256,6 +256,21 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         add(MtaSounds.WEAPON_WHIP.get(), SoundDefinition.definition()
                 .with(sound("morethanadventure:item/weaponry/whip")).subtitle("sound.morethanadventure.weapons.whip"));
 
+
+        add(MtaSounds.LIGHTNING_BOLT_THUNDER_FAR.get(), SoundDefinition.definition()
+                .with(
+                        sound("morethanadventure:weather/misc/thunder/far1"),
+                        sound("morethanadventure:weather/misc/thunder/far2"),
+                        sound("morethanadventure:weather/misc/thunder/far3")
+                ).subtitle("sound.morethanadventure.lightning_bolt.far"));
+        add(MtaSounds.LIGHTNING_BOLT_THUNDER_VERY_FAR.get(), SoundDefinition.definition()
+                .with(
+                        sound("morethanadventure:weather/misc/thunder/very_far1"),
+                        sound("morethanadventure:weather/misc/thunder/very_far2"),
+                        sound("morethanadventure:weather/misc/thunder/very_far3"),
+                        sound("morethanadventure:weather/misc/thunder/very_far4")
+                ).subtitle("sound.morethanadventure.lightning_bolt.very_far"));
+
     }
 
     protected static SoundDefinition.Sound entitySound(final String name) {
