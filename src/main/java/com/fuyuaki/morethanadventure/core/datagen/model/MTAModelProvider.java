@@ -53,26 +53,15 @@ public class MTAModelProvider implements DataProvider,IModelProviderExtension {
         this(output, MODID, true);
     }
 
-    protected BlockModelGenerators createBlockModelGenerators(Consumer<BlockStateGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
-        return new GenBlockModels(blockStateOutput, itemModelOutput, modelOutput);
-
-    }
-
-    protected ItemModelGenerators createItemModelGenerators(ItemModelOutput itemModelOutput, BiConsumer<ResourceLocation, ModelInstance> modelOutput) {
-        return new GenItemModels(itemModelOutput, modelOutput);
-    }
-
     @Override
     public CompletableFuture<?> run(CachedOutput output) {
         ItemInfoCollector itemInfoCollector = new ItemInfoCollector();
         BlockStateGeneratorCollector blockStateGeneratorCollector = new BlockStateGeneratorCollector();
         SimpleModelCollector simpleModelCollector = new SimpleModelCollector();
 
-        var blockModelGenerators = createBlockModelGenerators(blockStateGeneratorCollector, itemInfoCollector, simpleModelCollector);
-        var itemModelGenerators = createItemModelGenerators(itemInfoCollector, simpleModelCollector);
+        new GenBlockModels(blockStateGeneratorCollector, itemInfoCollector, simpleModelCollector).run();
 
-        if (blockModelGenerators != null) blockModelGenerators.run();
-        if (itemModelGenerators != null) itemModelGenerators.run();
+        new GenItemModels(itemInfoCollector, simpleModelCollector).run();
 
         itemInfoCollector.finalizeAndValidate();
         return CompletableFuture.allOf(
