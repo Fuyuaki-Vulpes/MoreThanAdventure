@@ -1,10 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-<<<<<<<< Updated upstream:src/generated/resources/assets/morethanadventure/models/item/freezing_icicle_boots.json
     "layer0": "morethanadventure:item/freezing_icicle_boots"
-========
-    "layer0": "morethanadventure:block/sweet_berry_leaves"
->>>>>>>> Stashed changes:src/generated/resources/assets/morethanadventure/models/item/sweet_berry_leaves.json
   }
 }

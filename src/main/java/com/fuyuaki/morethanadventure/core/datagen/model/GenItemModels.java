@@ -1,34 +1,15 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.ItemModelOutput;
-import net.minecraft.client.data.models.model.ItemModelUtils;
-import net.minecraft.client.data.models.model.ModelInstance;
-import net.minecraft.client.data.models.model.ModelTemplates;
-=======
 import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
-=======
-import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
-import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.ItemModelOutput;
->>>>>>> Stashed changes
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.renderer.item.properties.numeric.CrossbowPull;
 import net.minecraft.client.renderer.item.properties.numeric.UseDuration;
 import net.minecraft.client.renderer.item.properties.select.Charge;
-import net.minecraft.client.renderer.special.SpecialModelRenderer;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CrossbowItem;

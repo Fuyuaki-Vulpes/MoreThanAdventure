@@ -1,8 +1,6 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
 import com.google.gson.JsonElement;
-import net.minecraft.client.data.models.BlockModelGenerators;
-import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.BlockStateGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;

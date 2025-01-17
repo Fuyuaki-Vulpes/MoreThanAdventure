@@ -367,7 +367,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.HOST_HUSK.get(),"Host Husk");
         add(MtaItems.SAMURAI_CLOTH.get(),"Samurai Cloth");
         add(MtaItems.SIREN_SCALE.get(),"Siren Scale");
-        add(MtaItems.BLACK_WIDOW_VENOM.get(),"Black WIdow Venom");
+        add(MtaItems.BLACK_WIDOW_VENOM.get(),"Black Widow Venom");
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
         add(MtaItems.SPIRIT_DUST.get(),"Spirit Dust");
         add(MtaItems.CHARRED_BONE.get(),"Charred Bone");
