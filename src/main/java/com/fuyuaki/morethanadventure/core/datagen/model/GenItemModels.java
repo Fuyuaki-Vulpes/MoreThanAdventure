@@ -1,15 +1,11 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelInstance;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.renderer.item.SpecialModelWrapper;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -19,8 +15,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 import java.util.LinkedHashMap;
 import java.util.function.BiConsumer;
-
-import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenItemModels extends ItemModelGenerators {
 
@@ -137,10 +131,10 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.TEMPLE_ANGELS_LEGGINGS);
         simpleItem(MtaItems.TEMPLE_ANGELS_BOOTS);
 
-        //simpleItem(MtaItems.COLD_SET_HELMET);
-        //simpleItem(MtaItems.COLD_SET_CHESTPLATE);
-        //simpleItem(MtaItems.COLD_SET_LEGGINGS);
-        //simpleItem(MtaItems.COLD_SET_BOOTS);
+        simpleItem(MtaItems.FREEZING_ICICLE_HELMET);
+        simpleItem(MtaItems.FREEZING_ICICLE_CHESTPLATE);
+        simpleItem(MtaItems.FREEZING_ICICLE_LEGGINGS);
+        simpleItem(MtaItems.FREEZING_ICICLE_BOOTS);
 
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_HELMET);
         simpleItem(MtaItems.WRATHFUL_BERSERKERS_CHESTPLATE);
