@@ -19,13 +19,12 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WORLD_GEN = TABS.register("mtaworldgen", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtagenblocks"))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-            .icon(MtaBlocks.SWEET_BERRY_LEAVES.get().asItem()::getDefaultInstance)
+            .icon(MtaBlocks.PALM_SAPLING.get().asItem()::getDefaultInstance)
             .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
                 output.accept(MtaBlocks.PALM_LEAVES.get());
-                output.accept(MtaBlocks.SWEET_BERRY_LEAVES.get());
                 output.accept(MtaBlocks.SCATTERED_LEAVES.get());
                 output.accept(MtaBlocks.CATTAIL.get());
                 output.accept(MtaBlocks.CORPSE_FLOWER.get());

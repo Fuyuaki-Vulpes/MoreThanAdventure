@@ -45,7 +45,6 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<BiomeModifier> ADD_GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<BiomeModifier> ADD_MOONSTONE_ORE = registerKey("moonstone_ore");
-    public static final ResourceKey<BiomeModifier> ADD_SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
     public static final ResourceKey<BiomeModifier> ADD_GRASSY_DIRT_PATCHES = registerKey("grassy_dirt_patches");
     public static final ResourceKey<BiomeModifier> ADD_SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<BiomeModifier> ADD_SHALLOW_GRASS = registerKey("shallow_grass");
@@ -224,12 +223,6 @@ public class MtaBiomeModifiers {
                 biomes.getOrThrow(Tags.Biomes.IS_SWAMP),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.MOSSY_ROCKS)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
-        ));
-
-        context.register(ADD_SWEET_BERRY_LEAVES,new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(Tags.Biomes.IS_TAIGA),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.SWEET_BERRY_LEAVES)),
-                GenerationStep.Decoration.VEGETAL_DECORATION
         ));
         context.register(ADD_GRASSY_DIRT_PATCHES,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.GRASSY_DIRT_SHOULD_GENERATE),

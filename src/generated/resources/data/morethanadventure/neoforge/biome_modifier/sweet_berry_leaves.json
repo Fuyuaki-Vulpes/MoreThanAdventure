@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "#c:is_taiga",
-  "features": "morethanadventure:sweet_berry_leaves",
-  "step": "vegetal_decoration"
-}

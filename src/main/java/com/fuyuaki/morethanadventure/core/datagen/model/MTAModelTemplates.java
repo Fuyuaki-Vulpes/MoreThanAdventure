@@ -13,6 +13,10 @@ public class MTAModelTemplates {
     public static final ModelTemplate BIG_HANDHELD_MEDIUM_HILT = createItem("handheld_big_medium_hilt", TextureSlot.LAYER0);
     public static final ModelTemplate BIG_HANDHELD_MIDDLE_HILT = createItem("handheld_big_middle_hilt", TextureSlot.LAYER0);
     public static final ModelTemplate SPRINKLER_INVENTORY = createItem("template_sprinkler", TextureSlot.PARTICLE);
+    public static final ModelTemplate CROSSBOW = createItem("template_crossbow", TextureSlot.LAYER0);
+    public static final ModelTemplate BOW = createItem("template_bow", TextureSlot.LAYER0);
+    public static final ModelTemplate TRIDENT = createItem("template_trident", TextureSlot.PARTICLE);
+    public static final ModelTemplate TRIDENT_THROWING = createItem("template_trident_throwing", TextureSlot.PARTICLE);
 
     public static final ModelTemplate CLAW = createItem("handheld_claw", TextureSlot.LAYER0);
 

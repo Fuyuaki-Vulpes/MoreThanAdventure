@@ -12,6 +12,8 @@ import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -188,6 +190,8 @@ public class MTAClientEvents
     @SubscribeEvent
     public static void registerSpecialRenderers(RegisterSpecialModelRendererEvent event) {
         event.register(ResourceLocation.fromNamespaceAndPath(MODID,"sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID,"netherite_trident"), NetheriteTridentSpecialRenderer.Unbaked.MAP_CODEC);
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID,"mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
     }
 
 
@@ -216,7 +220,6 @@ public class MTAClientEvents
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PALM_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.SCATTERED_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_EVERGREEN, MtaBlocks.SWEET_BERRY_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.SHALLOW_GRASS.get());

@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item;
 
 import com.fuyuaki.morethanadventure.world.entity.arrows.MTAArrowEntity;
+import com.fuyuaki.morethanadventure.world.item.weaponry.ArcheryItem;
 import com.google.common.base.Suppliers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -22,22 +23,14 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class AngelBowItem extends BowItem {
+public class AngelBowItem extends ArcheryItem {
     public static final int MAX_DRAW_DURATION = 20;
     public static final int DEFAULT_RANGE = 60;
-    private final Supplier<ItemAttributeModifiers> attributeModifiers;
 
 
     public AngelBowItem(Properties pProperties) {
-        super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
-        this.attributeModifiers = Suppliers.memoize(
-                () -> {
-                    ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-                    ResourceLocation location = ResourceLocation.withDefaultNamespace("angel_bow");
+        super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC),2.0F,true,10.0F,0.0F);
 
-                    return createAttributeModifiers(builder).build();
-                }
-        );
     }
 
     @Override
@@ -45,48 +38,6 @@ public class AngelBowItem extends BowItem {
         return ItemUseAnimation.BOW;
     }
 
-
-
-    protected ItemAttributeModifiers.Builder createAttributeModifiers(ItemAttributeModifiers.Builder builder){
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("angel_bow");
-        return builder;
-    }
-
-
-    public ItemAttributeModifiers getDefaultAttributeModifiers() {
-        return this.attributeModifiers.get();
-    }
-
-    @Override
-    public boolean releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
-        if (pEntityLiving instanceof Player player) {
-            int i = this.getUseDuration(pStack, pEntityLiving) - pTimeLeft;
-
-            i = net.neoforged.neoforge.event.EventHooks.onArrowLoose(pStack, pLevel, player, i,true);
-
-            if (i < 0) return false;
-            float f = getPowerForTime(i);
-            if (!((double) f < 0.1)) {
-                List<ItemStack> list = draw(pStack, Items.ARROW.getDefaultInstance(), player);
-                if (pLevel instanceof ServerLevel serverlevel) {
-                    this.shoot(serverlevel, player, player.getUsedItemHand(), pStack, list, f * 4.0F, 0.0F, f >= 0.8F, null);
-                }
-
-                pLevel.playSound(
-                        null,
-                        player.getX(),
-                        player.getY(),
-                        player.getZ(),
-                        SoundEvents.ARROW_SHOOT,
-                        SoundSource.PLAYERS,
-                        1.0F,
-                        1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F
-                );
-                player.awardStat(Stats.ITEM_USED.get(this));
-            }
-        }
-        return true;
-    }
 
     @Override
     public int getDefaultProjectileRange() {

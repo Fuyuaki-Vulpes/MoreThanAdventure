@@ -204,7 +204,6 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addTaigaGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addCommonBerryBushes(biomeBuilder);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SWEET_BERRY_LEAVES);
         return biome(
                 true,
                 0.2F,

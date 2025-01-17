@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/template_bow",
+  "textures": {
+    "layer0": "morethanadventure:item/netherite_bow"
+  }
+}

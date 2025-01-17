@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/template_trident",
+  "textures": {
+    "particle": "morethanadventure:item/mystic_mermaids_trident"
+  }
+}

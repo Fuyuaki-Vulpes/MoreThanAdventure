@@ -37,7 +37,7 @@ public class MtaBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
 
 
-    public static final DeferredBlock<Sprinkler> SPRINKLER = registerBlock("sprinkler", Sprinkler::new,
+    public static final DeferredBlock<Block> SPRINKLER = registerBlock("sprinkler", Sprinkler::new,
             BlockBehaviour.Properties.of()
                     .strength(5.0F)
                     .sound(SoundType.METAL)
@@ -348,12 +348,6 @@ public class MtaBlocks {
 
     public static final DeferredBlock<Block> VERY_DIRTY_STONE_TILES_WALL = registerWall("very_dirty_stone_tiles_wall",
             Blocks.STONE_BRICK_WALL);
-
-    public static final DeferredBlock<Block> SWEET_BERRY_LEAVES = registerBlock("sweet_berry_leaves",  SweetBerryLeavesBlock::new,
-            BlockBehaviour.Properties
-                    .ofFullCopy(Blocks.SPRUCE_LEAVES)
-                    .sound(SoundType.SWEET_BERRY_BUSH)
-    );
 
 
     public static final DeferredBlock<Block> AGATE_ORE = oreBlock("agate_ore",

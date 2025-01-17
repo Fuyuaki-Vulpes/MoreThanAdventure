@@ -59,7 +59,6 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<PlacedFeature> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<PlacedFeature> MOONSTONE_ORE = registerKey("moonstone_ore");
-    public static final ResourceKey<PlacedFeature> SWEET_BERRY_LEAVES = registerKey("sweet_berry_leaves");
     public static final ResourceKey<PlacedFeature> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
     public static final ResourceKey<PlacedFeature> SCATTERED_LEAVES = registerKey("scattered_leaves");
 
@@ -335,18 +334,6 @@ public class MtaPlacedFeatures {
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(12), VerticalAnchor.top()))
 
         );
-        register(
-                context,
-                SWEET_BERRY_LEAVES,
-                holder(context, MtaConfigFeatures.SWEET_BERRY_LEAVES),
-                RarityFilter.onAverageOnceEvery(5),
-                SurfaceWaterDepthFilter.forMaxDepth(0),
-                InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
-                BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.SPRUCE_SAPLING.defaultBlockState(), BlockPos.ZERO)),
-                BiomeFilter.biome()
-        );
-
 
         register(
                 context,

@@ -79,8 +79,7 @@
       "minecraft:red_mushroom_taiga",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_common",
-      "morethanadventure:sweet_berry_leaves"
+      "minecraft:patch_berry_common"
     ],
     [
       "minecraft:freeze_top_layer"

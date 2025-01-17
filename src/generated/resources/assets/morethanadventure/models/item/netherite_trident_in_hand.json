@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/template_trident",
+  "textures": {
+    "particle": "morethanadventure:item/netherite_trident"
+  }
+}

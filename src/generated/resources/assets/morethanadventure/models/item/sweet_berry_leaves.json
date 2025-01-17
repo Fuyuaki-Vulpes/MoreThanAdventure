@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "morethanadventure:block/clear_quartz_cluster"
+    "layer0": "morethanadventure:block/sweet_berry_leaves"
   }
 }

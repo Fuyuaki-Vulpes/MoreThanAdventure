@@ -57,8 +57,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
 
         this.tag(BlockTags.LEAVES).add(
                 MtaBlocks.PALM_LEAVES.get(),
-                MtaBlocks.SEAWOOD_LEAVES.get(),
-                MtaBlocks.SWEET_BERRY_LEAVES.get()
+                MtaBlocks.SEAWOOD_LEAVES.get()
         );
         this.tag(BlockTags.WOODEN_STAIRS).add(
                 MtaBlocks.PALM_STAIRS.get(),
@@ -146,7 +145,6 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         );
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(
                 MtaBlocks.PALM_LEAVES.get(),
-                MtaBlocks.SWEET_BERRY_LEAVES.get(),
                 MtaBlocks.SCATTERED_LEAVES.get()
         );
 //        this.tag(BlockTags.MINEABLE_WITH_AXE).add();

@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "morethanadventure:block/scattered_leaves"
+    "model": "morethanadventure:item/scattered_leaves",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -12012264
+      }
+    ]
   }
 }

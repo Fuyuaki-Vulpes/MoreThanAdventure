@@ -13,30 +13,11 @@ import java.util.function.Supplier;
 public class NetheriteBowItem extends BowItem {
     public static final int MAX_DRAW_DURATION = 20;
     public static final int DEFAULT_RANGE = 25;
-    private final Supplier<ItemAttributeModifiers> attributeModifiers;
 
 
     public NetheriteBowItem(Properties pProperties) {
         super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC));
-        this.attributeModifiers = Suppliers.memoize(
-                () -> {
-                    ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
-                    ResourceLocation location = ResourceLocation.withDefaultNamespace("nether_bow");
 
-                    return createAttributeModifiers(builder).build();
-                }
-        );
-    }
-
-    protected ItemAttributeModifiers.Builder createAttributeModifiers(ItemAttributeModifiers.Builder builder){
-        ResourceLocation location = ResourceLocation.withDefaultNamespace("nether_bow");
-
-
-        return builder;
-    }
-
-    public ItemAttributeModifiers getDefaultAttributeModifiers() {
-        return this.attributeModifiers.get();
     }
 
     @Override

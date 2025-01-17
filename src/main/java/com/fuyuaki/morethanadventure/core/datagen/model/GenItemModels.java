@@ -1,13 +1,27 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+<<<<<<< Updated upstream
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelTemplates;
+=======
+import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.ItemModelOutput;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.client.renderer.item.properties.numeric.CrossbowPull;
+import net.minecraft.client.renderer.item.properties.numeric.UseDuration;
+import net.minecraft.client.renderer.item.properties.select.Charge;
+import net.minecraft.client.renderer.special.SpecialModelRenderer;
+>>>>>>> Stashed changes
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
@@ -246,12 +260,11 @@ public class GenItemModels extends ItemModelGenerators {
         handheldBigItem(MtaItems.NETHERITE_SCYTHE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
-        this.generateTrident(MtaItems.NETHERITE_TRIDENT.get());
+        this.generateTridents();
         this.generateBow(MtaItems.NETHERITE_BOW.get());
 
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
-        this.generateTrident(MtaItems.MYSTIC_MERMAIDS_TRIDENT.get());
         handheldBigItemMediumHilt(MtaItems.SILENT_REAPERS_SCYTHE);
         this.generateBow(MtaItems.TEMPLE_ANGELS_BOW.get());
         handheldBigItem(MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE);
@@ -376,9 +389,94 @@ public class GenItemModels extends ItemModelGenerators {
         this.itemModelOutput.accept(item.get(), ItemModelUtils.plainModel(this.createFlatItemModel(item.get(), ModelTemplates.FLAT_ITEM)));
     }
 
+    public void generateBow(Item bowItem) {
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(bowItem));
+        this.createFlatItemModel(bowItem, MTAModelTemplates.BOW);
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_0", ModelTemplates.BOW));
+        ItemModel.Unbaked itemmodel$unbaked2 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_1", ModelTemplates.BOW));
+        ItemModel.Unbaked itemmodel$unbaked3 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_2", ModelTemplates.BOW));
+        this.itemModelOutput
+                .accept(
+                        bowItem,
+                        ItemModelUtils.conditional(
+                                ItemModelUtils.isUsingItem(),
+                                ItemModelUtils.rangeSelect(
+                                        new UseDuration(false),
+                                        0.05F,
+                                        itemmodel$unbaked1,
+                                        ItemModelUtils.override(itemmodel$unbaked2, 0.65F),
+                                        ItemModelUtils.override(itemmodel$unbaked3, 0.9F)
+                                ),
+                                itemmodel$unbaked
+                        )
+                );
+    }
+
+    public void generateCrossbow(Item crossbowItem) {
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(crossbowItem));
+        this.createFlatItemModel(crossbowItem, MTAModelTemplates.CROSSBOW);
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(this.createFlatItemModel(crossbowItem, "_pulling_0", ModelTemplates.CROSSBOW));
+        ItemModel.Unbaked itemmodel$unbaked2 = ItemModelUtils.plainModel(this.createFlatItemModel(crossbowItem, "_pulling_1", ModelTemplates.CROSSBOW));
+        ItemModel.Unbaked itemmodel$unbaked3 = ItemModelUtils.plainModel(this.createFlatItemModel(crossbowItem, "_pulling_2", ModelTemplates.CROSSBOW));
+        ItemModel.Unbaked itemmodel$unbaked4 = ItemModelUtils.plainModel(this.createFlatItemModel(crossbowItem, "_arrow", ModelTemplates.CROSSBOW));
+        ItemModel.Unbaked itemmodel$unbaked5 = ItemModelUtils.plainModel(this.createFlatItemModel(crossbowItem, "_firework", ModelTemplates.CROSSBOW));
+        this.itemModelOutput
+                .accept(
+                        crossbowItem,
+                        ItemModelUtils.conditional(
+                                ItemModelUtils.isUsingItem(),
+                                ItemModelUtils.rangeSelect(
+                                        new CrossbowPull(),
+                                        itemmodel$unbaked1,
+                                        ItemModelUtils.override(itemmodel$unbaked2, 0.58F),
+                                        ItemModelUtils.override(itemmodel$unbaked3, 1.0F)
+                                ),
+                                ItemModelUtils.select(
+                                        new Charge(),
+                                        itemmodel$unbaked,
+                                        ItemModelUtils.when(CrossbowItem.ChargeType.ARROW, itemmodel$unbaked4),
+                                        ItemModelUtils.when(CrossbowItem.ChargeType.ROCKET, itemmodel$unbaked5)
+                                )
+                        )
+                );
+    }
 
 
     public void generateDrink(Item drink) {
 
     }
+
+    public void generateTridents() {
+
+        Item netheriteTrident = MtaItems.NETHERITE_TRIDENT.get();
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(this.createFlatItemModel(netheriteTrident, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.specialModel(
+                ModelLocationUtils.getModelLocation(netheriteTrident, "_in_hand"), new NetheriteTridentSpecialRenderer.Unbaked()
+        );
+        ItemModel.Unbaked itemmodel$unbaked2 = ItemModelUtils.specialModel(
+                ModelLocationUtils.getModelLocation(netheriteTrident, "_throwing"), new NetheriteTridentSpecialRenderer.Unbaked()
+        );
+        ItemModel.Unbaked itemmodel$unbaked3 = ItemModelUtils.conditional(ItemModelUtils.isUsingItem(), itemmodel$unbaked2, itemmodel$unbaked1);
+        this.itemModelOutput.accept(netheriteTrident, createFlatModelDispatch(itemmodel$unbaked, itemmodel$unbaked3));
+
+        MTAModelTemplates.TRIDENT.create(ModelLocationUtils.getModelLocation(netheriteTrident).withSuffix("_in_hand"), TextureMapping.particle(ModelLocationUtils.getModelLocation(netheriteTrident)), this.modelOutput);
+        MTAModelTemplates.TRIDENT_THROWING.create(ModelLocationUtils.getModelLocation(netheriteTrident).withSuffix("_throwing"), TextureMapping.particle(ModelLocationUtils.getModelLocation(netheriteTrident)), this.modelOutput);
+
+        Item mermaidTrident = MtaItems.MYSTIC_MERMAIDS_TRIDENT.get();
+
+        ItemModel.Unbaked _itemmodel$unbaked = ItemModelUtils.plainModel(this.createFlatItemModel(mermaidTrident, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked _itemmodel$unbaked1 = ItemModelUtils.specialModel(
+                ModelLocationUtils.getModelLocation(mermaidTrident, "_in_hand"), new MermaidTridentSpecialRenderer.Unbaked()
+        );
+        ItemModel.Unbaked _itemmodel$unbaked2 = ItemModelUtils.specialModel(
+                ModelLocationUtils.getModelLocation(mermaidTrident, "_throwing"), new MermaidTridentSpecialRenderer.Unbaked()
+        );
+        MTAModelTemplates.TRIDENT.create(ModelLocationUtils.getModelLocation(mermaidTrident).withSuffix("_in_hand"), TextureMapping.particle(ModelLocationUtils.getModelLocation(mermaidTrident)), this.modelOutput);
+        MTAModelTemplates.TRIDENT_THROWING.create(ModelLocationUtils.getModelLocation(mermaidTrident).withSuffix("_throwing"), TextureMapping.particle(ModelLocationUtils.getModelLocation(mermaidTrident)), this.modelOutput);
+
+        ItemModel.Unbaked _itemmodel$unbaked3 = ItemModelUtils.conditional(ItemModelUtils.isUsingItem(), _itemmodel$unbaked2, _itemmodel$unbaked1);
+        this.itemModelOutput.accept(mermaidTrident, createFlatModelDispatch(_itemmodel$unbaked, _itemmodel$unbaked3));
+    }
+
+
 }

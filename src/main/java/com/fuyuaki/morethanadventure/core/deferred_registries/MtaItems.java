@@ -636,6 +636,7 @@ public class MtaItems {
     public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.registerItem("netherite_trident",
             properties -> new NetheriteTridentItem(
                     properties
+                            .attributes(TridentItem.createAttributes())
                             .durability(2031).component(DataComponents.TOOL, NetheriteTridentItem.createToolProperties())));
     public static final DeferredItem<NetheriteBowItem> NETHERITE_BOW = ITEMS.registerItem("netherite_bow",
             properties -> new NetheriteBowItem(

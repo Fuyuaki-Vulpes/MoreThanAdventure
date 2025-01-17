@@ -3,6 +3,8 @@ package com.fuyuaki.morethanadventure.core.datagen.model;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.color.item.GrassColorSource;
 import net.minecraft.client.color.item.ItemTintSources;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -16,10 +18,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Property;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +33,9 @@ import java.util.function.Consumer;
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenBlockModels extends BlockModelGenerators {
+
+
+    // CLEAR QUARTZ CLUSTER NEEDED
 
     final Consumer<BlockStateGenerator> blockStateOutput;
     final BiConsumer<ResourceLocation, ModelInstance> modelOutput;
@@ -47,6 +54,7 @@ public class GenBlockModels extends BlockModelGenerators {
 
         createSprinkler(MtaBlocks.SPRINKLER.get(),Blocks.BIRCH_PLANKS);
 
+
         this.createDoublePlantWithDefaultItem(MtaBlocks.CATTAIL.get(),PlantType.NOT_TINTED);
         //simpleBlock(MtaBlocks.CORPSE_LILY.get(), models().cross(blockTexture(MtaBlocks.CORPSE_LILY.get()).getPath(), blockTexture(MtaBlocks.CORPSE_LILY.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.POTTED_CORPSE_LILY.get(), models().singleTexture("potted_corpse_lily", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(MtaBlocks.CORPSE_LILY.get())).renderType("cutout"));
@@ -57,6 +65,10 @@ public class GenBlockModels extends BlockModelGenerators {
         this.woodProvider(MtaBlocks.STRIPPED_PALM_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_PALM_LOG.get()).wood(MtaBlocks.STRIPPED_PALM_WOOD.get());
 
 
+        this.registerSimpleTintedItemModel(MtaBlocks.SCATTERED_LEAVES.get(),
+                this.createFlatItemModelWithBlockTexture(MtaBlocks.SCATTERED_LEAVES.get().asItem(),
+                        MtaBlocks.SCATTERED_LEAVES.get()),ItemModelUtils.constantTint(FoliageColor.FOLIAGE_DEFAULT))
+        ;
         this.createCrossBlock(MtaBlocks.SHALLOW_GRASS.get(),BlockModelGenerators.PlantType.TINTED);
         this.createItemWithGrassTint(MtaBlocks.SHALLOW_GRASS.get());
 
@@ -73,8 +85,8 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createTrivialCube(MtaBlocks.PERMAFROST_STONE.get());
         this.createAmethystCluster(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get());
 
-        createVerticalBlock(MtaBlocks.STONE_GEYSER.get(), Blocks.STONE, Blocks.STONE,MtaBlocks.NETHERRACK_GEYSER.get());
-        createVerticalBlock(MtaBlocks.TERRACOTTA_GEYSER.get(), Blocks.TERRACOTTA, Blocks.TERRACOTTA,MtaBlocks.NETHERRACK_GEYSER.get());
+        createVerticalBlock(MtaBlocks.STONE_GEYSER.get(), Blocks.STONE, Blocks.STONE,MtaBlocks.STONE_GEYSER.get());
+        createVerticalBlock(MtaBlocks.TERRACOTTA_GEYSER.get(), Blocks.TERRACOTTA, Blocks.TERRACOTTA,MtaBlocks.TERRACOTTA_GEYSER.get());
         createVerticalBlock(MtaBlocks.NETHERRACK_GEYSER.get(), Blocks.NETHERRACK, Blocks.NETHERRACK,MtaBlocks.NETHERRACK_GEYSER.get());
         this.createVerticalBlock(MtaBlocks.BASALT_GEYSER.get(), ResourceLocation.withDefaultNamespace("block/basalt_side"), ResourceLocation.withDefaultNamespace("block/basalt_top"),TextureMapping.getBlockTexture(MtaBlocks.BASALT_GEYSER.get()));
         this.createTrivialCube(MtaBlocks.MOSSY_ANDESITE.get());
@@ -124,8 +136,8 @@ public class GenBlockModels extends BlockModelGenerators {
     public void createVerticalBlock(Block block, Block side, Block bottom, Block top){
         TextureMapping texturemapping = new TextureMapping()
                 .put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(bottom))
-                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(side))
-                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(top));
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(top))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(side));
         this.blockStateOutput.accept(createSimpleBlock(block, ModelTemplates.CUBE_BOTTOM_TOP.create(block, texturemapping, this.modelOutput)));
     }
     public void createVerticalBlock(Block block, ResourceLocation side, ResourceLocation bottom, ResourceLocation top){
@@ -216,4 +228,30 @@ public class GenBlockModels extends BlockModelGenerators {
             this.itemModelOutput.accept(item, itemmodel$unbaked);
 
     }
+
+
+    public void createCropLeaves(Block block, Property<Integer> ageProperty, int tint, int... ageToVisualStageMapping) {
+
+        if (ageProperty.getPossibleValues().size() != ageToVisualStageMapping.length) {
+            throw new IllegalArgumentException();
+        } else {
+            Int2ObjectMap<ResourceLocation> int2objectmap = new Int2ObjectOpenHashMap<>();
+            PropertyDispatch propertydispatch = PropertyDispatch.property(ageProperty)
+                    .generate(
+                            p_388091_ -> {
+                                int i = ageToVisualStageMapping[p_388091_];
+                                ResourceLocation resourcelocation = int2objectmap.computeIfAbsent(
+                                        i, p_387534_ -> this.createSuffixedVariant(block, "_stage" + i, ModelTemplates.CUBE_ALL, TextureMapping::crop)
+                                );
+                                return Variant.variant().with(VariantProperties.MODEL, resourcelocation);
+                            }
+                    );
+            ResourceLocation resourcelocation = TexturedModel.LEAVES.create(block, this.modelOutput);
+
+            this.registerSimpleTintedItemModel(block, resourcelocation, ItemModelUtils.constantTint(tint));
+
+            this.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(propertydispatch));
+        }
+    }
+
 }

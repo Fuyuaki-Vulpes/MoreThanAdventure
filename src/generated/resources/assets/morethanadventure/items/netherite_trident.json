@@ -20,14 +20,14 @@
         "type": "minecraft:special",
         "base": "morethanadventure:item/netherite_trident_in_hand",
         "model": {
-          "type": "minecraft:trident"
+          "type": "morethanadventure:netherite_trident"
         }
       },
       "on_true": {
         "type": "minecraft:special",
         "base": "morethanadventure:item/netherite_trident_throwing",
         "model": {
-          "type": "minecraft:trident"
+          "type": "morethanadventure:netherite_trident"
         }
       },
       "property": "minecraft:using_item"
