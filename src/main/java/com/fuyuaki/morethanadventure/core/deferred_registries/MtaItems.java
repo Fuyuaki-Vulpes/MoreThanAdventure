@@ -528,7 +528,7 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<SickleItem> IRON_SICKLE = ITEMS.registerItem("iron_scythe",
+    public static final DeferredItem<SickleItem> IRON_SICKLE = ITEMS.registerItem("iron_sickle",
             properties -> new SickleItem(ToolMaterial.IRON,
                     properties
 
@@ -603,7 +603,7 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<SickleItem> GOLD_SICKLE = ITEMS.registerItem("gold_scythe",
+    public static final DeferredItem<SickleItem> GOLD_SICKLE = ITEMS.registerItem("gold_sickle",
             properties -> new SickleItem(ToolMaterial.GOLD,
                     properties
 
@@ -683,7 +683,7 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<SickleItem> NETHERSTEEL_SICKLE = ITEMS.registerItem("nethersteel_scythe",
+    public static final DeferredItem<SickleItem> NETHERSTEEL_SICKLE = ITEMS.registerItem("nethersteel_sickle",
             properties -> new SickleItem(MTAToolMaterials.NETHERSTEEL,
                     properties
 
@@ -868,7 +868,7 @@ public class MtaItems {
                     properties
                             .durability(528), 10F, false, 10F, 2F));
 
-    public static final DeferredItem<ArcheryItem> REINFORCED_LONG_BOW = ITEMS.registerItem("long_bow",
+    public static final DeferredItem<ArcheryItem> REINFORCED_LONG_BOW = ITEMS.registerItem("reinforced_long_bow",
             properties -> new ArcheryItem(
                     properties
                             .durability(528), 10F, true, 10F, 2F));
@@ -878,7 +878,7 @@ public class MtaItems {
                     properties
                             .durability(528), 5F, false, 5F, 20F));
 
-    public static final DeferredItem<ArcheryItem> REINFORCED_SHORT_BOW = ITEMS.registerItem("short_bow",
+    public static final DeferredItem<ArcheryItem> REINFORCED_SHORT_BOW = ITEMS.registerItem("reinforced_short_bow",
             properties -> new ArcheryItem(
                     properties
                             .durability(528), 5F, true, 5F, 20F));
@@ -888,7 +888,7 @@ public class MtaItems {
                     properties
                             .durability(528), 15F, false, 7F, 5F));
 
-    public static final DeferredItem<ArcheryItem> REINFORCED_TWIN_BOW = ITEMS.registerItem("twin_bow",
+    public static final DeferredItem<ArcheryItem> REINFORCED_TWIN_BOW = ITEMS.registerItem("reinforced_twin_bow",
             properties -> new ArcheryItem(
                     properties
                             .durability(528), 15F, true, 7F, 5F));

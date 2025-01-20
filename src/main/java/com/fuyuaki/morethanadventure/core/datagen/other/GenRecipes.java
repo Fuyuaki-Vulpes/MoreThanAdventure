@@ -283,16 +283,16 @@ public class GenRecipes  extends RecipeProvider {
         gemAwakening(MtaItems.ALEXANDRITE.get(), MtaItems.SAMURAI_CLOTH.get(), MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
         gemAwakening(MtaItems.AQUAMARINE.get(), MtaItems.SIREN_SCALE.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
         gemAwakening(MtaItems.BLOODSTONE.get(), MtaItems.BLACK_WIDOW_VENOM.get(), MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
-        //gemAwakening(MtaItems.CELESTITE.get(), MtaItems.PHANTOM_MEMBRANE.get(), MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
+        gemAwakening(MtaItems.CELESTITE.get(), Items.PHANTOM_MEMBRANE, MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
         gemAwakening(MtaItems.CRYOLITE.get(), MtaItems.SPIRIT_DUST.get(), MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
         gemAwakening(MtaItems.GARNET.get(), MtaItems.CHARRED_BONE.get(), MtaItems.AWAKENED_GARNET.get(), "has_garnet");
-        //gemAwakening(MtaItems.MOONSTONE.get(), MtaItems.SUGAR.get(), MtaItems.AWAKENED_MOONSTONE.get(), "has_moonstone");
+        gemAwakening(MtaItems.MOONSTONE.get(), Items.GHAST_TEAR, MtaItems.AWAKENED_MOONSTONE.get(), "has_moonstone");
 
         agateSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_HELMET.get());
         agateSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_CHESTPLATE.get());
         agateSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_LEGGINGS.get());
         agateSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_BOOTS.get());
-        agateSmithing(Items.MACE, RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_WAR_HAMMER.get());
+        agateSmithing(MtaItems.NETHERITE_MACE.get(), RecipeCategory.COMBAT, MtaItems.GREAT_SENTINELS_WAR_HAMMER.get());
 
         alexandriteSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_HELMET.get());
         alexandriteSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, MtaItems.HOLY_KNIGHTS_CHESTPLATE.get());
