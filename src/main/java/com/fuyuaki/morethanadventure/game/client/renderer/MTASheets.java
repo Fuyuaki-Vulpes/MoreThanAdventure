@@ -9,6 +9,6 @@ public class MTASheets {
     public static final ResourceLocation SPRINKLER_SHEETS = ResourceLocation.fromNamespaceAndPath(MODID,"textures/atlas/sprinkler.png");
 
     public static Material createSprinklerMaterial() {
-        return new Material(SPRINKLER_SHEETS,  ResourceLocation.fromNamespaceAndPath(MODID, "entity/sprinkler"));
+        return new Material(SPRINKLER_SHEETS,  ResourceLocation.fromNamespaceAndPath(MODID, "textures/entity/sprinkler.png"));
     }
 }

@@ -1,15 +1,11 @@
 package com.fuyuaki.morethanadventure.game.client.model.block;
 
 
-import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
-
-import java.util.function.Function;
 
 public class SprinklerModel extends Model {
     private final ModelPart root;

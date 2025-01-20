@@ -6,19 +6,14 @@ import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpeci
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.color.item.GrassColorSource;
-import net.minecraft.client.color.item.ItemTintSources;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.*;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.item.ItemModel;
-import net.minecraft.client.renderer.special.ChestSpecialRenderer;
-import net.minecraft.client.renderer.special.ConduitSpecialRenderer;
-import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -29,8 +24,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenBlockModels extends BlockModelGenerators {
 
@@ -223,7 +216,7 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createParticleOnlyBlock(block, particleBlock);
         Item item = block.asItem();
         ResourceLocation resourcelocation = MTAModelTemplates.SPRINKLER_INVENTORY.create(item, TextureMapping.particle(particleBlock), this.modelOutput);
-        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.specialModel(resourcelocation, new SprinklerSpecialRenderer.Unbaked(false));
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.specialModel(resourcelocation, new SprinklerSpecialRenderer.Unbaked());
 
             this.itemModelOutput.accept(item, itemmodel$unbaked);
 

@@ -5,10 +5,7 @@ import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -26,11 +23,9 @@ public class SprinklerSpecialRenderer implements NoDataSpecialModelRenderer {
 
 
     private final SprinklerModel model;
-    private final boolean turnedOn;
 
-    public SprinklerSpecialRenderer(SprinklerModel model, boolean turnedOn) {
+    public SprinklerSpecialRenderer(SprinklerModel model) {
         this.model = model;
-        this.turnedOn = turnedOn;
     }
 
 
@@ -38,22 +33,13 @@ public class SprinklerSpecialRenderer implements NoDataSpecialModelRenderer {
     public void render(ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, boolean hasFoilType) {
         VertexConsumer vertexconsumer = MTASheets.createSprinklerMaterial().buffer(bufferSource,RenderType::entityCutout);
         poseStack.pushPose();
-        this.model.setupAnim(this.turnedOn);
+        this.model.setupAnim(false);
         this.model.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
         poseStack.popPose();
     }
 
-    public static record Unbaked(boolean on) implements SpecialModelRenderer.Unbaked {
-        public static final MapCodec<SprinklerSpecialRenderer.Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec(
-                p_388545_ -> p_388545_.group(
-                                Codec.BOOL.optionalFieldOf("on", Boolean.FALSE).forGetter(SprinklerSpecialRenderer.Unbaked::on)
-                        )
-                        .apply(p_388545_, SprinklerSpecialRenderer.Unbaked::new)
-        );
-
-        public Unbaked() {
-            this(true);
-        }
+    public static record Unbaked() implements SpecialModelRenderer.Unbaked {
+        public static final MapCodec<SprinklerSpecialRenderer.Unbaked> MAP_CODEC = MapCodec.unit(new SprinklerSpecialRenderer.Unbaked());
 
         @Override
         public @NotNull MapCodec<SprinklerSpecialRenderer.Unbaked> type() {
@@ -61,9 +47,9 @@ public class SprinklerSpecialRenderer implements NoDataSpecialModelRenderer {
         }
 
         @Override
-        public SpecialModelRenderer<?> bake(EntityModelSet p_387681_) {
-            SprinklerModel model = new SprinklerModel(p_387681_.bakeLayer(MTAModelLayers.SPRINKLER));
-            return new SprinklerSpecialRenderer(model, this.on);
+        public SpecialModelRenderer<?> bake(EntityModelSet modelSet) {
+            SprinklerModel model = new SprinklerModel(modelSet.bakeLayer(MTAModelLayers.SPRINKLER));
+            return new SprinklerSpecialRenderer(model);
         }
     }
 }

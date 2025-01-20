@@ -1,9 +1,6 @@
 {
   "model": {
-    "type": "minecraft:special",
-    "base": "morethanadventure:item/sprinkler",
-    "model": {
-      "type": "morethanadventure:sprinkler"
-    }
+    "type": "minecraft:model",
+    "model": "morethanadventure:block/sprinkler"
   }
 }

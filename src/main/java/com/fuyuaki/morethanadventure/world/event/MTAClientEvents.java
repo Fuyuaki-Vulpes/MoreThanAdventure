@@ -194,6 +194,13 @@ public class MTAClientEvents
         event.register(ResourceLocation.fromNamespaceAndPath(MODID,"mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
     }
 
+    @SubscribeEvent
+    public static void registerSpecialBlockModelRenderers(RegisterSpecialBlockModelRendererEvent event) {
+        event.register(MtaBlocks.SPRINKLER.get(),
+                new SprinklerSpecialRenderer.Unbaked());
+
+    }
+
 
     @SubscribeEvent
     public static void registerAtlases(RegisterMaterialAtlasesEvent event) {

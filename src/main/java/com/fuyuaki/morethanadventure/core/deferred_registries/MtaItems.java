@@ -238,6 +238,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<AnchorItem> WOOD_ANCHOR = ITEMS.registerItem("wood_anchor",
+            properties -> new AnchorItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
     public static final DeferredItem<ClawItem> WOOD_CLAW = ITEMS.registerItem("wood_claw",
             properties -> new ClawItem(ToolMaterial.WOOD,
                     properties
@@ -263,6 +268,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> WOOD_FLAIL = ITEMS.registerItem("wood_flail",
+            properties -> new FlailItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> WOOD_GLAIVE = ITEMS.registerItem("wood_glaive",
             properties -> new GlaiveItem(ToolMaterial.WOOD,
                     properties
@@ -278,8 +288,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> WOOD_RAPIER = ITEMS.registerItem("wood_rapier",
+            properties -> new RapierItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> WOOD_SCYTHE = ITEMS.registerItem("wood_scythe",
             properties -> new ScytheItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> WOOD_SICKLE = ITEMS.registerItem("wood_sickle",
+            properties -> new SickleItem(ToolMaterial.WOOD,
                     properties
 
             ));
@@ -290,6 +310,11 @@ public class MtaItems {
             ));
     public static final DeferredItem<TwinbladeItem> WOOD_TWINBLADE = ITEMS.registerItem("wood_twinblade",
             properties -> new TwinbladeItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
+    public static final DeferredItem<AnchorItem>STONE_ANCHOR = ITEMS.registerItem("stone_anchor",
+            properties -> new AnchorItem(ToolMaterial.STONE,
                     properties
 
             ));
@@ -318,6 +343,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> STONE_FLAIL = ITEMS.registerItem("stone_flail",
+            properties -> new FlailItem(ToolMaterial.STONE,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> STONE_GLAIVE = ITEMS.registerItem("stone_glaive",
             properties -> new GlaiveItem(ToolMaterial.STONE,
                     properties
@@ -333,8 +363,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> STONE_RAPIER = ITEMS.registerItem("stone_rapier",
+            properties -> new RapierItem(ToolMaterial.STONE,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> STONE_SCYTHE = ITEMS.registerItem("stone_scythe",
             properties -> new ScytheItem(ToolMaterial.STONE,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> STONE_SICKLE = ITEMS.registerItem("stone_sickle",
+            properties -> new SickleItem(ToolMaterial.STONE,
                     properties
 
             ));
@@ -345,6 +385,11 @@ public class MtaItems {
             ));
     public static final DeferredItem<TwinbladeItem> STONE_TWINBLADE = ITEMS.registerItem("stone_twinblade",
             properties -> new TwinbladeItem(ToolMaterial.STONE,
+                    properties
+
+            ));
+    public static final DeferredItem<AnchorItem> COPPER_ANCHOR = ITEMS.registerItem("copper_anchor",
+            properties -> new AnchorItem(MTAToolMaterials.COPPER,
                     properties
 
             ));
@@ -378,6 +423,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> COPPER_FLAIL = ITEMS.registerItem("copper_flail",
+            properties -> new FlailItem(MTAToolMaterials.COPPER,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> COPPER_GLAIVE = ITEMS.registerItem("copper_glaive",
             properties -> new GlaiveItem(MTAToolMaterials.COPPER,
                     properties
@@ -393,8 +443,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> COPPER_RAPIER = ITEMS.registerItem("copper_rapier",
+            properties -> new RapierItem(MTAToolMaterials.COPPER,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> COPPER_SCYTHE = ITEMS.registerItem("copper_scythe",
             properties -> new ScytheItem(MTAToolMaterials.COPPER,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> COPPER_SICKLE = ITEMS.registerItem("copper_sickle",
+            properties -> new SickleItem(MTAToolMaterials.COPPER,
                     properties
 
             ));
@@ -405,6 +465,11 @@ public class MtaItems {
             ));
     public static final DeferredItem<TwinbladeItem> COPPER_TWINBLADE = ITEMS.registerItem("copper_twinblade",
             properties -> new TwinbladeItem(MTAToolMaterials.COPPER,
+                    properties
+
+            ));
+    public static final DeferredItem<AnchorItem> IRON_ANCHOR = ITEMS.registerItem("iron_anchor",
+            properties -> new AnchorItem(ToolMaterial.IRON,
                     properties
 
             ));
@@ -433,6 +498,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> IRON_FLAIL = ITEMS.registerItem("iron_flail",
+            properties -> new FlailItem(ToolMaterial.IRON,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> IRON_GLAIVE = ITEMS.registerItem("iron_glaive",
             properties -> new GlaiveItem(ToolMaterial.IRON,
                     properties
@@ -448,8 +518,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> IRON_RAPIER = ITEMS.registerItem("iron_rapier",
+            properties -> new RapierItem(ToolMaterial.IRON,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> IRON_SCYTHE = ITEMS.registerItem("iron_scythe",
             properties -> new ScytheItem(ToolMaterial.IRON,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> IRON_SICKLE = ITEMS.registerItem("iron_scythe",
+            properties -> new SickleItem(ToolMaterial.IRON,
                     properties
 
             ));
@@ -460,6 +540,11 @@ public class MtaItems {
             ));
     public static final DeferredItem<TwinbladeItem> IRON_TWINBLADE = ITEMS.registerItem("iron_twinblade",
             properties -> new TwinbladeItem(ToolMaterial.IRON,
+                    properties
+
+            ));
+    public static final DeferredItem<AnchorItem> GOLD_ANCHOR = ITEMS.registerItem("gold_anchor",
+            properties -> new AnchorItem(ToolMaterial.GOLD,
                     properties
 
             ));
@@ -488,6 +573,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> GOLD_FLAIL = ITEMS.registerItem("gold_flail",
+            properties -> new FlailItem(ToolMaterial.GOLD,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> GOLD_GLAIVE = ITEMS.registerItem("gold_glaive",
             properties -> new GlaiveItem(ToolMaterial.GOLD,
                     properties
@@ -503,8 +593,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> GOLD_RAPIER = ITEMS.registerItem("gold_rapier",
+            properties -> new RapierItem(ToolMaterial.GOLD,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> GOLD_SCYTHE = ITEMS.registerItem("gold_scythe",
             properties -> new ScytheItem(ToolMaterial.GOLD,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> GOLD_SICKLE = ITEMS.registerItem("gold_scythe",
+            properties -> new SickleItem(ToolMaterial.GOLD,
                     properties
 
             ));
@@ -521,6 +621,11 @@ public class MtaItems {
     public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.registerItem("nethersteel_sword",
             properties -> new SwordItem(MTAToolMaterials.NETHERSTEEL, 3.0F, -2.4F,
                     properties
+            ));
+    public static final DeferredItem<AnchorItem> NETHERSTEEL_ANCHOR = ITEMS.registerItem("nethersteel_anchor",
+            properties -> new AnchorItem(MTAToolMaterials.NETHERSTEEL,
+                    properties
+
             ));
 
     public static final DeferredItem<ClawItem> NETHERSTEEL_CLAW = ITEMS.registerItem("nethersteel_claw",
@@ -548,6 +653,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> NETHERSTEEL_FLAIL = ITEMS.registerItem("nethersteel_flail",
+            properties -> new FlailItem(MTAToolMaterials.NETHERSTEEL,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> NETHERSTEEL_GLAIVE = ITEMS.registerItem("nethersteel_glaive",
             properties -> new GlaiveItem(MTAToolMaterials.NETHERSTEEL,
                     properties
@@ -563,8 +673,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> NETHERSTEEL_RAPIER = ITEMS.registerItem("nethersteel_rapier",
+            properties -> new RapierItem(MTAToolMaterials.NETHERSTEEL,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> NETHERSTEEL_SCYTHE = ITEMS.registerItem("nethersteel_scythe",
             properties -> new ScytheItem(MTAToolMaterials.NETHERSTEEL,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> NETHERSTEEL_SICKLE = ITEMS.registerItem("nethersteel_scythe",
+            properties -> new SickleItem(MTAToolMaterials.NETHERSTEEL,
                     properties
 
             ));
@@ -575,6 +695,11 @@ public class MtaItems {
             ));
     public static final DeferredItem<TwinbladeItem> NETHERSTEEL_TWINBLADE = ITEMS.registerItem("nethersteel_twinblade",
             properties -> new TwinbladeItem(MTAToolMaterials.NETHERSTEEL,
+                    properties
+
+            ));
+    public static final DeferredItem<AnchorItem> DIAMOND_ANCHOR = ITEMS.registerItem("diamond_anchor",
+            properties -> new AnchorItem(ToolMaterial.DIAMOND,
                     properties
 
             ));
@@ -603,6 +728,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> DIAMOND_FLAIL = ITEMS.registerItem("diamond_flail",
+            properties -> new FlailItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> DIAMOND_GLAIVE = ITEMS.registerItem("diamond_glaive",
             properties -> new GlaiveItem(ToolMaterial.DIAMOND,
                     properties
@@ -618,8 +748,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> DIAMOND_RAPIER = ITEMS.registerItem("diamond_rapier",
+            properties -> new RapierItem(ToolMaterial.DIAMOND,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> DIAMOND_SCYTHE = ITEMS.registerItem("diamond_scythe",
             properties -> new ScytheItem(ToolMaterial.DIAMOND,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> DIAMOND_SICKLE = ITEMS.registerItem("diamond_sickle",
+            properties -> new SickleItem(ToolMaterial.DIAMOND,
                     properties
 
             ));
@@ -642,7 +782,16 @@ public class MtaItems {
             properties -> new NetheriteBowItem(
                     properties
                             .durability(2031)));
+    public static final DeferredItem<MaceItem> NETHERITE_MACE = ITEMS.registerItem("netherite_mace",
+            properties -> new MaceItem(
+                    properties
+                            .durability(2031)));
 
+    public static final DeferredItem<AnchorItem> NETHERITE_ANCHOR = ITEMS.registerItem("netherite_anchor",
+            properties -> new AnchorItem(ToolMaterial.NETHERITE,
+                    properties
+
+            ));
     public static final DeferredItem<ClawItem> NETHERITE_CLAW = ITEMS.registerItem("netherite_claw",
             properties -> new ClawItem(ToolMaterial.NETHERITE,
                     properties
@@ -668,6 +817,11 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<FlailItem> NETHERITE_FLAIL = ITEMS.registerItem("netherite_flail",
+            properties -> new FlailItem(ToolMaterial.NETHERITE,
+                    properties
+
+            ));
     public static final DeferredItem<GlaiveItem> NETHERITE_GLAIVE = ITEMS.registerItem("netherite_glaive",
             properties -> new GlaiveItem(ToolMaterial.NETHERITE,
                     properties
@@ -683,8 +837,18 @@ public class MtaItems {
                     properties
 
             ));
+    public static final DeferredItem<RapierItem> NETHERITE_RAPIER = ITEMS.registerItem("netherite_rapier",
+            properties -> new RapierItem(ToolMaterial.NETHERITE,
+                    properties
+
+            ));
     public static final DeferredItem<ScytheItem> NETHERITE_SCYTHE = ITEMS.registerItem("netherite_scythe",
             properties -> new ScytheItem(ToolMaterial.NETHERITE,
+                    properties
+
+            ));
+    public static final DeferredItem<SickleItem> NETHERITE_SICKLE = ITEMS.registerItem("netherite_sickle",
+            properties -> new SickleItem(ToolMaterial.NETHERITE,
                     properties
 
             ));
@@ -698,6 +862,36 @@ public class MtaItems {
                     properties
 
             ));
+
+    public static final DeferredItem<ArcheryItem> LONG_BOW = ITEMS.registerItem("long_bow",
+            properties -> new ArcheryItem(
+                    properties
+                            .durability(528), 10F, false, 10F, 2F));
+
+    public static final DeferredItem<ArcheryItem> REINFORCED_LONG_BOW = ITEMS.registerItem("long_bow",
+            properties -> new ArcheryItem(
+                    properties
+                            .durability(528), 10F, true, 10F, 2F));
+
+    public static final DeferredItem<ArcheryItem> SHORT_BOW = ITEMS.registerItem("short_bow",
+            properties -> new ArcheryItem(
+                    properties
+                            .durability(528), 5F, false, 5F, 20F));
+
+    public static final DeferredItem<ArcheryItem> REINFORCED_SHORT_BOW = ITEMS.registerItem("short_bow",
+            properties -> new ArcheryItem(
+                    properties
+                            .durability(528), 5F, true, 5F, 20F));
+
+    public static final DeferredItem<ArcheryItem> TWIN_BOW = ITEMS.registerItem("twin_bow",
+            properties -> new ArcheryItem(
+                    properties
+                            .durability(528), 15F, false, 7F, 5F));
+
+    public static final DeferredItem<ArcheryItem> REINFORCED_TWIN_BOW = ITEMS.registerItem("twin_bow",
+            properties -> new ArcheryItem(
+                    properties
+                            .durability(528), 15F, true, 7F, 5F));
 
 
 

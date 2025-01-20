@@ -8,17 +8,10 @@ import com.fuyuaki.morethanadventure.world.block.Sprinkler;
 import com.fuyuaki.morethanadventure.world.block.entity.SprinklerEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Axis;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.PartPose;
-import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.resources.model.Material;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class SprinklerRenderer<T extends SprinklerEntity> implements BlockEntityRenderer<T> {
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(MODID,"textures/entity/sprinkler.png");
 
 
     private final SprinklerModel sprinklerModel;
@@ -46,4 +40,6 @@ public class SprinklerRenderer<T extends SprinklerEntity> implements BlockEntity
         this.sprinklerModel.setupAnim(blockstate.getValue(Sprinkler.ON));
         this.sprinklerModel.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
     }
+
+
 }
