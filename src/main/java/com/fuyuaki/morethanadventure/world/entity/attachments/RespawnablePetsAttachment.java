@@ -53,7 +53,7 @@ public class RespawnablePetsAttachment implements INBTSerializable<CompoundTag> 
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        ListTag tagList = nbt.getList("Pets", Tag.TAG_LIST);
+        ListTag tagList = nbt.getList("Pets", Tag.TAG_COMPOUND);
         if (tagList.isEmpty()) {
             return;
         }

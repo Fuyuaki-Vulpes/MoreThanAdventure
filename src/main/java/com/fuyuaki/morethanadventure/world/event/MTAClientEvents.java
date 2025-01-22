@@ -34,8 +34,7 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 
 @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class MTAClientEvents
-{
+public class MTAClientEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
 
@@ -44,7 +43,6 @@ public class MTAClientEvents
         });
 
     }
-
 
 
     @SubscribeEvent
@@ -116,13 +114,12 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.SPRINKLER, SprinklerModel::createBodyLayer);
 
 
-
         event.registerLayerDefinition(MTAModelLayers.NETHERITE_TRIDENT, NetheriteTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.MYSTIC_MERMAIDS_TRIDENT, MysticMermaidsTridentModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON, ArmoredSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.BEARDED_DRAGON, BeardedDragonModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW,  () ->  spiderLayer.apply(MeshTransformer.scaling(0.8F)));
+        event.registerLayerDefinition(MTAModelLayers.BLACK_WIDOW, () -> spiderLayer.apply(MeshTransformer.scaling(0.8F)));
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_PATTERN, ButterflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.BUTTERFLY_OVERLAY, ButterflyModel::createBodyLayer);
@@ -136,15 +133,15 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.FALLEN_SAMURAI, FallenSamuraiModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FERRET, FerretModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.FROSTED_SLIME, FrostedSlimeModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER,  () ->  spiderLayer.apply(MeshTransformer.scaling(0.4F)));
-        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, () ->  spiderLayer.apply(MeshTransformer.scaling(0.4F)));
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER, () -> spiderLayer.apply(MeshTransformer.scaling(0.4F)));
+        event.registerLayerDefinition(MTAModelLayers.GLOW_SPIDER_GLOW, () -> spiderLayer.apply(MeshTransformer.scaling(0.4F)));
         event.registerLayerDefinition(MTAModelLayers.GREAT_WHITE_SHARK, GreatWhiteSharkModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.HOST,HostModel::createBodyLayer);
+        event.registerLayerDefinition(MTAModelLayers.HOST, HostModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.ICICLE_CREEPER, IcicleCreeperModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.JELLYFISH, JellyfishModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.SIREN, SirenModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, () -> LayerDefinition.create(MossyZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
+        event.registerLayerDefinition(MTAModelLayers.MOSSY_ZOMBIE, () -> LayerDefinition.create(MossyZombieModel.createMesh(CubeDeformation.NONE, 0.0f), 64, 32));
         event.registerLayerDefinition(MTAModelLayers.OCTOPUS, OctopusModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.OWL, OwlModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.PENGUIN, PenguinModel::createBodyLayer);
@@ -152,10 +149,10 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.SHRIMP, ShrimpModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.SKELETON_FIGHTER, SkeletonFighterModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.TOUCAN, ToucanModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, () -> LayerDefinition.create(ToxicZombieModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
+        event.registerLayerDefinition(MTAModelLayers.TOXIC_ZOMBIE, () -> LayerDefinition.create(ToxicZombieModel.createMesh(CubeDeformation.NONE, 0.0f), 64, 32));
         event.registerLayerDefinition(MTAModelLayers.TURKEY, TurkeyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.YUKI_ONNA, YukiOnnaModel::createBodyLayer);
-        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, () -> LayerDefinition.create(ZombifiedMinerModel.createMesh(CubeDeformation.NONE, 0.0f),64,32));
+        event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER, () -> LayerDefinition.create(ZombifiedMinerModel.createMesh(CubeDeformation.NONE, 0.0f), 64, 32));
 
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_OUTER_ARMOR, () -> humanoidOuterArmor);
         event.registerLayerDefinition(MTAModelLayers.ARMORED_SKELETON_INNER_ARMOR, () -> humanoidInnerArmor);
@@ -184,14 +181,13 @@ public class MTAClientEvents
         event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
 
 
-
     }
 
     @SubscribeEvent
     public static void registerSpecialRenderers(RegisterSpecialModelRendererEvent event) {
-        event.register(ResourceLocation.fromNamespaceAndPath(MODID,"sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
-        event.register(ResourceLocation.fromNamespaceAndPath(MODID,"netherite_trident"), NetheriteTridentSpecialRenderer.Unbaked.MAP_CODEC);
-        event.register(ResourceLocation.fromNamespaceAndPath(MODID,"mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "netherite_trident"), NetheriteTridentSpecialRenderer.Unbaked.MAP_CODEC);
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
     }
 
     @SubscribeEvent
@@ -204,10 +200,10 @@ public class MTAClientEvents
 
     @SubscribeEvent
     public static void registerAtlases(RegisterMaterialAtlasesEvent event) {
-        event.register(MTASheets.SPRINKLER_SHEETS,ResourceLocation.fromNamespaceAndPath(MODID,"sprinkler"));
+        event.register(MTASheets.SPRINKLER_SHEETS, ResourceLocation.fromNamespaceAndPath(MODID, "sprinkler"));
     }
 
-        @SubscribeEvent
+    @SubscribeEvent
     public static void particleFactory(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(MtaParticles.GEYSER_WATER.get(), GeyserParticle.Water::new);
         event.registerSpriteSet(MtaParticles.GEYSER_LAVA.get(), GeyserParticle.Lava::new);
@@ -216,6 +212,8 @@ public class MTAClientEvents
         event.registerSpriteSet(MtaParticles.POISON_BUBBLE.get(), PoisonBubble.Provider::new);
         event.registerSpriteSet(MtaParticles.BLOOD.get(), BloodParticle.Provider::new);
 
+        event.registerSpriteSet(MtaParticles.RAINDROP.get(), RainParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.SNOWFLAKE.get(), SnowflakeParticle.Provider::new);
 
         event.registerSpriteSet(MtaParticles.SLASH_ATTACK.get(), AttackParticle.Provider::new);
         event.registerSpriteSet(MtaParticles.STAB_ATTACK.get(), AttackParticle.Provider::new);
@@ -223,6 +221,8 @@ public class MTAClientEvents
         event.registerSpriteSet(MtaParticles.TEAR_ATTACK.get(), AttackParticle.Provider::new);
 
     }
+
+
     @SubscribeEvent
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PALM_LEAVES.get());
@@ -235,8 +235,6 @@ public class MTAClientEvents
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {
     }
-
-
 
 
 }

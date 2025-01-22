@@ -1,14 +1,16 @@
 package com.fuyuaki.morethanadventure.world.event;
 
-
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
+import com.fuyuaki.morethanadventure.world.level.weather.MTAClimate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -17,10 +19,12 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.level.LevelEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
-@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
+@EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.GAME)
 public class MTACommonEvents {
 
     @SubscribeEvent
@@ -50,4 +54,27 @@ public class MTACommonEvents {
 
         }
     }
+
+    @SubscribeEvent
+    public static void serverTickEvent(ServerTickEvent.Post event){
+        MTAClimate.tickServer(event.getServer().overworld());
+    }
+
+    @SubscribeEvent
+    public static void loadGame(LevelEvent.Load event){
+        LevelAccessor world = event.getLevel();
+        if (!world.isClientSide() && world instanceof ServerLevel) {
+            MTAClimate.load(world);
+        }
+    }
+
+    @SubscribeEvent
+    public static void exitGame(LevelEvent.Save event){
+        LevelAccessor world = event.getLevel();
+        if (!world.isClientSide() && world instanceof ServerLevel) {
+            MTAClimate.save(world);
+        }
+
+    }
+
 }

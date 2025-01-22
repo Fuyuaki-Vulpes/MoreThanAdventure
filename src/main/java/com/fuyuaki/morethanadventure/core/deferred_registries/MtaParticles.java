@@ -28,6 +28,11 @@ public class MtaParticles {
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> DAGGER_ATTACK = simpleParticle("dagger_attack",false);
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TEAR_ATTACK = simpleParticle("tear_attack",false);
 
+
+
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> RAINDROP = simpleParticle("rain_drop",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> SNOWFLAKE = simpleParticle("snowflake",false);
+
     private static <I extends Block> DeferredHolder<ParticleType<?>, SimpleParticleType> simpleParticle(String name, boolean overrideLimiter) {
         return PARTICLES.register(name, () -> new SimpleParticleType(false));
     }

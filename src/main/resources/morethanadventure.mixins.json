@@ -24,7 +24,8 @@
     "FogRendererMixin",
     "GameRendererMixin",
     "GUIMixin",
-    "LightTextureMixin"
+    "LightTextureMixin",
+    "WeatherEffectRendererMixin"
   ],
   "server": [
   ],
