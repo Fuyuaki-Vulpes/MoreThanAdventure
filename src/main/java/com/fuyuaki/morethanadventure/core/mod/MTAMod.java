@@ -4,7 +4,9 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.*;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
+import com.fuyuaki.morethanadventure.network.MTANetwork;
 import com.mojang.logging.LogUtils;
+import io.wispforest.accessories.networking.AccessoriesNetworking;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -33,7 +35,7 @@ public class MTAMod
     {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
+        MTANetwork.init();
         MTAComponents.register(modEventBus);
         MTAAttachments.register(modEventBus);
         MtaEntityTypes.register(modEventBus);
