@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.world.level.weather.wind;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.SectionPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -9,9 +10,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.LevelChunk;
+import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 import org.slf4j.Logger;
@@ -26,6 +30,7 @@ public class WeatherControl{
 
 
     public static void tick(ServerLevel level){
+        if (level.isClientSide() || !level.dimensionTypeRegistration().is(BuiltinDimensionTypes.OVERWORLD)) return;
         if (windData == null) windData = new WindData();
         windData.tick(level);
 
@@ -58,7 +63,9 @@ public class WeatherControl{
         return tag;
     }
 
-
+    public static WindData getWindData() {
+        return windData;
+    }
 
     public static class WindData{
 
@@ -160,37 +167,6 @@ public class WeatherControl{
                 }
                 this.tickCount = 0;
 
-            }
-            ChunkPos pos = null;
-            if (level.getRandomPlayer() != null) pos = level.getRandomPlayer().chunkPosition();
-            if (pos!= null) {
-
-
-                ChunkWindData data = getChunkWindData(pos,level);
-
-                if (data.ticks >= 3 ) {
-                    float dayCycle = -((float) level.getTimeOfDay(0) * 2 - 1);
-                    System.out.println("------------------------");
-                    System.out.println("Wind Direction:" + this.windDirection);
-                    System.out.println("Air Humidity:" + data.airHumidity);
-                    System.out.println("Air Temperature:" + data.airTemperature);
-                    System.out.println("Charge:" + data.charge);
-                    System.out.println("Density:" + data.density);
-                    System.out.println("Humidity:" + data.humidity);
-                    System.out.println("Pressure:" + data.pressure);
-                    System.out.println("Local Pressure:" + data.localPressure);
-                    System.out.println("Wetness:" + data.wetness);
-                    System.out.println("Stored Temperature:" + data.storedTemperature);
-                    System.out.println("///");
-                    System.out.println("Wind Strenght:" + data.getWindStrenght(dayCycle));
-                    System.out.println("Logical Pressure:" + data.getLogicalPressure(dayCycle));
-                    System.out.println("Rain Strenght:" + data.getRainStrenght());
-                    System.out.println("Is Raining? :" + data.isRaining());
-                    System.out.println("Is Snowing? :" + data.isSnowing());
-                    System.out.println("Is Thundering?:" + data.isThundering(dayCycle));
-                    System.out.println("------------------------");
-
-                }
             }
         }
 
@@ -336,14 +312,7 @@ public class WeatherControl{
             this(wetness,storedTemperature,localPressure,0,0,0,0,0);
         }
 
-        public ChunkWindData(float wetness,
-                             float storedTemperature,
-                             float localPressure,
-                             float density,
-                             float charge,
-                             float humidity,
-                             float airTemperature,
-                             float airHumidity) {
+        public ChunkWindData(float wetness, float storedTemperature, float localPressure, float density, float charge, float humidity, float airTemperature, float airHumidity) {
             this.wetness = wetness;
             this.storedTemperature = storedTemperature;
             this.pressure = 0;
@@ -362,21 +331,7 @@ public class WeatherControl{
             this.ticks = 0;
         }
 
-        public ChunkWindData(float wetness,
-                             float storedTemperature,
-                             float pressure,
-                             float localPressure,
-                             float density,
-                             float charge,
-                             float humidity,
-                             float airTemperature,
-                             float airHumidity,
-                             float processingPressure,
-                             float processingDensity,
-                             float processingCharge,
-                             float processingHumidity,
-                             float processingAirTemperature,
-                             float processingAirHumidity) {
+        public ChunkWindData(float wetness, float storedTemperature, float localPressure, float pressure, float density, float charge, float humidity, float airTemperature, float airHumidity, float processingPressure, float processingDensity, float processingCharge, float processingHumidity, float processingAirTemperature, float processingAirHumidity) {
             this.wetness = wetness;
             this.storedTemperature = storedTemperature;
             this.pressure = pressure;
@@ -397,36 +352,35 @@ public class WeatherControl{
 
 
 
-        public static ChunkWindData makeChunkWindData(Level level, double x, double z){
+        public static ChunkWindData makeChunkWindData(Level level, int x, int z){
             float localPressure;
             float storedTemperature;
             float wetness;
 
-            int i = SectionPos.posToSectionCoord(x);
-            int j = SectionPos.posToSectionCoord(z);
 
 
             if (level != null){
-                ChunkPos chunkpos = new ChunkPos(i, j);
+                ChunkPos chunkpos = new ChunkPos(x, z);
 
-                LevelChunk levelchunk = level.getChunk(i, j);
+                LevelChunk levelchunk = level.getChunk(x, z);
 
                 if (levelchunk == null) {
                     localPressure = 0;
                     storedTemperature = 0;
                     wetness = 0;
                 } else {
-                    BlockPos blockpos = chunkpos.getWorldPosition().atY(70);
+                    BlockPos blockpos = chunkpos.getWorldPosition().atY(90);
                     int a = level.getHeight(Heightmap.Types.WORLD_SURFACE, blockpos.getX() + 8, blockpos.getZ() + 8);
-                    float t = ((float) a - level.getSeaLevel()) / ((level.getMaxY() - level.getSeaLevel()) * 0.3F);
+                    blockpos = blockpos.atY(a);
+                    float t = ((float) a - level.getSeaLevel()) / (level.getSeaLevel());
                     localPressure = Math.clamp(t, -1.5F,1.5F) * -1.0F;
-                    wetness = level.getBiome(blockpos).value().getModifiedClimateSettings().downfall();
-                    storedTemperature = level.getBiome(blockpos).value().getBaseTemperature() / 2;
+                    Holder<Biome> biome = level.getBiome(blockpos);
+                    wetness = biome.value().getModifiedClimateSettings().downfall();
+                    storedTemperature =  (biome.value().getModifiedClimateSettings().temperature() - 0.5F) * 0.5F;
+
+
 
                 }
-
-
-
             }else {
                 localPressure = 0;
                 wetness = 0;
@@ -492,24 +446,28 @@ public class WeatherControl{
         }
 
 
+        private static float safelyLoad(float number){
+            return Float.isNaN(number) ? 0 : number;
+        }
+
         public static ChunkWindData load(CompoundTag tag){
-            float wetness = tag.getFloat("Wetness");
-            float temp = tag.getFloat("StoredTemperature");
-            float pressure = tag.getFloat("Pressure");
-            float localPressure = tag.getFloat("LocalPressure");
-            float density = tag.getFloat("Density");
-            float charge = tag.getFloat("Charge");
-            float humidity = tag.getFloat("Humidity");
-            float airTemperature = tag.getFloat("AirTemperature");
-            float airHumidity = tag.getFloat("AirHumidity");
+            float wetness = safelyLoad(tag.getFloat("Wetness"));
+            float temp = safelyLoad(tag.getFloat("StoredTemperature"));
+            float pressure = safelyLoad(tag.getFloat("Pressure"));
+            float localPressure = safelyLoad(tag.getFloat("LocalPressure"));
+            float density = safelyLoad(tag.getFloat("Density"));
+            float charge = safelyLoad(tag.getFloat("Charge"));
+            float humidity = safelyLoad(tag.getFloat("Humidity"));
+            float airTemperature = safelyLoad(tag.getFloat("AirTemperature"));
+            float airHumidity = safelyLoad(tag.getFloat("AirHumidity"));
             CompoundTag processing = tag.getCompound("Processing");
 
-            float processingPressure = processing.getFloat("Pressure");
-            float processingDensity = processing.getFloat("Density");
-            float processingCharge = processing.getFloat("Charge");
-            float processingHumidity = processing.getFloat("Humidity");
-            float processingAirTemperature = processing.getFloat("AirTemperature");
-            float processingAirHumidity = processing.getFloat("AirHumidity");
+            float processingPressure = safelyLoad(processing.getFloat("Pressure"));
+            float processingDensity = safelyLoad(processing.getFloat("Density"));
+            float processingCharge = safelyLoad(processing.getFloat("Charge"));
+            float processingHumidity = safelyLoad(processing.getFloat("Humidity"));
+            float processingAirTemperature = safelyLoad(processing.getFloat("AirTemperature"));
+            float processingAirHumidity = safelyLoad(processing.getFloat("AirHumidity"));
             return new ChunkWindData(wetness,
                     temp,
                     pressure,
@@ -528,20 +486,18 @@ public class WeatherControl{
             );
         }
 
-        public ChunkWindData reloadContents(ServerLevel level, ChunkPos chunkpos){
-            BlockPos blockpos = chunkpos.getWorldPosition().atY(70);
-            int a = level.getHeight(Heightmap.Types.WORLD_SURFACE, blockpos.getX() + 8, blockpos.getZ() + 8);
-            float t = ((float) a - level.getSeaLevel()) / ((level.getMaxY() - level.getSeaLevel()) * 0.3F);
-            this.localPressure = Math.clamp(t, -1.5F,1.5F) * -1.0F;
-            this.wetness = level.getBiome(blockpos).value().getModifiedClimateSettings().downfall();
-            this.storedTemperature = level.getBiome(blockpos).value().getBaseTemperature() / 2;
-
-            return this;
-        }
-
         public void tick() {
 
+            this.ticks++;
             if (ticks >= 4){
+
+            this.processingAirTemperature = Mth.clamp(this.processingAirTemperature,-1.0F,1.0F);
+            this.processingAirHumidity = Mth.clamp(this.processingAirHumidity,-1.0F,1.0F);
+            this.processingHumidity = Mth.clamp(this.processingHumidity,-1.0F,1.0F);
+            this.processingDensity = Mth.clamp(this.processingDensity,-2.0F,2.0F);
+            this.processingCharge = Mth.clamp(this.processingCharge,0.0F,3.0F);
+            this.processingPressure = Mth.clamp(this.processingPressure,-1.0F,1.0F);
+
                 if (Math.abs(this.processingAirTemperature) > 0.6F ){
                     this.processingCharge += RandomSource.create().nextFloat() * 0.3F;
                 }
@@ -575,35 +531,47 @@ public class WeatherControl{
 
            if (rand.nextBoolean()){
                if (rand.nextFloat() < 0.1F){
-                   float w = this.wetness / 2;
-                   this.humidity += w * 0.1F * rand.nextFloat();
-                   this.airHumidity += w * rand.nextFloat();
-               }
-               if (rand.nextFloat() < 0.3F && this.humidity != 0.0F && !Float.isNaN(this.humidity)){
-                   float temp = this.storedTemperature * this.humidity;
-                   this.airHumidity += temp * rand.nextFloat();
+                   float w = Mth.cos(this.storedTemperature) * this.wetness / 10;
+                   this.humidity += w  * rand.nextFloat();
+
+                   }
+               if (rand.nextFloat() < 0.2F){
+                   float temp = Mth.cos(this.storedTemperature) * this.humidity;
+                   this.airHumidity += temp * rand.nextFloat() / 10;
                }
                if (this.airTemperature > rand.nextFloat() * 1.5F || this.storedTemperature > rand.nextFloat() * 3){
                    float exchange = rand.nextFloat() / 100 ;
                    if (this.humidity - exchange > 0) {
                        this.humidity -= exchange;
-                       this.airHumidity += exchange * 2;
-                       this.density += exchange * 3;
+                       this.airHumidity += exchange;
+                       this.density += exchange;
                    }
                }
                if (rand.nextFloat() < 0.2F){
-                   this.airTemperature += this.storedTemperature * rand.nextFloat() * 0.2F;
+                   this.airTemperature += this.storedTemperature * rand.nextFloat() / 5;
+               }
+           }
+           if (rand.nextFloat() < 0.3){
+               if (this.humidity != 0.0F){
+                   this.humidity = Mth.lerp(rand.nextFloat() / 10, this.humidity,0.0F);
+               }
+               if (this.airHumidity > 0.0F){
+                   this.airHumidity = Mth.lerp(rand.nextFloat() / 10,this.airHumidity,0.0F);
+               }
+               if (Mth.abs(this.airTemperature) > 0.0F){
+                   this.airTemperature = Mth.lerp(rand.nextFloat() / 10,this.airTemperature,0.0F);
+
                }
            }
             if (this.isRaining()){
                 if (this.humidity < 1.0F){
-                    this.humidity = Mth.lerp(rand.nextFloat() * rand.nextIntBetweenInclusive(10,100),this.humidity,1.0F);
+                    this.humidity = Mth.lerp(rand.nextFloat() / 3, this.humidity,1.0F);
                 }
                 if (this.airHumidity > 0.0F){
-                    this.airHumidity = Mth.lerp(rand.nextFloat() * rand.nextIntBetweenInclusive(10,100),this.airHumidity,0.0F);
+                    this.airHumidity = Mth.lerp(rand.nextFloat() / 5,this.airHumidity,0.0F);
                 }
-                if (this.airTemperature > 0.0F){
-                    this.airTemperature = Mth.lerp(rand.nextFloat() * rand.nextIntBetweenInclusive(10,100),this.airTemperature,0.0F);
+                if (Mth.abs(this.airTemperature) > 0.0F){
+                    this.airTemperature = Mth.lerp(rand.nextFloat() / 2,this.airTemperature,0.0F);
 
                 }
                 if (this.pressure > 0.0F){
@@ -613,15 +581,12 @@ public class WeatherControl{
                 this.density -= Mth.lerp(rand.nextFloat() * rand.nextIntBetweenInclusive(10,100),this.density,0.0F);
             }
 
-            if (rand.nextIntBetweenInclusive(1, 1000) < 10 && rand.nextBoolean()){
-                this.humidity += (rand.nextFloat() - 0.5F) * 0.2F;
-            }
-//            this.airTemperature = Mth.clamp(this.airTemperature,-1.0F,1.0F);
-//            this.airHumidity = Mth.clamp(this.airHumidity,-1.0F,1.0F);
-//            this.humidity = Mth.clamp(this.humidity,-1.0F,1.0F);
-//            this.density = Mth.clamp(this.density,-2.0F,2.0F);
-//            this.charge = Mth.clamp(this.charge,0.0F,3.0F);
-//            this.pressure = Mth.clamp(this.charge,-1.0F,1.0F);
+            this.airTemperature = Mth.clamp(this.airTemperature,-1.0F,1.0F);
+            this.airHumidity = Mth.clamp(this.airHumidity,-1.0F,1.0F);
+            this.humidity = Mth.clamp(this.humidity,-1.0F,1.0F);
+            this.density = Mth.clamp(this.density,-2.0F,2.0F);
+            this.charge = Mth.clamp(this.charge,0.0F,3.0F);
+            this.pressure = Mth.clamp(this.pressure,-1.0F,1.0F);
 
 
         }
@@ -630,8 +595,9 @@ public class WeatherControl{
         public void makeThunder(ServerLevel level){
             this.charge -= level.random.nextFloat() / 4;
         }
-        public ChunkWindData moveFrom(ChunkWindData chunk1, float rate) {
+        public ChunkWindData moveFrom(ChunkWindData chunk1, float baseRate) {
 
+            float rate = baseRate / 100;
             this.processingPressure += chunk1.pressure * rate;
             chunk1.processingPressure -= chunk1.pressure * rate;
 
@@ -651,6 +617,20 @@ public class WeatherControl{
             chunk1.processingAirTemperature -= chunk1.airTemperature * rate;
 
             return chunk1;
+        }
+
+        public float getLogicalTemperature(Player player) {
+            float localTemperature = (this.storedTemperature + this.airTemperature) * ( this.humidity + this.airHumidity);
+
+            if (this.isRaining()){
+                localTemperature = localTemperature * (1 - this.getRainStrenght());
+            }
+
+            return localTemperature;
+        }
+
+        public float getLogicalHumidity(Player player) {
+            return this.humidity + this.airHumidity;
         }
     }
 }
