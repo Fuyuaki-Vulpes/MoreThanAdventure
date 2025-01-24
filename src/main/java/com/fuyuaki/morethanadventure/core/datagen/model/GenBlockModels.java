@@ -115,7 +115,7 @@ public class GenBlockModels extends BlockModelGenerators {
         this.registerSimpleItemModel(MtaBlocks.COARSE_DIRT_PATH.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.COARSE_DIRT_PATH.get()));
         this.registerSimpleItemModel(MtaBlocks.SAND_PATH.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.SAND_PATH.get()));
         this.registerSimpleItemModel(MtaBlocks.GRASSY_DIRT.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.GRASSY_DIRT.get()));
-        this.registerSimpleItemModel(MtaBlocks.PERMAFROST_GRASS.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.PERMAFROST_GRASS.get()));
+        this.registerSimpleTintedItemModel(MtaBlocks.PERMAFROST_GRASS.get(),ModelLocationUtils.getModelLocation(MtaBlocks.PERMAFROST_GRASS.get()),new GrassColorSource());
 
         this.createGrassLikeBlock(MtaBlocks.TUNDRA_GRASS.get(),MtaBlocks.PERMAFROST_DIRT.get(),false);
 

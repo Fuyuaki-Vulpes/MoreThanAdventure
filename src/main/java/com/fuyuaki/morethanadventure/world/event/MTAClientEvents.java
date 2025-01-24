@@ -212,8 +212,6 @@ public class MTAClientEvents {
         event.registerSpriteSet(MtaParticles.POISON_BUBBLE.get(), PoisonBubble.Provider::new);
         event.registerSpriteSet(MtaParticles.BLOOD.get(), BloodParticle.Provider::new);
 
-        event.registerSpriteSet(MtaParticles.RAINDROP.get(), RainParticle.Provider::new);
-        event.registerSpriteSet(MtaParticles.SNOWFLAKE.get(), SnowflakeParticle.Provider::new);
 
         event.registerSpriteSet(MtaParticles.SLASH_ATTACK.get(), AttackParticle.Provider::new);
         event.registerSpriteSet(MtaParticles.STAB_ATTACK.get(), AttackParticle.Provider::new);
