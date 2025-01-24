@@ -55,6 +55,7 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.BIG_BOWL);
 
         simpleItem(MtaItems.CLEAR_QUARTZ);
+        //simpleItem(MtaItems.NETHERSTEEL_INGOT);
         simpleItem(MtaItems.NETHERITE_FRACTURE);
 
         simpleItem(MtaItems.HOST_HUSK);
@@ -156,6 +157,10 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.COPPER_SWORD);
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
 
+        this.generateTridents();
+        this.generateBow(MtaItems.NETHERITE_BOW.get());
+        //handheldItem(MtaItems.NETHERITE_MACE);
+
         //handheldBigItem(MtaItems.WOOD_ANCHOR);
         handheldClaw(MtaItems.WOOD_CLAW);
         handheldBigItem(MtaItems.WOOD_CLAYMORE);
@@ -171,6 +176,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldBigItem(MtaItems.WOOD_SICKLE);
         handheldBigItem(MtaItems.WOOD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.WOOD_TWINBLADE);
+        //handheldItem(MtaItems.WOOD_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.STONE_ANCHOR);
         handheldClaw(MtaItems.STONE_CLAW);
@@ -187,6 +193,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.STONE_SICKLE);
         handheldBigItem(MtaItems.STONE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.STONE_TWINBLADE);
+        //handheldItem(MtaItems.STONE_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.COPPER_ANCHOR);
         handheldClaw(MtaItems.COPPER_CLAW);
@@ -203,6 +210,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.COPPER_SICKLE);
         handheldBigItem(MtaItems.COPPER_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);
+        //handheldItem(MtaItems.COPPER_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.IRON_ANCHOR);
         handheldClaw(MtaItems.IRON_CLAW);
@@ -219,6 +227,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.IRON_SICKLE);
         handheldBigItem(MtaItems.IRON_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.IRON_TWINBLADE);
+        //handheldItem(MtaItems.IRON_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.GOLD_ANCHOR);
         handheldClaw(MtaItems.GOLD_CLAW);
@@ -235,6 +244,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.GOLD_SICKLE);
         handheldBigItem(MtaItems.GOLD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.GOLD_TWINBLADE);
+        //handheldItem(MtaItems.GOLD_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.NETHERSTEEL_ANCHOR);
         handheldClaw(MtaItems.NETHERSTEEL_CLAW);
@@ -251,6 +261,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.NETHERSTEEL_SICKLE);
         handheldBigItem(MtaItems.NETHERSTEEL_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERSTEEL_TWINBLADE);
+        //handheldItem(MtaItems.NETHERSTEEL_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.DIAMOND_ANCHOR);
         handheldClaw(MtaItems.DIAMOND_CLAW);
@@ -267,6 +278,7 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.DIAMOND_SICKLE);
         handheldBigItem(MtaItems.DIAMOND_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);
+        //handheldItem(MtaItems.DIAMOND_WHIP_SWORD);
 
         //handheldBigItem(MtaItems.NETHERITE_ANCHOR);
         handheldClaw(MtaItems.NETHERITE_CLAW);
@@ -283,9 +295,18 @@ public class GenItemModels extends ItemModelGenerators {
         //handheldItem(MtaItems.NETHERITE_SICKLE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
-        this.generateTridents();
-        this.generateBow(MtaItems.NETHERITE_BOW.get());
-        //handheldItem(MtaItems.NETHERITE_MACE);
+        //handheldItem(MtaItems.NETHERITE_WHIP_SWORD);
+
+        //this.generateBow(MtaItems.LONG_BOW.get());
+        //this.generateBow(MtaItems.REINFORCED_LONG_BOW.get());
+        //this.generateBow(MtaItems.SHORT_BOW.get());
+        //this.generateBow(MtaItems.REINFORCED_SHORT_BOW.get());
+        //this.generateBow(MtaItems.TWIN_BOW.get());
+        //this.generateBow(MtaItems.REINFORCED_TWIN_BOW.get());
+
+        //handheldItem(MtaItems.LEATHER_WHIP);
+        //handheldItem(MtaItems.CHAIN_WHIP);
+        //handheldItem(MtaItems.NETHERITE_WHIP);
 
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);

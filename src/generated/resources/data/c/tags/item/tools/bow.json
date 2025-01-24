@@ -1,6 +1,12 @@
 {
   "values": [
     "morethanadventure:temple_angels_bow",
-    "morethanadventure:netherite_bow"
+    "morethanadventure:netherite_bow",
+    "morethanadventure:long_bow",
+    "morethanadventure:reinforced_long_bow",
+    "morethanadventure:short_bow",
+    "morethanadventure:reinforced_short_bow",
+    "morethanadventure:twin_bow",
+    "morethanadventure:reinforced_twin_bow"
   ]
 }

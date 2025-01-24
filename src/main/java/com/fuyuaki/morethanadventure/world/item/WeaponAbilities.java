@@ -24,6 +24,8 @@ public class WeaponAbilities extends ItemAbilities {
     public static final Set<ItemAbility> DEFAULT_SICKLE_ACTIONS = of(SWORD_DIG, HOE_DIG,HOE_TILL);
     public static final Set<ItemAbility> DEFAULT_SPEAR_ACTIONS = of(SWORD_DIG);
     public static final Set<ItemAbility> DEFAULT_TWINBLADE_ACTIONS = of(SWORD_DIG);
+    public static final Set<ItemAbility> DEFAULT_WHIP_SWORD_ACTIONS = of(SWORD_DIG);
+    public static final Set<ItemAbility> DEFAULT_WHIP_ACTIONS = of(SWORD_SWEEP);
 
 
     private static Set<ItemAbility> of(ItemAbility... actions) {

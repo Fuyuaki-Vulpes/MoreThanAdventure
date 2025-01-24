@@ -362,6 +362,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.BIG_BOWL.get(),"Big Bowl");
 
         add(MtaItems.CLEAR_QUARTZ.get(),"Clear Quartz");
+        add(MtaItems.NETHERSTEEL_INGOT.get(),"Nethersteel Ingot");
         add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
 
         add(MtaItems.HOST_HUSK.get(),"Host Husk");
@@ -480,6 +481,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.WOOD_SICKLE.get(),"Woods Sickle");
         add(MtaItems.WOOD_SPEAR.get(),"Wood Spear");
         add(MtaItems.WOOD_TWINBLADE.get(),"Wood Twinblade");
+        add(MtaItems.WOOD_WHIP_SWORD.get(),"Wood Whip Sword");
 
         add(MtaItems.STONE_ANCHOR.get(),"Stone Anchor");
         add(MtaItems.STONE_CLAW.get(),"Stone Claw");
@@ -496,6 +498,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.STONE_SICKLE.get(),"Stone Sickle");
         add(MtaItems.STONE_SPEAR.get(),"Stone Spear");
         add(MtaItems.STONE_TWINBLADE.get(),"Stone Twinblade");
+        add(MtaItems.STONE_WHIP_SWORD.get(),"Stone Whip Sword");
 
         add(MtaItems.COPPER_ANCHOR.get(),"Copper Anchor");
         add(MtaItems.COPPER_CLAW.get(),"Copper Claw");
@@ -512,6 +515,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.COPPER_SICKLE.get(),"Copper Sickle");
         add(MtaItems.COPPER_SPEAR.get(),"Copper Spear");
         add(MtaItems.COPPER_TWINBLADE.get(),"Copper Twinblade");
+        add(MtaItems.COPPER_WHIP_SWORD.get(),"Copper Whip Sword");
 
         add(MtaItems.IRON_ANCHOR.get(),"Iron Anchor");
         add(MtaItems.IRON_CLAW.get(),"Iron Claw");
@@ -528,6 +532,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.IRON_SICKLE.get(),"Iron Sickle");
         add(MtaItems.IRON_SPEAR.get(),"Iron Spear");
         add(MtaItems.IRON_TWINBLADE.get(),"Iron Twinblade");
+        add(MtaItems.IRON_WHIP_SWORD.get(),"Iron Whip Sword");
 
         add(MtaItems.GOLD_ANCHOR.get(),"Gold Anchor");
         add(MtaItems.GOLD_CLAW.get(),"Gold Claw");
@@ -544,6 +549,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.GOLD_SICKLE.get(),"Gold Sickle");
         add(MtaItems.GOLD_SPEAR.get(),"Gold Spear");
         add(MtaItems.GOLD_TWINBLADE.get(),"Gold Twinblade");
+        add(MtaItems.GOLD_WHIP_SWORD.get(),"Gold Whip Sword");
 
         add(MtaItems.NETHERSTEEL_ANCHOR.get(),"Nethersteel Anchor");
         add(MtaItems.NETHERSTEEL_CLAW.get(),"Nethersteel Claw");
@@ -560,6 +566,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.NETHERSTEEL_SICKLE.get(),"Nethersteel Sickle");
         add(MtaItems.NETHERSTEEL_SPEAR.get(),"Nethersteel Spear");
         add(MtaItems.NETHERSTEEL_TWINBLADE.get(),"Nethersteel Twinblade");
+        add(MtaItems.NETHERSTEEL_WHIP_SWORD.get(),"Nethersteel Whip Sword");
 
         add(MtaItems.DIAMOND_ANCHOR.get(),"Diamond Anchor");
         add(MtaItems.DIAMOND_CLAW.get(),"Diamond Claw");
@@ -576,6 +583,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.DIAMOND_SICKLE.get(),"Diamond Sickle");
         add(MtaItems.DIAMOND_SPEAR.get(),"Diamond Spear");
         add(MtaItems.DIAMOND_TWINBLADE.get(),"Diamond Twinblade");
+        add(MtaItems.DIAMOND_WHIP_SWORD.get(),"Diamond Whip Sword");
 
         add(MtaItems.NETHERITE_ANCHOR.get(),"Netherite Anchor");
         add(MtaItems.NETHERITE_CLAW.get(),"Netherite Claw");
@@ -592,6 +600,18 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.NETHERITE_SICKLE.get(),"Netherite Sickle");
         add(MtaItems.NETHERITE_SPEAR.get(),"Netherite Spear");
         add(MtaItems.NETHERITE_TWINBLADE.get(),"Netherite Twinblade");
+        add(MtaItems.NETHERITE_WHIP_SWORD.get(),"Netherite Whip Sword");
+
+        add(MtaItems.LONG_BOW.get(), "Long Bow");
+        add(MtaItems.REINFORCED_LONG_BOW.get(), "Reinforced Long Bow");
+        add(MtaItems.SHORT_BOW.get(), "Short Bow");
+        add(MtaItems.REINFORCED_SHORT_BOW.get(), "Reinforced Short Bow");
+        add(MtaItems.TWIN_BOW.get(), "Twin Bow");
+        add(MtaItems.REINFORCED_TWIN_BOW.get(), "Reinforced Twin Bow");
+
+        add(MtaItems.LEATHER_WHIP.get(), "Leather Whip");
+        add(MtaItems.CHAIN_WHIP.get(), "Chain Whip");
+        add(MtaItems.NETHERITE_WHIP.get(), "Netherite Whip");
 
         add(MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(), "Great Sentinel's War Hammer");
         add(MtaItems.HOLY_KNIGHTS_GREATSWORD.get(), "Holy Knight's Greatsword");

@@ -19,5 +19,13 @@ public class GenEnchantmentTags extends EnchantmentTagsProvider {
         this.tag(MtaTags.Enchantments.FLAMING).add(
                 Enchantments.FLAME
         );
+        this.tag(MtaTags.Enchantments.WHIP).add(
+                Enchantments.FIRE_ASPECT,
+                Enchantments.LOOTING,
+                Enchantments.KNOCKBACK,
+                Enchantments.MENDING,
+                Enchantments.SWEEPING_EDGE,
+                Enchantments.UNBREAKING
+        );
     }
 }

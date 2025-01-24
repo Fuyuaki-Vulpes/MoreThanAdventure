@@ -2,6 +2,8 @@ package com.fuyuaki.morethanadventure.world.item.weaponry;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
@@ -16,6 +18,12 @@ public class AnchorItem extends WeaponItem{
     public AnchorItem(ToolMaterial tier, Properties properties) {
         super(tier, attackDamage, attackSpeed,3.5F ,properties);
     }
+
+    @Override
+    public ParticleOptions getWeaponHitParticles() {
+        return ParticleTypes.SWEEP_ATTACK;
+    }
+
     @Override
     public SoundEvent getWeaponHitSound() {
         return MtaSounds.WEAPON_PUNCH.get();

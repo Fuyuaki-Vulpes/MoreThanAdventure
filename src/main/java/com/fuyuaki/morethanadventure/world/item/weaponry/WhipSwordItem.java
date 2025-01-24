@@ -9,14 +9,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.neoforged.neoforge.common.ItemAbility;
 
-public class FlailItem extends WeaponItem{
+public class WhipSwordItem extends WeaponItem{
 
-    protected static final float attackSpeed = -2.2F;
-    protected static final int attackDamage = 2;
-    protected static final float range = 4.0F;
 
-    public FlailItem(ToolMaterial tier, Properties properties) {
-        super(tier, attackDamage, attackSpeed,2.0F ,properties);
+    protected static final float attackSpeed = -2.6F;
+    protected static final int attackDamage = 3;
+    protected static final float range = 3.7F;
+
+    public WhipSwordItem(ToolMaterial p_tier, Properties p_properties) {
+        super(p_tier, attackDamage, attackSpeed, 3.7F, p_properties);
     }
 
     @Override
@@ -26,10 +27,11 @@ public class FlailItem extends WeaponItem{
 
     @Override
     public SoundEvent getWeaponHitSound() {
-        return MtaSounds.WEAPON_PUNCH.get();
+        return MtaSounds.WEAPON_TEAR.get();
     }
+
     @Override
     public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
-        return WeaponAbilities.DEFAULT_FLAIL_ACTIONS.contains(itemAbility);
+        return WeaponAbilities.DEFAULT_WHIP_SWORD_ACTIONS.contains(itemAbility);
     }
 }

@@ -1,5 +1,6 @@
 {
   "values": [
+    "morethanadventure:silent_reaper_scythe",
     "morethanadventure:wood_scythe",
     "morethanadventure:stone_scythe",
     "morethanadventure:copper_scythe",
@@ -23,6 +24,22 @@
     "morethanadventure:gold_claw",
     "morethanadventure:nethersteel_claw",
     "morethanadventure:diamond_claw",
-    "morethanadventure:netherite_claw"
+    "morethanadventure:netherite_claw",
+    "morethanadventure:wood_rapier",
+    "morethanadventure:stone_rapier",
+    "morethanadventure:copper_rapier",
+    "morethanadventure:iron_rapier",
+    "morethanadventure:gold_rapier",
+    "morethanadventure:nethersteel_rapier",
+    "morethanadventure:diamond_rapier",
+    "morethanadventure:netherite_rapier",
+    "morethanadventure:wood_sickle",
+    "morethanadventure:stone_sickle",
+    "morethanadventure:copper_sickle",
+    "morethanadventure:iron_sickle",
+    "morethanadventure:gold_sickle",
+    "morethanadventure:nethersteel_sickle",
+    "morethanadventure:diamond_sickle",
+    "morethanadventure:netherite_sickle"
   ]
 }

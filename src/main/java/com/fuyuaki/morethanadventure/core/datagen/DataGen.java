@@ -64,6 +64,7 @@ public class DataGen {
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
 
 
+
     }
 
 }

@@ -165,31 +165,64 @@ public class GenRecipes  extends RecipeProvider {
         newWeaponsTags(ItemTags.PLANKS, MtaItems.WOOD_ANCHOR.get(), MtaItems.WOOD_CLAW.get(), MtaItems.WOOD_CLAYMORE.get(),
                 MtaItems.WOOD_CUTLASS.get(), MtaItems.WOOD_DAGGER.get(), MtaItems.WOOD_DOUBLE_AXE.get(), MtaItems.WOOD_FLAIL.get(),
                 MtaItems.WOOD_GLAIVE.get(), MtaItems.WOOD_HALBERD.get(), MtaItems.WOOD_KATANA.get(), MtaItems.WOOD_RAPIER.get(),
-                MtaItems.WOOD_SCYTHE.get(), MtaItems.WOOD_SICKLE.get(), MtaItems.WOOD_SPEAR.get(), MtaItems.WOOD_TWINBLADE.get(), "planks");
+                MtaItems.WOOD_SCYTHE.get(), MtaItems.WOOD_SICKLE.get(), MtaItems.WOOD_SPEAR.get(), MtaItems.WOOD_TWINBLADE.get(),
+                MtaItems.WOOD_WHIP_SWORD.get(),"planks");
         newWeaponsTags(ItemTags.STONE_TOOL_MATERIALS, MtaItems.STONE_ANCHOR.get(), MtaItems.STONE_CLAW.get(), MtaItems.STONE_CLAYMORE.get(),
                 MtaItems.STONE_CUTLASS.get(), MtaItems.STONE_DAGGER.get(), MtaItems.STONE_DOUBLE_AXE.get(), MtaItems.STONE_FLAIL.get(),
                 MtaItems.STONE_GLAIVE.get(), MtaItems.STONE_HALBERD.get(), MtaItems.STONE_KATANA.get(), MtaItems.STONE_RAPIER.get(),
-                MtaItems.STONE_SCYTHE.get(), MtaItems.STONE_SICKLE.get(), MtaItems.STONE_SPEAR.get(), MtaItems.STONE_TWINBLADE.get(), "cobblestone");
+                MtaItems.STONE_SCYTHE.get(), MtaItems.STONE_SICKLE.get(), MtaItems.STONE_SPEAR.get(), MtaItems.STONE_TWINBLADE.get(),
+                MtaItems.STONE_WHIP_SWORD.get(), "cobblestone");
         newWeapons(Items.COPPER_INGOT, MtaItems.COPPER_ANCHOR.get(), MtaItems.COPPER_CLAW.get(), MtaItems.COPPER_CLAYMORE.get(),
                 MtaItems.COPPER_CUTLASS.get(), MtaItems.COPPER_DAGGER.get(), MtaItems.COPPER_DOUBLE_AXE.get(), MtaItems.COPPER_FLAIL.get(),
                 MtaItems.COPPER_GLAIVE.get(), MtaItems.COPPER_HALBERD.get(), MtaItems.COPPER_KATANA.get(), MtaItems.COPPER_RAPIER.get(),
-                MtaItems.COPPER_SCYTHE.get(), MtaItems.COPPER_SICKLE.get(), MtaItems.COPPER_SPEAR.get(), MtaItems.COPPER_TWINBLADE.get(), "copper_ingot");
+                MtaItems.COPPER_SCYTHE.get(), MtaItems.COPPER_SICKLE.get(), MtaItems.COPPER_SPEAR.get(), MtaItems.COPPER_TWINBLADE.get(),
+                MtaItems.COPPER_WHIP_SWORD.get(), "copper_ingot");
         newWeapons(Items.IRON_INGOT, MtaItems.IRON_ANCHOR.get(), MtaItems.IRON_CLAW.get(), MtaItems.IRON_CLAYMORE.get(),
                 MtaItems.IRON_CUTLASS.get(), MtaItems.IRON_DAGGER.get(), MtaItems.IRON_DOUBLE_AXE.get(), MtaItems.IRON_FLAIL.get(),
                 MtaItems.IRON_GLAIVE.get(), MtaItems.IRON_HALBERD.get(), MtaItems.IRON_KATANA.get(), MtaItems.IRON_RAPIER.get(),
-                MtaItems.IRON_SCYTHE.get(), MtaItems.IRON_SICKLE.get(), MtaItems.IRON_SPEAR.get(), MtaItems.IRON_TWINBLADE.get(), "iron_ingot");
+                MtaItems.IRON_SCYTHE.get(), MtaItems.IRON_SICKLE.get(), MtaItems.IRON_SPEAR.get(), MtaItems.IRON_TWINBLADE.get(),
+                MtaItems.IRON_WHIP_SWORD.get(), "iron_ingot");
         newWeapons(Items.GOLD_INGOT, MtaItems.GOLD_ANCHOR.get(), MtaItems.GOLD_CLAW.get(), MtaItems.GOLD_CLAYMORE.get(),
                 MtaItems.GOLD_CUTLASS.get(), MtaItems.GOLD_DAGGER.get(), MtaItems.GOLD_DOUBLE_AXE.get(), MtaItems.GOLD_FLAIL.get(),
                 MtaItems.GOLD_GLAIVE.get(), MtaItems.GOLD_HALBERD.get(), MtaItems.GOLD_KATANA.get(), MtaItems.GOLD_RAPIER.get(),
-                MtaItems.GOLD_SCYTHE.get(), MtaItems.GOLD_SICKLE.get(), MtaItems.GOLD_SPEAR.get(), MtaItems.GOLD_TWINBLADE.get(), "gold_ingot");
-        //newWeapons(MtaItems.NETHERSTEEL_INGOT, MtaItems.NETHERSTEEL_ANCHOR.get(), MtaItems.NETHERSTEEL_CLAW.get(), MtaItems.NETHERSTEEL_CLAYMORE.get(),
-        //        MtaItems.NETHERSTEEL_CUTLASS.get(), MtaItems.NETHERSTEEL_DAGGER.get(), MtaItems.NETHERSTEEL_DOUBLE_AXE.get(), MtaItems.NETHERSTEEL_FLAIL.get(),
-        //        MtaItems.NETHERSTEEL_GLAIVE.get(), MtaItems.NETHERSTEEL_HALBERD.get(),MtaItems.NETHERSTEEL_KATANA.get(), MtaItems.NETHERSTEEL_RAPIER.get(),
-        //        MtaItems.NETHERSTEEL_SCYTHE.get(), MtaItems.NETHERSTEEL_SICKLE.get(), MtaItems.NETHERSTEEL_SPEAR.get(), MtaItems.NETHERSTEEL_TWINBLADE.get(), "nethersteel_ingot");
+                MtaItems.GOLD_SCYTHE.get(), MtaItems.GOLD_SICKLE.get(), MtaItems.GOLD_SPEAR.get(), MtaItems.GOLD_TWINBLADE.get(),
+                MtaItems.GOLD_WHIP_SWORD.get(), "gold_ingot");
+        newWeapons(MtaItems.NETHERSTEEL_INGOT.get(), MtaItems.NETHERSTEEL_ANCHOR.get(), MtaItems.NETHERSTEEL_CLAW.get(), MtaItems.NETHERSTEEL_CLAYMORE.get(),
+                MtaItems.NETHERSTEEL_CUTLASS.get(), MtaItems.NETHERSTEEL_DAGGER.get(), MtaItems.NETHERSTEEL_DOUBLE_AXE.get(), MtaItems.NETHERSTEEL_FLAIL.get(),
+                MtaItems.NETHERSTEEL_GLAIVE.get(), MtaItems.NETHERSTEEL_HALBERD.get(),MtaItems.NETHERSTEEL_KATANA.get(), MtaItems.NETHERSTEEL_RAPIER.get(),
+                MtaItems.NETHERSTEEL_SCYTHE.get(), MtaItems.NETHERSTEEL_SICKLE.get(), MtaItems.NETHERSTEEL_SPEAR.get(), MtaItems.NETHERSTEEL_TWINBLADE.get(),
+                MtaItems.NETHERSTEEL_WHIP_SWORD.get(), "nethersteel_ingot");
         newWeapons(Items.DIAMOND, MtaItems.DIAMOND_ANCHOR.get(), MtaItems.DIAMOND_CLAW.get(), MtaItems.DIAMOND_CLAYMORE.get(),
                 MtaItems.DIAMOND_CUTLASS.get(), MtaItems.DIAMOND_DAGGER.get(), MtaItems.DIAMOND_DOUBLE_AXE.get(), MtaItems.DIAMOND_FLAIL.get(),
                 MtaItems.DIAMOND_GLAIVE.get(), MtaItems.DIAMOND_HALBERD.get(), MtaItems.DIAMOND_KATANA.get(), MtaItems.DIAMOND_RAPIER.get(),
-                MtaItems.DIAMOND_SCYTHE.get(), MtaItems.DIAMOND_SICKLE.get(), MtaItems.DIAMOND_SPEAR.get(), MtaItems.DIAMOND_TWINBLADE.get(), "diamond");
+                MtaItems.DIAMOND_SCYTHE.get(), MtaItems.DIAMOND_SICKLE.get(), MtaItems.DIAMOND_SPEAR.get(), MtaItems.DIAMOND_TWINBLADE.get(),
+                MtaItems.DIAMOND_WHIP_SWORD.get(), "diamond");
+
+        shaped(RecipeCategory.COMBAT, MtaItems.LONG_BOW)
+                .define('w', Items.STICK)
+                .define('s', Items.STRING)
+                .pattern("wws")
+                .pattern("w s")
+                .pattern("wws")
+                .unlockedBy("has_string", has(Items.STRING));
+        shaped(RecipeCategory.COMBAT, MtaItems.SHORT_BOW)
+                .define('w', Items.STICK)
+                .define('s', Items.STRING)
+                .pattern(" w")
+                .pattern("ws")
+                .pattern(" w")
+                .unlockedBy("has_string", has(Items.STRING));
+        shaped(RecipeCategory.COMBAT, MtaItems.TWIN_BOW)
+                .define('w', Items.STICK)
+                .define('s', Items.STRING)
+                .pattern(" ws")
+                .pattern("wss")
+                .pattern(" ws")
+                .unlockedBy("has_string", has(Items.STRING));
+
+        whipRecipe(Items.LEATHER, MtaItems.LEATHER_WHIP.get(), "has_leather");
+        whipRecipe(Items.CHAIN, MtaItems.CHAIN_WHIP.get(), "has_chain");
+        netheriteSmithing(MtaItems.CHAIN_WHIP.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_WHIP.get());
 
         smeltingResultFromBase(Items.LEATHER, Items.ROTTEN_FLESH);
 
@@ -353,6 +386,7 @@ public class GenRecipes  extends RecipeProvider {
         netheriteSmithing(MtaItems.DIAMOND_SICKLE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SICKLE.get());
         netheriteSmithing(MtaItems.DIAMOND_SPEAR.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_SPEAR.get());
         netheriteSmithing(MtaItems.DIAMOND_TWINBLADE.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_TWINBLADE.get());
+        netheriteSmithing(MtaItems.DIAMOND_WHIP_SWORD.get(), RecipeCategory.COMBAT, MtaItems.NETHERITE_WHIP_SWORD.get());
 
         shapeless(RecipeCategory.MISC, MtaItems.TOMATO_SEEDS)
                 .requires(MtaItems.TOMATO)
@@ -482,7 +516,7 @@ public class GenRecipes  extends RecipeProvider {
                 ;
     }
 
-    public void newWeapons(Item ore, Item rAnc, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rFla, Item rGla, Item rHal, Item rKat, Item rRap, Item rScy, Item rSic, Item rSpe, Item rTwi, String unlock) {
+    public void newWeapons(Item ore, Item rAnc, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rFla, Item rGla, Item rHal, Item rKat, Item rRap, Item rScy, Item rSic, Item rSpe, Item rTwi, Item rWhi, String unlock) {
         shaped(RecipeCategory.COMBAT, rAnc)
                 .define('o', ore)
                 .pattern(" o ")
@@ -584,11 +618,19 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("o  ")
+                .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rWhi)
+                .define('o', ore)
+                .define('c', Items.CHAIN)
+                .define('S', Items.STICK)
+                .pattern("  o")
+                .pattern(" oc")
+                .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
 
     }
 
-    public void newWeaponsTags(TagKey<Item> ore, Item rAnc, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rFla, Item rGla, Item rHal, Item rKat, Item rRap, Item rScy, Item rSic, Item rSpe, Item rTwi, String unlock) {
+    public void newWeaponsTags(TagKey<Item> ore, Item rAnc, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rFla, Item rGla, Item rHal, Item rKat, Item rRap, Item rScy, Item rSic, Item rSpe, Item rTwi, Item rWhi, String unlock) {
         shaped(RecipeCategory.COMBAT, rAnc)
                 .define('o', ore)
                 .pattern(" o ")
@@ -691,7 +733,25 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" s ")
                 .pattern("o  ")
                 .unlockedBy("has_" + unlock, has(ore));
+        shaped(RecipeCategory.COMBAT, rWhi)
+                .define('o', ore)
+                .define('c', Items.CHAIN)
+                .define('S', Items.STICK)
+                .pattern("  o")
+                .pattern(" oc")
+                .pattern("s  ")
+                .unlockedBy("has_" + unlock, has(ore));
 
+    }
+    public void whipRecipe(Item mat, Item result, String unlock) {
+        shaped(RecipeCategory.MISC, result)
+                .define('m', mat)
+                .define('s', Items.STICK)
+                .pattern("  m")
+                .pattern(" m ")
+                .pattern("s  ")
+                .unlockedBy(unlock, has(mat))
+        ;
     }
 
 

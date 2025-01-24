@@ -124,6 +124,9 @@ public class MtaTags {
         public static final TagKey<Item> CAUSES_BLEEDING = tag("weapon/causes_bleeding");
         public static final TagKey<Item> STUN = tag("weapon/stun");
 
+        public static final TagKey<Item> WHIP_ENCHANTMENTS = tag("whip_enchantments");
+        public static final TagKey<Item> LOOTING_ENCHANTMENTS = tag("looting_enchantments");
+
 
         private static TagKey<Item> tag(String name) {
             return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
@@ -133,7 +136,7 @@ public class MtaTags {
 
     public static class Enchantments {
         public static final TagKey<Enchantment> FLAMING = tag("flaming_bow");
-
+        public static final TagKey<Enchantment> WHIP = tag("whip");
         private static TagKey<Enchantment> tag(String name) {
             return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(MODID, name));
         }

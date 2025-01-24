@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#minecraft:netherite_tool_materials",
+  "base": "morethanadventure:chain_whip",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:netherite_whip"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}
