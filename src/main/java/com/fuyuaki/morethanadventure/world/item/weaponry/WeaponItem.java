@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -69,6 +70,19 @@ public class WeaponItem extends Item {
         return !player.isCreative();
     }
 
+    @Override
+    public boolean onEntitySwing(ItemStack stack, LivingEntity entity, InteractionHand hand) {
+        if (this.getSwingSound()!= null) {
+            entity.playSound(this.getSwingSound(), entity.getRandom().nextFloat() * 0.4F + 0.8F, entity.getRandom().nextFloat() + 0.5F);
+        }
+        return super.onEntitySwing(stack, entity, hand);
+    }
+
+
+    public SoundEvent getSwingSound() {
+        return null;
+    }
+
     public static ItemAttributeModifiers createAttributes(ToolMaterial tier, float attackDamage, float attackSpeed, float range) {
         return ItemAttributeModifiers.builder()
                 .add(
@@ -109,6 +123,8 @@ public class WeaponItem extends Item {
         super.inventoryTick(stack, level, entity, slotId, isSelected);
     }
 
+    public boolean spawnsParticleOnTarget(){ return false;}
+
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (stack.is(MtaTags.Items.TWO_HANDED) && !attacker.getItemInHand(InteractionHand.OFF_HAND).isEmpty()){
@@ -120,7 +136,21 @@ public class WeaponItem extends Item {
         double d0 = (double) (-Mth.sin(attacker.getYRot() * (float) (Math.PI / 180.0)));
         double d1 = (double) Mth.cos(attacker.getYRot() * (float) (Math.PI / 180.0));
         if (attacker.level() instanceof ServerLevel) {
+            if (spawnsParticleOnTarget()){
+                ((ServerLevel) attacker.level()).sendParticles(this.getWeaponHitParticles(),
+                        target.getX() - d0,
+                        target.getY(0.80),
+                        target.getZ() - d1,
+                        0,
+                        d0,
+                        0.0,
+                        d1,
+                        0.0);
+
+            }
+            else {
             ((ServerLevel) attacker.level()).sendParticles(this.getWeaponHitParticles(), attacker.getX() + d0, attacker.getY(0.80), attacker.getZ() + d1, 0, d0, 0.0, d1, 0.0);
+            }
         }
         if (stack.is(MtaTags.Items.CAUSES_BLEEDING)){
 

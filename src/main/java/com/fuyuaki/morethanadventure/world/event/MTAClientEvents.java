@@ -218,6 +218,18 @@ public class MTAClientEvents {
         event.registerSpriteSet(MtaParticles.STAB_ATTACK.get(), AttackParticle.Provider::new);
         event.registerSpriteSet(MtaParticles.DAGGER_ATTACK.get(), AttackParticle.Provider::new);
         event.registerSpriteSet(MtaParticles.TEAR_ATTACK.get(), AttackParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.WHIP_ATTACK.get(), AttackParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.ANCHOR_ATTACK.get(), AttackParticle.Provider::new);
+
+
+        event.registerSpriteSet(MtaParticles.FLAIL_WOOD.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_STONE.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_COPPER.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_GOLD.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_IRON.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_NETHERSTEEL.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_DIAMOND.get(), FlailParticle.Provider::new);
+        event.registerSpriteSet(MtaParticles.FLAIL_NETHERITE.get(), FlailParticle.Provider::new);
 
     }
 

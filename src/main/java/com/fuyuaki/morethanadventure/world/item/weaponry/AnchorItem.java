@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.world.item.weaponry;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
 import net.minecraft.core.particles.ParticleOptions;
@@ -21,7 +22,7 @@ public class AnchorItem extends WeaponItem{
 
     @Override
     public ParticleOptions getWeaponHitParticles() {
-        return ParticleTypes.SWEEP_ATTACK;
+        return MtaParticles.ANCHOR_ATTACK.get();
     }
 
     @Override

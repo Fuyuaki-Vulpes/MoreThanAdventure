@@ -29,6 +29,18 @@ public class MtaParticles {
     public static final DeferredHolder<ParticleType<?>, SimpleParticleType> TEAR_ATTACK = simpleParticle("tear_attack",false);
 
 
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> WHIP_ATTACK = simpleParticle("whip_attack",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> ANCHOR_ATTACK = simpleParticle("anchor_attack",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_WOOD = simpleParticle("flail_wooden",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_STONE = simpleParticle("flail_stone",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_COPPER = simpleParticle("flail_copper",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_GOLD = simpleParticle("flail_gold",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_IRON = simpleParticle("flail_iron",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_NETHERSTEEL = simpleParticle("flail_nethersteel",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_DIAMOND = simpleParticle("flail_diamond",false);
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> FLAIL_NETHERITE = simpleParticle("flail_netherite",false);
+
+
     private static <I extends Block> DeferredHolder<ParticleType<?>, SimpleParticleType> simpleParticle(String name, boolean overrideLimiter) {
         return PARTICLES.register(name, () -> new SimpleParticleType(false));
     }

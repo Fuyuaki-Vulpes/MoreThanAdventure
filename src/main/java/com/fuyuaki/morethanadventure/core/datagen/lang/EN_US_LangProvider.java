@@ -899,7 +899,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.weapons.stab_sharp", "Sharp Stab Attack");
         add("sound.morethanadventure.weapons.tear", "Tear Attack");
         add("sound.morethanadventure.weapons.throw", "Throw Attack");
-        add("sound.morethanadventure.weapons.whip", "Whip Attack");
+        add("sound.morethanadventure.weapons.whip.hit", "Whip Attack");
+        add("sound.morethanadventure.weapons.whip.swing", "Whip Swings");
+        add("sound.morethanadventure.weapons.flail.hit", "Flail Attack");
+        add("sound.morethanadventure.weapons.flail.swing", "Flail Swings");
 
         add("sound.morethanadventure.lightning_bolt.far", "Thunder roars");
         add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
