@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.game.client.renderer.item.properties.conditional.IsAttacking;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -159,154 +160,154 @@ public class GenItemModels extends ItemModelGenerators {
 
         this.generateTridents();
         this.generateBow(MtaItems.NETHERITE_BOW.get());
-        //handheldItem(MtaItems.NETHERITE_MACE);
+        handheldItem(MtaItems.NETHERITE_MACE);
 
-        //handheldBigItem(MtaItems.WOOD_ANCHOR);
+        handheldBigItem(MtaItems.WOOD_ANCHOR);
         handheldClaw(MtaItems.WOOD_CLAW);
         handheldBigItem(MtaItems.WOOD_CLAYMORE);
         handheldItem(MtaItems.WOOD_CUTLASS);
         handheldItem(MtaItems.WOOD_DAGGER);
         handheldBigItem(MtaItems.WOOD_DOUBLE_AXE);
-        //handheldItem(MtaItems.WOOD_FLAIL);
+        generateWhip(MtaItems.WOOD_FLAIL.get());
         handheldItem(MtaItems.WOOD_GLAIVE);
         handheldBigItem(MtaItems.WOOD_HALBERD);
         handheldItem(MtaItems.WOOD_KATANA);
-        //handheldItem(MtaItems.WOOD_RAPIER);
+        handheldItem(MtaItems.WOOD_RAPIER);
         handheldBigItem(MtaItems.WOOD_SCYTHE);
-        //handheldBigItem(MtaItems.WOOD_SICKLE);
+        handheldBigItem(MtaItems.WOOD_SICKLE);
         handheldBigItem(MtaItems.WOOD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.WOOD_TWINBLADE);
-        //handheldItem(MtaItems.WOOD_WHIP_SWORD);
+        handheldItem(MtaItems.WOOD_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.STONE_ANCHOR);
+        handheldBigItem(MtaItems.STONE_ANCHOR);
         handheldClaw(MtaItems.STONE_CLAW);
         handheldBigItem(MtaItems.STONE_CLAYMORE);
         handheldItem(MtaItems.STONE_CUTLASS);
         handheldItem(MtaItems.STONE_DAGGER);
         handheldBigItem(MtaItems.STONE_DOUBLE_AXE);
-        //handheldItem(MtaItems.STONE_FLAIL);
+        generateWhip(MtaItems.STONE_FLAIL.get());
         handheldItem(MtaItems.STONE_GLAIVE);
         handheldBigItem(MtaItems.STONE_HALBERD);
         handheldItem(MtaItems.STONE_KATANA);
-        //handheldItem(MtaItems.STONE_RAPIER);
+        handheldItem(MtaItems.STONE_RAPIER);
         handheldBigItem(MtaItems.STONE_SCYTHE);
-        //handheldItem(MtaItems.STONE_SICKLE);
+        handheldItem(MtaItems.STONE_SICKLE);
         handheldBigItem(MtaItems.STONE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.STONE_TWINBLADE);
-        //handheldItem(MtaItems.STONE_WHIP_SWORD);
+        handheldItem(MtaItems.STONE_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.COPPER_ANCHOR);
+        handheldBigItem(MtaItems.COPPER_ANCHOR);
         handheldClaw(MtaItems.COPPER_CLAW);
         handheldBigItem(MtaItems.COPPER_CLAYMORE);
         handheldItem(MtaItems.COPPER_CUTLASS);
         handheldItem(MtaItems.COPPER_DAGGER);
         handheldBigItem(MtaItems.COPPER_DOUBLE_AXE);
-        //handheldItem(MtaItems.COPPER_FLAIL);
+        generateWhip(MtaItems.COPPER_FLAIL.get());
         handheldItem(MtaItems.COPPER_GLAIVE);
         handheldBigItem(MtaItems.COPPER_HALBERD);
         handheldItem(MtaItems.COPPER_KATANA);
-        //handheldItem(MtaItems.COPPER_RAPIER);
+        handheldItem(MtaItems.COPPER_RAPIER);
         handheldBigItem(MtaItems.COPPER_SCYTHE);
-        //handheldItem(MtaItems.COPPER_SICKLE);
+        handheldItem(MtaItems.COPPER_SICKLE);
         handheldBigItem(MtaItems.COPPER_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);
-        //handheldItem(MtaItems.COPPER_WHIP_SWORD);
+        handheldItem(MtaItems.COPPER_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.IRON_ANCHOR);
+        handheldBigItem(MtaItems.IRON_ANCHOR);
         handheldClaw(MtaItems.IRON_CLAW);
         handheldBigItem(MtaItems.IRON_CLAYMORE);
         handheldItem(MtaItems.IRON_CUTLASS);
         handheldItem(MtaItems.IRON_DAGGER);
         handheldBigItem(MtaItems.IRON_DOUBLE_AXE);
-        //handheldItem(MtaItems.IRON_FLAIL);
+        generateWhip(MtaItems.IRON_FLAIL.get());
         handheldItem(MtaItems.IRON_GLAIVE);
         handheldBigItem(MtaItems.IRON_HALBERD);
         handheldItem(MtaItems.IRON_KATANA);
-        //handheldItem(MtaItems.IRON_RAPIER);
+        handheldItem(MtaItems.IRON_RAPIER);
         handheldBigItem(MtaItems.IRON_SCYTHE);
-        //handheldItem(MtaItems.IRON_SICKLE);
+        handheldItem(MtaItems.IRON_SICKLE);
         handheldBigItem(MtaItems.IRON_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.IRON_TWINBLADE);
-        //handheldItem(MtaItems.IRON_WHIP_SWORD);
+        handheldItem(MtaItems.IRON_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.GOLD_ANCHOR);
+        handheldBigItem(MtaItems.GOLD_ANCHOR);
         handheldClaw(MtaItems.GOLD_CLAW);
         handheldBigItem(MtaItems.GOLD_CLAYMORE);
         handheldItem(MtaItems.GOLD_CUTLASS);
         handheldItem(MtaItems.GOLD_DAGGER);
         handheldBigItem(MtaItems.GOLD_DOUBLE_AXE);
-        //handheldItem(MtaItems.GOLD_FLAIL);
+        generateWhip(MtaItems.GOLD_FLAIL.get());
         handheldItem(MtaItems.GOLD_GLAIVE);
         handheldBigItem(MtaItems.GOLD_HALBERD);
         handheldItem(MtaItems.GOLD_KATANA);
-        //handheldItem(MtaItems.GOLD_RAPIER);
+        handheldItem(MtaItems.GOLD_RAPIER);
         handheldBigItem(MtaItems.GOLD_SCYTHE);
-        //handheldItem(MtaItems.GOLD_SICKLE);
+        handheldItem(MtaItems.GOLD_SICKLE);
         handheldBigItem(MtaItems.GOLD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.GOLD_TWINBLADE);
-        //handheldItem(MtaItems.GOLD_WHIP_SWORD);
+        handheldItem(MtaItems.GOLD_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.NETHERSTEEL_ANCHOR);
+        handheldBigItem(MtaItems.NETHERSTEEL_ANCHOR);
         handheldClaw(MtaItems.NETHERSTEEL_CLAW);
         handheldBigItem(MtaItems.NETHERSTEEL_CLAYMORE);
         handheldItem(MtaItems.NETHERSTEEL_CUTLASS);
         handheldItem(MtaItems.NETHERSTEEL_DAGGER);
         handheldBigItem(MtaItems.NETHERSTEEL_DOUBLE_AXE);
-        //handheldItem(MtaItems.NETHERSTEEL_FLAIL);
+        generateWhip(MtaItems.NETHERSTEEL_FLAIL.get());
         handheldItem(MtaItems.NETHERSTEEL_GLAIVE);
         handheldBigItem(MtaItems.NETHERSTEEL_HALBERD);
         handheldItem(MtaItems.NETHERSTEEL_KATANA);
-        //handheldItem(MtaItems.NETHERSTEEL_RAPIER);
+        handheldItem(MtaItems.NETHERSTEEL_RAPIER);
         handheldBigItem(MtaItems.NETHERSTEEL_SCYTHE);
-        //handheldItem(MtaItems.NETHERSTEEL_SICKLE);
+        handheldItem(MtaItems.NETHERSTEEL_SICKLE);
         handheldBigItem(MtaItems.NETHERSTEEL_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERSTEEL_TWINBLADE);
-        //handheldItem(MtaItems.NETHERSTEEL_WHIP_SWORD);
+        handheldItem(MtaItems.NETHERSTEEL_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.DIAMOND_ANCHOR);
+        handheldBigItem(MtaItems.DIAMOND_ANCHOR);
         handheldClaw(MtaItems.DIAMOND_CLAW);
         handheldBigItem(MtaItems.DIAMOND_CLAYMORE);
         handheldItem(MtaItems.DIAMOND_CUTLASS);
         handheldItem(MtaItems.DIAMOND_DAGGER);
         handheldBigItem(MtaItems.DIAMOND_DOUBLE_AXE);
-        //handheldItem(MtaItems.DIAMOND_FLAIL);
+        generateWhip(MtaItems.DIAMOND_FLAIL.get());
         handheldItem(MtaItems.DIAMOND_GLAIVE);
         handheldBigItem(MtaItems.DIAMOND_HALBERD);
         handheldItem(MtaItems.DIAMOND_KATANA);
-        //handheldItem(MtaItems.DIAMOND_RAPIER);
+        handheldItem(MtaItems.DIAMOND_RAPIER);
         handheldBigItem(MtaItems.DIAMOND_SCYTHE);
-        //handheldItem(MtaItems.DIAMOND_SICKLE);
+        handheldItem(MtaItems.DIAMOND_SICKLE);
         handheldBigItem(MtaItems.DIAMOND_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);
-        //handheldItem(MtaItems.DIAMOND_WHIP_SWORD);
+        handheldItem(MtaItems.DIAMOND_WHIP_SWORD);
 
-        //handheldBigItem(MtaItems.NETHERITE_ANCHOR);
+        handheldBigItem(MtaItems.NETHERITE_ANCHOR);
         handheldClaw(MtaItems.NETHERITE_CLAW);
         handheldBigItem(MtaItems.NETHERITE_CLAYMORE);
         handheldItem(MtaItems.NETHERITE_CUTLASS);
         handheldItem(MtaItems.NETHERITE_DAGGER);
         handheldBigItem(MtaItems.NETHERITE_DOUBLE_AXE);
-        //handheldItem(MtaItems.NETHERITE_FLAIL);
+        generateWhip(MtaItems.NETHERITE_FLAIL.get());
         handheldItem(MtaItems.NETHERITE_GLAIVE);
         handheldBigItem(MtaItems.NETHERITE_HALBERD);
         handheldItem(MtaItems.NETHERITE_KATANA);
-        //handheldItem(MtaItems.NETHERITE_RAPIER);
+        handheldItem(MtaItems.NETHERITE_RAPIER);
         handheldBigItem(MtaItems.NETHERITE_SCYTHE);
-        //handheldItem(MtaItems.NETHERITE_SICKLE);
+        handheldItem(MtaItems.NETHERITE_SICKLE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
-        //handheldItem(MtaItems.NETHERITE_WHIP_SWORD);
+        handheldItem(MtaItems.NETHERITE_WHIP_SWORD);
 
-        //this.generateBow(MtaItems.LONG_BOW.get());
-        //this.generateBow(MtaItems.REINFORCED_LONG_BOW.get());
-        //this.generateBow(MtaItems.SHORT_BOW.get());
-        //this.generateBow(MtaItems.REINFORCED_SHORT_BOW.get());
-        //this.generateBow(MtaItems.TWIN_BOW.get());
-        //this.generateBow(MtaItems.REINFORCED_TWIN_BOW.get());
+        this.generateBow(MtaItems.LONG_BOW.get());
+        this.generateBow(MtaItems.REINFORCED_LONG_BOW.get());
+        this.generateBow(MtaItems.SHORT_BOW.get());
+        this.generateBow(MtaItems.REINFORCED_SHORT_BOW.get());
+        this.generateBow(MtaItems.TWIN_BOW.get());
+        this.generateBow(MtaItems.REINFORCED_TWIN_BOW.get());
 
-        //handheldItem(MtaItems.LEATHER_WHIP);
-        //handheldItem(MtaItems.CHAIN_WHIP);
-        //handheldItem(MtaItems.NETHERITE_WHIP);
+        generateWhip(MtaItems.LEATHER_WHIP.get());
+        generateWhip(MtaItems.CHAIN_WHIP.get());
+        generateWhip(MtaItems.NETHERITE_WHIP.get());
 
         handheldBigItem(MtaItems.GREAT_SENTINELS_WAR_HAMMER);
         handheldBigItem(MtaItems.HOLY_KNIGHTS_GREATSWORD);
@@ -488,7 +489,6 @@ public class GenItemModels extends ItemModelGenerators {
 
 
     public void generateDrink(Item drink) {
-
     }
 
     public void generateTridents() {
@@ -523,5 +523,12 @@ public class GenItemModels extends ItemModelGenerators {
         this.itemModelOutput.accept(mermaidTrident, createFlatModelDispatch(_itemmodel$unbaked, _itemmodel$unbaked3));
     }
 
+    public void generateWhip(Item whipItem){
+
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(this.createFlatItemModel(whipItem, ModelTemplates.FLAT_HANDHELD_ITEM));
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(this.createFlatItemModel(whipItem, "_loose", ModelTemplates.FLAT_HANDHELD_ITEM));
+        this.itemModelOutput.accept(whipItem, ItemModelUtils.conditional(new IsAttacking(), itemmodel$unbaked1, itemmodel$unbaked));
+
+    }
 
 }

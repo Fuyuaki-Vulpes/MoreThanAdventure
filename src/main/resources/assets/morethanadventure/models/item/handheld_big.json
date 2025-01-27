@@ -8,7 +8,7 @@
     },
     "thirdperson_lefthand": {
       "rotation": [0, 90, -55],
-      "translation": [0, 4, 0.5],
+      "translation": [0, 6.25, 1],
       "scale": [1.68, 1.68, 0.59]
     },
     "firstperson_righthand": {

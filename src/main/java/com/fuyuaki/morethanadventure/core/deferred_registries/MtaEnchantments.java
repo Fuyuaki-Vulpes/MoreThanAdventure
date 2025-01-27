@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 public class MtaEnchantments {
-/*    public static final ResourceKey<Enchantment> DISARM = ResourceKey.create(Registries.ENCHANTMENT,
+   /* public static final ResourceKey<Enchantment> DISARM = ResourceKey.create(Registries.ENCHANTMENT,
         ResourceLocation.fromNamespaceAndPath(MODID, "disarm"));
 
 

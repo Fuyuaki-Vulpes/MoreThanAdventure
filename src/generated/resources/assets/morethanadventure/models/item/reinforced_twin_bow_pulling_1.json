@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "morethanadventure:item/reinforced_twin_bow_pulling_1"
+  }
+}

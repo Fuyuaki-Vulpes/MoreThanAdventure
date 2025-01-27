@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "morethanadventure:item/stone_flail"
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "morethanadventure:item/stone_flail_loose"
+    },
+    "property": "morethanadventure:is_attacking"
+  }
+}

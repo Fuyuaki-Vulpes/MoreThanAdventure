@@ -6,7 +6,6 @@ import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuaki.morethanadventure.network.MTANetwork;
 import com.mojang.logging.LogUtils;
-import io.wispforest.accessories.networking.AccessoriesNetworking;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
@@ -49,7 +48,7 @@ public class MTAMod
         MtaBiomes.addBiomes();
         MtaSounds.register(modEventBus);
         MtaLootModifier.register(modEventBus);
-        MTAEnchantmentEffect.register(modEventBus);
+        //MTAEnchantmentEffect.register(modEventBus);
 
         MtaTabs.register(modEventBus);
 
@@ -87,8 +86,6 @@ public class MTAMod
         });
 
     }
-
-
 
 
 

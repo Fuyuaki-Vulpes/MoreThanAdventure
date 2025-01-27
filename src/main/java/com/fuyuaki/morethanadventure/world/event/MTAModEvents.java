@@ -15,6 +15,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 @EventBusSubscriber(modid = MODID,bus = EventBusSubscriber.Bus.MOD)
@@ -273,6 +274,7 @@ public class MTAModEvents {
     @SubscribeEvent
     private static void registerScreens(RegisterMenuScreensEvent event) {
     }
+
 
 }
 

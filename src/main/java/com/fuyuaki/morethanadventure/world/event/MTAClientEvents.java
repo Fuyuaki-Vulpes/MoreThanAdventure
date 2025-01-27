@@ -12,6 +12,7 @@ import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
+import com.fuyuaki.morethanadventure.game.client.renderer.item.properties.conditional.IsAttacking;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
@@ -232,6 +233,13 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerBindings(RegisterKeyMappingsEvent event) {
+    }
+
+
+    @SubscribeEvent
+    public static void registerConditionalProperties(RegisterConditionalItemModelPropertyEvent event) {
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "is_attacking"), IsAttacking.MAP_CODEC
+        );
     }
 
 
