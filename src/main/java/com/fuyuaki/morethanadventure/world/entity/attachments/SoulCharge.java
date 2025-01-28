@@ -19,11 +19,14 @@ public class SoulCharge implements INBTSerializable<CompoundTag> {
             Endec.FLOAT.fieldOf("incoming", SoulCharge::getIncomingCharge),
             Endec.INT.fieldOf("max", SoulCharge::getMaxCharge),
             Endec.INT.fieldOf("limit", SoulCharge::getLowMaxLimit),
+            Endec.FLOAT.fieldOf("cumulative", SoulCharge::getIncomingChargeAdditive),
             SoulCharge::new
     );
 
     float charge = 0;
     float incomingCharge = 0;
+    float incomingChargeAdditive = 0;
+    float ticks = 0;
     int maxCharge;
     public final int lowMaxLimit;
 
@@ -34,11 +37,12 @@ public class SoulCharge implements INBTSerializable<CompoundTag> {
     }
 
 
-    public SoulCharge(float charge, float incoming, int maxCharge, int lowLimit) {
+    public SoulCharge(float charge, float incoming, int maxCharge, int lowLimit, float incomeCumul) {
         this.charge = charge;
         this.incomingCharge = incoming;
         this.maxCharge = maxCharge;
         lowMaxLimit = lowLimit;
+        this.incomingChargeAdditive = incomeCumul;
     }
 
     public float getCharge() {
@@ -58,14 +62,26 @@ public class SoulCharge implements INBTSerializable<CompoundTag> {
     }
 
     public void tick(){
+        ticks ++;
         if (this.incomingCharge > 0) {
 
             this.charge = Math.min(this.charge + 1, this.maxCharge);
             if (this.charge >= this.maxCharge){
                 this.incomingCharge = 0;
             }
+            this.incomingChargeAdditive++;
+
             this.incomingCharge--;
+            ticks = 0;
         }
+        if (ticks == 40){
+            this.incomingChargeAdditive = 0;
+            ticks = 0;
+        }
+    }
+
+    public float getIncomingChargeAdditive() {
+        return this.incomingChargeAdditive;
     }
 
     public boolean drainCharge(float cost){
@@ -77,7 +93,9 @@ public class SoulCharge implements INBTSerializable<CompoundTag> {
         if (player.getAttributes().hasAttribute(MTAAttributes.SOUL_GATHERING)){
             toAdd = (float) (toAdd * player.getAttributes().getValue(MTAAttributes.SOUL_GATHERING));
         }
-        this.incomingCharge = toAdd ;
+        this.incomingCharge += toAdd ;
+        ticks = 0;
+
     }
 
     public void setMaxCharge(int maxCharge) {
