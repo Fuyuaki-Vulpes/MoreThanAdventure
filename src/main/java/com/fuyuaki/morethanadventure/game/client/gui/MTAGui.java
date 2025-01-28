@@ -54,8 +54,8 @@ public class MTAGui {
         SoulCharge soulCharge = MTASoulHelper.getPlayerSoulCharge(player);
         int soulChargeFraction = soulCharge.getMaxCharge() / 14;
         int soulChargeBit = (int) (soulCharge.getCharge() / soulChargeFraction);
-        if (soulCharge.getIncomingCharge() > 0){
-            String s = soulCharge.getIncomingCharge() + "+";
+        if (soulCharge.getIncomingChargeAdditive() > 0){
+            String s = soulCharge.getIncomingChargeAdditive() + "+";
             guiGraphics.drawString(Minecraft.getInstance().font, s,soulX + 8,soulY - 12, 0x92fbde);
         }
         guiGraphics.blitSprite(RenderType::guiTextured, SOUL_EMPTY, soulX, soulY,16,16);
