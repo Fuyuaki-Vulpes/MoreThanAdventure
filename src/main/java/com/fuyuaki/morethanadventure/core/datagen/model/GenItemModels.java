@@ -178,7 +178,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.WOOD_KATANA);
         handheldItem(MtaItems.WOOD_RAPIER);
         handheldBigItem(MtaItems.WOOD_SCYTHE);
-        handheldBigItem(MtaItems.WOOD_SICKLE);
+        handheldItem(MtaItems.WOOD_SICKLE);
         handheldBigItem(MtaItems.WOOD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.WOOD_TWINBLADE);
         handheldItem(MtaItems.WOOD_WHIP_SWORD);

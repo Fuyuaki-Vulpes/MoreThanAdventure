@@ -12,7 +12,7 @@ import net.neoforged.neoforge.common.ItemAbility;
 public class SpearItem extends WeaponItem {
 
     protected static final float attackSpeed = -2.7F;
-    protected static final int attackDamage = 3;
+    protected static final float attackDamage = 3;
     protected static final float range = 4.5F;
 
     public SpearItem(ToolMaterial tier, Properties properties) {

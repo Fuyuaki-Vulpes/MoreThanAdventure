@@ -139,6 +139,12 @@
     ],
     "subtitle": "sound.morethanadventure.ferret_hurt"
   },
+  "flail_swing": {
+    "sounds": [
+      "morethanadventure:item/weaponry/flail_swing"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.flail.swing"
+  },
   "glow_spider_ambient": {
     "sounds": [
       "morethanadventure:entity/glow_spider/say1",
@@ -243,6 +249,12 @@
     ],
     "subtitle": "sound.morethanadventure.weapons.deep_swing"
   },
+  "weapon_flail": {
+    "sounds": [
+      "morethanadventure:item/weaponry/flail_hit"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.flail.hit"
+  },
   "weapon_punch": {
     "sounds": [
       "morethanadventure:item/weaponry/punch"
@@ -281,9 +293,15 @@
   },
   "weapon_whip": {
     "sounds": [
-      "morethanadventure:item/weaponry/whip"
+      "morethanadventure:item/weaponry/whip_hit"
     ],
-    "subtitle": "sound.morethanadventure.weapons.whip"
+    "subtitle": "sound.morethanadventure.weapons.whip.hit"
+  },
+  "whip_swing": {
+    "sounds": [
+      "morethanadventure:item/weaponry/whip_swing"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.whip.swing"
   },
   "wisp_ambient": {
     "sounds": [

@@ -101,6 +101,10 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> WEAPON_TEAR = registerSoundEvent("weapon_tear");
     public static final Supplier<SoundEvent> WEAPON_THROW = registerSoundEvent("weapon_throw");
     public static final Supplier<SoundEvent> WEAPON_WHIP = registerSoundEvent("weapon_whip");
+    public static final Supplier<SoundEvent> WEAPON_FLAIL = registerSoundEvent("weapon_flail");
+
+    public static final Supplier<SoundEvent> FLAIL_SWING = registerSoundEvent("flail_swing");
+    public static final Supplier<SoundEvent> WHIP_SWING = registerSoundEvent("whip_swing");
 
 
     public static final Supplier<SoundEvent> LIGHTNING_BOLT_THUNDER_FAR = registerSoundEvent("thunder_far");

@@ -15,7 +15,7 @@ public record IsAttacking() implements ConditionalItemModelProperty {
 
     @Override
     public boolean get(ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed, ItemDisplayContext context) {
-        return entity == null ? false : entity.swinging && entity.getMainHandItem() == stack;
+        return entity != null && entity.swinging && entity.getMainHandItem() == stack;
     }
 
     @Override
