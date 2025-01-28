@@ -24,8 +24,27 @@ public record DisarmEnchantmentEffect(LevelBasedValue level) implements Enchantm
         if (entity instanceof LivingEntity livingEntity) {
             ItemStack itemstack = livingEntity.getItemBySlot(EquipmentSlot.MAINHAND);
             if (!itemstack.isEmpty()) {
-                livingEntity.spawnAtLocation(level, itemstack);
-                livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                if(enchantmentLevel == 1 && livingEntity.getRandom().nextFloat() <= 0.20F) {
+                    item.owner().spawnAtLocation(level, itemstack);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+                if(enchantmentLevel == 2 && livingEntity.getRandom().nextFloat() <= 0.40F) {
+                    item.owner().spawnAtLocation(level, itemstack);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+                if(enchantmentLevel == 3 && livingEntity.getRandom().nextFloat() <= 0.60F) {
+                    item.owner().spawnAtLocation(level, itemstack);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+                if(enchantmentLevel == 4 && livingEntity.getRandom().nextFloat() <= 0.80F) {
+                    livingEntity.spawnAtLocation(level, itemstack);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+                if(enchantmentLevel == 5 && livingEntity.getRandom().nextFloat() <= 1.0F) {
+                    item.owner().spawnAtLocation(level, itemstack);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+
             }
         }
 
