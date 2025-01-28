@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.network;
 
+import com.fuyuaki.morethanadventure.network.packet.SyncPlayerSoulPacket;
 import io.wispforest.owo.network.ClientAccess;
 import io.wispforest.owo.network.OwoNetChannel;
 import io.wispforest.owo.network.ServerAccess;
@@ -20,14 +21,14 @@ public class MTANetwork {
 
 
     public static void init(){
-//        CHANNEL.registerClientboundDeferred(StCClimateSync.class, StCClimateSync.ENDEC);
+        CHANNEL.registerClientboundDeferred(SyncPlayerSoulPacket.class, SyncPlayerSoulPacket.ENDEC);
 
     }
 
 
     @OnlyIn(Dist.CLIENT)
     public static void initClient(){
-//        CHANNEL.registerClientbound(StCClimateSync.class,StCClimateSync.ENDEC,clientHandler(StCClimateSync::handlePacket));
+        CHANNEL.registerClientbound(SyncPlayerSoulPacket.class,SyncPlayerSoulPacket.ENDEC,clientHandler(SyncPlayerSoulPacket::handlePacket));
     }
 
 

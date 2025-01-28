@@ -18,6 +18,7 @@ public class MtaEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, MODID);
 
     public static final DeferredHolder<MobEffect, MobEffect> FREEZING = MOB_EFFECTS.register("freezing", () -> new FreezingEffect().addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(MODID,"effect.frost_slow"), -0.05F,AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
     public static final DeferredHolder<MobEffect, MobEffect> STUN = MOB_EFFECTS.register("stun", () -> new StunEffect()
             .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(MODID,"effect.stun.slow"), -5.0F,AttributeModifier.Operation.ADD_VALUE)
             .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(MODID,"effect.stun.damage"), 0.0F,AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)

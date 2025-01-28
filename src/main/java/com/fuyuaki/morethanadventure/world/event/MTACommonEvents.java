@@ -1,6 +1,8 @@
 package com.fuyuaki.morethanadventure.world.event;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
+import com.fuyuaki.morethanadventure.world.entity.SoulOrb;
+import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -11,9 +13,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
@@ -45,6 +49,17 @@ public class MTACommonEvents {
                     player.swing(event.getHand());
                 }
             }
+
+        }
+    }
+
+    @SubscribeEvent
+    public static void entityOnDeath(LivingDeathEvent event){
+        Level level = event.getEntity().level();
+        Vec3 pos = event.getEntity().position();
+        int count = event.getEntity().getRandom().nextIntBetweenInclusive(1,3);
+        for (int n = 0; n < count; n++){
+            level.addFreshEntity(new SoulOrb(level, pos.x(), event.getEntity().getEyeY(), pos.z(), Math.max(MTASoulHelper.getSoulValueForEntity(event.getEntity()) / count,1)));
 
         }
     }

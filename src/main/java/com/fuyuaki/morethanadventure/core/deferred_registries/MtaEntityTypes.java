@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -16,6 +17,17 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 public class MtaEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY = DeferredRegister.create(Registries.ENTITY_TYPE, MODID);
 
+
+
+    public static final DeferredHolder<EntityType<?>, EntityType<SoulOrb>> SOUL_ORB = ENTITY.register("soul_orb",
+            () -> EntityType.Builder.<SoulOrb>of(SoulOrb::new, MobCategory.MISC)
+                    .noLootTable()
+                    .sized(0.5F, 0.5F)
+                    .clientTrackingRange(6).
+                    updateInterval(20)
+                    .build(entityKey("soul_orb"))
+
+    );
 // Tamable
 
     public static final DeferredHolder<EntityType<?>,EntityType<BeardedDragon>> BEARDED_DRAGON = ENTITY.register("bearded_dragon",

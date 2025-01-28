@@ -37,6 +37,7 @@ public class MTAMod
         MTANetwork.init();
         MTAComponents.register(modEventBus);
         MTAAttachments.register(modEventBus);
+        MTAAttributes.register(modEventBus);
         MtaEntityTypes.register(modEventBus);
         MtaBlockEntities.register(modEventBus);
         MtaBlocks.register(modEventBus);

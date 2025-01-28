@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
-import io.wispforest.owo.serialization.CodecUtils;
+import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -16,10 +16,17 @@ public class MTAAttachments {
 
     private static final DeferredRegister<AttachmentType<?>> ATTACHMENTS = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, MODID);
 
-    public static final DeferredHolder<AttachmentType<?>, AttachmentType<RespawnablePetsAttachment>> PETS_TO_RESPAWN = ATTACHMENTS.register("pets_to_respawn",
+    public static final DeferredHolder<AttachmentType<?>, AttachmentType<RespawnablePetsAttachment>> PETS_TO_RESPAWN = ATTACHMENTS
+            .register("pets_to_respawn",
             () -> AttachmentType.serializable( ()  -> new RespawnablePetsAttachment(new ArrayList<>()))
                     .copyOnDeath().build()
     );
+
+    public static final DeferredHolder<AttachmentType<?>, AttachmentType<SoulCharge>> SOUL_CHARGE = ATTACHMENTS
+            .register("soul_charge",
+                    () -> AttachmentType.serializable(() -> new SoulCharge(200)).copyOnDeath().build()
+
+            );
 
 
     public static void register(IEventBus eventBus){

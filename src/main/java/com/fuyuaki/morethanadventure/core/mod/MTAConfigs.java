@@ -15,11 +15,11 @@ public class MTAConfigs
     public static class Client {
         private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-
-        public static final ModConfigSpec.BooleanValue REVAMPED_RAIN = BUILDER
-                .comment("If rain and thunder should have unique effects")
-                .define("revamped_rain",false);
-
+//
+//        public static final ModConfigSpec.BooleanValue REVAMPED_RAIN = BUILDER
+//                .comment("If rain and thunder should have unique effects")
+//                .define("revamped_rain",false);
+//
 
 
 
@@ -37,6 +37,11 @@ public class MTAConfigs
         public static final ModConfigSpec.IntValue SPRINKLER_RANGE = BUILDER
                 .comment("Range of effect of the Sprinkler")
                 .defineInRange("sprinkler_range", 8, 1, 16);
+
+
+        public static final ModConfigSpec.IntValue COMMON_REGION_WEIGHT = BUILDER
+                .comment("Weight for the common regions for Terrablender")
+                .defineInRange("terrablender_common_weight", 6, 0, Integer.MAX_VALUE);
 
 
         static final ModConfigSpec SPEC = BUILDER.build();

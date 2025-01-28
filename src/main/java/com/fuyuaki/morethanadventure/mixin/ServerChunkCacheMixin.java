@@ -61,20 +61,12 @@ public abstract class ServerChunkCacheMixin{
         profiler.popPush("spawnAndTick");
         boolean flag = this.level.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING);
         int j = this.level.getGameRules().getInt(GameRules.RULE_RANDOMTICKING);
-        float time = this.level.getLevelData().getDayTime() % 24000L;
-        boolean flag1 =
-                (time > 100  && time < 1000)||
-                (time > 1500  && time < 2000)||
-                (time > 2500  && time < 3000)||
-                (time > 3500  && time < 3700)||
-                (time > 4000  && time < 5000)||
-                (time > 6000  && time < 6500)||
-                (time > 9000  && time < 9500)||
-                (time > 11700  && time < 12000);
+        float time = this.level.getDayTime() % 24000L;
+        boolean flag1 = time < 12000;
 
         List<MobCategory> list;
         if (flag && flag1) {
-            list = NaturalSpawner.getFilteredSpawningCategories(naturalspawner$spawnstate, false, false, true);
+            list = NaturalSpawner.getFilteredSpawningCategories(naturalspawner$spawnstate, this.spawnFriendlies, false, true);
         } else {
             list = List.of();
         }

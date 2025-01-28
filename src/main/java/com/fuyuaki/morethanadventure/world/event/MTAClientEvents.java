@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import com.fuyuaki.morethanadventure.core.mod.MTAMod;
+import com.fuyuaki.morethanadventure.game.client.gui.MTAGui;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
@@ -16,6 +17,7 @@ import com.fuyuaki.morethanadventure.game.client.renderer.item.properties.condit
 import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
@@ -24,6 +26,7 @@ import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.GrassColor;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -86,6 +89,9 @@ public class MTAClientEvents {
         event.registerEntityRenderer(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombieRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMinerRenderer::new);
+
+
+        event.registerEntityRenderer(MtaEntityTypes.SOUL_ORB.get(), SoulOrbRenderer::new);
 
 
         //ITEM & BLOCK
@@ -252,6 +258,19 @@ public class MTAClientEvents {
     public static void registerConditionalProperties(RegisterConditionalItemModelPropertyEvent event) {
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "is_attacking"), IsAttacking.MAP_CODEC
         );
+    }
+
+    @SubscribeEvent
+    public static void registerGuiComponents(RegisterGuiLayersEvent event) {
+
+
+
+        event.registerAboveAll(ResourceLocation.fromNamespaceAndPath(MODID,"gui"),((guiGraphics, deltaTracker) -> {
+            Minecraft minecraft = Minecraft.getInstance();
+            if (minecraft.player != null && minecraft.gameMode.getPlayerMode() != GameType.SPECTATOR){
+                MTAGui.renderGui(minecraft.player, guiGraphics);
+            }
+        }));
     }
 
 

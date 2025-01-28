@@ -411,7 +411,7 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
 
 
-        return biome(true, -1.0F, 0.5F,
+        return biome(false, -1.0F, 0.5F,
                 4159204,
                 329011,
                 0xeac466,
