@@ -82,6 +82,8 @@ public class MtaTags {
 
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Block> SEAWOOD = tag("seawood");
+        public static final TagKey<Block> AVOCADO_LOGS = tag("avocado_logs");
+        public static final TagKey<Block> MANGO_LOGS = tag("mango_logs");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
         public static final TagKey<Block> NEEDS_GEM_TOOL = tag("needs_gem_tool");
 
@@ -106,6 +108,8 @@ public class MtaTags {
     public static class Items {
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Item> SEAWOOD = tag("sealogs");
+        public static final TagKey<Item> AVOCADO_LOGS = tag("avocado_logs");
+        public static final TagKey<Item> MANGO_LOGS = tag("mango_logs");
 
         public static final TagKey<Item> AGATE_TOOL_MATERIALS = tag("agate_tool_materials");
         public static final TagKey<Item> ALEXANDRITE_TOOL_MATERIALS = tag("alexandrite_tool_materials");

@@ -51,7 +51,9 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaBlocks.AVOCADO_LOG.get(),"Avocado Log");
+        add(MtaBlocks.STRIPPED_AVOCADO_LOG.get(),"Stripped Avocado Log");
         add(MtaBlocks.AVOCADO_WOOD.get(),"Avocado Wood");
+        add(MtaBlocks.STRIPPED_AVOCADO_WOOD.get(),"Stripped Avocado Wood");
         add(MtaBlocks.AVOCADO_PLANKS.get(),"Avocado Planks");
         add(MtaBlocks.AVOCADO_LEAVES.get(),"Avocado Leaves");
         //add(MtaBlocks.AVOCADO_SAPLING.get(),"Avocado Sapling");
@@ -66,7 +68,9 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaBlocks.MANGO_LOG.get(),"Mango Log");
+        add(MtaBlocks.STRIPPED_MANGO_LOG.get(),"Stripped Mango Log");
         add(MtaBlocks.MANGO_WOOD.get(),"Mango Wood");
+        add(MtaBlocks.STRIPPED_MANGO_WOOD.get(),"Stripped Mango Wood");
         add(MtaBlocks.MANGO_PLANKS.get(),"Mango Planks");
         add(MtaBlocks.MANGO_LEAVES.get(),"Mango Leaves");
         //add(MtaBlocks.MANGO_SAPLING.get(),"Mango Sapling");

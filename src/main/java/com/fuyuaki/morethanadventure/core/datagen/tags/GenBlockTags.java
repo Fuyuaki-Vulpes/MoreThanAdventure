@@ -31,6 +31,14 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.SEALOG.get(),
                 MtaBlocks.SEAWOOD.get()
         );
+        this.tag(MtaTags.Blocks.AVOCADO_LOGS).add(
+                MtaBlocks.AVOCADO_LOG.get(),
+                MtaBlocks.AVOCADO_WOOD.get()
+        );
+        this.tag(MtaTags.Blocks.MANGO_LOGS).add(
+                MtaBlocks.MANGO_LOG.get(),
+                MtaBlocks.MANGO_WOOD.get()
+        );
         this.tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
                 .add(
                         MtaBlocks.SCATTERED_LEAVES.get()

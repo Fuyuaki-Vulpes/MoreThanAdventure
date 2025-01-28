@@ -119,7 +119,12 @@ public class GenBlockModels extends BlockModelGenerators {
 
         this.createGrassLikeBlock(MtaBlocks.TUNDRA_GRASS.get(),MtaBlocks.PERMAFROST_DIRT.get(),false);
 
+        this.woodProvider(MtaBlocks.AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.AVOCADO_LOG.get()).wood(MtaBlocks.AVOCADO_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_AVOCADO_LOG.get()).wood(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
         this.createCropLeaves(MtaBlocks.AVOCADO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_DEFAULT,0,1,2,3,4);
+
+        this.woodProvider(MtaBlocks.MANGO_LOG.get()).logWithHorizontal(MtaBlocks.MANGO_LOG.get()).wood(MtaBlocks.MANGO_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_MANGO_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_MANGO_LOG.get()).wood(MtaBlocks.STRIPPED_MANGO_WOOD.get());
         this.createCropLeaves(MtaBlocks.MANGO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_BIRCH,0,1,2,3,4);
 
         this.createCropBlock(MtaBlocks.ONION_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);

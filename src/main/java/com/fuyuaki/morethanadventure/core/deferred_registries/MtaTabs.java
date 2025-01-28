@@ -119,7 +119,9 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
 
                 output.accept(MtaBlocks.AVOCADO_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
                 output.accept(MtaBlocks.AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
                 output.accept(MtaBlocks.AVOCADO_PLANKS.get());
                 //output.accept(MtaBlocks.AVOCADO_SAPLING.get());
                 output.accept(MtaBlocks.AVOCADO_STAIRS.get());
@@ -132,7 +134,9 @@ public class MtaTabs {
                 output.accept(MtaBlocks.AVOCADO_TRAPDOOR.get());
 
                 output.accept(MtaBlocks.MANGO_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_MANGO_LOG.get());
                 output.accept(MtaBlocks.MANGO_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_MANGO_WOOD.get());
                 output.accept(MtaBlocks.MANGO_PLANKS.get());
                 //output.accept(MtaBlocks.MANGO_SAPLING.get());
                 output.accept(MtaBlocks.MANGO_STAIRS.get());
