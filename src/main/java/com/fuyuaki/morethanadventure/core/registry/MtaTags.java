@@ -125,6 +125,7 @@ public class MtaTags {
         public static final TagKey<Item> STUN = tag("weapon/stun");
 
         public static final TagKey<Item> WHIP_ENCHANTMENTS = tag("whip_enchantments");
+        public static final TagKey<Item> ANCHOR_ENCHANTMENTS = tag("anchor_enchantments");
         public static final TagKey<Item> LOOTING_ENCHANTMENTS = tag("looting_enchantments");
 
 

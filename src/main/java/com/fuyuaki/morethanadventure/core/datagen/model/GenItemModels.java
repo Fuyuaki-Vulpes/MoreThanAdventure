@@ -155,12 +155,16 @@ public class GenItemModels extends ItemModelGenerators {
 
         //WEAPONS
 
+
+
         handheldItem(MtaItems.COPPER_SWORD);
         handheldItem(MtaItems.NETHERSTEEL_SWORD);
 
         this.generateTridents();
         this.generateBow(MtaItems.NETHERITE_BOW.get());
         handheldItem(MtaItems.NETHERITE_MACE);
+
+        handheldBigItemMiddleHilt(MtaItems.POLEARM);
 
         handheldBigItem(MtaItems.WOOD_ANCHOR);
         handheldClaw(MtaItems.WOOD_CLAW);

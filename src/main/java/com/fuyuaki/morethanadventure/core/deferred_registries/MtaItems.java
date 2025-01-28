@@ -191,59 +191,12 @@ public class MtaItems {
 
 
     //WEAPONS
-
-    //SPECIAL WEAPONS
-    public static final DeferredItem<SentinelsWarHammerItem> GREAT_SENTINELS_WAR_HAMMER = ITEMS.registerItem("great_sentinels_war_hammer",
-            properties -> new SentinelsWarHammerItem(
-                    properties
-
-                            .durability(8192)
-                            .component(DataComponents.TOOL, SentinelsWarHammerItem.createToolProperties())
-            ));
-
-    public static final DeferredItem<KnightGreatswordItem> HOLY_KNIGHTS_GREATSWORD = ITEMS.registerItem("holy_knights_greatsword",
-            properties -> new KnightGreatswordItem(MTAToolMaterials.ALEXANDRITE,
+    public static final DeferredItem<WeaponItem> POLEARM = ITEMS.registerItem("polearm",
+            properties -> new WeaponItem(ToolMaterial.WOOD, 2F, -2.5F, 3.5F,
                     properties
 
             ));
-    public static final DeferredItem<MermaidTridentItem> MYSTIC_MERMAIDS_TRIDENT = ITEMS.registerItem("mystic_mermaids_trident",
-            properties -> new MermaidTridentItem(
-                    properties
 
-                            .durability(7108)
-            ));
-    public static final DeferredItem<ReaperScytheItem> SILENT_REAPERS_SCYTHE = ITEMS.registerItem("silent_reaper_scythe",
-            properties -> new ReaperScytheItem(MTAToolMaterials.BLOODSTONE,
-                    properties
-
-            ));
-    public static final DeferredItem<AngelBowItem> TEMPLE_ANGELS_BOW = ITEMS.registerItem("temple_angels_bow",
-            properties -> new AngelBowItem(
-                    properties
-
-                            .durability(6760)
-            ));
-    public static final DeferredItem<WeaponItem> FREEZING_ICICLE_SPEAR = ITEMS.registerItem("freezing_icicle_spear",
-            properties -> new FreezingIcicleSpearItem(MTAToolMaterials.CRYOLITE,
-                    properties
-
-                            .durability(6760)
-            ));
-    public static final DeferredItem<BerserkerBattleAxeItem> WRATHFUL_BERSERKERS_BATTLEAXE = ITEMS.registerItem("wrathful_berserkers_battleaxe",
-            properties -> new BerserkerBattleAxeItem(MTAToolMaterials.GARNET,
-                    properties
-
-            ));
-    public static final DeferredItem<RogueDaggerItem> SHADOW_ROGUES_DAGGER = ITEMS.registerItem("shadow_rogues_dagger",
-            properties -> new RogueDaggerItem(MTAToolMaterials.MOONSTONE,
-                    properties
-
-            ));
-    public static final DeferredItem<AnchorItem> WOOD_ANCHOR = ITEMS.registerItem("wood_anchor",
-            properties -> new AnchorItem(ToolMaterial.WOOD,
-                    properties
-
-            ));
     public static final DeferredItem<ClawItem> WOOD_CLAW = ITEMS.registerItem("wood_claw",
             properties -> new ClawItem(ToolMaterial.WOOD,
                     properties
@@ -949,7 +902,58 @@ public class MtaItems {
                     properties.fireResistant()
             ));
 
+    //SPECIAL WEAPONS
+    public static final DeferredItem<SentinelsWarHammerItem> GREAT_SENTINELS_WAR_HAMMER = ITEMS.registerItem("great_sentinels_war_hammer",
+            properties -> new SentinelsWarHammerItem(
+                    properties
 
+                            .durability(8192)
+                            .component(DataComponents.TOOL, SentinelsWarHammerItem.createToolProperties())
+            ));
+
+    public static final DeferredItem<KnightGreatswordItem> HOLY_KNIGHTS_GREATSWORD = ITEMS.registerItem("holy_knights_greatsword",
+            properties -> new KnightGreatswordItem(MTAToolMaterials.ALEXANDRITE,
+                    properties
+
+            ));
+    public static final DeferredItem<MermaidTridentItem> MYSTIC_MERMAIDS_TRIDENT = ITEMS.registerItem("mystic_mermaids_trident",
+            properties -> new MermaidTridentItem(
+                    properties
+
+                            .durability(7108)
+            ));
+    public static final DeferredItem<ReaperScytheItem> SILENT_REAPERS_SCYTHE = ITEMS.registerItem("silent_reaper_scythe",
+            properties -> new ReaperScytheItem(MTAToolMaterials.BLOODSTONE,
+                    properties
+
+            ));
+    public static final DeferredItem<AngelBowItem> TEMPLE_ANGELS_BOW = ITEMS.registerItem("temple_angels_bow",
+            properties -> new AngelBowItem(
+                    properties
+
+                            .durability(6760)
+            ));
+    public static final DeferredItem<WeaponItem> FREEZING_ICICLE_SPEAR = ITEMS.registerItem("freezing_icicle_spear",
+            properties -> new FreezingIcicleSpearItem(MTAToolMaterials.CRYOLITE,
+                    properties
+
+                            .durability(6760)
+            ));
+    public static final DeferredItem<BerserkerBattleAxeItem> WRATHFUL_BERSERKERS_BATTLEAXE = ITEMS.registerItem("wrathful_berserkers_battleaxe",
+            properties -> new BerserkerBattleAxeItem(MTAToolMaterials.GARNET,
+                    properties
+
+            ));
+    public static final DeferredItem<RogueDaggerItem> SHADOW_ROGUES_DAGGER = ITEMS.registerItem("shadow_rogues_dagger",
+            properties -> new RogueDaggerItem(MTAToolMaterials.MOONSTONE,
+                    properties
+
+            ));
+    public static final DeferredItem<AnchorItem> WOOD_ANCHOR = ITEMS.registerItem("wood_anchor",
+            properties -> new AnchorItem(ToolMaterial.WOOD,
+                    properties
+
+            ));
 
     //FOODS
     public static final DeferredItem<Item> ONION = ITEMS.registerItem("onion", properties -> new BlockItem(MtaBlocks.ONION_CROP.get(), properties

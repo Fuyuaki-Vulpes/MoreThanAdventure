@@ -4,10 +4,7 @@ import com.fuyuaki.morethanadventure.core.datagen.lang.EN_US_LangProvider;
 import com.fuyuaki.morethanadventure.core.datagen.other.loot.GlobalLootModifiers;
 import com.fuyuaki.morethanadventure.core.datagen.model.MTAModelProvider;
 import com.fuyuaki.morethanadventure.core.datagen.other.*;
-import com.fuyuaki.morethanadventure.core.datagen.tags.GenBiomeTags;
-import com.fuyuaki.morethanadventure.core.datagen.tags.GenBlockTags;
-import com.fuyuaki.morethanadventure.core.datagen.tags.GenEntityTags;
-import com.fuyuaki.morethanadventure.core.datagen.tags.GenItemTags;
+import com.fuyuaki.morethanadventure.core.datagen.tags.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -45,6 +42,9 @@ public class DataGen {
         event.createBlockAndItemTags(GenBlockTags::new,GenItemTags::new);
 
         generator.addProvider(true,
+                new GenEnchantmentTags(packOutput, datapackRegistries.getRegistryProvider()));
+
+        generator.addProvider(true,
                 new GenBiomeTags(packOutput, datapackRegistries.getRegistryProvider()));
 
         generator.addProvider(true,
@@ -62,7 +62,6 @@ public class DataGen {
 
         generator.addProvider(true,
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
-
 
 
     }

@@ -381,7 +381,7 @@ public class MtaTabs {
 
 
 
-
+                output.accept(MtaItems.POLEARM);
 
                 output.accept(MtaItems.WOOD_ANCHOR);
                 output.accept(MtaItems.WOOD_CLAW);
@@ -757,7 +757,7 @@ public class MtaTabs {
                 output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
                 output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
                 output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
-                output.accept(MtaItems.SIREN_SPAWN_EGG);
+                //output.accept(MtaItems.SIREN_SPAWN_EGG);
                 output.accept(MtaItems.WISPFLY_SPAWN_EGG);
 
             }).build());

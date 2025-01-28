@@ -1,9 +1,6 @@
 package com.fuyuaki.morethanadventure.core.datagen.lang;
 
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEffects;
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.core.deferred_registries.*;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -464,7 +461,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.NETHERSTEEL_SWORD.get(), "Nethersteel Sword");
         add(MtaItems.NETHERITE_TRIDENT.get(), "Netherite Trident");
         add(MtaItems.NETHERITE_BOW.get(), "Netherite Bow");
-        add(MtaItems.NETHERITE_MACE.get(), "Netherite MACE");
+        add(MtaItems.NETHERITE_MACE.get(), "Netherite Mace");
+
+        add(MtaItems.POLEARM.get(), "Polearm");
 
         add(MtaItems.WOOD_ANCHOR.get(),"Wood Anchor");
         add(MtaItems.WOOD_CLAW.get(),"Wood Claw");
@@ -738,6 +737,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.TOUCAN.get(),"Toucan");
         add(MtaEntityTypes.TURKEY.get(),"Turkey");
         add(MtaEntityTypes.MTA_ARROW.get(),"Special Arrow");
+
+        //ENCHANTMENTS
+        add("enchantment.morethanadventure.disarm", "Disarm");
 
 
 

@@ -162,6 +162,13 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_scrap_facture", has(MtaItems.NETHERITE_FRACTURE.get()));
 
+        shaped(RecipeCategory.COMBAT, MtaItems.POLEARM)
+                .define('s', Items.STICK)
+                .pattern("  s")
+                .pattern(" s ")
+                .pattern("s  ")
+                .unlockedBy("has_stick", has(Items.STICK));
+
         newWeaponsTags(ItemTags.PLANKS, MtaItems.WOOD_ANCHOR.get(), MtaItems.WOOD_CLAW.get(), MtaItems.WOOD_CLAYMORE.get(),
                 MtaItems.WOOD_CUTLASS.get(), MtaItems.WOOD_DAGGER.get(), MtaItems.WOOD_DOUBLE_AXE.get(), MtaItems.WOOD_FLAIL.get(),
                 MtaItems.WOOD_GLAIVE.get(), MtaItems.WOOD_HALBERD.get(), MtaItems.WOOD_KATANA.get(), MtaItems.WOOD_RAPIER.get(),
@@ -314,7 +321,7 @@ public class GenRecipes  extends RecipeProvider {
 
         gemAwakening(MtaItems.AGATE.get(), MtaItems.HOST_HUSK.get(), MtaItems.AWAKENED_AGATE.get(), "has_agate");
         gemAwakening(MtaItems.ALEXANDRITE.get(), MtaItems.SAMURAI_CLOTH.get(), MtaItems.AWAKENED_ALEXANDRITE.get(), "has_alexandrite");
-        gemAwakening(MtaItems.AQUAMARINE.get(), MtaItems.SIREN_SCALE.get(), MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
+        gemAwakening(MtaItems.AQUAMARINE.get(), Items.PRISMARINE, MtaItems.AWAKENED_AQUAMARINE.get(), "has_aquamarine");
         gemAwakening(MtaItems.BLOODSTONE.get(), MtaItems.BLACK_WIDOW_VENOM.get(), MtaItems.AWAKENED_BLOODSTONE.get(), "has_bloodstone");
         gemAwakening(MtaItems.CELESTITE.get(), Items.PHANTOM_MEMBRANE, MtaItems.AWAKENED_CELESTITE.get(), "has_celestite");
         gemAwakening(MtaItems.CRYOLITE.get(), MtaItems.SPIRIT_DUST.get(), MtaItems.AWAKENED_CRYOLITE.get(), "has_cryolite");
@@ -566,16 +573,16 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rGla)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern("  o")
-                .pattern(" so")
+                .pattern(" oo")
                 .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rHal)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern(" oo")
-                .pattern(" so")
+                .pattern(" o ")
                 .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rKat)
@@ -594,9 +601,9 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rScy)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern("ooo")
-                .pattern(" s ")
+                .pattern(" o ")
                 .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rSic)
@@ -607,7 +614,7 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rSpe)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("s  ")
@@ -680,16 +687,16 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rGla)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern("  o")
-                .pattern(" so")
+                .pattern(" oo")
                 .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rHal)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern(" oo")
-                .pattern(" so")
+                .pattern(" o ")
                 .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rKat)
@@ -708,9 +715,9 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rScy)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern("ooo")
-                .pattern(" s ")
+                .pattern(" o ")
                 .pattern("s  ")
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rSic)
@@ -721,7 +728,7 @@ public class GenRecipes  extends RecipeProvider {
                 .unlockedBy("has_" + unlock, has(ore));
         shaped(RecipeCategory.COMBAT, rSpe)
                 .define('o', ore)
-                .define('s', Items.STICK)
+                .define('s', MtaItems.POLEARM)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("s  ")

@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.datagen.other;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEnchantments;
 import com.fuyuaki.morethanadventure.game.worldgen.MTANoises;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaConfigFeatures;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
@@ -24,6 +25,7 @@ public class GenWorld extends DatapackBuiltinEntriesProvider {
             .add(Registries.NOISE, MTANoises::bootstrap)
             .add(Registries.BIOME, MtaBiomes::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, MtaBiomeModifiers::bootstrap)
+            .add(Registries.ENCHANTMENT, MtaEnchantments::bootstrap)
             ;
 
 

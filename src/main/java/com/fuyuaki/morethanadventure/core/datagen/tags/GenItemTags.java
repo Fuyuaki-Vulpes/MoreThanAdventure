@@ -380,6 +380,18 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.CHAIN_WHIP.get(),
                         MtaItems.NETHERITE_WHIP.get()
                 );
+
+        this.tag(MtaTags.Items.ANCHOR_ENCHANTMENTS)
+                .add(
+                        MtaItems.WOOD_ANCHOR.get(),
+                        MtaItems.STONE_ANCHOR.get(),
+                        MtaItems.COPPER_ANCHOR.get(),
+                        MtaItems.IRON_ANCHOR.get(),
+                        MtaItems.GOLD_ANCHOR.get(),
+                        MtaItems.NETHERSTEEL_ANCHOR.get(),
+                        MtaItems.DIAMOND_ANCHOR.get(),
+                        MtaItems.NETHERITE_ANCHOR.get()
+                );
         //this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
 
 

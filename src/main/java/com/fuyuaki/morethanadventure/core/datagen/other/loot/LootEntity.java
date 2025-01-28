@@ -422,6 +422,8 @@ public class LootEntity extends EntityLootSubProvider {
                         LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(Items.IRON_INGOT))
+                                .add(LootItem.lootTableItem(Items.GOLD_INGOT))
+                                .add(LootItem.lootTableItem(Items.COPPER_INGOT))
                                 .add(LootItem.lootTableItem(Items.CARROT))
                                 .add(LootItem.lootTableItem(Items.POTATO).apply(SmeltItemFunction.smelted().when(this.shouldSmeltLoot())))
                                 .when(LootItemKilledByPlayerCondition.killedByPlayer())
