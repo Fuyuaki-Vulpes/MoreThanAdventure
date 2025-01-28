@@ -24,6 +24,10 @@ repositories {
     }
     maven { url = 'https://maven.minecraftforge.net/' }
 
+    maven {
+        name "Modding Legacy Maven"
+        url "https://maven.moddinglegacy.com/maven"
+    }
 
     maven { url 'https://maven.su5ed.dev/releases' }
     maven { url 'https://maven.shedaniel.me/' }
@@ -121,6 +125,7 @@ dependencies {
 
     implementation "io.wispforest:owo-lib-neoforge:${owolibVersion}"
     implementation("io.wispforest:accessories-neoforge:${accessoriesVersion}")
+    implementation ("com.legacy:structure-gel:${gelVersion}")
 
 
 //    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
@@ -145,10 +150,12 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_authors             : mod_authors,
             mod_description         : mod_description,
             terrablenderVersion     : terrablenderVersion,
+            gelVersion     : gelVersion,
             emi_version             : emi_version,
             accessoriesVersion      : accessoriesVersion,
             owolibVersion      : owolibVersion,
             terrablenderVersionRange: terrablenderVersionRange,
+            gelVersionRange: gelVersionRange,
             accessoriesVersionRange: accessoriesVersionRange,
             owolibVersionRange: owolibVersionRange
 

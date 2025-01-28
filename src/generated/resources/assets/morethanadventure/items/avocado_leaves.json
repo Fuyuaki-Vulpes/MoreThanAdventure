@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "morethanadventure:block/avocado_leaves"
+    "model": "morethanadventure:block/avocado_leaves_stage4",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -12012264
+      }
+    ]
   }
 }

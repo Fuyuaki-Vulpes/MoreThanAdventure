@@ -151,7 +151,9 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> AVOCADO_WOOD = registerBlock("avocado_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
     public static final DeferredBlock<Block> AVOCADO_PLANKS = registerBlock("avocado_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    public static final DeferredBlock<Block> AVOCADO_LEAVES = registerBlock("avocado_leaves",  LeavesBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+    public static final DeferredBlock<Block> AVOCADO_LEAVES = registerBlock("avocado_leaves",
+            AvocadoLeaves::new,
+            leavesProperties(SoundType.AZALEA_LEAVES));
 
     //public static final DeferredBlock<Block> AVOCADO_SAPLING = registerBlock("mango_sapling",
     //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
@@ -183,7 +185,9 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> MANGO_WOOD = registerBlock("mango_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
     public static final DeferredBlock<Block> MANGO_PLANKS = registerBlock("mango_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    public static final DeferredBlock<Block> MANGO_LEAVES = registerBlock("mango_leaves",  LeavesBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
+    public static final DeferredBlock<Block> MANGO_LEAVES = registerBlock("mango_leaves",
+            MangoLeaves::new,
+            leavesProperties(SoundType.AZALEA_LEAVES));
 
     //public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("mango_sapling",
     //        properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));

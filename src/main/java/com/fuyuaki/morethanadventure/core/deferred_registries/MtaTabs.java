@@ -25,6 +25,15 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
                 output.accept(MtaBlocks.PALM_LEAVES.get());
+
+                output.accept(MtaBlocks.AVOCADO_LOG.get());
+                output.accept(MtaBlocks.AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.AVOCADO_LEAVES.get());
+
+                output.accept(MtaBlocks.MANGO_LOG.get());
+                output.accept(MtaBlocks.MANGO_WOOD.get());
+                output.accept(MtaBlocks.MANGO_LEAVES.get());
+
                 output.accept(MtaBlocks.SCATTERED_LEAVES.get());
                 output.accept(MtaBlocks.CATTAIL.get());
                 output.accept(MtaBlocks.CORPSE_FLOWER.get());

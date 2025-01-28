@@ -114,10 +114,13 @@ public class GenBlockModels extends BlockModelGenerators {
 
         this.registerSimpleItemModel(MtaBlocks.COARSE_DIRT_PATH.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.COARSE_DIRT_PATH.get()));
         this.registerSimpleItemModel(MtaBlocks.SAND_PATH.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.SAND_PATH.get()));
-        this.registerSimpleItemModel(MtaBlocks.GRASSY_DIRT.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.GRASSY_DIRT.get()));
+        this.registerSimpleTintedItemModel(MtaBlocks.GRASSY_DIRT.get(),ModelLocationUtils.getModelLocation(MtaBlocks.GRASSY_DIRT.get()),new GrassColorSource());
         this.registerSimpleTintedItemModel(MtaBlocks.PERMAFROST_GRASS.get(),ModelLocationUtils.getModelLocation(MtaBlocks.PERMAFROST_GRASS.get()),new GrassColorSource());
 
         this.createGrassLikeBlock(MtaBlocks.TUNDRA_GRASS.get(),MtaBlocks.PERMAFROST_DIRT.get(),false);
+
+        this.createCropLeaves(MtaBlocks.AVOCADO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_DEFAULT,0,1,2,3,4);
+        this.createCropLeaves(MtaBlocks.MANGO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_BIRCH,0,1,2,3,4);
 
         this.createCropBlock(MtaBlocks.ONION_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         this.createCropBlock(MtaBlocks.TOMATO_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
@@ -224,27 +227,27 @@ public class GenBlockModels extends BlockModelGenerators {
 
 
     public void createCropLeaves(Block block, Property<Integer> ageProperty, int tint, int... ageToVisualStageMapping) {
-
         if (ageProperty.getPossibleValues().size() != ageToVisualStageMapping.length) {
             throw new IllegalArgumentException();
         } else {
             Int2ObjectMap<ResourceLocation> int2objectmap = new Int2ObjectOpenHashMap<>();
             PropertyDispatch propertydispatch = PropertyDispatch.property(ageProperty)
                     .generate(
-                            p_388091_ -> {
-                                int i = ageToVisualStageMapping[p_388091_];
+                            integer -> {
+                                int i = ageToVisualStageMapping[integer];
                                 ResourceLocation resourcelocation = int2objectmap.computeIfAbsent(
-                                        i, p_387534_ -> this.createSuffixedVariant(block, "_stage" + i, ModelTemplates.CUBE_ALL, TextureMapping::crop)
+                                        i, p_387534_ -> this.createSuffixedVariant(block, "_stage" + i, ModelTemplates.LEAVES, TextureMapping::cube)
                                 );
                                 return Variant.variant().with(VariantProperties.MODEL, resourcelocation);
                             }
                     );
             ResourceLocation resourcelocation = TexturedModel.LEAVES.create(block, this.modelOutput);
 
-            this.registerSimpleTintedItemModel(block, resourcelocation, ItemModelUtils.constantTint(tint));
+            this.registerSimpleTintedItemModel(block, resourcelocation.withSuffix("_stage4"), ItemModelUtils.constantTint(tint));
 
             this.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block).with(propertydispatch));
         }
     }
+
 
 }

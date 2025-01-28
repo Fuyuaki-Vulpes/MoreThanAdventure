@@ -66,6 +66,9 @@ public class MTAGui {
         }
         guiGraphics.blitSprite(RenderType::guiTextured, SOUL_OVERLAY, soulX, soulY,16,16);
 
+
+//        String s = soulCharge.getCharge() + "";
+//        guiGraphics.drawCenteredString(Minecraft.getInstance().font,s,soulX + 16 + 1,soulY + 8,0xffffff);
     }
 
     public static ResourceLocation getHudSprite(String sprite){

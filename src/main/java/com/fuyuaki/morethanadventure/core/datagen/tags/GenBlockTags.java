@@ -57,7 +57,9 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
 
         this.tag(BlockTags.LEAVES).add(
                 MtaBlocks.PALM_LEAVES.get(),
-                MtaBlocks.SEAWOOD_LEAVES.get()
+                MtaBlocks.SEAWOOD_LEAVES.get(),
+                MtaBlocks.AVOCADO_LEAVES.get(),
+                MtaBlocks.MANGO_LEAVES.get()
         );
         this.tag(BlockTags.WOODEN_STAIRS).add(
                 MtaBlocks.PALM_STAIRS.get(),
