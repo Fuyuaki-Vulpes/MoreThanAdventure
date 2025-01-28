@@ -104,7 +104,7 @@ public class Turkey extends Animal {
                 this.playAmbientSound();
                 setGobble(this.random.nextIntBetweenInclusive(400,900));
             }
-            if (this.random.nextDouble() < 0.001 && getGobble() <= 0){
+            if (this.random.nextDouble() < 0.01 && getGobble() <= 0){
                 setGobbling(true);
                 setLeader(true);
             }
