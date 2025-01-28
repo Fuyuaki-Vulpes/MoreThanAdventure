@@ -1,7 +1,7 @@
 {
   "anvil_cost": 3,
   "description": {
-    "translate": "enchantment.morethanadventure.disarm"
+    "translate": "enchantment.morethanadventure.snag"
   },
   "effects": {
     "minecraft:post_attack": [
@@ -9,7 +9,11 @@
         "affected": "victim",
         "effect": {
           "type": "morethanadventure:disarm",
-          "level": 4.0
+          "level": {
+            "type": "minecraft:linear",
+            "base": 1.0,
+            "per_level_above_first": 1.0
+          }
         },
         "enchanted": "attacker"
       }
@@ -19,15 +23,15 @@
     "base": 25,
     "per_level_above_first": 8
   },
-  "max_level": 1,
+  "max_level": 5,
   "min_cost": {
     "base": 5,
     "per_level_above_first": 8
   },
-  "primary_items": "#morethanadventure:anchor_enchantments",
+  "primary_items": "#morethanadventure:whip_enchantments",
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#morethanadventure:anchor_enchantments",
+  "supported_items": "#morethanadventure:whip_enchantments",
   "weight": 100
 }

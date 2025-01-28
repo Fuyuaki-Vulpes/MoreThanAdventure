@@ -22,6 +22,8 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 public class MtaEnchantments {
    public static final ResourceKey<Enchantment> DISARM = ResourceKey.create(Registries.ENCHANTMENT,
         ResourceLocation.fromNamespaceAndPath(MODID, "disarm"));
+   public static final ResourceKey<Enchantment> SNAG = ResourceKey.create(Registries.ENCHANTMENT,
+        ResourceLocation.fromNamespaceAndPath(MODID, "snag"));
 
 
 
@@ -32,8 +34,13 @@ public class MtaEnchantments {
         HolderGetter<Block> block = context.lookup(Registries.BLOCK);
         HolderGetter<EntityType<?>> entity = context.lookup(Registries.ENTITY_TYPE);
 
-        register(context, DISARM, Enchantment.enchantment(Enchantment.definition(item.getOrThrow(MtaTags.Items.WHIP_ENCHANTMENTS),
-                item.getOrThrow(MtaTags.Items.WHIP_ENCHANTMENTS), 100, 2,
+        register(context, DISARM, Enchantment.enchantment(Enchantment.definition(item.getOrThrow(MtaTags.Items.ANCHOR_ENCHANTMENTS),
+                item.getOrThrow(MtaTags.Items.ANCHOR_ENCHANTMENTS), 100, 1,
+                Enchantment.dynamicCost(5,8), Enchantment.dynamicCost(25, 8), 3, EquipmentSlotGroup.MAINHAND))
+                .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.VICTIM, new DisarmEnchantmentEffect(LevelBasedValue.constant(4F))));
+
+        register(context, SNAG, Enchantment.enchantment(Enchantment.definition(item.getOrThrow(MtaTags.Items.WHIP_ENCHANTMENTS),
+                item.getOrThrow(MtaTags.Items.WHIP_ENCHANTMENTS), 100, 3,
                 Enchantment.dynamicCost(5,8), Enchantment.dynamicCost(25, 8), 3, EquipmentSlotGroup.MAINHAND))
                 .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.VICTIM, new DisarmEnchantmentEffect(LevelBasedValue.perLevel(1F))));
     }
