@@ -19,28 +19,47 @@ public class MTALootTables {
 
 
 
-    public static final ResourceKey<LootTable> OCEAN_RUIN_COLD_ARCHAEOLOGY = register("archaeology/ocean_ruin_cold");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD = chest("castle_ruins/reward");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_COMMON = chest("castle_ruins/reward_common");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_RARE = chest("castle_ruins/reward_rare");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_UNIQUE = chest("castle_ruins/reward_unique");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_OMINOUS = chest("castle_ruins/reward_ominous");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_OMINOUS_COMMON = chest("castle_ruins/reward_ominous_common");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_OMINOUS_RARE = chest("castle_ruins/reward_ominous_rare");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_OMINOUS_UNIQUE = chest("castle_ruins/reward_ominous_ominous");
+
+
+    public static final ResourceKey<LootTable> CASTLE_RUINS_EQUIPMENT = equipment("castle_ruins");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_EQUIPMENT_RANGED = equipment("castle_ruins_ranged");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_EQUIPMENT_MELEE = equipment("castle_ruins_melee");
+
+
+    public static final ResourceKey<LootTable> CASTLE_RUINS_POT = pot("castle_ruins_common");
+    public static final ResourceKey<LootTable> CASTLE_RUINS_POT_SPECIAL = pot("castle_ruins_special");
+
+
+
 
 
 
     private static ResourceKey<LootTable> chest(String name){
         return register("chests/" + name);
     }
-
-
+    private static ResourceKey<LootTable> pot(String name){
+        return register("pots/" + name);
+    }
+    private static ResourceKey<LootTable> dispenser(String name){
+        return register("dispensers/" + name);
+    }
     private static ResourceKey<LootTable> archaeology(String name){
         return register("archaeology/" + name);
     }
-
     private static ResourceKey<LootTable> gameplay(String name){
         return register("gameplay/" + name);
     }
-
-
     private static ResourceKey<LootTable> equipment(String name){
         return register("equipment/" + name);
     }
-
     private static ResourceKey<LootTable> spawners(String name){
         return register("spawners/" + name);
     }
