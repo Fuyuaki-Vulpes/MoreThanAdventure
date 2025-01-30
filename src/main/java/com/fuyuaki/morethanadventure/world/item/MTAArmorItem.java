@@ -23,7 +23,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import java.util.List;
 import java.util.UUID;
 
-public class MTAArmor extends ArmorItem {
+public class MTAArmorItem extends ArmorItem {
 
     protected final UUID FULL_SET_UUID = UUID.fromString("78f6b05d-a0ff-4b5e-86dc-9b397d5b7878");
     private static final ArmorMaterial SENTINEL = MTAArmorMats.GREAT_SENTINEL;
@@ -38,7 +38,7 @@ public class MTAArmor extends ArmorItem {
 
 
 
-    public MTAArmor(ArmorMaterial pMaterial, ArmorType pArmorType, Properties pProperties) {
+    public MTAArmorItem(ArmorMaterial pMaterial, ArmorType pArmorType, Properties pProperties) {
         super(pMaterial, pArmorType,
                 pProperties
                         .stacksTo(1)

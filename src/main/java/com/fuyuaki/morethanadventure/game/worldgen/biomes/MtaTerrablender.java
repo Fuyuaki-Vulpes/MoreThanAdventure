@@ -9,6 +9,7 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 public class MtaTerrablender {
     public static void registerBiomes(){
         Regions.register(new MtaOverworldRegions(ResourceLocation.fromNamespaceAndPath(MODID,"overworld"), MTAConfigs.Common.COMMON_REGION_WEIGHT.get()));
+        Regions.register(new MTARareOverworldRegions(ResourceLocation.fromNamespaceAndPath(MODID,"overworld_rare"), MTAConfigs.Common.RARE_REGION_WEIGHT.get()));
 
     }
 }

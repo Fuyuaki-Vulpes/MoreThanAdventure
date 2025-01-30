@@ -79,7 +79,7 @@ public class GenItemModels extends ItemModelGenerators {
         simpleItem(MtaItems.REGENERATIVE_TALISMAN);
         simpleItem(MtaItems.SLEEPING_KIT);
         simpleItem(MtaItems.STRIDER_BOOTS);
-        simpleItem(MtaItems.TOTEM_OF_COMBATING);
+        simpleItem(MtaItems.QUIVER);
 
         simpleItem(MtaItems.AGATE);
         simpleItem(MtaItems.ALEXANDRITE);

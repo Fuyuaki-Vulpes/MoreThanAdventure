@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.core.datagen.tags;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
+import io.wispforest.accessories.api.data.AccessoriesTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -398,9 +399,46 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
 
 
         commonTags();
+        accessoryTags();
     }
 
+    private void accessoryTags() {
+//        this.tag(AccessoriesTags.ANKLET_TAG).add();
+        this.tag(AccessoriesTags.BACK_TAG).add(
+                MtaItems.SLEEPING_KIT.get(),
+                MtaItems.QUIVER.get()
+        );
+        this.tag(AccessoriesTags.BELT_TAG).add(
+                MtaItems.QUIVER.get()
+        );
+//        this.tag(AccessoriesTags.CAPE_TAG).add();
+//        this.tag(AccessoriesTags.CHARM_TAG).add();
 
+        this.tag(AccessoriesTags.FACE_TAG).add(
+                MtaItems.CAT_MASK.get(),
+                MtaItems.SCUBA_GEAR.get()
+        );
+        this.tag(AccessoriesTags.HAND_TAG).add(
+                MtaItems.CLIMBING_CLAWS.get()
+        );
+//        this.tag(AccessoriesTags.HAT_TAG).add();
+//        this.tag(AccessoriesTags.NECKLACE_TAG).add();
+//        this.tag(AccessoriesTags.RING_TAG).add();
+
+
+        this.tag(AccessoriesTags.SHOES_TAG).add(
+                MtaItems.PISTON_BOOTS.get(),
+                MtaItems.STRIDER_BOOTS.get()
+
+        );
+        this.tag(MtaTags.Accessory.TALISMAN_TAG).add(
+                MtaItems.WEIGHTED_DICE.get(),
+                MtaItems.REGENERATIVE_TALISMAN.get()
+
+        );
+//        this.tag(AccessoriesTags.WRIST_TAG).add();
+
+    }
 
 
     private void weaponTags() {

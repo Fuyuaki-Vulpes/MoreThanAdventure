@@ -5,21 +5,30 @@ import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAtt
 import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
 import com.fuyuaki.morethanadventure.world.item.weaponry.WeaponItem;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ProjectileWeaponItem;
+import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.level.Level;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.function.Predicate;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity{
@@ -45,6 +54,7 @@ public abstract class PlayerMixin extends LivingEntity{
 
     @Shadow public abstract void resetAttackStrengthTicker();
 
+    @Shadow @Final private Inventory inventory;
     @Unique
     private final Player thisPlayer = (Player)(Object)this;
 

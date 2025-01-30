@@ -376,7 +376,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
 
 
-        add(MtaItems.SCUBA_GEAR.get(),"Weighted Dice");
+        add(MtaItems.SCUBA_GEAR.get(),"Scuba Gear");
         add(MtaItems.WEIGHTED_DICE.get(),"Weighted Dice");
         add(MtaItems.CAT_MASK.get(),"Cat Mask");
         add(MtaItems.CLIMBING_CLAWS.get(),"Climbing Claws");
@@ -384,7 +384,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.REGENERATIVE_TALISMAN.get(),"Regenerative Talisman");
         add(MtaItems.SLEEPING_KIT.get(),"Sleeping Kit");
         add(MtaItems.STRIDER_BOOTS.get(),"Strider Boots");
-        add(MtaItems.TOTEM_OF_COMBATING.get(),"Totem Of Combating");
+        add(MtaItems.QUIVER.get(),"Quiver");
 
         add(MtaItems.AGATE.get(),"Agate");
         add(MtaItems.ALEXANDRITE.get(),"Alexandrite");
@@ -796,6 +796,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(getTalismanDescriptionID(MtaItems.REGENERATIVE_TALISMAN), "Crouching heals you, allies, and pets in an area");
         add(getTalismanDescriptionID(MtaItems.SLEEPING_KIT), "Press \"Use Talisman\" key to sleep");
         add(getTalismanDescriptionID(MtaItems.STRIDER_BOOTS), "Boots made of Strider skin that allow you to walk on Lava");
+        add(getTalismanDescriptionID(MtaItems.QUIVER), "Mobs killed by arrow have a random chance of dropping multiple arrows.");
 
     }
 
@@ -920,6 +921,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("items.morethanadventure.weapons.tag.causes_bleeding", "Chance to cause Bleeding on Hit");
         add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
         add("items.morethanadventure.weapons.info.shift", "Press SHIFT to see chances");
+
+
+        add("accessories.slot.talisman", "Talisman");
 
 
 

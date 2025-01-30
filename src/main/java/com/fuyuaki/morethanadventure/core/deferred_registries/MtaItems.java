@@ -2,8 +2,10 @@ package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MTAArmorMats;
 import com.fuyuaki.morethanadventure.world.item.*;
+import com.fuyuaki.morethanadventure.world.item.MTAArmorItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.talisman.PistonBootsItem;
 import com.fuyuaki.morethanadventure.world.item.accessories.talisman.ScubaGearTalisman;
-import com.fuyuaki.morethanadventure.world.item.accessories.talisman.TalismanItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.TalismanItem;
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
@@ -44,16 +46,11 @@ public class MtaItems {
     public static final DeferredItem<Item> WEIGHTED_DICE = ITEMS.registerItem("weighted_dice", TalismanItem::new);
     public static final DeferredItem<Item> CAT_MASK = ITEMS.registerItem("cat_mask", TalismanItem::new);
     public static final DeferredItem<Item> CLIMBING_CLAWS = ITEMS.registerItem("climbing_claws", TalismanItem::new);
-    public static final DeferredItem<Item> PISTON_BOOTS = ITEMS.registerItem("piston_boots", TalismanItem::new);
+    public static final DeferredItem<Item> PISTON_BOOTS = ITEMS.registerItem("piston_boots", PistonBootsItem::new);
     public static final DeferredItem<Item> REGENERATIVE_TALISMAN = ITEMS.registerItem("regenerative_talisman", TalismanItem::new);
     public static final DeferredItem<Item> SLEEPING_KIT = ITEMS.registerItem("sleeping_kit", TalismanItem::new);
     public static final DeferredItem<Item> STRIDER_BOOTS = ITEMS.registerItem("strider_boots", TalismanItem::new);
-
-
-    //TOTEMS
-    public static final DeferredItem<Item> TOTEM_OF_COMBATING = ITEMS.registerSimpleItem("totem_of_combating",new Item.Properties()
-            .stacksTo(1).rarity(Rarity.UNCOMMON));
-
+    public static final DeferredItem<Item> QUIVER = ITEMS.registerItem("quiver", TalismanItem::new);
 
 
     //GEMS
@@ -97,75 +94,75 @@ public class MtaItems {
     public static final DeferredItem<Item> FEATHERWEIGHT_UPGRADE = ITEMS.registerSimpleItem("featherweight_upgrade");
 
     //ARMOR
-    public static final DeferredItem<Item> GREAT_SENTINELS_HELMET = ITEMS.registerItem("great_sentinel_helmet", properties -> new MTAArmor(MTAArmorMats.GREAT_SENTINEL, ArmorType.HELMET, properties
+    public static final DeferredItem<Item> GREAT_SENTINELS_HELMET = ITEMS.registerItem("great_sentinel_helmet", properties -> new MTAArmorItem(MTAArmorMats.GREAT_SENTINEL, ArmorType.HELMET, properties
             .fireResistant()));
-    public static final DeferredItem<Item> GREAT_SENTINELS_CHESTPLATE = ITEMS.registerItem("great_sentinel_chestplate", properties -> new MTAArmor(MTAArmorMats.GREAT_SENTINEL, ArmorType.CHESTPLATE, properties
+    public static final DeferredItem<Item> GREAT_SENTINELS_CHESTPLATE = ITEMS.registerItem("great_sentinel_chestplate", properties -> new MTAArmorItem(MTAArmorMats.GREAT_SENTINEL, ArmorType.CHESTPLATE, properties
             .fireResistant()));
-    public static final DeferredItem<Item> GREAT_SENTINELS_LEGGINGS = ITEMS.registerItem("great_sentinel_leggings", properties -> new MTAArmor(MTAArmorMats.GREAT_SENTINEL, ArmorType.LEGGINGS, properties
+    public static final DeferredItem<Item> GREAT_SENTINELS_LEGGINGS = ITEMS.registerItem("great_sentinel_leggings", properties -> new MTAArmorItem(MTAArmorMats.GREAT_SENTINEL, ArmorType.LEGGINGS, properties
             .fireResistant()));
-    public static final DeferredItem<Item> GREAT_SENTINELS_BOOTS = ITEMS.registerItem("great_sentinel_boots", properties -> new MTAArmor(MTAArmorMats.GREAT_SENTINEL, ArmorType.BOOTS, properties
-            .fireResistant()));
-
-    public static final DeferredItem<Item> HOLY_KNIGHTS_HELMET = ITEMS.registerItem("holy_knights_helmet", properties -> new MTAArmor(MTAArmorMats.HOLY_KNIGHT, ArmorType.HELMET, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> HOLY_KNIGHTS_CHESTPLATE = ITEMS.registerItem("holy_knights_chestplate", properties -> new MTAArmor(MTAArmorMats.HOLY_KNIGHT, ArmorType.CHESTPLATE, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> HOLY_KNIGHTS_LEGGINGS = ITEMS.registerItem("holy_knights_leggings", properties -> new MTAArmor(MTAArmorMats.HOLY_KNIGHT, ArmorType.LEGGINGS, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> HOLY_KNIGHTS_BOOTS = ITEMS.registerItem("holy_knights_boots", properties -> new MTAArmor(MTAArmorMats.HOLY_KNIGHT, ArmorType.BOOTS, properties
+    public static final DeferredItem<Item> GREAT_SENTINELS_BOOTS = ITEMS.registerItem("great_sentinel_boots", properties -> new MTAArmorItem(MTAArmorMats.GREAT_SENTINEL, ArmorType.BOOTS, properties
             .fireResistant()));
 
-    public static final DeferredItem<Item> MYSTIC_MERMAIDS_HELMET = ITEMS.registerItem("mystic_mermaids_helmet", properties -> new MTAArmor(MTAArmorMats.MYSTIC_MERMAID, ArmorType.HELMET, properties
+    public static final DeferredItem<Item> HOLY_KNIGHTS_HELMET = ITEMS.registerItem("holy_knights_helmet", properties -> new MTAArmorItem(MTAArmorMats.HOLY_KNIGHT, ArmorType.HELMET, properties
             .fireResistant()));
-    public static final DeferredItem<Item> MYSTIC_MERMAIDS_CHESTPLATE = ITEMS.registerItem("mystic_mermaids_chestplate", properties -> new MTAArmor(MTAArmorMats.MYSTIC_MERMAID, ArmorType.CHESTPLATE, properties
+    public static final DeferredItem<Item> HOLY_KNIGHTS_CHESTPLATE = ITEMS.registerItem("holy_knights_chestplate", properties -> new MTAArmorItem(MTAArmorMats.HOLY_KNIGHT, ArmorType.CHESTPLATE, properties
             .fireResistant()));
-    public static final DeferredItem<Item> MYSTIC_MERMAIDS_LEGGINGS = ITEMS.registerItem("mystic_mermaids_leggings", properties -> new MTAArmor(MTAArmorMats.MYSTIC_MERMAID, ArmorType.LEGGINGS, properties
+    public static final DeferredItem<Item> HOLY_KNIGHTS_LEGGINGS = ITEMS.registerItem("holy_knights_leggings", properties -> new MTAArmorItem(MTAArmorMats.HOLY_KNIGHT, ArmorType.LEGGINGS, properties
             .fireResistant()));
-    public static final DeferredItem<Item> MYSTIC_MERMAIDS_BOOTS = ITEMS.registerItem("mystic_mermaids_boots", properties -> new MTAArmor(MTAArmorMats.MYSTIC_MERMAID, ArmorType.BOOTS, properties
-            .fireResistant()));
-
-    public static final DeferredItem<Item> SILENT_REAPERS_HELMET = ITEMS.registerItem("silent_reapers_helmet", properties -> new MTAArmor(MTAArmorMats.SILENT_REAPER, ArmorType.HELMET, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> SILENT_REAPERS_CHESTPLATE = ITEMS.registerItem("silent_reapers_chestplate", properties -> new MTAArmor(MTAArmorMats.SILENT_REAPER, ArmorType.CHESTPLATE, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> SILENT_REAPERS_LEGGINGS = ITEMS.registerItem("silent_reapers_leggings", properties -> new MTAArmor(MTAArmorMats.SILENT_REAPER,ArmorType.LEGGINGS, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> SILENT_REAPERS_BOOTS = ITEMS.registerItem("silent_reapers_boots", properties -> new MTAArmor(MTAArmorMats.SILENT_REAPER, ArmorType.BOOTS, properties
+    public static final DeferredItem<Item> HOLY_KNIGHTS_BOOTS = ITEMS.registerItem("holy_knights_boots", properties -> new MTAArmorItem(MTAArmorMats.HOLY_KNIGHT, ArmorType.BOOTS, properties
             .fireResistant()));
 
-    public static final DeferredItem<Item> TEMPLE_ANGELS_HELMET = ITEMS.registerItem("temple_angels_helmet", properties -> new MTAArmor(MTAArmorMats.TEMPLE_ANGEL, ArmorType.HELMET, properties
+    public static final DeferredItem<Item> MYSTIC_MERMAIDS_HELMET = ITEMS.registerItem("mystic_mermaids_helmet", properties -> new MTAArmorItem(MTAArmorMats.MYSTIC_MERMAID, ArmorType.HELMET, properties
             .fireResistant()));
-    public static final DeferredItem<Item> TEMPLE_ANGELS_CHESTPLATE = ITEMS.registerItem("temple_angels_chestplate", properties -> new MTAArmor(MTAArmorMats.TEMPLE_ANGEL, ArmorType.CHESTPLATE, properties
+    public static final DeferredItem<Item> MYSTIC_MERMAIDS_CHESTPLATE = ITEMS.registerItem("mystic_mermaids_chestplate", properties -> new MTAArmorItem(MTAArmorMats.MYSTIC_MERMAID, ArmorType.CHESTPLATE, properties
             .fireResistant()));
-    public static final DeferredItem<Item> TEMPLE_ANGELS_LEGGINGS = ITEMS.registerItem("temple_angels_leggings", properties -> new MTAArmor(MTAArmorMats.TEMPLE_ANGEL, ArmorType.LEGGINGS, properties
+    public static final DeferredItem<Item> MYSTIC_MERMAIDS_LEGGINGS = ITEMS.registerItem("mystic_mermaids_leggings", properties -> new MTAArmorItem(MTAArmorMats.MYSTIC_MERMAID, ArmorType.LEGGINGS, properties
             .fireResistant()));
-    public static final DeferredItem<Item> TEMPLE_ANGELS_BOOTS = ITEMS.registerItem("temple_angels_boots", properties -> new MTAArmor(MTAArmorMats.TEMPLE_ANGEL, ArmorType.BOOTS, properties
-            .fireResistant()));
-
-    public static final DeferredItem<Item> FREEZING_ICICLE_HELMET = ITEMS.registerItem("freezing_icicle_helmet", properties -> new MTAArmor(MTAArmorMats.FREEZING_ICICLE, ArmorType.HELMET, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> FREEZING_ICICLE_CHESTPLATE = ITEMS.registerItem("freezing_icicle_chestplate", properties -> new MTAArmor(MTAArmorMats.FREEZING_ICICLE, ArmorType.CHESTPLATE, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> FREEZING_ICICLE_LEGGINGS = ITEMS.registerItem("freezing_icicle_leggings", properties -> new MTAArmor(MTAArmorMats.FREEZING_ICICLE, ArmorType.LEGGINGS, properties
-            .fireResistant()));
-    public static final DeferredItem<Item> FREEZING_ICICLE_BOOTS = ITEMS.registerItem("freezing_icicle_boots", properties -> new MTAArmor(MTAArmorMats.FREEZING_ICICLE, ArmorType.BOOTS, properties
+    public static final DeferredItem<Item> MYSTIC_MERMAIDS_BOOTS = ITEMS.registerItem("mystic_mermaids_boots", properties -> new MTAArmorItem(MTAArmorMats.MYSTIC_MERMAID, ArmorType.BOOTS, properties
             .fireResistant()));
 
-    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_HELMET = ITEMS.registerItem("wrathful_berserkers_helmet", properties -> new MTAArmor(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.HELMET, properties
+    public static final DeferredItem<Item> SILENT_REAPERS_HELMET = ITEMS.registerItem("silent_reapers_helmet", properties -> new MTAArmorItem(MTAArmorMats.SILENT_REAPER, ArmorType.HELMET, properties
             .fireResistant()));
-    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_CHESTPLATE = ITEMS.registerItem("wrathful_berserkers_chestplate", properties -> new MTAArmor(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.CHESTPLATE, properties
+    public static final DeferredItem<Item> SILENT_REAPERS_CHESTPLATE = ITEMS.registerItem("silent_reapers_chestplate", properties -> new MTAArmorItem(MTAArmorMats.SILENT_REAPER, ArmorType.CHESTPLATE, properties
             .fireResistant()));
-    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_LEGGINGS = ITEMS.registerItem("wrathful_berserkers_leggings", properties -> new MTAArmor(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.LEGGINGS, properties
+    public static final DeferredItem<Item> SILENT_REAPERS_LEGGINGS = ITEMS.registerItem("silent_reapers_leggings", properties -> new MTAArmorItem(MTAArmorMats.SILENT_REAPER,ArmorType.LEGGINGS, properties
             .fireResistant()));
-    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_BOOTS = ITEMS.registerItem("wrathful_berserkers_boots", properties -> new MTAArmor(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.BOOTS, properties
+    public static final DeferredItem<Item> SILENT_REAPERS_BOOTS = ITEMS.registerItem("silent_reapers_boots", properties -> new MTAArmorItem(MTAArmorMats.SILENT_REAPER, ArmorType.BOOTS, properties
             .fireResistant()));
 
-    public static final DeferredItem<Item> SHADOW_ROGUES_HELMET = ITEMS.registerItem("shadow_rogues_helmet", properties -> new MTAArmor(MTAArmorMats.SHADOW_ROGUE, ArmorType.HELMET, properties
+    public static final DeferredItem<Item> TEMPLE_ANGELS_HELMET = ITEMS.registerItem("temple_angels_helmet", properties -> new MTAArmorItem(MTAArmorMats.TEMPLE_ANGEL, ArmorType.HELMET, properties
             .fireResistant()));
-    public static final DeferredItem<Item> SHADOW_ROGUES_CHESTPLATE = ITEMS.registerItem("shadow_rogues_chestplate", properties -> new MTAArmor(MTAArmorMats.SHADOW_ROGUE,ArmorType.CHESTPLATE, properties
+    public static final DeferredItem<Item> TEMPLE_ANGELS_CHESTPLATE = ITEMS.registerItem("temple_angels_chestplate", properties -> new MTAArmorItem(MTAArmorMats.TEMPLE_ANGEL, ArmorType.CHESTPLATE, properties
             .fireResistant()));
-    public static final DeferredItem<Item> SHADOW_ROGUES_LEGGINGS = ITEMS.registerItem("shadow_rogues_leggings", properties -> new MTAArmor(MTAArmorMats.SHADOW_ROGUE, ArmorType.LEGGINGS, properties.fireResistant()));
-    public static final DeferredItem<Item> SHADOW_ROGUES_BOOTS = ITEMS.registerItem("shadow_rogues_boots", properties -> new MTAArmor(MTAArmorMats.SHADOW_ROGUE, ArmorType.BOOTS, properties
+    public static final DeferredItem<Item> TEMPLE_ANGELS_LEGGINGS = ITEMS.registerItem("temple_angels_leggings", properties -> new MTAArmorItem(MTAArmorMats.TEMPLE_ANGEL, ArmorType.LEGGINGS, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> TEMPLE_ANGELS_BOOTS = ITEMS.registerItem("temple_angels_boots", properties -> new MTAArmorItem(MTAArmorMats.TEMPLE_ANGEL, ArmorType.BOOTS, properties
+            .fireResistant()));
+
+    public static final DeferredItem<Item> FREEZING_ICICLE_HELMET = ITEMS.registerItem("freezing_icicle_helmet", properties -> new MTAArmorItem(MTAArmorMats.FREEZING_ICICLE, ArmorType.HELMET, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> FREEZING_ICICLE_CHESTPLATE = ITEMS.registerItem("freezing_icicle_chestplate", properties -> new MTAArmorItem(MTAArmorMats.FREEZING_ICICLE, ArmorType.CHESTPLATE, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> FREEZING_ICICLE_LEGGINGS = ITEMS.registerItem("freezing_icicle_leggings", properties -> new MTAArmorItem(MTAArmorMats.FREEZING_ICICLE, ArmorType.LEGGINGS, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> FREEZING_ICICLE_BOOTS = ITEMS.registerItem("freezing_icicle_boots", properties -> new MTAArmorItem(MTAArmorMats.FREEZING_ICICLE, ArmorType.BOOTS, properties
+            .fireResistant()));
+
+    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_HELMET = ITEMS.registerItem("wrathful_berserkers_helmet", properties -> new MTAArmorItem(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.HELMET, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_CHESTPLATE = ITEMS.registerItem("wrathful_berserkers_chestplate", properties -> new MTAArmorItem(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.CHESTPLATE, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_LEGGINGS = ITEMS.registerItem("wrathful_berserkers_leggings", properties -> new MTAArmorItem(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.LEGGINGS, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> WRATHFUL_BERSERKERS_BOOTS = ITEMS.registerItem("wrathful_berserkers_boots", properties -> new MTAArmorItem(MTAArmorMats.WRATHFUL_BERSERKER, ArmorType.BOOTS, properties
+            .fireResistant()));
+
+    public static final DeferredItem<Item> SHADOW_ROGUES_HELMET = ITEMS.registerItem("shadow_rogues_helmet", properties -> new MTAArmorItem(MTAArmorMats.SHADOW_ROGUE, ArmorType.HELMET, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> SHADOW_ROGUES_CHESTPLATE = ITEMS.registerItem("shadow_rogues_chestplate", properties -> new MTAArmorItem(MTAArmorMats.SHADOW_ROGUE,ArmorType.CHESTPLATE, properties
+            .fireResistant()));
+    public static final DeferredItem<Item> SHADOW_ROGUES_LEGGINGS = ITEMS.registerItem("shadow_rogues_leggings", properties -> new MTAArmorItem(MTAArmorMats.SHADOW_ROGUE, ArmorType.LEGGINGS, properties.fireResistant()));
+    public static final DeferredItem<Item> SHADOW_ROGUES_BOOTS = ITEMS.registerItem("shadow_rogues_boots", properties -> new MTAArmorItem(MTAArmorMats.SHADOW_ROGUE, ArmorType.BOOTS, properties
             .fireResistant()));
 
 
