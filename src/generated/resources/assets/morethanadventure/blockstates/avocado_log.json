@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "morethanadventure:block/avocado_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "morethanadventure:block/avocado_log"
+    },
+    "axis=z": {
+      "model": "morethanadventure:block/avocado_log_horizontal",
+      "x": 90
+    }
+  }
+}

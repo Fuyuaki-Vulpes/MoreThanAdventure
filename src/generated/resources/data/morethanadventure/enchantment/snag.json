@@ -23,7 +23,7 @@
     "base": 25,
     "per_level_above_first": 8
   },
-  "max_level": 5,
+  "max_level": 3,
   "min_cost": {
     "base": 5,
     "per_level_above_first": 8
@@ -33,5 +33,5 @@
     "mainhand"
   ],
   "supported_items": "#morethanadventure:whip_enchantments",
-  "weight": 100
+  "weight": 20
 }

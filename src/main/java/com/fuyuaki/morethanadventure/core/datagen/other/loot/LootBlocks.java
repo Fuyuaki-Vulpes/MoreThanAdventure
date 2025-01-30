@@ -83,7 +83,9 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.SEAWOOD_TRAPDOOR.get());
 
         dropSelf(MtaBlocks.AVOCADO_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
         dropSelf(MtaBlocks.AVOCADO_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
         dropSelf(MtaBlocks.AVOCADO_PLANKS.get());
         this.add(MtaBlocks.AVOCADO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.AVOCADO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(MtaBlocks.AVOCADO_STAIRS.get());
@@ -96,7 +98,9 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.AVOCADO_TRAPDOOR.get());
 
         dropSelf(MtaBlocks.MANGO_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_MANGO_LOG.get());
         dropSelf(MtaBlocks.MANGO_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_MANGO_WOOD.get());
         dropSelf(MtaBlocks.MANGO_PLANKS.get());
         this.add(MtaBlocks.MANGO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.MANGO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
         dropSelf(MtaBlocks.MANGO_STAIRS.get());

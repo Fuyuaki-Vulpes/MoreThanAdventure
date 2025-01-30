@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.world.item.enchantment.DisarmEnchantmentEffect;
+import com.fuyuaki.morethanadventure.world.item.enchantment.PullingEnchantmentEffect;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
@@ -16,6 +17,7 @@ public class MTAEnchantmentEffect {
             DeferredRegister.create(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, MODID);
 
 public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> DISARM = registerEnchantmentEffect("disarm", DisarmEnchantmentEffect.CODEC);
+public static final Supplier<MapCodec<? extends EnchantmentEntityEffect>> PULLING = registerEnchantmentEffect("pulling", PullingEnchantmentEffect.CODEC);
 
 private static Supplier<MapCodec<? extends EnchantmentEntityEffect>> registerEnchantmentEffect(String name, MapCodec<? extends  EnchantmentEntityEffect> codec){
     return ENTITY_ECHANTMENT_EFFECTS.register(name, () -> codec);

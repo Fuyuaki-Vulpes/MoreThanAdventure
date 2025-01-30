@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "morethanadventure:block/mango_log",
+    "side": "morethanadventure:block/mango_log"
+  }
+}
