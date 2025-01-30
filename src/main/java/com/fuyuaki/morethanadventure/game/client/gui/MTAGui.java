@@ -2,11 +2,15 @@ package com.fuyuaki.morethanadventure.game.client.gui;
 
 import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
+import com.fuyuaki.morethanadventure.world.item.weaponry.ArcheryItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BowItem;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -39,6 +43,10 @@ public class MTAGui {
 
     );
 
+    private static final ResourceLocation ARROW_CHARGE_BACKGROUND = getHudSprite("arrow_charge_background");
+    private static final ResourceLocation ARROW_CHARGE_PROGRESS = getHudSprite("arrow_charge_progress");
+    private static final ResourceLocation ARROW_CHARGE_FULL = getHudSprite("arrow_charge_full");
+
 
     public static void renderGui(Player player, GuiGraphics guiGraphics){
 
@@ -69,6 +77,45 @@ public class MTAGui {
 
 //        String s = soulCharge.getCharge() + "";
 //        guiGraphics.drawCenteredString(Minecraft.getInstance().font,s,soulX + 16 + 1,soulY + 8,0xffffff);
+
+        if (player.isUsingItem()){
+            ItemStack stack = player.getItemInHand(InteractionHand.MAIN_HAND);
+            if (stack.getItem() instanceof BowItem bowItem){
+                int i = bowItem.getUseDuration(stack, player) - player.getUseItemRemainingTicks();
+
+
+                int bowY = guiGraphics.guiHeight() / 2 - 7 + 16;
+                int bowX = guiGraphics.guiWidth() / 2 - 8;
+
+                guiGraphics.blitSprite(RenderType::crosshair,ARROW_CHARGE_BACKGROUND,bowX, bowY,18,5);
+                float charge = BowItem.getPowerForTime(i);
+                if (charge >= 1.0F){
+                    guiGraphics.blitSprite(RenderType::crosshair,ARROW_CHARGE_FULL,bowX, bowY,18,5);
+
+                }else {
+                    int l = (int)(charge * 19.0F);
+                    guiGraphics.blitSprite(RenderType::crosshair, ARROW_CHARGE_PROGRESS, 18, 5, 0, 0, bowX, bowY, l, 5);
+
+                }
+            }else if (stack.getItem() instanceof ArcheryItem bowItem){
+                int i = bowItem.getUseDuration(stack, player) - player.getUseItemRemainingTicks();
+
+
+                int bowY = guiGraphics.guiHeight() / 2 - 7 + 16;
+                int bowX = guiGraphics.guiWidth() / 2 - 8;
+
+                guiGraphics.blitSprite(RenderType::crosshair,ARROW_CHARGE_BACKGROUND,bowX, bowY,18,5);
+                float charge = BowItem.getPowerForTime(i);
+                if (charge >= 1.0F){
+                    guiGraphics.blitSprite(RenderType::crosshair,ARROW_CHARGE_FULL,bowX, bowY,18,5);
+
+                }else {
+                    int l = (int)(charge * 19.0F);
+                    guiGraphics.blitSprite(RenderType::crosshair, ARROW_CHARGE_PROGRESS, 18, 5, 0, 0, bowX, bowY, l, 5);
+
+                }
+            }
+        }
     }
 
     public static ResourceLocation getHudSprite(String sprite){
