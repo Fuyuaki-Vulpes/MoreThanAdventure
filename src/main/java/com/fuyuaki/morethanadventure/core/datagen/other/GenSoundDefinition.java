@@ -215,6 +215,19 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //add(MtaSounds.TOXIC_ZOMBIE_DEATH.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/toxic_zombie/death")).subtitle("sound.morethanadventure.toxic_zombie_death"));
 
+        add(MtaSounds.WITHER_SOLDIER_AMBIENT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/wither_soldier/idle1"),sound("morethanadventure:entity/wither_soldier/idle2"),sound("morethanadventure:entity/wither_soldier/idle3"),sound("morethanadventure:entity/wither_soldier/idle4"))
+                .subtitle("sound.morethanadventure.wither_soldier_ambient"));
+        add(MtaSounds.WITHER_SOLDIER_HURT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/wither_soldier/hurt1"),sound("morethanadventure:entity/wither_soldier/hurt2"),sound("morethanadventure:entity/wither_soldier/hurt3"),sound("morethanadventure:entity/wither_soldier/hurt4"))
+                .subtitle("sound.morethanadventure.wither_soldier_hurt"));
+        add(MtaSounds.WITHER_SOLDIER_DEATH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/wither_soldier/death1"),sound("morethanadventure:entity/wither_soldier/death2"))
+                .subtitle("sound.morethanadventure.wither_soldier_death"));
+        add(MtaSounds.WITHER_SOLDIER_STEP.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/wither_soldier/step1"),sound("morethanadventure:entity/wither_soldier/step2"),sound("morethanadventure:entity/wither_soldier/step3"),sound("morethanadventure:entity/wither_soldier/step4"))
+                .subtitle("sound.morethanadventure.wither_soldier_step"));
+
         add(MtaSounds.YUKI_ONNA_AMBIENT.get(), SoundDefinition.definition()
                 .with(sound("morethanadventure:entity/yuki_onna/idle1"),sound("morethanadventure:entity/yuki_onna/ambient_2")).subtitle("sound.morethanadventure.yuki_onna_ambient"));
         add(MtaSounds.YUKI_ONNA_HURT.get(), SoundDefinition.definition()
@@ -229,7 +242,22 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
         //add(MtaSounds.ZOMBIFIED_MINER_DEATH.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/zombified_miner/death")).subtitle("sound.morethanadventure.zombified_miner_death"));
 
+/*
 
+        add(MtaSounds._AMBIENT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/mob/idle1"),sound("morethanadventure:entity/mob/idle2"),sound("morethanadventure:entity/mob/idle3"),sound("morethanadventure:entity/mob/idle4"))
+                .subtitle("sound.morethanadventure._ambient"));
+        add(MtaSounds._HURT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/mob/hurt1"),sound("morethanadventure:entity/mob/hurt2"),sound("morethanadventure:entity/mob/hurt3"),sound("morethanadventure:entity/mob/hurt4"))
+                .subtitle("sound.morethanadventure._hurt"));
+        add(MtaSounds._DEATH.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/mob/death1"),sound("morethanadventure:entity/mob/death2"))
+                .subtitle("sound.morethanadventure._death"));
+        add(MtaSounds._STEP.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:entity/mob/step1"),sound("morethanadventure:entity/mob/step2"),sound("morethanadventure:entity/armored_skeleton/step3"),sound("morethanadventure:entity/mob/step4"))
+                .subtitle("sound.morethanadventure._step"));
+
+ */
         //Other
 
         add(MtaSounds.WEAPON_DEEP_SWING.get(), SoundDefinition.definition()

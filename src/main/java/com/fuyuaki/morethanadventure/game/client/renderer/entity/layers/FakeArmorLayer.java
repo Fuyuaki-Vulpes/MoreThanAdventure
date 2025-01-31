@@ -24,7 +24,7 @@ public class FakeArmorLayer <T extends HumanoidRenderState, M extends EntityMode
     @Override
     public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, T p_361554_, float p_117353_, float p_117354_) {
 
-        renderColoredCutoutModel(this.getParentModel(), clothesLocation, poseStack, bufferSource, packedLight, p_361554_, -1);
+        renderColoredCutoutModel(layerModel, clothesLocation, poseStack, bufferSource, packedLight, p_361554_, -1);
 
     }
 }

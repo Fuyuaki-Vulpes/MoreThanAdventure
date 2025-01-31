@@ -6,8 +6,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -146,6 +146,14 @@ public class MtaEntityTypes {
             () -> EntityType.Builder.<ArmoredSkeleton>of(ArmoredSkeleton::new, MobCategory.MONSTER)
                     .sized(0.675F, 2.1F)
                     .build(entityKey("armored_skeleton")));
+    public static final DeferredHolder<EntityType<?>,EntityType<WitherSoldierEntity>> WITHER_SOLDIER = ENTITY.register("wither_soldier",
+            () -> EntityType.Builder.<WitherSoldierEntity>of(WitherSoldierEntity::new, MobCategory.MONSTER)
+                    .fireImmune()
+                    .immuneTo(Blocks.WITHER_ROSE)
+                    .sized(0.7F, 2.4F)
+                    .eyeHeight(2.1F)
+                    .ridingOffset(-0.875F)
+                    .build(entityKey("wither_soldier")));
 
     public static final DeferredHolder<EntityType<?>,EntityType<BlackWidow>> BLACK_WIDOW = ENTITY.register("black_widow",
             () -> EntityType.Builder.<BlackWidow>of(BlackWidow::new, MobCategory.MONSTER)

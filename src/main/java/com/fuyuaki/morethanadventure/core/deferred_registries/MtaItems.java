@@ -1192,6 +1192,10 @@ public class MtaItems {
             properties -> new SpawnEggItem(MtaEntityTypes.TOXIC_ZOMBIE.get(), properties
             ));
 
+    public static final DeferredItem<Item> WITHER_SOLDIER_SPAWN_EGG =  ITEMS.registerItem("wither_soldier_spawn_egg",
+            properties -> new SpawnEggItem(MtaEntityTypes.WITHER_SOLDIER.get(), properties
+            ));
+
     public static final DeferredItem<Item> ZOMBIFIED_MINER_SPAWN_EGG =  ITEMS.registerItem("zombified_miner_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.ZOMBIFIED_MINER.get(), properties
             ));

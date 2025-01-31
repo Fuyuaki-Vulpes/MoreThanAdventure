@@ -396,6 +396,7 @@ public class GenItemModels extends ItemModelGenerators {
         this.generateSpawnEgg(MtaItems.TOUCAN_SPAWN_EGG.get(),0x292731,0xe78a43);
         this.generateSpawnEgg(MtaItems.TURKEY_SPAWN_EGG.get(),0x292731,0xe78a43);
         this.generateSpawnEgg(MtaItems.ARMORED_SKELETON_SPAWN_EGG.get(),0x1a222f,0x989fa1);
+        this.generateSpawnEgg(MtaItems.WITHER_SOLDIER_SPAWN_EGG.get(),0x1a222f,0x989fa1);
         this.generateSpawnEgg(MtaItems.BLACK_WIDOW_SPAWN_EGG.get(),0x080609,0x650618);
         this.generateSpawnEgg(MtaItems.CHARRED_SKELETON_SPAWN_EGG.get(),0x2f1c1c,0xf5870b);
         this.generateSpawnEgg(MtaItems.CORROSIVE_CUBE_SPAWN_EGG.get(),0x239a0e,0xddf549);

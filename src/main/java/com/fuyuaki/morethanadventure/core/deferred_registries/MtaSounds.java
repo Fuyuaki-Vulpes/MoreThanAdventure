@@ -86,6 +86,12 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> YUKI_ONNA_AMBIENT = registerSoundEvent("yuki_onna_ambient");
     public static final Supplier<SoundEvent> YUKI_ONNA_HURT = registerSoundEvent("yuki_onna_hurt");
     public static final Supplier<SoundEvent> YUKI_ONNA_DEATH = registerSoundEvent("yuki_onna_death");
+
+    public static final Supplier<SoundEvent> WITHER_SOLDIER_AMBIENT = registerSoundEvent("wither_soldier_ambient");
+    public static final Supplier<SoundEvent> WITHER_SOLDIER_HURT = registerSoundEvent("wither_soldier_hurt");
+    public static final Supplier<SoundEvent> WITHER_SOLDIER_DEATH = registerSoundEvent("wither_soldier_death");
+    public static final Supplier<SoundEvent> WITHER_SOLDIER_STEP = registerSoundEvent("wither_soldier_step");
+
     public static final Supplier<SoundEvent> ZOMBIFIED_MINER_AMBIENT = registerSoundEvent("zombified_miner_ambient");
     public static final Supplier<SoundEvent> ZOMBIFIED_MINER_HURT = registerSoundEvent("zombified_miner_hurt");
     public static final Supplier<SoundEvent> ZOMBIFIED_MINER_DEATH = registerSoundEvent("zombified_miner_death");

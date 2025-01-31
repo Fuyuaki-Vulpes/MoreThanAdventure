@@ -770,6 +770,7 @@ public class MtaTabs {
                 output.accept(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG);
                 output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
                 output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
+                output.accept(MtaItems.WITHER_SOLDIER_SPAWN_EGG);
                 output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
                 //output.accept(MtaItems.SIREN_SPAWN_EGG);
                 output.accept(MtaItems.WISPFLY_SPAWN_EGG);

@@ -80,6 +80,7 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_MOSSY_ZOMBIE = registerKey("add_spawns_mossy_zombie");
     public static final ResourceKey<BiomeModifier> SPAWNS_SKELETON_FIGHTER = registerKey("add_spawns_skeleton_fighter");
     public static final ResourceKey<BiomeModifier> SPAWNS_TOXIC_ZOMBIE = registerKey("add_spawns_toxic_zombie");
+    public static final ResourceKey<BiomeModifier> SPAWNS_WITHER_SOLDIER = registerKey("add_spawns_wither_soldier");
     public static final ResourceKey<BiomeModifier> SPAWNS_ZOMBIFIED_MINER = registerKey("add_spawns_zombified_miner");
     public static final ResourceKey<BiomeModifier> SPAWNS_SIREN = registerKey("add_spawns_siren");
 
@@ -373,6 +374,11 @@ public class MtaBiomeModifiers {
         context.register(SPAWNS_TOXIC_ZOMBIE,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_SWAMP),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOXIC_ZOMBIE.get(),25,1,1))
+        ));
+
+        context.register(SPAWNS_WITHER_SOLDIER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WITHER_SOLDIER.get(),6,1,2))
         ));
 
         context.register(SPAWNS_ZOMBIFIED_MINER,new BiomeModifiers.AddSpawnsBiomeModifier(

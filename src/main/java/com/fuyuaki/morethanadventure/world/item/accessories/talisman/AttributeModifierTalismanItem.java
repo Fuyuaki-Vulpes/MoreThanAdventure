@@ -34,7 +34,7 @@ public abstract class AttributeModifierTalismanItem extends TalismanItem {
     @Override
     public void getStaticModifiers(Item item, AccessoryItemAttributeModifiers.Builder builder) {
         Multimap<Holder<Attribute>, AttributeModifier> map = talismanStaticModifiers(LinkedHashMultimap.create());
-        if (map.isEmpty()) {
+        if (!map.isEmpty()) {
             map.forEach((attributeHolder, attributeModifier) -> builder.addForAny(attributeHolder, attributeModifier, false));
         }
 
@@ -44,7 +44,7 @@ public abstract class AttributeModifierTalismanItem extends TalismanItem {
     @Override
     public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
         Multimap<Holder<Attribute>, AttributeModifier> map = talismanDynamicModifiers(LinkedHashMultimap.create());
-        if (map.isEmpty()) {
+        if (!map.isEmpty()) {
             map.forEach(builder::addExclusive);
         }
 
