@@ -302,8 +302,8 @@ public class GenItemModels extends ItemModelGenerators {
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
         handheldItem(MtaItems.NETHERITE_WHIP_SWORD);
 
-        this.generateBow(MtaItems.LONG_BOW.get());
-        this.generateBow(MtaItems.REINFORCED_LONG_BOW.get());
+        this.generateBowBig(MtaItems.LONG_BOW.get());
+        this.generateBowBig(MtaItems.REINFORCED_LONG_BOW.get());
         this.generateBow(MtaItems.SHORT_BOW.get());
         this.generateBow(MtaItems.REINFORCED_SHORT_BOW.get());
         this.generateBow(MtaItems.TWIN_BOW.get());
@@ -443,9 +443,31 @@ public class GenItemModels extends ItemModelGenerators {
     public void generateBow(Item bowItem) {
         ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(bowItem));
         this.createFlatItemModel(bowItem, MTAModelTemplates.BOW);
-        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_0", ModelTemplates.BOW));
-        ItemModel.Unbaked itemmodel$unbaked2 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_1", ModelTemplates.BOW));
-        ItemModel.Unbaked itemmodel$unbaked3 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_2", ModelTemplates.BOW));
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_0", MTAModelTemplates.BOW));
+        ItemModel.Unbaked itemmodel$unbaked2 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_1", MTAModelTemplates.BOW));
+        ItemModel.Unbaked itemmodel$unbaked3 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_2", MTAModelTemplates.BOW));
+        this.itemModelOutput
+                .accept(
+                        bowItem,
+                        ItemModelUtils.conditional(
+                                ItemModelUtils.isUsingItem(),
+                                ItemModelUtils.rangeSelect(
+                                        new UseDuration(false),
+                                        0.05F,
+                                        itemmodel$unbaked1,
+                                        ItemModelUtils.override(itemmodel$unbaked2, 0.65F),
+                                        ItemModelUtils.override(itemmodel$unbaked3, 0.9F)
+                                ),
+                                itemmodel$unbaked
+                        )
+                );
+    }
+    public void generateBowBig(Item bowItem) {
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(bowItem));
+        this.createFlatItemModel(bowItem, MTAModelTemplates.BOW_BIG);
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_0", MTAModelTemplates.BOW_BIG));
+        ItemModel.Unbaked itemmodel$unbaked2 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_1", MTAModelTemplates.BOW_BIG));
+        ItemModel.Unbaked itemmodel$unbaked3 = ItemModelUtils.plainModel(this.createFlatItemModel(bowItem, "_pulling_2", MTAModelTemplates.BOW_BIG));
         this.itemModelOutput
                 .accept(
                         bowItem,

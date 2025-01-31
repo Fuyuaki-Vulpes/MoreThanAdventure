@@ -378,7 +378,7 @@ public class MtaBiomeModifiers {
 
         context.register(SPAWNS_WITHER_SOLDIER,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WITHER_SOLDIER.get(),6,1,2))
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WITHER_SOLDIER.get(),60,2,8))
         ));
 
         context.register(SPAWNS_ZOMBIFIED_MINER,new BiomeModifiers.AddSpawnsBiomeModifier(

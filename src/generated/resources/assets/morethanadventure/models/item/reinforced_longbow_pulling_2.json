@@ -1,0 +1,6 @@
+{
+  "parent": "morethanadventure:item/template_bow_big",
+  "textures": {
+    "layer0": "morethanadventure:item/reinforced_longbow_pulling_2"
+  }
+}

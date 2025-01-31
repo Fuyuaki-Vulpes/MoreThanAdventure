@@ -913,6 +913,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.weapons.flail.hit", "Flail Attack");
         add("sound.morethanadventure.weapons.flail.swing", "Flail Swings");
 
+        add("sound.morethanadventure.weapons.bow.longbow", "Longbow Fires Arrow");
+        add("sound.morethanadventure.weapons.bow.short_bow", "Shortbow Fires Arrow");
+        add("sound.morethanadventure.weapons.bow.twinbow", "Twinbow Fires Arrow");
+
         add("sound.morethanadventure.lightning_bolt.far", "Thunder roars");
         add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
 

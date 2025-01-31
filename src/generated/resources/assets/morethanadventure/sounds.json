@@ -139,12 +139,6 @@
     ],
     "subtitle": "sound.morethanadventure.ferret_hurt"
   },
-  "flail_swing": {
-    "sounds": [
-      "morethanadventure:item/weaponry/flail_swing"
-    ],
-    "subtitle": "sound.morethanadventure.weapons.flail.swing"
-  },
   "glow_spider_ambient": {
     "sounds": [
       "morethanadventure:entity/glow_spider/say1",
@@ -169,6 +163,12 @@
     ],
     "subtitle": "sound.morethanadventure.glow_spider_hurt"
   },
+  "longbow": {
+    "sounds": [
+      "morethanadventure:item/weaponry/bow/longbow"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.bow.longbow"
+  },
   "owl_ambient": {
     "sounds": [
       "morethanadventure:entity/owl/idle"
@@ -180,6 +180,12 @@
       "morethanadventure:entity/owl/hurt"
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
+  },
+  "short_bow": {
+    "sounds": [
+      "morethanadventure:item/weaponry/bow/short_bow"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.bow.short_bow"
   },
   "thunder_far": {
     "sounds": [
@@ -242,6 +248,12 @@
       "morethanadventure:entity/turkey/hurt2"
     ],
     "subtitle": "sound.morethanadventure.turkey_hurt"
+  },
+  "twinbow": {
+    "sounds": [
+      "morethanadventure:item/weaponry/bow/twinbow"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.bow.twinbow"
   },
   "weapon_deep_swing": {
     "sounds": [

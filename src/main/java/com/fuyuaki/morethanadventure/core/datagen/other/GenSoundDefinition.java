@@ -289,8 +289,16 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
                 .with(sound("morethanadventure:item/weaponry/flail_hit")).subtitle("sound.morethanadventure.weapons.flail.hit"));
 
 
-        add(MtaSounds.FLAIL_SWING.get(), SoundDefinition.definition()
-                    .with(sound("morethanadventure:item/weaponry/flail_swing")).subtitle("sound.morethanadventure.weapons.flail.swing"));
+        add(MtaSounds.LONGBOW_SHOOT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/bow/longbow")).subtitle("sound.morethanadventure.weapons.bow.longbow"));
+
+
+        add(MtaSounds.SHORTBOW_SHOOT.get(), SoundDefinition.definition()
+                .with(sound("morethanadventure:item/weaponry/bow/short_bow")).subtitle("sound.morethanadventure.weapons.bow.short_bow"));
+
+
+        add(MtaSounds.TWINBOW_SHOOT.get(), SoundDefinition.definition()
+                    .with(sound("morethanadventure:item/weaponry/bow/twinbow")).subtitle("sound.morethanadventure.weapons.bow.twinbow"));
 
 
         add(MtaSounds.WHIP_SWING.get(), SoundDefinition.definition()

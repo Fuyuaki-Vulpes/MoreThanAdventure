@@ -3,11 +3,13 @@ package com.fuyuaki.morethanadventure.core.deferred_registries;
 import com.fuyuaki.morethanadventure.core.registry.MTAArmorMats;
 import com.fuyuaki.morethanadventure.world.item.*;
 import com.fuyuaki.morethanadventure.world.item.MTAArmorItem;
+import com.fuyuaki.morethanadventure.world.item.accessories.StriderBoots;
 import com.fuyuaki.morethanadventure.world.item.accessories.talisman.PistonBootsItem;
 import com.fuyuaki.morethanadventure.world.item.accessories.talisman.ScubaGearTalisman;
 import com.fuyuaki.morethanadventure.world.item.accessories.TalismanItem;
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
@@ -49,7 +51,7 @@ public class MtaItems {
     public static final DeferredItem<Item> PISTON_BOOTS = ITEMS.registerItem("piston_boots", PistonBootsItem::new);
     public static final DeferredItem<Item> REGENERATIVE_TALISMAN = ITEMS.registerItem("regenerative_talisman", TalismanItem::new);
     public static final DeferredItem<Item> SLEEPING_KIT = ITEMS.registerItem("sleeping_kit", TalismanItem::new);
-    public static final DeferredItem<Item> STRIDER_BOOTS = ITEMS.registerItem("strider_boots", TalismanItem::new);
+    public static final DeferredItem<Item> STRIDER_BOOTS = ITEMS.registerItem("strider_boots", StriderBoots::new);
     public static final DeferredItem<Item> QUIVER = ITEMS.registerItem("quiver", TalismanItem::new);
 
 
@@ -854,35 +856,35 @@ public class MtaItems {
 
             ));
 
-    public static final DeferredItem<ArcheryItem> LONG_BOW = ITEMS.registerItem("long_bow",
+    public static final DeferredItem<ArcheryItem> LONG_BOW = ITEMS.registerItem("longbow",
             properties -> new ArcheryItem(
                     properties
-                            .durability(528), 10F, false, 10F, 2F));
+                            .durability(528), 1.8F, false, 30.0F, 0.5F, MtaSounds.LONGBOW_SHOOT.get()));
 
-    public static final DeferredItem<ArcheryItem> REINFORCED_LONG_BOW = ITEMS.registerItem("reinforced_long_bow",
+    public static final DeferredItem<ArcheryItem> REINFORCED_LONG_BOW = ITEMS.registerItem("reinforced_longbow",
             properties -> new ArcheryItem(
                     properties
-                            .durability(528), 10F, true, 10F, 2F));
+                            .durability(1056), 1.8F, true, 30.0F, 0.5F, MtaSounds.LONGBOW_SHOOT.get()));
 
-    public static final DeferredItem<ArcheryItem> SHORT_BOW = ITEMS.registerItem("short_bow",
+    public static final DeferredItem<ArcheryItem> SHORT_BOW = ITEMS.registerItem("shortbow",
             properties -> new ArcheryItem(
                     properties
-                            .durability(528), 5F, false, 5F, 20F));
+                            .durability(528), 0.7F, false, 10.0F, 1.2F, MtaSounds.SHORTBOW_SHOOT.get()));
 
-    public static final DeferredItem<ArcheryItem> REINFORCED_SHORT_BOW = ITEMS.registerItem("reinforced_short_bow",
+    public static final DeferredItem<ArcheryItem> REINFORCED_SHORT_BOW = ITEMS.registerItem("reinforced_shortbow",
             properties -> new ArcheryItem(
                     properties
-                            .durability(528), 5F, true, 5F, 20F));
+                            .durability(1056), 0.7F, true, 10.0F, 1.2F, MtaSounds.SHORTBOW_SHOOT.get()));
 
-    public static final DeferredItem<ArcheryItem> TWIN_BOW = ITEMS.registerItem("twin_bow",
+    public static final DeferredItem<ArcheryItem> TWIN_BOW = ITEMS.registerItem("twinbow",
             properties -> new ArcheryItem(
                     properties
-                            .durability(528), 15F, false, 7F, 5F));
+                            .durability(528), 1.0F, false, 25.0F, 0.8F, MtaSounds.TWINBOW_SHOOT.get()));
 
-    public static final DeferredItem<ArcheryItem> REINFORCED_TWIN_BOW = ITEMS.registerItem("reinforced_twin_bow",
+    public static final DeferredItem<ArcheryItem> REINFORCED_TWIN_BOW = ITEMS.registerItem("reinforced_twinbow",
             properties -> new ArcheryItem(
                     properties
-                            .durability(528), 15F, true, 7F, 5F));
+                            .durability(1056), 1.0F, true, 25.0F, 0.8F, MtaSounds.TWINBOW_SHOOT.get()));
 
     public static final DeferredItem<WhipItem> LEATHER_WHIP = ITEMS.registerItem("leather_whip",
             properties -> new WhipItem(ToolMaterial.WOOD,

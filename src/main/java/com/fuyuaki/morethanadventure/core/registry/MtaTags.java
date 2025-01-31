@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
@@ -155,6 +156,13 @@ public class MtaTags {
         public static final TagKey<Enchantment> WHIP = tag("whip");
         private static TagKey<Enchantment> tag(String name) {
             return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(MODID, name));
+        }
+    }
+
+    public static class EntityTypes {
+        public static final TagKey<EntityType<?>> WITHER_SOLDIER_DISLIKED = tag("wither_soldier_disliked");
+        private static TagKey<EntityType<?>> tag(String name) {
+            return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MODID, name));
         }
     }
 
