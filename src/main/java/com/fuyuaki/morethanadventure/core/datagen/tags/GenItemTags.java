@@ -54,10 +54,14 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+
+        this.copy(MtaTags.Blocks.ALPINE_LOGS, MtaTags.Items.ALPINE_LOGS);
+        this.copy(MtaTags.Blocks.AVOCADO_LOGS, MtaTags.Items.AVOCADO_LOGS);
+        this.copy(MtaTags.Blocks.BOGGED_OAK_LOGS, MtaTags.Items.BOGGED_OAK_LOGS);
+        this.copy(MtaTags.Blocks.MANGO_LOGS, MtaTags.Items.MANGO_LOGS);
+        this.copy(MtaTags.Blocks.MAPLE_LOGS, MtaTags.Items.MAPLE_LOGS);
         this.copy(MtaTags.Blocks.PALM_LOGS, MtaTags.Items.PALM_LOGS);
         this.copy(MtaTags.Blocks.SEAWOOD, MtaTags.Items.SEAWOOD);
-        this.copy(MtaTags.Blocks.AVOCADO_LOGS, MtaTags.Items.AVOCADO_LOGS);
-        this.copy(MtaTags.Blocks.MANGO_LOGS, MtaTags.Items.MANGO_LOGS);
 
         //this.tag(MtaTags.Items.COSMETIC_CORE_STONES).add();
         //this.tag(MtaTags.Items.EFFECTIVE_CORE_STONES).add();

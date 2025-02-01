@@ -22,17 +22,30 @@ public class MtaTabs {
             .icon(MtaBlocks.PALM_SAPLING.get().asItem()::getDefaultInstance)
             .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
-                output.accept(MtaBlocks.PALM_LOG.get());
-                output.accept(MtaBlocks.PALM_SAPLING.get());
-                output.accept(MtaBlocks.PALM_LEAVES.get());
+
+                output.accept(MtaBlocks.ALPINE_LOG.get());
+                output.accept(MtaBlocks.ALPINE_WOOD.get());
+                //output.accept(MtaBlocks.ALPINE_LEAVES.get());
 
                 output.accept(MtaBlocks.AVOCADO_LOG.get());
                 output.accept(MtaBlocks.AVOCADO_WOOD.get());
                 output.accept(MtaBlocks.AVOCADO_LEAVES.get());
 
+                output.accept(MtaBlocks.BOGGED_OAK_LOG.get());
+                output.accept(MtaBlocks.BOGGED_OAK_WOOD.get());
+                //output.accept(MtaBlocks.BOGGED_OAK_LEAVES.get());
+
                 output.accept(MtaBlocks.MANGO_LOG.get());
                 output.accept(MtaBlocks.MANGO_WOOD.get());
                 output.accept(MtaBlocks.MANGO_LEAVES.get());
+
+                output.accept(MtaBlocks.MAPLE_LOG.get());
+                output.accept(MtaBlocks.MAPLE_WOOD.get());
+                //output.accept(MtaBlocks.MAPLE_LEAVES.get());
+
+                output.accept(MtaBlocks.PALM_LOG.get());
+                output.accept(MtaBlocks.PALM_SAPLING.get());
+                output.accept(MtaBlocks.PALM_LEAVES.get());
 
                 output.accept(MtaBlocks.SCATTERED_LEAVES.get());
                 output.accept(MtaBlocks.CATTAIL.get());
@@ -90,6 +103,81 @@ public class MtaTabs {
             .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
+                output.accept(MtaBlocks.ALPINE_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_ALPINE_LOG.get());
+                output.accept(MtaBlocks.ALPINE_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
+                output.accept(MtaBlocks.ALPINE_PLANKS.get());
+                //output.accept(MtaBlocks.ALPINE_SAPLING.get());
+                output.accept(MtaBlocks.ALPINE_STAIRS.get());
+                output.accept(MtaBlocks.ALPINE_SLAB.get());
+                output.accept(MtaBlocks.ALPINE_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.ALPINE_BUTTON.get());
+                output.accept(MtaBlocks.ALPINE_FENCE.get());
+                output.accept(MtaBlocks.ALPINE_FENCE_GATE.get());
+                output.accept(MtaBlocks.ALPINE_DOOR.get());
+                output.accept(MtaBlocks.ALPINE_TRAPDOOR.get());
+
+                output.accept(MtaBlocks.AVOCADO_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
+                output.accept(MtaBlocks.AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.AVOCADO_PLANKS.get());
+                //output.accept(MtaBlocks.AVOCADO_SAPLING.get());
+                output.accept(MtaBlocks.AVOCADO_STAIRS.get());
+                output.accept(MtaBlocks.AVOCADO_SLAB.get());
+                output.accept(MtaBlocks.AVOCADO_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.AVOCADO_BUTTON.get());
+                output.accept(MtaBlocks.AVOCADO_FENCE.get());
+                output.accept(MtaBlocks.AVOCADO_FENCE_GATE.get());
+                output.accept(MtaBlocks.AVOCADO_DOOR.get());
+                output.accept(MtaBlocks.AVOCADO_TRAPDOOR.get());
+
+                output.accept(MtaBlocks.BOGGED_OAK_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get());
+                output.accept(MtaBlocks.BOGGED_OAK_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get());
+                output.accept(MtaBlocks.BOGGED_OAK_PLANKS.get());
+                //output.accept(MtaBlocks.BOGGED_OAK_SAPLING.get());
+                output.accept(MtaBlocks.BOGGED_OAK_STAIRS.get());
+                output.accept(MtaBlocks.BOGGED_OAK_SLAB.get());
+                output.accept(MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.BOGGED_OAK_BUTTON.get());
+                output.accept(MtaBlocks.BOGGED_OAK_FENCE.get());
+                output.accept(MtaBlocks.BOGGED_OAK_FENCE_GATE.get());
+                output.accept(MtaBlocks.BOGGED_OAK_DOOR.get());
+                output.accept(MtaBlocks.BOGGED_OAK_TRAPDOOR.get());
+
+                output.accept(MtaBlocks.MANGO_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_MANGO_LOG.get());
+                output.accept(MtaBlocks.MANGO_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_MANGO_WOOD.get());
+                output.accept(MtaBlocks.MANGO_PLANKS.get());
+                //output.accept(MtaBlocks.MANGO_SAPLING.get());
+                output.accept(MtaBlocks.MANGO_STAIRS.get());
+                output.accept(MtaBlocks.MANGO_SLAB.get());
+                output.accept(MtaBlocks.MANGO_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.MANGO_BUTTON.get());
+                output.accept(MtaBlocks.MANGO_FENCE.get());
+                output.accept(MtaBlocks.MANGO_FENCE_GATE.get());
+                output.accept(MtaBlocks.MANGO_DOOR.get());
+                output.accept(MtaBlocks.MANGO_TRAPDOOR.get());
+
+                output.accept(MtaBlocks.MAPLE_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_MAPLE_LOG.get());
+                output.accept(MtaBlocks.MAPLE_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
+                output.accept(MtaBlocks.MAPLE_PLANKS.get());
+                //output.accept(MtaBlocks.MAPLE_SAPLING.get());
+                output.accept(MtaBlocks.MAPLE_STAIRS.get());
+                output.accept(MtaBlocks.MAPLE_SLAB.get());
+                output.accept(MtaBlocks.MAPLE_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.MAPLE_BUTTON.get());
+                output.accept(MtaBlocks.MAPLE_FENCE.get());
+                output.accept(MtaBlocks.MAPLE_FENCE_GATE.get());
+                output.accept(MtaBlocks.MAPLE_DOOR.get());
+                output.accept(MtaBlocks.MAPLE_TRAPDOOR.get());
+
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.STRIPPED_PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_WOOD.get());
@@ -117,36 +205,6 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SEAWOOD_FENCE_GATE.get());
                 output.accept(MtaBlocks.SEAWOOD_DOOR.get());
                 output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
-
-                output.accept(MtaBlocks.AVOCADO_LOG.get());
-                output.accept(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
-                output.accept(MtaBlocks.AVOCADO_WOOD.get());
-                output.accept(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
-                output.accept(MtaBlocks.AVOCADO_PLANKS.get());
-                //output.accept(MtaBlocks.AVOCADO_SAPLING.get());
-                output.accept(MtaBlocks.AVOCADO_STAIRS.get());
-                output.accept(MtaBlocks.AVOCADO_SLAB.get());
-                output.accept(MtaBlocks.AVOCADO_PRESSURE_PLATE.get());
-                output.accept(MtaBlocks.AVOCADO_BUTTON.get());
-                output.accept(MtaBlocks.AVOCADO_FENCE.get());
-                output.accept(MtaBlocks.AVOCADO_FENCE_GATE.get());
-                output.accept(MtaBlocks.AVOCADO_DOOR.get());
-                output.accept(MtaBlocks.AVOCADO_TRAPDOOR.get());
-
-                output.accept(MtaBlocks.MANGO_LOG.get());
-                output.accept(MtaBlocks.STRIPPED_MANGO_LOG.get());
-                output.accept(MtaBlocks.MANGO_WOOD.get());
-                output.accept(MtaBlocks.STRIPPED_MANGO_WOOD.get());
-                output.accept(MtaBlocks.MANGO_PLANKS.get());
-                //output.accept(MtaBlocks.MANGO_SAPLING.get());
-                output.accept(MtaBlocks.MANGO_STAIRS.get());
-                output.accept(MtaBlocks.MANGO_SLAB.get());
-                output.accept(MtaBlocks.MANGO_PRESSURE_PLATE.get());
-                output.accept(MtaBlocks.MANGO_BUTTON.get());
-                output.accept(MtaBlocks.MANGO_FENCE.get());
-                output.accept(MtaBlocks.MANGO_FENCE_GATE.get());
-                output.accept(MtaBlocks.MANGO_DOOR.get());
-                output.accept(MtaBlocks.MANGO_TRAPDOOR.get());
 
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());

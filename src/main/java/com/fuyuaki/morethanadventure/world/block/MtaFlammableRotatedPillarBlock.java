@@ -34,6 +34,30 @@ public class MtaFlammableRotatedPillarBlock extends RotatedPillarBlock {
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem){
+            if(state.is(MtaBlocks.ALPINE_LOG.get())) {
+                return MtaBlocks.STRIPPED_ALPINE_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.ALPINE_WOOD.get())) {
+                return MtaBlocks.STRIPPED_AVOCADO_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.AVOCADO_LOG.get())) {
+                return MtaBlocks.STRIPPED_AVOCADO_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.AVOCADO_WOOD.get())) {
+                return MtaBlocks.STRIPPED_AVOCADO_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.MANGO_LOG.get())) {
+                return MtaBlocks.STRIPPED_MANGO_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.MANGO_WOOD.get())) {
+                return MtaBlocks.STRIPPED_MANGO_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.MAPLE_LOG.get())) {
+                return MtaBlocks.STRIPPED_MAPLE_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.MAPLE_WOOD.get())) {
+                return MtaBlocks.STRIPPED_PALM_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
             if(state.is(MtaBlocks.PALM_LOG.get())) {
                 return MtaBlocks.STRIPPED_PALM_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
             }

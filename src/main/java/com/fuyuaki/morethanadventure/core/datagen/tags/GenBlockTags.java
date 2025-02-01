@@ -23,6 +23,26 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(MtaTags.Blocks.ALPINE_LOGS).add(
+                MtaBlocks.ALPINE_LOG.get(),
+                MtaBlocks.ALPINE_WOOD.get()
+        );
+        this.tag(MtaTags.Blocks.AVOCADO_LOGS).add(
+                MtaBlocks.AVOCADO_LOG.get(),
+                MtaBlocks.AVOCADO_WOOD.get()
+        );
+        this.tag(MtaTags.Blocks.BOGGED_OAK_LOGS).add(
+                MtaBlocks.BOGGED_OAK_LOG.get(),
+                MtaBlocks.BOGGED_OAK_WOOD.get()
+        );
+        this.tag(MtaTags.Blocks.MANGO_LOGS).add(
+                MtaBlocks.MANGO_LOG.get(),
+                MtaBlocks.MANGO_WOOD.get()
+        );
+        this.tag(MtaTags.Blocks.MAPLE_LOGS).add(
+                MtaBlocks.MAPLE_LOG.get(),
+                MtaBlocks.MAPLE_WOOD.get()
+        );
         this.tag(MtaTags.Blocks.PALM_LOGS).add(
                 MtaBlocks.PALM_LOG.get(),
                 MtaBlocks.PALM_WOOD.get()
@@ -30,14 +50,6 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(MtaTags.Blocks.SEAWOOD).add(
                 MtaBlocks.SEALOG.get(),
                 MtaBlocks.SEAWOOD.get()
-        );
-        this.tag(MtaTags.Blocks.AVOCADO_LOGS).add(
-                MtaBlocks.AVOCADO_LOG.get(),
-                MtaBlocks.AVOCADO_WOOD.get()
-        );
-        this.tag(MtaTags.Blocks.MANGO_LOGS).add(
-                MtaBlocks.MANGO_LOG.get(),
-                MtaBlocks.MANGO_WOOD.get()
         );
         this.tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
                 .add(
@@ -187,6 +199,20 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 .addTag(BlockTags.DIRT);
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                MtaBlocks.BOGGED_OAK_LOG.get(),
+                MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get(),
+                MtaBlocks.BOGGED_OAK_WOOD.get(),
+                MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get(),
+                MtaBlocks.BOGGED_OAK_PLANKS.get(),
+                MtaBlocks.BOGGED_OAK_STAIRS.get(),
+                MtaBlocks.BOGGED_OAK_SLAB.get(),
+                MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get(),
+                MtaBlocks.BOGGED_OAK_BUTTON.get(),
+                MtaBlocks.BOGGED_OAK_FENCE.get(),
+                MtaBlocks.BOGGED_OAK_FENCE_GATE.get(),
+                MtaBlocks.BOGGED_OAK_DOOR.get(),
+                MtaBlocks.BOGGED_OAK_TRAPDOOR.get(),
+
                 MtaBlocks.NETHER_IRON_ORE.get(),
                 MtaBlocks.NETHER_DIAMOND_ORE.get(),
                 MtaBlocks.END_EMERALD_ORE.get(),
