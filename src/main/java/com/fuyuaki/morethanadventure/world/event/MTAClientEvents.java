@@ -88,6 +88,7 @@ public class MTAClientEvents {
         event.registerEntityRenderer(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighterRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombieRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.YUKI_ONNA.get(), YukiOnnaRenderer::new);
+        event.registerEntityRenderer(MtaEntityTypes.WITHER_SOLDIER.get(), WitherSoldierRenderer::new);
         event.registerEntityRenderer(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMinerRenderer::new);
 
 
@@ -116,6 +117,7 @@ public class MTAClientEvents {
         LayerDefinition skullLayer = SkullModel.createHumanoidHeadLayer();
         LayerDefinition creeperLayer = CreeperModel.createBodyLayer(CubeDeformation.NONE);
         LayerDefinition creeperArmorLayer = CreeperModel.createBodyLayer(new CubeDeformation(2.0F));
+        MeshTransformer meshtransformer = MeshTransformer.scaling(1.2F);
 
 
         event.registerLayerDefinition(MTAModelLayers.SPRINKLER, SprinklerModel::createBodyLayer);
@@ -184,6 +186,12 @@ public class MTAClientEvents {
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_INNER_ARMOR, () -> humanoidInnerArmor);
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_BABY_OUTER_ARMOR, () -> humanoidOuterArmor.apply(ZombifiedMinerModel.BABY_TRANSFORMER));
         event.registerLayerDefinition(MTAModelLayers.ZOMBIFIED_MINER_BABY_INNER_ARMOR, () -> humanoidInnerArmor.apply(ZombifiedMinerModel.BABY_TRANSFORMER));
+
+        event.registerLayerDefinition(MTAModelLayers.WITHER_SOLDIER, () -> skeletonLayer.apply(meshtransformer));
+        event.registerLayerDefinition(MTAModelLayers.WITHER_SOLDIER_ARMOR, () -> humanoidOuterArmor.apply(meshtransformer));
+        event.registerLayerDefinition(MTAModelLayers.WITHER_SOLDIER_OUTER_ARMOR, () -> humanoidOuterArmor.apply(meshtransformer));
+        event.registerLayerDefinition(MTAModelLayers.WITHER_SOLDIER_INNER_ARMOR, () -> humanoidInnerArmor.apply(meshtransformer));
+
         event.registerLayerDefinition(MTAModelLayers.WISPFLY, WispflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
 

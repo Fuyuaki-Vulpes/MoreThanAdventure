@@ -3,17 +3,12 @@ package com.fuyuaki.morethanadventure.world.event;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.world.entity.*;
-import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -21,7 +16,6 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -74,6 +68,7 @@ public class MTAModEvents {
         event.put(MtaEntityTypes.SKELETON_FIGHTER.get(), SkeletonFighter.createAttributes().build());
         event.put(MtaEntityTypes.TOXIC_ZOMBIE.get(), ToxicZombie.createAttributes().build());
         event.put(MtaEntityTypes.YUKI_ONNA.get(), YukiOnna.createAttributes().build());
+        event.put(MtaEntityTypes.WITHER_SOLDIER.get(), WitherSoldierEntity.createAttributes().build());
         event.put(MtaEntityTypes.ZOMBIFIED_MINER.get(), ZombifiedMiner.createAttributes().build());
 
 
@@ -269,6 +264,11 @@ public class MTAModEvents {
                 SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 YukiOnna::canSpawn,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(MtaEntityTypes.WITHER_SOLDIER.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                WitherSoldierEntity::checkMonsterSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.ZOMBIFIED_MINER.get(),
                 SpawnPlacementTypes.ON_GROUND,

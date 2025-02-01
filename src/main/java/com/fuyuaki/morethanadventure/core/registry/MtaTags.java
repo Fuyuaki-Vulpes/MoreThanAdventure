@@ -1,11 +1,13 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
+import io.wispforest.accessories.Accessories;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.biome.Biome;
@@ -140,18 +142,35 @@ public class MtaTags {
         public static final TagKey<Item> LOOTING_ENCHANTMENTS = tag("looting_enchantments");
 
 
+        public static final TagKey<Item> MTA_ACCESSORIES = tag("accessories");
+
+
         private static TagKey<Item> tag(String name) {
             return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(MODID, name));
         }
 
     }
 
+    public static class Accessory {
+        public static final TagKey<Item> TALISMAN_TAG = tag("talisman");
+
+        private static TagKey<Item> tag(String name) {
+            return TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(Accessories.MODID, name));
+        }
+    }
     public static class Enchantments {
         public static final TagKey<Enchantment> FLAMING = tag("flaming_bow");
         public static final TagKey<Enchantment> WHIP = tag("whip");
         public static final TagKey<Enchantment> HIT_BUFF_EXCLUSIVE = tag("hit_buff_exclusive");
         private static TagKey<Enchantment> tag(String name) {
             return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(MODID, name));
+        }
+    }
+
+    public static class EntityTypes {
+        public static final TagKey<EntityType<?>> WITHER_SOLDIER_DISLIKED = tag("wither_soldier_disliked");
+        private static TagKey<EntityType<?>> tag(String name) {
+            return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MODID, name));
         }
     }
 

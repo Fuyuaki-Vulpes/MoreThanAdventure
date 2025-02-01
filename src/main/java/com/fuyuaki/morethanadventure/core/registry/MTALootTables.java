@@ -18,6 +18,7 @@ public class MTALootTables {
 
 
 
+    public static final ResourceKey<LootTable> ARROW_QUIVER_BONUS = gameplay("talisman/quiver_kill_bonus");
 
     public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD = chest("castle_ruins/reward");
     public static final ResourceKey<LootTable> CASTLE_RUINS_REWARD_COMMON = chest("castle_ruins/reward_common");

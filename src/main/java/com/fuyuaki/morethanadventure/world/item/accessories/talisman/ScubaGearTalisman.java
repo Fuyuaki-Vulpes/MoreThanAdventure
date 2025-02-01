@@ -10,7 +10,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 
 public class ScubaGearTalisman extends AttributeModifierTalismanItem {
     public ScubaGearTalisman(Properties properties) {
-        super(properties.rarity(Rarity.EPIC), "siren","face");
+        super(properties.rarity(Rarity.EPIC), "scuba_gear");
     }
 
 

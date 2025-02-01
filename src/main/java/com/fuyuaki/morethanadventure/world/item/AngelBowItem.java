@@ -29,7 +29,7 @@ public class AngelBowItem extends ArcheryItem {
 
 
     public AngelBowItem(Properties pProperties) {
-        super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC),2.0F,true,10.0F,0.0F);
+        super(pProperties.stacksTo(1).fireResistant().rarity(Rarity.EPIC),2.0F,true,10.0F,0.0F,SoundEvents.ARROW_SHOOT);
 
     }
 

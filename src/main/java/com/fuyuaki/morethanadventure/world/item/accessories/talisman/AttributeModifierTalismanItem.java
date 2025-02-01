@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.world.item.accessories.talisman;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.world.item.accessories.TalismanItem;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import io.wispforest.accessories.api.AccessoriesCapability;
@@ -22,21 +23,19 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public abstract class AttributeModifierTalismanItem extends TalismanItem {
     public final ResourceLocation location;
-    public final String slot;
 
-    public AttributeModifierTalismanItem(Properties properties, String id, String slot) {
-        super(properties
-                .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public AttributeModifierTalismanItem(Properties properties, String id) {
+        super(properties);
         this.location = ResourceLocation.fromNamespaceAndPath(MODID,id);
 
-        this.slot = slot;
+
     }
 
     @Override
     public void getStaticModifiers(Item item, AccessoryItemAttributeModifiers.Builder builder) {
         Multimap<Holder<Attribute>, AttributeModifier> map = talismanStaticModifiers(LinkedHashMultimap.create());
-        if (map.isEmpty()) {
-            map.forEach((attributeHolder, attributeModifier) -> builder.addForSlot(attributeHolder, attributeModifier, slot, false));
+        if (!map.isEmpty()) {
+            map.forEach((attributeHolder, attributeModifier) -> builder.addForAny(attributeHolder, attributeModifier, false));
         }
 
         super.getStaticModifiers(item, builder);
@@ -45,21 +44,19 @@ public abstract class AttributeModifierTalismanItem extends TalismanItem {
     @Override
     public void getDynamicModifiers(ItemStack stack, SlotReference reference, AccessoryAttributeBuilder builder) {
         Multimap<Holder<Attribute>, AttributeModifier> map = talismanDynamicModifiers(LinkedHashMultimap.create());
-        if (map.isEmpty()) {
+        if (!map.isEmpty()) {
             map.forEach(builder::addExclusive);
         }
 
 
     }
-
     protected abstract Multimap<Holder<Attribute>, AttributeModifier> talismanStaticModifiers(Multimap<Holder<Attribute>, AttributeModifier> map);
     protected abstract Multimap<Holder<Attribute>, AttributeModifier> talismanDynamicModifiers(Multimap<Holder<Attribute>, AttributeModifier> map);
 
 
     public static boolean enableScubaGearEffects(LivingEntity player) {
         Optional<AccessoriesCapability> capability = AccessoriesCapability.getOptionally(player);
-        if (capability.isEmpty()) return false;
+        return capability.filter(accessoriesCapability -> accessoriesCapability.isEquipped(MtaItems.SCUBA_GEAR.get()) && player.isInWater()).isPresent();
 
-        return capability.get().isEquipped(MtaItems.SCUBA_GEAR.get()) && player.isInWater();
     }
 }

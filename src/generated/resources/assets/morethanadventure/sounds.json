@@ -139,12 +139,6 @@
     ],
     "subtitle": "sound.morethanadventure.ferret_hurt"
   },
-  "flail_swing": {
-    "sounds": [
-      "morethanadventure:item/weaponry/flail_swing"
-    ],
-    "subtitle": "sound.morethanadventure.weapons.flail.swing"
-  },
   "glow_spider_ambient": {
     "sounds": [
       "morethanadventure:entity/glow_spider/say1",
@@ -169,6 +163,12 @@
     ],
     "subtitle": "sound.morethanadventure.glow_spider_hurt"
   },
+  "longbow": {
+    "sounds": [
+      "morethanadventure:item/weaponry/bow/longbow"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.bow.longbow"
+  },
   "owl_ambient": {
     "sounds": [
       "morethanadventure:entity/owl/idle"
@@ -180,6 +180,12 @@
       "morethanadventure:entity/owl/hurt"
     ],
     "subtitle": "sound.morethanadventure.owl_hurt"
+  },
+  "short_bow": {
+    "sounds": [
+      "morethanadventure:item/weaponry/bow/short_bow"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.bow.short_bow"
   },
   "thunder_far": {
     "sounds": [
@@ -242,6 +248,12 @@
       "morethanadventure:entity/turkey/hurt2"
     ],
     "subtitle": "sound.morethanadventure.turkey_hurt"
+  },
+  "twinbow": {
+    "sounds": [
+      "morethanadventure:item/weaponry/bow/twinbow"
+    ],
+    "subtitle": "sound.morethanadventure.weapons.bow.twinbow"
   },
   "weapon_deep_swing": {
     "sounds": [
@@ -326,6 +338,40 @@
       "morethanadventure:entity/wispfly/hurt2"
     ],
     "subtitle": "sound.morethanadventure.wisp_hurt"
+  },
+  "wither_soldier_ambient": {
+    "sounds": [
+      "morethanadventure:entity/wither_soldier/idle1",
+      "morethanadventure:entity/wither_soldier/idle2",
+      "morethanadventure:entity/wither_soldier/idle3",
+      "morethanadventure:entity/wither_soldier/idle4"
+    ],
+    "subtitle": "sound.morethanadventure.wither_soldier_ambient"
+  },
+  "wither_soldier_death": {
+    "sounds": [
+      "morethanadventure:entity/wither_soldier/death1",
+      "morethanadventure:entity/wither_soldier/death2"
+    ],
+    "subtitle": "sound.morethanadventure.wither_soldier_death"
+  },
+  "wither_soldier_hurt": {
+    "sounds": [
+      "morethanadventure:entity/wither_soldier/hurt1",
+      "morethanadventure:entity/wither_soldier/hurt2",
+      "morethanadventure:entity/wither_soldier/hurt3",
+      "morethanadventure:entity/wither_soldier/hurt4"
+    ],
+    "subtitle": "sound.morethanadventure.wither_soldier_hurt"
+  },
+  "wither_soldier_step": {
+    "sounds": [
+      "morethanadventure:entity/wither_soldier/step1",
+      "morethanadventure:entity/wither_soldier/step2",
+      "morethanadventure:entity/wither_soldier/step3",
+      "morethanadventure:entity/wither_soldier/step4"
+    ],
+    "subtitle": "sound.morethanadventure.wither_soldier_step"
   },
   "yuki_onna_ambient": {
     "sounds": [

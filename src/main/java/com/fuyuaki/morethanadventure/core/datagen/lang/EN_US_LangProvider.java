@@ -427,7 +427,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add(MtaItems.NETHERITE_FRACTURE.get(),"Netherite Scrap Facture");
 
 
-        add(MtaItems.SCUBA_GEAR.get(),"Weighted Dice");
+        add(MtaItems.SCUBA_GEAR.get(),"Scuba Gear");
         add(MtaItems.WEIGHTED_DICE.get(),"Weighted Dice");
         add(MtaItems.CAT_MASK.get(),"Cat Mask");
         add(MtaItems.CLIMBING_CLAWS.get(),"Climbing Claws");
@@ -435,7 +435,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.REGENERATIVE_TALISMAN.get(),"Regenerative Talisman");
         add(MtaItems.SLEEPING_KIT.get(),"Sleeping Kit");
         add(MtaItems.STRIDER_BOOTS.get(),"Strider Boots");
-        add(MtaItems.TOTEM_OF_COMBATING.get(),"Totem Of Combating");
+        add(MtaItems.QUIVER.get(),"Quiver");
 
         add(MtaItems.AGATE.get(),"Agate");
         add(MtaItems.ALEXANDRITE.get(),"Alexandrite");
@@ -738,6 +738,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG.get(),"Mossy Zombie Spawn Egg");
         add(MtaItems.SKELETON_FIGHTER_SPAWN_EGG.get(),"Skeleton Fighter Spawn Egg");
         add(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG.get(),"Toxic Zombie Spawn Egg");
+        add(MtaItems.WITHER_SOLDIER_SPAWN_EGG.get(),"Wither Soldier Spawn Egg");
         add(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG.get(),"Zombified Miner Spawn Egg");
         add(MtaItems.SIREN_SPAWN_EGG.get(),"Siren Spawn Egg");
         add(MtaItems.WISPFLY_SPAWN_EGG.get(),"Wispfly Spawn Egg");
@@ -764,6 +765,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaEntityTypes.FALLEN_SAMURAI.get(),"Fallen Samurai");
         add(MtaEntityTypes.ICICLE_CREEPER.get(),"Icicle Creeper");
         add(MtaEntityTypes.ARMORED_SKELETON.get(),"Armored Skeleton");
+        add(MtaEntityTypes.WITHER_SOLDIER.get(),"Wither Soldier");
         add(MtaEntityTypes.BLACK_WIDOW.get(),"Black Widow");
         add(MtaEntityTypes.CHARRED_SKELETON.get(),"Charred Skeleton");
         add(MtaEntityTypes.CORROSIVE_CUBE.get(),"Corrosive Cube");
@@ -847,6 +849,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(getTalismanDescriptionID(MtaItems.REGENERATIVE_TALISMAN), "Crouching heals you, allies, and pets in an area");
         add(getTalismanDescriptionID(MtaItems.SLEEPING_KIT), "Press \"Use Talisman\" key to sleep");
         add(getTalismanDescriptionID(MtaItems.STRIDER_BOOTS), "Boots made of Strider skin that allow you to walk on Lava");
+        add(getTalismanDescriptionID(MtaItems.QUIVER), "Mobs killed by arrow have a random chance of dropping multiple arrows.");
 
     }
 
@@ -961,6 +964,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.weapons.flail.hit", "Flail Attack");
         add("sound.morethanadventure.weapons.flail.swing", "Flail Swings");
 
+        add("sound.morethanadventure.weapons.bow.longbow", "Longbow Fires Arrow");
+        add("sound.morethanadventure.weapons.bow.short_bow", "Shortbow Fires Arrow");
+        add("sound.morethanadventure.weapons.bow.twinbow", "Twinbow Fires Arrow");
+
         add("sound.morethanadventure.lightning_bolt.far", "Thunder roars");
         add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
 
@@ -971,6 +978,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("items.morethanadventure.weapons.tag.causes_bleeding", "Chance to cause Bleeding on Hit");
         add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
         add("items.morethanadventure.weapons.info.shift", "Press SHIFT to see chances");
+
+
+        add("accessories.slot.talisman", "Talisman");
 
 
 

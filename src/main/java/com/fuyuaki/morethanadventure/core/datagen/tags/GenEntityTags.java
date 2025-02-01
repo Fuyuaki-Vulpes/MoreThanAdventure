@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.datagen.tags;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -41,6 +42,12 @@ public class GenEntityTags extends IntrinsicHolderTagsProvider<EntityType<?>> {
                         MtaEntityTypes.OCTOPUS.get(),
                         MtaEntityTypes.SHRIMP.get(),
                         MtaEntityTypes.SIREN.get()
+                );
+        this.tag(MtaTags.EntityTypes.WITHER_SOLDIER_DISLIKED)
+                .add(
+                        EntityType.IRON_GOLEM,
+                        EntityType.SNOW_GOLEM,
+                        EntityType.VILLAGER
                 );
     }
 }

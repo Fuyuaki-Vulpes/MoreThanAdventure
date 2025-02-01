@@ -76,6 +76,12 @@ public class MTAModelLayers {
     public static final ModelLayerLocation ZOMBIFIED_MINER_INNER_ARMOR = register("zombified_miner_inner_armor");
     public static final ModelLayerLocation ZOMBIFIED_MINER_BABY_OUTER_ARMOR = register("zombified_miner_baby_outer_armor");
     public static final ModelLayerLocation ZOMBIFIED_MINER_BABY_INNER_ARMOR = register("zombified_miner_baby_inner_armor");
+
+    public static final ModelLayerLocation WITHER_SOLDIER = register("wither_soldier");
+    public static final ModelLayerLocation WITHER_SOLDIER_ARMOR = register("wither_soldier_armor");
+    public static final ModelLayerLocation WITHER_SOLDIER_OUTER_ARMOR = register("wither_soldier_outer_armor");
+    public static final ModelLayerLocation WITHER_SOLDIER_INNER_ARMOR = register("wither_soldier_inner_armor");
+
     public static final ModelLayerLocation WISPFLY = register("wispfly");
     public static final ModelLayerLocation WISPFLY_OUTER_LAYER = register("wispfly_outer_layer");
 

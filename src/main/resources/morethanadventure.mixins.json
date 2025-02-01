@@ -5,6 +5,7 @@
   "refmap": "yoamod.refmap.json",
   "mixins": [
     "BlocksMixin",
+    "CreeperMixin",
     "FarmBlockMixin",
     "InventoryMixin",
     "LightningBoltMixin",

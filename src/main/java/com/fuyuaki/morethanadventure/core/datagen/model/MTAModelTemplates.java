@@ -15,6 +15,7 @@ public class MTAModelTemplates {
     public static final ModelTemplate SPRINKLER_INVENTORY = createItem("template_sprinkler", TextureSlot.PARTICLE);
     public static final ModelTemplate CROSSBOW = createItem("template_crossbow", TextureSlot.LAYER0);
     public static final ModelTemplate BOW = createItem("template_bow", TextureSlot.LAYER0);
+    public static final ModelTemplate BOW_BIG = createItem("template_bow_big", TextureSlot.LAYER0);
     public static final ModelTemplate TRIDENT = createItem("template_trident", TextureSlot.PARTICLE);
     public static final ModelTemplate TRIDENT_THROWING = createItem("template_trident_throwing", TextureSlot.PARTICLE);
 

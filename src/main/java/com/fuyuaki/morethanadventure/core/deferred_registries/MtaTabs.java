@@ -441,14 +441,15 @@ public class MtaTabs {
 
 
                 output.accept(MtaItems.WEIGHTED_DICE);
+                output.accept(MtaItems.SCUBA_GEAR);
                 output.accept(MtaItems.CAT_MASK);
                 output.accept(MtaItems.CLIMBING_CLAWS);
                 output.accept(MtaItems.PISTON_BOOTS);
                 output.accept(MtaItems.REGENERATIVE_TALISMAN);
                 output.accept(MtaItems.SLEEPING_KIT);
                 output.accept(MtaItems.STRIDER_BOOTS);
+                output.accept(MtaItems.QUIVER);
 
-                output.accept(MtaItems.TOTEM_OF_COMBATING);
 
 
 
@@ -827,6 +828,7 @@ public class MtaTabs {
                 output.accept(MtaItems.MOSSY_ZOMBIE_SPAWN_EGG);
                 output.accept(MtaItems.SKELETON_FIGHTER_SPAWN_EGG);
                 output.accept(MtaItems.TOXIC_ZOMBIE_SPAWN_EGG);
+                output.accept(MtaItems.WITHER_SOLDIER_SPAWN_EGG);
                 output.accept(MtaItems.ZOMBIFIED_MINER_SPAWN_EGG);
                 //output.accept(MtaItems.SIREN_SPAWN_EGG);
                 output.accept(MtaItems.WISPFLY_SPAWN_EGG);
