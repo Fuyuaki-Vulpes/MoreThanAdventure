@@ -50,6 +50,7 @@ public class MTAMod
         MtaSounds.register(modEventBus);
         MtaLootModifier.register(modEventBus);
         MTAEnchantmentEffect.register(modEventBus);
+        MTAEnchantmentEffectsComponents.register(modEventBus);
 
         MtaTabs.register(modEventBus);
 
@@ -65,7 +66,6 @@ public class MTAMod
         RenderType transparentRenderType = RenderType.cutoutMipped();
         RenderType cutoutRenderType = RenderType.cutout();
         RenderType translucentRenderType = RenderType.translucent();
-        //setRenderType(MtaBlocks.SCATTERED_LEAVES.get(), cutoutRenderType);
         setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SHALLOW_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SAND_GRASS.get(), cutoutRenderType);

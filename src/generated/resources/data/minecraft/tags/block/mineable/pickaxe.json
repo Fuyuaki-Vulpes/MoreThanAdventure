@@ -1,5 +1,18 @@
 {
   "values": [
+    "morethanadventure:bogged_oak_log",
+    "morethanadventure:stripped_bogged_oak_log",
+    "morethanadventure:bogged_oak_wood",
+    "morethanadventure:stripped_bogged_oak_wood",
+    "morethanadventure:bogged_oak_planks",
+    "morethanadventure:bogged_oak_stairs",
+    "morethanadventure:bogged_oak_slab",
+    "morethanadventure:bogged_oak_pressure_plate",
+    "morethanadventure:bogged_oak_button",
+    "morethanadventure:bogged_oak_fence",
+    "morethanadventure:bogged_oak_fence_gate",
+    "morethanadventure:bogged_oak_door",
+    "morethanadventure:bogged_oak_trapdoor",
     "morethanadventure:nether_iron_ore",
     "morethanadventure:nether_diamond_ore",
     "morethanadventure:end_emerald_ore",

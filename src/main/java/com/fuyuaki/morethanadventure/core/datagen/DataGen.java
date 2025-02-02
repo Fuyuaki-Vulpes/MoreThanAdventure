@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.datagen;
 
+import com.fuyuaki.morethanadventure.core.datagen.advancement.GenAdvancements;
 import com.fuyuaki.morethanadventure.core.datagen.lang.EN_US_LangProvider;
 import com.fuyuaki.morethanadventure.core.datagen.other.loot.GlobalLootModifiers;
 import com.fuyuaki.morethanadventure.core.datagen.model.MTAModelProvider;
@@ -27,10 +28,6 @@ public class DataGen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         var datapackRegistries = new DatapackBuiltinEntriesProvider(packOutput, event.getLookupProvider(), GenWorld.BUILDER, Set.of(MODID));
 
-
-        generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider()
-                )
-        );
 
         event.createProvider(GenRecipes.Runner::new);
 
@@ -62,6 +59,10 @@ public class DataGen {
 
         generator.addProvider(true,
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
+
+        generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider()
+                )
+        );
 
 
     }

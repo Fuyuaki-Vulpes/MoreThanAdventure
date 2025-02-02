@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "beginnings": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "morethanadventure:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.mta.adventure.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "morethanadventure:awakened_agate"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.mta.adventure.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "beginnings"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

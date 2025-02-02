@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "morethanadventure:block/bogged_oak_planks",
+    "side": "morethanadventure:block/bogged_oak_planks",
+    "top": "morethanadventure:block/bogged_oak_planks"
+  }
+}

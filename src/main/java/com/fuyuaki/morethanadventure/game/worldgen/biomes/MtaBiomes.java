@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.game.worldgen.biomes;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
+import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -25,6 +26,9 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import javax.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -51,6 +55,8 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> UNDERWATER_FOREST = createBiome("underwater_forest");
 
     public static final ResourceKey<Biome> CRYSTALLINE_GROTTO = createBiome("crystalline_grotto");
+    public static final List<ResourceKey<Biome>> BIOMES = List.of(LUSH_RIVER,SPARSE_TAIGA,SPARSE_CHERRY_GROVE,OASIS,GRAVELLY_RIVER,TUNDRA,
+            LUSH_MEADOW,UNDERWATER_FOREST);
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -463,7 +469,6 @@ public class MtaBiomes {
     }
     private static void register(BootstrapContext<Biome> context, ResourceKey<Biome> key, Biome biome) {
         context.register(key, biome);
-
     }
 
     private static void registerVillagers(ResourceKey<Biome> key, VillagerType type) {

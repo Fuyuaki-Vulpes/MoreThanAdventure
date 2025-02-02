@@ -90,12 +90,6 @@ file="META-INF/mtaaccesstransformer.cfg"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.${mod_id}]]
-    modId="structure_gel"
-    type="required"
-    versionRange="${gelVersionRange}"
-    ordering="NONE"
-    side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="accessories"

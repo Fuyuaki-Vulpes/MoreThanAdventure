@@ -27,6 +27,7 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+
         this.tag(MtaTags.Biomes.GRASSY_DIRT_SHOULD_GENERATE)
                 .addTag(Tags.Biomes.IS_DENSE_VEGETATION)
                 .addTag(Tags.Biomes.IS_FOREST)

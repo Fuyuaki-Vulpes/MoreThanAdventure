@@ -1,32 +1,26 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
-import com.fuyuaki.morethanadventure.world.item.component.PullingComponent;
 import com.fuyuaki.morethanadventure.world.item.enchantment.DisarmEnchantmentEffect;
 import com.fuyuaki.morethanadventure.world.item.enchantment.HitAndBuffEnchantmentEffect;
 import com.fuyuaki.morethanadventure.world.item.enchantment.PullingEnchantmentEffect;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.enchantment.*;
-import net.minecraft.world.item.enchantment.effects.DamageImmunity;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.EnchantmentTarget;
+import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.phys.Vec3;
-
-import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -68,7 +62,7 @@ public class MtaEnchantments {
         register(context, STRAFING, Enchantment.enchantment(Enchantment.definition(item.getOrThrow(ItemTags.BOW_ENCHANTABLE),
                 item.getOrThrow(ItemTags.BOW_ENCHANTABLE), 15, 5,
                 Enchantment.dynamicCost(5,8), Enchantment.dynamicCost(25, 8), 3, EquipmentSlotGroup.MAINHAND))
-                .withEffect(MTAEnchantmentEffect.PULLING.get(),
+                .withEffect(MTAEnchantmentEffectsComponents.PULLING.get(),EnchantmentTarget.ATTACKER, EnchantmentTarget.ATTACKER,
                         new PullingEnchantmentEffect(ResourceLocation.fromNamespaceAndPath(MODID, "enchantment.pulling"), 0.1F, LevelBasedValue.perLevel(0.1F),
                                 Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADD_VALUE)));
     }

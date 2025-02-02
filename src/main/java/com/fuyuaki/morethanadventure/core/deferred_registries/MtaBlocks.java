@@ -63,8 +63,9 @@ public class MtaBlocks {
     //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
 
     public static final DeferredBlock<Block> ALPINE_STAIRS = registerBlock("alpine_stairs",
-            properties -> new StairBlock(MtaBlocks.AVOCADO_PLANKS.get().defaultBlockState(),properties),
+            properties -> new StairBlock(Blocks.OAK_STAIRS.defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+
     public static final DeferredBlock<Block> ALPINE_SLAB = registerBlock("alpine_slab",
              SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
 

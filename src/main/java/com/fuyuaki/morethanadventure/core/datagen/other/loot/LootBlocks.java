@@ -86,7 +86,7 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.BOGGED_OAK_LOG.get());
         dropSelf(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get());
         dropSelf(MtaBlocks.BOGGED_OAK_WOOD.get());
-        dropSelf(MtaBlocks.BOGGED_OAK_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get());
         dropSelf(MtaBlocks.BOGGED_OAK_PLANKS.get());
         dropSelf(MtaBlocks.BOGGED_OAK_STAIRS.get());
         this.add(MtaBlocks.BOGGED_OAK_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SEAWOOD_SLAB.get()));
@@ -99,7 +99,7 @@ public class LootBlocks extends BlockLootSubProvider {
 
         dropSelf(MtaBlocks.MANGO_LOG.get());
         dropSelf(MtaBlocks.STRIPPED_MANGO_LOG.get());
-        dropSelf(MtaBlocks.MAPLE_WOOD.get());
+        dropSelf(MtaBlocks.MANGO_WOOD.get());
         dropSelf(MtaBlocks.STRIPPED_MANGO_WOOD.get());
         dropSelf(MtaBlocks.MANGO_PLANKS.get());
         this.add(MtaBlocks.MANGO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.MANGO.get(),NORMAL_LEAVES_SAPLING_CHANCES));

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:mta_adventure/root",
+  "criteria": {
+    "craft": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#morethanadventure:mta_mod_weapons"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.mta.adventure.weapon.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "morethanadventure:iron_halberd"
+    },
+    "title": {
+      "translate": "advancements.mta.adventure.weapon.title"
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

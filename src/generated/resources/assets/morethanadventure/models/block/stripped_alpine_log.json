@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "morethanadventure:block/stripped_alpine_log_top",
+    "side": "morethanadventure:block/stripped_alpine_log"
+  }
+}

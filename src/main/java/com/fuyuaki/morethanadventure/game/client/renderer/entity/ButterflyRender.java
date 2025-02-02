@@ -49,6 +49,7 @@ public class ButterflyRender extends MobRenderer<Butterfly, ButterflyRenderState
         state.patternId = entity.getPattern();
         state.overlayColor = entity.getOverlayColor();
         state.overlayId = entity.getOverlay();
+        state.onGround = entity.onGround();
         super.extractRenderState(entity, state, partialTick);
     }
 }

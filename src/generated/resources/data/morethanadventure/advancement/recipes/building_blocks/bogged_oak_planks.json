@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_logs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#morethanadventure:bogged_oak_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "morethanadventure:bogged_oak_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_logs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "morethanadventure:bogged_oak_planks"
+    ]
+  }
+}

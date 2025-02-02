@@ -4,10 +4,10 @@
     "translate": "enchantment.morethanadventure.strafing"
   },
   "effects": {
-    "minecraft:tick": [
+    "morethanadventure:pulling": [
       {
+        "affected": "attacker",
         "effect": {
-          "type": "morethanadventure:pulling",
           "attribute": "minecraft:movement_speed",
           "id": "morethanadventure:enchantment.pulling",
           "level": {
@@ -17,7 +17,8 @@
           },
           "modPercent": 0.1,
           "operation": "add_value"
-        }
+        },
+        "enchanted": "attacker"
       }
     ]
   },

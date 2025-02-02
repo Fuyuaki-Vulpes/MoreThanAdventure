@@ -143,6 +143,9 @@ public class MtaTags {
         public static final TagKey<Item> LOOTING_ENCHANTMENTS = tag("looting_enchantments");
 
 
+        public static final TagKey<Item> MTA_WEAPONRY = tag("mta_mod_weapons");
+
+
         public static final TagKey<Item> MTA_ACCESSORIES = tag("accessories");
 
 

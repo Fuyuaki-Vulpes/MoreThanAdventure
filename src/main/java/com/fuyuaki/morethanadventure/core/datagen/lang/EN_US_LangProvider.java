@@ -994,8 +994,27 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaTags.Items.TWO_HANDED, "Two-Handed");
         add(MtaTags.Items.CAUSES_BLEEDING, "Causes Bleeding");
         add(MtaTags.Items.STUN, "Causes Stunning");
+
+
+        this.advancements();
     }
 
+    private void advancements() {
+        add("advancements.mta.adventure.root.title", "More Than Adventure!");
+        add("advancements.mta.adventure.root.description", "The Root Advancement of More Than Adventure");
+
+        add("advancements.mta.adventure.biomes.title", "More Than Biomes!");
+        add("advancements.mta.adventure.biomes.description", "Come across a More Than Adventure Biome");
+
+        add("advancements.mta.adventure.biomes_all.title", "All The Biomes!");
+        add("advancements.mta.adventure.biomes_all.description", "Come across all More Than Adventure Biomes");
+
+        add("advancements.mta.adventure.weapon.title", "More Than Swords!");
+        add("advancements.mta.adventure.weapon.description", "Obtain yourself a weapon from More Than Adventure");
+
+
+
+    }
 
 
     private String getTalismanDescriptionID(DeferredItem<? extends Item> item){

@@ -17,8 +17,20 @@ import net.minecraft.world.item.enchantment.LevelBasedValue;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.phys.Vec3;
 
-public record PullingEnchantmentEffect(ResourceLocation id, float modPercent, LevelBasedValue level, Holder<Attribute> attribute, AttributeModifier.Operation operation) implements EnchantmentEntityEffect {
-    public static final MapCodec<PullingEnchantmentEffect> CODEC = RecordCodecBuilder.mapCodec(instance ->
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Stream;
+
+public record PullingEnchantmentEffect(
+        ResourceLocation id,
+        float modPercent,
+        LevelBasedValue level,
+        Holder<Attribute> attribute,
+        AttributeModifier.Operation operation
+) implements EnchantmentEntityEffect {
+
+
+    public static final MapCodec<PullingEnchantmentEffect> MAP_CODEC = RecordCodecBuilder.mapCodec(instance ->
             instance.group(ResourceLocation.CODEC.fieldOf("id").forGetter(PullingEnchantmentEffect::id),
                             Codec.FLOAT.fieldOf("modPercent").forGetter(PullingEnchantmentEffect::modPercent),
                             LevelBasedValue.CODEC.fieldOf("level").forGetter(PullingEnchantmentEffect::level),
@@ -26,24 +38,28 @@ public record PullingEnchantmentEffect(ResourceLocation id, float modPercent, Le
                             AttributeModifier.Operation.CODEC.fieldOf("operation").forGetter(PullingEnchantmentEffect::operation))
                     .apply(instance, PullingEnchantmentEffect::new));
 
-
     @Override
     public void apply(ServerLevel serverLevel, int enchantmentLevel, EnchantedItemInUse enchantedItemInUse, Entity entity, Vec3 vec3) {
         if (entity instanceof LivingEntity livingEntity) {
-            ItemStack itemstack = livingEntity.getItemBySlot(EquipmentSlot.MAINHAND);
-            AttributeModifier modifier = new AttributeModifier(id,enchantmentLevel * modPercent, operation);
-            if (!livingEntity.getAttribute(attribute).hasModifier(id)) {
-                if (itemstack.equals(enchantedItemInUse.itemStack()) && livingEntity.isUsingItem()) {
-                    livingEntity.getAttribute(attribute).addOrReplacePermanentModifier(modifier);
+
+            ItemStack itemstack = livingEntity.getUseItem();
+            if (itemstack.equals(enchantedItemInUse.itemStack()) && livingEntity.isUsingItem()) {
+                AttributeModifier modifier = new AttributeModifier(id, enchantmentLevel * modPercent, operation);
+                Stream<ResourceLocation> modifiers = Objects.requireNonNull(livingEntity.getAttribute(attribute)).getModifiers()
+                        .stream().map(AttributeModifier::id);
+                if (modifiers.noneMatch((resourceLocation) -> resourceLocation == id)) {
+                    livingEntity.getAttribute(attribute).addOrUpdateTransientModifier(modifier);
+
                 }
-            } else if (!itemstack.equals(enchantedItemInUse.itemStack()) || !livingEntity.isUsingItem()) {
+            }
+            else if (!itemstack.equals(enchantedItemInUse.itemStack()) || !livingEntity.isUsingItem()) {
                 livingEntity.getAttribute(attribute).removeModifier(id);
             }
         }
     }
 
     @Override
-    public MapCodec<? extends EnchantmentEntityEffect> codec() {
-        return CODEC;
+    public MapCodec<? extends PullingEnchantmentEffect> codec() {
+        return MAP_CODEC;
     }
 }

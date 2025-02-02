@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "morethanadventure:block/maple_log_top",
+    "side": "morethanadventure:block/maple_log"
+  }
+}

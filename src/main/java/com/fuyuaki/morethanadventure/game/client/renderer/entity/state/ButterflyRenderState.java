@@ -7,6 +7,7 @@ public class ButterflyRenderState extends LivingEntityRenderState {
 
     public DyeColor overlayColor;
     public int overlayId;
+    public boolean onGround;
 
     public DyeColor patternColor;
     public int patternId;

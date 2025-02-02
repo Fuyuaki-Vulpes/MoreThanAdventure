@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate_wall",
+  "textures": {
+    "texture": "morethanadventure:block/bogged_oak_planks"
+  }
+}
