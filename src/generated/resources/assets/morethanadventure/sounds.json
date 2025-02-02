@@ -187,6 +187,16 @@
     ],
     "subtitle": "sound.morethanadventure.weapons.bow.short_bow"
   },
+  "stove_crackle": {
+    "sounds": [
+      "morethanadventure:block/stove/stove1",
+      "morethanadventure:block/stove/stove2",
+      "morethanadventure:block/stove/stove3",
+      "morethanadventure:block/stove/stove4",
+      "morethanadventure:block/stove/stove5"
+    ],
+    "subtitle": "sound.morethanadventure.stove.crackle"
+  },
   "thunder_far": {
     "sounds": [
       "morethanadventure:weather/misc/thunder/far1",

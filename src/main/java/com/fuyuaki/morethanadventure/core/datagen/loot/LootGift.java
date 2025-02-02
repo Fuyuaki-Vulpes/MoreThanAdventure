@@ -1,10 +1,9 @@
-package com.fuyuaki.morethanadventure.core.datagen.other.loot;
+package com.fuyuaki.morethanadventure.core.datagen.loot;
 
 import com.fuyuaki.morethanadventure.core.registry.MTALootTables;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -12,7 +11,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.function.BiConsumer;

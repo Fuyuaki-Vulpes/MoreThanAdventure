@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.core.registry.MTABlockSetTypes;
 import com.fuyuaki.morethanadventure.core.registry.MTAWoodTypes;
 import com.fuyuaki.morethanadventure.game.worldgen.tree.MtaTreeGrower;
 import com.fuyuaki.morethanadventure.world.block.*;
+import com.fuyuaki.morethanadventure.world.block.kitchen.StoveBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -47,6 +48,16 @@ public class MtaBlocks {
 
 
 
+
+
+    public static final DeferredBlock<Block> STOVE = registerBlock("stove", StoveBlock::new,
+            BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.5F)
+                    .lightLevel(litBlockEmission(13))
+    );
 
 
     public static final DeferredBlock<Block> ALPINE_LOG = registerBlock("alpine_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));

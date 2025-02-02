@@ -319,6 +319,15 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
                         sound("morethanadventure:weather/misc/thunder/very_far4")
                 ).subtitle("sound.morethanadventure.lightning_bolt.very_far"));
 
+        add(MtaSounds.STOVE_CRACKLE.get(), SoundDefinition.definition()
+                .with(
+                        sound("morethanadventure:block/stove/stove1"),
+                        sound("morethanadventure:block/stove/stove2"),
+                        sound("morethanadventure:block/stove/stove3"),
+                        sound("morethanadventure:block/stove/stove4"),
+                        sound("morethanadventure:block/stove/stove5")
+                ).subtitle("sound.morethanadventure.stove.crackle"));
+
     }
 
     protected static SoundDefinition.Sound entitySound(final String name) {

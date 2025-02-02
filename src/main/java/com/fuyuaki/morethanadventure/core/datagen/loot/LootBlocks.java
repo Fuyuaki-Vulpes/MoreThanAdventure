@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.core.datagen.other.loot;
+package com.fuyuaki.morethanadventure.core.datagen.loot;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
@@ -52,6 +52,7 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.PITCHER_PLANT.get());
         this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
         dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
+        dropSelf(MtaBlocks.STOVE.get());
 
         dropSelf(MtaBlocks.ALPINE_LOG.get());
         dropSelf(MtaBlocks.STRIPPED_ALPINE_LOG.get());

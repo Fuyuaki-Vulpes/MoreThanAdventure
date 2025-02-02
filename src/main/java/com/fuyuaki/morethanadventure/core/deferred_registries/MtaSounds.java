@@ -121,6 +121,9 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> LIGHTNING_BOLT_THUNDER_VERY_FAR = registerSoundEvent("thunder_very_far");
 
 
+    public static final Supplier<SoundEvent> STOVE_CRACKLE = registerSoundEvent("stove_crackle");
+
+
     private static Supplier<SoundEvent> registerSoundEvent (String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
