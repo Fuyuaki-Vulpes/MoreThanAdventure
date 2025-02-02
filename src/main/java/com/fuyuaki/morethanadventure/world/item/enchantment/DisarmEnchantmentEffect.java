@@ -23,26 +23,47 @@ public record DisarmEnchantmentEffect(LevelBasedValue level) implements Enchantm
     public void apply(ServerLevel level, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin) {
         if (entity instanceof LivingEntity livingEntity) {
             ItemStack itemstack = livingEntity.getItemBySlot(EquipmentSlot.MAINHAND);
+            ItemStack itemstack1 = livingEntity.getItemBySlot(EquipmentSlot.OFFHAND);
             if (!itemstack.isEmpty()) {
                 if(enchantmentLevel == 1 && livingEntity.getRandom().nextFloat() <= 0.20F) {
                     item.owner().spawnAtLocation(level, itemstack);
                     livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
                 }
+                else if(enchantmentLevel == 1 && livingEntity.getRandom().nextFloat() <= 0.10F) {
+                    item.owner().spawnAtLocation(level, itemstack1);
+                    livingEntity.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+                }
                 if(enchantmentLevel == 2 && livingEntity.getRandom().nextFloat() <= 0.40F) {
                     item.owner().spawnAtLocation(level, itemstack);
                     livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
                 }
+                else if(enchantmentLevel == 2 && livingEntity.getRandom().nextFloat() <= 0.20F) {
+                    item.owner().spawnAtLocation(level, itemstack1);
+                    livingEntity.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+                }
                 if(enchantmentLevel == 3 && livingEntity.getRandom().nextFloat() <= 0.60F) {
                     item.owner().spawnAtLocation(level, itemstack);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+                else if(enchantmentLevel == 3 && livingEntity.getRandom().nextFloat() <= 0.30F) {
+                    item.owner().spawnAtLocation(level, itemstack1);
                     livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
                 }
                 if(enchantmentLevel == 4 && livingEntity.getRandom().nextFloat() <= 0.80F) {
                     livingEntity.spawnAtLocation(level, itemstack);
                     livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
                 }
+                else if(enchantmentLevel == 4 && livingEntity.getRandom().nextFloat() <= 0.80F) {
+                    livingEntity.spawnAtLocation(level, itemstack1);
+                    livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
                 if(enchantmentLevel == 5 && livingEntity.getRandom().nextFloat() <= 1.0F) {
                     item.owner().spawnAtLocation(level, itemstack);
                     livingEntity.setItemSlot(EquipmentSlot.MAINHAND, ItemStack.EMPTY);
+                }
+                else if(enchantmentLevel == 5 && livingEntity.getRandom().nextFloat() <= 0.9F) {
+                    item.owner().spawnAtLocation(level, itemstack1);
+                    livingEntity.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
                 }
 
             }

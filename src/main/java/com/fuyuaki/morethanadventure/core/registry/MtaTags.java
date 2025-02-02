@@ -82,10 +82,13 @@ public class MtaTags {
         public static final TagKey<Block> DIRTIES_STONE_TILES = tag("dirties_stone_tiles");
 
 
+        public static final TagKey<Block> ALPINE_LOGS = tag("alpine_logs");
+        public static final TagKey<Block> AVOCADO_LOGS = tag("avocado_logs");
+        public static final TagKey<Block> BOGGED_OAK_LOGS = tag("bogged_oak_logs");
+        public static final TagKey<Block> MANGO_LOGS = tag("mango_logs");
+        public static final TagKey<Block> MAPLE_LOGS = tag("maple_logs");
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Block> SEAWOOD = tag("seawood");
-        public static final TagKey<Block> AVOCADO_LOGS = tag("avocado_logs");
-        public static final TagKey<Block> MANGO_LOGS = tag("mango_logs");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = tag("needs_copper_tool");
         public static final TagKey<Block> NEEDS_GEM_TOOL = tag("needs_gem_tool");
 
@@ -109,10 +112,14 @@ public class MtaTags {
     }
 
     public static class Items {
+
+        public static final TagKey<Item> ALPINE_LOGS = tag("alpine_logs");
+        public static final TagKey<Item> AVOCADO_LOGS = tag("avocado_logs");
+        public static final TagKey<Item> BOGGED_OAK_LOGS = tag("bogged_oak_logs");
+        public static final TagKey<Item> MANGO_LOGS = tag("mango_logs");
+        public static final TagKey<Item> MAPLE_LOGS = tag("maple_logs");
         public static final TagKey<Item> PALM_LOGS = tag("palm_logs");
         public static final TagKey<Item> SEAWOOD = tag("sealogs");
-        public static final TagKey<Item> AVOCADO_LOGS = tag("avocado_logs");
-        public static final TagKey<Item> MANGO_LOGS = tag("mango_logs");
 
         public static final TagKey<Item> AGATE_TOOL_MATERIALS = tag("agate_tool_materials");
         public static final TagKey<Item> ALEXANDRITE_TOOL_MATERIALS = tag("alexandrite_tool_materials");
@@ -155,6 +162,7 @@ public class MtaTags {
     public static class Enchantments {
         public static final TagKey<Enchantment> FLAMING = tag("flaming_bow");
         public static final TagKey<Enchantment> WHIP = tag("whip");
+        public static final TagKey<Enchantment> HIT_BUFF_EXCLUSIVE = tag("hit_buff_exclusive");
         private static TagKey<Enchantment> tag(String name) {
             return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(MODID, name));
         }

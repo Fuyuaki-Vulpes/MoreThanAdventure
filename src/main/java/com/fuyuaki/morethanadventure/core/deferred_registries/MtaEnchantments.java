@@ -1,31 +1,40 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
+import com.fuyuaki.morethanadventure.world.item.component.PullingComponent;
 import com.fuyuaki.morethanadventure.world.item.enchantment.DisarmEnchantmentEffect;
+import com.fuyuaki.morethanadventure.world.item.enchantment.HitAndBuffEnchantmentEffect;
 import com.fuyuaki.morethanadventure.world.item.enchantment.PullingEnchantmentEffect;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
-import net.minecraft.world.item.enchantment.EnchantmentTarget;
-import net.minecraft.world.item.enchantment.LevelBasedValue;
+import net.minecraft.world.item.enchantment.*;
+import net.minecraft.world.item.enchantment.effects.DamageImmunity;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaEnchantments {
    public static final ResourceKey<Enchantment> DISARM = ResourceKey.create(Registries.ENCHANTMENT,
         ResourceLocation.fromNamespaceAndPath(MODID, "disarm"));
+   public static final ResourceKey<Enchantment> HIT_AND_RUN = ResourceKey.create(Registries.ENCHANTMENT,
+           ResourceLocation.fromNamespaceAndPath(MODID, "hit_and_run"));
    public static final ResourceKey<Enchantment> SNAG = ResourceKey.create(Registries.ENCHANTMENT,
         ResourceLocation.fromNamespaceAndPath(MODID, "snag"));
    public static final ResourceKey<Enchantment> STRAFING = ResourceKey.create(Registries.ENCHANTMENT,
@@ -50,11 +59,17 @@ public class MtaEnchantments {
                 Enchantment.dynamicCost(5,8), Enchantment.dynamicCost(25, 8), 3, EquipmentSlotGroup.MAINHAND))
                 .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.VICTIM, new DisarmEnchantmentEffect(LevelBasedValue.perLevel(1F))));
 
+        register(context, HIT_AND_RUN, Enchantment.enchantment(Enchantment.definition(item.getOrThrow(ItemTags.BOW_ENCHANTABLE),
+                20,3, Enchantment.dynamicCost(5,8), Enchantment.dynamicCost(25,8), 3, EquipmentSlotGroup.MAINHAND))
+                .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER, EnchantmentTarget.ATTACKER,
+                        new HitAndBuffEnchantmentEffect(LevelBasedValue.perLevel(0.1F), Attributes.MOVEMENT_SPEED, 0.1F, AttributeModifier.Operation.ADD_VALUE, 100,
+                                ResourceLocation.fromNamespaceAndPath(MODID, "hit_and_run"))));
+
         register(context, STRAFING, Enchantment.enchantment(Enchantment.definition(item.getOrThrow(ItemTags.BOW_ENCHANTABLE),
                 item.getOrThrow(ItemTags.BOW_ENCHANTABLE), 15, 5,
                 Enchantment.dynamicCost(5,8), Enchantment.dynamicCost(25, 8), 3, EquipmentSlotGroup.MAINHAND))
-                .withEffect(EnchantmentEffectComponents.TICK,
-                        new PullingEnchantmentEffect(ResourceLocation.fromNamespaceAndPath(MODID, "enchantment.pulling"), LevelBasedValue.perLevel(0.1F),
+                .withEffect(MTAEnchantmentEffect.PULLING.get(),
+                        new PullingEnchantmentEffect(ResourceLocation.fromNamespaceAndPath(MODID, "enchantment.pulling"), 0.1F, LevelBasedValue.perLevel(0.1F),
                                 Attributes.MOVEMENT_SPEED, AttributeModifier.Operation.ADD_VALUE)));
     }
 

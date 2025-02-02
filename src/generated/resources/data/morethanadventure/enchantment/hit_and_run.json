@@ -1,23 +1,26 @@
 {
   "anvil_cost": 3,
   "description": {
-    "translate": "enchantment.morethanadventure.strafing"
+    "translate": "enchantment.morethanadventure.hit_and_run"
   },
   "effects": {
-    "minecraft:tick": [
+    "minecraft:post_attack": [
       {
+        "affected": "attacker",
         "effect": {
-          "type": "morethanadventure:pulling",
+          "type": "morethanadventure:hit_and_buff",
           "attribute": "minecraft:movement_speed",
-          "id": "morethanadventure:enchantment.pulling",
+          "id": "morethanadventure:hit_and_run",
           "level": {
             "type": "minecraft:linear",
             "base": 0.1,
             "per_level_above_first": 0.1
           },
           "modPercent": 0.1,
-          "operation": "add_value"
-        }
+          "operation": "add_value",
+          "tickAmount": 100
+        },
+        "enchanted": "attacker"
       }
     ]
   },
@@ -25,15 +28,14 @@
     "base": 25,
     "per_level_above_first": 8
   },
-  "max_level": 5,
+  "max_level": 3,
   "min_cost": {
     "base": 5,
     "per_level_above_first": 8
   },
-  "primary_items": "#minecraft:enchantable/bow",
   "slots": [
     "mainhand"
   ],
   "supported_items": "#minecraft:enchantable/bow",
-  "weight": 15
+  "weight": 20
 }

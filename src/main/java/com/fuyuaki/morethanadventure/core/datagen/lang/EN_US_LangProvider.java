@@ -18,6 +18,91 @@ public class EN_US_LangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         //BLOCKS
+
+
+        add(MtaBlocks.ALPINE_LOG.get(),"Alpine Log");
+        add(MtaBlocks.STRIPPED_ALPINE_LOG.get(),"Stripped Alpine Log");
+        add(MtaBlocks.ALPINE_WOOD.get(),"Alpine Wood");
+        add(MtaBlocks.STRIPPED_ALPINE_WOOD.get(),"Stripped Alpine Wood");
+        add(MtaBlocks.ALPINE_PLANKS.get(),"Alpine Planks");
+        //add(MtaBlocks.ALPINE_LEAVES.get(),"Alpine Leaves");
+        //add(MtaBlocks.ALPINE_SAPLING.get(),"Alpine Sapling");
+        add(MtaBlocks.ALPINE_STAIRS.get(),"Alpine Stairs");
+        add(MtaBlocks.ALPINE_SLAB.get(),"Alpine Slab");
+        add(MtaBlocks.ALPINE_PRESSURE_PLATE.get(),"Alpine Pressure Plate");
+        add(MtaBlocks.ALPINE_BUTTON.get(),"Alpine Button");
+        add(MtaBlocks.ALPINE_FENCE.get(),"Alpine Fence");
+        add(MtaBlocks.ALPINE_FENCE_GATE.get(),"Alpine Fence Gate");
+        add(MtaBlocks.ALPINE_DOOR.get(),"Alpine Door");
+        add(MtaBlocks.ALPINE_TRAPDOOR.get(),"Alpine Trapdoor");
+
+
+        add(MtaBlocks.AVOCADO_LOG.get(),"Avocado Log");
+        add(MtaBlocks.STRIPPED_AVOCADO_LOG.get(),"Stripped Avocado Log");
+        add(MtaBlocks.AVOCADO_WOOD.get(),"Avocado Wood");
+        add(MtaBlocks.STRIPPED_AVOCADO_WOOD.get(),"Stripped Avocado Wood");
+        add(MtaBlocks.AVOCADO_PLANKS.get(),"Avocado Planks");
+        add(MtaBlocks.AVOCADO_LEAVES.get(),"Avocado Leaves");
+        //add(MtaBlocks.AVOCADO_SAPLING.get(),"Avocado Sapling");
+        add(MtaBlocks.AVOCADO_STAIRS.get(),"Avocado Stairs");
+        add(MtaBlocks.AVOCADO_SLAB.get(),"Avocado Slab");
+        add(MtaBlocks.AVOCADO_PRESSURE_PLATE.get(),"Avocado Pressure Plate");
+        add(MtaBlocks.AVOCADO_BUTTON.get(),"Avocado Button");
+        add(MtaBlocks.AVOCADO_FENCE.get(),"Avocado Fence");
+        add(MtaBlocks.AVOCADO_FENCE_GATE.get(),"Avocado Fence Gate");
+        add(MtaBlocks.AVOCADO_DOOR.get(),"Avocado Door");
+        add(MtaBlocks.AVOCADO_TRAPDOOR.get(),"Avocado Trapdoor");
+
+
+        add(MtaBlocks.BOGGED_OAK_LOG.get(),"Bogged Oak Log");
+        add(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get(),"Stripped Bogged Oak Log");
+        add(MtaBlocks.BOGGED_OAK_WOOD.get(),"Bogged Oak Wood");
+        add(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get(),"Stripped Bogged Oak Wood");
+        add(MtaBlocks.BOGGED_OAK_PLANKS.get(),"Bogged Oak Planks");
+        add(MtaBlocks.BOGGED_OAK_STAIRS.get(),"Bogged Oak Stairs");
+        add(MtaBlocks.BOGGED_OAK_SLAB.get(),"Bogged Oak Slab");
+        add(MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get(),"Bogged Oak Pressure Plate");
+        add(MtaBlocks.BOGGED_OAK_BUTTON.get(),"Bogged Oak Button");
+        add(MtaBlocks.BOGGED_OAK_FENCE.get(),"Bogged Oak Fence");
+        add(MtaBlocks.BOGGED_OAK_FENCE_GATE.get(),"Bogged Oak Fence Gate");
+        add(MtaBlocks.BOGGED_OAK_DOOR.get(),"Bogged Oak Door");
+        add(MtaBlocks.BOGGED_OAK_TRAPDOOR.get(),"Bogged Oak Trapdoor");
+
+
+        add(MtaBlocks.MANGO_LOG.get(),"Mango Log");
+        add(MtaBlocks.STRIPPED_MANGO_LOG.get(),"Stripped Mango Log");
+        add(MtaBlocks.MANGO_WOOD.get(),"Mango Wood");
+        add(MtaBlocks.STRIPPED_MANGO_WOOD.get(),"Stripped Mango Wood");
+        add(MtaBlocks.MANGO_PLANKS.get(),"Mango Planks");
+        add(MtaBlocks.MANGO_LEAVES.get(),"Mango Leaves");
+        //add(MtaBlocks.MANGO_SAPLING.get(),"Mango Sapling");
+        add(MtaBlocks.MANGO_STAIRS.get(),"Mango Stairs");
+        add(MtaBlocks.MANGO_SLAB.get(),"Mango Slab");
+        add(MtaBlocks.MANGO_PRESSURE_PLATE.get(),"Mango Pressure Plate");
+        add(MtaBlocks.MANGO_BUTTON.get(),"Mango Button");
+        add(MtaBlocks.MANGO_FENCE.get(),"Mango Fence");
+        add(MtaBlocks.MANGO_FENCE_GATE.get(),"Mango Fence Gate");
+        add(MtaBlocks.MANGO_DOOR.get(),"Mango Door");
+        add(MtaBlocks.MANGO_TRAPDOOR.get(),"Mango Trapdoor");
+
+
+        add(MtaBlocks.MAPLE_LOG.get(),"Maple Log");
+        add(MtaBlocks.STRIPPED_MAPLE_LOG.get(),"Stripped Maple Log");
+        add(MtaBlocks.MAPLE_WOOD.get(),"Maple Wood");
+        add(MtaBlocks.STRIPPED_MAPLE_WOOD.get(),"Stripped Maple Wood");
+        add(MtaBlocks.MAPLE_PLANKS.get(),"Maple Planks");
+        //add(MtaBlocks.MAPLE_LEAVES.get(),"Maple Leaves");
+        //add(MtaBlocks.MAPLE_SAPLING.get(),"Maple Sapling");
+        add(MtaBlocks.MAPLE_STAIRS.get(),"Maple Stairs");
+        add(MtaBlocks.MAPLE_SLAB.get(),"Maple Slab");
+        add(MtaBlocks.MAPLE_PRESSURE_PLATE.get(),"Maple Pressure Plate");
+        add(MtaBlocks.MAPLE_BUTTON.get(),"Maple Button");
+        add(MtaBlocks.MAPLE_FENCE.get(),"Maple Fence");
+        add(MtaBlocks.MAPLE_FENCE_GATE.get(),"Maple Fence Gate");
+        add(MtaBlocks.MAPLE_DOOR.get(),"Maple Door");
+        add(MtaBlocks.MAPLE_TRAPDOOR.get(),"Maple Trapdoor");
+
+
         add(MtaBlocks.PALM_LOG.get(),"Palm Log");
         add(MtaBlocks.STRIPPED_PALM_LOG.get(),"Stripped Palm Log");
         add(MtaBlocks.PALM_WOOD.get(),"Palm Wood");
@@ -48,40 +133,6 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SEAWOOD_FENCE_GATE.get(),"Seawood Fence Gate");
         add(MtaBlocks.SEAWOOD_DOOR.get(),"Seawood Door");
         add(MtaBlocks.SEAWOOD_TRAPDOOR.get(),"Seawood Trapdoor");
-
-
-        add(MtaBlocks.AVOCADO_LOG.get(),"Avocado Log");
-        add(MtaBlocks.STRIPPED_AVOCADO_LOG.get(),"Stripped Avocado Log");
-        add(MtaBlocks.AVOCADO_WOOD.get(),"Avocado Wood");
-        add(MtaBlocks.STRIPPED_AVOCADO_WOOD.get(),"Stripped Avocado Wood");
-        add(MtaBlocks.AVOCADO_PLANKS.get(),"Avocado Planks");
-        add(MtaBlocks.AVOCADO_LEAVES.get(),"Avocado Leaves");
-        //add(MtaBlocks.AVOCADO_SAPLING.get(),"Avocado Sapling");
-        add(MtaBlocks.AVOCADO_STAIRS.get(),"Avocado Stairs");
-        add(MtaBlocks.AVOCADO_SLAB.get(),"Avocado Slab");
-        add(MtaBlocks.AVOCADO_PRESSURE_PLATE.get(),"Avocado Pressure Plate");
-        add(MtaBlocks.AVOCADO_BUTTON.get(),"Avocado Button");
-        add(MtaBlocks.AVOCADO_FENCE.get(),"Avocado Fence");
-        add(MtaBlocks.AVOCADO_FENCE_GATE.get(),"Avocado Fence Gate");
-        add(MtaBlocks.AVOCADO_DOOR.get(),"Avocado Door");
-        add(MtaBlocks.AVOCADO_TRAPDOOR.get(),"Avocado Trapdoor");
-
-
-        add(MtaBlocks.MANGO_LOG.get(),"Mango Log");
-        add(MtaBlocks.STRIPPED_MANGO_LOG.get(),"Stripped Mango Log");
-        add(MtaBlocks.MANGO_WOOD.get(),"Mango Wood");
-        add(MtaBlocks.STRIPPED_MANGO_WOOD.get(),"Stripped Mango Wood");
-        add(MtaBlocks.MANGO_PLANKS.get(),"Mango Planks");
-        add(MtaBlocks.MANGO_LEAVES.get(),"Mango Leaves");
-        //add(MtaBlocks.MANGO_SAPLING.get(),"Mango Sapling");
-        add(MtaBlocks.MANGO_STAIRS.get(),"Mango Stairs");
-        add(MtaBlocks.MANGO_SLAB.get(),"Mango Slab");
-        add(MtaBlocks.MANGO_PRESSURE_PLATE.get(),"Mango Pressure Plate");
-        add(MtaBlocks.MANGO_BUTTON.get(),"Mango Button");
-        add(MtaBlocks.MANGO_FENCE.get(),"Mango Fence");
-        add(MtaBlocks.MANGO_FENCE_GATE.get(),"Mango Fence Gate");
-        add(MtaBlocks.MANGO_DOOR.get(),"Mango Door");
-        add(MtaBlocks.MANGO_TRAPDOOR.get(),"Mango Trapdoor");
 
 
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");

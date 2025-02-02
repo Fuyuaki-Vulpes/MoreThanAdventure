@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MTABlockSetTypes;
+import com.fuyuaki.morethanadventure.core.registry.MTAWoodTypes;
 import com.fuyuaki.morethanadventure.game.worldgen.tree.MtaTreeGrower;
 import com.fuyuaki.morethanadventure.world.block.*;
 import net.minecraft.core.BlockPos;
@@ -43,6 +44,181 @@ public class MtaBlocks {
                     .strength(5.0F)
                     .sound(SoundType.METAL)
                     .noOcclusion());
+
+
+
+
+
+    public static final DeferredBlock<Block> ALPINE_LOG = registerBlock("alpine_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> STRIPPED_ALPINE_LOG = registerBlock("stripped_alpine_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> ALPINE_WOOD = registerBlock("alpine_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+    public static final DeferredBlock<Block> STRIPPED_ALPINE_WOOD = registerBlock("stripped_alpine_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<Block> ALPINE_PLANKS = registerBlock("alpine_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+    //public static final DeferredBlock<Block> ALPINE_LEAVES = registerBlock("alpine_leaves",
+    //        AlpineLeaves::new,
+    //        leavesProperties(SoundType.AZALEA_LEAVES));
+
+    //public static final DeferredBlock<Block> ALPINE_SAPLING = registerBlock("alpine_sapling",
+    //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
+
+    public static final DeferredBlock<Block> ALPINE_STAIRS = registerBlock("alpine_stairs",
+            properties -> new StairBlock(MtaBlocks.AVOCADO_PLANKS.get().defaultBlockState(),properties),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+    public static final DeferredBlock<Block> ALPINE_SLAB = registerBlock("alpine_slab",
+             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<Block> ALPINE_PRESSURE_PLATE = registerBlock("alpine_pressure_plate",
+            properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+    public static final DeferredBlock<Block> ALPINE_BUTTON = registerBlock("alpine_button",
+            properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<Block> ALPINE_FENCE = registerBlock("alpine_fence",
+            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+    public static final DeferredBlock<Block> ALPINE_FENCE_GATE = registerBlock("alpine_fence_gate",
+            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<Block> ALPINE_DOOR = registerBlock("alpine_door",
+            properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+    public static final DeferredBlock<Block> ALPINE_TRAPDOOR = registerBlock("alpine_trapdoor",
+            properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+
+
+
+ public static final DeferredBlock<Block> AVOCADO_LOG = registerBlock("avocado_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> STRIPPED_AVOCADO_LOG = registerBlock("stripped_avocado_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> AVOCADO_WOOD = registerBlock("avocado_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+    public static final DeferredBlock<Block> STRIPPED_AVOCADO_WOOD = registerBlock("stripped_avocado_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<Block> AVOCADO_PLANKS = registerBlock("avocado_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+    public static final DeferredBlock<Block> AVOCADO_LEAVES = registerBlock("avocado_leaves",
+            AvocadoLeaves::new,
+            leavesProperties(SoundType.AZALEA_LEAVES));
+
+    //public static final DeferredBlock<Block> AVOCADO_SAPLING = registerBlock("mango_sapling",
+    //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
+
+    public static final DeferredBlock<Block> AVOCADO_STAIRS = registerBlock("avocado_stairs",
+            properties -> new StairBlock(MtaBlocks.AVOCADO_PLANKS.get().defaultBlockState(),properties),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+    public static final DeferredBlock<Block> AVOCADO_SLAB = registerBlock("avocado_slab",
+             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<Block> AVOCADO_PRESSURE_PLATE = registerBlock("avocado_pressure_plate",
+            properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+    public static final DeferredBlock<Block> AVOCADO_BUTTON = registerBlock("avocado_button",
+            properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<Block> AVOCADO_FENCE = registerBlock("avocado_fence",
+            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+    public static final DeferredBlock<Block> AVOCADO_FENCE_GATE = registerBlock("avocado_fence_gate",
+            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<Block> AVOCADO_DOOR = registerBlock("avocado_door",
+            properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+    public static final DeferredBlock<Block> AVOCADO_TRAPDOOR = registerBlock("avocado_trapdoor",
+            properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+
+ public static final DeferredBlock<Block> BOGGED_OAK_LOG = registerBlock("bogged_oak_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+    public static final DeferredBlock<Block> STRIPPED_BOGGED_OAK_LOG = registerBlock("stripped_bogged_oak_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+    public static final DeferredBlock<Block> BOGGED_OAK_WOOD = registerBlock("bogged_oak_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+    public static final DeferredBlock<Block> STRIPPED_BOGGED_OAK_WOOD = registerBlock("stripped_bogged_oak_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+
+    public static final DeferredBlock<Block> BOGGED_OAK_PLANKS = registerBlock("bogged_oak_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+
+    public static final DeferredBlock<Block> BOGGED_OAK_STAIRS = registerBlock("bogged_oak_stairs",
+            properties -> new StairBlock(MtaBlocks.BOGGED_OAK_PLANKS.get().defaultBlockState(),properties),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS));
+    public static final DeferredBlock<Block> BOGGED_OAK_SLAB = registerBlock("bogged_oak_slab",
+             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB));
+
+    public static final DeferredBlock<Block> BOGGED_OAK_PRESSURE_PLATE = registerBlock("bogged_oak_pressure_plate",
+            properties -> new PressurePlateBlock(MTABlockSetTypes.BOGGED_OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_PRESSURE_PLATE));
+    public static final DeferredBlock<Block> BOGGED_OAK_BUTTON = registerBlock("bogged_oak_button",
+            properties -> new ButtonBlock(MTABlockSetTypes.BOGGED_OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BUTTON));
+
+    public static final DeferredBlock<Block> BOGGED_OAK_FENCE = registerBlock("bogged_oak_fence",
+            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL));
+    public static final DeferredBlock<Block> BOGGED_OAK_FENCE_GATE = registerBlock("bogged_oak_fence_gate",
+            properties -> new FenceGateBlock(MTAWoodTypes.BOGGED_OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL));
+
+    public static final DeferredBlock<Block> BOGGED_OAK_DOOR = registerBlock("bogged_oak_door",
+            properties -> new DoorBlock(MTABlockSetTypes.BOGGED_OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR));
+    public static final DeferredBlock<Block> BOGGED_OAK_TRAPDOOR = registerBlock("bogged_oak_trapdoor",
+            properties -> new TrapDoorBlock(MTABlockSetTypes.BOGGED_OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR));
+
+
+
+    public static final DeferredBlock<Block> MANGO_LOG = registerBlock("mango_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> STRIPPED_MANGO_LOG = registerBlock("stripped_mango_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> MANGO_WOOD = registerBlock("mango_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+    public static final DeferredBlock<Block> STRIPPED_MANGO_WOOD = registerBlock("stripped_mango_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<Block> MANGO_PLANKS = registerBlock("mango_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+    public static final DeferredBlock<Block> MANGO_LEAVES = registerBlock("mango_leaves",
+            MangoLeaves::new,
+            leavesProperties(SoundType.AZALEA_LEAVES));
+
+    //public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("mango_sapling",
+    //        properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
+
+    public static final DeferredBlock<Block> MANGO_STAIRS = registerBlock("mango_stairs",
+            properties -> new StairBlock(MtaBlocks.MANGO_PLANKS.get().defaultBlockState(),properties),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+    public static final DeferredBlock<Block> MANGO_SLAB = registerBlock("mango_slab",
+             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<Block> MANGO_PRESSURE_PLATE = registerBlock("mango_pressure_plate",
+            properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+    public static final DeferredBlock<Block> MANGO_BUTTON = registerBlock("mango_button",
+            properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<Block> MANGO_FENCE = registerBlock("mango_fence",
+            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+    public static final DeferredBlock<Block> MANGO_FENCE_GATE = registerBlock("mango_fence_gate",
+            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<Block> MANGO_DOOR = registerBlock("mango_door",
+            properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+    public static final DeferredBlock<Block> MANGO_TRAPDOOR = registerBlock("mango_trapdoor",
+            properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
+public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> STRIPPED_MAPLE_LOG = registerBlock("stripped_maple_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
+    public static final DeferredBlock<Block> MAPLE_WOOD = registerBlock("maple_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+    public static final DeferredBlock<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
+
+    public static final DeferredBlock<Block> MAPLE_PLANKS = registerBlock("maple_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
+    //public static final DeferredBlock<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
+    //        MapleLeaves::new,
+    //        leavesProperties(SoundType.AZALEA_LEAVES));
+
+    //public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("maple_sapling",
+    //        properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
+
+    public static final DeferredBlock<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
+            properties -> new StairBlock(MtaBlocks.MANGO_PLANKS.get().defaultBlockState(),properties),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+    public static final DeferredBlock<Block> MAPLE_SLAB = registerBlock("maple_slab",
+             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+
+    public static final DeferredBlock<Block> MAPLE_PRESSURE_PLATE = registerBlock("maple_pressure_plate",
+            properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
+    public static final DeferredBlock<Block> MAPLE_BUTTON = registerBlock("maple_button",
+            properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
+
+    public static final DeferredBlock<Block> MAPLE_FENCE = registerBlock("maple_fence",
+            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+    public static final DeferredBlock<Block> MAPLE_FENCE_GATE = registerBlock("maple_fence_gate",
+            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+
+    public static final DeferredBlock<Block> MAPLE_DOOR = registerBlock("maple_door",
+            properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
+    public static final DeferredBlock<Block> MAPLE_TRAPDOOR = registerBlock("maple_trapdoor",
+            properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
+
 
     public static final DeferredBlock<Block> PALM_LOG = registerBlock("palm_log",  MtaFlammableRotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
     public static final DeferredBlock<Block> STRIPPED_PALM_LOG = registerBlock("stripped_palm_log",  MtaFlammableRotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG));
@@ -96,9 +272,9 @@ public class MtaBlocks {
 
     public static final DeferredBlock<Block> PALM_STAIRS = registerBlock("palm_stairs",
             properties -> new StairBlock(MtaBlocks.PALM_PLANKS.get().defaultBlockState(),properties),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
     public static final DeferredBlock<Block> PALM_SLAB = registerBlock("palm_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+            SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
 
     public static final DeferredBlock<Block> PALM_PRESSURE_PLATE = registerBlock("palm_pressure_plate",
             properties -> new PressurePlateBlock(MTABlockSetTypes.PALM,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
@@ -106,9 +282,9 @@ public class MtaBlocks {
             properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
 
     public static final DeferredBlock<Block> PALM_FENCE = registerBlock("palm_fence",
-             FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
-    public static final DeferredBlock<Block>PALM_FENCE_GATE = registerBlock("palm_fence_gate",
-             properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
+            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
+    public static final DeferredBlock<Block> PALM_FENCE_GATE = registerBlock("palm_fence_gate",
+            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
 
     public static final DeferredBlock<Block> PALM_DOOR = registerBlock("palm_door",
             properties -> new DoorBlock(BlockSetType.OAK, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
@@ -128,9 +304,9 @@ public class MtaBlocks {
 
     public static final DeferredBlock<Block> SEAWOOD_STAIRS = registerBlock("seawood_stairs",
             properties -> new StairBlock(MtaBlocks.SEAWOOD_PLANKS.get().defaultBlockState(),properties),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
     public static final DeferredBlock<Block> SEAWOOD_SLAB = registerBlock("seawood_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
+            SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
 
     public static final DeferredBlock<Block> SEAWOOD_PRESSURE_PLATE = registerBlock("seawood_pressure_plate",
             properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
@@ -139,85 +315,13 @@ public class MtaBlocks {
 
     public static final DeferredBlock<Block> SEAWOOD_FENCE = registerBlock("seawood_fence",
             FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
-    public static final DeferredBlock<Block>SEAWOOD_FENCE_GATE = registerBlock("seawood_fence_gate",
+    public static final DeferredBlock<Block> SEAWOOD_FENCE_GATE = registerBlock("seawood_fence_gate",
             properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
 
     public static final DeferredBlock<Block> SEAWOOD_DOOR = registerBlock("seawood_door",
             properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
     public static final DeferredBlock<Block> SEAWOOD_TRAPDOOR = registerBlock("seawood_trapdoor",
             properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
-
-
-    public static final DeferredBlock<Block> AVOCADO_LOG = registerBlock("avocado_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
-    public static final DeferredBlock<Block> STRIPPED_AVOCADO_LOG = registerBlock("stripped_avocado_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
-    public static final DeferredBlock<Block> AVOCADO_WOOD = registerBlock("avocado_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
-    public static final DeferredBlock<Block> STRIPPED_AVOCADO_WOOD = registerBlock("stripped_avocado_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
-
-    public static final DeferredBlock<Block> AVOCADO_PLANKS = registerBlock("avocado_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    public static final DeferredBlock<Block> AVOCADO_LEAVES = registerBlock("avocado_leaves",
-            AvocadoLeaves::new,
-            leavesProperties(SoundType.AZALEA_LEAVES));
-
-    //public static final DeferredBlock<Block> AVOCADO_SAPLING = registerBlock("mango_sapling",
-    //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
-
-    public static final DeferredBlock<Block> AVOCADO_STAIRS = registerBlock("avocado_stairs",
-            properties -> new StairBlock(MtaBlocks.AVOCADO_PLANKS.get().defaultBlockState(),properties),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
-    public static final DeferredBlock<Block> AVOCADO_SLAB = registerBlock("avocado_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
-
-    public static final DeferredBlock<Block> AVOCADO_PRESSURE_PLATE = registerBlock("avocado_pressure_plate",
-            properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
-    public static final DeferredBlock<Block> AVOCADO_BUTTON = registerBlock("avocado_button",
-            properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
-
-    public static final DeferredBlock<Block> AVOCADO_FENCE = registerBlock("avocado_fence",
-            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
-    public static final DeferredBlock<Block>AVOCADO_FENCE_GATE = registerBlock("avocado_fence_gate",
-            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
-
-    public static final DeferredBlock<Block> AVOCADO_DOOR = registerBlock("avocado_door",
-            properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
-    public static final DeferredBlock<Block> AVOCADO_TRAPDOOR = registerBlock("avocado_trapdoor",
-            properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
-
-
-
-    public static final DeferredBlock<Block> MANGO_LOG = registerBlock("mango_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
-    public static final DeferredBlock<Block> STRIPPED_MANGO_LOG = registerBlock("stripped_mango_log",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG));
-    public static final DeferredBlock<Block> MANGO_WOOD = registerBlock("mango_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
-    public static final DeferredBlock<Block> STRIPPED_MANGO_WOOD = registerBlock("stripped_mango_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
-
-    public static final DeferredBlock<Block> MANGO_PLANKS = registerBlock("mango_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    public static final DeferredBlock<Block> MANGO_LEAVES = registerBlock("mango_leaves",
-            MangoLeaves::new,
-            leavesProperties(SoundType.AZALEA_LEAVES));
-
-    //public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("mango_sapling",
-    //        properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
-
-    public static final DeferredBlock<Block> MANGO_STAIRS = registerBlock("mango_stairs",
-            properties -> new StairBlock(MtaBlocks.MANGO_PLANKS.get().defaultBlockState(),properties),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
-    public static final DeferredBlock<Block> MANGO_SLAB = registerBlock("mango_slab",
-             SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB));
-
-    public static final DeferredBlock<Block> MANGO_PRESSURE_PLATE = registerBlock("mango_pressure_plate",
-            properties -> new PressurePlateBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE));
-    public static final DeferredBlock<Block> MANGO_BUTTON = registerBlock("mango_button",
-            properties -> new ButtonBlock(BlockSetType.OAK, 10,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON));
-
-    public static final DeferredBlock<Block> MANGO_FENCE = registerBlock("mango_fence",
-            FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE));
-    public static final DeferredBlock<Block>MANGO_FENCE_GATE = registerBlock("mango_fence_gate",
-            properties -> new FenceGateBlock(WoodType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE));
-
-    public static final DeferredBlock<Block> MANGO_DOOR = registerBlock("mango_door",
-            properties -> new DoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR));
-    public static final DeferredBlock<Block> MANGO_TRAPDOOR = registerBlock("mango_trapdoor",
-            properties -> new TrapDoorBlock(BlockSetType.OAK,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR));
-
 
 
 

@@ -52,6 +52,81 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.PITCHER_PLANT.get());
         this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
         dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
+
+        dropSelf(MtaBlocks.ALPINE_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_ALPINE_LOG.get());
+        dropSelf(MtaBlocks.ALPINE_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
+        dropSelf(MtaBlocks.ALPINE_PLANKS.get());
+        //this.add(MtaBlocks.ALPINE_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.AVOCADO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MtaBlocks.ALPINE_STAIRS.get());
+        this.add(MtaBlocks.ALPINE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SEAWOOD_SLAB.get()));
+        dropSelf(MtaBlocks.ALPINE_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.ALPINE_BUTTON.get());
+        dropSelf(MtaBlocks.ALPINE_FENCE.get());
+        dropSelf(MtaBlocks.ALPINE_FENCE_GATE.get());
+        this.add(MtaBlocks.ALPINE_DOOR.get(), block -> createDoorTable(MtaBlocks.AVOCADO_DOOR.get()));
+        dropSelf(MtaBlocks.ALPINE_TRAPDOOR.get());
+
+        dropSelf(MtaBlocks.AVOCADO_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
+        dropSelf(MtaBlocks.AVOCADO_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
+        dropSelf(MtaBlocks.AVOCADO_PLANKS.get());
+        this.add(MtaBlocks.AVOCADO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.AVOCADO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MtaBlocks.AVOCADO_STAIRS.get());
+        this.add(MtaBlocks.AVOCADO_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SEAWOOD_SLAB.get()));
+        dropSelf(MtaBlocks.AVOCADO_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.AVOCADO_BUTTON.get());
+        dropSelf(MtaBlocks.AVOCADO_FENCE.get());
+        dropSelf(MtaBlocks.AVOCADO_FENCE_GATE.get());
+        this.add(MtaBlocks.AVOCADO_DOOR.get(), block -> createDoorTable(MtaBlocks.AVOCADO_DOOR.get()));
+        dropSelf(MtaBlocks.AVOCADO_TRAPDOOR.get());
+
+        dropSelf(MtaBlocks.BOGGED_OAK_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_WOOD.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_WOOD.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_PLANKS.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_STAIRS.get());
+        this.add(MtaBlocks.BOGGED_OAK_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SEAWOOD_SLAB.get()));
+        dropSelf(MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_BUTTON.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_FENCE.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_FENCE_GATE.get());
+        this.add(MtaBlocks.BOGGED_OAK_DOOR.get(), block -> createDoorTable(MtaBlocks.AVOCADO_DOOR.get()));
+        dropSelf(MtaBlocks.BOGGED_OAK_TRAPDOOR.get());
+
+        dropSelf(MtaBlocks.MANGO_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_MANGO_LOG.get());
+        dropSelf(MtaBlocks.MAPLE_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_MANGO_WOOD.get());
+        dropSelf(MtaBlocks.MANGO_PLANKS.get());
+        this.add(MtaBlocks.MANGO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.MANGO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MtaBlocks.MANGO_STAIRS.get());
+        this.add(MtaBlocks.MANGO_SLAB.get(), block -> createSlabItemTable(MtaBlocks.MANGO_SLAB.get()));
+        dropSelf(MtaBlocks.MANGO_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.MANGO_BUTTON.get());
+        dropSelf(MtaBlocks.MANGO_FENCE.get());
+        dropSelf(MtaBlocks.MANGO_FENCE_GATE.get());
+        this.add(MtaBlocks.MANGO_DOOR.get(), block -> createDoorTable(MtaBlocks.MANGO_DOOR.get()));
+        dropSelf(MtaBlocks.MANGO_TRAPDOOR.get());
+
+        dropSelf(MtaBlocks.MAPLE_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_MAPLE_LOG.get());
+        dropSelf(MtaBlocks.MAPLE_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
+        dropSelf(MtaBlocks.MAPLE_PLANKS.get());
+        //this.add(MtaBlocks.MAPLE_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.MANGO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MtaBlocks.MAPLE_STAIRS.get());
+        this.add(MtaBlocks.MAPLE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.MANGO_SLAB.get()));
+        dropSelf(MtaBlocks.MAPLE_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.MAPLE_BUTTON.get());
+        dropSelf(MtaBlocks.MAPLE_FENCE.get());
+        dropSelf(MtaBlocks.MAPLE_FENCE_GATE.get());
+        this.add(MtaBlocks.MAPLE_DOOR.get(), block -> createDoorTable(MtaBlocks.MANGO_DOOR.get()));
+        dropSelf(MtaBlocks.MAPLE_TRAPDOOR.get());
+
         dropSelf(MtaBlocks.PALM_LOG.get());
         dropSelf(MtaBlocks.PALM_WOOD.get());
         dropSelf(MtaBlocks.STRIPPED_PALM_LOG.get());
@@ -81,36 +156,6 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.SEAWOOD_FENCE_GATE.get());
         this.add(MtaBlocks.SEAWOOD_DOOR.get(), block -> createDoorTable(MtaBlocks.SEAWOOD_DOOR.get()));
         dropSelf(MtaBlocks.SEAWOOD_TRAPDOOR.get());
-
-        dropSelf(MtaBlocks.AVOCADO_LOG.get());
-        dropSelf(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
-        dropSelf(MtaBlocks.AVOCADO_WOOD.get());
-        dropSelf(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
-        dropSelf(MtaBlocks.AVOCADO_PLANKS.get());
-        this.add(MtaBlocks.AVOCADO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.AVOCADO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
-        dropSelf(MtaBlocks.AVOCADO_STAIRS.get());
-        this.add(MtaBlocks.AVOCADO_SLAB.get(), block -> createSlabItemTable(MtaBlocks.SEAWOOD_SLAB.get()));
-        dropSelf(MtaBlocks.AVOCADO_PRESSURE_PLATE.get());
-        dropSelf(MtaBlocks.AVOCADO_BUTTON.get());
-        dropSelf(MtaBlocks.AVOCADO_FENCE.get());
-        dropSelf(MtaBlocks.AVOCADO_FENCE_GATE.get());
-        this.add(MtaBlocks.AVOCADO_DOOR.get(), block -> createDoorTable(MtaBlocks.AVOCADO_DOOR.get()));
-        dropSelf(MtaBlocks.AVOCADO_TRAPDOOR.get());
-
-        dropSelf(MtaBlocks.MANGO_LOG.get());
-        dropSelf(MtaBlocks.STRIPPED_MANGO_LOG.get());
-        dropSelf(MtaBlocks.MANGO_WOOD.get());
-        dropSelf(MtaBlocks.STRIPPED_MANGO_WOOD.get());
-        dropSelf(MtaBlocks.MANGO_PLANKS.get());
-        this.add(MtaBlocks.MANGO_LEAVES.get(), block -> createLeavesDrops(block, MtaItems.MANGO.get(),NORMAL_LEAVES_SAPLING_CHANCES));
-        dropSelf(MtaBlocks.MANGO_STAIRS.get());
-        this.add(MtaBlocks.MANGO_SLAB.get(), block -> createSlabItemTable(MtaBlocks.MANGO_SLAB.get()));
-        dropSelf(MtaBlocks.MANGO_PRESSURE_PLATE.get());
-        dropSelf(MtaBlocks.MANGO_BUTTON.get());
-        dropSelf(MtaBlocks.MANGO_FENCE.get());
-        dropSelf(MtaBlocks.MANGO_FENCE_GATE.get());
-        this.add(MtaBlocks.MANGO_DOOR.get(), block -> createDoorTable(MtaBlocks.MANGO_DOOR.get()));
-        dropSelf(MtaBlocks.MANGO_TRAPDOOR.get());
 
         dropSelf(MtaBlocks.PALM_TRAPDOOR.get());
         dropSelf(MtaBlocks.SPRINKLER.get());

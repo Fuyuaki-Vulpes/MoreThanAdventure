@@ -32,7 +32,37 @@ public class GenRecipes  extends RecipeProvider {
     protected void buildRecipes() {
         this.generateForEnabledBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA));
 
+        woodFromLogs(MtaBlocks.ALPINE_WOOD, MtaBlocks.ALPINE_LOG);
+        woodFromLogs(MtaBlocks.STRIPPED_ALPINE_WOOD, MtaBlocks.STRIPPED_ALPINE_LOG);
+        planksFromLogs(MtaBlocks.ALPINE_PLANKS, MtaTags.Items.ALPINE_LOGS, 4);
+
+        woodFromLogs(MtaBlocks.AVOCADO_WOOD, MtaBlocks.AVOCADO_LOG);
+        woodFromLogs(MtaBlocks.STRIPPED_AVOCADO_WOOD, MtaBlocks.STRIPPED_AVOCADO_LOG);
+        planksFromLogs(MtaBlocks.AVOCADO_PLANKS, MtaTags.Items.AVOCADO_LOGS, 4);
+
+        woodFromLogs(MtaBlocks.BOGGED_OAK_WOOD, MtaBlocks.BOGGED_OAK_LOG);
+        woodFromLogs(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD, MtaBlocks.STRIPPED_BOGGED_OAK_LOG);
+        planksFromLogs(MtaBlocks.BOGGED_OAK_PLANKS, MtaTags.Items.BOGGED_OAK_LOGS, 4);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_LOG.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STRIPPED_BOGGED_OAK_LOG);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_WOOD.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STRIPPED_BOGGED_OAK_WOOD);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_STAIRS);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_SLAB, 2);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_BUTTON);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_FENCE);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_FENCE_GATE);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_DOOR);
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(MtaBlocks.BOGGED_OAK_PLANKS.get()), RecipeCategory.BUILDING_BLOCKS, MtaBlocks.BOGGED_OAK_TRAPDOOR);
+
+        woodFromLogs(MtaBlocks.MANGO_WOOD, MtaBlocks.MANGO_LOG);
+        woodFromLogs(MtaBlocks.STRIPPED_MANGO_WOOD, MtaBlocks.STRIPPED_MANGO_LOG);
+        planksFromLogs(MtaBlocks.MANGO_PLANKS, MtaTags.Items.MANGO_LOGS, 4);
+
+        woodFromLogs(MtaBlocks.MAPLE_WOOD, MtaBlocks.MAPLE_LOG);
+        woodFromLogs(MtaBlocks.STRIPPED_MAPLE_WOOD, MtaBlocks.STRIPPED_MAPLE_LOG);
+        planksFromLogs(MtaBlocks.MAPLE_PLANKS, MtaTags.Items.MAPLE_LOGS, 4);
+
         woodFromLogs(MtaBlocks.PALM_WOOD, MtaBlocks.PALM_LOG);
+        woodFromLogs(MtaBlocks.STRIPPED_PALM_WOOD, MtaBlocks.STRIPPED_PALM_LOG);
         planksFromLogs(MtaBlocks.PALM_PLANKS, MtaTags.Items.PALM_LOGS, 4);
 
         woodFromLogs(MtaBlocks.SEAWOOD, MtaBlocks.SEALOG);

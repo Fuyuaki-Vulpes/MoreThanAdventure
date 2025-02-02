@@ -15,6 +15,78 @@ public class MTAFamilies {
     private static final String RECIPE_GROUP_PREFIX_WOODEN = "wooden";
     private static final String RECIPE_UNLOCKED_BY_HAS_PLANKS = "has_planks";
 
+
+
+    public static final BlockFamily ALPINE_PLANKS = familyBuilder(MtaBlocks.ALPINE_PLANKS.get())
+            .button(MtaBlocks.ALPINE_BUTTON.get())
+            .fence(MtaBlocks.ALPINE_FENCE.get())
+            .fenceGate(MtaBlocks.ALPINE_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.ALPINE_PRESSURE_PLATE.get())
+            //.sign(MtaBlocksALPINE_SIGN.get(), Blocks.ALPINE_WALL_SIGN.get())
+            .slab(MtaBlocks.ALPINE_SLAB.get())
+            .stairs(MtaBlocks.ALPINE_STAIRS.get())
+            .door(MtaBlocks.ALPINE_DOOR.get())
+            .trapdoor(MtaBlocks.ALPINE_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
+    public static final BlockFamily AVOCADO_PLANKS = familyBuilder(MtaBlocks.AVOCADO_PLANKS.get())
+            .button(MtaBlocks.AVOCADO_BUTTON.get())
+            .fence(MtaBlocks.AVOCADO_FENCE.get())
+            .fenceGate(MtaBlocks.AVOCADO_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.AVOCADO_PRESSURE_PLATE.get())
+            //.sign(MtaBlocks.AVOCADO_SIGN.get(), Blocks.AVOCADO_WALL_SIGN.get())
+            .slab(MtaBlocks.AVOCADO_SLAB.get())
+            .stairs(MtaBlocks.AVOCADO_STAIRS.get())
+            .door(MtaBlocks.AVOCADO_DOOR.get())
+            .trapdoor(MtaBlocks.AVOCADO_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
+    public static final BlockFamily BOGGED_OAK_PLANKS = familyBuilder(MtaBlocks.BOGGED_OAK_PLANKS.get())
+            .button(MtaBlocks.BOGGED_OAK_BUTTON.get())
+            .fence(MtaBlocks.BOGGED_OAK_FENCE.get())
+            .fenceGate(MtaBlocks.BOGGED_OAK_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get())
+            //.sign(MtaBlocks.BOGGED_OAK_SIGN.get(), Blocks.BOGGED_OAK_WALL_SIGN.get())
+            .slab(MtaBlocks.BOGGED_OAK_SLAB.get())
+            .stairs(MtaBlocks.BOGGED_OAK_STAIRS.get())
+            .door(MtaBlocks.BOGGED_OAK_DOOR.get())
+            .trapdoor(MtaBlocks.BOGGED_OAK_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
+    public static final BlockFamily MANGO_PLANKS = familyBuilder(MtaBlocks.MANGO_PLANKS.get())
+            .button(MtaBlocks.MANGO_BUTTON.get())
+            .fence(MtaBlocks.MANGO_FENCE.get())
+            .fenceGate(MtaBlocks.MANGO_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.MANGO_PRESSURE_PLATE.get())
+            //.sign(MtaBlocks.MANGO_SIGN.get(), Blocks.MANGO_WALL_SIGN.get())
+            .slab(MtaBlocks.MANGO_SLAB.get())
+            .stairs(MtaBlocks.MANGO_STAIRS.get())
+            .door(MtaBlocks.MANGO_DOOR.get())
+            .trapdoor(MtaBlocks.MANGO_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
+    public static final BlockFamily MAPLE_PLANKS = familyBuilder(MtaBlocks.MAPLE_PLANKS.get())
+            .button(MtaBlocks.MAPLE_BUTTON.get())
+            .fence(MtaBlocks.MAPLE_FENCE.get())
+            .fenceGate(MtaBlocks.MAPLE_FENCE_GATE.get())
+            .pressurePlate(MtaBlocks.MAPLE_PRESSURE_PLATE.get())
+            //.sign(MtaBlocks.MAPLE_SIGN.get(), Blocks.MAPLE_WALL_SIGN.get())
+            .slab(MtaBlocks.MAPLE_SLAB.get())
+            .stairs(MtaBlocks.MAPLE_STAIRS.get())
+            .door(MtaBlocks.MAPLE_DOOR.get())
+            .trapdoor(MtaBlocks.MAPLE_TRAPDOOR.get())
+            .recipeGroupPrefix("wooden")
+            .recipeUnlockedBy("has_planks")
+            .getFamily();
+
     public static final BlockFamily PALM_PLANKS = familyBuilder(MtaBlocks.PALM_PLANKS.get())
             .button(MtaBlocks.PALM_BUTTON.get())
             .fence(MtaBlocks.PALM_FENCE.get())
@@ -39,34 +111,6 @@ public class MTAFamilies {
             .stairs(MtaBlocks.SEAWOOD_STAIRS.get())
             .door(MtaBlocks.SEAWOOD_DOOR.get())
             .trapdoor(MtaBlocks.SEAWOOD_TRAPDOOR.get())
-            .recipeGroupPrefix("wooden")
-            .recipeUnlockedBy("has_planks")
-            .getFamily();
-
-    public static final BlockFamily MANGO_PLANKS = familyBuilder(MtaBlocks.MANGO_PLANKS.get())
-            .button(MtaBlocks.MANGO_BUTTON.get())
-            .fence(MtaBlocks.MANGO_FENCE.get())
-            .fenceGate(MtaBlocks.MANGO_FENCE_GATE.get())
-            .pressurePlate(MtaBlocks.MANGO_PRESSURE_PLATE.get())
-            //.sign(MtaBlocks.MANGO_SIGN.get(), Blocks.MANGO_WALL_SIGN.get())
-            .slab(MtaBlocks.MANGO_SLAB.get())
-            .stairs(MtaBlocks.MANGO_STAIRS.get())
-            .door(MtaBlocks.MANGO_DOOR.get())
-            .trapdoor(MtaBlocks.MANGO_TRAPDOOR.get())
-            .recipeGroupPrefix("wooden")
-            .recipeUnlockedBy("has_planks")
-            .getFamily();
-
-    public static final BlockFamily AVOCADO_PLANKS = familyBuilder(MtaBlocks.AVOCADO_PLANKS.get())
-            .button(MtaBlocks.AVOCADO_BUTTON.get())
-            .fence(MtaBlocks.AVOCADO_FENCE.get())
-            .fenceGate(MtaBlocks.AVOCADO_FENCE_GATE.get())
-            .pressurePlate(MtaBlocks.AVOCADO_PRESSURE_PLATE.get())
-            //.sign(MtaBlocks.AVOCADO_SIGN.get(), Blocks.AVOCADO_WALL_SIGN.get())
-            .slab(MtaBlocks.AVOCADO_SLAB.get())
-            .stairs(MtaBlocks.AVOCADO_STAIRS.get())
-            .door(MtaBlocks.AVOCADO_DOOR.get())
-            .trapdoor(MtaBlocks.AVOCADO_TRAPDOOR.get())
             .recipeGroupPrefix("wooden")
             .recipeUnlockedBy("has_planks")
             .getFamily();

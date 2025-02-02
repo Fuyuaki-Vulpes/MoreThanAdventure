@@ -1,9 +1,7 @@
 {
-  "replace": false,
   "values": [
     "morethanadventure:disarm",
     "morethanadventure:snag",
-    "morethanadventure:strafing"
+    "morethanadventure:hit_and_run"
   ]
 }
-

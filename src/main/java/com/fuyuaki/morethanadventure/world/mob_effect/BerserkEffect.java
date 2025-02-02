@@ -16,12 +16,12 @@ public class BerserkEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(ServerLevel p_376587_, LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel level, LivingEntity livingEntity, int amplifier) {
         if (amplifier > 0 && Objects.requireNonNull(livingEntity.getEffect(MtaEffects.BERSERK)).getDuration() < 5){
             livingEntity.forceAddEffect(new MobEffectInstance(MtaEffects.BERSERK, 60, amplifier - 1),livingEntity);
         }
 
-        return super.applyEffectTick(p_376587_, livingEntity, amplifier);
+        return super.applyEffectTick(level, livingEntity, amplifier);
     }
 
 
