@@ -94,7 +94,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
         add(MtaBlocks.PERMAFROST_DIRT.get(),"Permafrost Dirt");
         add(MtaBlocks.SHALLOW_GRASS.get(),"Shallow Grass");
+        add(MtaBlocks.SAND_GRASS.get(),"Sand Grass");
+        add(MtaBlocks.BEACHGRASS.get(),"Beach-grass");
         add(MtaBlocks.PERMAFROST_STONE.get(),"Permafrost Stone");
+        add(MtaBlocks.POLAR_SAND.get(),"Polar Sand");
         add(MtaBlocks.PERMAFROST_GRASS.get(),"Permafrost Grass");
         add(MtaBlocks.TUNDRA_GRASS.get(),"Tundra Grass");
         add(MtaBlocks.COBBLED_DIRT.get(),"Cobbled Dirt");

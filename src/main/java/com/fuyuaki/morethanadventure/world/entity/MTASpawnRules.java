@@ -27,10 +27,8 @@ public class MTASpawnRules {
     public static boolean checkWaterAnimalSpawnRules(
             EntityType<? extends Animal> pAnimal, LevelAccessor pLevel, EntitySpawnReason pSpawnType, BlockPos pPos, RandomSource pRandom
     ) {
-        int i = 63;
 
-        return  pPos.getY() <= i
-                && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER) ||   pLevel.getBlockState(pPos.above()).is(Blocks.WATER);
+        return  pLevel.getFluidState(pPos.below()).is(FluidTags.WATER) ||   pLevel.getBlockState(pPos.above()).is(Blocks.WATER);
     }
 
     public static boolean checkDesertAnimalSpawnRules(

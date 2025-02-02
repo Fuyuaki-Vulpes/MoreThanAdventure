@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import com.fuyuaki.morethanadventure.world.item.WeaponAbilities;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.neoforged.neoforge.common.ItemAbility;
@@ -23,6 +24,14 @@ public class SickleItem extends WeaponItem{
         return MtaParticles.SLASH_ATTACK.get();
 
     }
+
+
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+
+        return super.hurtEnemy(stack, target, attacker);
+    }
+
     @Override
     public SoundEvent getWeaponHitSound() {
         return MtaSounds.WEAPON_TEAR.get();

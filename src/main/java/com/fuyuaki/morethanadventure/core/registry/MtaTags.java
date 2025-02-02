@@ -100,6 +100,7 @@ public class MtaTags {
         public static final TagKey<Block> ORE_CLUSTER_REPLACEABLE = tag("ore_vein_replaceable");
         public static final TagKey<Block> NETHER_CLUSTER_CLUSTER_REPLACEABLE = tag("nether_ore_vein_replaceable");
         public static final TagKey<Block> FLOWER_PLACEABLE = tag("flower_placeable");
+        public static final TagKey<Block> SAND_VEGETATION_MAY_PLACE_ON = tag("sand_vegetation_may_place_on");
 
         private static TagKey<Block> tag(String name) {
             return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MODID, name));
@@ -200,6 +201,7 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_HORSESHOE_CRAB = tag("has_horseshoe_crab");
         public static final TagKey<Biome> HAS_JELLYFISH = tag("has_jellyfish");
         public static final TagKey<Biome> HAS_OCTOPUS = tag("has_octopus");
+        public static final TagKey<Biome> HAS_DEER = tag("has_deer");
         public static final TagKey<Biome> HAS_OWL = tag("has_owl");
         public static final TagKey<Biome> HAS_PENGUIN = tag("has_penguin");
         public static final TagKey<Biome> HAS_RACCOON = tag("has_raccoon");
@@ -207,6 +209,7 @@ public class MtaTags {
         public static final TagKey<Biome> HAS_TOUCAN = tag("has_toucan");
         public static final TagKey<Biome> HAS_WISP_RARE = tag("has_wisp_rare");
         public static final TagKey<Biome> HAS_WISP = tag("has_wisp");
+        public static final TagKey<Biome> HAS_TURKEY = tag("has_turkey");
 
 
         public static final TagKey<Biome> HAS_BLACK_WIDOW = tag("has_black_widow");

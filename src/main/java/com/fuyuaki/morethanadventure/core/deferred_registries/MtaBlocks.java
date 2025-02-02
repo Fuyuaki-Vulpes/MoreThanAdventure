@@ -8,6 +8,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -297,6 +298,30 @@ public class MtaBlocks {
                             .ignitedByLava()
                             .pushReaction(PushReaction.DESTROY)
     );
+    public static final DeferredBlock<Block> SAND_GRASS = registerBlock("sand_grass",
+            SandVegetationBlock::new,
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .replaceable()
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType( BlockBehaviour.OffsetType.XYZ)
+                            .ignitedByLava()
+                            .pushReaction(PushReaction.DESTROY)
+    );
+    public static final DeferredBlock<Block> BEACHGRASS = registerBlock("beachgrass",
+            SandVegetationBlock::new,
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .replaceable()
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType( BlockBehaviour.OffsetType.XYZ)
+                            .ignitedByLava()
+                            .pushReaction(PushReaction.DESTROY)
+    );
 
     public static final DeferredBlock<Block> PERMAFROST_DIRT = registerBlock("permafrost_dirt",
             BlockBehaviour.Properties
@@ -312,6 +337,12 @@ public class MtaBlocks {
              PermafrostDirtBlock::new,
             BlockBehaviour.Properties
                     .ofFullCopy(Blocks.GRASS_BLOCK)
+
+    );
+    public static final DeferredBlock<Block> POLAR_SAND = registerBlock("polar_sand",
+            properties ->  new ColoredFallingBlock(new ColorRGBA(0xe1f0ed), properties),
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.SAND).mapColor(MapColor.SNOW)
 
     );
     public static final DeferredBlock<Block> TUNDRA_GRASS = registerBlock("tundra_grass",

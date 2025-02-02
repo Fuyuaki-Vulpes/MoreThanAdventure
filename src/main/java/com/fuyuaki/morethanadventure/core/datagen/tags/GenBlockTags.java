@@ -644,6 +644,9 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                         Blocks.GRAVEL
                 );
 
+
+        this.tag(MtaTags.Blocks.SAND_VEGETATION_MAY_PLACE_ON).addTag(BlockTags.SAND).addTag(BlockTags.TERRACOTTA).addTag(BlockTags.DIRT);
+
         this.tag(BlockTags.ANIMALS_SPAWNABLE_ON)
                 .add(
                         MtaBlocks.GRASSY_DIRT.get(),

@@ -62,7 +62,9 @@ public class GenBlockModels extends BlockModelGenerators {
                 this.createFlatItemModelWithBlockTexture(MtaBlocks.SCATTERED_LEAVES.get().asItem(),
                         MtaBlocks.SCATTERED_LEAVES.get()),ItemModelUtils.constantTint(FoliageColor.FOLIAGE_DEFAULT))
         ;
-        this.createCrossBlock(MtaBlocks.SHALLOW_GRASS.get(),BlockModelGenerators.PlantType.TINTED);
+        this.createCrossBlock(MtaBlocks.SHALLOW_GRASS.get(),PlantType.TINTED);
+        this.createCrossBlockWithDefaultItem(MtaBlocks.SAND_GRASS.get(),PlantType.NOT_TINTED);
+        this.createCrossBlockWithDefaultItem(MtaBlocks.BEACHGRASS.get(), PlantType.NOT_TINTED);
         this.createItemWithGrassTint(MtaBlocks.SHALLOW_GRASS.get());
 
         createTintedLeaves(MtaBlocks.PALM_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
@@ -94,6 +96,7 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createTrivialCube(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get());
         this.createTrivialCube(MtaBlocks.QUARTZ_LAMP.get());
         this.createTrivialCube(MtaBlocks.NETHERITIC_CRYSTAL.get());
+        this.createTrivialCube(MtaBlocks.POLAR_SAND.get());
 
         this.createTrivialCube(MtaBlocks.AGATE_ORE.get());
         this.createTrivialCube(MtaBlocks.DEEPSLATE_AGATE_ORE.get());

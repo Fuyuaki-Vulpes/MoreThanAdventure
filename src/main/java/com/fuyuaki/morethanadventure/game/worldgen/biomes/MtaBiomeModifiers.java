@@ -59,6 +59,8 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNS_HORSESHOE_CRAB = registerKey("add_spawns_horseshoe_crab");
     public static final ResourceKey<BiomeModifier> SPAWNS_JELLYFISH = registerKey("add_spawns_jellyfish");
     public static final ResourceKey<BiomeModifier> SPAWNS_OCTOPUS = registerKey("add_spawns_octopus");
+    public static final ResourceKey<BiomeModifier> SPAWNS_DEER = registerKey("add_spawns_deer");
+    public static final ResourceKey<BiomeModifier> SPAWNS_TURKEY = registerKey("add_spawns_turkey");
     public static final ResourceKey<BiomeModifier> SPAWNS_OWL = registerKey("add_spawns_owl");
     public static final ResourceKey<BiomeModifier> SPAWNS_PENGUIN = registerKey("add_spawns_penguin");
     public static final ResourceKey<BiomeModifier> SPAWNS_RACCOON = registerKey("add_spawns_raccoon");
@@ -280,6 +282,14 @@ public class MtaBiomeModifiers {
         context.register(SPAWNS_OCTOPUS,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_OCTOPUS),
                 List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.OCTOPUS.get(),15,1,2))
+        ));
+        context.register(SPAWNS_DEER,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_DEER),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.DEER.get(),15,1,2))
+        ));
+        context.register(SPAWNS_TURKEY,new BiomeModifiers.AddSpawnsBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.HAS_TURKEY),
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.TURKEY.get(),15,1,2))
         ));
         context.register(SPAWNS_OWL,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_OWL),

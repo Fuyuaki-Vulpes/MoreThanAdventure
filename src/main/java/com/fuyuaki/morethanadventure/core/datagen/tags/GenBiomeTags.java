@@ -110,11 +110,22 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .add(Biomes.DEEP_OCEAN)
                 .add(Biomes.DEEP_COLD_OCEAN)
                 .add(Biomes.DEEP_LUKEWARM_OCEAN);
+
         this.tag(MtaTags.Biomes.HAS_OCTOPUS)
                 .add(Biomes.OCEAN)
                 .add(Biomes.LUKEWARM_OCEAN);
+
         this.tag(MtaTags.Biomes.HAS_OWL)
                 .addTag(Tags.Biomes.IS_FOREST);
+
+        this.tag(MtaTags.Biomes.HAS_DEER)
+                .addTag(Tags.Biomes.IS_FOREST);
+
+        this.tag(MtaTags.Biomes.HAS_TURKEY)
+                .addTag(Tags.Biomes.IS_FOREST)
+                .addTag(Tags.Biomes.IS_PLAINS)
+                .remove(Tags.Biomes.IS_DRY);
+
         this.tag(MtaTags.Biomes.HAS_PENGUIN)
                 .add(Biomes.FROZEN_OCEAN)
                 .add(Biomes.ICE_SPIKES)

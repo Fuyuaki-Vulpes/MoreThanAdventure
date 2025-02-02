@@ -1,0 +1,9 @@
+{
+  "remove": [
+    "#c:is_dry"
+  ],
+  "values": [
+    "#c:is_forest",
+    "#c:is_plains"
+  ]
+}

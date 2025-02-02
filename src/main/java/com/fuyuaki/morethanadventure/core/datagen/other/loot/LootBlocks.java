@@ -131,6 +131,7 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.CALCITE_CLEAR_QUARTZ_GROWTH.get(), block -> this.createSingleItemTable(Blocks.CALCITE));
         dropSelf(MtaBlocks.QUARTZ_LAMP.get());
         dropSelf(MtaBlocks.COBBLED_DIRT.get());
+        dropSelf(MtaBlocks.POLAR_SAND.get());
         dropSelf(MtaBlocks.STONE_TILES.get());
         this.add(MtaBlocks.STONE_TILES_SLAB.get(), block -> createSlabItemTable(MtaBlocks.STONE_TILES_SLAB.get()));
         dropSelf(MtaBlocks.STONE_TILES_STAIRS.get());
@@ -156,6 +157,8 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.TUNDRA_GRASS.get(), block -> this.createSingleItemTableWithSilkTouch(block, MtaBlocks.PERMAFROST_DIRT.get()));
         this.add(MtaBlocks.COARSE_DIRT_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(MtaBlocks.SHALLOW_GRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SHALLOW_GRASS));
+        this.add(MtaBlocks.SAND_GRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SHALLOW_GRASS));
+        this.add(MtaBlocks.BEACHGRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SHALLOW_GRASS));
 
         dropSelf(MtaBlocks.TERRACOTTA_TILES.get());
         this.add(MtaBlocks.TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.TERRACOTTA_SLAB.get()));
