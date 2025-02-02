@@ -603,10 +603,21 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
 
         this.tag(MtaTags.Items.MTA_WEAPONRY)
                 .add(
+
+                        MtaItems.GREAT_SENTINELS_WAR_HAMMER.get(),
+                        MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
+                        MtaItems.MYSTIC_MERMAIDS_TRIDENT.get(),
+                        MtaItems.SILENT_REAPERS_SCYTHE.get(),
+                        MtaItems.TEMPLE_ANGELS_BOW.get(),
+                        MtaItems.FREEZING_ICICLE_SPEAR.get(),
+                        MtaItems.WRATHFUL_BERSERKERS_BATTLEAXE.get(),
+                        MtaItems.SHADOW_ROGUES_DAGGER.get(),
+
                         MtaItems.COPPER_SWORD.get(),
                         MtaItems.NETHERSTEEL_SWORD.get(),
-                        MtaItems.HOLY_KNIGHTS_GREATSWORD.get(),
-                        MtaItems.SHADOW_ROGUES_DAGGER.get(),
+                        MtaItems.NETHERITE_BOW.get(),
+                        MtaItems.NETHERITE_TRIDENT.get(),
+                        MtaItems.NETHERITE_MACE.get(),
 
                         MtaItems.WOOD_ANCHOR.get(),
                         MtaItems.WOOD_CLAW.get(),
@@ -622,10 +633,11 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.WOOD_SCYTHE.get(),
                         MtaItems.WOOD_SICKLE.get(),
                         MtaItems.WOOD_SPEAR.get(),
+                        MtaItems.WOOD_TWINBLADE.get(),
                         MtaItems.WOOD_WHIP_SWORD.get(),
 
-                        MtaItems.STONE_CLAW.get(),
                         MtaItems.STONE_ANCHOR.get(),
+                        MtaItems.STONE_CLAW.get(),
                         MtaItems.STONE_CLAYMORE.get(),
                         MtaItems.STONE_CUTLASS.get(),
                         MtaItems.STONE_DAGGER.get(),
@@ -638,6 +650,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.STONE_SCYTHE.get(),
                         MtaItems.STONE_SICKLE.get(),
                         MtaItems.STONE_SPEAR.get(),
+                        MtaItems.STONE_TWINBLADE.get(),
                         MtaItems.STONE_WHIP_SWORD.get(),
 
                         MtaItems.COPPER_ANCHOR.get(),
@@ -740,7 +753,18 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.NETHERITE_SICKLE.get(),
                         MtaItems.NETHERITE_SPEAR.get(),
                         MtaItems.NETHERITE_TWINBLADE.get(),
-                        MtaItems.NETHERITE_WHIP_SWORD.get()
+                        MtaItems.NETHERITE_WHIP_SWORD.get(),
+
+                        MtaItems.LONG_BOW.get(),
+                        MtaItems.REINFORCED_LONG_BOW.get(),
+                        MtaItems.SHORT_BOW.get(),
+                        MtaItems.REINFORCED_SHORT_BOW.get(),
+                        MtaItems.TWIN_BOW.get(),
+                        MtaItems.REINFORCED_TWIN_BOW.get(),
+
+                        MtaItems.LEATHER_WHIP.get(),
+                        MtaItems.CHAIN_WHIP.get(),
+                        MtaItems.NETHERITE_WHIP.get()
                 );
 
     }
