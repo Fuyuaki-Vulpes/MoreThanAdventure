@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.core.datagen.other.loot;
+package com.fuyuaki.morethanadventure.core.datagen.loot;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.LootTableSubProvider;

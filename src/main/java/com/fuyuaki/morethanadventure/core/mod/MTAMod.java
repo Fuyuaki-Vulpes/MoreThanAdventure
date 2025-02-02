@@ -48,6 +48,7 @@ public class MTAMod
         MtaFeatures.register(modEventBus);
         MtaBiomes.addBiomes();
         MtaSounds.register(modEventBus);
+        MTAMenuTypes.register(modEventBus);
         MtaLootModifier.register(modEventBus);
         MTAEnchantmentEffect.register(modEventBus);
         MTAEnchantmentEffectsComponents.register(modEventBus);

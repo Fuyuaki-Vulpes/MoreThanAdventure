@@ -151,6 +151,8 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createCropBlock(MtaBlocks.BELL_PEPPER_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         this.createCropBlock(MtaBlocks.CHILI_PEPPER_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
 
+        this.createDirectionalLit(MtaBlocks.STOVE.get(),TexturedModel.ORIENTABLE);
+
     }
 
     public void createVerticalBlock(Block block, Block side, Block bottom, Block top){
@@ -273,5 +275,19 @@ public class GenBlockModels extends BlockModelGenerators {
         }
     }
 
-
+    public void createDirectionalLit(Block block, TexturedModel.Provider modelProvider) {
+        ResourceLocation resourcelocation = modelProvider.create(block, this.modelOutput);
+        ResourceLocation front = TextureMapping.getBlockTexture(block, "_front_on");
+        ResourceLocation top = TextureMapping.getBlockTexture(block, "_top_on");
+        ResourceLocation resourcelocation2 = modelProvider.get(block)
+                .updateTextures(p_388889_ -> p_388889_.put(TextureSlot.FRONT, front))
+                .updateTextures(textureMapping -> textureMapping.put(TextureSlot.TOP,top))
+                .createWithSuffix(block, "_on", this.modelOutput);
+        this.blockStateOutput
+                .accept(
+                        MultiVariantGenerator.multiVariant(block)
+                                .with(createBooleanModelDispatch(BlockStateProperties.LIT, resourcelocation2, resourcelocation))
+                                .with(createHorizontalFacingDispatch())
+                );
+    }
 }

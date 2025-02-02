@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "morethanadventure:block/stove_bottom",
+    "front": "morethanadventure:block/stove_front",
+    "side": "morethanadventure:block/stove_side",
+    "top": "morethanadventure:block/stove_top"
+  }
+}

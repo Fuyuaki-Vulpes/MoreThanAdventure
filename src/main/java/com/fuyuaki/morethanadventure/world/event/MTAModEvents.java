@@ -1,8 +1,10 @@
 package com.fuyuaki.morethanadventure.world.event;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTAMenuTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.world.entity.*;
+import com.fuyuaki.morethanadventure.world.inventory.screens.StoveScreen;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacementTypes;
@@ -286,6 +288,7 @@ public class MTAModEvents {
 
     @SubscribeEvent
     private static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(MTAMenuTypes.STOVE.get(), StoveScreen::new);
     }
 
 }

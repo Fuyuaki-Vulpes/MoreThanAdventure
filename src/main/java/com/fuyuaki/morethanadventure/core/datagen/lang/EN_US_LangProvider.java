@@ -136,6 +136,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
+        add(MtaBlocks.STOVE.get(),"Stove");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
         add(MtaBlocks.NETHERRACK_GEYSER.get(),"Netherrack Geyser");
@@ -974,6 +975,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.lightning_bolt.far", "Thunder roars");
         add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
 
+        add("sound.morethanadventure.stove.crackle", "Stove Crackles");
+
 
 
         add("items.morethanadventure.weapons.tag.throwable", "Throwable Item");
@@ -994,6 +997,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaTags.Items.TWO_HANDED, "Two-Handed");
         add(MtaTags.Items.CAUSES_BLEEDING, "Causes Bleeding");
         add(MtaTags.Items.STUN, "Causes Stunning");
+
+
+
+        add("mta.container.stove", "Stove");
 
 
         this.advancements();

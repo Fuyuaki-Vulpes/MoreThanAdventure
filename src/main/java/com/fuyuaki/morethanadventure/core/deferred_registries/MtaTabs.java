@@ -666,13 +666,14 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ITEMS_UTILITIES = TABS.register("mtautil", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtautil"))
             .withTabsBefore(MtaTabs.EQUIPMENTS.getId())
-            .icon(MtaBlocks.SPRINKLER.get().asItem()::getDefaultInstance)
+            .icon(MtaBlocks.STOVE.get().asItem()::getDefaultInstance)
             .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
 
 
 
+                output.accept(MtaBlocks.STOVE.get());
                 output.accept(MtaBlocks.SPRINKLER.get());
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
 

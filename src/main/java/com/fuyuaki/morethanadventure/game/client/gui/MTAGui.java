@@ -49,7 +49,10 @@ public class MTAGui {
 
 
     public static void renderGui(Player player, GuiGraphics guiGraphics){
-
+        Minecraft minecraft = Minecraft.getInstance();
+        if (minecraft.options.hideGui){
+            return;
+        }
         int width = guiGraphics.guiWidth();
         int halfWidth = width / 2;
         int height = guiGraphics.guiHeight();

@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.core.datagen.other.loot;
+package com.fuyuaki.morethanadventure.core.datagen.loot;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.fuyuaki.morethanadventure.core.mod.MTAMod;

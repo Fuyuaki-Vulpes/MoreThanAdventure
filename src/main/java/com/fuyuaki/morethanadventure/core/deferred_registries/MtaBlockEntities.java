@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.world.block.entity.SprinklerEntity;
+import com.fuyuaki.morethanadventure.world.block.entity.StoveBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
@@ -14,6 +15,9 @@ public class MtaBlockEntities {
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SprinklerEntity>> SPRINKLER =
             BL_ENTITY.register("sprinkler", () -> new BlockEntityType<>(SprinklerEntity::new, MtaBlocks.SPRINKLER.get()));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<StoveBlockEntity>> STOVE =
+            BL_ENTITY.register("stove", () -> new BlockEntityType<>(StoveBlockEntity::new, MtaBlocks.STOVE.get()));
 
 
 
