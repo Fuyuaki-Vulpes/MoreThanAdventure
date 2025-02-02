@@ -95,6 +95,14 @@ public class MtaSurfaceRules {
                                                                                                 (MTANoises.TUNDRA_VEGETATION, 0.9D, Double.MAX_VALUE),
                                                                                         permafrostTundraSurface),
                                                                                 permafrostSurface
+                                                                        )),
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.ALPINE_TUNDRA),
+                                                                        SurfaceRules.sequence(
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (MTANoises.TUNDRA_VEGETATION, 0.9D, Double.MAX_VALUE),
+                                                                                        permafrostTundraSurface),
+                                                                                permafrostSurface
                                                                         ))
 
                                                         )

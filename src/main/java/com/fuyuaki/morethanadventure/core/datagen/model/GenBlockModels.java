@@ -54,9 +54,40 @@ public class GenBlockModels extends BlockModelGenerators {
         //simpleBlock(MtaBlocks.PITCHER_PLANT.get(), models().cross(blockTexture(MtaBlocks.PITCHER_PLANT.get()).getPath(), blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.POTTED_PITCHER_PLANT.get(), models().singleTexture("potted_pitcher_plant", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //blockItem(MtaBlocks.VENUS_FLYTRAP);
+
+
+
+        this.woodProvider(MtaBlocks.ALPINE_LOG.get()).logWithHorizontal(MtaBlocks.ALPINE_LOG.get()).wood(MtaBlocks.ALPINE_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_ALPINE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_ALPINE_LOG.get()).wood(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
+        createTintedLeaves(MtaBlocks.ALPINE_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
+        this.createPlantWithDefaultItem(MtaBlocks.ALPINE_SAPLING.get(),MtaBlocks.POTTED_ALPINE_SAPLING.get(),PlantType.NOT_TINTED);
+
+        this.woodProvider(MtaBlocks.AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.AVOCADO_LOG.get()).wood(MtaBlocks.AVOCADO_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_AVOCADO_LOG.get()).wood(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
+        this.createCropLeaves(MtaBlocks.AVOCADO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_DEFAULT,0,1,2,3,4);
+        this.createPlantWithDefaultItem(MtaBlocks.AVOCADO_SAPLING.get(),MtaBlocks.POTTED_AVOCADO_SAPLING.get(),PlantType.NOT_TINTED);
+
+        this.woodProvider(MtaBlocks.BOGGED_OAK_LOG.get()).logWithHorizontal(MtaBlocks.BOGGED_OAK_LOG.get()).wood(MtaBlocks.BOGGED_OAK_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get()).wood(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get());
+
+        this.woodProvider(MtaBlocks.MANGO_LOG.get()).logWithHorizontal(MtaBlocks.MANGO_LOG.get()).wood(MtaBlocks.MANGO_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_MANGO_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_MANGO_LOG.get()).wood(MtaBlocks.STRIPPED_MANGO_WOOD.get());
+        this.createCropLeaves(MtaBlocks.MANGO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_BIRCH,0,1,2,3,4);
+        this.createPlantWithDefaultItem(MtaBlocks.MANGO_SAPLING.get(),MtaBlocks.POTTED_MANGO_SAPLING.get(),PlantType.NOT_TINTED);
+
+        this.woodProvider(MtaBlocks.MAPLE_LOG.get()).logWithHorizontal(MtaBlocks.MAPLE_LOG.get()).wood(MtaBlocks.MAPLE_WOOD.get());
+        this.woodProvider(MtaBlocks.STRIPPED_MAPLE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_MAPLE_LOG.get()).wood(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
+        createTintedLeaves(MtaBlocks.MAPLE_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
+        this.createPlantWithDefaultItem(MtaBlocks.MAPLE_SAPLING.get(),MtaBlocks.POTTED_MAPLE_SAPLING.get(),PlantType.NOT_TINTED);
+
         this.woodProvider(MtaBlocks.PALM_LOG.get()).logWithHorizontal(MtaBlocks.PALM_LOG.get()).wood(MtaBlocks.PALM_WOOD.get());
         this.woodProvider(MtaBlocks.STRIPPED_PALM_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_PALM_LOG.get()).wood(MtaBlocks.STRIPPED_PALM_WOOD.get());
+        createTintedLeaves(MtaBlocks.PALM_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
+        this.createPlantWithDefaultItem(MtaBlocks.PALM_SAPLING.get(),MtaBlocks.POTTED_PALM_SAPLING.get(),PlantType.NOT_TINTED);
 
+        this.woodProvider(MtaBlocks.SEALOG.get()).logWithHorizontal(MtaBlocks.SEALOG.get()).wood(MtaBlocks.SEAWOOD.get());
+        createTintedLeaves(MtaBlocks.SEAWOOD_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_EVERGREEN);
+        this.createCrossBlockWithDefaultItem(MtaBlocks.SEAWOOD_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
         this.registerSimpleTintedItemModel(MtaBlocks.SCATTERED_LEAVES.get(),
                 this.createFlatItemModelWithBlockTexture(MtaBlocks.SCATTERED_LEAVES.get().asItem(),
@@ -66,14 +97,6 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createCrossBlockWithDefaultItem(MtaBlocks.SAND_GRASS.get(),PlantType.NOT_TINTED);
         this.createCrossBlockWithDefaultItem(MtaBlocks.BEACHGRASS.get(), PlantType.NOT_TINTED);
         this.createItemWithGrassTint(MtaBlocks.SHALLOW_GRASS.get());
-
-        createTintedLeaves(MtaBlocks.PALM_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
-
-        this.createPlantWithDefaultItem(MtaBlocks.PALM_SAPLING.get(),MtaBlocks.POTTED_PALM_SAPLING.get(),PlantType.NOT_TINTED);
-        this.woodProvider(MtaBlocks.SEALOG.get()).logWithHorizontal(MtaBlocks.SEALOG.get()).wood(MtaBlocks.SEAWOOD.get());
-
-        createTintedLeaves(MtaBlocks.SEAWOOD_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_EVERGREEN);
-        this.createCrossBlockWithDefaultItem(MtaBlocks.SEAWOOD_SAPLING.get(), BlockModelGenerators.PlantType.NOT_TINTED);
 
         this.createTrivialCube(MtaBlocks.PERMAFROST_DIRT.get());
 
@@ -122,22 +145,6 @@ public class GenBlockModels extends BlockModelGenerators {
 
         this.createGrassLikeBlock(MtaBlocks.TUNDRA_GRASS.get(),MtaBlocks.PERMAFROST_DIRT.get(),false);
 
-        this.woodProvider(MtaBlocks.ALPINE_LOG.get()).logWithHorizontal(MtaBlocks.ALPINE_LOG.get()).wood(MtaBlocks.ALPINE_WOOD.get());
-        this.woodProvider(MtaBlocks.STRIPPED_ALPINE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_ALPINE_LOG.get()).wood(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
-
-        this.woodProvider(MtaBlocks.AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.AVOCADO_LOG.get()).wood(MtaBlocks.AVOCADO_WOOD.get());
-        this.woodProvider(MtaBlocks.STRIPPED_AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_AVOCADO_LOG.get()).wood(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
-        this.createCropLeaves(MtaBlocks.AVOCADO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_DEFAULT,0,1,2,3,4);
-
-        this.woodProvider(MtaBlocks.BOGGED_OAK_LOG.get()).logWithHorizontal(MtaBlocks.BOGGED_OAK_LOG.get()).wood(MtaBlocks.BOGGED_OAK_WOOD.get());
-        this.woodProvider(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get()).wood(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get());
-
-        this.woodProvider(MtaBlocks.MANGO_LOG.get()).logWithHorizontal(MtaBlocks.MANGO_LOG.get()).wood(MtaBlocks.MANGO_WOOD.get());
-        this.woodProvider(MtaBlocks.STRIPPED_MANGO_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_MANGO_LOG.get()).wood(MtaBlocks.STRIPPED_MANGO_WOOD.get());
-        this.createCropLeaves(MtaBlocks.MANGO_LEAVES.get(), BlockStateProperties.AGE_4,FoliageColor.FOLIAGE_BIRCH,0,1,2,3,4);
-
-        this.woodProvider(MtaBlocks.MAPLE_LOG.get()).logWithHorizontal(MtaBlocks.MAPLE_LOG.get()).wood(MtaBlocks.MAPLE_WOOD.get());
-        this.woodProvider(MtaBlocks.STRIPPED_MAPLE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_MAPLE_LOG.get()).wood(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
 
         this.createCropBlock(MtaBlocks.ONION_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         this.createCropBlock(MtaBlocks.TOMATO_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);

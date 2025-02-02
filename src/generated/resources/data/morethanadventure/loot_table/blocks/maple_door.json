@@ -13,14 +13,14 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "morethanadventure:mango_door",
+              "block": "morethanadventure:maple_door",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "half": "lower"
               }
             }
           ],
-          "name": "morethanadventure:mango_door"
+          "name": "morethanadventure:maple_door"
         }
       ],
       "rolls": 1.0

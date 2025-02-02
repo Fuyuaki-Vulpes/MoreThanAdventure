@@ -1,8 +1,10 @@
 {
   "values": [
-    "morethanadventure:palm_leaves",
-    "morethanadventure:seawood_leaves",
+    "morethanadventure:alpine_leaves",
     "morethanadventure:avocado_leaves",
-    "morethanadventure:mango_leaves"
+    "morethanadventure:mango_leaves",
+    "morethanadventure:maple_leaves",
+    "morethanadventure:palm_leaves",
+    "morethanadventure:seawood_leaves"
   ]
 }

@@ -3,6 +3,7 @@
     "#c:is_spooky",
     "minecraft:desert",
     "minecraft:stony_peaks",
-    "minecraft:stony_shore"
+    "minecraft:stony_shore",
+    "morethanadventure:bog"
   ]
 }

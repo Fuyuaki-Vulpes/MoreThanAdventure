@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.game.worldgen.biomes;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
-import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
@@ -26,14 +25,13 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import javax.annotation.Nullable;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaBiomes {
 
+    //MUSIC
     @Nullable
     private static final Music NORMAL_MUSIC = null;
     private static final Music FOREST_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_FOREST);
@@ -43,20 +41,29 @@ public class MtaBiomes {
     private static final Music CAVE_LUSH_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_LUSH_CAVES);
     private static final Music MOUNTAIN_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JAGGED_PEAKS);
     private static final Music DESERT_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_DESERT);
+    private static final Music SNOWY_SLOPES_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES);
     private static final Music MAGICAL_MUSIC = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_CHERRY_GROVE);
 
+    //OVERWORLD
+
+    public static final ResourceKey<Biome> ALPINE_TUNDRA = createBiome("alpine_tundra");
+    public static final ResourceKey<Biome> BOG = createBiome("bog");
+    public static final ResourceKey<Biome> GRAVELLY_RIVER = createBiome("gravelly_river");
+    public static final ResourceKey<Biome> LUSH_MEADOW = createBiome("lush_meadow");
     public static final ResourceKey<Biome> LUSH_RIVER = createBiome("lush_river");
+    public static final ResourceKey<Biome> MAPLE_FOREST = createBiome("maple_forest");
+    public static final ResourceKey<Biome> OASIS = createBiome("oasis");
     public static final ResourceKey<Biome> SPARSE_CHERRY_GROVE = createBiome("sparse_cherry_grove");
     public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
-    public static final ResourceKey<Biome> OASIS = createBiome("oasis");
-    public static final ResourceKey<Biome> GRAVELLY_RIVER = createBiome("gravelly_river");
     public static final ResourceKey<Biome> TUNDRA = createBiome("tundra");
-    public static final ResourceKey<Biome> LUSH_MEADOW = createBiome("lush_meadow");
     public static final ResourceKey<Biome> UNDERWATER_FOREST = createBiome("underwater_forest");
 
+    //CAVE
+
     public static final ResourceKey<Biome> CRYSTALLINE_GROTTO = createBiome("crystalline_grotto");
+
     public static final List<ResourceKey<Biome>> BIOMES = List.of(LUSH_RIVER,SPARSE_TAIGA,SPARSE_CHERRY_GROVE,OASIS,GRAVELLY_RIVER,TUNDRA,
-            LUSH_MEADOW,UNDERWATER_FOREST);
+            LUSH_MEADOW,UNDERWATER_FOREST, MAPLE_FOREST);
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -80,6 +87,9 @@ public class MtaBiomes {
         register(context,LUSH_MEADOW, lushMeadow(placedFeatureHolder,configuredCarverHolder));
         register(context,CRYSTALLINE_GROTTO, crystallineGrotto(placedFeatureHolder,configuredCarverHolder));
         register(context,UNDERWATER_FOREST, underwaterForest(placedFeatureHolder,configuredCarverHolder));
+        register(context,MAPLE_FOREST, mapleForest(placedFeatureHolder,configuredCarverHolder));
+        register(context,ALPINE_TUNDRA, alpineTundra(placedFeatureHolder,configuredCarverHolder));
+        register(context,BOG, bog(placedFeatureHolder,configuredCarverHolder));
     }
 
 
@@ -91,6 +101,107 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
+    }
+
+
+    private static Biome alpineTundra(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 4, 2, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.DEER.get(), 15, 2, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 15, 2, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 15, 2, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 15, 2, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 15, 2, 4))
+
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.YUKI_ONNA.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.FROSTED_SLIME.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.ICICLE_CREEPER.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.STRAY, 15, 2, 4));
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PATCH_TUNDRA_GRASS);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.ALPINE_TREE);
+
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+
+
+        return biome(true, -1.0F, 0.8F,
+                4159204,
+                329011,
+                0xeac466,
+                0xa5bc6c,
+                spawnBuilder, biomeBuilder, SNOWY_SLOPES_MUSIC);
+    }
+
+
+    private static Biome bog(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 4, 1, 3))
+
+
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITCH, 5, 1, 1))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.BOGGED, 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.ARMORED_SKELETON.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.FALLEN_SAMURAI.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.BLACK_WIDOW.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.HOST.get(), 15, 1, 1))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.SKELETON_FIGHTER.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.CORROSIVE_CUBE.get(), 15, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.TOXIC_ZOMBIE.get(), 15, 2, 4));
+
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addBadlandGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
+
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_GRAVEL);
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.BOGGED_OAK_TREE);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+
+        BiomeSpecialEffects.Builder effects = new BiomeSpecialEffects.Builder()
+                .waterColor(0x9eacb5)
+                .waterFogColor(0xc0c8cc)
+                .grassColorOverride(0x899aa3)
+                .foliageColorOverride(0x899aa3)
+                .fogColor(0xe1e4e6)
+                .skyColor(0xd3dfe6)
+                .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                .backgroundMusic(SWAMP_MUSIC);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false)
+                .temperature(0.7F)
+                .downfall(0.2F)
+                .specialEffects(effects.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
     }
 
 
@@ -455,6 +566,48 @@ public class MtaBiomes {
     }
 
 
+
+    public static Biome mapleForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder()
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.BUTTERFLY.get(), 15, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.DEER.get(), 15, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.OWL.get(), 15, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.RACCOON.get(), 15, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.TURKEY.get(), 15, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.WISPFLY.get(), 15, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 15, 1, 3))
+
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.FALLEN_SAMURAI.get(), 15, 1, 3))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.GLOW_SPIDER.get(), 15, 1, 3))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.SKELETON_FIGHTER.get(), 15, 1, 3));
+
+
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder, 20);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
+
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+
+
+
+        biomeBuilder
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.MAPLE_TREE);
+
+
+        return biome(true, 0.5F, 0.8F,
+                0x79a6ff,
+                0xc0d8ff,
+                0x79c05a,
+                0xe87538,
+                spawnBuilder, biomeBuilder, FOREST_MUSIC);
+    }
+
+
     private static void registerVillagerTypes() {
         registerVillagers(LUSH_MEADOW, VillagerType.PLAINS);
         registerVillagers(LUSH_RIVER, VillagerType.PLAINS);
@@ -463,6 +616,9 @@ public class MtaBiomes {
         registerVillagers(SPARSE_CHERRY_GROVE, VillagerType.PLAINS);
         registerVillagers(OASIS, VillagerType.DESERT);
         registerVillagers(TUNDRA, VillagerType.SNOW);
+        registerVillagers(MAPLE_FOREST, VillagerType.PLAINS);
+        registerVillagers(ALPINE_TUNDRA, VillagerType.SNOW);
+        registerVillagers(BOG, VillagerType.SWAMP);
 
 
 
@@ -529,6 +685,8 @@ public class MtaBiomes {
                 .generationSettings(pGenerationSettings.build())
                 .build();
     }
+
+
     private static Biome baseOcean(MobSpawnSettings.Builder mobSpawnSettings, int waterColor, int waterFogColor, BiomeGenerationSettings.Builder generationSettings) {
         return biome(true, 0.5F, 0.5F, waterColor, waterFogColor, null, null, mobSpawnSettings, generationSettings, NORMAL_MUSIC);
     }

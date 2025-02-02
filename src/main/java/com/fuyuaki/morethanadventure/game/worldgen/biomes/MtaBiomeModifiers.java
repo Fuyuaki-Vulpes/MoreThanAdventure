@@ -23,6 +23,8 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaBiomeModifiers {
 
+    public  static final ResourceKey<BiomeModifier> ADD_AVOCADO_TREE = registerKey(("avocado_tree"));
+    public  static final ResourceKey<BiomeModifier> ADD_MANGO_TREE = registerKey(("mango_tree"));
     public  static final ResourceKey<BiomeModifier> ADD_PALM_TREE = registerKey(("palm_tree"));
     public static final ResourceKey<BiomeModifier> ADD_DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<BiomeModifier> ADD_DEBRIS_CLUSTER = registerKey("debris_cluster");
@@ -101,6 +103,18 @@ public class MtaBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CATTAIL_VEGETATION)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
 
+        ));
+
+        context.register(ADD_AVOCADO_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+        context.register(ADD_MANGO_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.MANGO_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 
         context.register(ADD_PALM_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(

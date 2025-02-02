@@ -35,7 +35,7 @@ public class MtaBiomeList {
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES = new ResourceKey[][]{
             {MtaBiomes.TUNDRA, MtaBiomes.TUNDRA, null, null, MtaBiomes.SPARSE_TAIGA},
-            {null, null, null, MtaBiomes.SPARSE_TAIGA, null},
+            {null, null, MtaBiomes.MAPLE_FOREST, MtaBiomes.SPARSE_TAIGA, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, MtaBiomes.OASIS}
@@ -43,14 +43,14 @@ public class MtaBiomeList {
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
             {null, null, null, null, null},
-            {null, null, null, MtaBiomes.SPARSE_TAIGA, null},
+            {null, null, MtaBiomes.MAPLE_FOREST, MtaBiomes.SPARSE_TAIGA, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, MtaBiomes.OASIS, MtaBiomes.OASIS, null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES = new ResourceKey[][]{
-            {MtaBiomes.TUNDRA, null, null, null, null},
+            {MtaBiomes.TUNDRA, null, null, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.ALPINE_TUNDRA},
             {null, null, MtaBiomes.LUSH_MEADOW, null, null},
             {null, null, null, MtaBiomes.LUSH_MEADOW, null},
             {null, null, null, null, null},
@@ -58,7 +58,7 @@ public class MtaBiomeList {
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
-            {null,                          null,                          null,                          null,         null},
+            {null,                          null,        MtaBiomes.MAPLE_FOREST,                          null,         null},
             {null, MtaBiomes.SPARSE_CHERRY_GROVE, MtaBiomes.SPARSE_CHERRY_GROVE,        MtaBiomes.SPARSE_TAIGA,         null},
             {null,                          null,         MtaBiomes.LUSH_MEADOW, MtaBiomes.SPARSE_CHERRY_GROVE,         null},
             {null,                          null,                          null,         MtaBiomes.LUSH_MEADOW,         null},
@@ -66,8 +66,8 @@ public class MtaBiomeList {
     };
 
     public static final ResourceKey<Biome>[][] MTA_SLOPE_BIOMES = new ResourceKey[][]{
-            {null, null, null, null, null},
-            {null, null, null, null, null},
+            {null, null, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.ALPINE_TUNDRA},
+            {null, null, null, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.ALPINE_TUNDRA},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null}
@@ -93,7 +93,7 @@ public class MtaBiomeList {
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, null, null},
+            {null, MtaBiomes.BOG, null, null, null},
             {null, null, null, null, null}
     };
 

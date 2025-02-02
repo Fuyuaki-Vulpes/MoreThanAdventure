@@ -32,9 +32,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -47,6 +49,11 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaConfigFeatures {
 
+    public static final ResourceKey<ConfiguredFeature<?,?>> ALPINE_TREE = registerKey("alpine_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> AVOCADO_TREE = registerKey("avocado_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> BOGGED_OAK_TREE = registerKey("bogged_oak_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> MANGO_TREE = registerKey("mango_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> PALM_TREE = registerKey("palm_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> FREQUENT_CLAY = registerKey("frequent_clay");
@@ -102,6 +109,64 @@ public class MtaConfigFeatures {
 
         HolderGetter<ConfiguredFeature<?, ?>> holdergetter = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(
+                context,
+                ALPINE_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.SPRUCE_LOG),
+                        new StraightTrunkPlacer(6, 4, 0),
+                        BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
+                        new PineFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), UniformInt.of(3, 4)),
+                        new TwoLayersFeatureSize(2, 0, 2)
+                )
+                        .ignoreVines()
+                        .build()
+        );
+        register(
+                context,
+                AVOCADO_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.AVOCADO_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.AVOCADO_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+        register(
+                context,
+                BOGGED_OAK_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.BOGGED_OAK_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.PALM_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
+                        new TwoLayersFeatureSize(0, 0, 0)).build()
+        );
+        register(
+                context,
+                MANGO_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.MANGO_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.MANGO_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+        register(
+                context,
+                MAPLE_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.MAPLE_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.MAPLE_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
         register(
                 context,
                 PALM_TREE,

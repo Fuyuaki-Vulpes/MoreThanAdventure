@@ -48,7 +48,7 @@ public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel
     @Override
     public void setupAnim(T state) {
         this.root.y = Mth.sin(state.ageInTicks) * 0.1F;
-        if(!state.onGround){
+        if(state.isFlying){
             this.left_wing.zRot = (Mth.sin(state.ageInTicks) + 1.0F) * 0.5F;
             this.right_wing.zRot = - (Mth.sin(state.ageInTicks) + 1.0F) * 0.5F;
         }

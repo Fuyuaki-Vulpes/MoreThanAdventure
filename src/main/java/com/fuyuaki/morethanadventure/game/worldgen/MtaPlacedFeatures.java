@@ -27,6 +27,11 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MtaPlacedFeatures {
 
+    public static final ResourceKey<PlacedFeature> ALPINE_TREE = registerKey("alpine_tree");
+    public static final ResourceKey<PlacedFeature> AVOCADO_TREE = registerKey("avocado_tree");
+    public static final ResourceKey<PlacedFeature> BOGGED_OAK_TREE = registerKey("bogged_oak_tree");
+    public static final ResourceKey<PlacedFeature> MANGO_TREE = registerKey("mango_tree");
+    public static final ResourceKey<PlacedFeature> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
     public static final ResourceKey<PlacedFeature> PALM_TREE_RARE = registerKey("palm_tree_rare");
     public static final ResourceKey<PlacedFeature> SEAWOOD_TREE = registerKey("seawood_tree");
@@ -68,6 +73,45 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+
+        register(
+                context,
+                ALPINE_TREE,
+                holder(context,MtaConfigFeatures.ALPINE_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.5F, 1),
+                        MtaBlocks.ALPINE_SAPLING.get())
+        );
+
+        register(
+                context,
+                AVOCADO_TREE,
+                holder(context,MtaConfigFeatures.AVOCADO_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
+                        MtaBlocks.AVOCADO_SAPLING.get())
+        );
+
+        register(
+                context,
+                BOGGED_OAK_TREE,
+                holder(context,MtaConfigFeatures.BOGGED_OAK_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
+        ));
+
+        register(
+                context,
+                MANGO_TREE,
+                holder(context,MtaConfigFeatures.MANGO_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
+                        MtaBlocks.MANGO_SAPLING.get())
+        );
+
+        register(
+                context,
+                MAPLE_TREE,
+                holder(context,MtaConfigFeatures.MAPLE_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.5F, 1),
+                        MtaBlocks.MAPLE_SAPLING.get())
+        );
 
         register(
                 context,

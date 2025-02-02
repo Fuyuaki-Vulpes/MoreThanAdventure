@@ -62,6 +62,22 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 );
 
         this.tag(BlockTags.LOGS_THAT_BURN).add(
+                MtaBlocks.ALPINE_LOG.get(),
+                MtaBlocks.STRIPPED_ALPINE_LOG.get(),
+                MtaBlocks.ALPINE_WOOD.get(),
+                MtaBlocks.STRIPPED_ALPINE_WOOD.get(),
+                MtaBlocks.AVOCADO_LOG.get(),
+                MtaBlocks.STRIPPED_AVOCADO_LOG.get(),
+                MtaBlocks.AVOCADO_WOOD.get(),
+                MtaBlocks.STRIPPED_AVOCADO_WOOD.get(),
+                MtaBlocks.MANGO_LOG.get(),
+                MtaBlocks.STRIPPED_MANGO_LOG.get(),
+                MtaBlocks.MANGO_WOOD.get(),
+                MtaBlocks.STRIPPED_MANGO_WOOD.get(),
+                MtaBlocks.MAPLE_LOG.get(),
+                MtaBlocks.STRIPPED_MAPLE_LOG.get(),
+                MtaBlocks.MAPLE_WOOD.get(),
+                MtaBlocks.STRIPPED_MAPLE_WOOD.get(),
                 MtaBlocks.PALM_LOG.get(),
                 MtaBlocks.STRIPPED_PALM_LOG.get(),
                 MtaBlocks.PALM_WOOD.get(),
@@ -70,46 +86,101 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.SEAWOOD.get()
         );
 
+        this.tag(BlockTags.SLABS).add(MtaBlocks.BOGGED_OAK_SLAB.get());
+        this.tag(BlockTags.STAIRS).add(MtaBlocks.BOGGED_OAK_STAIRS.get());
+        this.tag(BlockTags.FENCES).add(MtaBlocks.BOGGED_OAK_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES).add(MtaBlocks.BOGGED_OAK_FENCE_GATE.get());
+        this.tag(BlockTags.DOORS).add(MtaBlocks.BOGGED_OAK_DOOR.get());
+        this.tag(BlockTags.TRAPDOORS).add(MtaBlocks.BOGGED_OAK_TRAPDOOR.get());
+
+
         this.tag(BlockTags.PLANKS).add(
-                MtaBlocks.SEAWOOD_PLANKS.get(),
-                MtaBlocks.PALM_PLANKS.get()
+                MtaBlocks.ALPINE_PLANKS.get(),
+                MtaBlocks.AVOCADO_PLANKS.get(),
+                MtaBlocks.BOGGED_OAK_PLANKS.get(),
+                MtaBlocks.MANGO_PLANKS.get(),
+                MtaBlocks.MAPLE_PLANKS.get(),
+                MtaBlocks.PALM_PLANKS.get(),
+                MtaBlocks.SEAWOOD_PLANKS.get()
+
         );
 
         this.tag(BlockTags.LEAVES).add(
-                MtaBlocks.PALM_LEAVES.get(),
-                MtaBlocks.SEAWOOD_LEAVES.get(),
+
+                MtaBlocks.ALPINE_LEAVES.get(),
                 MtaBlocks.AVOCADO_LEAVES.get(),
-                MtaBlocks.MANGO_LEAVES.get()
+                MtaBlocks.MANGO_LEAVES.get(),
+                MtaBlocks.MAPLE_LEAVES.get(),
+                MtaBlocks.PALM_LEAVES.get(),
+                MtaBlocks.SEAWOOD_LEAVES.get()
         );
         this.tag(BlockTags.WOODEN_STAIRS).add(
+                MtaBlocks.ALPINE_STAIRS.get(),
+                MtaBlocks.AVOCADO_STAIRS.get(),
+                MtaBlocks.MANGO_STAIRS.get(),
+                MtaBlocks.MAPLE_STAIRS.get(),
                 MtaBlocks.PALM_STAIRS.get(),
                 MtaBlocks.SEAWOOD_STAIRS.get()
         );
         this.tag(BlockTags.WOODEN_SLABS).add(
+                MtaBlocks.ALPINE_SLAB.get(),
+                MtaBlocks.AVOCADO_SLAB.get(),
+                MtaBlocks.MANGO_SLAB.get(),
+                MtaBlocks.MAPLE_SLAB.get(),
                 MtaBlocks.PALM_SLAB.get(),
                 MtaBlocks.SEAWOOD_SLAB.get()
         );
         this.tag(BlockTags.WOODEN_BUTTONS).add(
+                MtaBlocks.ALPINE_BUTTON.get(),
+                MtaBlocks.AVOCADO_BUTTON.get(),
+                MtaBlocks.MANGO_BUTTON.get(),
+                MtaBlocks.MAPLE_BUTTON.get(),
                 MtaBlocks.PALM_BUTTON.get(),
                 MtaBlocks.SEAWOOD_BUTTON.get()
         );
         this.tag(BlockTags.WOODEN_FENCES).add(
+                MtaBlocks.ALPINE_FENCE.get(),
+                MtaBlocks.AVOCADO_FENCE.get(),
+                MtaBlocks.MANGO_FENCE.get(),
+                MtaBlocks.MAPLE_FENCE.get(),
                 MtaBlocks.PALM_FENCE.get(),
                 MtaBlocks.SEAWOOD_FENCE.get()
         );
         this.tag(BlockTags.WOODEN_DOORS).add(
+                MtaBlocks.ALPINE_DOOR.get(),
+                MtaBlocks.AVOCADO_DOOR.get(),
+                MtaBlocks.MANGO_DOOR.get(),
+                MtaBlocks.MAPLE_DOOR.get(),
                 MtaBlocks.PALM_DOOR.get(),
                 MtaBlocks.SEAWOOD_DOOR.get()
         );
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(
+                MtaBlocks.ALPINE_TRAPDOOR.get(),
+                MtaBlocks.AVOCADO_TRAPDOOR.get(),
+                MtaBlocks.MANGO_TRAPDOOR.get(),
+                MtaBlocks.MAPLE_TRAPDOOR.get(),
                 MtaBlocks.PALM_TRAPDOOR.get(),
                 MtaBlocks.SEAWOOD_TRAPDOOR.get()
         );
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
+                MtaBlocks.ALPINE_PRESSURE_PLATE.get(),
+                MtaBlocks.AVOCADO_PRESSURE_PLATE.get(),
+                MtaBlocks.MANGO_PRESSURE_PLATE.get(),
+                MtaBlocks.MAPLE_PRESSURE_PLATE.get(),
                 MtaBlocks.PALM_PRESSURE_PLATE.get(),
                 MtaBlocks.SEAWOOD_PRESSURE_PLATE.get()
         );
+        this.tag(BlockTags.STONE_BUTTONS).add(
+                MtaBlocks.BOGGED_OAK_BUTTON.get()
+        );
+        this.tag(BlockTags.STONE_PRESSURE_PLATES).add(
+                MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get()
+        );
         this.tag(BlockTags.SAPLINGS).add(
+                MtaBlocks.ALPINE_SAPLING.get(),
+                MtaBlocks.AVOCADO_SAPLING.get(),
+                MtaBlocks.MANGO_SAPLING.get(),
+                MtaBlocks.MAPLE_SAPLING.get(),
                 MtaBlocks.PALM_SAPLING.get(),
                 MtaBlocks.SEAWOOD_SAPLING.get()
         );
@@ -166,6 +237,10 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.DEEPSLATE_CLEAR_QUARTZ_ORE.get()
         );
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(
+                MtaBlocks.ALPINE_LEAVES.get(),
+                MtaBlocks.AVOCADO_LEAVES.get(),
+                MtaBlocks.MANGO_LEAVES.get(),
+                MtaBlocks.MAPLE_LEAVES.get(),
                 MtaBlocks.PALM_LEAVES.get(),
                 MtaBlocks.SCATTERED_LEAVES.get()
         );

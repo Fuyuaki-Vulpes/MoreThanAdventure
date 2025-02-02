@@ -71,8 +71,10 @@ public class MTAMod
         setRenderType(MtaBlocks.SAND_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.BEACHGRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.PERMAFROST_GRASS.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.ALPINE_LEAVES.get(),cutoutRenderType);
         setRenderType(MtaBlocks.AVOCADO_LEAVES.get(),cutoutRenderType);
         setRenderType(MtaBlocks.MANGO_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MAPLE_LEAVES.get(),cutoutRenderType);
         setRenderType(MtaBlocks.SEAWOOD_LEAVES.get(),cutoutRenderType);
         setRenderType(MtaBlocks.PALM_LEAVES.get(),cutoutRenderType);
         setRenderType(MtaBlocks.CATTAIL.get(),cutoutRenderType);

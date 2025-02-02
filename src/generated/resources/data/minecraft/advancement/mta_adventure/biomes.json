@@ -49,6 +49,22 @@
       },
       "trigger": "minecraft:location"
     },
+    "morethanadventure:maple_forest": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:maple_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "morethanadventure:oasis": {
       "conditions": {
         "player": [
@@ -166,6 +182,9 @@
     ],
     [
       "morethanadventure:underwater_forest"
+    ],
+    [
+      "morethanadventure:maple_forest"
     ]
   ],
   "sends_telemetry_event": true

@@ -25,8 +25,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.ALPINE_WOOD.get(),"Alpine Wood");
         add(MtaBlocks.STRIPPED_ALPINE_WOOD.get(),"Stripped Alpine Wood");
         add(MtaBlocks.ALPINE_PLANKS.get(),"Alpine Planks");
-        //add(MtaBlocks.ALPINE_LEAVES.get(),"Alpine Leaves");
-        //add(MtaBlocks.ALPINE_SAPLING.get(),"Alpine Sapling");
+        add(MtaBlocks.ALPINE_LEAVES.get(),"Alpine Leaves");
+        add(MtaBlocks.ALPINE_SAPLING.get(),"Alpine Sapling");
         add(MtaBlocks.ALPINE_STAIRS.get(),"Alpine Stairs");
         add(MtaBlocks.ALPINE_SLAB.get(),"Alpine Slab");
         add(MtaBlocks.ALPINE_PRESSURE_PLATE.get(),"Alpine Pressure Plate");
@@ -43,7 +43,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.STRIPPED_AVOCADO_WOOD.get(),"Stripped Avocado Wood");
         add(MtaBlocks.AVOCADO_PLANKS.get(),"Avocado Planks");
         add(MtaBlocks.AVOCADO_LEAVES.get(),"Avocado Leaves");
-        //add(MtaBlocks.AVOCADO_SAPLING.get(),"Avocado Sapling");
+        add(MtaBlocks.AVOCADO_SAPLING.get(),"Avocado Sapling");
         add(MtaBlocks.AVOCADO_STAIRS.get(),"Avocado Stairs");
         add(MtaBlocks.AVOCADO_SLAB.get(),"Avocado Slab");
         add(MtaBlocks.AVOCADO_PRESSURE_PLATE.get(),"Avocado Pressure Plate");
@@ -75,7 +75,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.STRIPPED_MANGO_WOOD.get(),"Stripped Mango Wood");
         add(MtaBlocks.MANGO_PLANKS.get(),"Mango Planks");
         add(MtaBlocks.MANGO_LEAVES.get(),"Mango Leaves");
-        //add(MtaBlocks.MANGO_SAPLING.get(),"Mango Sapling");
+        add(MtaBlocks.MANGO_SAPLING.get(),"Mango Sapling");
         add(MtaBlocks.MANGO_STAIRS.get(),"Mango Stairs");
         add(MtaBlocks.MANGO_SLAB.get(),"Mango Slab");
         add(MtaBlocks.MANGO_PRESSURE_PLATE.get(),"Mango Pressure Plate");
@@ -91,8 +91,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MAPLE_WOOD.get(),"Maple Wood");
         add(MtaBlocks.STRIPPED_MAPLE_WOOD.get(),"Stripped Maple Wood");
         add(MtaBlocks.MAPLE_PLANKS.get(),"Maple Planks");
-        //add(MtaBlocks.MAPLE_LEAVES.get(),"Maple Leaves");
-        //add(MtaBlocks.MAPLE_SAPLING.get(),"Maple Sapling");
+        add(MtaBlocks.MAPLE_LEAVES.get(),"Maple Leaves");
+        add(MtaBlocks.MAPLE_SAPLING.get(),"Maple Sapling");
         add(MtaBlocks.MAPLE_STAIRS.get(),"Maple Stairs");
         add(MtaBlocks.MAPLE_SLAB.get(),"Maple Slab");
         add(MtaBlocks.MAPLE_PRESSURE_PLATE.get(),"Maple Pressure Plate");

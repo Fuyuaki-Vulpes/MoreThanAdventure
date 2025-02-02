@@ -24,24 +24,23 @@ public class MtaTabs {
             .displayItems((parameters, output) -> {
 
                 output.accept(MtaBlocks.ALPINE_LOG.get());
-                output.accept(MtaBlocks.ALPINE_WOOD.get());
-                //output.accept(MtaBlocks.ALPINE_LEAVES.get());
+                output.accept(MtaBlocks.ALPINE_SAPLING.get());
+                output.accept(MtaBlocks.ALPINE_LEAVES.get());
 
                 output.accept(MtaBlocks.AVOCADO_LOG.get());
-                output.accept(MtaBlocks.AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.AVOCADO_SAPLING.get());
                 output.accept(MtaBlocks.AVOCADO_LEAVES.get());
 
                 output.accept(MtaBlocks.BOGGED_OAK_LOG.get());
                 output.accept(MtaBlocks.BOGGED_OAK_WOOD.get());
-                //output.accept(MtaBlocks.BOGGED_OAK_LEAVES.get());
 
                 output.accept(MtaBlocks.MANGO_LOG.get());
-                output.accept(MtaBlocks.MANGO_WOOD.get());
+                output.accept(MtaBlocks.MANGO_SAPLING.get());
                 output.accept(MtaBlocks.MANGO_LEAVES.get());
 
                 output.accept(MtaBlocks.MAPLE_LOG.get());
-                output.accept(MtaBlocks.MAPLE_WOOD.get());
-                //output.accept(MtaBlocks.MAPLE_LEAVES.get());
+                output.accept(MtaBlocks.MAPLE_SAPLING.get());
+                output.accept(MtaBlocks.MAPLE_LEAVES.get());
 
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
@@ -111,7 +110,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.ALPINE_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
                 output.accept(MtaBlocks.ALPINE_PLANKS.get());
-                //output.accept(MtaBlocks.ALPINE_SAPLING.get());
+                output.accept(MtaBlocks.ALPINE_SAPLING.get());
                 output.accept(MtaBlocks.ALPINE_STAIRS.get());
                 output.accept(MtaBlocks.ALPINE_SLAB.get());
                 output.accept(MtaBlocks.ALPINE_PRESSURE_PLATE.get());
@@ -126,7 +125,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.AVOCADO_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
                 output.accept(MtaBlocks.AVOCADO_PLANKS.get());
-                //output.accept(MtaBlocks.AVOCADO_SAPLING.get());
+                output.accept(MtaBlocks.AVOCADO_SAPLING.get());
                 output.accept(MtaBlocks.AVOCADO_STAIRS.get());
                 output.accept(MtaBlocks.AVOCADO_SLAB.get());
                 output.accept(MtaBlocks.AVOCADO_PRESSURE_PLATE.get());
@@ -141,7 +140,6 @@ public class MtaTabs {
                 output.accept(MtaBlocks.BOGGED_OAK_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_BOGGED_OAK_WOOD.get());
                 output.accept(MtaBlocks.BOGGED_OAK_PLANKS.get());
-                //output.accept(MtaBlocks.BOGGED_OAK_SAPLING.get());
                 output.accept(MtaBlocks.BOGGED_OAK_STAIRS.get());
                 output.accept(MtaBlocks.BOGGED_OAK_SLAB.get());
                 output.accept(MtaBlocks.BOGGED_OAK_PRESSURE_PLATE.get());
@@ -156,7 +154,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.MANGO_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_MANGO_WOOD.get());
                 output.accept(MtaBlocks.MANGO_PLANKS.get());
-                //output.accept(MtaBlocks.MANGO_SAPLING.get());
+                output.accept(MtaBlocks.MANGO_SAPLING.get());
                 output.accept(MtaBlocks.MANGO_STAIRS.get());
                 output.accept(MtaBlocks.MANGO_SLAB.get());
                 output.accept(MtaBlocks.MANGO_PRESSURE_PLATE.get());
@@ -171,7 +169,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.MAPLE_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
                 output.accept(MtaBlocks.MAPLE_PLANKS.get());
-                //output.accept(MtaBlocks.MAPLE_SAPLING.get());
+                output.accept(MtaBlocks.MAPLE_SAPLING.get());
                 output.accept(MtaBlocks.MAPLE_STAIRS.get());
                 output.accept(MtaBlocks.MAPLE_SLAB.get());
                 output.accept(MtaBlocks.MAPLE_PRESSURE_PLATE.get());

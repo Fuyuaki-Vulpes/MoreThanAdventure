@@ -57,13 +57,20 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
 
 
 
+        this.tag(BiomeTags.HAS_VILLAGE_PLAINS).add(MtaBiomes.MAPLE_FOREST);
         this.tag(BiomeTags.HAS_VILLAGE_DESERT).add(MtaBiomes.OASIS);
-        this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(MtaBiomes.TUNDRA);
+        this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
         this.tag(Tags.Biomes.IS_DESERT).add(MtaBiomes.OASIS);
-        this.tag(Tags.Biomes.IS_SNOWY).add(MtaBiomes.TUNDRA);
-        this.tag(Tags.Biomes.IS_COLD_OVERWORLD).add(MtaBiomes.TUNDRA);
+        this.tag(Tags.Biomes.IS_SNOWY).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
+        this.tag(Tags.Biomes.IS_FOREST).add(MtaBiomes.MAPLE_FOREST);
+        this.tag(Tags.Biomes.IS_COLD_OVERWORLD).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
         this.tag(Tags.Biomes.IS_SNOWY_PLAINS).add(MtaBiomes.TUNDRA);
-        this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(MtaBiomes.TUNDRA);
+        this.tag(Tags.Biomes.IS_MOUNTAIN_SLOPE).add(MtaBiomes.ALPINE_TUNDRA);
+        this.tag(BiomeTags.SPAWNS_SNOW_FOXES).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
+        this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
+        this.tag(BiomeTags.HAS_SWAMP_HUT).add(MtaBiomes.BOG);
+        this.tag(Tags.Biomes.IS_DRY).add(MtaBiomes.BOG);
+        this.tag(Tags.Biomes.IS_DEAD).add(MtaBiomes.BOG);
 
 
 
@@ -88,7 +95,8 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .addTag(Tags.Biomes.IS_DESERT);
         this.tag(MtaTags.Biomes.HAS_BUTTERFLY)
                 .addTag(Tags.Biomes.IS_PLAINS)
-                .addTag(BiomeTags.IS_FOREST);
+                .addTag(BiomeTags.IS_FOREST)
+                .add(MtaBiomes.MAPLE_FOREST);
 
 
         this.tag(MtaTags.Biomes.HAS_CAPYBARA)
@@ -120,7 +128,8 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .addTag(Tags.Biomes.IS_FOREST);
 
         this.tag(MtaTags.Biomes.HAS_DEER)
-                .addTag(Tags.Biomes.IS_FOREST);
+                .addTag(Tags.Biomes.IS_FOREST)
+                .add(MtaBiomes.ALPINE_TUNDRA);
 
         this.tag(MtaTags.Biomes.HAS_TURKEY)
                 .addTag(Tags.Biomes.IS_FOREST)
@@ -155,7 +164,7 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .add(MtaBiomes.OASIS);
 
         this.tag(MtaTags.Biomes.HAS_SNOWY_WOLF)
-                .add(MtaBiomes.TUNDRA);
+                .add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
 
 
         this.tag(MtaTags.Biomes.HAS_BLACK_WIDOW)
@@ -179,7 +188,7 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
 
         this.tag(MtaTags.Biomes.HAS_HOST)
                 .addTag(Tags.Biomes.IS_SPOOKY)
-                .add(Biomes.DESERT, Biomes.STONY_PEAKS, Biomes.STONY_SHORE)
+                .add(Biomes.DESERT, Biomes.STONY_PEAKS, Biomes.STONY_SHORE, MtaBiomes.BOG)
         ;
         this.tag(MtaTags.Biomes.HAS_SIREN)
                 .add(MtaBiomes.UNDERWATER_FOREST)

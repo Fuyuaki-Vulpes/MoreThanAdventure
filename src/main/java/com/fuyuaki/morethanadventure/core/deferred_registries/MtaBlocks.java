@@ -55,13 +55,12 @@ public class MtaBlocks {
     public static final DeferredBlock<Block> STRIPPED_ALPINE_WOOD = registerBlock("stripped_alpine_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
     public static final DeferredBlock<Block> ALPINE_PLANKS = registerBlock("alpine_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    //public static final DeferredBlock<Block> ALPINE_LEAVES = registerBlock("alpine_leaves",
-    //        AlpineLeaves::new,
-    //        leavesProperties(SoundType.AZALEA_LEAVES));
+    public static final DeferredBlock<Block> ALPINE_LEAVES = registerBlock("alpine_leaves", LeavesBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LEAVES));
 
-    //public static final DeferredBlock<Block> ALPINE_SAPLING = registerBlock("alpine_sapling",
-    //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
-
+    public static final DeferredBlock<Block> ALPINE_SAPLING = registerBlock("alpine_sapling",
+            properties -> new SeaSaplingBlock(MtaTreeGrower.ALPINE_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SAPLING));
+    public static final DeferredBlock<Block> POTTED_ALPINE_SAPLING = registerBlock("potted_alpine_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ALPINE_SAPLING::value, properties),flowerPotProperties());
     public static final DeferredBlock<Block> ALPINE_STAIRS = registerBlock("alpine_stairs",
             properties -> new StairBlock(Blocks.OAK_STAIRS.defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
@@ -97,9 +96,10 @@ public class MtaBlocks {
             AvocadoLeaves::new,
             leavesProperties(SoundType.AZALEA_LEAVES));
 
-    //public static final DeferredBlock<Block> AVOCADO_SAPLING = registerBlock("mango_sapling",
-    //        properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
-
+    public static final DeferredBlock<Block> AVOCADO_SAPLING = registerBlock("avocado_sapling",
+            properties -> new SeaSaplingBlock(MtaTreeGrower.AVOCADO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
+    public static final DeferredBlock<Block> POTTED_AVOCADO_SAPLING = registerBlock("potted_avocado_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, AVOCADO_SAPLING::value, properties),flowerPotProperties());
     public static final DeferredBlock<Block> AVOCADO_STAIRS = registerBlock("avocado_stairs",
             properties -> new StairBlock(MtaBlocks.AVOCADO_PLANKS.get().defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
@@ -162,9 +162,10 @@ public class MtaBlocks {
             MangoLeaves::new,
             leavesProperties(SoundType.AZALEA_LEAVES));
 
-    //public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("mango_sapling",
-    //        properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
-
+    public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("mango_sapling",
+            properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
+    public static final DeferredBlock<Block> POTTED_MANGO_SAPLING = registerBlock("potted_mango_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MANGO_SAPLING::value, properties),flowerPotProperties());
     public static final DeferredBlock<Block> MANGO_STAIRS = registerBlock("mango_stairs",
             properties -> new StairBlock(MtaBlocks.MANGO_PLANKS.get().defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));
@@ -192,13 +193,12 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
     public static final DeferredBlock<Block> STRIPPED_MAPLE_WOOD = registerBlock("stripped_maple_wood",  RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD));
 
     public static final DeferredBlock<Block> MAPLE_PLANKS = registerBlock("maple_planks",  Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS));
-    //public static final DeferredBlock<Block> MAPLE_LEAVES = registerBlock("maple_leaves",
-    //        MapleLeaves::new,
-    //        leavesProperties(SoundType.AZALEA_LEAVES));
+    public static final DeferredBlock<Block> MAPLE_LEAVES = registerBlock("maple_leaves", LeavesBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
 
-    //public static final DeferredBlock<Block> MANGO_SAPLING = registerBlock("maple_sapling",
-    //        properties -> new SeaSaplingBlock(MtaTreeGrower.MANGO_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_SAPLING));
-
+    public static final DeferredBlock<Block> MAPLE_SAPLING = registerBlock("maple_sapling",
+            properties -> new SeaSaplingBlock(MtaTreeGrower.MAPLE_TREE,properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING));
+    public static final DeferredBlock<Block> POTTED_MAPLE_SAPLING = registerBlock("potted_maple_sapling",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MAPLE_SAPLING::value, properties),flowerPotProperties());
     public static final DeferredBlock<Block> MAPLE_STAIRS = registerBlock("maple_stairs",
             properties -> new StairBlock(MtaBlocks.MANGO_PLANKS.get().defaultBlockState(),properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS));

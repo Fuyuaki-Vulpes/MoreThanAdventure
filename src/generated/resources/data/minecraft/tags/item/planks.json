@@ -1,6 +1,11 @@
 {
   "values": [
-    "morethanadventure:seawood_planks",
-    "morethanadventure:palm_planks"
+    "morethanadventure:alpine_planks",
+    "morethanadventure:avocado_planks",
+    "morethanadventure:bogged_oak_planks",
+    "morethanadventure:mango_planks",
+    "morethanadventure:maple_planks",
+    "morethanadventure:palm_planks",
+    "morethanadventure:seawood_planks"
   ]
 }
