@@ -39,6 +39,11 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .remove(Biomes.MANGROVE_SWAMP)
                 ;
 
+        this.tag(MtaTags.Biomes.HAS_IPE_TREE)
+                .add(Biomes.JUNGLE)
+                .add(Biomes.SPARSE_JUNGLE)
+                ;
+
         this.tag(Tags.Biomes.IS_LUSH)
                 .add(MtaBiomes.LUSH_RIVER)
                 .add(MtaBiomes.LUSH_MEADOW)

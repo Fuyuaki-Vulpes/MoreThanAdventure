@@ -52,6 +52,10 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> ALPINE_TREE = registerKey("alpine_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> AVOCADO_TREE = registerKey("avocado_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> BOGGED_OAK_TREE = registerKey("bogged_oak_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PINK_IPE_TREE = registerKey("pink_ipe_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PURPLE_IPE_TREE = registerKey("purple_ipe_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> WHITE_IPE_TREE = registerKey("white_ipe_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> YELLOW_IPE_TREE = registerKey("yellow_ipe_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> MANGO_TREE = registerKey("mango_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> PALM_TREE = registerKey("palm_tree");
@@ -114,9 +118,9 @@ public class MtaConfigFeatures {
                 ALPINE_TREE,
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(Blocks.SPRUCE_LOG),
+                        BlockStateProvider.simple(MtaBlocks.ALPINE_LOG.get()),
                         new StraightTrunkPlacer(6, 4, 0),
-                        BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
+                        BlockStateProvider.simple(MtaBlocks.ALPINE_LEAVES.get()),
                         new PineFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), UniformInt.of(3, 4)),
                         new TwoLayersFeatureSize(2, 0, 2)
                 )
@@ -141,9 +145,53 @@ public class MtaConfigFeatures {
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.BOGGED_OAK_LOG.get()),
                         new PalmTrunkPlacer(4, 5, 3),
-                        BlockStateProvider.simple(MtaBlocks.PALM_LEAVES.get()),
+                        BlockStateProvider.simple(Blocks.OAK_LEAVES),
                         new PalmFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
                         new TwoLayersFeatureSize(0, 0, 0)).build()
+        );
+        register(
+                context,
+                PINK_IPE_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.PINK_IPE_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+        register(
+                context,
+                PURPLE_IPE_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.PURPLE_IPE_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+        register(
+                context,
+                WHITE_IPE_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.WHITE_IPE_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
+        );
+        register(
+                context,
+                YELLOW_IPE_TREE,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
+                        new PalmTrunkPlacer(4, 5, 3),
+                        BlockStateProvider.simple(MtaBlocks.YELLOW_IPE_LEAVES.get()),
+                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
                 context,

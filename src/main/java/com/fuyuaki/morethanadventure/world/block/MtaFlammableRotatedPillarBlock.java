@@ -46,6 +46,12 @@ public class MtaFlammableRotatedPillarBlock extends RotatedPillarBlock {
             if(state.is(MtaBlocks.AVOCADO_WOOD.get())) {
                 return MtaBlocks.STRIPPED_AVOCADO_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
             }
+            if(state.is(MtaBlocks.IPE_LOG.get())) {
+                return MtaBlocks.STRIPPED_IPE_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
+            if(state.is(MtaBlocks.IPE_WOOD.get())) {
+                return MtaBlocks.STRIPPED_IPE_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+            }
             if(state.is(MtaBlocks.MANGO_LOG.get())) {
                 return MtaBlocks.STRIPPED_MANGO_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
             }
@@ -56,7 +62,7 @@ public class MtaFlammableRotatedPillarBlock extends RotatedPillarBlock {
                 return MtaBlocks.STRIPPED_MAPLE_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
             }
             if(state.is(MtaBlocks.MAPLE_WOOD.get())) {
-                return MtaBlocks.STRIPPED_PALM_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
+                return MtaBlocks.STRIPPED_MAPLE_WOOD.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));
             }
             if(state.is(MtaBlocks.PALM_LOG.get())) {
                 return MtaBlocks.STRIPPED_PALM_LOG.get().defaultBlockState().setValue(AXIS,state.getValue(AXIS));

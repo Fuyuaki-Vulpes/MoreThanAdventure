@@ -69,6 +69,10 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.ALPINE_FENCE_GATE.get());
         this.add(MtaBlocks.ALPINE_DOOR.get(), block -> createDoorTable(MtaBlocks.ALPINE_DOOR.get()));
         dropSelf(MtaBlocks.ALPINE_TRAPDOOR.get());
+        dropSelf(MtaBlocks.ALPINE_SIGN.get());
+        dropOther(MtaBlocks.ALPINE_WALL_SIGN.get(), MtaBlocks.ALPINE_SIGN);
+        dropSelf(MtaBlocks.ALPINE_HANGING_SIGN.get());
+        dropOther(MtaBlocks.ALPINE_HANGING_WALL_SIGN.get(), MtaBlocks.ALPINE_HANGING_SIGN);
         dropPottedContents(MtaBlocks.POTTED_ALPINE_SAPLING.get());
 
 
@@ -87,6 +91,10 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.AVOCADO_FENCE_GATE.get());
         this.add(MtaBlocks.AVOCADO_DOOR.get(), block -> createDoorTable(MtaBlocks.AVOCADO_DOOR.get()));
         dropSelf(MtaBlocks.AVOCADO_TRAPDOOR.get());
+        dropSelf(MtaBlocks.AVOCADO_SIGN.get());
+        dropOther(MtaBlocks.AVOCADO_WALL_SIGN.get(), MtaBlocks.AVOCADO_SIGN);
+        dropSelf(MtaBlocks.AVOCADO_HANGING_SIGN.get());
+        dropOther(MtaBlocks.AVOCADO_HANGING_WALL_SIGN.get(), MtaBlocks.AVOCADO_HANGING_SIGN);
         dropPottedContents(MtaBlocks.POTTED_AVOCADO_SAPLING.get());
 
 
@@ -103,6 +111,40 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.BOGGED_OAK_FENCE_GATE.get());
         this.add(MtaBlocks.BOGGED_OAK_DOOR.get(), block -> createDoorTable(MtaBlocks.AVOCADO_DOOR.get()));
         dropSelf(MtaBlocks.BOGGED_OAK_TRAPDOOR.get());
+        dropSelf(MtaBlocks.BOGGED_OAK_SIGN.get());
+        dropOther(MtaBlocks.BOGGED_OAK_WALL_SIGN.get(), MtaBlocks.BOGGED_OAK_SIGN);
+        dropSelf(MtaBlocks.BOGGED_OAK_HANGING_SIGN.get());
+        dropOther(MtaBlocks.BOGGED_OAK_HANGING_WALL_SIGN.get(), MtaBlocks.BOGGED_OAK_HANGING_SIGN);
+
+        dropSelf(MtaBlocks.IPE_LOG.get());
+        dropSelf(MtaBlocks.STRIPPED_IPE_LOG.get());
+        dropSelf(MtaBlocks.IPE_WOOD.get());
+        dropSelf(MtaBlocks.STRIPPED_IPE_WOOD.get());
+        dropSelf(MtaBlocks.IPE_PLANKS.get());
+        this.add(MtaBlocks.PINK_IPE_LEAVES.get(), block -> createLeavesDrops(block, MtaBlocks.PINK_IPE_SAPLING.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(MtaBlocks.PURPLE_IPE_LEAVES.get(), block -> createLeavesDrops(block, MtaBlocks.PURPLE_IPE_SAPLING.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(MtaBlocks.WHITE_IPE_LEAVES.get(), block -> createLeavesDrops(block, MtaBlocks.WHITE_IPE_SAPLING.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(MtaBlocks.YELLOW_IPE_LEAVES.get(), block -> createLeavesDrops(block, MtaBlocks.YELLOW_IPE_SAPLING.get(),NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(MtaBlocks.PINK_IPE_SAPLING.get());
+        dropSelf(MtaBlocks.PURPLE_IPE_SAPLING.get());
+        dropSelf(MtaBlocks.WHITE_IPE_SAPLING.get());
+        dropSelf(MtaBlocks.YELLOW_IPE_SAPLING.get());
+        dropSelf(MtaBlocks.IPE_STAIRS.get());
+        this.add(MtaBlocks.IPE_SLAB.get(), block -> createSlabItemTable(MtaBlocks.ALPINE_SLAB.get()));
+        dropSelf(MtaBlocks.IPE_PRESSURE_PLATE.get());
+        dropSelf(MtaBlocks.IPE_BUTTON.get());
+        dropSelf(MtaBlocks.IPE_FENCE.get());
+        dropSelf(MtaBlocks.IPE_FENCE_GATE.get());
+        this.add(MtaBlocks.IPE_DOOR.get(), block -> createDoorTable(MtaBlocks.ALPINE_DOOR.get()));
+        dropSelf(MtaBlocks.IPE_TRAPDOOR.get());
+        dropSelf(MtaBlocks.IPE_SIGN.get());
+        dropOther(MtaBlocks.IPE_WALL_SIGN.get(), MtaBlocks.IPE_SIGN);
+        dropSelf(MtaBlocks.IPE_HANGING_SIGN.get());
+        dropOther(MtaBlocks.IPE_HANGING_WALL_SIGN.get(), MtaBlocks.IPE_HANGING_SIGN);
+        dropPottedContents(MtaBlocks.POTTED_PINK_IPE_SAPLING.get());
+        dropPottedContents(MtaBlocks.POTTED_PURPLE_IPE_SAPLING.get());
+        dropPottedContents(MtaBlocks.POTTED_WHITE_IPE_SAPLING.get());
+        dropPottedContents(MtaBlocks.POTTED_YELLOW_IPE_SAPLING.get());
 
         dropSelf(MtaBlocks.MANGO_LOG.get());
         dropSelf(MtaBlocks.STRIPPED_MANGO_LOG.get());
@@ -119,6 +161,10 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.MANGO_FENCE_GATE.get());
         this.add(MtaBlocks.MANGO_DOOR.get(), block -> createDoorTable(MtaBlocks.MANGO_DOOR.get()));
         dropSelf(MtaBlocks.MANGO_TRAPDOOR.get());
+        dropSelf(MtaBlocks.MANGO_SIGN.get());
+        dropOther(MtaBlocks.MANGO_WALL_SIGN.get(), MtaBlocks.MANGO_SIGN);
+        dropSelf(MtaBlocks.MANGO_HANGING_SIGN.get());
+        dropOther(MtaBlocks.MANGO_HANGING_WALL_SIGN.get(), MtaBlocks.MANGO_HANGING_SIGN);
         dropPottedContents(MtaBlocks.POTTED_MANGO_SAPLING.get());
 
 
@@ -137,6 +183,10 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.MAPLE_FENCE_GATE.get());
         this.add(MtaBlocks.MAPLE_DOOR.get(), block -> createDoorTable(MtaBlocks.MAPLE_DOOR.get()));
         dropSelf(MtaBlocks.MAPLE_TRAPDOOR.get());
+        dropSelf(MtaBlocks.MAPLE_SIGN.get());
+        dropOther(MtaBlocks.MAPLE_WALL_SIGN.get(), MtaBlocks.MAPLE_SIGN);
+        dropSelf(MtaBlocks.MAPLE_HANGING_SIGN.get());
+        dropOther(MtaBlocks.MAPLE_HANGING_WALL_SIGN.get(), MtaBlocks.MAPLE_HANGING_SIGN);
         dropPottedContents(MtaBlocks.POTTED_MAPLE_SAPLING.get());
 
 
@@ -155,6 +205,10 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.PALM_FENCE_GATE.get());
         this.add(MtaBlocks.PALM_DOOR.get(), block -> createDoorTable(MtaBlocks.PALM_DOOR.get()));
         dropSelf(MtaBlocks.PALM_TRAPDOOR.get());
+        dropSelf(MtaBlocks.PALM_SIGN.get());
+        dropOther(MtaBlocks.PALM_WALL_SIGN.get(), MtaBlocks.PALM_SIGN);
+        dropSelf(MtaBlocks.PALM_HANGING_SIGN.get());
+        dropOther(MtaBlocks.PALM_HANGING_WALL_SIGN.get(), MtaBlocks.PALM_HANGING_SIGN);
         dropPottedContents(MtaBlocks.POTTED_PALM_SAPLING.get());
 
 
@@ -171,6 +225,12 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.SEAWOOD_FENCE_GATE.get());
         this.add(MtaBlocks.SEAWOOD_DOOR.get(), block -> createDoorTable(MtaBlocks.SEAWOOD_DOOR.get()));
         dropSelf(MtaBlocks.SEAWOOD_TRAPDOOR.get());
+        dropSelf(MtaBlocks.SEAWOOD_SIGN.get());
+        dropOther(MtaBlocks.SEAWOOD_WALL_SIGN.get(), MtaBlocks.SEAWOOD_SIGN);
+        dropSelf(MtaBlocks.SEAWOOD_HANGING_SIGN.get());
+        dropOther(MtaBlocks.SEAWOOD_HANGING_WALL_SIGN.get(), MtaBlocks.SEAWOOD_HANGING_SIGN);
+        dropPottedContents(MtaBlocks.POTTED_SEAWOOD_SAPLING.get());
+
 
         dropSelf(MtaBlocks.SPRINKLER.get());
         dropSelf(MtaBlocks.MOSSY_ANDESITE.get());

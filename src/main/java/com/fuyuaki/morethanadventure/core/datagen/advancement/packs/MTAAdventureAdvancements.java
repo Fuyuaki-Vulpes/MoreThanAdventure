@@ -8,7 +8,10 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
-import net.minecraft.advancements.critereon.*;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -16,10 +19,8 @@ import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
@@ -54,7 +55,7 @@ public class MTAAdventureAdvancements implements AdvancementSubProvider {
 
         AdvancementHolder biomeAdvancement = addBiomes(Advancement.Builder.advancement().requirements(needAny),registries,MtaBiomes.BIOMES)
                 .parent(root)
-                .display(MtaBlocks.PALM_SAPLING.get(),
+                .display(MtaBlocks.ALPINE_SAPLING.get(),
                         Component.translatable(nameKey("biomes")),
                         Component.translatable(descKey("biomes")),
                         null,

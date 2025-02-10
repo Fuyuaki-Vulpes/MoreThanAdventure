@@ -30,6 +30,10 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ALPINE_TREE = registerKey("alpine_tree");
     public static final ResourceKey<PlacedFeature> AVOCADO_TREE = registerKey("avocado_tree");
     public static final ResourceKey<PlacedFeature> BOGGED_OAK_TREE = registerKey("bogged_oak_tree");
+    public static final ResourceKey<PlacedFeature> PINK_IPE_TREE = registerKey("pink_ipe_tree");
+    public static final ResourceKey<PlacedFeature> PURPLE_IPE_TREE = registerKey("purple_ipe_tree");
+    public static final ResourceKey<PlacedFeature> WHITE_IPE_TREE = registerKey("white_ipe_tree");
+    public static final ResourceKey<PlacedFeature> YELLOW_IPE_TREE = registerKey("yellow_ipe_tree");
     public static final ResourceKey<PlacedFeature> MANGO_TREE = registerKey("mango_tree");
     public static final ResourceKey<PlacedFeature> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
@@ -94,6 +98,34 @@ public class MtaPlacedFeatures {
                 context,
                 BOGGED_OAK_TREE,
                 holder(context,MtaConfigFeatures.BOGGED_OAK_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
+        ));
+
+        register(
+                context,
+                PINK_IPE_TREE,
+                holder(context,MtaConfigFeatures.PINK_IPE_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
+        ));
+
+        register(
+                context,
+                PURPLE_IPE_TREE,
+                holder(context,MtaConfigFeatures.PURPLE_IPE_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
+        ));
+
+        register(
+                context,
+                WHITE_IPE_TREE,
+                holder(context,MtaConfigFeatures.WHITE_IPE_TREE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
+        ));
+
+        register(
+                context,
+                YELLOW_IPE_TREE,
+                holder(context,MtaConfigFeatures.YELLOW_IPE_TREE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
         ));
 

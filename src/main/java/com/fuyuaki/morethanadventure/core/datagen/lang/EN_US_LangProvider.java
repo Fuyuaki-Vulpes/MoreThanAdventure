@@ -35,6 +35,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.ALPINE_FENCE_GATE.get(),"Alpine Fence Gate");
         add(MtaBlocks.ALPINE_DOOR.get(),"Alpine Door");
         add(MtaBlocks.ALPINE_TRAPDOOR.get(),"Alpine Trapdoor");
+        add(MtaBlocks.ALPINE_SIGN.get(),"Alpine Sign");
+        add(MtaBlocks.ALPINE_WALL_SIGN.get(),"Alpine Wall Sign");
+        add(MtaBlocks.ALPINE_HANGING_SIGN.get(), "Alpine Hanging Sign");
+        add(MtaBlocks.ALPINE_HANGING_WALL_SIGN.get(), "Alpine Hanging Wall Sign");
+        add(MtaBlocks.POTTED_ALPINE_SAPLING.get(),"Potted Alpine Sapling");
 
 
         add(MtaBlocks.AVOCADO_LOG.get(),"Avocado Log");
@@ -52,6 +57,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.AVOCADO_FENCE_GATE.get(),"Avocado Fence Gate");
         add(MtaBlocks.AVOCADO_DOOR.get(),"Avocado Door");
         add(MtaBlocks.AVOCADO_TRAPDOOR.get(),"Avocado Trapdoor");
+        add(MtaBlocks.AVOCADO_SIGN.get(),"Avocado Sign");
+        add(MtaBlocks.AVOCADO_WALL_SIGN.get(),"Avocado Wall Sign");
+        add(MtaBlocks.AVOCADO_HANGING_SIGN.get(), "Avocado Hanging Sign");
+        add(MtaBlocks.AVOCADO_HANGING_WALL_SIGN.get(), "Avocado Hanging Wall Sign");
+        add(MtaBlocks.POTTED_AVOCADO_SAPLING.get(),"Potted Avocado Sapling");
 
 
         add(MtaBlocks.BOGGED_OAK_LOG.get(),"Bogged Oak Log");
@@ -67,6 +77,41 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.BOGGED_OAK_FENCE_GATE.get(),"Bogged Oak Fence Gate");
         add(MtaBlocks.BOGGED_OAK_DOOR.get(),"Bogged Oak Door");
         add(MtaBlocks.BOGGED_OAK_TRAPDOOR.get(),"Bogged Oak Trapdoor");
+        add(MtaBlocks.BOGGED_OAK_SIGN.get(),"Bogged Oak Sign");
+        add(MtaBlocks.BOGGED_OAK_WALL_SIGN.get(),"Bogged Oak Wall Sign");
+        add(MtaBlocks.BOGGED_OAK_HANGING_SIGN.get(), "Bogged Oak Hanging Sign");
+        add(MtaBlocks.BOGGED_OAK_HANGING_WALL_SIGN.get(), "Bogged Oak Hanging Wall Sign");
+
+
+        add(MtaBlocks.IPE_LOG.get(),"Ipe Log");
+        add(MtaBlocks.STRIPPED_IPE_LOG.get(),"Stripped Ipe Log");
+        add(MtaBlocks.IPE_WOOD.get(),"Ipe Wood");
+        add(MtaBlocks.STRIPPED_IPE_WOOD.get(),"Stripped Ipe Wood");
+        add(MtaBlocks.IPE_PLANKS.get(),"Ipe Planks");
+        add(MtaBlocks.PINK_IPE_LEAVES.get(),"Pink Ipe Leaves");
+        add(MtaBlocks.PURPLE_IPE_LEAVES.get(),"Purple Ipe Leaves");
+        add(MtaBlocks.WHITE_IPE_LEAVES.get(),"White Ipe Leaves");
+        add(MtaBlocks.YELLOW_IPE_LEAVES.get(),"Yellow Ipe Leaves");
+        add(MtaBlocks.PINK_IPE_SAPLING.get(),"Pink Ipe Sapling");
+        add(MtaBlocks.PURPLE_IPE_SAPLING.get(),"Purple Ipe Sapling");
+        add(MtaBlocks.WHITE_IPE_SAPLING.get(),"White Ipe Sapling");
+        add(MtaBlocks.YELLOW_IPE_SAPLING.get(),"Yellow Ipe Sapling");
+        add(MtaBlocks.IPE_STAIRS.get(),"Ipe Stairs");
+        add(MtaBlocks.IPE_SLAB.get(),"Ipe Slab");
+        add(MtaBlocks.IPE_PRESSURE_PLATE.get(),"Ipe Pressure Plate");
+        add(MtaBlocks.IPE_BUTTON.get(),"Ipe Button");
+        add(MtaBlocks.IPE_FENCE.get(),"Ipe Fence");
+        add(MtaBlocks.IPE_FENCE_GATE.get(),"Ipe Fence Gate");
+        add(MtaBlocks.IPE_DOOR.get(),"Ipe Door");
+        add(MtaBlocks.IPE_TRAPDOOR.get(),"Ipe Trapdoor");
+        add(MtaBlocks.IPE_SIGN.get(),"Ipe Sign");
+        add(MtaBlocks.IPE_WALL_SIGN.get(),"Ipe Wall Sign");
+        add(MtaBlocks.IPE_HANGING_SIGN.get(), "Ipe Hanging Sign");
+        add(MtaBlocks.IPE_HANGING_WALL_SIGN.get(), "Ipe Hanging Wall Sign");
+        add(MtaBlocks.POTTED_PINK_IPE_SAPLING.get(),"Pink Ipe Sapling");
+        add(MtaBlocks.POTTED_PURPLE_IPE_SAPLING.get(),"Purple Ipe Sapling");
+        add(MtaBlocks.POTTED_WHITE_IPE_SAPLING.get(),"White Ipe Sapling");
+        add(MtaBlocks.POTTED_YELLOW_IPE_SAPLING.get(),"Yellow Ipe Sapling");
 
 
         add(MtaBlocks.MANGO_LOG.get(),"Mango Log");
@@ -84,6 +129,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MANGO_FENCE_GATE.get(),"Mango Fence Gate");
         add(MtaBlocks.MANGO_DOOR.get(),"Mango Door");
         add(MtaBlocks.MANGO_TRAPDOOR.get(),"Mango Trapdoor");
+        add(MtaBlocks.MANGO_SIGN.get(),"Mango Sign");
+        add(MtaBlocks.MANGO_WALL_SIGN.get(),"Mango Wall Sign");
+        add(MtaBlocks.MANGO_HANGING_SIGN.get(), "Mango Hanging Sign");
+        add(MtaBlocks.MANGO_HANGING_WALL_SIGN.get(), "Mango Hanging Wall Sign");
+        add(MtaBlocks.POTTED_MANGO_SAPLING.get(),"Potted Mango Sapling");
 
 
         add(MtaBlocks.MAPLE_LOG.get(),"Maple Log");
@@ -101,6 +151,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MAPLE_FENCE_GATE.get(),"Maple Fence Gate");
         add(MtaBlocks.MAPLE_DOOR.get(),"Maple Door");
         add(MtaBlocks.MAPLE_TRAPDOOR.get(),"Maple Trapdoor");
+        add(MtaBlocks.MAPLE_SIGN.get(),"Maple Sign");
+        add(MtaBlocks.MAPLE_WALL_SIGN.get(),"Maple Wall Sign");
+        add(MtaBlocks.MAPLE_HANGING_SIGN.get(), "Maple Hanging Sign");
+        add(MtaBlocks.MAPLE_HANGING_WALL_SIGN.get(), "Maple Hanging Wall Sign");
+        add(MtaBlocks.POTTED_MAPLE_SAPLING.get(),"Potted Maple Sapling");
 
 
         add(MtaBlocks.PALM_LOG.get(),"Palm Log");
@@ -118,6 +173,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.PALM_FENCE_GATE.get(),"Palm Fence Gate");
         add(MtaBlocks.PALM_DOOR.get(),"Palm Door");
         add(MtaBlocks.PALM_TRAPDOOR.get(),"Palm Trapdoor");
+        add(MtaBlocks.PALM_SIGN.get(),"Palm Sign");
+        add(MtaBlocks.PALM_WALL_SIGN.get(),"Palm Wall Sign");
+        add(MtaBlocks.PALM_HANGING_SIGN.get(), "Palm Hanging Sign");
+        add(MtaBlocks.PALM_HANGING_WALL_SIGN.get(), "Palm Hanging Wall Sign");
+        add(MtaBlocks.POTTED_PALM_SAPLING.get(),"Potted Palm Sapling");
 
 
         add(MtaBlocks.SEALOG.get(),"SeaLog");
@@ -133,6 +193,11 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.SEAWOOD_FENCE_GATE.get(),"Seawood Fence Gate");
         add(MtaBlocks.SEAWOOD_DOOR.get(),"Seawood Door");
         add(MtaBlocks.SEAWOOD_TRAPDOOR.get(),"Seawood Trapdoor");
+        add(MtaBlocks.SEAWOOD_SIGN.get(),"Seawood Sign");
+        add(MtaBlocks.SEAWOOD_WALL_SIGN.get(),"Seawood Wall Sign");
+        add(MtaBlocks.SEAWOOD_HANGING_SIGN.get(), "Seawood Hanging Sign");
+        add(MtaBlocks.SEAWOOD_HANGING_WALL_SIGN.get(), "Seawood Hanging Wall Sign");
+        add(MtaBlocks.POTTED_SEAWOOD_SAPLING.get(),"Potted Seawood Sapling");
 
 
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
@@ -415,6 +480,23 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         //ITEM
+        add(MtaItems.ALPINE_SIGN.get(),"Alpine Sign");
+        add(MtaItems.ALPINE_HANGING_SIGN.get(),"Alpine Hanging Sign");
+        add(MtaItems.AVOCADO_SIGN.get(),"Avocado Sign");
+        add(MtaItems.AVOCADO_HANGING_SIGN.get(),"Avocado Hanging Sign");
+        add(MtaItems.BOGGED_OAK_SIGN.get(),"Bogged Oak Sign");
+        add(MtaItems.BOGGED_OAK_HANGING_SIGN.get(),"Bogged Oak Hanging Sign");
+        add(MtaItems.IPE_SIGN.get(),"Ipe Sign");
+        add(MtaItems.IPE_HANGING_SIGN.get(),"Ipe Hanging Sign");
+        add(MtaItems.MANGO_SIGN.get(),"Mango Sign");
+        add(MtaItems.MANGO_HANGING_SIGN.get(),"Mango Hanging Sign");
+        add(MtaItems.MAPLE_SIGN.get(),"Maple Sign");
+        add(MtaItems.MAPLE_HANGING_SIGN.get(),"Maple Hanging Sign");
+        add(MtaItems.PALM_SIGN.get(),"Palm Sign");
+        add(MtaItems.PALM_HANGING_SIGN.get(),"Palm Hanging Sign");
+        add(MtaItems.SEAWOOD_SIGN.get(),"Seawood Sign");
+        add(MtaItems.SEAWOOD_HANGING_SIGN.get(),"Seawood Hanging Sign");
+
         add(MtaItems.BIG_BOWL.get(),"Big Bowl");
 
         add(MtaItems.CLEAR_QUARTZ.get(),"Clear Quartz");

@@ -72,12 +72,43 @@ public class MTAMod
         setRenderType(MtaBlocks.SAND_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.BEACHGRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.PERMAFROST_GRASS.get(),cutoutRenderType);
+
         setRenderType(MtaBlocks.ALPINE_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.ALPINE_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.ALPINE_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.ALPINE_TRAPDOOR.get(),cutoutRenderType);
         setRenderType(MtaBlocks.AVOCADO_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.AVOCADO_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.AVOCADO_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.AVOCADO_TRAPDOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.BOGGED_OAK_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.BOGGED_OAK_TRAPDOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PINK_IPE_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PURPLE_IPE_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.WHITE_IPE_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.YELLOW_IPE_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PINK_IPE_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PURPLE_IPE_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.WHITE_IPE_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.YELLOW_IPE_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.IPE_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.IPE_TRAPDOOR.get(),cutoutRenderType);
         setRenderType(MtaBlocks.MANGO_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MANGO_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MANGO_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MANGO_TRAPDOOR.get(),cutoutRenderType);
         setRenderType(MtaBlocks.MAPLE_LEAVES.get(),cutoutRenderType);
-        setRenderType(MtaBlocks.SEAWOOD_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MAPLE_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MAPLE_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.MAPLE_TRAPDOOR.get(),cutoutRenderType);
         setRenderType(MtaBlocks.PALM_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PALM_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PALM_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.PALM_TRAPDOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.SEAWOOD_LEAVES.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.SEAWOOD_SAPLING.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.SEAWOOD_DOOR.get(),cutoutRenderType);
+        setRenderType(MtaBlocks.SEAWOOD_TRAPDOOR.get(),cutoutRenderType);
         setRenderType(MtaBlocks.CATTAIL.get(),cutoutRenderType);
 
     }

@@ -35,6 +35,10 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.BOGGED_OAK_LOG.get(),
                 MtaBlocks.BOGGED_OAK_WOOD.get()
         );
+        this.tag(MtaTags.Blocks.IPE_LOGS).add(
+                MtaBlocks.IPE_LOG.get(),
+                MtaBlocks.IPE_WOOD.get()
+        );
         this.tag(MtaTags.Blocks.MANGO_LOGS).add(
                 MtaBlocks.MANGO_LOG.get(),
                 MtaBlocks.MANGO_WOOD.get()
@@ -70,6 +74,10 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.STRIPPED_AVOCADO_LOG.get(),
                 MtaBlocks.AVOCADO_WOOD.get(),
                 MtaBlocks.STRIPPED_AVOCADO_WOOD.get(),
+                MtaBlocks.IPE_LOG.get(),
+                MtaBlocks.STRIPPED_IPE_LOG.get(),
+                MtaBlocks.IPE_WOOD.get(),
+                MtaBlocks.STRIPPED_IPE_WOOD.get(),
                 MtaBlocks.MANGO_LOG.get(),
                 MtaBlocks.STRIPPED_MANGO_LOG.get(),
                 MtaBlocks.MANGO_WOOD.get(),
@@ -98,6 +106,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.ALPINE_PLANKS.get(),
                 MtaBlocks.AVOCADO_PLANKS.get(),
                 MtaBlocks.BOGGED_OAK_PLANKS.get(),
+                MtaBlocks.IPE_PLANKS.get(),
                 MtaBlocks.MANGO_PLANKS.get(),
                 MtaBlocks.MAPLE_PLANKS.get(),
                 MtaBlocks.PALM_PLANKS.get(),
@@ -109,6 +118,10 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
 
                 MtaBlocks.ALPINE_LEAVES.get(),
                 MtaBlocks.AVOCADO_LEAVES.get(),
+                MtaBlocks.PINK_IPE_LEAVES.get(),
+                MtaBlocks.PURPLE_IPE_LEAVES.get(),
+                MtaBlocks.WHITE_IPE_LEAVES.get(),
+                MtaBlocks.YELLOW_IPE_LEAVES.get(),
                 MtaBlocks.MANGO_LEAVES.get(),
                 MtaBlocks.MAPLE_LEAVES.get(),
                 MtaBlocks.PALM_LEAVES.get(),
@@ -117,6 +130,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_STAIRS).add(
                 MtaBlocks.ALPINE_STAIRS.get(),
                 MtaBlocks.AVOCADO_STAIRS.get(),
+                MtaBlocks.IPE_STAIRS.get(),
                 MtaBlocks.MANGO_STAIRS.get(),
                 MtaBlocks.MAPLE_STAIRS.get(),
                 MtaBlocks.PALM_STAIRS.get(),
@@ -125,6 +139,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_SLABS).add(
                 MtaBlocks.ALPINE_SLAB.get(),
                 MtaBlocks.AVOCADO_SLAB.get(),
+                MtaBlocks.IPE_SLAB.get(),
                 MtaBlocks.MANGO_SLAB.get(),
                 MtaBlocks.MAPLE_SLAB.get(),
                 MtaBlocks.PALM_SLAB.get(),
@@ -133,6 +148,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_BUTTONS).add(
                 MtaBlocks.ALPINE_BUTTON.get(),
                 MtaBlocks.AVOCADO_BUTTON.get(),
+                MtaBlocks.IPE_BUTTON.get(),
                 MtaBlocks.MANGO_BUTTON.get(),
                 MtaBlocks.MAPLE_BUTTON.get(),
                 MtaBlocks.PALM_BUTTON.get(),
@@ -141,6 +157,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_FENCES).add(
                 MtaBlocks.ALPINE_FENCE.get(),
                 MtaBlocks.AVOCADO_FENCE.get(),
+                MtaBlocks.IPE_FENCE.get(),
                 MtaBlocks.MANGO_FENCE.get(),
                 MtaBlocks.MAPLE_FENCE.get(),
                 MtaBlocks.PALM_FENCE.get(),
@@ -149,6 +166,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_DOORS).add(
                 MtaBlocks.ALPINE_DOOR.get(),
                 MtaBlocks.AVOCADO_DOOR.get(),
+                MtaBlocks.IPE_DOOR.get(),
                 MtaBlocks.MANGO_DOOR.get(),
                 MtaBlocks.MAPLE_DOOR.get(),
                 MtaBlocks.PALM_DOOR.get(),
@@ -157,6 +175,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(
                 MtaBlocks.ALPINE_TRAPDOOR.get(),
                 MtaBlocks.AVOCADO_TRAPDOOR.get(),
+                MtaBlocks.IPE_TRAPDOOR.get(),
                 MtaBlocks.MANGO_TRAPDOOR.get(),
                 MtaBlocks.MAPLE_TRAPDOOR.get(),
                 MtaBlocks.PALM_TRAPDOOR.get(),
@@ -165,10 +184,51 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(
                 MtaBlocks.ALPINE_PRESSURE_PLATE.get(),
                 MtaBlocks.AVOCADO_PRESSURE_PLATE.get(),
+                MtaBlocks.IPE_PRESSURE_PLATE.get(),
                 MtaBlocks.MANGO_PRESSURE_PLATE.get(),
                 MtaBlocks.MAPLE_PRESSURE_PLATE.get(),
                 MtaBlocks.PALM_PRESSURE_PLATE.get(),
                 MtaBlocks.SEAWOOD_PRESSURE_PLATE.get()
+        );
+        this.tag(BlockTags.STANDING_SIGNS).add(
+                MtaBlocks.ALPINE_SIGN.get(),
+                MtaBlocks.AVOCADO_SIGN.get(),
+                MtaBlocks.BOGGED_OAK_SIGN.get(),
+                MtaBlocks.IPE_SIGN.get(),
+                MtaBlocks.MANGO_SIGN.get(),
+                MtaBlocks.MAPLE_SIGN.get(),
+                MtaBlocks.PALM_SIGN.get(),
+                MtaBlocks.SEAWOOD_SIGN.get()
+        );
+        this.tag(BlockTags.WALL_SIGNS).add(
+                MtaBlocks.ALPINE_WALL_SIGN.get(),
+                MtaBlocks.AVOCADO_WALL_SIGN.get(),
+                MtaBlocks.BOGGED_OAK_WALL_SIGN.get(),
+                MtaBlocks.IPE_WALL_SIGN.get(),
+                MtaBlocks.MANGO_WALL_SIGN.get(),
+                MtaBlocks.MAPLE_WALL_SIGN.get(),
+                MtaBlocks.PALM_WALL_SIGN.get(),
+                MtaBlocks.SEAWOOD_WALL_SIGN.get()
+        );
+        this.tag(BlockTags.CEILING_HANGING_SIGNS).add(
+                MtaBlocks.ALPINE_HANGING_SIGN.get(),
+                MtaBlocks.AVOCADO_HANGING_SIGN.get(),
+                MtaBlocks.BOGGED_OAK_HANGING_SIGN.get(),
+                MtaBlocks.IPE_HANGING_SIGN.get(),
+                MtaBlocks.MANGO_HANGING_SIGN.get(),
+                MtaBlocks.MAPLE_HANGING_SIGN.get(),
+                MtaBlocks.PALM_HANGING_SIGN.get(),
+                MtaBlocks.SEAWOOD_HANGING_SIGN.get()
+        );
+        this.tag(BlockTags.WALL_HANGING_SIGNS).add(
+                MtaBlocks.ALPINE_HANGING_WALL_SIGN.get(),
+                MtaBlocks.AVOCADO_HANGING_WALL_SIGN.get(),
+                MtaBlocks.BOGGED_OAK_HANGING_WALL_SIGN.get(),
+                MtaBlocks.IPE_HANGING_WALL_SIGN.get(),
+                MtaBlocks.MANGO_HANGING_WALL_SIGN.get(),
+                MtaBlocks.MAPLE_HANGING_WALL_SIGN.get(),
+                MtaBlocks.PALM_HANGING_WALL_SIGN.get(),
+                MtaBlocks.SEAWOOD_HANGING_WALL_SIGN.get()
         );
         this.tag(BlockTags.STONE_BUTTONS).add(
                 MtaBlocks.BOGGED_OAK_BUTTON.get()
@@ -179,6 +239,10 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.SAPLINGS).add(
                 MtaBlocks.ALPINE_SAPLING.get(),
                 MtaBlocks.AVOCADO_SAPLING.get(),
+                MtaBlocks.PINK_IPE_SAPLING.get(),
+                MtaBlocks.PURPLE_IPE_SAPLING.get(),
+                MtaBlocks.WHITE_IPE_SAPLING.get(),
+                MtaBlocks.YELLOW_IPE_SAPLING.get(),
                 MtaBlocks.MANGO_SAPLING.get(),
                 MtaBlocks.MAPLE_SAPLING.get(),
                 MtaBlocks.PALM_SAPLING.get(),
@@ -239,6 +303,10 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.MINEABLE_WITH_HOE).add(
                 MtaBlocks.ALPINE_LEAVES.get(),
                 MtaBlocks.AVOCADO_LEAVES.get(),
+                MtaBlocks.PINK_IPE_LEAVES.get(),
+                MtaBlocks.PURPLE_IPE_LEAVES.get(),
+                MtaBlocks.WHITE_IPE_LEAVES.get(),
+                MtaBlocks.YELLOW_IPE_LEAVES.get(),
                 MtaBlocks.MANGO_LEAVES.get(),
                 MtaBlocks.MAPLE_LEAVES.get(),
                 MtaBlocks.PALM_LEAVES.get(),

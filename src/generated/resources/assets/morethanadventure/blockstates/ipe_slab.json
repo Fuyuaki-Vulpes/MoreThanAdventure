@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "morethanadventure:block/ipe_slab"
+    },
+    "type=double": {
+      "model": "morethanadventure:block/ipe_planks"
+    },
+    "type=top": {
+      "model": "morethanadventure:block/ipe_slab_top"
+    }
+  }
+}

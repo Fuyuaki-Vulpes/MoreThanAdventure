@@ -19,7 +19,7 @@ public class MtaTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WORLD_GEN = TABS.register("mtaworldgen", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mtagenblocks"))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-            .icon(MtaBlocks.PALM_SAPLING.get().asItem()::getDefaultInstance)
+            .icon(MtaBlocks.ALPINE_SAPLING.get().asItem()::getDefaultInstance)
             .backgroundTexture(TAB_TEXTURE).withLabelColor(0xb0fbf0)
             .displayItems((parameters, output) -> {
 
@@ -30,6 +30,16 @@ public class MtaTabs {
                 output.accept(MtaBlocks.AVOCADO_LOG.get());
                 output.accept(MtaBlocks.AVOCADO_SAPLING.get());
                 output.accept(MtaBlocks.AVOCADO_LEAVES.get());
+
+                output.accept(MtaBlocks.IPE_LOG.get());
+                output.accept(MtaBlocks.PINK_IPE_SAPLING.get());
+                output.accept(MtaBlocks.PURPLE_IPE_SAPLING.get());
+                output.accept(MtaBlocks.WHITE_IPE_SAPLING.get());
+                output.accept(MtaBlocks.YELLOW_IPE_SAPLING.get());
+                output.accept(MtaBlocks.PINK_IPE_LEAVES.get());
+                output.accept(MtaBlocks.PURPLE_IPE_LEAVES.get());
+                output.accept(MtaBlocks.WHITE_IPE_LEAVES.get());
+                output.accept(MtaBlocks.YELLOW_IPE_LEAVES.get());
 
                 output.accept(MtaBlocks.BOGGED_OAK_LOG.get());
                 output.accept(MtaBlocks.BOGGED_OAK_WOOD.get());
@@ -45,6 +55,10 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
                 output.accept(MtaBlocks.PALM_LEAVES.get());
+
+                output.accept(MtaBlocks.SEALOG.get());
+                output.accept(MtaBlocks.SEAWOOD_SAPLING.get());
+                output.accept(MtaBlocks.SEAWOOD_LEAVES.get());
 
                 output.accept(MtaBlocks.SCATTERED_LEAVES.get());
                 output.accept(MtaBlocks.CATTAIL.get());
@@ -109,6 +123,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.STRIPPED_ALPINE_LOG.get());
                 output.accept(MtaBlocks.ALPINE_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
+                output.accept(MtaBlocks.ALPINE_LEAVES.get());
                 output.accept(MtaBlocks.ALPINE_PLANKS.get());
                 output.accept(MtaBlocks.ALPINE_SAPLING.get());
                 output.accept(MtaBlocks.ALPINE_STAIRS.get());
@@ -119,11 +134,14 @@ public class MtaTabs {
                 output.accept(MtaBlocks.ALPINE_FENCE_GATE.get());
                 output.accept(MtaBlocks.ALPINE_DOOR.get());
                 output.accept(MtaBlocks.ALPINE_TRAPDOOR.get());
+                output.accept(MtaBlocks.ALPINE_SIGN.get());
+                output.accept(MtaBlocks.ALPINE_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.AVOCADO_LOG.get());
                 output.accept(MtaBlocks.STRIPPED_AVOCADO_LOG.get());
                 output.accept(MtaBlocks.AVOCADO_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_AVOCADO_WOOD.get());
+                output.accept(MtaBlocks.ALPINE_LEAVES.get());
                 output.accept(MtaBlocks.AVOCADO_PLANKS.get());
                 output.accept(MtaBlocks.AVOCADO_SAPLING.get());
                 output.accept(MtaBlocks.AVOCADO_STAIRS.get());
@@ -134,6 +152,8 @@ public class MtaTabs {
                 output.accept(MtaBlocks.AVOCADO_FENCE_GATE.get());
                 output.accept(MtaBlocks.AVOCADO_DOOR.get());
                 output.accept(MtaBlocks.AVOCADO_TRAPDOOR.get());
+                output.accept(MtaBlocks.AVOCADO_SIGN.get());
+                output.accept(MtaBlocks.AVOCADO_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.BOGGED_OAK_LOG.get());
                 output.accept(MtaBlocks.STRIPPED_BOGGED_OAK_LOG.get());
@@ -148,11 +168,38 @@ public class MtaTabs {
                 output.accept(MtaBlocks.BOGGED_OAK_FENCE_GATE.get());
                 output.accept(MtaBlocks.BOGGED_OAK_DOOR.get());
                 output.accept(MtaBlocks.BOGGED_OAK_TRAPDOOR.get());
+                output.accept(MtaBlocks.BOGGED_OAK_SIGN.get());
+                output.accept(MtaBlocks.BOGGED_OAK_HANGING_SIGN.get());
+
+                output.accept(MtaBlocks.IPE_LOG.get());
+                output.accept(MtaBlocks.STRIPPED_IPE_LOG.get());
+                output.accept(MtaBlocks.IPE_WOOD.get());
+                output.accept(MtaBlocks.STRIPPED_IPE_WOOD.get());
+                output.accept(MtaBlocks.PINK_IPE_LEAVES.get());
+                output.accept(MtaBlocks.PURPLE_IPE_LEAVES.get());
+                output.accept(MtaBlocks.WHITE_IPE_LEAVES.get());
+                output.accept(MtaBlocks.YELLOW_IPE_LEAVES.get());
+                output.accept(MtaBlocks.IPE_PLANKS.get());
+                output.accept(MtaBlocks.PINK_IPE_SAPLING.get());
+                output.accept(MtaBlocks.PURPLE_IPE_SAPLING.get());
+                output.accept(MtaBlocks.WHITE_IPE_SAPLING.get());
+                output.accept(MtaBlocks.YELLOW_IPE_SAPLING.get());
+                output.accept(MtaBlocks.IPE_STAIRS.get());
+                output.accept(MtaBlocks.IPE_SLAB.get());
+                output.accept(MtaBlocks.IPE_PRESSURE_PLATE.get());
+                output.accept(MtaBlocks.IPE_BUTTON.get());
+                output.accept(MtaBlocks.IPE_FENCE.get());
+                output.accept(MtaBlocks.IPE_FENCE_GATE.get());
+                output.accept(MtaBlocks.IPE_DOOR.get());
+                output.accept(MtaBlocks.IPE_TRAPDOOR.get());
+                output.accept(MtaBlocks.IPE_SIGN.get());
+                output.accept(MtaBlocks.IPE_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.MANGO_LOG.get());
                 output.accept(MtaBlocks.STRIPPED_MANGO_LOG.get());
                 output.accept(MtaBlocks.MANGO_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_MANGO_WOOD.get());
+                output.accept(MtaBlocks.MANGO_LEAVES.get());
                 output.accept(MtaBlocks.MANGO_PLANKS.get());
                 output.accept(MtaBlocks.MANGO_SAPLING.get());
                 output.accept(MtaBlocks.MANGO_STAIRS.get());
@@ -163,11 +210,14 @@ public class MtaTabs {
                 output.accept(MtaBlocks.MANGO_FENCE_GATE.get());
                 output.accept(MtaBlocks.MANGO_DOOR.get());
                 output.accept(MtaBlocks.MANGO_TRAPDOOR.get());
+                output.accept(MtaBlocks.MANGO_SIGN.get());
+                output.accept(MtaBlocks.MANGO_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.MAPLE_LOG.get());
                 output.accept(MtaBlocks.STRIPPED_MAPLE_LOG.get());
                 output.accept(MtaBlocks.MAPLE_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
+                output.accept(MtaBlocks.MAPLE_LEAVES.get());
                 output.accept(MtaBlocks.MAPLE_PLANKS.get());
                 output.accept(MtaBlocks.MAPLE_SAPLING.get());
                 output.accept(MtaBlocks.MAPLE_STAIRS.get());
@@ -178,11 +228,14 @@ public class MtaTabs {
                 output.accept(MtaBlocks.MAPLE_FENCE_GATE.get());
                 output.accept(MtaBlocks.MAPLE_DOOR.get());
                 output.accept(MtaBlocks.MAPLE_TRAPDOOR.get());
+                output.accept(MtaBlocks.MAPLE_SIGN.get());
+                output.accept(MtaBlocks.MAPLE_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.PALM_LOG.get());
                 output.accept(MtaBlocks.STRIPPED_PALM_LOG.get());
                 output.accept(MtaBlocks.PALM_WOOD.get());
                 output.accept(MtaBlocks.STRIPPED_PALM_WOOD.get());
+                output.accept(MtaBlocks.PALM_LEAVES.get());
                 output.accept(MtaBlocks.PALM_PLANKS.get());
                 output.accept(MtaBlocks.PALM_SAPLING.get());
                 output.accept(MtaBlocks.PALM_STAIRS.get());
@@ -193,9 +246,12 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PALM_FENCE_GATE.get());
                 output.accept(MtaBlocks.PALM_DOOR.get());
                 output.accept(MtaBlocks.PALM_TRAPDOOR.get());
+                output.accept(MtaBlocks.PALM_SIGN.get());
+                output.accept(MtaBlocks.PALM_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.SEALOG.get());
                 output.accept(MtaBlocks.SEAWOOD.get());
+                output.accept(MtaBlocks.SEAWOOD_LEAVES.get());
                 output.accept(MtaBlocks.SEAWOOD_PLANKS.get());
                 output.accept(MtaBlocks.SEAWOOD_SAPLING.get());
                 output.accept(MtaBlocks.SEAWOOD_STAIRS.get());
@@ -206,6 +262,8 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SEAWOOD_FENCE_GATE.get());
                 output.accept(MtaBlocks.SEAWOOD_DOOR.get());
                 output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
+                output.accept(MtaBlocks.SEAWOOD_SIGN.get());
+                output.accept(MtaBlocks.SEAWOOD_HANGING_SIGN.get());
 
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());

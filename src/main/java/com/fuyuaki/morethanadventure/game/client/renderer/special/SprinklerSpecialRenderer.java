@@ -19,8 +19,6 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class SprinklerSpecialRenderer implements NoDataSpecialModelRenderer {
 
-    public static final ResourceLocation LOCATION = ResourceLocation.fromNamespaceAndPath(MODID, "entity/sprinkler");
-
 
     private final SprinklerModel model;
 

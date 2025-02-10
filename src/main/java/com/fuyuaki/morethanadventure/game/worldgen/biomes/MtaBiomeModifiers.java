@@ -24,6 +24,10 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 public class MtaBiomeModifiers {
 
     public  static final ResourceKey<BiomeModifier> ADD_AVOCADO_TREE = registerKey(("avocado_tree"));
+    public  static final ResourceKey<BiomeModifier> ADD_PINK_IPE_TREE = registerKey(("pink_ipe_tree"));
+    public  static final ResourceKey<BiomeModifier> ADD_PURPLE_IPE_TREE = registerKey(("purple_ipe_tree"));
+    public  static final ResourceKey<BiomeModifier> ADD_WHITE_IPE_TREE = registerKey(("white_ipe_tree"));
+    public  static final ResourceKey<BiomeModifier> ADD_YELLOW_IPE_TREE = registerKey(("yellow_ipe_tree"));
     public  static final ResourceKey<BiomeModifier> ADD_MANGO_TREE = registerKey(("mango_tree"));
     public  static final ResourceKey<BiomeModifier> ADD_PALM_TREE = registerKey(("palm_tree"));
     public static final ResourceKey<BiomeModifier> ADD_DIAMOND_CLUSTER = registerKey("diamond_cluster");
@@ -107,6 +111,28 @@ public class MtaBiomeModifiers {
 
         context.register(ADD_AVOCADO_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+
+
+        context.register(ADD_PINK_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_PURPLE_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_WHITE_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_YELLOW_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));

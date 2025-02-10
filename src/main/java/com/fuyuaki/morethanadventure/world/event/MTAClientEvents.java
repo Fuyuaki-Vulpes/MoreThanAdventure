@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaParticles;
 import com.fuyuaki.morethanadventure.core.mod.MTAMod;
+import com.fuyuaki.morethanadventure.core.registry.MTAWoodTypes;
 import com.fuyuaki.morethanadventure.game.client.gui.MTAGui;
 import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
@@ -14,9 +15,7 @@ import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.item.properties.conditional.IsAttacking;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -24,6 +23,9 @@ import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshTransformer;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GameType;
@@ -45,6 +47,14 @@ public class MTAClientEvents {
         event.enqueueWork(() -> {
             MTAMod.setupRenderTypes();
         });
+        Sheets.addWoodType(MTAWoodTypes.ALPINE);
+        Sheets.addWoodType(MTAWoodTypes.AVOCADO);
+        Sheets.addWoodType(MTAWoodTypes.BOGGED_OAK);
+        Sheets.addWoodType(MTAWoodTypes.IPE);
+        Sheets.addWoodType(MTAWoodTypes.MANGO);
+        Sheets.addWoodType(MTAWoodTypes.MAPLE);
+        Sheets.addWoodType(MTAWoodTypes.PALM);
+        Sheets.addWoodType(MTAWoodTypes.SEAWOOD);
 
     }
 
@@ -96,6 +106,9 @@ public class MTAClientEvents {
 
 
         //ITEM & BLOCK
+
+        event.registerBlockEntityRenderer(MtaBlockEntities.SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(MtaBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
 
         event.registerBlockEntityRenderer(MtaBlockEntities.SPRINKLER.get(), SprinklerRenderer::new);
 
@@ -200,6 +213,8 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerSpecialRenderers(RegisterSpecialModelRendererEvent event) {
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "signs/alpine"), MTAStandingSignSpecialRenderer.Unbaked.MAP_CODEC);
+        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "signs/hanging/alpine"), MTAHangingSignSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "netherite_trident"), NetheriteTridentSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
@@ -207,8 +222,8 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerSpecialBlockModelRenderers(RegisterSpecialBlockModelRendererEvent event) {
-        event.register(MtaBlocks.SPRINKLER.get(),
-                new SprinklerSpecialRenderer.Unbaked());
+        event.register(MtaBlocks.SPRINKLER.get(), new SprinklerSpecialRenderer.Unbaked());
+        event.register(MtaBlocks.ALPINE_SIGN.get(), new MTAStandingSignSpecialRenderer.Unbaked(MTAWoodTypes.ALPINE));
 
     }
 
@@ -250,12 +265,16 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_EVERGREEN, MtaBlocks.ALPINE_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.AVOCADO_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PINK_IPE_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PURPLE_IPE_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.WHITE_IPE_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.YELLOW_IPE_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_BIRCH, MtaBlocks.MANGO_LEAVES.get());
+        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.MAPLE_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PALM_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.SCATTERED_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.AVOCADO_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_BIRCH, MtaBlocks.MANGO_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_EVERGREEN, MtaBlocks.ALPINE_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.MAPLE_LEAVES.get());
 
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.GRASSY_DIRT.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageGrassColor(pLevel, pPos) : GrassColor.getDefaultColor(), MtaBlocks.PERMAFROST_GRASS.get());

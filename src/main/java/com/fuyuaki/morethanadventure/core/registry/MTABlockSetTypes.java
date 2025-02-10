@@ -6,8 +6,15 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 public class MTABlockSetTypes {
-    public static final BlockSetType PALM = register("palm");
+
+    public static final BlockSetType ALPINE = register("alpine");
+    public static final BlockSetType AVOCADO = register("avocado");
     public static final BlockSetType BOGGED_OAK = registerFull("bogged_oak", true, true, false, BlockSetType.PressurePlateSensitivity.MOBS ,SoundType.STONE, SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN, SoundEvents.IRON_TRAPDOOR_CLOSE, SoundEvents.IRON_TRAPDOOR_OPEN, SoundEvents.STONE_PRESSURE_PLATE_CLICK_OFF, SoundEvents.STONE_PRESSURE_PLATE_CLICK_ON, SoundEvents.STONE_BUTTON_CLICK_OFF, SoundEvents.STONE_BUTTON_CLICK_ON);
+    public static final BlockSetType IPE= register("ipe");
+    public static final BlockSetType MANGO= register("mango");
+    public static final BlockSetType MAPLE= register("maple");
+    public static final BlockSetType PALM = register("palm");
+    public static final BlockSetType SEAWOOD = register("seawood");
 
     public static BlockSetType register(String name) {
         return BlockSetType.register(new BlockSetType("mta" + name));

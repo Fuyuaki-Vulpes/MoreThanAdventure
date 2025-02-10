@@ -85,6 +85,7 @@ public class MtaTags {
         public static final TagKey<Block> ALPINE_LOGS = tag("alpine_logs");
         public static final TagKey<Block> AVOCADO_LOGS = tag("avocado_logs");
         public static final TagKey<Block> BOGGED_OAK_LOGS = tag("bogged_oak_logs");
+        public static final TagKey<Block> IPE_LOGS = tag("ipe_logs");
         public static final TagKey<Block> MANGO_LOGS = tag("mango_logs");
         public static final TagKey<Block> MAPLE_LOGS = tag("maple_logs");
         public static final TagKey<Block> PALM_LOGS = tag("palm_logs");
@@ -191,6 +192,8 @@ public class MtaTags {
         public static final TagKey<Biome> CRYOLITE = tag("cryolite");
         public static final TagKey<Biome> GARNET = tag("garnet");
         public static final TagKey<Biome> MOONSTONE = tag("moonstone");
+
+        public static final TagKey<Biome> HAS_IPE_TREE = tag("has_ipe_tree");
 
 
         public static final TagKey<Biome> HAS_PALE_WOLF = tag("has_pale_wolf");

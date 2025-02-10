@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "morethanadventure:item/seawood_hanging_sign"
+  }
+}

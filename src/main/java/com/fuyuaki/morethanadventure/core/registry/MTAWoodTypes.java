@@ -8,8 +8,14 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 
 
 public class MTAWoodTypes {
-    public static final WoodType PALM = register("palm", MTABlockSetTypes.PALM);
+    public static final WoodType ALPINE = register("alpine", MTABlockSetTypes.ALPINE);
+    public static final WoodType AVOCADO = register("avocado", MTABlockSetTypes.AVOCADO);
     public static final WoodType BOGGED_OAK = registerFull("bogged_oak", MTABlockSetTypes.BOGGED_OAK, SoundType.NETHER_WOOD, SoundType.NETHER_WOOD_HANGING_SIGN, SoundEvents.NETHER_WOOD_DOOR_CLOSE, SoundEvents.NETHER_WOOD_DOOR_OPEN);
+    public static final WoodType IPE = register("ipe", MTABlockSetTypes.IPE);
+    public static final WoodType MANGO = register("mango", MTABlockSetTypes.MANGO);
+    public static final WoodType MAPLE = register("maple", MTABlockSetTypes.MAPLE);
+    public static final WoodType PALM = register("palm", MTABlockSetTypes.PALM);
+    public static final WoodType SEAWOOD = register("seawood", MTABlockSetTypes.SEAWOOD);
 
 
 
