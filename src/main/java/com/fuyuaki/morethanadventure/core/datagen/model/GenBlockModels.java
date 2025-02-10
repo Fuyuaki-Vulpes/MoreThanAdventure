@@ -61,7 +61,7 @@ public class GenBlockModels extends BlockModelGenerators {
         this.woodProvider(MtaBlocks.STRIPPED_ALPINE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_ALPINE_LOG.get()).wood(MtaBlocks.STRIPPED_ALPINE_WOOD.get());
         createTintedLeaves(MtaBlocks.ALPINE_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_EVERGREEN);
         this.createPlantWithDefaultItem(MtaBlocks.ALPINE_SAPLING.get(),MtaBlocks.POTTED_ALPINE_SAPLING.get(),PlantType.NOT_TINTED);
-        this.createHangingSign(MtaBlocks.ALPINE_PLANKS.get(), MtaBlocks.ALPINE_HANGING_SIGN.get(), MtaBlocks.ALPINE_HANGING_WALL_SIGN.get());
+        this.createHangingSign(MtaBlocks.STRIPPED_ALPINE_LOG.get(), MtaBlocks.ALPINE_HANGING_SIGN.get(), MtaBlocks.ALPINE_HANGING_WALL_SIGN.get());
 
 
         this.woodProvider(MtaBlocks.AVOCADO_LOG.get()).logWithHorizontal(MtaBlocks.AVOCADO_LOG.get()).wood(MtaBlocks.AVOCADO_WOOD.get());

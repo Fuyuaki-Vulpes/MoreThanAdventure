@@ -1060,15 +1060,6 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
         return registerBlock(name, WallBlock::new, BlockBehaviour.Properties.ofFullCopy(baseBlock));
     }
 
-    private static BlockBehaviour.Properties registerWallVariant(Block baseBlock, boolean overrideDescription) {
-        BlockBehaviour.Properties blockbehaviour$properties = baseBlock.properties();
-        BlockBehaviour.Properties blockbehaviour$properties1 = BlockBehaviour.Properties.of().overrideLootTable(baseBlock.getLootTable());
-        if (overrideDescription) {
-            blockbehaviour$properties1 = blockbehaviour$properties1.overrideDescription(baseBlock.getDescriptionId());
-        }
-
-        return blockbehaviour$properties1;
-    }
 
     public static DeferredBlock<Block> oreBlock(String name, int min, int max, BlockBehaviour.Properties block) {
         return registerBlock(name, properties -> new DropExperienceBlock(
@@ -1135,7 +1126,7 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
             ));
     public static final DeferredBlock<DropExperienceBlock> DEEPSLATE_PLACEHOLDER_ORE = registerBlock("deepslate_placeholder_ore",
              DropExperienceBlock(ConstantInt.of(0),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
+                        BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE)
             ));
     public static final DeferredBlock<DropExperienceBlock> NETHER_PLACEHOLDER_ORE = registerBlock("nether_placeholder_ore",
              DropExperienceBlock(ConstantInt.of(0),

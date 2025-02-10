@@ -213,8 +213,6 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerSpecialRenderers(RegisterSpecialModelRendererEvent event) {
-        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "signs/alpine"), MTAStandingSignSpecialRenderer.Unbaked.MAP_CODEC);
-        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "signs/hanging/alpine"), MTAHangingSignSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "netherite_trident"), NetheriteTridentSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
@@ -222,8 +220,6 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerSpecialBlockModelRenderers(RegisterSpecialBlockModelRendererEvent event) {
-        event.register(MtaBlocks.SPRINKLER.get(), new SprinklerSpecialRenderer.Unbaked());
-        event.register(MtaBlocks.ALPINE_SIGN.get(), new MTAStandingSignSpecialRenderer.Unbaked(MTAWoodTypes.ALPINE));
 
     }
 
@@ -267,12 +263,7 @@ public class MTAClientEvents {
     public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_EVERGREEN, MtaBlocks.ALPINE_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.AVOCADO_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PINK_IPE_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PURPLE_IPE_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.WHITE_IPE_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.YELLOW_IPE_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_BIRCH, MtaBlocks.MANGO_LEAVES.get());
-        event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.MAPLE_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.PALM_LEAVES.get());
         event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null && pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.FOLIAGE_DEFAULT, MtaBlocks.SCATTERED_LEAVES.get());
 
