@@ -103,7 +103,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.WOOD_SCYTHE.get(),
                         MtaItems.WOOD_SICKLE.get(),
                         MtaItems.WOOD_SPEAR.get(),
-                        MtaItems.WOOD_WHIP_SWORD.get(),
+                        //MtaItems.WOOD_WHIP_SWORD.get(),
 
                         MtaItems.STONE_CLAW.get(),
                         MtaItems.STONE_ANCHOR.get(),
@@ -119,7 +119,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.STONE_SCYTHE.get(),
                         MtaItems.STONE_SICKLE.get(),
                         MtaItems.STONE_SPEAR.get(),
-                        MtaItems.STONE_WHIP_SWORD.get(),
+                       // MtaItems.STONE_WHIP_SWORD.get(),
 
                         MtaItems.COPPER_ANCHOR.get(),
                         MtaItems.COPPER_CLAW.get(),
@@ -136,7 +136,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.COPPER_SICKLE.get(),
                         MtaItems.COPPER_SPEAR.get(),
                         MtaItems.COPPER_TWINBLADE.get(),
-                        MtaItems.COPPER_WHIP_SWORD.get(),
+                       // MtaItems.COPPER_WHIP_SWORD.get(),
 
                         MtaItems.IRON_ANCHOR.get(),
                         MtaItems.IRON_CLAW.get(),
@@ -153,7 +153,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.IRON_SICKLE.get(),
                         MtaItems.IRON_SPEAR.get(),
                         MtaItems.IRON_TWINBLADE.get(),
-                        MtaItems.IRON_WHIP_SWORD.get(),
+                       // MtaItems.IRON_WHIP_SWORD.get(),
 
                         MtaItems.GOLD_ANCHOR.get(),
                         MtaItems.GOLD_CLAW.get(),
@@ -170,7 +170,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.GOLD_SICKLE.get(),
                         MtaItems.GOLD_SPEAR.get(),
                         MtaItems.GOLD_TWINBLADE.get(),
-                        MtaItems.GOLD_WHIP_SWORD.get(),
+                       // MtaItems.GOLD_WHIP_SWORD.get(),
 
                         MtaItems.NETHERSTEEL_CLAW.get(),
                         MtaItems.NETHERSTEEL_ANCHOR.get(),
@@ -187,7 +187,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.NETHERSTEEL_SICKLE.get(),
                         MtaItems.NETHERSTEEL_SPEAR.get(),
                         MtaItems.NETHERSTEEL_TWINBLADE.get(),
-                        MtaItems.NETHERSTEEL_WHIP_SWORD.get(),
+                      //  MtaItems.NETHERSTEEL_WHIP_SWORD.get(),
 
                         MtaItems.DIAMOND_ANCHOR.get(),
                         MtaItems.DIAMOND_CLAW.get(),
@@ -204,7 +204,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.DIAMOND_SICKLE.get(),
                         MtaItems.DIAMOND_SPEAR.get(),
                         MtaItems.DIAMOND_TWINBLADE.get(),
-                        MtaItems.DIAMOND_WHIP_SWORD.get(),
+                       // MtaItems.DIAMOND_WHIP_SWORD.get(),
 
                         MtaItems.NETHERITE_ANCHOR.get(),
                         MtaItems.NETHERITE_CLAW.get(),
@@ -220,8 +220,8 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.NETHERITE_SCYTHE.get(),
                         MtaItems.NETHERITE_SICKLE.get(),
                         MtaItems.NETHERITE_SPEAR.get(),
-                        MtaItems.NETHERITE_TWINBLADE.get(),
-                        MtaItems.NETHERITE_WHIP_SWORD.get()
+                        MtaItems.NETHERITE_TWINBLADE.get()
+                        //MtaItems.NETHERITE_WHIP_SWORD.get()
                 );
 
         this.tag(ItemTags.PICKAXES)
@@ -634,7 +634,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.WOOD_SICKLE.get(),
                         MtaItems.WOOD_SPEAR.get(),
                         MtaItems.WOOD_TWINBLADE.get(),
-                        MtaItems.WOOD_WHIP_SWORD.get(),
+                        //MtaItems.WOOD_WHIP_SWORD.get(),
 
                         MtaItems.STONE_ANCHOR.get(),
                         MtaItems.STONE_CLAW.get(),
@@ -651,7 +651,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.STONE_SICKLE.get(),
                         MtaItems.STONE_SPEAR.get(),
                         MtaItems.STONE_TWINBLADE.get(),
-                        MtaItems.STONE_WHIP_SWORD.get(),
+                        //MtaItems.STONE_WHIP_SWORD.get(),
 
                         MtaItems.COPPER_ANCHOR.get(),
                         MtaItems.COPPER_CLAW.get(),
@@ -668,7 +668,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.COPPER_SICKLE.get(),
                         MtaItems.COPPER_SPEAR.get(),
                         MtaItems.COPPER_TWINBLADE.get(),
-                        MtaItems.COPPER_WHIP_SWORD.get(),
+                       // MtaItems.COPPER_WHIP_SWORD.get(),
 
                         MtaItems.IRON_ANCHOR.get(),
                         MtaItems.IRON_CLAW.get(),
@@ -685,7 +685,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.IRON_SICKLE.get(),
                         MtaItems.IRON_SPEAR.get(),
                         MtaItems.IRON_TWINBLADE.get(),
-                        MtaItems.IRON_WHIP_SWORD.get(),
+                      //  MtaItems.IRON_WHIP_SWORD.get(),
 
                         MtaItems.GOLD_ANCHOR.get(),
                         MtaItems.GOLD_CLAW.get(),
@@ -702,7 +702,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.GOLD_SICKLE.get(),
                         MtaItems.GOLD_SPEAR.get(),
                         MtaItems.GOLD_TWINBLADE.get(),
-                        MtaItems.GOLD_WHIP_SWORD.get(),
+                      //  MtaItems.GOLD_WHIP_SWORD.get(),
 
                         MtaItems.NETHERSTEEL_CLAW.get(),
                         MtaItems.NETHERSTEEL_ANCHOR.get(),
@@ -719,7 +719,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.NETHERSTEEL_SICKLE.get(),
                         MtaItems.NETHERSTEEL_SPEAR.get(),
                         MtaItems.NETHERSTEEL_TWINBLADE.get(),
-                        MtaItems.NETHERSTEEL_WHIP_SWORD.get(),
+                      //  MtaItems.NETHERSTEEL_WHIP_SWORD.get(),
 
                         MtaItems.DIAMOND_ANCHOR.get(),
                         MtaItems.DIAMOND_CLAW.get(),
@@ -736,7 +736,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.DIAMOND_SICKLE.get(),
                         MtaItems.DIAMOND_SPEAR.get(),
                         MtaItems.DIAMOND_TWINBLADE.get(),
-                        MtaItems.DIAMOND_WHIP_SWORD.get(),
+                       // MtaItems.DIAMOND_WHIP_SWORD.get(),
 
                         MtaItems.NETHERITE_ANCHOR.get(),
                         MtaItems.NETHERITE_CLAW.get(),
@@ -753,7 +753,7 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.NETHERITE_SICKLE.get(),
                         MtaItems.NETHERITE_SPEAR.get(),
                         MtaItems.NETHERITE_TWINBLADE.get(),
-                        MtaItems.NETHERITE_WHIP_SWORD.get(),
+                       // MtaItems.NETHERITE_WHIP_SWORD.get(),
 
                         MtaItems.LONG_BOW.get(),
                         MtaItems.REINFORCED_LONG_BOW.get(),

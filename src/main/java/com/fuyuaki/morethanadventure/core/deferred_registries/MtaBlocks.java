@@ -43,7 +43,7 @@ public class MtaBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
 
 
-    public static final DeferredBlock<Block> SPRINKLER = registerBlock("sprinkler", Sprinkler::new,
+    public static final DeferredBlock<Block> SPRINKLER = registerNoItemBlock("sprinkler", Sprinkler::new,
             BlockBehaviour.Properties.of()
                     .strength(5.0F)
                     .sound(SoundType.METAL)

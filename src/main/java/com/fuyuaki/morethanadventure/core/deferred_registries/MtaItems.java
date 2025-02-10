@@ -264,11 +264,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> WOOD_WHIP_SWORD = ITEMS.registerItem("wood_whip_sword",
-            properties -> new WhipSwordItem(ToolMaterial.WOOD,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> WOOD_WHIP_SWORD = ITEMS.registerItem("wood_whip_sword",
+//        properties -> new WhipSwordItem(ToolMaterial.WOOD,
+//                properties
+//
+//        ));
     public static final DeferredItem<AnchorItem>STONE_ANCHOR = ITEMS.registerItem("stone_anchor",
             properties -> new AnchorItem(ToolMaterial.STONE,
                     properties
@@ -344,11 +344,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> STONE_WHIP_SWORD = ITEMS.registerItem("stone_whip_sword",
-            properties -> new WhipSwordItem(ToolMaterial.STONE,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> STONE_WHIP_SWORD = ITEMS.registerItem("stone_whip_sword",
+//            properties -> new WhipSwordItem(ToolMaterial.STONE,
+//                    properties
+//
+//            ));
     public static final DeferredItem<AnchorItem> COPPER_ANCHOR = ITEMS.registerItem("copper_anchor",
             properties -> new AnchorItem(MTAToolMaterials.COPPER,
                     properties
@@ -429,11 +429,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> COPPER_WHIP_SWORD = ITEMS.registerItem("copper_whip_sword",
-            properties -> new WhipSwordItem(MTAToolMaterials.COPPER,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> COPPER_WHIP_SWORD = ITEMS.registerItem("copper_whip_sword",
+//            properties -> new WhipSwordItem(MTAToolMaterials.COPPER,
+//                    properties
+//
+//            ));
     public static final DeferredItem<AnchorItem> IRON_ANCHOR = ITEMS.registerItem("iron_anchor",
             properties -> new AnchorItem(ToolMaterial.IRON,
                     properties
@@ -509,11 +509,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> IRON_WHIP_SWORD = ITEMS.registerItem("iron_whip_sword",
-            properties -> new WhipSwordItem(ToolMaterial.IRON,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> IRON_WHIP_SWORD = ITEMS.registerItem("iron_whip_sword",
+//            properties -> new WhipSwordItem(ToolMaterial.IRON,
+//                    properties
+//
+//            ));
     public static final DeferredItem<AnchorItem> GOLD_ANCHOR = ITEMS.registerItem("gold_anchor",
             properties -> new AnchorItem(ToolMaterial.GOLD,
                     properties
@@ -589,11 +589,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> GOLD_WHIP_SWORD = ITEMS.registerItem("gold_whip_sword",
-            properties -> new WhipSwordItem(ToolMaterial.GOLD,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> GOLD_WHIP_SWORD = ITEMS.registerItem("gold_whip_sword",
+//            properties -> new WhipSwordItem(ToolMaterial.GOLD,
+//                    properties
+//
+//            ));
     public static final DeferredItem<SwordItem> NETHERSTEEL_SWORD = ITEMS.registerItem("nethersteel_sword",
             properties -> new SwordItem(MTAToolMaterials.NETHERSTEEL, 3.0F, -2.4F,
                     properties
@@ -674,11 +674,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> NETHERSTEEL_WHIP_SWORD = ITEMS.registerItem("nethersteel_whip_sword",
-            properties -> new WhipSwordItem(MTAToolMaterials.NETHERSTEEL,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> NETHERSTEEL_WHIP_SWORD = ITEMS.registerItem("nethersteel_whip_sword",
+//            properties -> new WhipSwordItem(MTAToolMaterials.NETHERSTEEL,
+//                    properties
+//
+//            ));
     public static final DeferredItem<AnchorItem> DIAMOND_ANCHOR = ITEMS.registerItem("diamond_anchor",
             properties -> new AnchorItem(ToolMaterial.DIAMOND,
                     properties
@@ -754,11 +754,11 @@ public class MtaItems {
                     properties
 
             ));
-    public static final DeferredItem<WhipSwordItem> DIAMOND_WHIP_SWORD = ITEMS.registerItem("diamond_whip_sword",
-            properties -> new WhipSwordItem(ToolMaterial.DIAMOND,
-                    properties
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> DIAMOND_WHIP_SWORD = ITEMS.registerItem("diamond_whip_sword",
+//            properties -> new WhipSwordItem(ToolMaterial.DIAMOND,
+//                    properties
+//
+//            ));
     public static final DeferredItem<NetheriteTridentItem> NETHERITE_TRIDENT = ITEMS.registerItem("netherite_trident",
             properties -> new NetheriteTridentItem(
                     properties
@@ -848,11 +848,11 @@ public class MtaItems {
                     properties.fireResistant()
 
             ));
-    public static final DeferredItem<WhipSwordItem> NETHERITE_WHIP_SWORD = ITEMS.registerItem("netherite_whip_sword",
-            properties -> new WhipSwordItem(ToolMaterial.NETHERITE,
-                    properties.fireResistant()
-
-            ));
+//    public static final DeferredItem<WhipSwordItem> NETHERITE_WHIP_SWORD = ITEMS.registerItem("netherite_whip_sword",
+//            properties -> new WhipSwordItem(ToolMaterial.NETHERITE,
+//                    properties.fireResistant()
+//
+//            ));
 
     public static final DeferredItem<ArcheryItem> LONG_BOW = ITEMS.registerItem("longbow",
             properties -> new ArcheryItem(
@@ -1203,6 +1203,8 @@ public class MtaItems {
     public static final DeferredItem<Item> SIREN_SPAWN_EGG =  ITEMS.registerItem("siren_spawn_egg",
             properties -> new SpawnEggItem(MtaEntityTypes.SIREN.get(), properties
             ));
+
+    public static final DeferredItem<BlockItem> SPRINKLER = ITEMS.registerSimpleBlockItem(MtaBlocks.SPRINKLER);
 
     public static final DeferredItem<Item> ALPINE_SIGN = ITEMS.registerItem("alpine_sign",
             properties -> new SignItem(MtaBlocks.ALPINE_SIGN.get(), MtaBlocks.ALPINE_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));

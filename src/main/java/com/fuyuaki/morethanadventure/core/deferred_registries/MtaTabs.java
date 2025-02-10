@@ -529,7 +529,7 @@ public class MtaTabs {
                 output.accept(MtaItems.WOOD_SICKLE);
                 output.accept(MtaItems.WOOD_SPEAR);
                 output.accept(MtaItems.WOOD_TWINBLADE);
-                output.accept(MtaItems.WOOD_WHIP_SWORD);
+                //output.accept(MtaItems.WOOD_WHIP_SWORD);
 
                 output.accept(MtaItems.STONE_ANCHOR);
                 output.accept(MtaItems.STONE_CLAW);
@@ -546,7 +546,7 @@ public class MtaTabs {
                 output.accept(MtaItems.STONE_SICKLE);
                 output.accept(MtaItems.STONE_SPEAR);
                 output.accept(MtaItems.STONE_TWINBLADE);
-                output.accept(MtaItems.STONE_WHIP_SWORD);
+                //output.accept(MtaItems.STONE_WHIP_SWORD);
 
                 output.accept(MtaItems.COPPER_SWORD);
                 output.accept(MtaItems.COPPER_PICKAXE);
@@ -568,7 +568,7 @@ public class MtaTabs {
                 output.accept(MtaItems.COPPER_SICKLE);
                 output.accept(MtaItems.COPPER_SPEAR);
                 output.accept(MtaItems.COPPER_TWINBLADE);
-                output.accept(MtaItems.COPPER_WHIP_SWORD);
+                //output.accept(MtaItems.COPPER_WHIP_SWORD);
 
                 output.accept(MtaItems.IRON_ANCHOR);
                 output.accept(MtaItems.IRON_CLAW);
@@ -585,7 +585,7 @@ public class MtaTabs {
                 output.accept(MtaItems.IRON_SICKLE);
                 output.accept(MtaItems.IRON_SPEAR);
                 output.accept(MtaItems.IRON_TWINBLADE);
-                output.accept(MtaItems.IRON_WHIP_SWORD);
+                //output.accept(MtaItems.IRON_WHIP_SWORD);
 
                 output.accept(MtaItems.GOLD_ANCHOR);
                 output.accept(MtaItems.GOLD_CLAW);
@@ -602,7 +602,7 @@ public class MtaTabs {
                 output.accept(MtaItems.GOLD_SICKLE);
                 output.accept(MtaItems.GOLD_SPEAR);
                 output.accept(MtaItems.GOLD_TWINBLADE);
-                output.accept(MtaItems.GOLD_WHIP_SWORD);
+               // output.accept(MtaItems.GOLD_WHIP_SWORD);
 
                 output.accept(MtaItems.NETHERSTEEL_SWORD);
                 output.accept(MtaItems.NETHERSTEEL_PICKAXE);
@@ -624,7 +624,7 @@ public class MtaTabs {
                 output.accept(MtaItems.NETHERSTEEL_SICKLE);
                 output.accept(MtaItems.NETHERSTEEL_SPEAR);
                 output.accept(MtaItems.NETHERSTEEL_TWINBLADE);
-                output.accept(MtaItems.NETHERSTEEL_WHIP_SWORD);
+               // output.accept(MtaItems.NETHERSTEEL_WHIP_SWORD);
 
                 output.accept(MtaItems.DIAMOND_ANCHOR);
                 output.accept(MtaItems.DIAMOND_CLAW);
@@ -641,7 +641,7 @@ public class MtaTabs {
                 output.accept(MtaItems.DIAMOND_SICKLE);
                 output.accept(MtaItems.DIAMOND_SPEAR);
                 output.accept(MtaItems.DIAMOND_TWINBLADE);
-                output.accept(MtaItems.DIAMOND_WHIP_SWORD);
+               // output.accept(MtaItems.DIAMOND_WHIP_SWORD);
 
                 output.accept(MtaItems.NETHERITE_TRIDENT);
                 output.accept(MtaItems.NETHERITE_BOW);
@@ -661,7 +661,7 @@ public class MtaTabs {
                 output.accept(MtaItems.NETHERITE_SICKLE);
                 output.accept(MtaItems.NETHERITE_SPEAR);
                 output.accept(MtaItems.NETHERITE_TWINBLADE);
-                output.accept(MtaItems.NETHERITE_WHIP_SWORD);
+               // output.accept(MtaItems.NETHERITE_WHIP_SWORD);
 
                 output.accept(MtaItems.LONG_BOW);
                 output.accept(MtaItems.REINFORCED_LONG_BOW);

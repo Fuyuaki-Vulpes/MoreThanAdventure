@@ -181,7 +181,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.WOOD_SICKLE);
         handheldBigItem(MtaItems.WOOD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.WOOD_TWINBLADE);
-        handheldItem(MtaItems.WOOD_WHIP_SWORD);
+        //handheldItem(MtaItems.WOOD_WHIP_SWORD);
 
         handheldBigItem(MtaItems.STONE_ANCHOR);
         handheldClaw(MtaItems.STONE_CLAW);
@@ -198,7 +198,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.STONE_SICKLE);
         handheldBigItem(MtaItems.STONE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.STONE_TWINBLADE);
-        handheldItem(MtaItems.STONE_WHIP_SWORD);
+        //handheldItem(MtaItems.STONE_WHIP_SWORD);
 
         handheldBigItem(MtaItems.COPPER_ANCHOR);
         handheldClaw(MtaItems.COPPER_CLAW);
@@ -215,7 +215,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.COPPER_SICKLE);
         handheldBigItem(MtaItems.COPPER_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.COPPER_TWINBLADE);
-        handheldItem(MtaItems.COPPER_WHIP_SWORD);
+        //handheldItem(MtaItems.COPPER_WHIP_SWORD);
 
         handheldBigItem(MtaItems.IRON_ANCHOR);
         handheldClaw(MtaItems.IRON_CLAW);
@@ -232,7 +232,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.IRON_SICKLE);
         handheldBigItem(MtaItems.IRON_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.IRON_TWINBLADE);
-        handheldItem(MtaItems.IRON_WHIP_SWORD);
+        //handheldItem(MtaItems.IRON_WHIP_SWORD);
 
         handheldBigItem(MtaItems.GOLD_ANCHOR);
         handheldClaw(MtaItems.GOLD_CLAW);
@@ -249,7 +249,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.GOLD_SICKLE);
         handheldBigItem(MtaItems.GOLD_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.GOLD_TWINBLADE);
-        handheldItem(MtaItems.GOLD_WHIP_SWORD);
+        //handheldItem(MtaItems.GOLD_WHIP_SWORD);
 
         handheldBigItem(MtaItems.NETHERSTEEL_ANCHOR);
         handheldClaw(MtaItems.NETHERSTEEL_CLAW);
@@ -266,7 +266,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.NETHERSTEEL_SICKLE);
         handheldBigItem(MtaItems.NETHERSTEEL_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERSTEEL_TWINBLADE);
-        handheldItem(MtaItems.NETHERSTEEL_WHIP_SWORD);
+       // handheldItem(MtaItems.NETHERSTEEL_WHIP_SWORD);
 
         handheldBigItem(MtaItems.DIAMOND_ANCHOR);
         handheldClaw(MtaItems.DIAMOND_CLAW);
@@ -283,7 +283,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.DIAMOND_SICKLE);
         handheldBigItem(MtaItems.DIAMOND_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.DIAMOND_TWINBLADE);
-        handheldItem(MtaItems.DIAMOND_WHIP_SWORD);
+        //handheldItem(MtaItems.DIAMOND_WHIP_SWORD);
 
         handheldBigItem(MtaItems.NETHERITE_ANCHOR);
         handheldClaw(MtaItems.NETHERITE_CLAW);
@@ -300,7 +300,7 @@ public class GenItemModels extends ItemModelGenerators {
         handheldItem(MtaItems.NETHERITE_SICKLE);
         handheldBigItem(MtaItems.NETHERITE_SPEAR);
         handheldBigItemMiddleHilt(MtaItems.NETHERITE_TWINBLADE);
-        handheldItem(MtaItems.NETHERITE_WHIP_SWORD);
+        //handheldItem(MtaItems.NETHERITE_WHIP_SWORD);
 
         this.generateBowBig(MtaItems.LONG_BOW.get());
         this.generateBowBig(MtaItems.REINFORCED_LONG_BOW.get());

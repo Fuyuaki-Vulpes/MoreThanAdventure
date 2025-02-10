@@ -76,10 +76,10 @@ public class GenBlockModels extends BlockModelGenerators {
 
         this.woodProvider(MtaBlocks.IPE_LOG.get()).logWithHorizontal(MtaBlocks.IPE_LOG.get()).wood(MtaBlocks.IPE_WOOD.get());
         this.woodProvider(MtaBlocks.STRIPPED_IPE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_IPE_LOG.get()).wood(MtaBlocks.STRIPPED_IPE_WOOD.get());
-        createTintedLeaves(MtaBlocks.PINK_IPE_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
-        createTintedLeaves(MtaBlocks.PURPLE_IPE_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
-        createTintedLeaves(MtaBlocks.WHITE_IPE_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
-        createTintedLeaves(MtaBlocks.YELLOW_IPE_LEAVES.get(), TexturedModel.LEAVES, FoliageColor.FOLIAGE_DEFAULT);
+        createTrivialCube(MtaBlocks.PINK_IPE_LEAVES.get());
+        createTrivialCube(MtaBlocks.PURPLE_IPE_LEAVES.get());
+        createTrivialCube(MtaBlocks.WHITE_IPE_LEAVES.get());
+        createTrivialCube(MtaBlocks.YELLOW_IPE_LEAVES.get());
         this.createPlantWithDefaultItem(MtaBlocks.PINK_IPE_SAPLING.get(),MtaBlocks.POTTED_PINK_IPE_SAPLING.get(),PlantType.NOT_TINTED);
         this.createPlantWithDefaultItem(MtaBlocks.PURPLE_IPE_SAPLING.get(),MtaBlocks.POTTED_PURPLE_IPE_SAPLING.get(),PlantType.NOT_TINTED);
         this.createPlantWithDefaultItem(MtaBlocks.WHITE_IPE_SAPLING.get(),MtaBlocks.POTTED_WHITE_IPE_SAPLING.get(),PlantType.NOT_TINTED);
