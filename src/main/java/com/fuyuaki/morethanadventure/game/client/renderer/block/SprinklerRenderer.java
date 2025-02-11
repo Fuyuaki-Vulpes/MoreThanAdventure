@@ -31,7 +31,7 @@ public class SprinklerRenderer<T extends SprinklerEntity> implements BlockEntity
         VertexConsumer vertexconsumer = MATERIAL.buffer(bufferSource, RenderType::entityCutout);
         poseStack.translate(0.5F, -0.5F, 0.5F);
         poseStack.rotateAround(Axis.XP.rotation(3.145F), 0.0F, 1.0F, 0.0F);
-        this.sprinklerModel.setupAnim(blockEntity.getOn(), partialTick);
+        this.sprinklerModel.setupAnim(blockEntity.getOn());
         this.sprinklerModel.renderToBuffer(poseStack, vertexconsumer, packedLight, packedOverlay);
     }
 

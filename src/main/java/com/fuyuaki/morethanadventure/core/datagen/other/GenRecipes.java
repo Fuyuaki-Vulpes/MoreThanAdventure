@@ -462,8 +462,33 @@ public class GenRecipes  extends RecipeProvider {
                 .requires(MtaTags.Common.CROPS_RICE)
                 .requires(Items.DRIED_KELP)
                 .unlockedBy("has_rice", has(MtaItems.RICE));
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.SHRIMP), RecipeCategory.FOOD, MtaItems.COOKED_SHRIMP, 0.35F, 200)
                 .unlockedBy("has_shrimp", has(MtaItems.SHRIMP));
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_HORSE), RecipeCategory.FOOD, MtaItems.COOKED_HORSE, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_HORSE));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_DUCK), RecipeCategory.FOOD, MtaItems.COOKED_DUCK, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_DUCK));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_GOAT), RecipeCategory.FOOD, MtaItems.COOKED_GOAT, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_GOAT));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_DEER), RecipeCategory.FOOD, MtaItems.COOKED_DEER, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_DEER));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_TURKEY), RecipeCategory.FOOD, MtaItems.COOKED_TURKEY, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_TURKEY));
+
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.SHRIMP), RecipeCategory.FOOD, MtaItems.COOKED_SHRIMP, 0.35F, 200)
+                .unlockedBy("has_shrimp", has(MtaItems.SHRIMP));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_HORSE), RecipeCategory.FOOD, MtaItems.COOKED_HORSE, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_HORSE));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_DUCK), RecipeCategory.FOOD, MtaItems.COOKED_DUCK, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_DUCK));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_GOAT), RecipeCategory.FOOD, MtaItems.COOKED_GOAT, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_GOAT));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_DEER), RecipeCategory.FOOD, MtaItems.COOKED_DEER, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_DEER));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_TURKEY), RecipeCategory.FOOD, MtaItems.COOKED_TURKEY, 0.35F, 200)
+                .unlockedBy("has_food", has(MtaItems.RAW_TURKEY));
 
         //Farmer's Delight
 

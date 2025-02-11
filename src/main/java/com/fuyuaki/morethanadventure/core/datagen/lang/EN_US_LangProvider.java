@@ -767,6 +767,16 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         //FOODS
         add(MtaItems.ONION.get(),"Onion");
+        add(MtaItems.RAW_HORSE.get(),"Horse");
+        add(MtaItems.COOKED_HORSE.get(),"Cooked Horse");
+        add(MtaItems.RAW_DEER.get(),"Deer");
+        add(MtaItems.COOKED_DEER.get(),"Cooked Deer");
+        add(MtaItems.RAW_DUCK.get(),"Duck");
+        add(MtaItems.COOKED_DUCK.get(),"Cooked Duck");
+        add(MtaItems.RAW_GOAT.get(),"Goat");
+        add(MtaItems.COOKED_GOAT.get(),"Cooked Goat");
+        add(MtaItems.RAW_TURKEY.get(),"Turkey");
+        add(MtaItems.COOKED_TURKEY.get(),"Cooked Turkey");
         add(MtaItems.SHRIMP.get(),"Shrimp");
         add(MtaItems.COOKED_SHRIMP.get(),"Cooked Shrimp");
         add(MtaItems.TOMATO.get(),"Tomato");

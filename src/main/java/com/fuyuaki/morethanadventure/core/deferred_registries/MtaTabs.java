@@ -788,9 +788,21 @@ public class MtaTabs {
                 output.accept(MtaItems.BIG_BOWL);
 
                 //FOOD
-                output.accept(MtaItems.ONION);
                 output.accept(MtaItems.SHRIMP);
                 output.accept(MtaItems.COOKED_SHRIMP);
+
+                output.accept(MtaItems.RAW_HORSE);
+                output.accept(MtaItems.COOKED_HORSE);
+                output.accept(MtaItems.RAW_DUCK);
+                output.accept(MtaItems.COOKED_DUCK);
+                output.accept(MtaItems.RAW_GOAT);
+                output.accept(MtaItems.COOKED_GOAT);
+                output.accept(MtaItems.RAW_DEER);
+                output.accept(MtaItems.COOKED_DEER);
+                output.accept(MtaItems.RAW_TURKEY);
+                output.accept(MtaItems.COOKED_TURKEY);
+
+                output.accept(MtaItems.ONION);
                 output.accept(MtaItems.TOMATO);
                 output.accept(MtaItems.TOMATO_SEEDS);
                 output.accept(MtaItems.BELL_PEPPER);

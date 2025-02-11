@@ -15,6 +15,22 @@ public class MtaFoods {
             .nutrition(5)
             .saturationModifier(1.6F)
             .build();
+
+    public static final FoodProperties HORSE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).build();
+    public static final FoodProperties COOKED_HORSE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build();
+
+    public static final FoodProperties DUCK = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).build();
+    public static final FoodProperties COOKED_DUCK = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build();
+
+    public static final FoodProperties GOAT = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).build();
+    public static final FoodProperties COOKED_GOAT = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build();
+
+    public static final FoodProperties DEER = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).build();
+    public static final FoodProperties COOKED_DEER = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build();
+
+    public static final FoodProperties TURKEY = new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).build();
+    public static final FoodProperties COOKED_TURKEY = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build();
+
     public static final FoodProperties TOMATO = new FoodProperties.Builder()
             .nutrition(3)
             .saturationModifier(0.3F)
