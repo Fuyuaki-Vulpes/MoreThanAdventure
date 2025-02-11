@@ -52,7 +52,6 @@ public class GenItemModels extends ItemModelGenerators {
     @Override
     public void run() {
 
-
         simpleItem(MtaItems.BIG_BOWL);
 
         simpleItem(MtaItems.CLEAR_QUARTZ);

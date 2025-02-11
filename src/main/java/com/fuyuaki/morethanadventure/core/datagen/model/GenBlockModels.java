@@ -2,7 +2,6 @@ package com.fuyuaki.morethanadventure.core.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.SprinklerSpecialRenderer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.color.item.GrassColorSource;
@@ -10,10 +9,8 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.*;
 import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -24,6 +21,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+
+import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class GenBlockModels extends BlockModelGenerators {
 
@@ -45,7 +44,7 @@ public class GenBlockModels extends BlockModelGenerators {
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(p_386718_ -> this.family(p_386718_.getBaseBlock()).generateFor(p_386718_));
 
-        createSprinkler(MtaBlocks.SPRINKLER.get(),Blocks.BIRCH_PLANKS);
+        createSprinkler(MtaBlocks.SPRINKLER.get(),Blocks.BIRCH_PLANKS, ResourceLocation.fromNamespaceAndPath(MODID, "textures/item/sprinkler.png"));
 
 
         this.createDoublePlantWithDefaultItem(MtaBlocks.CATTAIL.get(),PlantType.NOT_TINTED);
@@ -261,13 +260,9 @@ public class GenBlockModels extends BlockModelGenerators {
     }
 
 
-    public void createSprinkler(Block block, Block particleBlock){
+    public void createSprinkler(Block block, Block particleBlock, ResourceLocation location){
         this.createParticleOnlyBlock(block, particleBlock);
-        Item item = block.asItem();
-        ResourceLocation resourcelocation = MTAModelTemplates.SPRINKLER_INVENTORY.create(item, TextureMapping.particle(particleBlock), this.modelOutput);
-        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.specialModel(resourcelocation, new SprinklerSpecialRenderer.Unbaked());
-
-            this.itemModelOutput.accept(item, itemmodel$unbaked);
+        this.registerSimpleItemModel(block, location);
 
     }
 

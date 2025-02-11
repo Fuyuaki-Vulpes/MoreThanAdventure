@@ -1,6 +1,0 @@
-{
-  "parent": "morethanadventure:item/template_sprinkler",
-  "textures": {
-    "particle": "minecraft:block/birch_planks"
-  }
-}

@@ -2,8 +2,8 @@
   "sources": [
     {
       "type": "directory",
-      "source": "gui/slot",
-      "prefix": "gui/slot/"
+      "source": "sprinkler",
+      "prefix": "sprinkler/"
     }
   ]
 }

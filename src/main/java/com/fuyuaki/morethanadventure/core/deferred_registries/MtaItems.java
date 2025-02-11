@@ -1204,8 +1204,6 @@ public class MtaItems {
             properties -> new SpawnEggItem(MtaEntityTypes.SIREN.get(), properties
             ));
 
-    public static final DeferredItem<BlockItem> SPRINKLER = ITEMS.registerSimpleBlockItem(MtaBlocks.SPRINKLER);
-
     public static final DeferredItem<Item> ALPINE_SIGN = ITEMS.registerItem("alpine_sign",
             properties -> new SignItem(MtaBlocks.ALPINE_SIGN.get(), MtaBlocks.ALPINE_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> ALPINE_HANGING_SIGN = ITEMS.registerItem("alpine_hanging_sign",

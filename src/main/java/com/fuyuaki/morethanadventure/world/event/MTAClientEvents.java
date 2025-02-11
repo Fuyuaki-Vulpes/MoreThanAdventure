@@ -11,7 +11,6 @@ import com.fuyuaki.morethanadventure.game.client.model.MTAModelLayers;
 import com.fuyuaki.morethanadventure.game.client.model.block.SprinklerModel;
 import com.fuyuaki.morethanadventure.game.client.model.entity.*;
 import com.fuyuaki.morethanadventure.game.client.particle.*;
-import com.fuyuaki.morethanadventure.game.client.renderer.MTASheets;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.item.properties.conditional.IsAttacking;
@@ -213,7 +212,6 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerSpecialRenderers(RegisterSpecialModelRendererEvent event) {
-        event.register(ResourceLocation.fromNamespaceAndPath(MODID, "sprinkler"), SprinklerSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "netherite_trident"), NetheriteTridentSpecialRenderer.Unbaked.MAP_CODEC);
         event.register(ResourceLocation.fromNamespaceAndPath(MODID, "mermaid_trident"), MermaidTridentSpecialRenderer.Unbaked.MAP_CODEC);
     }
@@ -226,7 +224,6 @@ public class MTAClientEvents {
 
     @SubscribeEvent
     public static void registerAtlases(RegisterMaterialAtlasesEvent event) {
-        event.register(MTASheets.SPRINKLER_SHEETS, ResourceLocation.fromNamespaceAndPath(MODID, "sprinkler"));
     }
 
     @SubscribeEvent
