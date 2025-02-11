@@ -65,7 +65,6 @@ public class MtaSounds {
     public static final Supplier<SoundEvent> GLOW_SPIDER_AMBIENT = registerSoundEvent("glow_spider_ambient");
     public static final Supplier<SoundEvent> GLOW_SPIDER_HURT = registerSoundEvent("glow_spider_hurt");
     public static final Supplier<SoundEvent> GLOW_SPIDER_DEATH = registerSoundEvent("glow_spider_death");
-    public static final Supplier<SoundEvent> HOST_AMBIENT = registerSoundEvent("host_ambient");
     public static final Supplier<SoundEvent> HOST_HURT = registerSoundEvent("host_hurt");
     public static final Supplier<SoundEvent> HOST_DEATH = registerSoundEvent("host_death");
     public static final Supplier<SoundEvent> ICICLE_CREEPER_AMBIENT = registerSoundEvent("icicle_creeper_ambient");

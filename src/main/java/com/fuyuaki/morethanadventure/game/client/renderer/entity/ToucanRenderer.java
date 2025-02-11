@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -32,6 +33,15 @@ public class ToucanRenderer extends MobRenderer<Toucan, ToucanRenderState, Touca
             poseStack.scale(0.45f,0.45f,0.45f);
         }
         super.render(renderState, poseStack, bufferSource, packedLight);
+    }
+
+    @Override
+    public void extractRenderState(Toucan toucan, ToucanRenderState state, float v) {
+        super.extractRenderState(toucan, state, v);
+        float f = Mth.lerp(v, toucan.oFlap, toucan.flap);
+        float f1 = Mth.lerp(v, toucan.oFlapSpeed, toucan.flapSpeed);
+        state.flapAngle = (Mth.sin(f) + 1.0F) * f1;
+        state.isFlying = toucan.isFlying();
     }
 
     @Override

@@ -18,6 +18,7 @@ import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
@@ -39,7 +40,7 @@ public class Host extends Zombie {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return MtaSounds.HOST_AMBIENT.get();
+        return null;
     }
 
     @Nullable
@@ -56,6 +57,8 @@ public class Host extends Zombie {
 
     @Override
     public boolean hurtServer(ServerLevel level, DamageSource source, float amount) {
+        if (source.is(Tags.DamageTypes.IS_ENVIRONMENT) && !source.is(Tags.DamageTypes.IS_PHYSICAL)) return super.hurtServer(level,source, amount);
+
         if (this.level().getDifficulty() == Difficulty.EASY) {
             if (this.getRandom().nextFloat() <= 0.20) {
                 int i = 1;

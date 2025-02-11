@@ -69,7 +69,7 @@ public class GreatWhiteShark extends WaterAnimal implements NeutralMob {
         return Animal.createAnimalAttributes().add(Attributes.MAX_HEALTH, 15.0F)
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.2F)
+                .add(Attributes.MOVEMENT_SPEED, 0.5F)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 3.2F);
 
     }

@@ -43,7 +43,7 @@ public class ButterflyWingLayer extends RenderLayer<ButterflyRenderState,Butterf
     public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, ButterflyRenderState p_361554_, float p_117353_, float p_117354_) {
         int i = p_361554_.patternColor.getTextureDiffuseColor();
         coloredCutoutModelCopyLayerRender(
-                this.getParentModel(),
+                modelLayer,
                 this.getPattern(p_361554_.patternId),
                 poseStack,
                 bufferSource,

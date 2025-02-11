@@ -5,6 +5,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class HorseshoeCrabModel <T extends HorseshoeCrabRenderState> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -47,6 +48,9 @@ public class HorseshoeCrabModel <T extends HorseshoeCrabRenderState> extends Ent
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-
+        front.zRot += (Mth.sin(state.walkAnimationPos * 0.7F) * 1.4F * state.walkAnimationSpeed * 0.12F);
+        back.zRot += (Mth.cos(state.walkAnimationPos * 0.7F) * 1.4F * state.walkAnimationSpeed * 0.12F);
+        back.yRot += (Mth.cos(state.walkAnimationPos * 0.7F) * 1.4F * state.walkAnimationSpeed * 0.2F);
+        tail.yRot += (Mth.sin(state.walkAnimationPos * 0.7F) * 1.4F * state.walkAnimationSpeed * 0.4F);
     }
 }

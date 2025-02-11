@@ -106,7 +106,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
 
     @Override
     public boolean isFlying() {
-        return this.getDeltaMovement().y > 0.1F || this.getDeltaMovement().y < -0.1F;
+        return !this.onGround();
     }
 
     @Override

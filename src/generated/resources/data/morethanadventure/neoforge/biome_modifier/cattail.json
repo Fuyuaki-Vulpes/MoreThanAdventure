@@ -1,6 +1,9 @@
 {
   "type": "neoforge:add_features",
   "biomes": "#morethanadventure:has_cattail",
-  "features": "morethanadventure:cattail_vegetation",
+  "features": [
+    "morethanadventure:cattail_vegetation",
+    "morethanadventure:cattail_vegetation_waterlogged"
+  ],
   "step": "vegetal_decoration"
 }

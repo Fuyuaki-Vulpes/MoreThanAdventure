@@ -173,12 +173,15 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
                 .with(sound("morethanadventure:entity/glow_spider/death"))
                 .subtitle("sound.morethanadventure.glow_spider_death"));
 
-        //add(MtaSounds.HOST_AMBIENT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/host/idle")).subtitle("sound.morethanadventure.host_ambient"));
-        //add(MtaSounds.HOST_HURT.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/host/hurt")).subtitle("sound.morethanadventure.host_hurt"));
-        //add(MtaSounds.HOST_DEATH.get(), SoundDefinition.definition()
-        //        .with(sound("morethanadventure:entity/host/death")).subtitle("sound.morethanadventure.host_death"));
+        add(MtaSounds.HOST_HURT.get(), SoundDefinition.definition()
+                .with(
+                        sound("morethanadventure:entity/host/hurt1"),
+                        sound("morethanadventure:entity/host/hurt2")
+                ).subtitle("sound.morethanadventure.host_hurt"));
+        add(MtaSounds.HOST_DEATH.get(), SoundDefinition.definition()
+                .with(
+                        sound("morethanadventure:entity/host/death")
+                ).subtitle("sound.morethanadventure.host_death"));
 
         //add(MtaSounds.ICICLE_CREEPER_AMBIENT.get(), SoundDefinition.definition()
         //        .with(sound("morethanadventure:entity/icicle_creeper/idle")).subtitle("sound.morethanadventure.icicle_creeper_ambient"));

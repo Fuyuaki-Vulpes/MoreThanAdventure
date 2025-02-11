@@ -40,8 +40,24 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 ;
 
         this.tag(MtaTags.Biomes.HAS_IPE_TREE)
-                .add(Biomes.JUNGLE)
-                .add(Biomes.SPARSE_JUNGLE)
+                .add(
+                        Biomes.JUNGLE,
+                        Biomes.SPARSE_JUNGLE)
+                ;
+        this.tag(MtaTags.Biomes.HAS_AVOCADO_TREE)
+                .add(
+                        Biomes.SPARSE_JUNGLE,
+                        Biomes.PLAINS,
+                        Biomes.SUNFLOWER_PLAINS)
+                .addTag(Tags.Biomes.IS_PLAINS).remove(Tags.Biomes.IS_SNOWY).remove(Tags.Biomes.IS_DRY)
+        ;
+
+        this.tag(MtaTags.Biomes.HAS_MANGO_TREE)
+                .add(
+                        Biomes.SPARSE_JUNGLE,
+                        Biomes.PLAINS,
+                        Biomes.SUNFLOWER_PLAINS)
+                .addTag(Tags.Biomes.IS_PLAINS).remove(Tags.Biomes.IS_SNOWY).remove(Tags.Biomes.IS_DRY)
                 ;
 
         this.tag(Tags.Biomes.IS_LUSH)

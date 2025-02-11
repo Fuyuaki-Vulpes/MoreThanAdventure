@@ -24,7 +24,7 @@ public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create().texOffs(0, 0).addBox(-1.5F, -0.75F, -7.0F, 1.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, 23.75F, 5.0F));
+        PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create().texOffs(0, 0).addBox(-1.5F, -0.75F, -7.0F, 1.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, 0.0F, 5.0F));
 
         PartDefinition cube_r1 = root.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(6, -3).mirror().addBox(0.0F, -1.0F, -3.0F, 0.0F, 1.0F, 3.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.75F, 0.0F, -7.0F, -0.2182F, -0.2618F, 0.0F));
 
@@ -47,11 +47,17 @@ public class ButterflyModel <T extends ButterflyRenderState> extends EntityModel
 
     @Override
     public void setupAnim(T state) {
-        this.root.y = Mth.sin(state.ageInTicks) * 0.1F;
-        if(state.isFlying){
-            this.left_wing.zRot = (Mth.sin(state.ageInTicks) + 1.0F) * 0.5F;
-            this.right_wing.zRot = - (Mth.sin(state.ageInTicks) + 1.0F) * 0.5F;
-        }
         super.setupAnim(state);
+        if(state.isFlying){
+            this.root().y = -Mth.cos(state.ageInTicks * 0.4F) + 23;
+            float n = (float) (Mth.abs(Mth.sin(state.ageInTicks * 0.2F)) * Math.PI / 2);
+            this.left_wing.zRot = -n;
+            this.right_wing.zRot = n;
+        }else {
+            this.root().y = 23;
+
+            this.left_wing.zRot = (float) (-Math.PI / 2);
+            this.right_wing.zRot = (float) (Math.PI / 2);
+        }
     }
 }

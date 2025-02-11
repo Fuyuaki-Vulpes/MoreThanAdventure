@@ -21,6 +21,7 @@ public class PistonBootsItem extends AttributeModifierTalismanItem{
     protected Multimap<Holder<Attribute>, AttributeModifier> talismanDynamicModifiers(Multimap<Holder<Attribute>, AttributeModifier> map) {
         map.put(Attributes.STEP_HEIGHT, new AttributeModifier(location, 0.75, AttributeModifier.Operation.ADD_VALUE));
         map.put(Attributes.JUMP_STRENGTH, new AttributeModifier(location, 1.7, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        map.put(Attributes.SAFE_FALL_DISTANCE, new AttributeModifier(location, 20.0, AttributeModifier.Operation.ADD_VALUE));
         return map;
     }
 }

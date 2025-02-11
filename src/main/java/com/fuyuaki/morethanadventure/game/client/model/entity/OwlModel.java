@@ -67,6 +67,17 @@ public class OwlModel <T extends OwlRenderState> extends EntityModel<T> {
         super.setupAnim(state);
         AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
 
+        if (state.isFlying){
+            float f2 = state.flapAngle * 0.3F;
+            this.head.y += f2;
+            this.body.y += f2;
+            float n = 0.0873F;
+            this.left_wing.zRot = -n - state.flapAngle;
+            this.left_wing.y += f2;
+            this.right_wing.zRot = n + state.flapAngle;
+            this.right_wing.y += f2;
+        }
+
         AnimUtils.animateWalkRot(this.left_foot,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
         AnimUtils.animateWalkRot(this.right_foot,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
     }

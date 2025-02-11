@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -33,6 +34,15 @@ public class OwlRenderer extends MobRenderer<Owl, OwlRenderState, OwlModel<OwlRe
             poseStack.scale(0.45f,0.45f,0.45f);
         }
         super.render(renderState, poseStack, bufferSource, packedLight);
+    }
+
+    @Override
+    public void extractRenderState(Owl owl, OwlRenderState state, float v) {
+        super.extractRenderState(owl, state, v);
+        float f = Mth.lerp(v, owl.oFlap, owl.flap);
+        float f1 = Mth.lerp(v, owl.oFlapSpeed, owl.flapSpeed);
+        state.flapAngle = (Mth.sin(f) + 1.0F) * f1;
+        state.isFlying = owl.isFlying();
     }
 
     @Override

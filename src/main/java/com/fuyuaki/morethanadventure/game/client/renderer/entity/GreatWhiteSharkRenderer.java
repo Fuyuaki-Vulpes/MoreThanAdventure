@@ -24,7 +24,8 @@ public class GreatWhiteSharkRenderer extends MobRenderer<GreatWhiteShark, GreatW
 
     public void extractRenderState(GreatWhiteShark entity, GreatWhiteSharkRenderState renderState, float p_361483_) {
         super.extractRenderState(entity, renderState, p_361483_);
-        renderState.isMoving = entity.getDeltaMovement().horizontalDistanceSqr() > 1.0E-7;
+        renderState.isMoving = entity.getDeltaMovement().length() > 0.001F;
+        renderState.hasTarget = entity.isAggressive();
     }
 
 

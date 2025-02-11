@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#minecraft:is_jungle",
-  "features": "morethanadventure:avocado_tree",
+  "biomes": "#morethanadventure:has_ipe_tree",
+  "features": "morethanadventure:pink_ipe_tree",
   "step": "vegetal_decoration"
 }
