@@ -194,6 +194,8 @@ public class MtaTags {
         public static final TagKey<Biome> MOONSTONE = tag("moonstone");
 
         public static final TagKey<Biome> HAS_IPE_TREE = tag("has_ipe_tree");
+        public static final TagKey<Biome> HAS_AVOCADO_TREE = tag("has_avocado_tree");
+        public static final TagKey<Biome> HAS_MANGO_TREE = tag("has_mango_tree");
 
 
         public static final TagKey<Biome> HAS_PALE_WOLF = tag("has_pale_wolf");

@@ -983,9 +983,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         //add("sound.morethanadventure.shrimp_ambient", "Shrimp Call");
         //add("sound.morethanadventure.shrimp_hurt", "Shrimp Hurts");
         //add("sound.morethanadventure.shrimp_death", "Shrimp Dies");
-        //add("sound.morethanadventure.toucan_ambient", "Toucan Call");
-        //add("sound.morethanadventure.toucan_hurt", "Toucan Hurts");
-        //add("sound.morethanadventure.toucan_death", "Toucan Dies");
+        add("sound.morethanadventure.toucan_ambient", "Toucan Call");
+        add("sound.morethanadventure.toucan_hurt", "Toucan Hurts");
+        add("sound.morethanadventure.toucan_death", "Toucan Dies");
         add("sound.morethanadventure.turkey_ambient", "Turkey Gobbles");
         add("sound.morethanadventure.turkey_hurt", "Turkey Hurts");
         add("sound.morethanadventure.turkey_death", "Turkey Dies");
@@ -1014,9 +1014,8 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.glow_spider_ambient", "Glow Spider Hisses");
         add("sound.morethanadventure.glow_spider_hurt", "Glow Spider Hurts");
         add("sound.morethanadventure.glow_spider_death", "Glow Spider Dies");
-        //add("sound.morethanadventure.host_ambient", "Host Call");
-        //add("sound.morethanadventure.host_hurt", "Host Hurts");
-        //add("sound.morethanadventure.host_death", "Host Dies");
+        add("sound.morethanadventure.host_hurt", "Host Hurts");
+        add("sound.morethanadventure.host_death", "Host Dies");
         //add("sound.morethanadventure.icicle_creeper_ambient", "Icicle Creeper Call");
         //add("sound.morethanadventure.icicle_creeper_hurt", "Icicle Creeper Hurts");
         //add("sound.morethanadventure.icicle_creeper_death", "Icicle Creeper Dies");

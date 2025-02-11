@@ -6,6 +6,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class PenguinModel <T extends PenguinRenderState> extends EntityModel<T> {
     private final ModelPart root;
@@ -56,7 +57,24 @@ public class PenguinModel <T extends PenguinRenderState> extends EntityModel<T> 
         super.setupAnim(state);
         AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
 
-        AnimUtils.animateWalkRot(this.left_foot,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
-        AnimUtils.animateWalkRot(this.right_foot,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
+        if (state.isInWater){
+            this.root().z = -15.0F;
+            this.head.y += -2.0F;
+            this.left_wing.y += 4.0F;
+            this.right_wing.y += 4.0F;
+            this.root().y = 20.0F;
+            this.root().xRot = (float) (Math.PI / 2);
+            this.left_wing.zRot = (float) -(Math.PI / 2);
+            this.right_wing.zRot = (float) (Math.PI / 2);
+            this.left_wing.yRot = (float) -(Math.PI / 2);
+            this.right_wing.yRot = (float) (Math.PI / 2);
+            this.head.xRot = (float) -(Math.PI / 2) + state.xRot * (float) (Math.PI / 180.0);
+        }
+        AnimUtils.animateWalkRot(this.left_foot,state.walkAnimationPos, state.walkAnimationSpeed,1.4F,false);
+        AnimUtils.animateWalkRot(this.right_foot,state.walkAnimationPos, state.walkAnimationSpeed,1.4F,true);
+        AnimUtils.animateWalkZRotAdditive(this.body, state.walkAnimationPos, state.walkAnimationSpeed, 0.4F,false);
+
+        AnimUtils.animateWalkZRotAdditive(this.left_wing, Mth.abs(state.walkAnimationPos), state.walkAnimationSpeed,0.4F,false);
+        AnimUtils.animateWalkZRotAdditive(this.right_wing,Mth.abs(state.walkAnimationPos), state.walkAnimationSpeed,0.4F,true);
     }
 }

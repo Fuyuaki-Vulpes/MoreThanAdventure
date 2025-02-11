@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.PinkPetalsBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -90,6 +91,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
 
     public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
+    public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION_WATERLOGGED = registerKey("cattail_vegetation_waterlogged");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -505,11 +507,24 @@ public class MtaConfigFeatures {
                 context,
                 CATTAIL_VEGETATION,
                 Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(12, 7, 3, PlacementUtils.filtered(
+                new RandomPatchConfiguration(6, 3, 2, PlacementUtils.filtered(
                         Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.CATTAIL.get())),
-                        BlockPredicate.wouldSurvive(MtaBlocks.CATTAIL.get().defaultBlockState(), BlockPos.ZERO)
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.CATTAIL.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
                 )
-
+                ));
+        register(
+                context,
+                CATTAIL_VEGETATION_WATERLOGGED,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(16, 8, 2, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.CATTAIL.get()
+                                .defaultBlockState().setValue(BlockStateProperties.WATERLOGGED,true))),
+                        BlockPredicate.allOf(
+                                BlockPredicate.wouldSurvive(MtaBlocks.CATTAIL.get().defaultBlockState(), BlockPos.ZERO),
+                                BlockPredicate.matchesBlocks(Blocks.WATER)
+                        )
+                )
                 ));
 
 

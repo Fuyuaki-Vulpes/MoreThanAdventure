@@ -28,7 +28,7 @@ public abstract class CreeperMixin extends Monster {
 
     @Inject(method = "registerGoals", at = @At("HEAD"))
     private void onGetNightVisionScale(CallbackInfo ci) {
-        this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, Player.class,living -> TalismanItem.isEquipped(living,MtaItems.CAT_MASK.get()), 6.0F, 1.0, 1.2, EntitySelector.NO_SPECTATORS::test));
+        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class,living -> TalismanItem.isEquipped(living,MtaItems.CAT_MASK.get()), 6.0F, 1.0, 1.2, EntitySelector.NO_SPECTATORS::test));
 
     }
 

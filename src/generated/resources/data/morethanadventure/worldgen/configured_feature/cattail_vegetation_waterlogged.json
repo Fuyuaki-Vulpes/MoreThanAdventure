@@ -11,7 +11,7 @@
               "Name": "morethanadventure:cattail",
               "Properties": {
                 "half": "lower",
-                "waterlogged": "false"
+                "waterlogged": "true"
               }
             }
           }
@@ -35,15 +35,15 @@
               },
               {
                 "type": "minecraft:matching_blocks",
-                "blocks": "minecraft:air"
+                "blocks": "minecraft:water"
               }
             ]
           }
         }
       ]
     },
-    "tries": 6,
-    "xz_spread": 3,
+    "tries": 16,
+    "xz_spread": 8,
     "y_spread": 2
   }
 }

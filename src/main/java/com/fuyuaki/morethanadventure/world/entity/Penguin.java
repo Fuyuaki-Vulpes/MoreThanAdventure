@@ -47,7 +47,7 @@ public class Penguin extends MTATameableAnimal {
                 .add(Attributes.FOLLOW_RANGE, 7.0)
                 .add(Attributes.ATTACK_DAMAGE, 6.0)
                 .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 2.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.05F);
+                .add(Attributes.MOVEMENT_SPEED, 0.15F);
     }
 
     @Override

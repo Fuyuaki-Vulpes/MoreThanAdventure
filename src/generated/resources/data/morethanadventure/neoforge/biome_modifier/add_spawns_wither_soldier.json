@@ -5,6 +5,6 @@
     "type": "morethanadventure:wither_soldier",
     "maxCount": 8,
     "minCount": 2,
-    "weight": 60
+    "weight": 2
   }
 }

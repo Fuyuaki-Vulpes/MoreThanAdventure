@@ -29,6 +29,7 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
 public class Owl extends MTATameableAnimal implements FlyingAnimal {
@@ -109,7 +110,7 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal {
     private void calculateFlapping() {
         this.oFlap = this.flap;
         this.oFlapSpeed = this.flapSpeed;
-        this.flapSpeed = this.flapSpeed + (float)(!this.onGround() && !this.isPassenger() ? 4 : -1) * 0.3F;
+        this.flapSpeed = this.flapSpeed + (float)(!this.onGround() && !this.isPassenger() ? 1 : -1) * 0.3F;
         this.flapSpeed = Mth.clamp(this.flapSpeed, 0.0F, 1.0F);
         if (!this.onGround() && this.flapping < 1.0F) {
             this.flapping = 1.0F;
@@ -121,7 +122,7 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal {
             this.setDeltaMovement(vec3.multiply(1.0, 0.6, 1.0));
         }
 
-        this.flap = this.flap + this.flapping * 2.0F;
+        this.flap = this.flap + this.flapping * 0.2F;
     }
 
     @Override
@@ -136,7 +137,7 @@ public class Owl extends MTATameableAnimal implements FlyingAnimal {
 
     @Override
     public boolean isFood(ItemStack pStack) {
-        return false;
+        return pStack.is(Tags.Items.FOODS_RAW_MEAT);
     }
 
     @Nullable

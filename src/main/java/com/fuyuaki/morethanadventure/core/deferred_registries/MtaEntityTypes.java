@@ -101,7 +101,7 @@ public class MtaEntityTypes {
 
     public static final DeferredHolder<EntityType<?>,EntityType<Jellyfish>> JELLYFISH = ENTITY.register("jellyfish",
             () -> EntityType.Builder.<Jellyfish>of(Jellyfish::new, MobCategory.WATER_CREATURE)
-                    .sized(0.8f,0.5F)
+                    .sized(0.9f,0.9F)
                     .build(entityKey("jellyfish")));
 
     public static final DeferredHolder<EntityType<?>,EntityType<Shrimp>> SHRIMP = ENTITY.register("shirmp",

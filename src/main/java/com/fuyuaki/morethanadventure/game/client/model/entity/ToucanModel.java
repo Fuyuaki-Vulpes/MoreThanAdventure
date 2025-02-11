@@ -61,6 +61,17 @@ public class ToucanModel <T extends ToucanRenderState> extends EntityModel<T> {
     public void setupAnim(T state) {
         super.setupAnim(state);
         AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
+
+        if (state.isFlying){
+            float f2 = state.flapAngle * 0.3F;
+            this.head.y += f2;
+            this.body.y += f2;
+            this.left_wing.zRot = -0.0873F - state.flapAngle;
+            this.left_wing.y += f2;
+            this.right_wing.zRot = 0.0873F + state.flapAngle;
+            this.right_wing.y += f2;
+        }
+
         AnimUtils.animateWalkRot(this.left_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,false);
         AnimUtils.animateWalkRot(this.right_leg,state.walkAnimationPos, state.walkAnimationSpeed,0.8F,true);
     }

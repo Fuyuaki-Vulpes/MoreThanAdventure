@@ -5,6 +5,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class ShrimpModel<T extends ShrimpRenderState> extends EntityModel<T> {
     private final ModelPart root;
@@ -52,5 +53,11 @@ public class ShrimpModel<T extends ShrimpRenderState> extends EntityModel<T> {
 
     @Override
     public void setupAnim(T renderState) {
+        super.setupAnim(renderState);
+        this.root.xRot = renderState.xRot * (float) (Math.PI / 180.0);
+        this.root.yRot = renderState.yRot * (float) (Math.PI / 180.0);
+        this.root.xRot = this.root.xRot + (Mth.cos(renderState.ageInTicks * 0.3F) * 0.1F);
+        this.body.xRot = -0.1F * Mth.cos(renderState.ageInTicks * 0.3F);
+
     }
 }

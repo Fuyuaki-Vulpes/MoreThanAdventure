@@ -163,6 +163,19 @@
     ],
     "subtitle": "sound.morethanadventure.glow_spider_hurt"
   },
+  "host_death": {
+    "sounds": [
+      "morethanadventure:entity/host/death"
+    ],
+    "subtitle": "sound.morethanadventure.host_death"
+  },
+  "host_hurt": {
+    "sounds": [
+      "morethanadventure:entity/host/hurt1",
+      "morethanadventure:entity/host/hurt2"
+    ],
+    "subtitle": "sound.morethanadventure.host_hurt"
+  },
   "longbow": {
     "sounds": [
       "morethanadventure:item/weaponry/bow/longbow"

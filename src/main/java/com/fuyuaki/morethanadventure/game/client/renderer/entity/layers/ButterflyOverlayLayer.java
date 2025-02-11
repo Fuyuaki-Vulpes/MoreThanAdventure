@@ -43,8 +43,9 @@ public class ButterflyOverlayLayer extends RenderLayer<ButterflyRenderState,Butt
     @Override
     public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, ButterflyRenderState p_361554_, float p_117353_, float p_117354_) {
         int i = p_361554_.overlayColor.getTextureDiffuseColor();
+
         coloredCutoutModelCopyLayerRender(
-                this.getParentModel(),
+                modelLayer,
                 this.getOverlay(p_361554_.overlayId),
                 poseStack,
                 bufferSource,

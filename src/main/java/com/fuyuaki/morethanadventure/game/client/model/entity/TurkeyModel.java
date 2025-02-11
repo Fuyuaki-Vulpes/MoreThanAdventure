@@ -91,8 +91,8 @@ public class TurkeyModel <T extends TurkeyRenderState> extends EntityModel<T> {
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-        AnimUtils.adjustHead(this.neck,state.yRot/2,state.xRot/2);
-        AnimUtils.adjustHead(this.head,state.yRot/2,state.yRot/2);
+        AnimUtils.adjustHeadDivided(2,this.neck,state.yRot,state.xRot);
+        AnimUtils.adjustHeadDivided(2,this.head,state.yRot,state.xRot);
         AnimUtils.animateWalkRot(this.left_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.5F,false);
         AnimUtils.animateWalkRot(this.right_leg,state.walkAnimationPos, state.walkAnimationSpeed,1.5F,true);
 

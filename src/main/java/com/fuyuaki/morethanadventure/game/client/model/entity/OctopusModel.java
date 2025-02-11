@@ -1,10 +1,14 @@
 package com.fuyuaki.morethanadventure.game.client.model.entity;
 
+import com.fuyuaki.morethanadventure.game.client.model.animation.AnimUtils;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.state.OctopusRenderState;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
+
+import java.util.Arrays;
 
 public class OctopusModel <T extends OctopusRenderState> extends EntityModel<T> {
     private final ModelPart root;
@@ -13,14 +17,7 @@ public class OctopusModel <T extends OctopusRenderState> extends EntityModel<T> 
     private final ModelPart beak_right;
     private final ModelPart beak_left;
     private final ModelPart legs;
-    private final ModelPart leg_1;
-    private final ModelPart leg_2;
-    private final ModelPart leg_3;
-    private final ModelPart leg_4;
-    private final ModelPart leg_5;
-    private final ModelPart leg_6;
-    private final ModelPart leg_7;
-    private final ModelPart leg_8;
+    private final ModelPart[] leg = new ModelPart[8];
 
     public OctopusModel(ModelPart main) {
         super(main);
@@ -30,14 +27,8 @@ public class OctopusModel <T extends OctopusRenderState> extends EntityModel<T> 
         this.beak_right = this.head.getChild("beak_right");
         this.beak_left = this.head.getChild("beak_left");
         this.legs = this.root.getChild("legs");
-        this.leg_1 = this.legs.getChild("leg_1");
-        this.leg_2 = this.legs.getChild("leg_2");
-        this.leg_3 = this.legs.getChild("leg_3");
-        this.leg_4 = this.legs.getChild("leg_4");
-        this.leg_5 = this.legs.getChild("leg_5");
-        this.leg_6 = this.legs.getChild("leg_6");
-        this.leg_7 = this.legs.getChild("leg_7");
-        this.leg_8 = this.legs.getChild("leg_8");
+        Arrays.setAll(this.leg, i -> legs.getChild(createLegName(i)));
+
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -62,28 +53,31 @@ public class OctopusModel <T extends OctopusRenderState> extends EntityModel<T> 
 
         PartDefinition legs = root.addOrReplaceChild("legs", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition leg_1 = legs.addOrReplaceChild("leg_1", CubeListBuilder.create().texOffs(0, 14).addBox(-1.5F, -1.0F, -18.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, -2.0F));
+        CubeListBuilder cubelistbuilder = CubeListBuilder.create().texOffs(0, 14).addBox(-1.5F, -1.0F, -1.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F));
 
-        PartDefinition leg_2 = legs.addOrReplaceChild("leg_2", CubeListBuilder.create().texOffs(0, 14).addBox(-1.5F, -1.0F, -18.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.5F, 0.0F, -2.0F, 0.0F, 0.7854F, 0.0F));
+        for (int k = 0; k < 8; k++) {
+            double d0 = (double)k * Math.PI * 2.0 / 8.0;
+            float f = (float)Math.cos(d0) * 2.0F;
+            float f2 = (float)Math.sin(d0) * 2.0F;
+            d0 = (double)k * Math.PI * -2.0 / 8.0 + (Math.PI / 2);
+            float f3 = (float)d0;
 
-        PartDefinition leg_3 = legs.addOrReplaceChild("leg_3", CubeListBuilder.create().texOffs(0, 35).addBox(-18.0F, -1.0F, -1.5F, 19.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.5F, 0.0F, 0.0F));
-
-        PartDefinition leg_4 = legs.addOrReplaceChild("leg_4", CubeListBuilder.create().texOffs(0, 14).addBox(-1.5F, -1.0F, -1.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-2.5F, 0.0F, 2.0F, 0.0F, -0.7854F, 0.0F));
-
-        PartDefinition leg_5 = legs.addOrReplaceChild("leg_5", CubeListBuilder.create().texOffs(0, 14).addBox(-1.5F, -1.0F, -1.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 2.0F));
-
-        PartDefinition leg_6 = legs.addOrReplaceChild("leg_6", CubeListBuilder.create().texOffs(0, 14).mirror().addBox(-1.5F, -1.0F, -18.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(2.5F, 0.0F, -2.0F, 0.0F, -0.7854F, 0.0F));
-
-        PartDefinition leg_7 = legs.addOrReplaceChild("leg_7", CubeListBuilder.create().texOffs(0, 35).mirror().addBox(-1.0F, -1.0F, -1.5F, 19.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(2.5F, 0.0F, 0.0F));
-
-        PartDefinition leg_8 = legs.addOrReplaceChild("leg_8", CubeListBuilder.create().texOffs(0, 14).mirror().addBox(-1.5F, -1.0F, -1.0F, 3.0F, 2.0F, 19.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(2.5F, 0.0F, 2.0F, 0.0F, 0.7854F, 0.0F));
-
+            legs.addOrReplaceChild(createLegName(k), cubelistbuilder, PartPose.offsetAndRotation(f, 0.0F, f2, 0.0F, f3, 0.0F));
+        }
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
 
+    private static String createLegName(int index) {
+        return "leg_" + index;
+    }
     @Override
     public void setupAnim(T state) {
         super.setupAnim(state);
-
+        this.root().y = state.tentacleAngle * 3;
+        AnimUtils.adjustHead(this.head,state.yRot,state.xRot);
+        AnimUtils.adjustHeadDivided(5,this.legs,state.yRot,state.xRot);
+        for (ModelPart modelpart : this.leg) {
+            modelpart.xRot = state.tentacleAngle * 1.6F - Mth.HALF_PI + 0.2F;
+        }
     }
 }

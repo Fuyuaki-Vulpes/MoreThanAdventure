@@ -2,20 +2,8 @@
   "feature": "morethanadventure:pink_ipe_tree",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:weighted_list",
-        "distribution": [
-          {
-            "data": 1,
-            "weight": 4
-          },
-          {
-            "data": 2,
-            "weight": 1
-          }
-        ]
-      }
+      "type": "minecraft:rarity_filter",
+      "chance": 150
     },
     {
       "type": "minecraft:in_square"
@@ -30,6 +18,19 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "morethanadventure:pink_ipe_sapling",
+          "Properties": {
+            "stage": "0",
+            "waterlogged": "false"
+          }
+        }
+      }
     }
   ]
 }

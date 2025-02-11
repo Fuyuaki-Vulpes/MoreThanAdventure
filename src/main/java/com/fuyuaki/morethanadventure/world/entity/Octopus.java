@@ -1,44 +1,59 @@
 package com.fuyuaki.morethanadventure.world.entity;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.AgeableWaterCreature;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.PathType;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
-public class Octopus extends MTATameableAnimal {
+public class Octopus extends AgeableWaterCreature {
+    public float xBodyRot;
+    public float xBodyRotO;
+    public float tentacleMovement;
+    public float oldTentacleMovement;
+    public float tentacleAngle;
+    public float oldTentacleAngle;
+    private float speed;
+    protected float tentacleSpeed;
+    private float rotateSpeed;
+    Vec3 movementVector = Vec3.ZERO;
 
-    public Octopus(EntityType<? extends MTATameableAnimal> pEntityType, Level pLevel) {
-        super(40.0F,pEntityType, pLevel);
+    public Octopus(EntityType<? extends AgeableWaterCreature> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
         this.setPathfindingMalus(PathType.WATER, 0.0F);
         this.setPathfindingMalus(PathType.WATER_BORDER, 0.0F);
+        this.random.setSeed((long)this.getId());
+        this.tentacleSpeed = 1.0F / (this.random.nextFloat() + 1.0F) * 0.2F;
     }
 
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new TamableAnimal.TamableAnimalPanicGoal(1.5, DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
-        this.goalSelector.addGoal(2, new OctopusSitWhenOrderedToGoal(this));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.25, stack -> stack.is(ItemTags.FISHES), false));
-        this.goalSelector.addGoal(4, new BreedGoal(this, 1.25));
-        this.goalSelector.addGoal(4, new FollowOwnerGoal(this, 1.0, 10.0F, 2.0F));
-        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
-        this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1.0));
-        this.goalSelector.addGoal(6, new RandomSwimmingGoal(this, 1.0,20));
-        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+
+        this.goalSelector.addGoal(0, new OctopusRandomMovementGoal(this));
+        this.goalSelector.addGoal(1, new OctopusFleeGoal()); ;
     }
 
     @Override
@@ -61,79 +76,105 @@ public class Octopus extends MTATameableAnimal {
     }
 
 
-    @Override
-    public boolean isFood(ItemStack pStack) {
-        return pStack.is(ItemTags.FISHES);
-    }
-
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
-        Octopus octopus = MtaEntityTypes.OCTOPUS.get().create(pLevel, EntitySpawnReason.BREEDING);
-        return octopus;
+        return MtaEntityTypes.OCTOPUS.get().create(pLevel, EntitySpawnReason.BREEDING);
+    }
+
+
+    @Override
+    protected double getDefaultGravity() {
+        return 0.08;
     }
 
     @Override
-    public boolean onClimbable() {
-        return this.isClimbing();
-    }
+    public void aiStep() {
+        super.aiStep();
+        this.xBodyRotO = this.xBodyRot;
+        this.oldTentacleMovement = this.tentacleMovement;
+        this.oldTentacleAngle = this.tentacleAngle;
+        this.tentacleMovement = this.tentacleMovement + this.tentacleSpeed;
+        if ((double)this.tentacleMovement > Math.PI * 2) {
+            if (this.level().isClientSide) {
+                this.tentacleMovement = (float) (Math.PI * 2);
+            } else {
+                this.tentacleMovement -= (float) (Math.PI * 2);
+                if (this.random.nextInt(10) == 0) {
+                    this.tentacleSpeed = 1.0F / (this.random.nextFloat() + 1.0F) * 0.2F;
+                }
 
-    public boolean isClimbing() {
-        return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
-    }
-
-    /**
-     * Updates the WatchableObject (Byte) created in entityInit(), setting it to 0x01 if par1 is true or 0x00 if it is false.
-     */
-    public void setClimbing(boolean pClimbing) {
-        byte b0 = this.entityData.get(DATA_FLAGS_ID);
-        if (pClimbing) {
-            b0 = (byte)(b0 | 1);
-        } else {
-            b0 = (byte)(b0 & -2);
-        }
-
-        this.entityData.set(DATA_FLAGS_ID, b0);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (!this.level().isClientSide) {
-            this.setClimbing(this.horizontalCollision);
-        }
-    }
-
-    @Override
-    public boolean isPushedByFluid() {
-        return false;
-    }
-
-    @Override
-    public boolean checkSpawnObstruction(LevelReader pLevel) {
-        return pLevel.isUnobstructed(this);
-    }
-
-    @Override
-    public int getAmbientSoundInterval() {
-        return 120;
-    }
-
-    @Override
-    protected int getBaseExperienceReward(ServerLevel level) {
-        return 1 + this.level().random.nextInt(3);
-    }
-
-    protected void handleAirSupply(int pAirSupply) {
-        if (this.isAlive() && !this.isInWaterOrBubble()) {
-            this.setAirSupply(pAirSupply - 1);
-            if (this.getAirSupply() == -20) {
-                this.setAirSupply(0);
-                this.hurt(this.damageSources().drown(), 2.0F);
+                this.level().broadcastEntityEvent(this, (byte)19);
             }
-        } else {
-            this.setAirSupply(300);
         }
+
+        if (this.isInWaterOrBubble()) {
+            if (this.tentacleMovement < (float) Math.PI) {
+                float f = this.tentacleMovement / (float) Math.PI;
+                this.tentacleAngle = Mth.sin(f * f * (float) Math.PI) * (float) Math.PI * 0.25F;
+                if ((double)f > 0.75) {
+                    if (this.isControlledByLocalInstance()) {
+                        this.setDeltaMovement(this.movementVector);
+                    }
+
+                    this.rotateSpeed = 1.0F;
+                } else {
+                    this.rotateSpeed *= 0.8F;
+                }
+            } else {
+                this.tentacleAngle = 0.0F;
+                if (this.isControlledByLocalInstance()) {
+                    this.setDeltaMovement(this.getDeltaMovement().scale(0.9));
+                }
+
+                this.rotateSpeed *= 0.99F;
+            }
+
+            Vec3 vec3 = this.getDeltaMovement();
+            double d0 = vec3.horizontalDistance();
+            this.yBodyRot = this.yBodyRot + (-((float)Mth.atan2(vec3.x, vec3.z)) * (180.0F / (float)Math.PI) - this.yBodyRot) * 0.1F;
+            this.setYRot(this.yBodyRot);
+            this.xBodyRot = this.xBodyRot + (-((float)Mth.atan2(d0, vec3.y)) * (180.0F / (float)Math.PI) - this.xBodyRot) * 0.1F;
+        } else {
+            this.tentacleAngle = Mth.abs(Mth.sin(this.tentacleMovement)) * (float) Math.PI * 0.25F;
+            if (!this.level().isClientSide) {
+                double d1 = this.getDeltaMovement().y;
+                if (this.hasEffect(MobEffects.LEVITATION)) {
+                    d1 = 0.05 * (double)(this.getEffect(MobEffects.LEVITATION).getAmplifier() + 1);
+                } else {
+                    d1 -= this.getGravity();
+                }
+
+                this.setDeltaMovement(0.0, d1 * 0.98F, 0.0);
+            }
+
+            this.xBodyRot = this.xBodyRot + (-90.0F - this.xBodyRot) * 0.02F;
+        }
+    }
+
+
+    private Vec3 rotateVector(Vec3 vector) {
+        Vec3 vec3 = vector.xRot(this.xBodyRotO * (float) (Math.PI / 180.0));
+        return vec3.yRot(-this.yBodyRotO * (float) (Math.PI / 180.0));
+    }
+    @Override
+    public void travel(Vec3 travelVector) {
+        if (this.isControlledByLocalInstance()) {
+            this.move(MoverType.SELF, this.getDeltaMovement());
+        }
+    }
+
+    @Override
+    public void handleEntityEvent(byte p_29957_) {
+        if (p_29957_ == 19) {
+            this.tentacleMovement = 0.0F;
+        } else {
+            super.handleEntityEvent(p_29957_);
+        }
+    }
+
+    public boolean hasMovementVector() {
+        return this.movementVector.lengthSqr() > 1.0E-5F;
     }
 
     @Override
@@ -142,46 +183,89 @@ public class Octopus extends MTATameableAnimal {
         super.baseTick();
         this.handleAirSupply(i);
     }
-
-    public class OctopusSitWhenOrderedToGoal extends Goal {
-        private final TamableAnimal mob;
-
-        public OctopusSitWhenOrderedToGoal(TamableAnimal pMob) {
-            this.mob = pMob;
-            this.setFlags(EnumSet.of(Goal.Flag.JUMP, Goal.Flag.MOVE));
-        }
-
-        @Override
-        public boolean canContinueToUse() {
-            return this.mob.isOrderedToSit();
-        }
+    class OctopusFleeGoal extends Goal {
+        private static final float Octopus_FLEE_SPEED = 3.0F;
+        private static final float Octopus_FLEE_MIN_DISTANCE = 5.0F;
+        private static final float Octopus_FLEE_MAX_DISTANCE = 10.0F;
+        private int fleeTicks;
 
         @Override
         public boolean canUse() {
-            if (!this.mob.isTame()) {
-                return false;
-            } else if (!this.mob.isInWaterOrBubble()) {
-                return false;
-            } else {
-                LivingEntity livingentity = this.mob.getOwner();
-                if (livingentity == null) {
-                    return true;
-                } else {
-                    return this.mob.distanceToSqr(livingentity) < 144.0 && livingentity.getLastHurtByMob() != null ? false : this.mob.isOrderedToSit();
-                }
-            }
+            LivingEntity livingentity = Octopus.this.getLastHurtByMob();
+            return Octopus.this.isInWater() && livingentity != null ? Octopus.this.distanceToSqr(livingentity) < 100.0 : false;
         }
 
         @Override
         public void start() {
-            this.mob.getNavigation().stop();
-            this.mob.setInSittingPose(true);
+            this.fleeTicks = 0;
         }
 
         @Override
-        public void stop() {
-            this.mob.setInSittingPose(false);
+        public boolean requiresUpdateEveryTick() {
+            return true;
+        }
+
+        @Override
+        public void tick() {
+            this.fleeTicks++;
+            LivingEntity livingentity = Octopus.this.getLastHurtByMob();
+            if (livingentity != null) {
+                Vec3 vec3 = new Vec3(Octopus.this.getX() - livingentity.getX(), Octopus.this.getY() - livingentity.getY(), Octopus.this.getZ() - livingentity.getZ());
+                BlockState blockstate = Octopus.this.level()
+                        .getBlockState(BlockPos.containing(Octopus.this.getX() + vec3.x, Octopus.this.getY() + vec3.y, Octopus.this.getZ() + vec3.z));
+                FluidState fluidstate = Octopus.this.level()
+                        .getFluidState(BlockPos.containing(Octopus.this.getX() + vec3.x, Octopus.this.getY() + vec3.y, Octopus.this.getZ() + vec3.z));
+                if (fluidstate.is(FluidTags.WATER) || blockstate.isAir()) {
+                    double d0 = vec3.length();
+                    if (d0 > 0.0) {
+                        vec3.normalize();
+                        double d1 = 3.0;
+                        if (d0 > 5.0) {
+                            d1 -= (d0 - 5.0) / 5.0;
+                        }
+
+                        if (d1 > 0.0) {
+                            vec3 = vec3.scale(d1);
+                        }
+                    }
+
+                    if (blockstate.isAir()) {
+                        vec3 = vec3.subtract(0.0, vec3.y, 0.0);
+                    }
+
+                    Octopus.this.movementVector = new Vec3(vec3.x / 20.0, vec3.y / 20.0, vec3.z / 20.0);
+                }
+
+                if (this.fleeTicks % 10 == 5) {
+                    Octopus.this.level().addParticle(ParticleTypes.BUBBLE, Octopus.this.getX(), Octopus.this.getY(), Octopus.this.getZ(), 0.0, 0.0, 0.0);
+                }
+            }
         }
     }
 
+    static class OctopusRandomMovementGoal extends Goal {
+        private final Octopus octopus;
+
+        public OctopusRandomMovementGoal(Octopus p_30003_) {
+            this.octopus = p_30003_;
+        }
+
+        @Override
+        public boolean canUse() {
+            return true;
+        }
+
+        @Override
+        public void tick() {
+            int i = this.octopus.getNoActionTime();
+            if (i > 100) {
+                this.octopus.movementVector = Vec3.ZERO;
+            } else if (this.octopus.getRandom().nextInt(reducedTickDelay(50)) == 0 || !this.octopus.wasTouchingWater || !this.octopus.hasMovementVector()) {
+                float f = this.octopus.getRandom().nextFloat() * (float) (Math.PI * 2);
+                this.octopus.movementVector = new Vec3(
+                        (double)(Mth.cos(f) * 0.2F), (double)(-0.1F + this.octopus.getRandom().nextFloat() * 0.2F), (double)(Mth.sin(f) * 0.2F)
+                );
+            }
+        }
+    }
 }

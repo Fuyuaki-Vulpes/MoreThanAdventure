@@ -134,7 +134,7 @@ public class MTAModEvents {
         event.register(MtaEntityTypes.OCTOPUS.get(),
                 SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.OCEAN_FLOOR,
-                MTASpawnRules::checkWaterAnimalSpawnRules,
+                MTASpawnRules::checkWaterCreatureSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.OWL.get(),
                 SpawnPlacementTypes.ON_GROUND,
@@ -176,7 +176,7 @@ public class MTAModEvents {
         event.register(MtaEntityTypes.JELLYFISH.get(),
                 SpawnPlacementTypes.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                MTASpawnRules::checkSeaAnimalSpawnRules,
+                MTASpawnRules::checkSeaCreatureSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
         event.register(MtaEntityTypes.SHRIMP.get(),
                 SpawnPlacementTypes.IN_WATER,

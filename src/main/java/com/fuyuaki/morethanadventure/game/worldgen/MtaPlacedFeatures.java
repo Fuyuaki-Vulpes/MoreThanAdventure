@@ -75,6 +75,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
 
     public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
+    public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION_WATERLOGGED = registerKey("cattail_vegetation_waterlogged");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
@@ -90,7 +91,7 @@ public class MtaPlacedFeatures {
                 context,
                 AVOCADO_TREE,
                 holder(context,MtaConfigFeatures.AVOCADO_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(70),
                         MtaBlocks.AVOCADO_SAPLING.get())
         );
 
@@ -105,35 +106,39 @@ public class MtaPlacedFeatures {
                 context,
                 PINK_IPE_TREE,
                 holder(context,MtaConfigFeatures.PINK_IPE_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
-        ));
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(150),
+                        MtaBlocks.PINK_IPE_SAPLING.get()
+                ));
 
         register(
                 context,
                 PURPLE_IPE_TREE,
                 holder(context,MtaConfigFeatures.PURPLE_IPE_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
-        ));
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(150),
+                        MtaBlocks.PURPLE_IPE_SAPLING.get()
+                ));
 
         register(
                 context,
                 WHITE_IPE_TREE,
                 holder(context,MtaConfigFeatures.WHITE_IPE_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
-        ));
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(150),
+                        MtaBlocks.WHITE_IPE_SAPLING.get()
+                ));
 
         register(
                 context,
                 YELLOW_IPE_TREE,
                 holder(context,MtaConfigFeatures.YELLOW_IPE_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.2F, 1)
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(150),
+                        MtaBlocks.YELLOW_IPE_SAPLING.get()
         ));
 
         register(
                 context,
                 MANGO_TREE,
                 holder(context,MtaConfigFeatures.MANGO_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(70),
                         MtaBlocks.MANGO_SAPLING.get())
         );
 
@@ -445,7 +450,14 @@ public class MtaPlacedFeatures {
                 context,
                 CATTAIL_VEGETATION,
                 holder(context,MtaConfigFeatures.CATTAIL_VEGETATION),
-                VegetationPlacements.worldSurfaceSquaredWithCount(4)
+                VegetationPlacements.worldSurfaceSquaredWithCount(3)
+
+        );
+        PlacementUtils.register(
+                context,
+                CATTAIL_VEGETATION_WATERLOGGED,
+                holder(context,MtaConfigFeatures.CATTAIL_VEGETATION_WATERLOGGED),
+                VegetationPlacements.worldSurfaceSquaredWithCount(6)
 
         );
 

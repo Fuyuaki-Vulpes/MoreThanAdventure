@@ -83,13 +83,19 @@ public class GreatWhiteSharkModel <T extends GreatWhiteSharkRenderState> extends
 
         this.torso_back.xRot = state.xRot * (float) (Math.PI / 180.0);
         this.torso_back.yRot = state.yRot * (float) (Math.PI / 180.0);
-
+        this.jaw.xRot = state.hasTarget ? (float) (Math.PI * 0.12F) : 0.0F;
         if (state.isMoving) {
-            this.torso.xRot = this.torso.xRot + (-0.05F - 0.05F * Mth.cos(state.ageInTicks * 0.3F));
-            this.torso_back.xRot = this.torso_back.xRot + (-0.05F - 0.05F * Mth.cos(state.ageInTicks * 0.3F));
+            this.torso.yRot += (Mth.cos(state.ageInTicks * 0.4F) * 0.1F);
+            this.torso_back.yRot -= (Mth.cos(state.ageInTicks * 0.4F) * 0.1F);
 
-            this.tail.xRot = -0.1F * Mth.cos(state.ageInTicks * 0.3F);
-            this.fin.xRot = -0.2F * Mth.cos(state.ageInTicks * 0.3F);
+            this.tail.yRot = -Mth.cos(state.ageInTicks * 0.4F) * 0.2F;
+            this.fin.yRot = -Mth.cos(state.ageInTicks * 0.4F) * 0.3F;
         }
+
+        this.left_fin.zRot = -(Mth.cos(state.ageInTicks * 0.5F) + 1) * 0.2F + (float) (Math.PI / 3);
+        this.right_fin.zRot = (Mth.cos(state.ageInTicks * 0.5F) + 1) * 0.2F - (float) (Math.PI / 3);
+
+        this.left_fin.yRot = (Mth.cos(state.ageInTicks * 0.2F) - 1) * -0.2F - (float) (Math.PI / 5);
+        this.right_fin.yRot = (Mth.cos(state.ageInTicks * 0.2F) + 1) * 0.2F + (float) (Math.PI / 5);
     }
 }

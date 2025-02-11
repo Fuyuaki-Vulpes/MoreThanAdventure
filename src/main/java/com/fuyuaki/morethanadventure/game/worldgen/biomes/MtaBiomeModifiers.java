@@ -104,41 +104,41 @@ public class MtaBiomeModifiers {
 
         context.register(ADD_CATTAIL,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.HAS_CATTAIL),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CATTAIL_VEGETATION)),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.CATTAIL_VEGETATION),placedFeatures.getOrThrow(MtaPlacedFeatures.CATTAIL_VEGETATION_WATERLOGGED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
 
         ));
 
         context.register(ADD_AVOCADO_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),
+                biomes.getOrThrow(MtaTags.Biomes.HAS_AVOCADO_TREE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 
 
         context.register(ADD_PINK_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                biomes.getOrThrow(MtaTags.Biomes.HAS_IPE_TREE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.PINK_IPE_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
         context.register(ADD_PURPLE_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                biomes.getOrThrow(MtaTags.Biomes.HAS_IPE_TREE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.PURPLE_IPE_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
         context.register(ADD_WHITE_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                biomes.getOrThrow(MtaTags.Biomes.HAS_IPE_TREE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.WHITE_IPE_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
         context.register(ADD_YELLOW_IPE_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
-                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.AVOCADO_TREE)),
+                biomes.getOrThrow(MtaTags.Biomes.HAS_IPE_TREE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.YELLOW_IPE_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 
         context.register(ADD_MANGO_TREE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),
+                biomes.getOrThrow(MtaTags.Biomes.HAS_MANGO_TREE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.MANGO_TREE)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
@@ -428,7 +428,7 @@ public class MtaBiomeModifiers {
 
         context.register(SPAWNS_WITHER_SOLDIER,new BiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
-                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WITHER_SOLDIER.get(),60,2,8))
+                List.of(new MobSpawnSettings.SpawnerData(MtaEntityTypes.WITHER_SOLDIER.get(),2,2,8))
         ));
 
         context.register(SPAWNS_ZOMBIFIED_MINER,new BiomeModifiers.AddSpawnsBiomeModifier(
