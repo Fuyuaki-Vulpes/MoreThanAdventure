@@ -16,7 +16,10 @@ import net.neoforged.neoforge.common.Tags;
 
 public class SprinklerEntity extends BlockEntity {
 
-    public SprinklerEntity( BlockPos pPos, BlockState pBlockState) {
+
+    private boolean ON = false;
+
+    public SprinklerEntity(BlockPos pPos, BlockState pBlockState) {
         super(MtaBlockEntities.SPRINKLER.get(), pPos, pBlockState);
     }
 
@@ -25,6 +28,9 @@ public class SprinklerEntity extends BlockEntity {
 
 
     public static void particleTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
+        if (!sprinklerEntity.getOn()) {
+            sprinklerEntity.setOn(true);
+        }
         for (int p = 0; p < 8; p++){
             level.addParticle(MtaParticles.SPRINKLER.get(), blockPos.getX() + 0.5,blockPos.above().above().getY(),blockPos.getZ() + 0.5,0,0,0);
         }
@@ -43,6 +49,9 @@ public class SprinklerEntity extends BlockEntity {
 
     public static void growthTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
         int range = MTAConfigs.Common.SPRINKLER_RANGE.get();
+        if (!sprinklerEntity.getOn()) {
+            sprinklerEntity.setOn(true);
+        }
         if (level.random.nextFloat() < 0.005) {
             for (BlockPos pos : BlockPos.betweenClosed(blockPos.east(range).above(2).south(range), blockPos.west(range).below().north(range))) {
                 BlockState state = level.getBlockState(pos);
@@ -58,5 +67,18 @@ public class SprinklerEntity extends BlockEntity {
 
             }
         }
+    }
+    public static void offTick(Level level, BlockPos blockPos, BlockState blockState, SprinklerEntity sprinklerEntity) {
+        if (sprinklerEntity.getOn()) {
+            sprinklerEntity.setOn(false);
+        }
+    }
+
+    public boolean getOn() {
+        return this.ON;
+    }
+
+    public void setOn(boolean value){
+        this.ON = value;
     }
 }

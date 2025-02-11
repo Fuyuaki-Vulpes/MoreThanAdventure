@@ -6,6 +6,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.util.Mth;
 
 public class SprinklerModel extends Model {
     private final ModelPart root;
@@ -19,6 +20,7 @@ public class SprinklerModel extends Model {
         this.head = this.root.getChild("head");
         this.tip = this.head.getChild("tip");
     }
+
 
 
     public static LayerDefinition createBodyLayer() {
@@ -36,22 +38,25 @@ public class SprinklerModel extends Model {
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
 
-    public void setupAnim(boolean on) {
+    public void setupAnim(boolean on, float partialTick) {
         float offset = 17;
-        float r = 0;
-        float f = on ? 0.1F : -0.1F;
-        if (offset >= 7 && offset <= 17) offset += f;
-        if (offset > 17) offset = 17;
-        if (offset < 7) offset = 7;
-        if (on) {
-            r += 0.1F;
-            if (r > Math.PI) r = 0;
-
-        } else {
-            r = 0;
+        float start = 7;
+        if(this.head.y < start || this.head.y > offset){
+            this.head.y = start;
+            this.tip.yRot = 0;
         }
-        this.tip.yRot = r;
-        this.head.y = offset;
+        if (on) {
+            this.tip.yRot += 0.01;
+            if (this.tip.yRot > Math.PI) this.tip.yRot -= (float) Math.PI;
+            if(this.head.y < offset){
+                this.head.y = Mth.lerp(partialTick + 0.1F, this.head.y, offset);
+            }
+        } else {
+            this.tip.yRot = 0;
+            if(this.head.y > start){
+                this.head.y = Mth.lerp(partialTick + 0.1F, this.head.y, start);
+            }
+        }
     }
 
 

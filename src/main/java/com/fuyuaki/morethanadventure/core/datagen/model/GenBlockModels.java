@@ -22,8 +22,6 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
-
 public class GenBlockModels extends BlockModelGenerators {
 
 
@@ -44,7 +42,7 @@ public class GenBlockModels extends BlockModelGenerators {
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(p_386718_ -> this.family(p_386718_.getBaseBlock()).generateFor(p_386718_));
 
-        createSprinkler(MtaBlocks.SPRINKLER.get(),Blocks.BIRCH_PLANKS, ResourceLocation.fromNamespaceAndPath(MODID, "textures/item/sprinkler.png"));
+        createSprinkler(MtaBlocks.SPRINKLER.get(),Blocks.BIRCH_PLANKS);
 
 
         this.createDoublePlantWithDefaultItem(MtaBlocks.CATTAIL.get(),PlantType.NOT_TINTED);
@@ -260,10 +258,9 @@ public class GenBlockModels extends BlockModelGenerators {
     }
 
 
-    public void createSprinkler(Block block, Block particleBlock, ResourceLocation location){
+    public void createSprinkler(Block block, Block particleBlock){
         this.createParticleOnlyBlock(block, particleBlock);
-        this.registerSimpleItemModel(block, location);
-
+        this.registerSimpleFlatItemModel(block.asItem());
     }
 
 

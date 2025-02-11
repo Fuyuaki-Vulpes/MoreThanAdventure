@@ -4,7 +4,6 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlockEntities;
 import com.fuyuaki.morethanadventure.world.block.entity.SprinklerEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,7 +13,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -96,9 +96,9 @@ public class Sprinkler extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         if (pLevel.isClientSide) {
-            return pState.getValue(ON) ? createTickerHelper(pBlockEntityType, MtaBlockEntities.SPRINKLER.get(), SprinklerEntity::particleTick) : null;
+            return pState.getValue(ON) ? createTickerHelper(pBlockEntityType, MtaBlockEntities.SPRINKLER.get(), SprinklerEntity::particleTick) : createTickerHelper(pBlockEntityType, MtaBlockEntities.SPRINKLER.get(), SprinklerEntity::offTick);
         }
-         return pState.getValue(ON) ? createTickerHelper(pBlockEntityType, MtaBlockEntities.SPRINKLER.get(), SprinklerEntity::growthTick) : null;
+         return pState.getValue(ON) ? createTickerHelper(pBlockEntityType, MtaBlockEntities.SPRINKLER.get(), SprinklerEntity::growthTick) : createTickerHelper(pBlockEntityType, MtaBlockEntities.SPRINKLER.get(), SprinklerEntity::offTick);
     }
 
     @Nullable
