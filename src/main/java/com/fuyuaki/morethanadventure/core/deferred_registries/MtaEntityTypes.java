@@ -1,16 +1,21 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
-import com.fuyuaki.morethanadventure.world.entity.arrows.MTAArrowEntity;
 import com.fuyuaki.morethanadventure.world.entity.*;
+import com.fuyuaki.morethanadventure.world.entity.arrows.MTAArrowEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.vehicle.Boat;
+import net.minecraft.world.entity.vehicle.ChestBoat;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -28,6 +33,23 @@ public class MtaEntityTypes {
                     .build(entityKey("soul_orb"))
 
     );
+
+//Boats
+
+/*public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ALPINE_BOAT = ENTITY.register("alpine_boat",
+        EntityType.Builder.of(boatFactory(() -> MtaItems.ALPINE_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ALPINE_CHEST_BOAT = ENTITY.register("alpine_chest_boat",
+        () -> EntityType.Builder.of(boatFactory(() -> MtaItems.ALPINE_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10));
+*/
 // Tamable
 
     public static final DeferredHolder<EntityType<?>,EntityType<BeardedDragon>> BEARDED_DRAGON = ENTITY.register("bearded_dragon",
@@ -234,6 +256,13 @@ public class MtaEntityTypes {
         ENTITY.register(eventBus);
     }
 
+    private static EntityType.EntityFactory<Boat> boatFactory(Supplier<Item> boatItemGetter) {
+        return (entityType, level) -> new Boat(entityType, level, boatItemGetter);
+    }
+
+    private static EntityType.EntityFactory<ChestBoat> chestBoatFactory(Supplier<Item> boatItemGetter) {
+        return (entityType, level) -> new ChestBoat(entityType, level, boatItemGetter);
+    }
 
     private static ResourceKey<EntityType<?>> entityKey(String name) {
         return ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MODID,name));

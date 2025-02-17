@@ -1208,6 +1208,11 @@ public class MtaItems {
             properties -> new SignItem(MtaBlocks.ALPINE_SIGN.get(), MtaBlocks.ALPINE_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> ALPINE_HANGING_SIGN = ITEMS.registerItem("alpine_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.ALPINE_HANGING_SIGN.get(), MtaBlocks.ALPINE_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+//public static final DeferredItem<Item> ALPINE_BOAT = ITEMS.registerItem("alpine_boat",
+//            properties -> new BoatItem(MtaEntityTypes.ALPINE_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+//public static final DeferredItem<Item> ALPINE_CHEST_BOAT = ITEMS.registerItem("alpine_chest_boat",
+//            properties -> new BoatItem(MtaEntityTypes.ALPINE_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+
 
     public static final DeferredItem<Item> AVOCADO_SIGN = ITEMS.registerItem("avocado_sign",
             properties -> new SignItem(MtaBlocks.AVOCADO_SIGN.get(), MtaBlocks.AVOCADO_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
