@@ -9,6 +9,7 @@ import com.fuyuaki.morethanadventure.world.item.accessories.talisman.ScubaGearTa
 import com.fuyuaki.morethanadventure.world.item.weaponry.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -953,6 +954,31 @@ public class MtaItems {
             ));
 
     //FOODS
+
+
+    public static final DeferredItem<Item>  RAW_HORSE = ITEMS.registerSimpleItem("horse", new Item.Properties()
+            .food(MtaFoods.HORSE));
+    public static final DeferredItem<Item> COOKED_HORSE = ITEMS.registerSimpleItem("cooked_horse", new Item.Properties()
+            .food(MtaFoods.COOKED_HORSE));
+    public static final DeferredItem<Item>  RAW_DUCK = ITEMS.registerSimpleItem("duck", new Item.Properties()
+            .food(MtaFoods.DUCK));
+    public static final DeferredItem<Item> COOKED_DUCK = ITEMS.registerSimpleItem("cooked_duck", new Item.Properties()
+            .food(MtaFoods.COOKED_DUCK, Consumables.CHICKEN));
+    public static final DeferredItem<Item>  RAW_GOAT = ITEMS.registerSimpleItem("goat", new Item.Properties()
+            .food(MtaFoods.GOAT));
+    public static final DeferredItem<Item> COOKED_GOAT = ITEMS.registerSimpleItem("cooked_goat", new Item.Properties()
+            .food(MtaFoods.COOKED_GOAT));
+    public static final DeferredItem<Item>  RAW_DEER = ITEMS.registerSimpleItem("deer", new Item.Properties()
+            .food(MtaFoods.DEER));
+    public static final DeferredItem<Item> COOKED_DEER = ITEMS.registerSimpleItem("cooked_deer", new Item.Properties()
+            .food(MtaFoods.COOKED_DEER));
+    public static final DeferredItem<Item>  RAW_TURKEY = ITEMS.registerSimpleItem("turkey", new Item.Properties()
+            .food(MtaFoods.TURKEY, Consumables.CHICKEN));
+    public static final DeferredItem<Item> COOKED_TURKEY = ITEMS.registerSimpleItem("cooked_turkey", new Item.Properties()
+            .food(MtaFoods.COOKED_TURKEY));
+
+
+
     public static final DeferredItem<Item> ONION = ITEMS.registerItem("onion", properties -> new BlockItem(MtaBlocks.ONION_CROP.get(), properties
             .food(MtaFoods.ONION)));
     public static final DeferredItem<Item> SHRIMP = ITEMS.registerSimpleItem("shrimp", new Item.Properties()

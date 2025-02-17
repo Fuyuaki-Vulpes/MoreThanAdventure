@@ -335,6 +335,18 @@ public class GenItemModels extends ItemModelGenerators {
 
         //FOODS
 
+        simpleItem(MtaItems.RAW_HORSE);
+        simpleItem(MtaItems.COOKED_HORSE);
+        simpleItem(MtaItems.RAW_DUCK);
+        simpleItem(MtaItems.COOKED_DUCK);
+        simpleItem(MtaItems.RAW_GOAT);
+        simpleItem(MtaItems.COOKED_GOAT);
+        simpleItem(MtaItems.RAW_DEER);
+        simpleItem(MtaItems.COOKED_DEER);
+        simpleItem(MtaItems.RAW_TURKEY);
+        simpleItem(MtaItems.COOKED_TURKEY);
+
+
         simpleItem(MtaItems.SHRIMP);
         simpleItem(MtaItems.COOKED_SHRIMP);
         simpleItem(MtaItems.TOMATO);

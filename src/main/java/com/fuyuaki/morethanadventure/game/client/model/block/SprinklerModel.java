@@ -12,6 +12,7 @@ public class SprinklerModel extends Model {
     private final ModelPart root;
     private final ModelPart head;
     private final ModelPart tip;
+    private float openness = 0;
 
     public SprinklerModel(ModelPart root) {
         super(root, RenderType::entityCutout);
@@ -38,9 +39,10 @@ public class SprinklerModel extends Model {
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
 
-    public void setupAnim(boolean on, float partialTick) {
+    public void setupAnim(boolean on) {
         float offset = 17;
         float start = 7;
+        this.openness = 0;
         if(this.head.y < start || this.head.y > offset){
             this.head.y = start;
             this.tip.yRot = 0;
@@ -49,12 +51,14 @@ public class SprinklerModel extends Model {
             this.tip.yRot += 0.01;
             if (this.tip.yRot > Math.PI) this.tip.yRot -= (float) Math.PI;
             if(this.head.y < offset){
-                this.head.y = Mth.lerp(partialTick + 0.1F, this.head.y, offset);
+                this.openness += 0.1F;
+                this.head.y = Mth.lerp(this.openness, this.head.y, offset);
             }
         } else {
             this.tip.yRot = 0;
             if(this.head.y > start){
-                this.head.y = Mth.lerp(partialTick + 0.1F, this.head.y, start);
+                this.openness -= 0.1F;
+                this.head.y = Mth.lerp(1 - this.openness, this.head.y, start);
             }
         }
     }
