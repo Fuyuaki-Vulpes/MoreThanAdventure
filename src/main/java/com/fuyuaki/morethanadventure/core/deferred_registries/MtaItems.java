@@ -1234,47 +1234,74 @@ public class MtaItems {
             properties -> new SignItem(MtaBlocks.ALPINE_SIGN.get(), MtaBlocks.ALPINE_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> ALPINE_HANGING_SIGN = ITEMS.registerItem("alpine_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.ALPINE_HANGING_SIGN.get(), MtaBlocks.ALPINE_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
-//public static final DeferredItem<Item> ALPINE_BOAT = ITEMS.registerItem("alpine_boat",
-//            properties -> new BoatItem(MtaEntityTypes.ALPINE_BOAT.get(), properties), new Item.Properties().stacksTo(1));
-//public static final DeferredItem<Item> ALPINE_CHEST_BOAT = ITEMS.registerItem("alpine_chest_boat",
-//            properties -> new BoatItem(MtaEntityTypes.ALPINE_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+public static final DeferredItem<Item> ALPINE_BOAT = ITEMS.registerItem("alpine_boat",
+            properties -> new BoatItem(MtaEntityTypes.ALPINE_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+public static final DeferredItem<Item> ALPINE_CHEST_BOAT = ITEMS.registerItem("alpine_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.ALPINE_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
 
     public static final DeferredItem<Item> AVOCADO_SIGN = ITEMS.registerItem("avocado_sign",
             properties -> new SignItem(MtaBlocks.AVOCADO_SIGN.get(), MtaBlocks.AVOCADO_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> AVOCADO_HANGING_SIGN = ITEMS.registerItem("avocado_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.AVOCADO_HANGING_SIGN.get(), MtaBlocks.AVOCADO_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+    public static final DeferredItem<Item> AVOCADO_BOAT = ITEMS.registerItem("avocado_boat",
+            properties -> new BoatItem(MtaEntityTypes.AVOCADO_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> AVOCADO_CHEST_BOAT = ITEMS.registerItem("avocado_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.AVOCADO_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> BOGGED_OAK_SIGN = ITEMS.registerItem("bogged_oak_sign",
             properties -> new SignItem(MtaBlocks.BOGGED_OAK_SIGN.get(), MtaBlocks.BOGGED_OAK_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> BOGGED_OAK_HANGING_SIGN = ITEMS.registerItem("bogged_oak_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.BOGGED_OAK_HANGING_SIGN.get(), MtaBlocks.BOGGED_OAK_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+    public static final DeferredItem<Item> BOGGED_OAK_BOAT = ITEMS.registerItem("bogged_oak_boat",
+            properties -> new BoatItem(MtaEntityTypes.BOGGED_OAK_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> BOGGED_OAK_CHEST_BOAT = ITEMS.registerItem("bogged_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.BOGGED_OAK_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> IPE_SIGN = ITEMS.registerItem("ipe_sign",
             properties -> new SignItem(MtaBlocks.IPE_SIGN.get(), MtaBlocks.IPE_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> IPE_HANGING_SIGN = ITEMS.registerItem("ipe_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.IPE_HANGING_SIGN.get(), MtaBlocks.IPE_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+    public static final DeferredItem<Item> IPE_BOAT = ITEMS.registerItem("ipe_boat",
+            properties -> new BoatItem(MtaEntityTypes.IPE_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> IPE_CHEST_BOAT = ITEMS.registerItem("ipe_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.IPE_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> MANGO_SIGN = ITEMS.registerItem("mango_sign",
             properties -> new SignItem(MtaBlocks.MANGO_SIGN.get(), MtaBlocks.MANGO_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> MANGO_HANGING_SIGN = ITEMS.registerItem("mango_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.MANGO_HANGING_SIGN.get(), MtaBlocks.MANGO_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+    public static final DeferredItem<Item> MANGO_BOAT = ITEMS.registerItem("mango_boat",
+            properties -> new BoatItem(MtaEntityTypes.MANGO_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> MANGO_CHEST_BOAT = ITEMS.registerItem("mango_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.MANGO_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> MAPLE_SIGN = ITEMS.registerItem("maple_sign",
             properties -> new SignItem(MtaBlocks.MAPLE_SIGN.get(), MtaBlocks.MAPLE_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> MAPLE_HANGING_SIGN = ITEMS.registerItem("maple_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.MAPLE_HANGING_SIGN.get(), MtaBlocks.MAPLE_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+    public static final DeferredItem<Item> MAPLE_BOAT = ITEMS.registerItem("maple_boat",
+            properties -> new BoatItem(MtaEntityTypes.MAPLE_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> MAPLE_CHEST_BOAT = ITEMS.registerItem("maple_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.MAPLE_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> PALM_SIGN = ITEMS.registerItem("palm_sign",
             properties -> new SignItem(MtaBlocks.PALM_SIGN.get(), MtaBlocks.PALM_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> PALM_HANGING_SIGN = ITEMS.registerItem("palm_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.PALM_HANGING_SIGN.get(), MtaBlocks.PALM_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+    public static final DeferredItem<Item> PALM_BOAT = ITEMS.registerItem("palm_boat",
+            properties -> new BoatItem(MtaEntityTypes.PALM_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> PALM_CHEST_BOAT = ITEMS.registerItem("palm_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.PALM_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> SEAWOOD_SIGN = ITEMS.registerItem("seawood_sign",
             properties -> new SignItem(MtaBlocks.SEAWOOD_SIGN.get(), MtaBlocks.SEAWOOD_WALL_SIGN.get(), properties), (new Item.Properties()).stacksTo(16));
     public static final DeferredItem<Item> SEAWOOD_HANGING_SIGN = ITEMS.registerItem("seawood_hanging_sign",
             properties -> new HangingSignItem(MtaBlocks.SEAWOOD_HANGING_SIGN.get(), MtaBlocks.SEAWOOD_HANGING_WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
-
+    public static final DeferredItem<Item> SEAWOOD_BOAT = ITEMS.registerItem("seawood_boat",
+            properties -> new BoatItem(MtaEntityTypes.SEAWOOD_BOAT.get(), properties), new Item.Properties().stacksTo(1));
+    public static final DeferredItem<Item> SEAWOOD_CHEST_BOAT = ITEMS.registerItem("seawood_chest_boat",
+            properties -> new BoatItem(MtaEntityTypes.SEAWOOD_CHEST_BOAT.get(), properties), new Item.Properties().stacksTo(1));
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

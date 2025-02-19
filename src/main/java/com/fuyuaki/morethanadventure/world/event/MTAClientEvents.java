@@ -14,7 +14,8 @@ import com.fuyuaki.morethanadventure.game.client.particle.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.block.SprinklerRenderer;
 import com.fuyuaki.morethanadventure.game.client.renderer.entity.*;
 import com.fuyuaki.morethanadventure.game.client.renderer.item.properties.conditional.IsAttacking;
-import com.fuyuaki.morethanadventure.game.client.renderer.special.*;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.MermaidTridentSpecialRenderer;
+import com.fuyuaki.morethanadventure.game.client.renderer.special.NetheriteTridentSpecialRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.*;
 import net.minecraft.client.model.geom.LayerDefinitions;
@@ -25,6 +26,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GameType;
@@ -102,6 +104,23 @@ public class MTAClientEvents {
 
 
         event.registerEntityRenderer(MtaEntityTypes.SOUL_ORB.get(), SoulOrbRenderer::new);
+
+        event.registerEntityRenderer(MtaEntityTypes.ALPINE_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.ALPINE_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.ALPINE_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.ALPINE_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.AVOCADO_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.AVOCADO_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.AVOCADO_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.AVOCADO_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.BOGGED_OAK_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.BOGGED_OAK_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.BOGGED_OAK_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.BOGGED_OAK_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.IPE_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.IPE_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.IPE_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.IPE_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.MANGO_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.MANGO_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.MANGO_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.MANGO_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.MAPLE_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.MAPLE_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.MAPLE_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.MAPLE_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.PALM_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.PALM_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.PALM_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.PALM_CHEST_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.SEAWOOD_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.SEAWOOD_BOAT));
+        event.registerEntityRenderer(MtaEntityTypes.SEAWOOD_CHEST_BOAT.get(), context -> new BoatRenderer(context, MTAModelLayers.SEAWOOD_CHEST_BOAT));
 
 
         //ITEM & BLOCK
@@ -206,6 +225,24 @@ public class MTAClientEvents {
 
         event.registerLayerDefinition(MTAModelLayers.WISPFLY, WispflyModel::createBodyLayer);
         event.registerLayerDefinition(MTAModelLayers.WISPFLY_OUTER_LAYER, WispflyModel::createOuterLayer);
+
+
+        event.registerLayerDefinition(MTAModelLayers.ALPINE_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.ALPINE_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.AVOCADO_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.AVOCADO_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.BOGGED_OAK_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.BOGGED_OAK_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.IPE_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.IPE_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.MANGO_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.MANGO_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.MAPLE_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.MAPLE_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.PALM_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.PALM_CHEST_BOAT,BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.SEAWOOD_BOAT, BoatModel::createBoatModel);
+        event.registerLayerDefinition(MTAModelLayers.SEAWOOD_CHEST_BOAT,BoatModel::createChestBoatModel);
 
 
     }

@@ -52,6 +52,23 @@ public class GenItemModels extends ItemModelGenerators {
     @Override
     public void run() {
 
+        simpleItem(MtaItems.ALPINE_BOAT);
+        simpleItem(MtaItems.ALPINE_CHEST_BOAT);
+        simpleItem(MtaItems.AVOCADO_BOAT);
+        simpleItem(MtaItems.AVOCADO_CHEST_BOAT);
+        simpleItem(MtaItems.BOGGED_OAK_BOAT);
+        simpleItem(MtaItems.BOGGED_OAK_CHEST_BOAT);
+        simpleItem(MtaItems.IPE_BOAT);
+        simpleItem(MtaItems.IPE_CHEST_BOAT);
+        simpleItem(MtaItems.MANGO_BOAT);
+        simpleItem(MtaItems.MANGO_CHEST_BOAT);
+        simpleItem(MtaItems.MAPLE_BOAT);
+        simpleItem(MtaItems.MAPLE_CHEST_BOAT);
+        simpleItem(MtaItems.PALM_BOAT);
+        simpleItem(MtaItems.PALM_CHEST_BOAT);
+        simpleItem(MtaItems.SEAWOOD_BOAT);
+        simpleItem(MtaItems.SEAWOOD_CHEST_BOAT);
+
         simpleItem(MtaItems.BIG_BOWL);
 
         simpleItem(MtaItems.CLEAR_QUARTZ);

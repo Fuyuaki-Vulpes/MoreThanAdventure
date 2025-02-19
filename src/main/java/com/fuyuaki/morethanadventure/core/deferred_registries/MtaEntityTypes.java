@@ -28,28 +28,142 @@ public class MtaEntityTypes {
             () -> EntityType.Builder.<SoulOrb>of(SoulOrb::new, MobCategory.MISC)
                     .noLootTable()
                     .sized(0.5F, 0.5F)
-                    .clientTrackingRange(6).
-                    updateInterval(20)
+                    .clientTrackingRange(6)
+                    .updateInterval(20)
                     .build(entityKey("soul_orb"))
 
     );
 
 //Boats
 
-/*public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ALPINE_BOAT = ENTITY.register("alpine_boat",
-        EntityType.Builder.of(boatFactory(() -> MtaItems.ALPINE_BOAT.get()), MobCategory.MISC)
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ALPINE_BOAT = ENTITY.register("alpine_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.ALPINE_BOAT.get()), MobCategory.MISC)
                 .noLootTable()
                 .sized(1.375F, 0.5625F)
                 .eyeHeight(0.5625F)
-                .clientTrackingRange(10));
+                .clientTrackingRange(10)
+                .build(entityKey("alpine_boat")));
 
-public static final DeferredHolder<EntityType<?>, EntityType<Boat>> ALPINE_CHEST_BOAT = ENTITY.register("alpine_chest_boat",
-        () -> EntityType.Builder.of(boatFactory(() -> MtaItems.ALPINE_CHEST_BOAT.get()), MobCategory.MISC)
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> ALPINE_CHEST_BOAT = ENTITY.register("alpine_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.ALPINE_CHEST_BOAT.get()), MobCategory.MISC)
                 .noLootTable()
                 .sized(1.375F, 0.5625F)
                 .eyeHeight(0.5625F)
-                .clientTrackingRange(10));
-*/
+                .clientTrackingRange(10)
+                .build(entityKey("alpine_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> AVOCADO_BOAT = ENTITY.register("avocado_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.AVOCADO_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("avocado_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> AVOCADO_CHEST_BOAT = ENTITY.register("avocado_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.AVOCADO_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("avocado_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> BOGGED_OAK_BOAT = ENTITY.register("bogged_oak_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.BOGGED_OAK_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("bogged_oak_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> BOGGED_OAK_CHEST_BOAT = ENTITY.register("bogged_oak_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.BOGGED_OAK_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("bogged_oak_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> IPE_BOAT = ENTITY.register("ipe_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.IPE_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("ipe_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> IPE_CHEST_BOAT = ENTITY.register("ipe_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.IPE_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("ipe_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> MANGO_BOAT = ENTITY.register("mango_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.MANGO_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("mango_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> MANGO_CHEST_BOAT = ENTITY.register("mango_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.MANGO_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("mango_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> MAPLE_BOAT = ENTITY.register("maple_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.MAPLE_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("maple_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> MAPLE_CHEST_BOAT = ENTITY.register("maple_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.MAPLE_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("maple_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> PALM_BOAT = ENTITY.register("palm_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.PALM_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("palm_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> PALM_CHEST_BOAT = ENTITY.register("palm_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.PALM_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("palm_chest_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<Boat>> SEAWOOD_BOAT = ENTITY.register("seawood_boat",
+        () -> EntityType.Builder.<Boat>of(boatFactory(() -> MtaItems.SEAWOOD_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("seawood_boat")));
+
+public static final DeferredHolder<EntityType<?>, EntityType<ChestBoat>> SEAWOOD_CHEST_BOAT = ENTITY.register("seawood_chest_boat",
+        () -> EntityType.Builder.of(chestBoatFactory(() -> MtaItems.SEAWOOD_CHEST_BOAT.get()), MobCategory.MISC)
+                .noLootTable()
+                .sized(1.375F, 0.5625F)
+                .eyeHeight(0.5625F)
+                .clientTrackingRange(10)
+                .build(entityKey("seawood_chest_boat")));
+
 // Tamable
 
     public static final DeferredHolder<EntityType<?>,EntityType<BeardedDragon>> BEARDED_DRAGON = ENTITY.register("bearded_dragon",

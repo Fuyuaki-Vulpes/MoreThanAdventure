@@ -85,6 +85,24 @@ public class MTAModelLayers {
     public static final ModelLayerLocation WISPFLY = register("wispfly");
     public static final ModelLayerLocation WISPFLY_OUTER_LAYER = register("wispfly_outer_layer");
 
+    public static final ModelLayerLocation ALPINE_BOAT = registerBoat("alpine_boat");
+    public static final ModelLayerLocation ALPINE_CHEST_BOAT = registerChestBoat("alpine_chest_boat");
+    public static final ModelLayerLocation AVOCADO_BOAT = registerBoat("avocado_boat");
+    public static final ModelLayerLocation AVOCADO_CHEST_BOAT = registerChestBoat("avocado_chest_boat");
+    public static final ModelLayerLocation BOGGED_OAK_BOAT = registerBoat("bogged-oak_boat");
+    public static final ModelLayerLocation BOGGED_OAK_CHEST_BOAT = registerChestBoat("bogged-oak_chest_boat");
+    public static final ModelLayerLocation IPE_BOAT = registerBoat("ipe_boat");
+    public static final ModelLayerLocation IPE_CHEST_BOAT = registerChestBoat("ipe_chest_boat");
+    public static final ModelLayerLocation MANGO_BOAT = registerBoat("mango_boat");
+    public static final ModelLayerLocation MANGO_CHEST_BOAT = registerChestBoat("mango_chest_boat");
+    public static final ModelLayerLocation MAPLE_BOAT = registerBoat("maple_boat");
+    public static final ModelLayerLocation MAPLE_CHEST_BOAT = registerChestBoat("maple_chest_boat");
+    public static final ModelLayerLocation PALM_BOAT = registerBoat("palm_boat");
+    public static final ModelLayerLocation PALM_CHEST_BOAT = registerChestBoat("palm_chest_boat");
+    public static final ModelLayerLocation SEAWOOD_BOAT = registerBoat("seawood_boat");
+    public static final ModelLayerLocation SEAWOOD_CHEST_BOAT = registerChestBoat("seawood_chest_boat");
+
+
 
 
 
@@ -92,5 +110,11 @@ public class MTAModelLayers {
 
     private static ModelLayerLocation register(String name){
         return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, name), "main");
+    }
+    private static ModelLayerLocation registerBoat(String name){
+        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, "boat/" + name), "main");
+    }
+    private static ModelLayerLocation registerChestBoat(String name){
+        return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MODID, "chest_boat/" + name), "main");
     }
 }
