@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
+import com.fuyuaki.morethanadventure.world.level.feature.placers.GentleForkingTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
@@ -19,6 +20,9 @@ public class MTAPlacers {
 
     public static final DeferredHolder<TrunkPlacerType<?>,TrunkPlacerType<PalmTrunkPlacer>> PALM_TRUNK_PLACER =
             TRUNK_PLACER.register("palm_trunk_placer",() -> new TrunkPlacerType<>(PalmTrunkPlacer.CODEC));
+
+    public static final DeferredHolder<TrunkPlacerType<?>,TrunkPlacerType<GentleForkingTrunkPlacer>> GENTLE_FORKING_TRUNK_PLACER =
+            TRUNK_PLACER.register("gentle_forking_trunk_placer",() -> new TrunkPlacerType<>(GentleForkingTrunkPlacer.CODEC));
 
     public static final DeferredHolder<TrunkPlacerType<?>,TrunkPlacerType<SeawoodTrunkPlacer>> SEAWOOD_TRUNK_PLACER =
             TRUNK_PLACER.register("seawood_trunk_placer",() -> new TrunkPlacerType<>(SeawoodTrunkPlacer.CODEC));

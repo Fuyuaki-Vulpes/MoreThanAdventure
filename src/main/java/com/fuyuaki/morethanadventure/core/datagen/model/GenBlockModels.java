@@ -51,6 +51,7 @@ public class GenBlockModels extends BlockModelGenerators {
         //simpleBlock(MtaBlocks.PITCHER_PLANT.get(), models().cross(blockTexture(MtaBlocks.PITCHER_PLANT.get()).getPath(), blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.POTTED_PITCHER_PLANT.get(), models().singleTexture("potted_pitcher_plant", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //blockItem(MtaBlocks.VENUS_FLYTRAP);
+        this.createPlantWithDefaultItem(MtaBlocks.PRICKLY_PEAR.get(),MtaBlocks.POTTED_PRICKLY_PEAR.get(),PlantType.NOT_TINTED);
 
 
 

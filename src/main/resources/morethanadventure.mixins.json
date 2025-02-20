@@ -16,6 +16,7 @@
     "MobEffectUtilMixin",
     "MusicMixin",
     "PlayerMixin",
+    "SaplingMixin",
     "ServerChunkCacheMixin",
     "ServerPlayerMixin",
     "SnowballMixin",

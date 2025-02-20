@@ -1,11 +1,14 @@
 package com.fuyuaki.morethanadventure.game.worldgen.biomes;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaSounds;
 import com.fuyuaki.morethanadventure.game.worldgen.MtaPlacedFeatures;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.TreePlacements;
@@ -57,6 +60,8 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
     public static final ResourceKey<Biome> TUNDRA = createBiome("tundra");
     public static final ResourceKey<Biome> UNDERWATER_FOREST = createBiome("underwater_forest");
+    public static final ResourceKey<Biome> POLAR_DESERT = createBiome("polar_desert");
+    public static final ResourceKey<Biome> CERRADO = createBiome("cerrado");
 
     //CAVE
 
@@ -90,6 +95,8 @@ public class MtaBiomes {
         register(context,MAPLE_FOREST, mapleForest(placedFeatureHolder,configuredCarverHolder));
         register(context,ALPINE_TUNDRA, alpineTundra(placedFeatureHolder,configuredCarverHolder));
         register(context,BOG, bog(placedFeatureHolder,configuredCarverHolder));
+        register(context,POLAR_DESERT, polarDesert(placedFeatureHolder,configuredCarverHolder));
+        register(context,CERRADO, cerrado(placedFeatureHolder,configuredCarverHolder));
     }
 
 
@@ -103,6 +110,51 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
+
+    private static Biome cerrado(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 12, 4, 8))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FROG, 10, 2, 5))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 20, 1, 2))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 5, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(MtaEntityTypes.DEER.get(), 8, 1, 3))
+        ;
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
+
+
+        globalOverworldGeneration(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_TALL_GRASS);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_LARGE_FERN);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+
+        BiomeDefaultFeatures.addSavannaTrees(biomeBuilder);
+        BiomeDefaultFeatures.addWarmFlowers(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
+
+        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SHALLOW_GRASS_SPARSE);
+
+
+        return biome(true,1.8F,0.1F,
+                4159204,
+                329011,
+                0xd4a531,
+                0xe3c622,
+                spawnBuilder,
+                biomeBuilder,
+                DESERT_MUSIC
+                );
+    }
 
     private static Biome alpineTundra(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
@@ -143,6 +195,41 @@ public class MtaBiomes {
                 0xeac466,
                 0xa5bc6c,
                 spawnBuilder, biomeBuilder, SNOWY_SLOPES_MUSIC);
+    }
+
+    public static Biome polarDesert(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        MobSpawnSettings.Builder mobspawnsettings$builder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.snowySpawns(mobspawnsettings$builder);
+        mobspawnsettings$builder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.WOLF, 8, 4, 4))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.FOX, 12, 2, 4))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(MtaEntityTypes.YUKI_ONNA.get(), 40, 1, 3))
+        ;
+        mobspawnsettings$builder.creatureGenerationProbability(0.05F);
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers);
+        BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PERMAFROST_ROCK);
+        BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
+        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false)
+                .temperature(-1.0F)
+                .downfall(0.0F)
+                .specialEffects(new BiomeSpecialEffects.Builder()
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .skyColor(calculateSkyColor(-1.0F))
+                        .ambientParticle(new AmbientParticleSettings(ParticleTypes.SNOWFLAKE, 0.00125F))
+                        .ambientAdditionsSound(new AmbientAdditionsSettings(MtaSounds.AMBIENT_POLAR_WIND, 0.005))
+                        .backgroundMusic(SNOWY_SLOPES_MUSIC)
+                        .build())
+                .mobSpawnSettings(mobspawnsettings$builder.build())
+                .generationSettings(biomeBuilder.build())
+                .build();
+
     }
 
 

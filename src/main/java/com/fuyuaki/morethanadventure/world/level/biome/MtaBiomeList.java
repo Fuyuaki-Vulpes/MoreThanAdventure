@@ -34,18 +34,18 @@ public class MtaBiomeList {
 
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES = new ResourceKey[][]{
-            {MtaBiomes.TUNDRA, MtaBiomes.TUNDRA, null, null, MtaBiomes.SPARSE_TAIGA},
-            {null, null, MtaBiomes.MAPLE_FOREST, MtaBiomes.SPARSE_TAIGA, null},
-            {null, null, null, null, null},
-            {null, null, null, null, null},
+            {MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.TUNDRA, null, MtaBiomes.SPARSE_TAIGA},
+            {MtaBiomes.TUNDRA, null, MtaBiomes.MAPLE_FOREST, MtaBiomes.SPARSE_TAIGA, null},
+            {null, MtaBiomes.CERRADO, null, null, null},
+            {null, MtaBiomes.CERRADO, MtaBiomes.CERRADO, null, null},
             {null, null, null, null, MtaBiomes.OASIS}
     };
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
-            {null, null, null, null, null},
+            {null,MtaBiomes.TUNDRA, null, null, null},
             {null, null, MtaBiomes.MAPLE_FOREST, MtaBiomes.SPARSE_TAIGA, null},
             {null, null, null, null, null},
-            {null, null, null, null, null},
+            {MtaBiomes.CERRADO, null, null, null, null},
             {null, null, MtaBiomes.OASIS, MtaBiomes.OASIS, null}
     };
 
@@ -106,7 +106,7 @@ public class MtaBiomeList {
     };
 
     public static final ResourceKey<Biome>[][] MTA_BEACH_BIOMES = new ResourceKey[][]{
-            {null, null, null, null, null},
+            {null, MtaBiomes.POLAR_DESERT, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},

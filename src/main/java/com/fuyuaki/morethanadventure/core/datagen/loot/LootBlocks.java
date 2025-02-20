@@ -51,6 +51,8 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.CORPSE_FLOWER.get());
         dropSelf(MtaBlocks.PITCHER_PLANT.get());
         this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
+        dropSelf(MtaBlocks.PRICKLY_PEAR.get());
+        this.add(MtaBlocks.POTTED_PRICKLY_PEAR.get(), createPotFlowerItemTable(MtaBlocks.PRICKLY_PEAR));
         dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
         dropSelf(MtaBlocks.STOVE.get());
 

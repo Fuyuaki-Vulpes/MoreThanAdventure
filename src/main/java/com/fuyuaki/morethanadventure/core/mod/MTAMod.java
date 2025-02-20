@@ -68,6 +68,8 @@ public class MTAMod
         RenderType cutoutRenderType = RenderType.cutout();
         RenderType translucentRenderType = RenderType.translucent();
         setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.PRICKLY_PEAR.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.POTTED_PRICKLY_PEAR.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SHALLOW_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SAND_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.BEACHGRASS.get(), cutoutRenderType);

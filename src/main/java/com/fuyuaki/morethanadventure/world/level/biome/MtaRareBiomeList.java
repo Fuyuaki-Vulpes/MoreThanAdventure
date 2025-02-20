@@ -34,7 +34,7 @@ public class MtaRareBiomeList {
 
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES = new ResourceKey[][]{
-            {null, null, null, null, null},
+            {MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},

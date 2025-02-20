@@ -49,6 +49,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SPARSE_SPRUCE_TREE = registerKey("sparse_taiga");
     public static final ResourceKey<PlacedFeature> SPARSE_MANGROVE = registerKey("sparse_mangrove");
     public static final ResourceKey<PlacedFeature> STONY_ROCK = registerKey("stony_rocks");
+    public static final ResourceKey<PlacedFeature> PERMAFROST_ROCK = registerKey("permafrost_rocks");
     public static final ResourceKey<PlacedFeature> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<PlacedFeature> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<PlacedFeature> GEYSER_NETHER = registerKey("geyser_nether");
@@ -253,6 +254,15 @@ public class MtaPlacedFeatures {
                 STONY_ROCK,
                 holder(context, MtaConfigFeatures.STONY_ROCKS),
                 CountPlacement.of(1),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome()
+        );
+        register(
+                context,
+                PERMAFROST_ROCK,
+                holder(context, MtaConfigFeatures.PERMAFROST_ROCKS),
+                CountPlacement.of(4),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()

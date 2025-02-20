@@ -34,7 +34,7 @@ repositories {
 
     maven { url = "https://maven.fabricmc.net/" }
     maven { url = "https://maven.wispforest.io/releases" }
-
+    maven { url "https://maven.architectury.dev/" }
 
     maven { url = "https://maven.ryanliptak.com/" }
     maven { url = "https://api.modrinth.com/maven" }
@@ -130,6 +130,7 @@ dependencies {
     implementation("io.wispforest:accessories-neoforge:${accessoriesVersion}")
     implementation ("com.legacy:structure-gel:${gelVersion}")
 
+    runtimeOnly ("me.shedaniel:RoughlyEnoughItems-neoforge:$rei_version")
 
 //    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
 //    runtimeOnly "dev.emi:emi-neoforge:${emi_version}"

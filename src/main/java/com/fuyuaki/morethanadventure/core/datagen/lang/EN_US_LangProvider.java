@@ -20,6 +20,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         //BLOCKS
 
 
+        add(MtaBlocks.PRICKLY_PEAR.get(),"Prickly Pear");
+        add(MtaBlocks.POTTED_PRICKLY_PEAR.get(),"Potted Prickly Pear");
+
         add(MtaBlocks.ALPINE_LOG.get(),"Alpine Log");
         add(MtaBlocks.STRIPPED_ALPINE_LOG.get(),"Stripped Alpine Log");
         add(MtaBlocks.ALPINE_WOOD.get(),"Alpine Wood");
@@ -201,6 +204,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
+        add(MtaBlocks.SPRINKLER.asItem(),"Sprinkler");
         add(MtaBlocks.STOVE.get(),"Stove");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
@@ -1076,7 +1080,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("items.morethanadventure.weapons.tag.causes_bleeding", "Chance to cause Bleeding on Hit");
         add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
         add("items.morethanadventure.weapons.info.shift", "Press SHIFT to see chances");
-
+        add("sound.morethanadventure.sprinkler.loop", "Sprinkler Irrigates");
 
         add("accessories.slot.talisman", "Talisman");
 

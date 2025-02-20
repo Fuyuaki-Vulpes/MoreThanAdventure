@@ -1,4 +1,12 @@
 {
+  "ambient.polar.wind": {
+    "sounds": [
+      "morethanadventure:ambient/weather/polar/wind1",
+      "morethanadventure:ambient/weather/polar/wind2",
+      "morethanadventure:ambient/weather/polar/wind3",
+      "morethanadventure:ambient/weather/polar/wind4"
+    ]
+  },
   "armored_skeleton_ambient": {
     "sounds": [
       "morethanadventure:entity/armored_skeleton/idle1",

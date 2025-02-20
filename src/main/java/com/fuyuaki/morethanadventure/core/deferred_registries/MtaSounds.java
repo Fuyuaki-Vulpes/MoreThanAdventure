@@ -1,6 +1,8 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.mod.MTAMod;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -12,6 +14,10 @@ import java.util.function.Supplier;
 public class MtaSounds {
     public static DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, MTAMod.MODID);
+
+
+    //AMBIENT
+    public static final Holder<SoundEvent> AMBIENT_POLAR_WIND = registerForHolder("ambient.polar.wind");
 
 
     //Animals
@@ -124,6 +130,11 @@ public class MtaSounds {
 
 
     private static Supplier<SoundEvent> registerSoundEvent (String name) {
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, name);
+        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
+    }
+
+    private static Holder<SoundEvent> registerForHolder(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(MTAMod.MODID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
     }

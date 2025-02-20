@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaFeatures;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
+import com.fuyuaki.morethanadventure.world.level.feature.placers.GentleForkingTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
@@ -32,6 +33,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -66,6 +68,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> STONY_ROCKS = registerKey("stony_rocks");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PERMAFROST_ROCKS = registerKey("permafrost_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_NETHER = registerKey("geyser_nether");
@@ -157,9 +160,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.PINK_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -168,9 +171,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.PURPLE_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -179,9 +182,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.WHITE_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -190,9 +193,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.YELLOW_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -290,6 +293,11 @@ public class MtaConfigFeatures {
                 STONY_ROCKS,
                 Feature.FOREST_ROCK,
                 new BlockStateConfiguration(Blocks.ANDESITE.defaultBlockState())
+        );
+        register(context,
+                PERMAFROST_ROCKS,
+                Feature.FOREST_ROCK,
+                new BlockStateConfiguration(MtaBlocks.PERMAFROST_STONE.get().defaultBlockState())
         );
         register(context,
                 MOSSY_ROCKS,

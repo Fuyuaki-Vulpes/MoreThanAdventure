@@ -89,8 +89,16 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         this.tag(Tags.Biomes.IS_MOUNTAIN_SLOPE).add(MtaBiomes.ALPINE_TUNDRA);
         this.tag(BiomeTags.SPAWNS_SNOW_FOXES).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
         this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
+        this.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).add(MtaBiomes.CERRADO);
         this.tag(BiomeTags.HAS_SWAMP_HUT).add(MtaBiomes.BOG);
         this.tag(Tags.Biomes.IS_DRY).add(MtaBiomes.BOG);
+
+        this.tag(BiomeTags.IS_SAVANNA).add(MtaBiomes.CERRADO);
+        this.tag(BiomeTags.HAS_VILLAGE_SAVANNA).add(MtaBiomes.CERRADO);
+        this.tag(BiomeTags.HAS_MINESHAFT).add(MtaBiomes.CERRADO);
+        this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(MtaBiomes.CERRADO);
+
+
         this.tag(Tags.Biomes.IS_DEAD).add(MtaBiomes.BOG);
 
 
@@ -183,6 +191,9 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
 
         this.tag(MtaTags.Biomes.HAS_SPOTTED_WOLF)
                 .add(MtaBiomes.OASIS);
+
+        this.tag(MtaTags.Biomes.HAS_RUSTY_WOLF)
+                .add(MtaBiomes.CERRADO);
 
         this.tag(MtaTags.Biomes.HAS_SNOWY_WOLF)
                 .add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
@@ -310,7 +321,7 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         this.tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("minecraft", "has_wolf_variant/pale")))
                 .addTag(MtaTags.Biomes.HAS_PALE_WOLF)
         ;
-/*
+
         //rusty
         this.tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("forge", "has_wolf_variant/rusty")))
                 .addTag(MtaTags.Biomes.HAS_RUSTY_WOLF)
@@ -321,7 +332,7 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         this.tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("minecraft", "has_wolf_variant/rusty")))
                 .addTag(MtaTags.Biomes.HAS_RUSTY_WOLF)
         ;
-        */
+
 
         //snowy
         this.tag(TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("forge", "has_wolf_variant/snowy")))

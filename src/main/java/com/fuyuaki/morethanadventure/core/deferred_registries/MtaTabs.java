@@ -65,6 +65,7 @@ public class MtaTabs {
                 output.accept(MtaBlocks.CORPSE_FLOWER.get());
                 output.accept(MtaBlocks.PITCHER_PLANT.get());
                 output.accept(MtaBlocks.VENUS_FLYTRAP.get());
+                output.accept(MtaBlocks.PRICKLY_PEAR.get());
 
 
                 output.accept(MtaBlocks.STONE_GEYSER.get());
@@ -264,6 +265,8 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SEAWOOD_TRAPDOOR.get());
                 output.accept(MtaBlocks.SEAWOOD_SIGN.get());
                 output.accept(MtaBlocks.SEAWOOD_HANGING_SIGN.get());
+
+                output.accept(MtaBlocks.POTTED_PRICKLY_PEAR.get());
 
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());
