@@ -1,6 +1,22 @@
 {
   "parent": "minecraft:mta_adventure/biome",
   "criteria": {
+    "morethanadventure:cerrado": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:cerrado"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "morethanadventure:gravelly_river": {
       "conditions": {
         "player": [
@@ -74,6 +90,22 @@
             "predicate": {
               "location": {
                 "biomes": "morethanadventure:oasis"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:polar_desert": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:polar_desert"
               }
             }
           }
@@ -185,6 +217,12 @@
     ],
     [
       "morethanadventure:maple_forest"
+    ],
+    [
+      "morethanadventure:polar_desert"
+    ],
+    [
+      "morethanadventure:cerrado"
     ]
   ],
   "sends_telemetry_event": true

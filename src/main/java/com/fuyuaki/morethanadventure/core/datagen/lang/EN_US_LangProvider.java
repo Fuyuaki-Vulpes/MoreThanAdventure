@@ -20,6 +20,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         //BLOCKS
 
 
+        add(MtaItems.PRICKLY_PEAR_PAD.get(),"Prickly Pear Pad");
         add(MtaBlocks.PRICKLY_PEAR.get(),"Prickly Pear");
         add(MtaBlocks.POTTED_PRICKLY_PEAR.get(),"Potted Prickly Pear");
 
@@ -1072,6 +1073,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
 
         add("sound.morethanadventure.stove.crackle", "Stove Crackles");
+        add("sound.morethanadventure.prickly_pear.shear", "Prickly Pear Sheared");
 
 
 

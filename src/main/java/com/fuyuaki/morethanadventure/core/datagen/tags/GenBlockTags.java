@@ -800,6 +800,9 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.PITCHER_PLANT.get(),
                 MtaBlocks.CORPSE_FLOWER.get()
         );
+        this.tag(BlockTags.SNOW).add(
+                MtaBlocks.POLAR_SAND.get()
+        );
 
         this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
                 MtaBlocks.CATTAIL.get(),

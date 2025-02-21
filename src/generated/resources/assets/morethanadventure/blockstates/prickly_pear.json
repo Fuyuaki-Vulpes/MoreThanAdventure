@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": {
+    "spiky=false": {
+      "model": "morethanadventure:block/prickly_pear_sheared"
+    },
+    "spiky=true": {
       "model": "morethanadventure:block/prickly_pear"
     }
   }

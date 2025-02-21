@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuaki.morethanadventure.network.MTANetwork;
+import com.fuyuaki.morethanadventure.world.block.MTADispenseItemBehavior;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -125,6 +126,7 @@ public class MTAMod
     {
         event.enqueueWork(() ->
         {
+            MTADispenseItemBehavior.bootStrap();
             MtaTerrablender.registerBiomes();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,MODID,MtaSurfaceRules.makeOverworld());
         });

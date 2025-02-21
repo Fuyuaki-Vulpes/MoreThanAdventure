@@ -127,6 +127,7 @@ public class MtaSounds {
 
 
     public static final Supplier<SoundEvent> STOVE_CRACKLE = registerSoundEvent("stove_crackle");
+    public static final Supplier<SoundEvent> PRICKLY_PEAR_SHEAR = registerSoundEvent("mta.block.prickly_pear.shear");
 
 
     private static Supplier<SoundEvent> registerSoundEvent (String name) {

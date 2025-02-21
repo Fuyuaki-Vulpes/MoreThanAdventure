@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.world.level.feature.placers;
+package com.fuyuaki.morethanadventure.world.level.feature.feature;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAPlacers;
 import com.google.common.collect.Lists;

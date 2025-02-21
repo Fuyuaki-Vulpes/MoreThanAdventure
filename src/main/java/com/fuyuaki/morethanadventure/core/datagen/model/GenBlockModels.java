@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.core.datagen.model;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MTAFamilies;
+import com.fuyuaki.morethanadventure.world.block.CactusShrubBlock;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.color.item.GrassColorSource;
@@ -51,7 +52,7 @@ public class GenBlockModels extends BlockModelGenerators {
         //simpleBlock(MtaBlocks.PITCHER_PLANT.get(), models().cross(blockTexture(MtaBlocks.PITCHER_PLANT.get()).getPath(), blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //simpleBlock(MtaBlocks.POTTED_PITCHER_PLANT.get(), models().singleTexture("potted_pitcher_plant", ResourceLocation.parse("flower_pot_cross"), "plant", blockTexture(MtaBlocks.PITCHER_PLANT.get())).renderType("cutout"));
         //blockItem(MtaBlocks.VENUS_FLYTRAP);
-        this.createPlantWithDefaultItem(MtaBlocks.PRICKLY_PEAR.get(),MtaBlocks.POTTED_PRICKLY_PEAR.get(),PlantType.NOT_TINTED);
+        this.createPricklyPear(MtaBlocks.PRICKLY_PEAR.get(),MtaBlocks.POTTED_PRICKLY_PEAR.get(),PlantType.NOT_TINTED);
 
 
 
@@ -303,4 +304,23 @@ public class GenBlockModels extends BlockModelGenerators {
                                 .with(createHorizontalFacingDispatch())
                 );
     }
+
+    public void createPricklyPear(Block block, Block pottedBlock, BlockModelGenerators.PlantType plantType) {
+        this.registerSimpleItemModel(block.asItem(), plantType.createItemModel(this, block));
+        TextureMapping texturemapping = plantType.getPlantTextureMapping(block);
+        ResourceLocation resourcelocation = plantType.getCrossPot().create(pottedBlock, texturemapping, this.modelOutput);
+        this.blockStateOutput.accept(createSimpleBlock(pottedBlock, resourcelocation));
+
+        TextureMapping texturemapping1 = plantType.getTextureMapping(block);
+
+        TextureMapping texturemapping2 = plantType.getTextureMapping(block).put(TextureSlot.CROSS, TextureMapping.getBlockTexture(block,"_sheared"));
+
+        ResourceLocation sheared = plantType.getCross().createWithSuffix(block,"_sheared", texturemapping2, this.modelOutput);
+
+        ResourceLocation resourcelocation1 = plantType.getCross().create(block, texturemapping1, this.modelOutput);
+        this.blockStateOutput.accept(
+                MultiVariantGenerator.multiVariant(block)
+                        .with(createBooleanModelDispatch(CactusShrubBlock.SPIKY, resourcelocation1, sheared)));
+    }
+
 }

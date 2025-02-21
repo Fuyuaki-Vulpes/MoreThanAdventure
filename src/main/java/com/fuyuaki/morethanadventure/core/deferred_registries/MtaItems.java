@@ -1067,6 +1067,8 @@ public class MtaItems {
 
 
 
+    public static final DeferredItem<Item> PRICKLY_PEAR_PAD = ITEMS.registerSimpleItem("prickly_pear_pad", new Item.Properties()
+            .food(MtaFoods.PRICKLY_PEAR));
 
 
 

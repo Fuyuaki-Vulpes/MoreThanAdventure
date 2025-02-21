@@ -266,7 +266,6 @@ public class MtaTabs {
                 output.accept(MtaBlocks.SEAWOOD_SIGN.get());
                 output.accept(MtaBlocks.SEAWOOD_HANGING_SIGN.get());
 
-                output.accept(MtaBlocks.POTTED_PRICKLY_PEAR.get());
 
                 output.accept(MtaBlocks.STONE_TILES.get());
                 output.accept(MtaBlocks.STONE_TILES_SLAB.get());

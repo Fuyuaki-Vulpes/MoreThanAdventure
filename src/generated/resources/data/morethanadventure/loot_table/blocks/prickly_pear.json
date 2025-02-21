@@ -10,8 +10,37 @@
       ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "morethanadventure:prickly_pear"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "morethanadventure:prickly_pear",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "spiky": "false"
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "add": false,
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "max": 5.0,
+                    "min": 2.0
+                  },
+                  "function": "minecraft:set_count"
+                }
+              ],
+              "name": "morethanadventure:prickly_pear_pad"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "morethanadventure:prickly_pear"
+            }
+          ]
         }
       ],
       "rolls": 1.0

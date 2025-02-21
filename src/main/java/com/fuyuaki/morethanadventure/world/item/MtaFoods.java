@@ -124,21 +124,11 @@ public class MtaFoods {
             .nutrition(7)
             .saturationModifier(1.3F)
             .build();
-     public static final FoodProperties BANANA_SMOOTHIE = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(1.3F)
+
+    public static final FoodProperties PRICKLY_PEAR = new FoodProperties.Builder()
+            .nutrition(5)
+            .saturationModifier(0.6F)
             .build();
-     public static final FoodProperties GRAPE_SMOOTHIE = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(1.3F)
-            .build();
-     public static final FoodProperties MANGO_SMOOTHIE = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(1.3F)
-            .build();
-     public static final FoodProperties STRAWBERRY_SMOOTHIE = new FoodProperties.Builder()
-            .nutrition(7)
-            .saturationModifier(1.3F)
-            .build();
+
 
 }

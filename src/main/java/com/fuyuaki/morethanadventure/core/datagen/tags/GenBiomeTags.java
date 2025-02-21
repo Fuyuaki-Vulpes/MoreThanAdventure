@@ -69,11 +69,14 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .add(MtaBiomes.UNDERWATER_FOREST)
                 ;
 
-        this.tag(Tags.Biomes.IS_RIVER).add(MtaBiomes.LUSH_RIVER);
+        this.tag(Tags.Biomes.IS_RIVER).add(MtaBiomes.LUSH_RIVER,MtaBiomes.GRAVELLY_RIVER);
 
-        this.tag(Tags.Biomes.IS_SPARSE_VEGETATION)
+        this.tag(Tags.Biomes.IS_SPARSE_VEGETATION_OVERWORLD)
                 .add(MtaBiomes.SPARSE_TAIGA,
                         MtaBiomes.SPARSE_CHERRY_GROVE, MtaBiomes.TUNDRA);
+
+        this.tag(Tags.Biomes.IS_DENSE_VEGETATION_OVERWORLD)
+                .add(MtaBiomes.CERRADO);
 
 
 
@@ -81,25 +84,30 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         this.tag(BiomeTags.HAS_VILLAGE_PLAINS).add(MtaBiomes.MAPLE_FOREST);
         this.tag(BiomeTags.HAS_VILLAGE_DESERT).add(MtaBiomes.OASIS);
         this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
-        this.tag(Tags.Biomes.IS_DESERT).add(MtaBiomes.OASIS);
-        this.tag(Tags.Biomes.IS_SNOWY).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
+        this.tag(Tags.Biomes.IS_DESERT).add(MtaBiomes.OASIS, MtaBiomes.POLAR_DESERT);
+        this.tag(Tags.Biomes.IS_SNOWY).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.POLAR_DESERT);
         this.tag(Tags.Biomes.IS_FOREST).add(MtaBiomes.MAPLE_FOREST);
-        this.tag(Tags.Biomes.IS_COLD_OVERWORLD).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
-        this.tag(Tags.Biomes.IS_SNOWY_PLAINS).add(MtaBiomes.TUNDRA);
+        this.tag(Tags.Biomes.IS_TAIGA).add(MtaBiomes.SPARSE_TAIGA);
+        this.tag(Tags.Biomes.IS_COLD_OVERWORLD).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.POLAR_DESERT);
+
+        this.tag(Tags.Biomes.IS_SNOWY_PLAINS).add(MtaBiomes.TUNDRA, MtaBiomes.POLAR_DESERT);
+
         this.tag(Tags.Biomes.IS_MOUNTAIN_SLOPE).add(MtaBiomes.ALPINE_TUNDRA);
-        this.tag(BiomeTags.SPAWNS_SNOW_FOXES).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
-        this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA);
+        this.tag(BiomeTags.SPAWNS_SNOW_FOXES).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.POLAR_DESERT);
+        this.tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(MtaBiomes.TUNDRA, MtaBiomes.ALPINE_TUNDRA, MtaBiomes.POLAR_DESERT);
         this.tag(BiomeTags.SPAWNS_WARM_VARIANT_FROGS).add(MtaBiomes.CERRADO);
         this.tag(BiomeTags.HAS_SWAMP_HUT).add(MtaBiomes.BOG);
-        this.tag(Tags.Biomes.IS_DRY).add(MtaBiomes.BOG);
+        this.tag(Tags.Biomes.IS_DRY_OVERWORLD).add(MtaBiomes.BOG, MtaBiomes.POLAR_DESERT);
 
         this.tag(BiomeTags.IS_SAVANNA).add(MtaBiomes.CERRADO);
+        this.tag(BiomeTags.HAS_MINESHAFT).add(MtaBiomes.CERRADO,MtaBiomes.OASIS,MtaBiomes.ALPINE_TUNDRA,MtaBiomes.MAPLE_FOREST);
+        this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(MtaBiomes.CERRADO,MtaBiomes.TUNDRA);
+
         this.tag(BiomeTags.HAS_VILLAGE_SAVANNA).add(MtaBiomes.CERRADO);
-        this.tag(BiomeTags.HAS_MINESHAFT).add(MtaBiomes.CERRADO);
-        this.tag(BiomeTags.HAS_PILLAGER_OUTPOST).add(MtaBiomes.CERRADO);
+        this.tag(BiomeTags.HAS_VILLAGE_SNOWY).add(MtaBiomes.TUNDRA);
+        this.tag(BiomeTags.HAS_VILLAGE_DESERT).add(MtaBiomes.OASIS);
 
-
-        this.tag(Tags.Biomes.IS_DEAD).add(MtaBiomes.BOG);
+        this.tag(Tags.Biomes.IS_DEAD).add(MtaBiomes.BOG,MtaBiomes.POLAR_DESERT);
 
 
 
@@ -154,11 +162,12 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
                 .add(Biomes.LUKEWARM_OCEAN);
 
         this.tag(MtaTags.Biomes.HAS_OWL)
-                .addTag(Tags.Biomes.IS_FOREST);
+                .addTag(Tags.Biomes.IS_FOREST)
+                .add(MtaBiomes.CERRADO);
 
         this.tag(MtaTags.Biomes.HAS_DEER)
                 .addTag(Tags.Biomes.IS_FOREST)
-                .add(MtaBiomes.ALPINE_TUNDRA);
+                .add(MtaBiomes.ALPINE_TUNDRA,MtaBiomes.CERRADO);
 
         this.tag(MtaTags.Biomes.HAS_TURKEY)
                 .addTag(Tags.Biomes.IS_FOREST)

@@ -4,7 +4,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaFeatures;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
-import com.fuyuaki.morethanadventure.world.level.feature.placers.GentleForkingTrunkPlacer;
+import com.fuyuaki.morethanadventure.world.level.feature.feature.GentleForkingTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
@@ -92,6 +92,10 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
     public static final ResourceKey<ConfiguredFeature<?,?>> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PRICKLY_PEAR = registerKey("prickly_pear");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PRICKLY_PEAR_SPARSE = registerKey("prickly_pear_sparse");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SAND_GRASS = registerKey("sand_grass");
+    public static final ResourceKey<ConfiguredFeature<?,?>> BEACHGRASS = registerKey("beachgrass");
 
     public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
     public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION_WATERLOGGED = registerKey("cattail_vegetation_waterlogged");
@@ -291,17 +295,17 @@ public class MtaConfigFeatures {
         );
         register(context,
                 STONY_ROCKS,
-                Feature.FOREST_ROCK,
+                MtaFeatures.ROCK_BLOBS.get(),
                 new BlockStateConfiguration(Blocks.ANDESITE.defaultBlockState())
         );
         register(context,
                 PERMAFROST_ROCKS,
-                Feature.FOREST_ROCK,
+                MtaFeatures.ROCK_BLOBS.get(),
                 new BlockStateConfiguration(MtaBlocks.PERMAFROST_STONE.get().defaultBlockState())
         );
         register(context,
                 MOSSY_ROCKS,
-                Feature.FOREST_ROCK,
+                MtaFeatures.ROCK_BLOBS.get(),
                 new BlockStateConfiguration(MtaBlocks.MOSSY_ANDESITE.get().defaultBlockState())
         );
 
@@ -535,6 +539,43 @@ public class MtaConfigFeatures {
                 )
                 ));
 
+        register(
+                context,
+                PRICKLY_PEAR,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(7, 3, 3, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.PRICKLY_PEAR.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.PRICKLY_PEAR.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
+        register(
+                context,
+                PRICKLY_PEAR_SPARSE,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(5, 8, 2, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.PRICKLY_PEAR.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.PRICKLY_PEAR.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
+
+        register(
+                context,
+                SAND_GRASS,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(13, 4, 3, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.SAND_GRASS.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.SAND_GRASS.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
+        register(
+                context,
+                BEACHGRASS,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(12, 10, 6, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.BEACHGRASS.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.BEACHGRASS.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
 
     }
 

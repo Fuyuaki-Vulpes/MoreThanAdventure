@@ -342,6 +342,10 @@ public class GenSoundDefinition extends SoundDefinitionsProvider {
                         sound("morethanadventure:block/stove/stove4"),
                         sound("morethanadventure:block/stove/stove5")
                 ).subtitle("sound.morethanadventure.stove.crackle"));
+        add(MtaSounds.PRICKLY_PEAR_SHEAR.get(), definition()
+                .with(
+                        sound("morethanadventure:block/prickly_pear/shear")
+                ).subtitle("sound.morethanadventure.prickly_pear.shear"));
 
     }
 

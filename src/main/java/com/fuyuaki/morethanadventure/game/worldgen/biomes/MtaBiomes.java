@@ -68,7 +68,7 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> CRYSTALLINE_GROTTO = createBiome("crystalline_grotto");
 
     public static final List<ResourceKey<Biome>> BIOMES = List.of(LUSH_RIVER,SPARSE_TAIGA,SPARSE_CHERRY_GROVE,OASIS,GRAVELLY_RIVER,TUNDRA,
-            LUSH_MEADOW,UNDERWATER_FOREST, MAPLE_FOREST);
+            LUSH_MEADOW,UNDERWATER_FOREST, MAPLE_FOREST, POLAR_DESERT, CERRADO);
 
     public static ResourceKey<Biome> createBiome(String name){
         return ResourceKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(MODID,name));
@@ -136,6 +136,8 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addSavannaTrees(biomeBuilder);
         BiomeDefaultFeatures.addWarmFlowers(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PRICKLY_PEAR);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SAND_GRASS_SPARSE);
 
         BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
 
@@ -440,6 +442,8 @@ public class MtaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PALM_TREE);
         BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PRICKLY_PEAR);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SAND_GRASS);
 
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
 

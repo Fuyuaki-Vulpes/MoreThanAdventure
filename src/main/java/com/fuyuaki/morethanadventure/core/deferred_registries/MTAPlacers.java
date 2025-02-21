@@ -1,6 +1,6 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
-import com.fuyuaki.morethanadventure.world.level.feature.placers.GentleForkingTrunkPlacer;
+import com.fuyuaki.morethanadventure.world.level.feature.feature.GentleForkingTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;

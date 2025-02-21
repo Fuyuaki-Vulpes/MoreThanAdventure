@@ -78,6 +78,13 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
     public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION_WATERLOGGED = registerKey("cattail_vegetation_waterlogged");
 
+    public static final ResourceKey<PlacedFeature> PRICKLY_PEAR = registerKey("prickly_pear");
+    public static final ResourceKey<PlacedFeature> PRICKLY_PEAR_SPARSE = registerKey("prickly_pear_sparse");
+
+    public static final ResourceKey<PlacedFeature> SAND_GRASS = registerKey("sand_grass");
+    public static final ResourceKey<PlacedFeature> SAND_GRASS_SPARSE = registerKey("sand_grass_sparse");
+    public static final ResourceKey<PlacedFeature> BEACHGRASS = registerKey("beachgrass");
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
         register(
@@ -139,7 +146,7 @@ public class MtaPlacedFeatures {
                 context,
                 MANGO_TREE,
                 holder(context,MtaConfigFeatures.MANGO_TREE),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(70),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(300),
                         MtaBlocks.MANGO_SAPLING.get())
         );
 
@@ -155,14 +162,14 @@ public class MtaPlacedFeatures {
                 context,
                 PALM_TREE,
                 holder(context,MtaConfigFeatures.PALM_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(6),
                         MtaBlocks.PALM_SAPLING.get())
         );
         register(
                 context,
                 PALM_TREE_RARE,
                 holder(context,MtaConfigFeatures.PALM_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05F, 1),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(20),
                         MtaBlocks.PALM_SAPLING.get())
 
         );
@@ -471,8 +478,51 @@ public class MtaPlacedFeatures {
 
         );
 
+        PlacementUtils.register(
+                context,
+                PRICKLY_PEAR,
+                holder(context,MtaConfigFeatures.PRICKLY_PEAR),
+                VegetationPlacements.worldSurfaceSquaredWithCount(4)
+
+        );
+        PlacementUtils.register(
+                context,
+                PRICKLY_PEAR_SPARSE,
+                holder(context,MtaConfigFeatures.PRICKLY_PEAR_SPARSE),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(12),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome())
+
+        );
 
 
+        PlacementUtils.register(
+                context,
+                SAND_GRASS,
+                holder(context,MtaConfigFeatures.SAND_GRASS),
+                VegetationPlacements.worldSurfaceSquaredWithCount(3)
+
+        );
+        PlacementUtils.register(
+                context,
+                SAND_GRASS_SPARSE,
+                holder(context,MtaConfigFeatures.SAND_GRASS),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(3),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome())
+
+        );
+        PlacementUtils.register(
+                context,
+                BEACHGRASS,
+                holder(context,MtaConfigFeatures.BEACHGRASS),
+                VegetationPlacements.worldSurfaceSquaredWithCount(5)
+
+        );
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

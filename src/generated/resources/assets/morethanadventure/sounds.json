@@ -190,6 +190,12 @@
     ],
     "subtitle": "sound.morethanadventure.weapons.bow.longbow"
   },
+  "mta.block.prickly_pear.shear": {
+    "sounds": [
+      "morethanadventure:block/prickly_pear/shear"
+    ],
+    "subtitle": "sound.morethanadventure.prickly_pear.shear"
+  },
   "owl_ambient": {
     "sounds": [
       "morethanadventure:entity/owl/idle"
