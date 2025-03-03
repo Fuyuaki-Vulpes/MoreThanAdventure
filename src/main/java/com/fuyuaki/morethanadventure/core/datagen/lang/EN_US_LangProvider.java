@@ -214,6 +214,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MOSSY_ANDESITE.get(),"Mossy Andesite");
         add(MtaBlocks.SAND_PATH.get(),"Sand Path");
         add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
+        add(MtaBlocks.GRASSY_SAND.get(),"Grassy Sand");
         add(MtaBlocks.PERMAFROST_DIRT.get(),"Permafrost Dirt");
         add(MtaBlocks.SHALLOW_GRASS.get(),"Shallow Grass");
         add(MtaBlocks.SAND_GRASS.get(),"Sand Grass");

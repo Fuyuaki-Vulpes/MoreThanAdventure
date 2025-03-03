@@ -33,6 +33,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
@@ -62,11 +63,13 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> MANGO_TREE = registerKey("mango_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> PALM_TREE = registerKey("palm_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> ACACIA_BUSH = registerKey("acacia_bush");
     public static final ResourceKey<ConfiguredFeature<?,?>> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<ConfiguredFeature<?,?>> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEBRIS_CLUSTER = registerKey("debris_cluster");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SANDSTONE_ROCKS = registerKey("sandstone_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> STONY_ROCKS = registerKey("stony_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> PERMAFROST_ROCKS = registerKey("permafrost_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOSSY_ROCKS = registerKey("mossy_rocks");
@@ -235,6 +238,21 @@ public class MtaConfigFeatures {
                         new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
+
+        FeatureUtils.register(
+                context,
+                ACACIA_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.ACACIA_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(Blocks.ACACIA_LEAVES),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
+        );
+
         register(
                 context,
                 SEAWOOD_TREE,
@@ -292,6 +310,11 @@ public class MtaConfigFeatures {
                         Blocks.ANCIENT_DEBRIS.defaultBlockState(),
                         Blocks.BASALT.defaultBlockState()
                 )
+        );
+        register(context,
+                SANDSTONE_ROCKS,
+                MtaFeatures.ROCK_BLOBS.get(),
+                new BlockStateConfiguration(Blocks.SANDSTONE.defaultBlockState())
         );
         register(context,
                 STONY_ROCKS,
@@ -562,7 +585,7 @@ public class MtaConfigFeatures {
                 context,
                 SAND_GRASS,
                 Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(13, 4, 3, PlacementUtils.filtered(
+                new RandomPatchConfiguration(22, 6, 3, PlacementUtils.filtered(
                         Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.SAND_GRASS.get())),
                         BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.SAND_GRASS.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
                 )
@@ -571,7 +594,7 @@ public class MtaConfigFeatures {
                 context,
                 BEACHGRASS,
                 Feature.RANDOM_PATCH,
-                new RandomPatchConfiguration(12, 10, 6, PlacementUtils.filtered(
+                new RandomPatchConfiguration(17, 10, 6, PlacementUtils.filtered(
                         Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.BEACHGRASS.get())),
                         BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.BEACHGRASS.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
                 )

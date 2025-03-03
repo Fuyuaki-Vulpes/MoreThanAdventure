@@ -553,6 +553,11 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
             copy(Blocks.DIRT)
     );
 
+    public static final DeferredBlock<Block> GRASSY_SAND = registerBlock("grassy_sand",
+            properties -> new ColoredFallingBlock(new ColorRGBA(14406560), properties),
+            copy(Blocks.SAND)
+    );
+
     public static final DeferredBlock<Block> COBBLED_DIRT = registerBlock("cobbled_dirt",
             copy(Blocks.DIRT)
                     .strength(1.0F,3.0F)

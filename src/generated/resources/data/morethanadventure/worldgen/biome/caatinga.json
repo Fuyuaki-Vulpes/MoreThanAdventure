@@ -4,11 +4,10 @@
     "minecraft:cave_extra_underground",
     "minecraft:canyon"
   ],
-  "downfall": 0.1,
+  "creature_spawn_probability": 0.2,
+  "downfall": 0.0,
   "effects": {
     "fog_color": 12638463,
-    "foliage_color": 14927394,
-    "grass_color": 13935921,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -27,7 +26,7 @@
       }
     ],
     "music_volume": 1.0,
-    "sky_color": 7385087,
+    "sky_color": 7254527,
     "water_color": 4159204,
     "water_fog_color": 329011
   },
@@ -41,6 +40,8 @@
       "minecraft:amethyst_geode"
     ],
     [
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower",
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
@@ -73,6 +74,7 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
+      "minecraft:ore_gold_extra",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
@@ -84,19 +86,19 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass",
-      "minecraft:patch_large_fern",
-      "minecraft:trees_savanna",
-      "minecraft:flower_warm",
+      "morethanadventure:sparse_oak",
+      "minecraft:patch_grass_badlands",
+      "minecraft:flower_default",
+      "minecraft:patch_dead_bush_2",
       "minecraft:patch_dead_bush",
       "morethanadventure:prickly_pear",
       "morethanadventure:sand_grass_sparse",
-      "minecraft:patch_grass_savanna",
-      "morethanadventure:acacia_bush",
+      "morethanadventure:stony_rocks",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
+      "minecraft:patch_sugar_cane_desert",
       "minecraft:patch_pumpkin",
+      "minecraft:patch_cactus_desert",
       "morethanadventure:shallow_grass_sparse"
     ],
     [
@@ -117,58 +119,16 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:wolf",
-        "maxCount": 8,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:frog",
-        "maxCount": 5,
+        "type": "minecraft:rabbit",
+        "maxCount": 3,
         "minCount": 2,
-        "weight": 10
+        "weight": 4
       },
       {
-        "type": "minecraft:parrot",
+        "type": "minecraft:armadillo",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 20
-      },
-      {
-        "type": "minecraft:ocelot",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 5
-      },
-      {
-        "type": "morethanadventure:deer",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 8
-      },
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
+        "weight": 6
       }
     ],
     "misc": [],
@@ -183,13 +143,13 @@
         "type": "minecraft:zombie",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 95
+        "weight": 19
       },
       {
         "type": "minecraft:zombie_villager",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 5
+        "weight": 1
       },
       {
         "type": "minecraft:skeleton",
@@ -220,6 +180,12 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
+      },
+      {
+        "type": "minecraft:husk",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 80
       }
     ],
     "underground_water_creature": [
@@ -233,5 +199,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 1.8
+  "temperature": 2.0
 }

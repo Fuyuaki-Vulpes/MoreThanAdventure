@@ -317,6 +317,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 .add(
                         MtaBlocks.SAND_PATH.get(),
                         MtaBlocks.GRASSY_DIRT.get(),
+                        MtaBlocks.GRASSY_SAND.get(),
                         MtaBlocks.PERMAFROST_GRASS.get(),
                         MtaBlocks.PERMAFROST_DIRT.get(),
                         MtaBlocks.TUNDRA_GRASS.get(),
@@ -801,7 +802,8 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.CORPSE_FLOWER.get()
         );
         this.tag(BlockTags.SNOW).add(
-                MtaBlocks.POLAR_SAND.get()
+                MtaBlocks.POLAR_SAND.get(),
+                MtaBlocks.GRASSY_SAND.get()
         );
 
         this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
@@ -822,6 +824,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.ANIMALS_SPAWNABLE_ON)
                 .add(
                         MtaBlocks.GRASSY_DIRT.get(),
+                        MtaBlocks.GRASSY_SAND.get(),
                         Blocks.COARSE_DIRT,
                         Blocks.PODZOL
                 );

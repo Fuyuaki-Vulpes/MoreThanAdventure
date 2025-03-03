@@ -1,0 +1,8 @@
+{
+  "type": "morethanadventure:rock_blobs",
+  "config": {
+    "state": {
+      "Name": "minecraft:sandstone"
+    }
+  }
+}

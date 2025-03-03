@@ -21,6 +21,7 @@ public class MtaSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
     private static final SurfaceRules.RuleSource GRASSY_DIRT = makeStateRule(MtaBlocks.GRASSY_DIRT.get());
+    private static final SurfaceRules.RuleSource GRASSY_SAND = makeStateRule(MtaBlocks.GRASSY_SAND.get());
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
     private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
@@ -51,8 +52,10 @@ public class MtaSurfaceRules {
         SurfaceRules.ConditionSource isAboveWaterLevel = SurfaceRules.waterBlockCheck(0, 0);
         SurfaceRules.ConditionSource sixBelowWater = SurfaceRules.waterStartCheck(-6, -1);
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASS_BLOCK), DIRT);
+        SurfaceRules.RuleSource grassySandSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRASSY_SAND), SAND);
         SurfaceRules.RuleSource permafrostSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel,PERMAFROST_GRASS), PERMAFROST_DIRT);
         SurfaceRules.RuleSource permafrostTundraSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel,TUNDRA_GRASS), PERMAFROST_DIRT);
+        SurfaceRules.RuleSource permafrostDeepSurface = SurfaceRules.ifTrue(SurfaceRules.verticalGradient("deepslate", VerticalAnchor.belowTop(0), VerticalAnchor.belowTop(12)), PERMAFROST_STONE);
         SurfaceRules.ConditionSource isTop5Blocks = SurfaceRules.yBlockCheck(VerticalAnchor.belowTop(5), 0);
         SurfaceRules.ConditionSource isHole = SurfaceRules.hole();
         SurfaceRules.ConditionSource isSteep = SurfaceRules.steep();
@@ -91,9 +94,17 @@ public class MtaSurfaceRules {
                                                                         SurfaceRules.sequence(
                                                                                 SurfaceRules.ifTrue(
                                                                                         SurfaceRules.noiseCondition
-                                                                                                (MTANoises.OASIS_GRASS, -0.25D, 0.3D),
-                                                                                        grassSurface),
+                                                                                                (MTANoises.OASIS_GRASS, 0.35D, 2.0D),
+                                                                                        grassySandSurface),
                                                                                 SAND
+                                                                        )),
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                                                        SurfaceRules.sequence(
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (Noises.BADLANDS_SURFACE, -0.70D, 0.2D),
+                                                                                        COARSE_DIRT),
+                                                                                GRAVEL
                                                                         )),
                                                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),
                                                                         SurfaceRules.sequence(
@@ -122,13 +133,8 @@ public class MtaSurfaceRules {
                                                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR,
                                                         SurfaceRules.sequence(
                                                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
-                                                                        SurfaceRules.sequence(
-                                                                                SurfaceRules.ifTrue(
-                                                                                        SurfaceRules.noiseCondition
-                                                                                                (MTANoises.OASIS_GRASS, -0.25D, 0.3D),
-                                                                                        DIRT),
                                                                                 sandstoneLinedSand
-                                                                        )),
+                                                                        ),
                                                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.TUNDRA),
                                                                         PERMAFROST_DIRT)
                                                         )
@@ -136,14 +142,8 @@ public class MtaSurfaceRules {
                                                 SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR,
                                                         SurfaceRules.sequence(
                                                         SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
-                                                                SurfaceRules.sequence(
-
-                                                                        SurfaceRules.ifTrue(
-                                                                                SurfaceRules.noiseCondition
-                                                                                        (MTANoises.OASIS_GRASS, -0.25D, 0.3D),
-                                                                                STONE),
                                                                         SANDSTONE
-                                                                )),
+                                                                ),
                                                         SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),
                                                                 SurfaceRules.sequence(
                                                                         POLAR_SAND
@@ -210,8 +210,7 @@ public class MtaSurfaceRules {
                                 )
 
                         ),
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),
-                                PERMAFROST_STONE
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),permafrostDeepSurface
                                 )
 
 

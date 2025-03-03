@@ -102,6 +102,7 @@ public class MtaTabs {
 
 
                 output.accept(MtaBlocks.GRASSY_DIRT.get());
+                output.accept(MtaBlocks.GRASSY_SAND.get());
                 output.accept(MtaBlocks.PERMAFROST_GRASS.get());
                 output.accept(MtaBlocks.PERMAFROST_DIRT.get());
                 output.accept(MtaBlocks.PERMAFROST_STONE.get());

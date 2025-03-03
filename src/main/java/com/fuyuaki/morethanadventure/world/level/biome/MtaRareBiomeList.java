@@ -54,7 +54,7 @@ public class MtaRareBiomeList {
             {null,                          null,                          null,                          null,         null},
             {null,                          null,                          null,                          null,         null},
             {null,                          null,                          null,                          null,         null},
-            {null,                          null,                          null,                          null,         null}
+            {MtaBiomes.CAATINGA,            MtaBiomes.CAATINGA,            null,                          null,         null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
@@ -70,7 +70,7 @@ public class MtaRareBiomeList {
             {null,                          null,                          null,                          null,         null},
             {null,                          null,                          null,                          null,         null},
             {null,                          null,                          null,                          null,         null},
-            {null,                          null,                          null,                          null,         null}
+            {MtaBiomes.CAATINGA,            null,                          null,                          null,         null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PEAK_BIOMES = new ResourceKey[][]{
@@ -86,7 +86,7 @@ public class MtaRareBiomeList {
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {null, null, null, null, null}
+            {MtaBiomes.CAATINGA, MtaBiomes.CAATINGA, null, null, null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_SWAMP_BIOMES = new ResourceKey[][]{

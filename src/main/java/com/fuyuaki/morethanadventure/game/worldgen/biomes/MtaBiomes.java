@@ -56,6 +56,7 @@ public class MtaBiomes {
     public static final ResourceKey<Biome> LUSH_RIVER = createBiome("lush_river");
     public static final ResourceKey<Biome> MAPLE_FOREST = createBiome("maple_forest");
     public static final ResourceKey<Biome> OASIS = createBiome("oasis");
+    public static final ResourceKey<Biome> CAATINGA = createBiome("caatinga");
     public static final ResourceKey<Biome> SPARSE_CHERRY_GROVE = createBiome("sparse_cherry_grove");
     public static final ResourceKey<Biome> SPARSE_TAIGA = createBiome("sparse_taiga");
     public static final ResourceKey<Biome> TUNDRA = createBiome("tundra");
@@ -97,6 +98,7 @@ public class MtaBiomes {
         register(context,BOG, bog(placedFeatureHolder,configuredCarverHolder));
         register(context,POLAR_DESERT, polarDesert(placedFeatureHolder,configuredCarverHolder));
         register(context,CERRADO, cerrado(placedFeatureHolder,configuredCarverHolder));
+        register(context,CAATINGA, caatinga(placedFeatureHolder,configuredCarverHolder));
     }
 
 
@@ -110,6 +112,52 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
+
+    private static Biome caatinga(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.desertSpawns(spawnBuilder);
+        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.ARMADILLO, 6, 1, 2));
+        spawnBuilder.creatureGenerationProbability(0.2F);
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
+
+        BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
+
+
+        globalOverworldGeneration(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addExtraGold(biomeBuilder);
+
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SPARSE_OAK_TREE);
+
+        BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+
+        BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
+
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PRICKLY_PEAR);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SAND_GRASS_SPARSE);
+
+
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SHALLOW_GRASS_SPARSE);
+
+
+        return biome(true,
+                2.0F,
+                0.0F,
+                spawnBuilder,
+                biomeBuilder,
+                DESERT_MUSIC
+        );
+    }
 
     private static Biome cerrado(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
@@ -134,12 +182,14 @@ public class MtaBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
 
         BiomeDefaultFeatures.addSavannaTrees(biomeBuilder);
+
         BiomeDefaultFeatures.addWarmFlowers(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PRICKLY_PEAR);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SAND_GRASS_SPARSE);
 
         BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.ACACIA_BUSH);
 
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
@@ -445,7 +495,7 @@ public class MtaBiomes {
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.PRICKLY_PEAR);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SAND_GRASS);
 
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.STONY_ROCK);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.SANDSTONE_ROCK);
 
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
 

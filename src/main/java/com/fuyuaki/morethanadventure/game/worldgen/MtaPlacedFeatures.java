@@ -36,6 +36,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> YELLOW_IPE_TREE = registerKey("yellow_ipe_tree");
     public static final ResourceKey<PlacedFeature> MANGO_TREE = registerKey("mango_tree");
     public static final ResourceKey<PlacedFeature> MAPLE_TREE = registerKey("maple_tree");
+    public static final ResourceKey<PlacedFeature> ACACIA_BUSH = registerKey("acacia_bush");
     public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
     public static final ResourceKey<PlacedFeature> PALM_TREE_RARE = registerKey("palm_tree_rare");
     public static final ResourceKey<PlacedFeature> SEAWOOD_TREE = registerKey("seawood_tree");
@@ -46,8 +47,10 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<PlacedFeature> DEBRIS_CLUSTER = registerKey("debris_cluster");
     public static final ResourceKey<PlacedFeature> SPARSE_CHERRY_TREE = registerKey("sparse_cherry");
+    public static final ResourceKey<PlacedFeature> SPARSE_OAK_TREE = registerKey("sparse_oak");
     public static final ResourceKey<PlacedFeature> SPARSE_SPRUCE_TREE = registerKey("sparse_taiga");
     public static final ResourceKey<PlacedFeature> SPARSE_MANGROVE = registerKey("sparse_mangrove");
+    public static final ResourceKey<PlacedFeature> SANDSTONE_ROCK = registerKey("sandstone_rocks");
     public static final ResourceKey<PlacedFeature> STONY_ROCK = registerKey("stony_rocks");
     public static final ResourceKey<PlacedFeature> PERMAFROST_ROCK = registerKey("permafrost_rocks");
     public static final ResourceKey<PlacedFeature> MOSSY_ROCKS = registerKey("mossy_rocks");
@@ -160,6 +163,14 @@ public class MtaPlacedFeatures {
 
         register(
                 context,
+                ACACIA_BUSH,
+                holder(context,MtaConfigFeatures.ACACIA_BUSH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1),
+                        Blocks.ACACIA_SAPLING)
+        );
+
+        register(
+                context,
                 PALM_TREE,
                 holder(context,MtaConfigFeatures.PALM_TREE),
                 VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(6),
@@ -250,12 +261,28 @@ public class MtaPlacedFeatures {
 
         register(
                 context,
+                SPARSE_OAK_TREE,
+                holder(context, TreeFeatures.OAK),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(6),Blocks.OAK_SAPLING)
+        );
+
+        register(
+                context,
                 SPARSE_SPRUCE_TREE,
                 holder(context, TreeFeatures.SPRUCE),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1),Blocks.SPRUCE_SAPLING)
 
         );
 
+        register(
+                context,
+                SANDSTONE_ROCK,
+                holder(context, MtaConfigFeatures.SANDSTONE_ROCKS),
+                CountPlacement.of(1),
+                InSquarePlacement.spread(),
+                PlacementUtils.HEIGHTMAP,
+                BiomeFilter.biome()
+        );
         register(
                 context,
                 STONY_ROCK,
@@ -269,7 +296,7 @@ public class MtaPlacedFeatures {
                 context,
                 PERMAFROST_ROCK,
                 holder(context, MtaConfigFeatures.PERMAFROST_ROCKS),
-                CountPlacement.of(4),
+                CountPlacement.of(2),
                 InSquarePlacement.spread(),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
@@ -502,18 +529,15 @@ public class MtaPlacedFeatures {
                 context,
                 SAND_GRASS,
                 holder(context,MtaConfigFeatures.SAND_GRASS),
-                VegetationPlacements.worldSurfaceSquaredWithCount(3)
+                VegetationPlacements.worldSurfaceSquaredWithCount(7)
 
         );
         PlacementUtils.register(
                 context,
                 SAND_GRASS_SPARSE,
                 holder(context,MtaConfigFeatures.SAND_GRASS),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(3),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        BiomeFilter.biome())
+                VegetationPlacements.worldSurfaceSquaredWithCount(2)
+
 
         );
         PlacementUtils.register(
