@@ -1,5 +1,6 @@
-package com.fuyuaki.morethanadventure.game.worldgen.biomes;
+package com.fuyuaki.morethanadventure.game.worldgen.biomes.region;
 
+import com.fuyuaki.morethanadventure.game.worldgen.biomes.builder.MtaOverworldBiomeBuilder;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;

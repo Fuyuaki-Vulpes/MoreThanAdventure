@@ -4,7 +4,7 @@ import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 
-public class MtaRareBiomeList {
+public class MtaAlternateBiomesList {
     /*
     BIOME LIST GOES:
     ResourceKey[temperature][humidity]
@@ -34,19 +34,19 @@ public class MtaRareBiomeList {
 
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES = new ResourceKey[][]{
-            {MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT, MtaBiomes.POLAR_DESERT},
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {MtaBiomes.CAATINGA, MtaBiomes.CAATINGA, null, null, null}
+            {null, MtaBiomes.DENSE_SAVANNA, null, null, null},
+            {null, null, null, null, null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
             {null, null, null, null, null},
             {null, null, null, null, null},
             {null, null, null, null, null},
-            {MtaBiomes.CAATINGA, null, null, null, null},
-            {null, null, MtaBiomes.CAATINGA, MtaBiomes.CAATINGA, null}
+            {MtaBiomes.DENSE_SAVANNA, null, MtaBiomes.DENSE_SAVANNA, null, null},
+            {null, null, null, null, null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PLATEAU_BIOMES = new ResourceKey[][]{
@@ -70,7 +70,7 @@ public class MtaRareBiomeList {
             {null,                          null,                          null,                          null,         null},
             {null,                          null,                          null,                          null,         null},
             {null,                          null,                          null,                          null,         null},
-            {null,            null,                          null,                          null,         null}
+            {null,                          null,                          null,                          null,         null}
     };
 
     public static final ResourceKey<Biome>[][] MTA_PEAK_BIOMES = new ResourceKey[][]{

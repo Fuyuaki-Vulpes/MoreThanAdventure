@@ -98,12 +98,20 @@ public class MtaSurfaceRules {
                                                                                         grassySandSurface),
                                                                                 SAND
                                                                         )),
-                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.OASIS),
+                                                                SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.CAATINGA),
                                                                         SurfaceRules.sequence(
                                                                                 SurfaceRules.ifTrue(
                                                                                         SurfaceRules.noiseCondition
-                                                                                                (Noises.BADLANDS_SURFACE, -0.70D, 0.2D),
+                                                                                                (Noises.BADLANDS_SURFACE, 0.2D, 0.8D),
                                                                                         COARSE_DIRT),
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (Noises.BADLANDS_SURFACE, -0.70D, 0.2D),
+                                                                                        GRASSY_DIRT),
+                                                                                SurfaceRules.ifTrue(
+                                                                                        SurfaceRules.noiseCondition
+                                                                                                (Noises.BADLANDS_SURFACE, -1.00D, 0.7D),
+                                                                                        grassSurface),
                                                                                 GRAVEL
                                                                         )),
                                                                 SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),

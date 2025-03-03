@@ -72,15 +72,12 @@ public class MTACommonEvents {
         Level level = event.getEntity().level();
         Vec3 pos = event.getEntity().position();
         LivingEntity attacker = event.getEntity().getLastHurtByMob();
-        int count = event.getEntity().getRandom().nextIntBetweenInclusive(1, 3);
-        for (int n = 0; n < count; n++) {
-            level.addFreshEntity(new SoulOrb(level, pos.x(), event.getEntity().getEyeY(), pos.z(), Math.max(MTASoulHelper.getSoulValueForEntity(event.getEntity()) / count, 1)));
+        if (attacker instanceof Player){
+            int count = event.getEntity().getRandom().nextIntBetweenInclusive(1, 3);
+            for (int n = 0; n < count; n++) {
+                level.addFreshEntity(new SoulOrb(level, pos.x(), event.getEntity().getEyeY(), pos.z(), Math.max(MTASoulHelper.getSoulValueForEntity(event.getEntity()) / count, 1)));
 
-        }
-        if (attacker != null && TalismanItem.isEquipped(attacker, MtaItems.QUIVER.get()) && event.getSource().is(DamageTypes.ARROW)) {
-            Vec3 posAttacker = attacker.position();
-            Level levelAttacker = attacker.level();
-
+            }
         }
 
     }

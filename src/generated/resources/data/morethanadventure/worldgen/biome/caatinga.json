@@ -8,6 +8,8 @@
   "downfall": 0.0,
   "effects": {
     "fog_color": 12638463,
+    "foliage_color": 13028503,
+    "grass_color": 11255170,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -87,13 +89,13 @@
     [
       "minecraft:glow_lichen",
       "morethanadventure:sparse_oak",
-      "minecraft:patch_grass_badlands",
       "minecraft:flower_default",
-      "minecraft:patch_dead_bush_2",
+      "minecraft:patch_grass_badlands",
+      "morethanadventure:stony_rocks",
       "minecraft:patch_dead_bush",
       "morethanadventure:prickly_pear",
+      "minecraft:patch_dead_bush_2",
       "morethanadventure:sand_grass_sparse",
-      "morethanadventure:stony_rocks",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_desert",

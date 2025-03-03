@@ -37,6 +37,10 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> MANGO_TREE = registerKey("mango_tree");
     public static final ResourceKey<PlacedFeature> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<PlacedFeature> ACACIA_BUSH = registerKey("acacia_bush");
+    public static final ResourceKey<PlacedFeature> BIRCH_BUSH = registerKey("birch_bush");
+    public static final ResourceKey<PlacedFeature> SPRUCE_BUSH = registerKey("spruce_bush");
+    public static final ResourceKey<PlacedFeature> OAK_BUSH = registerKey("oak_bush");
+    public static final ResourceKey<PlacedFeature> DARK_OAK_BUSH = registerKey("dark_oak_bush");
     public static final ResourceKey<PlacedFeature> PALM_TREE = registerKey("palm_tree");
     public static final ResourceKey<PlacedFeature> PALM_TREE_RARE = registerKey("palm_tree_rare");
     public static final ResourceKey<PlacedFeature> SEAWOOD_TREE = registerKey("seawood_tree");
@@ -87,8 +91,16 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SAND_GRASS = registerKey("sand_grass");
     public static final ResourceKey<PlacedFeature> SAND_GRASS_SPARSE = registerKey("sand_grass_sparse");
     public static final ResourceKey<PlacedFeature> BEACHGRASS = registerKey("beachgrass");
+    public static final ResourceKey<PlacedFeature> DENSE_SAVANNA_TREES = registerKey("dense_savanna_trees");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+
+        register(
+                context,
+                DENSE_SAVANNA_TREES,
+                holder(context,VegetationFeatures.TREES_SAVANNA),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.25F, 1))
+        );
 
         register(
                 context,
@@ -167,6 +179,38 @@ public class MtaPlacedFeatures {
                 holder(context,MtaConfigFeatures.ACACIA_BUSH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1),
                         Blocks.ACACIA_SAPLING)
+        );
+
+        register(
+                context,
+                BIRCH_BUSH,
+                holder(context,MtaConfigFeatures.BIRCH_BUSH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1),
+                        Blocks.BIRCH_SAPLING)
+        );
+
+        register(
+                context,
+                OAK_BUSH,
+                holder(context,MtaConfigFeatures.OAK_BUSH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1),
+                        Blocks.OAK_SAPLING)
+        );
+
+        register(
+                context,
+                DARK_OAK_BUSH,
+                holder(context,MtaConfigFeatures.DARK_OAK_BUSH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1),
+                        Blocks.DARK_OAK_SAPLING)
+        );
+
+        register(
+                context,
+                SPRUCE_BUSH,
+                holder(context,MtaConfigFeatures.SPRUCE_BUSH),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.5F, 1),
+                        Blocks.SPRUCE_SAPLING)
         );
 
         register(

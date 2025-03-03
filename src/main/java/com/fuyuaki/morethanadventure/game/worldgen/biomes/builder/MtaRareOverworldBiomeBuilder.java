@@ -1,6 +1,8 @@
-package com.fuyuaki.morethanadventure.game.worldgen.biomes;
+package com.fuyuaki.morethanadventure.game.worldgen.biomes.builder;
 
+import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.world.level.biome.MtaBiomeList;
+import com.fuyuaki.morethanadventure.world.level.biome.MtaRareBiomeList;
 import com.fuyuaki.morethanadventure.world.level.biome.VanillaBiomeList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
@@ -11,7 +13,7 @@ import net.minecraft.world.level.biome.Climate;
 
 import java.util.function.Consumer;
 
-public class MtaOverworldBiomeBuilder {
+public class MtaRareOverworldBiomeBuilder {
     private static final float VALLEY_SIZE = 0.05F;
     private static final float LOW_START = 0.26666668F;
     public static final float HIGH_START = 0.4F;
@@ -402,11 +404,11 @@ public class MtaOverworldBiomeBuilder {
     }
 
     protected ResourceKey<Biome> pickMiddleBiomeMTA(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
-        ResourceKey<Biome> middleBiome = biomeOrFallback(MtaBiomeList.MTA_MIDDLE_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.MIDDLE_BIOMES[temperatureIndex][humidityIndex]);
+        ResourceKey<Biome> middleBiome = biomeOrFallback(MtaRareBiomeList.MTA_MIDDLE_BIOMES[temperatureIndex][humidityIndex],MtaBiomeList.MTA_MIDDLE_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.MIDDLE_BIOMES[temperatureIndex][humidityIndex]);
 
         if (weirdness.max() < 0) return middleBiome;
         else {
-            return biomeOrFallback(MtaBiomeList.MTA_MIDDLE_BIOMES_VARIANT[temperatureIndex][humidityIndex], middleBiome);
+            return biomeOrFallback(MtaRareBiomeList.MTA_MIDDLE_BIOMES_VARIANT[temperatureIndex][humidityIndex],MtaBiomeList.MTA_MIDDLE_BIOMES_VARIANT[temperatureIndex][humidityIndex], middleBiome);
         }
     }
 
@@ -429,23 +431,23 @@ public class MtaOverworldBiomeBuilder {
     }
 
     protected ResourceKey<Biome> pickSwampBiomeMTA(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
-        return biomeOrFallback(MtaBiomeList.MTA_SWAMP_BIOMES[temperatureIndex][humidityIndex], this.pickSwampBiomeVanilla(temperatureIndex, humidityIndex, weirdness));
+        return biomeOrFallback(MtaRareBiomeList.MTA_SWAMP_BIOMES[temperatureIndex][humidityIndex],MtaBiomeList.MTA_SWAMP_BIOMES[temperatureIndex][humidityIndex], this.pickSwampBiomeVanilla(temperatureIndex, humidityIndex, weirdness));
     }
 
     protected ResourceKey<Biome> pickRiverBiomeMTA(int temperatureIndex, int humidityIndex) {
-        return biomeOrFallback(MtaBiomeList.MTA_RIVER_BIOMES[temperatureIndex][humidityIndex], temperatureIndex == 0 ? Biomes.FROZEN_RIVER : Biomes.RIVER);
+        return biomeOrFallback(MtaRareBiomeList.MTA_RIVER_BIOMES[temperatureIndex][humidityIndex], MtaBiomeList.MTA_RIVER_BIOMES[temperatureIndex][humidityIndex], temperatureIndex == 0 ? Biomes.FROZEN_RIVER : Biomes.RIVER);
     }
 
     protected ResourceKey<Biome> pickBeachBiomeMTA(int temperatureIndex, int humidityIndex) {
-        return biomeOrFallback(MtaBiomeList.MTA_BEACH_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.BEACH_BIOMES[temperatureIndex][humidityIndex]);
+        return biomeOrFallback(MtaRareBiomeList.MTA_BEACH_BIOMES[temperatureIndex][humidityIndex],MtaBiomeList.MTA_BEACH_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.BEACH_BIOMES[temperatureIndex][humidityIndex]);
     }
 
     protected ResourceKey<Biome> pickStonyShoresBiomeMTA(int temperatureIndex, int humidityIndex) {
-        return biomeOrFallback(MtaBiomeList.MTA_STONY_SHORES_BIOMES[temperatureIndex][humidityIndex], Biomes.STONY_SHORE);
+        return biomeOrFallback(MtaRareBiomeList.MTA_STONY_SHORES_BIOMES[temperatureIndex][humidityIndex],MtaBiomeList.MTA_STONY_SHORES_BIOMES[temperatureIndex][humidityIndex], Biomes.STONY_SHORE);
     }
 
     protected ResourceKey<Biome> pickIslandBiomeMTA(int temperatureIndex, int humidityIndex) {
-        return biomeOrFallback(MtaBiomeList.MTA_ISLAND_BIOMES[temperatureIndex][humidityIndex], Biomes.MUSHROOM_FIELDS);
+        return biomeOrFallback(MtaRareBiomeList.MTA_ISLAND_BIOMES[temperatureIndex][humidityIndex],MtaBiomeList.MTA_ISLAND_BIOMES[temperatureIndex][humidityIndex], Biomes.MUSHROOM_FIELDS);
     }
 
     protected ResourceKey<Biome> pickBadlandsBiome(int humidityIndex, Climate.Parameter weirdness) {
@@ -458,9 +460,9 @@ public class MtaOverworldBiomeBuilder {
 
     protected ResourceKey<Biome> pickPlateauBiomeMTA(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
         if (weirdness.max() < 0L)
-            return biomeOrFallback(MtaBiomeList.MTA_PLATEAU_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
+            return biomeOrFallback(MtaRareBiomeList.MTA_PLATEAU_BIOMES[temperatureIndex][humidityIndex], MtaBiomeList.MTA_PLATEAU_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
         else
-            return biomeOrFallback(MtaBiomeList.MTA_PLATEAU_BIOMES_VARIANT[temperatureIndex][humidityIndex], MtaBiomeList.MTA_PLATEAU_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.PLATEAU_BIOMES_VARIANT[temperatureIndex][humidityIndex], VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
+            return biomeOrFallback(MtaRareBiomeList.MTA_PLATEAU_BIOMES_VARIANT[temperatureIndex][humidityIndex], MtaBiomeList.MTA_PLATEAU_BIOMES_VARIANT[temperatureIndex][humidityIndex], MtaBiomeList.MTA_PLATEAU_BIOMES[temperatureIndex][humidityIndex], VanillaBiomeList.PLATEAU_BIOMES_VARIANT[temperatureIndex][humidityIndex], VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
     }
 
     protected ResourceKey<Biome> pickPeakBiome(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
@@ -472,11 +474,11 @@ public class MtaOverworldBiomeBuilder {
     }
 
     protected ResourceKey<Biome> pickPeakBiomeMTA(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
-        return biomeOrFallback(MtaBiomeList.MTA_PEAK_BIOMES[temperatureIndex][humidityIndex], this.pickPeakBiome(temperatureIndex, humidityIndex, weirdness));
+        return biomeOrFallback(MtaRareBiomeList.MTA_PEAK_BIOMES[temperatureIndex][humidityIndex], MtaBiomeList.MTA_PEAK_BIOMES[temperatureIndex][humidityIndex], this.pickPeakBiome(temperatureIndex, humidityIndex, weirdness));
     }
 
     protected ResourceKey<Biome> pickSlopeBiomeMTA(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
-        return biomeOrFallback(MtaBiomeList.MTA_SLOPE_BIOMES[temperatureIndex][humidityIndex], this.pickPlateauBiomeMTA(temperatureIndex, humidityIndex, weirdness));
+        return biomeOrFallback(MtaRareBiomeList.MTA_SLOPE_BIOMES[temperatureIndex][humidityIndex], MtaBiomeList.MTA_SLOPE_BIOMES[temperatureIndex][humidityIndex], this.pickPlateauBiomeMTA(temperatureIndex, humidityIndex, weirdness));
     }
 
     protected ResourceKey<Biome> pickExtremeHillsBiomeVanilla(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
@@ -485,12 +487,12 @@ public class MtaOverworldBiomeBuilder {
     }
 
     protected ResourceKey<Biome> pickExtremeHillsBiomeMTA(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
-        return biomeOrFallback(MtaBiomeList.MTA_EXTREME_HILLS_BIOMES[temperatureIndex][humidityIndex], this.pickExtremeHillsBiomeVanilla(temperatureIndex, humidityIndex, weirdness), VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
+        return biomeOrFallback(MtaRareBiomeList.MTA_EXTREME_HILLS_BIOMES[temperatureIndex][humidityIndex], MtaBiomeList.MTA_EXTREME_HILLS_BIOMES[temperatureIndex][humidityIndex], this.pickExtremeHillsBiomeVanilla(temperatureIndex, humidityIndex, weirdness), VanillaBiomeList.PLATEAU_BIOMES[temperatureIndex][humidityIndex]);
     }
 
     protected ResourceKey<Biome> pickOceanBiomes(int temperatureIndex, int humidityIndex) {
 
-        return biomeOrFallback(MtaBiomeList.MTA_OCEANS[temperatureIndex][humidityIndex],VanillaBiomeList.OCEANS[temperatureIndex][humidityIndex]);
+        return biomeOrFallback(MtaRareBiomeList.MTA_OCEANS[temperatureIndex][humidityIndex],MtaBiomeList.MTA_OCEANS[temperatureIndex][humidityIndex],VanillaBiomeList.OCEANS[temperatureIndex][humidityIndex]);
 
     }
 }
