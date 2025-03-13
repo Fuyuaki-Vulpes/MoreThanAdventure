@@ -54,6 +54,19 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
         dropSelf(MtaBlocks.STOVE.get());
 
+        dropSelf(MtaBlocks.DEATH_CAP.get());
+        this.add(MtaBlocks.DEATH_CAP_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.DEATH_CAP));
+        dropSelf(MtaBlocks.DEATH_ANGEL.get());
+        this.add(MtaBlocks.DEATH_ANGEL_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.DEATH_ANGEL));
+        dropSelf(MtaBlocks.FLY_AGARIC.get());
+        this.add(MtaBlocks.FLY_AGARIC_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.FLY_AGARIC));
+        dropSelf(MtaBlocks.KING_BOLETE.get());
+        this.add(MtaBlocks.KING_BOLETE_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.KING_BOLETE));
+        dropSelf(MtaBlocks.MAITAKE.get());
+        this.add(MtaBlocks.MAITAKE_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.MAITAKE));
+        dropSelf(MtaBlocks.MOREL.get());
+        this.add(MtaBlocks.MOREL_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.MOREL));
+
         dropSelf(MtaBlocks.ALPINE_LOG.get());
         dropSelf(MtaBlocks.STRIPPED_ALPINE_LOG.get());
         dropSelf(MtaBlocks.ALPINE_WOOD.get());

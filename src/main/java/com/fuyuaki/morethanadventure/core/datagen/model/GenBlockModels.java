@@ -115,6 +115,7 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createCrossBlockWithDefaultItem(MtaBlocks.BEACHGRASS.get(), PlantType.NOT_TINTED);
         this.createItemWithGrassTint(MtaBlocks.SHALLOW_GRASS.get());
 
+        this.createTrivialCube(MtaBlocks.PEAT.get());
         this.createTrivialCube(MtaBlocks.PERMAFROST_DIRT.get());
 
         this.createTrivialCube(MtaBlocks.PERMAFROST_STONE.get());
@@ -167,6 +168,19 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createCropBlock(MtaBlocks.TOMATO_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         this.createCropBlock(MtaBlocks.BELL_PEPPER_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
         this.createCropBlock(MtaBlocks.CHILI_PEPPER_CROP.get(), BlockStateProperties.AGE_7, 0, 1, 2, 3, 4, 5, 6, 7);
+
+        this.createPlantWithDefaultItem(MtaBlocks.DEATH_CAP.get(),MtaBlocks.POTTED_DEATH_CAP.get(),PlantType.NOT_TINTED);
+        this.createMushroomBlock(MtaBlocks.DEATH_CAP_BLOCK.get());
+        this.createPlantWithDefaultItem(MtaBlocks.DEATH_ANGEL.get(),MtaBlocks.POTTED_DEATH_ANGEL.get(),PlantType.NOT_TINTED);
+        this.createMushroomBlock(MtaBlocks.DEATH_ANGEL_BLOCK.get());
+        this.createPlantWithDefaultItem(MtaBlocks.FLY_AGARIC.get(),MtaBlocks.POTTED_FLY_AGARIC.get(),PlantType.NOT_TINTED);
+        this.createMushroomBlock(MtaBlocks.FLY_AGARIC_BLOCK.get());
+        this.createPlantWithDefaultItem(MtaBlocks.KING_BOLETE.get(),MtaBlocks.POTTED_KING_BOLETE.get(),PlantType.NOT_TINTED);
+        this.createMushroomBlock(MtaBlocks.KING_BOLETE_BLOCK.get());
+        this.createPlantWithDefaultItem(MtaBlocks.MAITAKE.get(),MtaBlocks.POTTED_MAITAKE.get(),PlantType.NOT_TINTED);
+        this.createMushroomBlock(MtaBlocks.MAITAKE_BLOCK.get());
+        this.createPlantWithDefaultItem(MtaBlocks.MOREL.get(),MtaBlocks.POTTED_MOREL.get(),PlantType.NOT_TINTED);
+        this.createMushroomBlock(MtaBlocks.MOREL_BLOCK.get());
 
         this.createDirectionalLit(MtaBlocks.STOVE.get(),TexturedModel.ORIENTABLE);
 

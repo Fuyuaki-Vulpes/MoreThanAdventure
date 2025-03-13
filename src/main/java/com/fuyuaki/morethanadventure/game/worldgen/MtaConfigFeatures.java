@@ -23,6 +23,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.block.PinkPetalsBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -89,6 +90,14 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
     public static final ResourceKey<ConfiguredFeature<?,?>> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
+
+
+    public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_DEATH_CAP = registerKey("huge_death_cap");
+    public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_DEATH_ANGEL = registerKey("huge_death_angel");
+    public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_FLY_AGARIC = registerKey("huge_fly_agaric");
+    public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_KING_BOLETE = registerKey("huge_king_bolete");
+    public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_MAITAKE = registerKey("huge_maitake");
+    public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_MOREL = registerKey("huge_morel");
 
     public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
     public static final ResourceKey<ConfiguredFeature<?,?>> CATTAIL_VEGETATION_WATERLOGGED = registerKey("cattail_vegetation_waterlogged");
@@ -503,6 +512,97 @@ public class MtaConfigFeatures {
                         12
                 )
         );
+        register(
+                context,
+                HUGE_DEATH_CAP,
+                Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                        BlockStateProvider.simple(
+                                Blocks.MUSHROOM_STEM
+                                        .defaultBlockState()
+                                        .setValue(HugeMushroomBlock.UP, Boolean.FALSE)
+                                        .setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)
+                        ),
+                        2
+                )
+        );
+        register(
+                context,
+                HUGE_DEATH_ANGEL,
+                Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                        BlockStateProvider.simple(
+                                Blocks.MUSHROOM_STEM
+                                        .defaultBlockState()
+                                        .setValue(HugeMushroomBlock.UP, Boolean.FALSE)
+                                        .setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)
+                        ),
+                        2
+                )
+        );
+        register(
+                context,
+                HUGE_FLY_AGARIC,
+                Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                        BlockStateProvider.simple(
+                                Blocks.MUSHROOM_STEM
+                                        .defaultBlockState()
+                                        .setValue(HugeMushroomBlock.UP, Boolean.FALSE)
+                                        .setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)
+                        ),
+                        2
+                )
+        );
+        register(
+                context,
+                HUGE_KING_BOLETE,
+                Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                        BlockStateProvider.simple(
+                                Blocks.MUSHROOM_STEM
+                                        .defaultBlockState()
+                                        .setValue(HugeMushroomBlock.UP, Boolean.FALSE)
+                                        .setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)
+                        ),
+                        2
+                )
+        );
+        register(
+                context,
+                HUGE_MAITAKE,
+                Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                        BlockStateProvider.simple(
+                                Blocks.MUSHROOM_STEM
+                                        .defaultBlockState()
+                                        .setValue(HugeMushroomBlock.UP, Boolean.FALSE)
+                                        .setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)
+                        ),
+                        2
+                )
+        );
+        register(
+                context,
+                HUGE_MOREL,
+                Feature.HUGE_RED_MUSHROOM,
+                new HugeMushroomFeatureConfiguration(
+                        BlockStateProvider.simple(Blocks.RED_MUSHROOM_BLOCK.defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                        BlockStateProvider.simple(
+                                Blocks.MUSHROOM_STEM
+                                        .defaultBlockState()
+                                        .setValue(HugeMushroomBlock.UP, Boolean.FALSE)
+                                        .setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)
+                        ),
+                        2
+                )
+        );
+
         register(
                 context,
                 CATTAIL_VEGETATION,

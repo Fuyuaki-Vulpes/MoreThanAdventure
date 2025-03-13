@@ -2,7 +2,10 @@ package com.fuyuaki.morethanadventure.game.worldgen;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.game.worldgen.util.MTAOreUtils;
-import net.minecraft.core.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.CaveFeatures;
@@ -73,6 +76,13 @@ public class MtaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
     public static final ResourceKey<PlacedFeature> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
+
+    public static final ResourceKey<PlacedFeature> HUGE_DEATH_CAP = registerKey("huge_death_cap");
+    public static final ResourceKey<PlacedFeature> HUGE_DEATH_ANGEL = registerKey("huge_death_angel");
+    public static final ResourceKey<PlacedFeature> HUGE_FLY_AGARIC = registerKey("huge_fly_agaric");
+    public static final ResourceKey<PlacedFeature> HUGE_KING_BOLETE = registerKey("huge_king_bolete");
+    public static final ResourceKey<PlacedFeature> HUGE_MAITAKE = registerKey("huge_maitake");
+    public static final ResourceKey<PlacedFeature> HUGE_MOREL = registerKey("huge_morel");
 
     public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION = registerKey("cattail_vegetation");
     public static final ResourceKey<PlacedFeature> CATTAIL_VEGETATION_WATERLOGGED = registerKey("cattail_vegetation_waterlogged");
@@ -426,7 +436,6 @@ public class MtaPlacedFeatures {
                 BiomeFilter.biome()
         );
 
-
         PlacementUtils.register(
                 context,
                 SCATTERED_LEAVES,
@@ -436,6 +445,7 @@ public class MtaPlacedFeatures {
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome()
         );
+
         PlacementUtils.register(
                 context,
                 PATCH_TUNDRA_GRASS,

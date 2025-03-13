@@ -209,6 +209,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MOSSY_ANDESITE.get(),"Mossy Andesite");
         add(MtaBlocks.SAND_PATH.get(),"Sand Path");
         add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
+        add(MtaBlocks.PEAT.get(),"Peat");
         add(MtaBlocks.PERMAFROST_DIRT.get(),"Permafrost Dirt");
         add(MtaBlocks.SHALLOW_GRASS.get(),"Shallow Grass");
         add(MtaBlocks.SAND_GRASS.get(),"Sand Grass");
@@ -241,6 +242,25 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.PITCHER_PLANT.get(),"Pitcher Plant");
         add(MtaBlocks.POTTED_PITCHER_PLANT.get(),"Potted Pitcher Plant");
         add(MtaBlocks.VENUS_FLYTRAP.get(),"Venus Flytrap");
+
+        add(MtaBlocks.DEATH_CAP.get(),"Death Cap");
+        add(MtaBlocks.POTTED_DEATH_CAP.get(),"Potted Death Cap");
+        add(MtaBlocks.DEATH_CAP_BLOCK.get(),"Death Cap Block");
+        add(MtaBlocks.DEATH_ANGEL.get(),"Death Angel");
+        add(MtaBlocks.POTTED_DEATH_ANGEL.get(),"Potted Death Angel");
+        add(MtaBlocks.DEATH_ANGEL_BLOCK.get(),"Death Angel Block");
+        add(MtaBlocks.FLY_AGARIC.get(),"Fly Agaric");
+        add(MtaBlocks.POTTED_FLY_AGARIC.get(),"Potted Fly Agaric");
+        add(MtaBlocks.FLY_AGARIC_BLOCK.get(),"Fly Agaric Block");
+        add(MtaBlocks.KING_BOLETE.get(),"King Bolete");
+        add(MtaBlocks.POTTED_KING_BOLETE.get(),"Potted King Bolete");
+        add(MtaBlocks.KING_BOLETE_BLOCK.get(),"King Bolete Block");
+        add(MtaBlocks.MAITAKE.get(),"Maitake");
+        add(MtaBlocks.POTTED_MAITAKE.get(),"Potted Maitake");
+        add(MtaBlocks.MAITAKE_BLOCK.get(),"Maitake Block");
+        add(MtaBlocks.MOREL.get(),"Morel");
+        add(MtaBlocks.POTTED_MOREL.get(),"Potted Morel");
+        add(MtaBlocks.MOREL_BLOCK.get(),"Morel Block");
 
         add(MtaBlocks.TERRACOTTA_TILES.get(),"Terracotta Tiles");
         add(MtaBlocks.TERRACOTTA_SLAB.get(),"Terracotta Slab");

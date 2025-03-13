@@ -312,7 +312,14 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.PALM_LEAVES.get(),
                 MtaBlocks.SCATTERED_LEAVES.get()
         );
-//        this.tag(BlockTags.MINEABLE_WITH_AXE).add();
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                MtaBlocks.DEATH_CAP_BLOCK.get(),
+                MtaBlocks.DEATH_ANGEL_BLOCK.get(),
+                MtaBlocks.FLY_AGARIC_BLOCK.get(),
+                MtaBlocks.KING_BOLETE_BLOCK.get(),
+                MtaBlocks.MAITAKE_BLOCK.get(),
+                MtaBlocks.MOREL_BLOCK.get()
+        );
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(
                         MtaBlocks.SAND_PATH.get(),
@@ -329,6 +336,7 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                         MtaBlocks.GRASSY_DIRT.get(),
                         MtaBlocks.COARSE_DIRT_PATH.get(),
                         MtaBlocks.COBBLED_DIRT.get(),
+                        MtaBlocks.PEAT.get(),
                         MtaBlocks.PERMAFROST_GRASS.get(),
                         MtaBlocks.PERMAFROST_DIRT.get(),
                         MtaBlocks.TUNDRA_GRASS.get()

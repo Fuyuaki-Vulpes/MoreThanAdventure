@@ -66,6 +66,18 @@ public class MtaTabs {
                 output.accept(MtaBlocks.PITCHER_PLANT.get());
                 output.accept(MtaBlocks.VENUS_FLYTRAP.get());
 
+                //output.accept(MtaBlocks.DEATH_CAP.get());
+                //output.accept(MtaBlocks.DEATH_CAP_BLOCK.get());
+                //output.accept(MtaBlocks.DEATH_ANGEL.get());
+                //output.accept(MtaBlocks.DEATH_ANGEL_BLOCK.get());
+                //output.accept(MtaBlocks.FLY_AGARIC.get());
+                //output.accept(MtaBlocks.FLY_AGARIC_BLOCK.get());
+                //output.accept(MtaBlocks.KING_BOLETE.get());
+                //output.accept(MtaBlocks.KING_BOLETE_BLOCK.get());
+                //output.accept(MtaBlocks.MAITAKE.get());
+                //output.accept(MtaBlocks.MAITAKE_BLOCK.get());
+                //output.accept(MtaBlocks.MOREL.get());
+                //output.accept(MtaBlocks.MOREL_BLOCK.get());
 
                 output.accept(MtaBlocks.STONE_GEYSER.get());
                 output.accept(MtaBlocks.TERRACOTTA_GEYSER.get());
@@ -101,6 +113,7 @@ public class MtaTabs {
 
 
                 output.accept(MtaBlocks.GRASSY_DIRT.get());
+                //output.accept(MtaBlocks.PEAT.get());
                 output.accept(MtaBlocks.PERMAFROST_GRASS.get());
                 output.accept(MtaBlocks.PERMAFROST_DIRT.get());
                 output.accept(MtaBlocks.PERMAFROST_STONE.get());

@@ -2,6 +2,7 @@ package com.fuyuaki.morethanadventure.core.deferred_registries;
 
 import com.fuyuaki.morethanadventure.core.registry.MTABlockSetTypes;
 import com.fuyuaki.morethanadventure.core.registry.MTAWoodTypes;
+import com.fuyuaki.morethanadventure.game.worldgen.MtaConfigFeatures;
 import com.fuyuaki.morethanadventure.game.worldgen.tree.MtaTreeGrower;
 import com.fuyuaki.morethanadventure.world.block.*;
 import com.fuyuaki.morethanadventure.world.block.kitchen.StoveBlock;
@@ -598,6 +599,10 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
                             .pushReaction(PushReaction.DESTROY)
     );
 
+    public static final DeferredBlock<Block> PEAT = registerBlock("peat",
+            BlockBehaviour.Properties
+                    .ofFullCopy(Blocks.DIRT)
+    );
     public static final DeferredBlock<Block> PERMAFROST_DIRT = registerBlock("permafrost_dirt",
             BlockBehaviour.Properties
                     .ofFullCopy(Blocks.DIRT)
@@ -913,6 +918,106 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
     public static final DeferredBlock<Block> VENUS_FLYTRAP = registerBlock("venus_flytrap",
              Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK));
 
+
+    public static final DeferredBlock<Block> DEATH_CAP = registerBlock(
+            "death_cap",
+            p_368320_ -> new MushroomBlock(MtaConfigFeatures.HUGE_DEATH_CAP, p_368320_),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM)
+                    .mapColor(MapColor.COLOR_RED)
+    );
+
+    public static final DeferredBlock<Block> POTTED_DEATH_CAP = registerBlock("potted_death_cap",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DEATH_CAP::value, properties),flowerPotProperties());
+
+
+    public static final DeferredBlock<Block> DEATH_CAP_BLOCK = registerBlock(
+            "death_cap_block",
+            HugeMushroomBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()
+    );
+
+    public static final DeferredBlock<Block> DEATH_ANGEL = registerBlock(
+            "death_angel",
+            p_368320_ -> new MushroomBlock(MtaConfigFeatures.HUGE_DEATH_ANGEL, p_368320_),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM)
+                    .mapColor(MapColor.COLOR_RED)
+    );
+
+    public static final DeferredBlock<Block> POTTED_DEATH_ANGEL = registerBlock("potted_death_angel",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, DEATH_ANGEL::value, properties),flowerPotProperties());
+
+
+    public static final DeferredBlock<Block> DEATH_ANGEL_BLOCK = registerBlock(
+            "death_angel_block",
+            HugeMushroomBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()
+    );
+
+    public static final DeferredBlock<Block> FLY_AGARIC = registerBlock(
+            "fly_agaric",
+            p_368320_ -> new MushroomBlock(MtaConfigFeatures.HUGE_FLY_AGARIC, p_368320_),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM)
+    );
+
+    public static final DeferredBlock<Block> POTTED_FLY_AGARIC = registerBlock("potted_fly_agaric",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, FLY_AGARIC::value, properties),flowerPotProperties());
+
+
+    public static final DeferredBlock<Block> FLY_AGARIC_BLOCK = registerBlock(
+            "fly_agaric_block",
+            HugeMushroomBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()
+    );
+
+    public static final DeferredBlock<Block> KING_BOLETE = registerBlock(
+            "king_bolete",
+            p_368320_ -> new MushroomBlock(MtaConfigFeatures.HUGE_KING_BOLETE, p_368320_),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.RED_MUSHROOM)
+                    .mapColor(MapColor.COLOR_RED)
+    );
+
+    public static final DeferredBlock<Block> POTTED_KING_BOLETE = registerBlock("potted_king_bolete",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, KING_BOLETE::value, properties),flowerPotProperties());
+
+
+    public static final DeferredBlock<Block> KING_BOLETE_BLOCK = registerBlock(
+            "king_bolete_block",
+            HugeMushroomBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()
+    );
+
+    public static final DeferredBlock<Block> MAITAKE = registerBlock(
+            "maitake",
+            p_368320_ -> new MushroomBlock(MtaConfigFeatures.HUGE_MAITAKE, p_368320_),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)
+    );
+
+    public static final DeferredBlock<Block> POTTED_MAITAKE = registerBlock("potted_maitake",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MAITAKE::value, properties),flowerPotProperties());
+
+
+    public static final DeferredBlock<Block> MAITAKE_BLOCK = registerBlock(
+            "maitake_block",
+            HugeMushroomBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()
+    );
+
+    public static final DeferredBlock<Block> MOREL = registerBlock(
+            "morel",
+            p_368320_ -> new MushroomBlock(MtaConfigFeatures.HUGE_MOREL, p_368320_),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)
+                    .mapColor(MapColor.COLOR_RED)
+    );
+
+    public static final DeferredBlock<Block> POTTED_MOREL = registerBlock("potted_morel",
+            properties -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, MOREL::value, properties),flowerPotProperties());
+
+
+    public static final DeferredBlock<Block> MOREL_BLOCK = registerBlock(
+            "morel_block",
+            HugeMushroomBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASS).strength(0.2F).sound(SoundType.WOOD).ignitedByLava()
+    );
 
 /*
     public static final DeferredBlock<Block> TEST_VINES =  registerBlock("test_vines",  VineFlowerBlock(
