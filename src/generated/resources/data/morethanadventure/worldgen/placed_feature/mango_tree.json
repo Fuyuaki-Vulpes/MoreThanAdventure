@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 70
+      "chance": 300
     },
     {
       "type": "minecraft:in_square"
@@ -26,8 +26,7 @@
         "state": {
           "Name": "morethanadventure:mango_sapling",
           "Properties": {
-            "stage": "0",
-            "waterlogged": "false"
+            "stage": "0"
           }
         }
       }

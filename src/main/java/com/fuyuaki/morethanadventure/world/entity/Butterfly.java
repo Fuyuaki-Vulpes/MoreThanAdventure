@@ -52,7 +52,7 @@ public class Butterfly extends Animal implements FlyingAnimal {
 
     public Butterfly(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new FlyingMoveControl(this, 20, true);
+        this.moveControl = new FlyingMoveControl(this, 60, false);
         this.setPathfindingMalus(PathType.LEAVES, 0.0F);
 
     }

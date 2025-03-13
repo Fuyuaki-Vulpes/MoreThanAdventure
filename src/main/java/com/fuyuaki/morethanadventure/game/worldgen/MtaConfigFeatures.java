@@ -4,6 +4,7 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaFeatures;
 import com.fuyuaki.morethanadventure.core.registry.MtaTags;
 import com.fuyuaki.morethanadventure.world.level.feature.configuration.OreClusterConfiguration;
+import com.fuyuaki.morethanadventure.world.level.feature.feature.GentleForkingTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmFoliagePlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.PalmTrunkPlacer;
 import com.fuyuaki.morethanadventure.world.level.feature.placers.SeawoodTrunkPlacer;
@@ -33,6 +34,8 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -61,12 +64,19 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> MANGO_TREE = registerKey("mango_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> MAPLE_TREE = registerKey("maple_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> PALM_TREE = registerKey("palm_tree");
+    public static final ResourceKey<ConfiguredFeature<?,?>> ACACIA_BUSH = registerKey("acacia_bush");
+    public static final ResourceKey<ConfiguredFeature<?,?>> BIRCH_BUSH = registerKey("birch_bush");
+    public static final ResourceKey<ConfiguredFeature<?,?>> OAK_BUSH = registerKey("oak_bush");
+    public static final ResourceKey<ConfiguredFeature<?,?>> DARK_OAK_BUSH = registerKey("dark_oak_bush");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SPRUCE_BUSH = registerKey("spruce_bush");
     public static final ResourceKey<ConfiguredFeature<?,?>> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> FREQUENT_CLAY = registerKey("frequent_clay");
     public static final ResourceKey<ConfiguredFeature<?,?>> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEBRIS_CLUSTER = registerKey("debris_cluster");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SANDSTONE_ROCKS = registerKey("sandstone_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> STONY_ROCKS = registerKey("stony_rocks");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PERMAFROST_ROCKS = registerKey("permafrost_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOSSY_ROCKS = registerKey("mossy_rocks");
     public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_OVERWORLD = registerKey("geyser_overworld");
     public static final ResourceKey<ConfiguredFeature<?,?>> GEYSER_NETHER = registerKey("geyser_nether");
@@ -90,6 +100,10 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
     public static final ResourceKey<ConfiguredFeature<?,?>> SHALLOW_GRASS_SPARSE = registerKey("shallow_grass_sparse");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PRICKLY_PEAR = registerKey("prickly_pear");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PRICKLY_PEAR_SPARSE = registerKey("prickly_pear_sparse");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SAND_GRASS = registerKey("sand_grass");
+    public static final ResourceKey<ConfiguredFeature<?,?>> BEACHGRASS = registerKey("beachgrass");
 
 
     public static final ResourceKey<ConfiguredFeature<?,?>> HUGE_DEATH_CAP = registerKey("huge_death_cap");
@@ -166,9 +180,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.PINK_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -177,9 +191,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.PURPLE_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -188,9 +202,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.WHITE_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -199,9 +213,9 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.IPE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(4, 0, 2),
                         BlockStateProvider.simple(MtaBlocks.YELLOW_IPE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
+                        new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(0), ConstantInt.of(5), 0.25F, 0.5F, 0.16666667F, 0.33333334F),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
         register(
@@ -237,6 +251,77 @@ public class MtaConfigFeatures {
                         new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
                         new TwoLayersFeatureSize(1, 0, 2)).build()
         );
+
+        FeatureUtils.register(
+                context,
+                ACACIA_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.ACACIA_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(Blocks.ACACIA_LEAVES),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
+        );
+
+        FeatureUtils.register(
+                context,
+                BIRCH_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.BIRCH_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(Blocks.BIRCH_LEAVES),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
+        );
+
+        FeatureUtils.register(
+                context,
+                OAK_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.OAK_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(Blocks.OAK_LEAVES),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
+        );
+
+        FeatureUtils.register(
+                context,
+                DARK_OAK_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.DARK_OAK_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(Blocks.DARK_OAK_LEAVES),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
+        );
+
+        FeatureUtils.register(
+                context,
+                SPRUCE_BUSH,
+                Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(Blocks.SPRUCE_LOG),
+                        new StraightTrunkPlacer(1, 0, 0),
+                        BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
+                        new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                        new TwoLayersFeatureSize(0, 0, 0)
+                )
+                        .build()
+        );
+
         register(
                 context,
                 SEAWOOD_TREE,
@@ -296,13 +381,23 @@ public class MtaConfigFeatures {
                 )
         );
         register(context,
+                SANDSTONE_ROCKS,
+                MtaFeatures.ROCK_BLOBS.get(),
+                new BlockStateConfiguration(Blocks.SANDSTONE.defaultBlockState())
+        );
+        register(context,
                 STONY_ROCKS,
-                Feature.FOREST_ROCK,
+                MtaFeatures.ROCK_BLOBS.get(),
                 new BlockStateConfiguration(Blocks.ANDESITE.defaultBlockState())
         );
         register(context,
+                PERMAFROST_ROCKS,
+                MtaFeatures.ROCK_BLOBS.get(),
+                new BlockStateConfiguration(MtaBlocks.PERMAFROST_STONE.get().defaultBlockState())
+        );
+        register(context,
                 MOSSY_ROCKS,
-                Feature.FOREST_ROCK,
+                MtaFeatures.ROCK_BLOBS.get(),
                 new BlockStateConfiguration(MtaBlocks.MOSSY_ANDESITE.get().defaultBlockState())
         );
 
@@ -627,6 +722,43 @@ public class MtaConfigFeatures {
                 )
                 ));
 
+        register(
+                context,
+                PRICKLY_PEAR,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(7, 3, 3, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.PRICKLY_PEAR.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.PRICKLY_PEAR.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
+        register(
+                context,
+                PRICKLY_PEAR_SPARSE,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(5, 8, 2, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.PRICKLY_PEAR.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.PRICKLY_PEAR.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
+
+        register(
+                context,
+                SAND_GRASS,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(22, 6, 3, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.SAND_GRASS.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.SAND_GRASS.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
+        register(
+                context,
+                BEACHGRASS,
+                Feature.RANDOM_PATCH,
+                new RandomPatchConfiguration(17, 10, 6, PlacementUtils.filtered(
+                        Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(MtaBlocks.BEACHGRASS.get())),
+                        BlockPredicate.allOf(BlockPredicate.wouldSurvive(MtaBlocks.BEACHGRASS.get().defaultBlockState(), BlockPos.ZERO),BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                )
+                ));
 
     }
 

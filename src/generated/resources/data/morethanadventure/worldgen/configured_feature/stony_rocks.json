@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:forest_rock",
+  "type": "morethanadventure:rock_blobs",
   "config": {
     "state": {
       "Name": "minecraft:andesite"

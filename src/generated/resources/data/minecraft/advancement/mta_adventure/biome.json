@@ -1,6 +1,102 @@
 {
   "parent": "minecraft:mta_adventure/root",
   "criteria": {
+    "morethanadventure:alpine_tundra": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:alpine_tundra"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:bog": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:bog"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:caatinga": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:caatinga"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:cerrado": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:cerrado"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:crystalline_grotto": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:crystalline_grotto"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:dense_savanna": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:dense_savanna"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
     "morethanadventure:gravelly_river": {
       "conditions": {
         "player": [
@@ -74,6 +170,22 @@
             "predicate": {
               "location": {
                 "biomes": "morethanadventure:oasis"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "morethanadventure:polar_desert": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "morethanadventure:polar_desert"
               }
             }
           }
@@ -161,14 +273,21 @@
   "requirements": [
     [
       "morethanadventure:lush_river",
-      "morethanadventure:sparse_taiga",
       "morethanadventure:sparse_cherry_grove",
+      "morethanadventure:sparse_taiga",
       "morethanadventure:oasis",
-      "morethanadventure:gravelly_river",
       "morethanadventure:tundra",
+      "morethanadventure:gravelly_river",
       "morethanadventure:lush_meadow",
+      "morethanadventure:crystalline_grotto",
       "morethanadventure:underwater_forest",
-      "morethanadventure:maple_forest"
+      "morethanadventure:maple_forest",
+      "morethanadventure:alpine_tundra",
+      "morethanadventure:bog",
+      "morethanadventure:polar_desert",
+      "morethanadventure:cerrado",
+      "morethanadventure:caatinga",
+      "morethanadventure:dense_savanna"
     ]
   ],
   "sends_telemetry_event": true

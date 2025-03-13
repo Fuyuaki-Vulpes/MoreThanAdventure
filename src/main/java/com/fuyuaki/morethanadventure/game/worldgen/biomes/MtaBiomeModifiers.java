@@ -54,6 +54,8 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_GRASSY_DIRT_PATCHES = registerKey("grassy_dirt_patches");
     public static final ResourceKey<BiomeModifier> ADD_SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<BiomeModifier> ADD_SHALLOW_GRASS = registerKey("shallow_grass");
+    public static final ResourceKey<BiomeModifier> ADD_PRICKLY_PEAR = registerKey("prickly_pear");
+    public static final ResourceKey<BiomeModifier> ADD_BEACHGRASS = registerKey("beachgrass");
 
 
     public static final ResourceKey<BiomeModifier> SPAWNS_BEARDED_DRAGON = registerKey("add_spawns_bearded_dragon");
@@ -282,6 +284,16 @@ public class MtaBiomeModifiers {
         context.register(ADD_SHALLOW_GRASS,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(Tags.Biomes.IS_PLAINS),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.SHALLOW_GRASS_SPARSE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_PRICKLY_PEAR,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_BEACH),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.PRICKLY_PEAR_SPARSE)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_BEACHGRASS,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_BEACH),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.BEACHGRASS)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 

@@ -20,6 +20,10 @@ public class EN_US_LangProvider extends LanguageProvider {
         //BLOCKS
 
 
+        add(MtaItems.PRICKLY_PEAR_PAD.get(),"Prickly Pear Pad");
+        add(MtaBlocks.PRICKLY_PEAR.get(),"Prickly Pear");
+        add(MtaBlocks.POTTED_PRICKLY_PEAR.get(),"Potted Prickly Pear");
+
         add(MtaBlocks.ALPINE_LOG.get(),"Alpine Log");
         add(MtaBlocks.STRIPPED_ALPINE_LOG.get(),"Stripped Alpine Log");
         add(MtaBlocks.ALPINE_WOOD.get(),"Alpine Wood");
@@ -201,6 +205,7 @@ public class EN_US_LangProvider extends LanguageProvider {
 
 
         add(MtaBlocks.SPRINKLER.get(),"Sprinkler");
+        add(MtaBlocks.SPRINKLER.asItem(),"Sprinkler");
         add(MtaBlocks.STOVE.get(),"Stove");
         add(MtaBlocks.STONE_GEYSER.get(),"Stone Geyser");
         add(MtaBlocks.TERRACOTTA_GEYSER.get(),"Terracotta Geyser");
@@ -209,7 +214,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.MOSSY_ANDESITE.get(),"Mossy Andesite");
         add(MtaBlocks.SAND_PATH.get(),"Sand Path");
         add(MtaBlocks.GRASSY_DIRT.get(),"Grassy Dirt");
-        add(MtaBlocks.PEAT.get(),"Peat");
+        add(MtaBlocks.GRASSY_SAND.get(),"Grassy Sand");
         add(MtaBlocks.PERMAFROST_DIRT.get(),"Permafrost Dirt");
         add(MtaBlocks.SHALLOW_GRASS.get(),"Shallow Grass");
         add(MtaBlocks.SAND_GRASS.get(),"Sand Grass");
@@ -242,25 +247,6 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.PITCHER_PLANT.get(),"Pitcher Plant");
         add(MtaBlocks.POTTED_PITCHER_PLANT.get(),"Potted Pitcher Plant");
         add(MtaBlocks.VENUS_FLYTRAP.get(),"Venus Flytrap");
-
-        add(MtaBlocks.DEATH_CAP.get(),"Death Cap");
-        add(MtaBlocks.POTTED_DEATH_CAP.get(),"Potted Death Cap");
-        add(MtaBlocks.DEATH_CAP_BLOCK.get(),"Death Cap Block");
-        add(MtaBlocks.DEATH_ANGEL.get(),"Death Angel");
-        add(MtaBlocks.POTTED_DEATH_ANGEL.get(),"Potted Death Angel");
-        add(MtaBlocks.DEATH_ANGEL_BLOCK.get(),"Death Angel Block");
-        add(MtaBlocks.FLY_AGARIC.get(),"Fly Agaric");
-        add(MtaBlocks.POTTED_FLY_AGARIC.get(),"Potted Fly Agaric");
-        add(MtaBlocks.FLY_AGARIC_BLOCK.get(),"Fly Agaric Block");
-        add(MtaBlocks.KING_BOLETE.get(),"King Bolete");
-        add(MtaBlocks.POTTED_KING_BOLETE.get(),"Potted King Bolete");
-        add(MtaBlocks.KING_BOLETE_BLOCK.get(),"King Bolete Block");
-        add(MtaBlocks.MAITAKE.get(),"Maitake");
-        add(MtaBlocks.POTTED_MAITAKE.get(),"Potted Maitake");
-        add(MtaBlocks.MAITAKE_BLOCK.get(),"Maitake Block");
-        add(MtaBlocks.MOREL.get(),"Morel");
-        add(MtaBlocks.POTTED_MOREL.get(),"Potted Morel");
-        add(MtaBlocks.MOREL_BLOCK.get(),"Morel Block");
 
         add(MtaBlocks.TERRACOTTA_TILES.get(),"Terracotta Tiles");
         add(MtaBlocks.TERRACOTTA_SLAB.get(),"Terracotta Slab");
@@ -1088,6 +1074,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("sound.morethanadventure.lightning_bolt.very_far", "Thunder roars");
 
         add("sound.morethanadventure.stove.crackle", "Stove Crackles");
+        add("sound.morethanadventure.prickly_pear.shear", "Prickly Pear Sheared");
 
 
 
@@ -1096,7 +1083,7 @@ public class EN_US_LangProvider extends LanguageProvider {
         add("items.morethanadventure.weapons.tag.causes_bleeding", "Chance to cause Bleeding on Hit");
         add("items.morethanadventure.weapons.tag.stun", "Chance to Stun on Hit");
         add("items.morethanadventure.weapons.info.shift", "Press SHIFT to see chances");
-
+        add("sound.morethanadventure.sprinkler.loop", "Sprinkler Irrigates");
 
         add("accessories.slot.talisman", "Talisman");
 

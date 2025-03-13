@@ -41,11 +41,15 @@ public class MTAConfigs
 
         public static final ModConfigSpec.IntValue COMMON_REGION_WEIGHT = BUILDER
                 .comment("Weight for the common regions for Terrablender")
-                .defineInRange("terrablender_common_weight", 6, 0, Integer.MAX_VALUE);
+                .defineInRange("terrablender_common_weight", 5, 0, Integer.MAX_VALUE);
+
+        public static final ModConfigSpec.IntValue ALTERNATE_REGION_WEIGHT = BUILDER
+                .comment("Weight for the common alternate regions for Terrablender")
+                .defineInRange("terrablender_alternate_weight", 5, 0, Integer.MAX_VALUE);
 
         public static final ModConfigSpec.IntValue RARE_REGION_WEIGHT = BUILDER
                 .comment("Weight for the rare regions for Terrablender")
-                .defineInRange("terrablender_common_weight", 3, 0, Integer.MAX_VALUE);
+                .defineInRange("terrablender_common_weight", 2, 0, Integer.MAX_VALUE);
 
 
         static final ModConfigSpec SPEC = BUILDER.build();

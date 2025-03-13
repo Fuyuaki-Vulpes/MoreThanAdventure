@@ -5,6 +5,7 @@
   "refmap": "yoamod.refmap.json",
   "mixins": [
     "BlocksMixin",
+    "CactusBlockMixin",
     "CreeperMixin",
     "FarmBlockMixin",
     "InventoryMixin",
@@ -16,6 +17,7 @@
     "MobEffectUtilMixin",
     "MusicMixin",
     "PlayerMixin",
+    "SaplingMixin",
     "ServerChunkCacheMixin",
     "ServerPlayerMixin",
     "SnowballMixin",

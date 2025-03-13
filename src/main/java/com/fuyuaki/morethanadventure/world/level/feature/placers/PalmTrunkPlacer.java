@@ -42,11 +42,7 @@ public class PalmTrunkPlacer extends TrunkPlacer {
         for (int i = 0; i < pFreeTreeHeight; i++) {
             this.placeLog(pLevel, pBlockSetter, pRandom, placedPos.above(i), pConfig);
             if (pRandom.nextFloat() > (float) pFreeTreeHeight / 700 && pRandom.nextBoolean()){
-                Direction direction = Direction.getRandom(pRandom);
-
-                while (!direction.getAxis().isHorizontal()){
-                    direction = Direction.getRandom(pRandom);
-                }
+                Direction direction = Direction.Plane.HORIZONTAL.getRandomDirection(pRandom);
 
                 placedPos = placedPos.relative(direction);
                 this.placeLog(pLevel, pBlockSetter, pRandom, placedPos.above(i), pConfig);

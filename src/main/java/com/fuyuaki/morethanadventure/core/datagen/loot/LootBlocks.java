@@ -2,12 +2,15 @@ package com.fuyuaki.morethanadventure.core.datagen.loot;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
+import com.fuyuaki.morethanadventure.world.block.CactusShrubBlock;
 import com.fuyuaki.morethanadventure.world.block.OnionCropBlock;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.util.valueproviders.UniformFloat;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -51,6 +54,25 @@ public class LootBlocks extends BlockLootSubProvider {
         dropSelf(MtaBlocks.CORPSE_FLOWER.get());
         dropSelf(MtaBlocks.PITCHER_PLANT.get());
         this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
+        this.add(MtaBlocks.PRICKLY_PEAR.get(), block -> LootTable.lootTable()
+                .withPool(
+                        this.applyExplosionCondition(
+                                block,
+                                LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(
+                                                LootItem.lootTableItem(MtaItems.PRICKLY_PEAR_PAD.get())
+                                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CactusShrubBlock.SPIKY, false)))
+                                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F,5.0F)))
+                                                        .otherwise(LootItem.lootTableItem(block))
+                                        )
+                                        )
+                        )
+
+        );
+
+        this.add(MtaBlocks.POTTED_PRICKLY_PEAR.get(), createPotFlowerItemTable(MtaBlocks.PRICKLY_PEAR));
         dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
         dropSelf(MtaBlocks.STOVE.get());
 
@@ -283,14 +305,15 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.NETHERITIC_CRYSTAL.get(), block -> this.createOreDrop(block, MtaItems.NETHERITE_FRACTURE.get()));
         this.add(MtaBlocks.SAND_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
         this.add(MtaBlocks.GRASSY_DIRT.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        this.add(MtaBlocks.GRASSY_SAND.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
         dropSelf(MtaBlocks.PERMAFROST_DIRT.get());
         this.add(MtaBlocks.PERMAFROST_GRASS.get(), block -> this.createSingleItemTableWithSilkTouch(block, MtaBlocks.PERMAFROST_DIRT.get()));
         this.add(MtaBlocks.PERMAFROST_STONE.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));
         this.add(MtaBlocks.TUNDRA_GRASS.get(), block -> this.createSingleItemTableWithSilkTouch(block, MtaBlocks.PERMAFROST_DIRT.get()));
         this.add(MtaBlocks.COARSE_DIRT_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(MtaBlocks.SHALLOW_GRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SHALLOW_GRASS));
-        this.add(MtaBlocks.SAND_GRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SHALLOW_GRASS));
-        this.add(MtaBlocks.BEACHGRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SHALLOW_GRASS));
+        this.add(MtaBlocks.SAND_GRASS.get(), this.createShearsOnlyDrop(MtaBlocks.SAND_GRASS));
+        this.add(MtaBlocks.BEACHGRASS.get(), this.createShearsOnlyDrop(MtaBlocks.BEACHGRASS));
 
         dropSelf(MtaBlocks.TERRACOTTA_TILES.get());
         this.add(MtaBlocks.TERRACOTTA_SLAB.get(), block -> createSlabItemTable(MtaBlocks.TERRACOTTA_SLAB.get()));

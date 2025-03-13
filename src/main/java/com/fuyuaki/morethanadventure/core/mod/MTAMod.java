@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
 import com.fuyuaki.morethanadventure.network.MTANetwork;
+import com.fuyuaki.morethanadventure.world.block.MTADispenseItemBehavior;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -68,6 +69,8 @@ public class MTAMod
         RenderType cutoutRenderType = RenderType.cutout();
         RenderType translucentRenderType = RenderType.translucent();
         setRenderType(MtaBlocks.CLEAR_QUARTZ_CLUSTER.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.PRICKLY_PEAR.get(), cutoutRenderType);
+        setRenderType(MtaBlocks.POTTED_PRICKLY_PEAR.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SHALLOW_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.SAND_GRASS.get(), cutoutRenderType);
         setRenderType(MtaBlocks.BEACHGRASS.get(), cutoutRenderType);
@@ -123,6 +126,7 @@ public class MTAMod
     {
         event.enqueueWork(() ->
         {
+            MTADispenseItemBehavior.bootStrap();
             MtaTerrablender.registerBiomes();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD,MODID,MtaSurfaceRules.makeOverworld());
         });

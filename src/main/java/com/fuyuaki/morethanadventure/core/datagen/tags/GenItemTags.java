@@ -399,6 +399,10 @@ public class GenItemTags extends IntrinsicHolderTagsProvider<Item> {
                         MtaItems.DIAMOND_ANCHOR.get(),
                         MtaItems.NETHERITE_ANCHOR.get()
                 );
+        this.tag(ItemTags.CAMEL_FOOD)
+                .add(
+                        MtaItems.PRICKLY_PEAR_PAD.get()
+                );
         //this.tag(MtaTags.Items.CORE_STONES).addTag(MtaTags.Items.COSMETIC_CORE_STONES).addTag(MtaTags.Items.EFFECTIVE_CORE_STONES);
 
 

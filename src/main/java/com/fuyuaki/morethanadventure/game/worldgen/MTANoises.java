@@ -16,7 +16,7 @@ public class MTANoises {
 
     public static void bootstrap(BootstrapContext<NormalNoise.NoiseParameters> context) {
         register(context, CALCITE_3D, -6, 0.3D,1,-1);
-        register(context, OASIS_GRASS, -5, 1.0D, -1.0D, 3.0D);
+        register(context, OASIS_GRASS, -7, 0.2D, 2.0D, -6.0D);
         register(context, TUNDRA_VEGETATION, -7, 2.0D, -2.0D, -3.0D);
     }
 

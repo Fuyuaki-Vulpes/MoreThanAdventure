@@ -72,10 +72,18 @@ public class GenRecipes  extends RecipeProvider {
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.GRASS_BLOCK, 2)
                 .unlockedBy("has_dirt", has(Blocks.DIRT));
-        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 4)
-                .requires(Blocks.DIRT, 2)
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 2)
+                .requires(Blocks.SAND, 2)
                 .requires(Blocks.SHORT_GRASS, 2)
-                .unlockedBy("has_dirt", has(Blocks.DIRT));
+                .unlockedBy("has_sand", has(Blocks.DIRT));
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_SAND.get(), 4)
+                .requires(Blocks.DIRT, 2)
+                .requires(Blocks.GRASS_BLOCK, 2)
+                .unlockedBy("has_sand", has(Blocks.SAND));
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_SAND, 2)
+                .requires(Blocks.SAND, 2)
+                .requires(Blocks.SHORT_GRASS, 2)
+                .unlockedBy("has_dirt", has(Blocks.SAND));
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.COBBLED_DIRT, 4)
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.COBBLESTONE, 2)

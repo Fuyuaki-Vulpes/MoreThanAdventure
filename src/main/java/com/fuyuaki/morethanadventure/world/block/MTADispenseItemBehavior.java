@@ -8,12 +8,8 @@ import net.minecraft.core.dispenser.DispenseItemBehavior;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.DispenserBlock;
 
-public class MTADispenseItemBehavior implements DispenseItemBehavior {
-    @Override
-    public ItemStack dispense(BlockSource blockSource, ItemStack item) {
-        return null;
-    }
-    static void bootStrap() {
+public class MTADispenseItemBehavior {
+    public static void bootStrap() {
         DispenserBlock.registerBehavior(MtaItems.ALPINE_BOAT.get(), new BoatDispenseItemBehavior(MtaEntityTypes.ALPINE_BOAT.get()));
         DispenserBlock.registerBehavior(MtaItems.ALPINE_CHEST_BOAT.get(), new BoatDispenseItemBehavior(MtaEntityTypes.ALPINE_CHEST_BOAT.get()));
         DispenserBlock.registerBehavior(MtaItems.AVOCADO_BOAT.get(), new BoatDispenseItemBehavior(MtaEntityTypes.AVOCADO_BOAT.get()));
