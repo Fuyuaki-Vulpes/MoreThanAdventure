@@ -9,8 +9,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.util.valueproviders.UniformFloat;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -78,16 +76,22 @@ public class LootBlocks extends BlockLootSubProvider {
 
         dropSelf(MtaBlocks.DEATH_CAP.get());
         this.add(MtaBlocks.DEATH_CAP_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.DEATH_CAP));
+        this.add(MtaBlocks.POTTED_DEATH_CAP.get(), createPotFlowerItemTable(MtaBlocks.DEATH_CAP));
         dropSelf(MtaBlocks.DEATH_ANGEL.get());
         this.add(MtaBlocks.DEATH_ANGEL_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.DEATH_ANGEL));
+        this.add(MtaBlocks.POTTED_DEATH_ANGEL.get(), createPotFlowerItemTable(MtaBlocks.DEATH_ANGEL));
         dropSelf(MtaBlocks.FLY_AGARIC.get());
         this.add(MtaBlocks.FLY_AGARIC_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.FLY_AGARIC));
+        this.add(MtaBlocks.POTTED_FLY_AGARIC.get(), createPotFlowerItemTable(MtaBlocks.FLY_AGARIC));
         dropSelf(MtaBlocks.KING_BOLETE.get());
         this.add(MtaBlocks.KING_BOLETE_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.KING_BOLETE));
+        this.add(MtaBlocks.POTTED_KING_BOLETE.get(), createPotFlowerItemTable(MtaBlocks.KING_BOLETE));
         dropSelf(MtaBlocks.MAITAKE.get());
         this.add(MtaBlocks.MAITAKE_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.MAITAKE));
+        this.add(MtaBlocks.POTTED_MAITAKE.get(), createPotFlowerItemTable(MtaBlocks.MAITAKE));
         dropSelf(MtaBlocks.MOREL.get());
         this.add(MtaBlocks.MOREL_BLOCK.get(), block -> this.createMushroomBlockDrop(block, MtaBlocks.MOREL));
+        this.add(MtaBlocks.POTTED_MOREL.get(), createPotFlowerItemTable(MtaBlocks.MOREL));
 
         dropSelf(MtaBlocks.ALPINE_LOG.get());
         dropSelf(MtaBlocks.STRIPPED_ALPINE_LOG.get());
@@ -306,6 +310,7 @@ public class LootBlocks extends BlockLootSubProvider {
         this.add(MtaBlocks.SAND_PATH.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
         this.add(MtaBlocks.GRASSY_DIRT.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(MtaBlocks.GRASSY_SAND.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.SAND));
+        dropSelf(MtaBlocks.PEAT.get());
         dropSelf(MtaBlocks.PERMAFROST_DIRT.get());
         this.add(MtaBlocks.PERMAFROST_GRASS.get(), block -> this.createSingleItemTableWithSilkTouch(block, MtaBlocks.PERMAFROST_DIRT.get()));
         this.add(MtaBlocks.PERMAFROST_STONE.get(), block -> this.createSingleItemTableWithSilkTouch(block, Blocks.COBBLESTONE));

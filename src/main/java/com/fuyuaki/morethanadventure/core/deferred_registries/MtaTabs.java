@@ -734,6 +734,24 @@ public class MtaTabs {
 
 
 
+                output.accept(MtaItems.ALPINE_BOAT.get());
+                output.accept(MtaItems.ALPINE_CHEST_BOAT.get());
+                output.accept(MtaItems.AVOCADO_BOAT.get());
+                output.accept(MtaItems.AVOCADO_CHEST_BOAT.get());
+                output.accept(MtaItems.BOGGED_OAK_BOAT.get());
+                output.accept(MtaItems.BOGGED_OAK_CHEST_BOAT.get());
+                output.accept(MtaItems.IPE_BOAT.get());
+                output.accept(MtaItems.IPE_CHEST_BOAT.get());
+                output.accept(MtaItems.MANGO_BOAT.get());
+                output.accept(MtaItems.MANGO_CHEST_BOAT.get());
+                output.accept(MtaItems.MAPLE_BOAT.get());
+                output.accept(MtaItems.MAPLE_CHEST_BOAT.get());
+                output.accept(MtaItems.PALM_BOAT.get());
+                output.accept(MtaItems.PALM_CHEST_BOAT.get());
+                output.accept(MtaItems.SEAWOOD_BOAT.get());
+                output.accept(MtaItems.SEAWOOD_CHEST_BOAT.get());
+
+
                 output.accept(MtaBlocks.STOVE.get());
                 output.accept(MtaBlocks.SPRINKLER.get());
                 output.accept(MtaBlocks.QUARTZ_LAMP.get());
