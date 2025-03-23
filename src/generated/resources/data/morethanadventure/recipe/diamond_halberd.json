@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "minecraft:diamond",
+    "s": "morethanadventure:polearm"
+  },
+  "pattern": [
+    " oo",
+    " o ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:diamond_halberd"
+  }
+}

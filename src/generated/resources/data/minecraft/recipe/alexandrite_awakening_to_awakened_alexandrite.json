@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "morethanadventure:alexandrite",
+    "k": "morethanadventure:samurai_cloth",
+    "l": "minecraft:lapis_lazuli",
+    "n": "minecraft:netherite_scrap"
+  },
+  "pattern": [
+    "klk",
+    "ngn",
+    "klk"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:awakened_alexandrite"
+  }
+}

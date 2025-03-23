@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "#minecraft:planks",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "  o",
+    " s ",
+    "o  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:wood_twinblade"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_agate",
+  "base": "minecraft:netherite_chestplate",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:great_sentinel_chestplate"
+  },
+  "template": "morethanadventure:armament_upgrade"
+}

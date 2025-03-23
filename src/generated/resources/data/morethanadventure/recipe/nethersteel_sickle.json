@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "morethanadventure:nethersteel_ingot",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "ooo",
+    " s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:nethersteel_sickle"
+  }
+}

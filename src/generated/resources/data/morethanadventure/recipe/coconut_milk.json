@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "morethanadventure:coconut",
+    "#c:stones"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:coconut_milk"
+  }
+}

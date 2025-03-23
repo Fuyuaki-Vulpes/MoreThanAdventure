@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": "minecraft:chain",
+    "o": "morethanadventure:nethersteel_ingot",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "  o",
+    " c ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:nethersteel_flail"
+  }
+}

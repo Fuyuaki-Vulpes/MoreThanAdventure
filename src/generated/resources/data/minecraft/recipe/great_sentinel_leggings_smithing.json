@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_agate",
+  "base": "minecraft:netherite_leggings",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:great_sentinel_leggings"
+  },
+  "template": "morethanadventure:armament_upgrade"
+}

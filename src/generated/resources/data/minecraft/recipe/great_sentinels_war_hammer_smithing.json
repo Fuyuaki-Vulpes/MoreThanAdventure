@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_agate",
+  "base": "morethanadventure:netherite_mace",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:great_sentinels_war_hammer"
+  },
+  "template": "morethanadventure:armament_upgrade"
+}

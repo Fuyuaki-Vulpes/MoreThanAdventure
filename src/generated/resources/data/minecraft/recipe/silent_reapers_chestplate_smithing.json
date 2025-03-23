@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_bloodstone",
+  "base": "minecraft:netherite_chestplate",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:silent_reapers_chestplate"
+  },
+  "template": "morethanadventure:deathly_upgrade"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "O": "minecraft:blue_terracotta",
+    "X": "morethanadventure:featherweight_upgrade"
+  },
+  "pattern": [
+    "DOD",
+    "DXD",
+    "DDD"
+  ],
+  "result": {
+    "count": 2,
+    "id": "morethanadventure:featherweight_upgrade"
+  }
+}

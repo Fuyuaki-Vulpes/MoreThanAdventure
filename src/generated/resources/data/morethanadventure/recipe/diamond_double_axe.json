@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "minecraft:diamond",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "o o",
+    "oso",
+    " s "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:diamond_double_axe"
+  }
+}

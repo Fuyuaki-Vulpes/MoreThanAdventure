@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "s": "minecraft:string",
+    "w": "minecraft:stick"
+  },
+  "pattern": [
+    " w",
+    "ws",
+    " w"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:shortbow"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_garnet",
+  "base": "morethanadventure:netherite_double_axe",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:wrathful_berserkers_battleaxe"
+  },
+  "template": "morethanadventure:berserk_upgrade"
+}

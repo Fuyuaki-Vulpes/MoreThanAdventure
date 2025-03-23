@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:andesite",
+    "minecraft:andesite",
+    "minecraft:moss_block",
+    "minecraft:moss_block"
+  ],
+  "result": {
+    "count": 4,
+    "id": "morethanadventure:mossy_andesite"
+  }
+}

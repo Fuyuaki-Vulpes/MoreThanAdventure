@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "O": "minecraft:brown_terracotta",
+    "X": "morethanadventure:deathly_upgrade"
+  },
+  "pattern": [
+    "DOD",
+    "DXD",
+    "DDD"
+  ],
+  "result": {
+    "count": 2,
+    "id": "morethanadventure:deathly_upgrade"
+  }
+}

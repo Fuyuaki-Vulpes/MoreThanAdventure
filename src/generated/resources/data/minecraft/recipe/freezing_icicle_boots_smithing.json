@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_cryolite",
+  "base": "minecraft:netherite_boots",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:freezing_icicle_boots"
+  },
+  "template": "morethanadventure:freezing_upgrade"
+}

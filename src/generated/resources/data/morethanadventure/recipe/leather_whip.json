@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "m": "minecraft:leather",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "  m",
+    " m ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:leather_whip"
+  }
+}

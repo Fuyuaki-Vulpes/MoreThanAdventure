@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_awakened_cryolite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "morethanadventure:awakened_cryolite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:freezing_icicle_spear_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_awakened_cryolite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:freezing_icicle_spear_smithing"
+    ]
+  }
+}

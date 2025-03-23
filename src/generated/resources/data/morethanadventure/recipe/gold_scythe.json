@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "minecraft:gold_ingot",
+    "s": "morethanadventure:polearm"
+  },
+  "pattern": [
+    "ooo",
+    " o ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:gold_scythe"
+  }
+}

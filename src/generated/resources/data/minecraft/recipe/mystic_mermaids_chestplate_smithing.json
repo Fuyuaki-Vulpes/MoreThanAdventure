@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_aquamarine",
+  "base": "minecraft:netherite_chestplate",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:mystic_mermaids_chestplate"
+  },
+  "template": "morethanadventure:aquatic_upgrade"
+}

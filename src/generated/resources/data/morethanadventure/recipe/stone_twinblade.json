@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "#minecraft:stone_tool_materials",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "  o",
+    " s ",
+    "o  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:stone_twinblade"
+  }
+}

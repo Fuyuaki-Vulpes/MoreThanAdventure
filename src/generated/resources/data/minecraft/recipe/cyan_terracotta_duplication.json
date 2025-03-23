@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": "minecraft:diamond",
+    "O": "minecraft:cyan_terracotta",
+    "X": "morethanadventure:aquatic_upgrade"
+  },
+  "pattern": [
+    "DOD",
+    "DXD",
+    "DDD"
+  ],
+  "result": {
+    "count": 2,
+    "id": "morethanadventure:aquatic_upgrade"
+  }
+}

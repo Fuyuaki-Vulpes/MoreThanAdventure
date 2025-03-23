@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "morethanadventure:moonstone",
+    "k": "minecraft:ghast_tear",
+    "l": "minecraft:lapis_lazuli",
+    "n": "minecraft:netherite_scrap"
+  },
+  "pattern": [
+    "klk",
+    "ngn",
+    "klk"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:awakened_moonstone"
+  }
+}

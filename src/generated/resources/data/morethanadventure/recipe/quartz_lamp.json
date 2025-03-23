@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:dusts/glowstone",
+    "Q": "morethanadventure:clear_quartz"
+  },
+  "pattern": [
+    "Q#",
+    "#Q"
+  ],
+  "result": {
+    "count": 2,
+    "id": "morethanadventure:quartz_lamp"
+  }
+}

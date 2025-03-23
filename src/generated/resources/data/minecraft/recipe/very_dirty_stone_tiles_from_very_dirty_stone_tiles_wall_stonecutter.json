@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "morethanadventure:very_dirty_stone_tiles",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:very_dirty_stone_tiles_wall"
+  }
+}

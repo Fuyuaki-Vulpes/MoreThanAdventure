@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "o": "minecraft:iron_ingot",
+    "s": "morethanadventure:polearm"
+  },
+  "pattern": [
+    "  o",
+    " oo",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:iron_glaive"
+  }
+}

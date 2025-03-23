@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:light_gray_concrete",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:light_gray_concretes_wall"
+  }
+}

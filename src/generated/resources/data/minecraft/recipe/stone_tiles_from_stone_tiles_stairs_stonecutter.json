@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "morethanadventure:stone_tiles",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:stone_tiles_stairs"
+  }
+}

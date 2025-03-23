@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_garnet",
+  "base": "minecraft:netherite_helmet",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:wrathful_berserkers_helmet"
+  },
+  "template": "morethanadventure:berserk_upgrade"
+}

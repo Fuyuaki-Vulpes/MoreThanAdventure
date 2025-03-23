@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": "minecraft:chain",
+    "o": "#minecraft:planks",
+    "s": "minecraft:stick"
+  },
+  "pattern": [
+    "  o",
+    " c ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:wood_flail"
+  }
+}

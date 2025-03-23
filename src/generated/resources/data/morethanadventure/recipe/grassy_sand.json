@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:sand",
+    "minecraft:sand",
+    "minecraft:grass_block",
+    "minecraft:grass_block"
+  ],
+  "result": {
+    "count": 4,
+    "id": "morethanadventure:grassy_sand"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "s": "minecraft:string",
+    "w": "minecraft:stick"
+  },
+  "pattern": [
+    "wws",
+    "w s",
+    "wws"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:longbow"
+  }
+}

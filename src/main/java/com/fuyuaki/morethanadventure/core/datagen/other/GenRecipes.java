@@ -15,6 +15,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -71,23 +72,23 @@ public class GenRecipes  extends RecipeProvider {
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT.get(), 4)
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.GRASS_BLOCK, 2)
-                .unlockedBy("has_dirt", has(Blocks.DIRT));
+                .unlockedBy("has_dirt", has(Blocks.DIRT)).save(this.output);
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_DIRT, 2)
-                .requires(Blocks.SAND, 2)
-                .requires(Blocks.SHORT_GRASS, 2)
-                .unlockedBy("has_sand", has(Blocks.DIRT));
-        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_SAND.get(), 4)
                 .requires(Blocks.DIRT, 2)
+                .requires(Blocks.SHORT_GRASS, 2)
+                .unlockedBy("has_dirt", has(Blocks.SHORT_GRASS)).save(this.output,getItemName(MtaBlocks.GRASSY_DIRT.get()) + "_from_short_grass");
+        shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_SAND.get(), 4)
+                .requires(Blocks.SAND, 2)
                 .requires(Blocks.GRASS_BLOCK, 2)
-                .unlockedBy("has_sand", has(Blocks.SAND));
+                .unlockedBy("has_sand", has(Blocks.SAND)).save(this.output);
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.GRASSY_SAND, 2)
                 .requires(Blocks.SAND, 2)
                 .requires(Blocks.SHORT_GRASS, 2)
-                .unlockedBy("has_dirt", has(Blocks.SAND));
+                .unlockedBy("has_sand", has(Blocks.SAND)).save(this.output,getItemName(MtaBlocks.GRASSY_SAND.get()) + "_from_short_grass");
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.COBBLED_DIRT, 4)
                 .requires(Blocks.DIRT, 2)
                 .requires(Blocks.COBBLESTONE, 2)
-                .unlockedBy("has_dirt", has(Blocks.DIRT))
+                .unlockedBy("has_dirt", has(Blocks.DIRT)).save(this.output)
                 ;
 
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.STONE_TILES, Blocks.STONE);
@@ -101,17 +102,17 @@ public class GenRecipes  extends RecipeProvider {
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
                 .requires(MtaBlocks.STONE_TILES, 3)
-                .unlockedBy("has_stone_tiles", has(MtaBlocks.STONE_TILES))
+                .unlockedBy("has_stone_tiles", has(MtaBlocks.STONE_TILES)).save(this.output)
                 ;
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
                 .requires(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES, 3)
-                .unlockedBy("has_slight_dirty_stone_tiles", has(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES))
+                .unlockedBy("has_slight_dirty_stone_tiles", has(MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES)).save(this.output)
                 ;
         shapeless(RecipeCategory.BUILDING_BLOCKS, MtaBlocks.VERY_DIRTY_STONE_TILES, 3)
                 .requires(Blocks.DIRT)
                 .requires(MtaBlocks.DIRTY_STONE_TILES, 3)
-                .unlockedBy("has_dirty_stone_tiles", has(MtaBlocks.DIRTY_STONE_TILES))
+                .unlockedBy("has_dirty_stone_tiles", has(MtaBlocks.DIRTY_STONE_TILES)).save(this.output)
                 ;
 
 
@@ -157,7 +158,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("XX")
                 .pattern("X#")
                 .pattern(" #")
-                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER)).save(this.output)
                 ;
         shaped(RecipeCategory.TOOLS, MtaItems.COPPER_HOE)
                 .define('#', Items.STICK)
@@ -165,7 +166,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("XX")
                 .pattern(" #")
                 .pattern(" #")
-                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER)).save(this.output)
                 ;
         shaped(RecipeCategory.TOOLS, MtaItems.COPPER_PICKAXE)
                 .define('#', Items.STICK)
@@ -173,7 +174,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("XXX")
                 .pattern(" # ")
                 .pattern(" # ")
-                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER)).save(this.output)
                 ;
         shaped(RecipeCategory.TOOLS, MtaItems.COPPER_SHOVEL)
                 .define('#', Items.STICK)
@@ -181,7 +182,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("X")
                 .pattern("#")
                 .pattern("#")
-                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER)).save(this.output)
                 ;
         shaped(RecipeCategory.COMBAT, MtaItems.COPPER_SWORD)
                 .define('#', Items.STICK)
@@ -189,7 +190,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("X")
                 .pattern("X")
                 .pattern("#")
-                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER)).save(this.output)
                 ;
 
 
@@ -198,14 +199,14 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .unlockedBy("has_scrap_facture", has(MtaItems.NETHERITE_FRACTURE.get()));
+                .unlockedBy("has_scrap_facture", has(MtaItems.NETHERITE_FRACTURE.get())).save(this.output);
 
         shaped(RecipeCategory.COMBAT, MtaItems.POLEARM)
                 .define('s', Items.STICK)
                 .pattern("  s")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_stick", has(Items.STICK));
+                .unlockedBy("has_stick", has(Items.STICK)).save(this.output);
 
         newWeaponsTags(ItemTags.PLANKS, MtaItems.WOOD_ANCHOR.get(), MtaItems.WOOD_CLAW.get(), MtaItems.WOOD_CLAYMORE.get(),
                 MtaItems.WOOD_CUTLASS.get(), MtaItems.WOOD_DAGGER.get(), MtaItems.WOOD_DOUBLE_AXE.get(), MtaItems.WOOD_FLAIL.get(),
@@ -256,21 +257,21 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("wws")
                 .pattern("w s")
                 .pattern("wws")
-                .unlockedBy("has_string", has(Items.STRING));
+                .unlockedBy("has_string", has(Items.STRING)).save(this.output);
         shaped(RecipeCategory.COMBAT, MtaItems.SHORT_BOW)
                 .define('w', Items.STICK)
                 .define('s', Items.STRING)
                 .pattern(" w")
                 .pattern("ws")
                 .pattern(" w")
-                .unlockedBy("has_string", has(Items.STRING));
+                .unlockedBy("has_string", has(Items.STRING)).save(this.output);
         shaped(RecipeCategory.COMBAT, MtaItems.TWIN_BOW)
                 .define('w', Items.STICK)
                 .define('s', Items.STRING)
                 .pattern(" ws")
                 .pattern("wss")
                 .pattern(" ws")
-                .unlockedBy("has_string", has(Items.STRING));
+                .unlockedBy("has_string", has(Items.STRING)).save(this.output);
 
         whipRecipe(Items.LEATHER, MtaItems.LEATHER_WHIP.get(), "has_leather");
         whipRecipe(Items.CHAIN, MtaItems.CHAIN_WHIP.get(), "has_chain");
@@ -284,17 +285,17 @@ public class GenRecipes  extends RecipeProvider {
 
         shapeless(RecipeCategory.MISC, Items.BLACK_DYE, 2)
                 .requires(Tags.Items.ORES_COAL)
-                .unlockedBy("has_coal", has(Tags.Items.ORES_COAL));
+                .unlockedBy("has_coal", has(Tags.Items.ORES_COAL)).save(this.output,"black_dye_from_coal");
 
         shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 2)
                 .requires(Blocks.ANDESITE, 2)
                 .requires(Blocks.VINE, 2)
-                .unlockedBy("has_andesite", has(Blocks.ANDESITE));
+                .unlockedBy("has_andesite", has(Blocks.ANDESITE)).save(this.output,getItemName(MtaBlocks.MOSSY_ANDESITE.get()) + "_vines");
 
         shapeless(RecipeCategory.MISC, MtaBlocks.MOSSY_ANDESITE.get(), 4)
                 .requires(Blocks.ANDESITE, 2)
                 .requires(Blocks.MOSS_BLOCK, 2)
-                .unlockedBy("has_andesite", has(Blocks.ANDESITE));
+                .unlockedBy("has_andesite", has(Blocks.ANDESITE)).save(this.output,getItemName(MtaBlocks.MOSSY_ANDESITE.get()) + "_moss");
 
         twoByTwoPacker(RecipeCategory.BUILDING_BLOCKS, Blocks.QUARTZ_BLOCK, MtaItems.CLEAR_QUARTZ);
         shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.DIORITE, 2)
@@ -302,12 +303,12 @@ public class GenRecipes  extends RecipeProvider {
                 .define('C', Blocks.COBBLESTONE)
                 .pattern("CQ")
                 .pattern("QC")
-                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ)).save(this.output, getItemName(Blocks.DIORITE) + "_clear_quartz")
                 ;
         shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.GRANITE)
                 .requires(Blocks.DIORITE)
                 .requires(MtaItems.CLEAR_QUARTZ)
-                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ)).save(this.output, getItemName(Blocks.GRANITE) + "_clear_quartz")
                 ;
         shaped(RecipeCategory.REDSTONE, Blocks.COMPARATOR)
                 .define('#', Blocks.REDSTONE_TORCH)
@@ -316,7 +317,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" # ")
                 .pattern("#X#")
                 .pattern("III")
-                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ)).save(this.output, getItemName(Blocks.COMPARATOR) + "_clear_quartz")
                 ;
         shaped(RecipeCategory.REDSTONE, Blocks.DAYLIGHT_DETECTOR)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
@@ -325,7 +326,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("GGG")
                 .pattern("QQQ")
                 .pattern("WWW")
-                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ)).save(this.output, getItemName(Blocks.DAYLIGHT_DETECTOR) + "_clear_quartz")
                 ;
         shaped(RecipeCategory.REDSTONE, Blocks.OBSERVER)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
@@ -334,7 +335,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("###")
                 .pattern("RRQ")
                 .pattern("###")
-                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ)).save(this.output, getItemName(Blocks.OBSERVER) + "_clear_quartz")
                 ;
 
 
@@ -345,14 +346,14 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" N ")
                 .pattern("NCN")
                 .pattern("C#C")
-                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER))
+                .unlockedBy("has_copper", has(Tags.Items.INGOTS_COPPER)).save(this.output)
                 ;
         shaped(RecipeCategory.DECORATIONS, MtaBlocks.QUARTZ_LAMP.get(), 2)
                 .define('Q', MtaItems.CLEAR_QUARTZ)
                 .define('#', Tags.Items.DUSTS_GLOWSTONE)
                 .pattern("Q#")
                 .pattern("#Q")
-                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ))
+                .unlockedBy("has_quartz", has(MtaItems.CLEAR_QUARTZ)).save(this.output)
                 ;
 
         upgradeTemplate(MtaItems.ARMAMENT_UPGRADE.get(), Blocks.RED_TERRACOTTA, "has_armament_upgrade");
@@ -442,61 +443,60 @@ public class GenRecipes  extends RecipeProvider {
 
         shapeless(RecipeCategory.MISC, MtaItems.TOMATO_SEEDS)
                 .requires(MtaItems.TOMATO)
-                .unlockedBy("has_tomato", has(MtaItems.TOMATO));
+                .unlockedBy("has_tomato", has(MtaItems.TOMATO)).save(this.output);
         shapeless(RecipeCategory.MISC, MtaItems.BELL_PEPPER_SEEDS)
                 .requires(MtaItems.BELL_PEPPER)
-                .unlockedBy("has_red_pepper", has(MtaItems.BELL_PEPPER));
+                .unlockedBy("has_red_pepper", has(MtaItems.BELL_PEPPER)).save(this.output);
         shapeless(RecipeCategory.MISC, MtaItems.CHILI_PEPPER_SEEDS)
                 .requires(MtaItems.CHILI_PEPPER)
-                .unlockedBy("has_chili_pepper", has(MtaItems.CHILI_PEPPER));
+                .unlockedBy("has_chili_pepper", has(MtaItems.CHILI_PEPPER)).save(this.output);
         shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_SLICE, 2)
                 .requires(MtaItems.COCONUT)
-                .unlockedBy("has_coconut", has(MtaItems.COCONUT));
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT)).save(this.output);
         shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.COBBLESTONES)
-                .unlockedBy("has_coconut", has(MtaItems.COCONUT));
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT)).save(this.output, getItemName(MtaItems.COCONUT_MILK) + "_2");
         shapeless(RecipeCategory.FOOD, MtaItems.COCONUT_MILK)
                 .requires(MtaItems.COCONUT)
                 .requires(Tags.Items.STONES)
-                .unlockedBy("has_coconut", has(MtaItems.COCONUT));
+                .unlockedBy("has_coconut", has(MtaItems.COCONUT)).save(this.output);
         shapeless(RecipeCategory.MISC, MtaItems.SPICE_MIX)
                 .requires(MtaItems.CHILI_PEPPER)
                 .requires(MtaItems.BELL_PEPPER)
                 .requires(MtaTags.Common.FOODS_ONION)
                 .requires(Items.GLASS_BOTTLE)
-                .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE));
+                .unlockedBy("has_glass_bottle", has(Items.GLASS_BOTTLE)).save(this.output);
         shapeless(RecipeCategory.FOOD, MtaItems.ONIGIRI)
                 .requires(MtaTags.Common.CROPS_RICE)
                 .requires(Items.DRIED_KELP)
-                .unlockedBy("has_rice", has(MtaItems.RICE));
+                .unlockedBy("has_rice", has(MtaItems.RICE)).save(this.output);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.SHRIMP), RecipeCategory.FOOD, MtaItems.COOKED_SHRIMP, 0.35F, 200)
-                .unlockedBy("has_shrimp", has(MtaItems.SHRIMP));
 
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_HORSE), RecipeCategory.FOOD, MtaItems.COOKED_HORSE, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_HORSE));
+                .unlockedBy("has_food", has(MtaItems.RAW_HORSE)).save(this.output,getSmeltingRecipeName(MtaItems.COOKED_HORSE));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_DUCK), RecipeCategory.FOOD, MtaItems.COOKED_DUCK, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_DUCK));
+                .unlockedBy("has_food", has(MtaItems.RAW_DUCK)).save(this.output,getSmeltingRecipeName(MtaItems.COOKED_DUCK));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_GOAT), RecipeCategory.FOOD, MtaItems.COOKED_GOAT, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_GOAT));
+                .unlockedBy("has_food", has(MtaItems.RAW_GOAT)).save(this.output,getSmeltingRecipeName(MtaItems.COOKED_GOAT));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_DEER), RecipeCategory.FOOD, MtaItems.COOKED_DEER, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_DEER));
+                .unlockedBy("has_food", has(MtaItems.RAW_DEER)).save(this.output,getSmeltingRecipeName(MtaItems.COOKED_DEER));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(MtaItems.RAW_TURKEY), RecipeCategory.FOOD, MtaItems.COOKED_TURKEY, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_TURKEY));
+                .unlockedBy("has_food", has(MtaItems.RAW_TURKEY)).save(this.output,getSmeltingRecipeName(MtaItems.COOKED_TURKEY));
+
 
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.SHRIMP), RecipeCategory.FOOD, MtaItems.COOKED_SHRIMP, 0.35F, 200)
-                .unlockedBy("has_shrimp", has(MtaItems.SHRIMP));
+                .unlockedBy("has_shrimp", has(MtaItems.SHRIMP)).save(this.output,getItemName(MtaItems.COOKED_SHRIMP) +"_smoking");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_HORSE), RecipeCategory.FOOD, MtaItems.COOKED_HORSE, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_HORSE));
+                .unlockedBy("has_food", has(MtaItems.RAW_HORSE)).save(this.output,getItemName(MtaItems.COOKED_HORSE) +"_smoking");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_DUCK), RecipeCategory.FOOD, MtaItems.COOKED_DUCK, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_DUCK));
+                .unlockedBy("has_food", has(MtaItems.RAW_DUCK)).save(this.output,getItemName(MtaItems.COOKED_DUCK) +"_smoking");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_GOAT), RecipeCategory.FOOD, MtaItems.COOKED_GOAT, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_GOAT));
+                .unlockedBy("has_food", has(MtaItems.RAW_GOAT)).save(this.output,getItemName(MtaItems.COOKED_GOAT) +"_smoking");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_DEER), RecipeCategory.FOOD, MtaItems.COOKED_DEER, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_DEER));
+                .unlockedBy("has_food", has(MtaItems.RAW_DEER)).save(this.output,getItemName(MtaItems.COOKED_DEER) +"_smoking");
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(MtaItems.RAW_TURKEY), RecipeCategory.FOOD, MtaItems.COOKED_TURKEY, 0.35F, 200)
-                .unlockedBy("has_food", has(MtaItems.RAW_TURKEY));
+                .unlockedBy("has_food", has(MtaItems.RAW_TURKEY)).save(this.output,getItemName(MtaItems.COOKED_TURKEY) +"_smoking");
 
         //Farmer's Delight
 
@@ -519,44 +519,44 @@ public class GenRecipes  extends RecipeProvider {
 
 
     protected void agateSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ARMAMENT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AGATE), pCategory, pResultItem).unlocks("has_awakened_agate", has(MtaItems.AWAKENED_AGATE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ARMAMENT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AGATE), pCategory, pResultItem).unlocks("has_awakened_agate", has(MtaItems.AWAKENED_AGATE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void alexandriteSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ROYAL_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_ALEXANDRITE), pCategory, pResultItem).unlocks("has_awakened_alexandrite", has(MtaItems.AWAKENED_ALEXANDRITE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ROYAL_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_ALEXANDRITE), pCategory, pResultItem).unlocks("has_awakened_alexandrite", has(MtaItems.AWAKENED_ALEXANDRITE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void aquamarineSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.AQUATIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AQUAMARINE), pCategory, pResultItem).unlocks("has_awakened_aquamarine", has(MtaItems.AWAKENED_AQUAMARINE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.AQUATIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_AQUAMARINE), pCategory, pResultItem).unlocks("has_awakened_aquamarine", has(MtaItems.AWAKENED_AQUAMARINE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void bloodstoneSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.DEATHLY_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_BLOODSTONE), pCategory, pResultItem).unlocks("has_awakened_bloodstone", has(MtaItems.AWAKENED_BLOODSTONE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.DEATHLY_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_BLOODSTONE), pCategory, pResultItem).unlocks("has_awakened_bloodstone", has(MtaItems.AWAKENED_BLOODSTONE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void celestiteSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ANGELIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CELESTITE), pCategory, pResultItem).unlocks("has_awakened_celestite", has(MtaItems.AWAKENED_CELESTITE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.ANGELIC_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CELESTITE), pCategory, pResultItem).unlocks("has_awakened_celestite", has(MtaItems.AWAKENED_CELESTITE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void cryoliteSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FREEZING_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CRYOLITE), pCategory, pResultItem).unlocks("has_awakened_cryolite", has(MtaItems.AWAKENED_CRYOLITE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FREEZING_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_CRYOLITE), pCategory, pResultItem).unlocks("has_awakened_cryolite", has(MtaItems.AWAKENED_CRYOLITE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void garnetSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.BERSERK_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_GARNET), pCategory, pResultItem).unlocks("has_awakened_garnet", has(MtaItems.AWAKENED_GARNET));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.BERSERK_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_GARNET), pCategory, pResultItem).unlocks("has_awakened_garnet", has(MtaItems.AWAKENED_GARNET)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void moonstoneSmithing(Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FEATHERWEIGHT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_MOONSTONE), pCategory, pResultItem).unlocks("has_awakened_moonstone", has(MtaItems.AWAKENED_MOONSTONE));
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(MtaItems.FEATHERWEIGHT_UPGRADE), Ingredient.of(pIngredientItem), Ingredient.of(MtaItems.AWAKENED_MOONSTONE), pCategory, pResultItem).unlocks("has_awakened_moonstone", has(MtaItems.AWAKENED_MOONSTONE)).save(this.output,getItemName(pResultItem) + "_smithing");
     }
 
     protected void cuttingStoneSetRecipe(Block ing, Block slab, Block stair, Block wall) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ing), RecipeCategory.BUILDING_BLOCKS, slab, 2)
-                .unlockedBy(getHasName(ing), has(ing));
+                .unlockedBy(getHasName(ing), has(ing)).save(this.output,getConversionRecipeName(ing,slab) + "_stonecutter");
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ing), RecipeCategory.BUILDING_BLOCKS, stair)
-                .unlockedBy(getHasName(ing), has(ing));
+                .unlockedBy(getHasName(ing), has(ing)).save(this.output,getConversionRecipeName(ing,stair) + "_stonecutter");
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ing), RecipeCategory.BUILDING_BLOCKS, wall)
-                .unlockedBy(getHasName(ing), has(ing));
+                .unlockedBy(getHasName(ing), has(ing)).save(this.output,getConversionRecipeName(ing,wall) + "_stonecutter");
     }
 
     protected void cuttingTerracottaSetRecipe(Block ing, Block tiles, Block slab, Block tSlab, Block stair, Block tStair, Block wall, Block tWall) {
@@ -577,7 +577,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("DOD")
                 .pattern("DXD")
                 .pattern("DDD")
-                .unlockedBy(unlock, has(template));
+                .unlockedBy(unlock, has(template)).save(this.output,getItemName(frame) + "_duplication");
     }
 
     public void gemAwakening(Item gem, Item key, Item result, String unlock) {
@@ -590,49 +590,55 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("ngn")
                 .pattern("klk")
                 .unlockedBy(unlock, has(gem))
-                ;
+                .save(this.output,getItemName(gem) + "_awakening_to_" + getItemName(result));
     }
 
-    public void newWeapons(Item ore, Item rAnc, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rFla, Item rGla, Item rHal, Item rKat, Item rRap, Item rScy, Item rSic, Item rSpe, Item rTwi,/* Item rWhi*/ String unlock) {
+    public void newWeapons(ItemLike ore, Item rAnc, Item rClaw, Item rClay, Item rCut, Item rDag, Item rDou, Item rFla, Item rGla, Item rHal, Item rKat, Item rRap, Item rScy, Item rSic, Item rSpe, Item rTwi,/* Item rWhi*/ String unlock) {
         shaped(RecipeCategory.COMBAT, rAnc)
                 .define('o', ore)
                 .pattern(" o ")
                 .pattern(" o ")
                 .pattern("ooo")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rClaw)
                 .define('o', ore)
                 .define('s', Items.LEATHER)
                 .pattern("ooo")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rClay)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o  ")
                 .pattern(" o ")
                 .pattern("  s")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rCut)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rDag)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rDou)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o o")
                 .pattern("oso")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rFla)
                 .define('o', ore)
                 .define('c', Items.CHAIN)
@@ -640,62 +646,71 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("  o")
                 .pattern(" c ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rGla)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern("  o")
                 .pattern(" oo")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rHal)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern(" oo")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rKat)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rRap)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" o ")
                 .pattern("ss ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rScy)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern("ooo")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rSic)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("ooo")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rSpe)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rTwi)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("o  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
 //        shaped(RecipeCategory.COMBAT, rWhi)
 //                .define('o', ore)
 //                .define('c', Items.CHAIN)
@@ -703,7 +718,8 @@ public class GenRecipes  extends RecipeProvider {
 //                .pattern("  o")
 //                .pattern(" oc")
 //                .pattern("s  ")
-//                .unlockedBy("has_" + unlock, has(ore));
+//                .unlockedBy("has_" + unlock, has(ore))
+//                .save(this.output);
 
     }
 
@@ -713,40 +729,46 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern(" o ")
                 .pattern(" o ")
                 .pattern("ooo")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rClaw)
                 .define('o', ore)
                 .define('s', Items.LEATHER)
                 .pattern("ooo")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rClay)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o  ")
                 .pattern(" o ")
                 .pattern("  s")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rCut)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rDag)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern(" o")
                 .pattern("s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rDou)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("o o")
                 .pattern("oso")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rFla)
                 .define('o', ore)
                 .define('c', Items.CHAIN)
@@ -754,62 +776,71 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("  o")
                 .pattern(" c ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rGla)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern("  o")
                 .pattern(" oo")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rHal)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern(" oo")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rKat)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rRap)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" o ")
                 .pattern("ss ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rScy)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern("ooo")
                 .pattern(" o ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rSic)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("ooo")
                 .pattern(" s ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rSpe)
                 .define('o', ore)
                 .define('s', MtaItems.POLEARM)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("s  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
         shaped(RecipeCategory.COMBAT, rTwi)
                 .define('o', ore)
                 .define('s', Items.STICK)
                 .pattern("  o")
                 .pattern(" s ")
                 .pattern("o  ")
-                .unlockedBy("has_" + unlock, has(ore));
+                .unlockedBy("has_" + unlock, has(ore))
+                .save(this.output);
 //        shaped(RecipeCategory.COMBAT, rWhi)
 //                .define('o', ore)
 //                .define('c', Items.CHAIN)
@@ -827,7 +858,7 @@ public class GenRecipes  extends RecipeProvider {
                 .pattern("  m")
                 .pattern(" m ")
                 .pattern("s  ")
-                .unlockedBy(unlock, has(mat))
+                .unlockedBy(unlock, has(mat)).save(this.output);
         ;
     }
 

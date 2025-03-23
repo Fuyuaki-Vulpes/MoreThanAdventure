@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_moonstone",
+  "base": "morethanadventure:netherite_dagger",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:shadow_rogues_dagger"
+  },
+  "template": "morethanadventure:featherweight_upgrade"
+}

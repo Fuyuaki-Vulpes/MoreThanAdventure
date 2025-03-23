@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "morethanadventure:awakened_moonstone",
+  "base": "minecraft:netherite_chestplate",
+  "result": {
+    "count": 1,
+    "id": "morethanadventure:shadow_rogues_chestplate"
+  },
+  "template": "morethanadventure:featherweight_upgrade"
+}
