@@ -9,6 +9,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.TreePlacements;
@@ -782,6 +783,8 @@ private static Biome caatinga(HolderGetter<PlacedFeature> placedFeatures, Holder
                 new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
         globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addOtherBirchTrees(biomeBuilder);
+
         BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
         BiomeDefaultFeatures.addForestGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
@@ -793,11 +796,11 @@ private static Biome caatinga(HolderGetter<PlacedFeature> placedFeatures, Holder
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, MtaPlacedFeatures.MAPLE_TREE);
 
 
-        return biome(true, 0.5F, 0.8F,
+        return biome(true, 0.2F, 0.8F,
                 0x79a6ff,
                 0xc0d8ff,
                 0x79c05a,
-                0xe87538,
+                0xdbb435,
                 spawnBuilder, biomeBuilder, FOREST_MUSIC);
     }
 

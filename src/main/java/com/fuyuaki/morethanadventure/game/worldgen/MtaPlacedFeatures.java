@@ -179,7 +179,7 @@ public class MtaPlacedFeatures {
                 context,
                 MAPLE_TREE,
                 holder(context,MtaConfigFeatures.MAPLE_TREE),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.5F, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.2F, 1),
                         MtaBlocks.MAPLE_SAPLING.get())
         );
 

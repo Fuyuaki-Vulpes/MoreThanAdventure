@@ -93,7 +93,7 @@ public class GenBlockModels extends BlockModelGenerators {
 
         this.woodProvider(MtaBlocks.MAPLE_LOG.get()).logWithHorizontal(MtaBlocks.MAPLE_LOG.get()).wood(MtaBlocks.MAPLE_WOOD.get());
         this.woodProvider(MtaBlocks.STRIPPED_MAPLE_LOG.get()).logWithHorizontal(MtaBlocks.STRIPPED_MAPLE_LOG.get()).wood(MtaBlocks.STRIPPED_MAPLE_WOOD.get());
-        createTintedLeaves(MtaBlocks.MAPLE_LEAVES.get(), TexturedModel.LEAVES,FoliageColor.FOLIAGE_DEFAULT);
+        this.createTrivialBlock(MtaBlocks.MAPLE_LEAVES.get(), TexturedModel.LEAVES);
         this.createPlantWithDefaultItem(MtaBlocks.MAPLE_SAPLING.get(),MtaBlocks.POTTED_MAPLE_SAPLING.get(),PlantType.NOT_TINTED);
         this.createHangingSign(MtaBlocks.MAPLE_PLANKS.get(), MtaBlocks.MAPLE_HANGING_SIGN.get(), MtaBlocks.MAPLE_HANGING_WALL_SIGN.get());
 

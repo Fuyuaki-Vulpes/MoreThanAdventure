@@ -34,10 +34,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.CherryFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
@@ -235,10 +232,10 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.MAPLE_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new StraightTrunkPlacer(6, 2, 0),
                         BlockStateProvider.simple(MtaBlocks.MAPLE_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
-                        new TwoLayersFeatureSize(1, 0, 2)).build()
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 1)).build()
         );
         register(
                 context,
