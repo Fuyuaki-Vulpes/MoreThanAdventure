@@ -124,7 +124,7 @@ public class MtaPlacedFeatures {
                 context,
                 AVOCADO_TREE,
                 holder(context,MtaConfigFeatures.AVOCADO_TREE),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(70),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(160),
                         MtaBlocks.AVOCADO_SAPLING.get())
         );
 
@@ -171,7 +171,7 @@ public class MtaPlacedFeatures {
                 context,
                 MANGO_TREE,
                 holder(context,MtaConfigFeatures.MANGO_TREE),
-                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(300),
+                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(210),
                         MtaBlocks.MANGO_SAPLING.get())
         );
 

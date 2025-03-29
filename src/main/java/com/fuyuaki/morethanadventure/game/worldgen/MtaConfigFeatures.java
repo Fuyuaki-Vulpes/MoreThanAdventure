@@ -38,6 +38,8 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -115,6 +117,11 @@ public class MtaConfigFeatures {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
+        BeehiveDecorator beehiveVeryRare = new BeehiveDecorator(0.002F);
+        BeehiveDecorator beehiveRare = new BeehiveDecorator(0.01F);
+        BeehiveDecorator beehiveSlightlyRare = new BeehiveDecorator(0.02F);
+        BeehiveDecorator beehiveCommon = new BeehiveDecorator(0.05F);
+        BeehiveDecorator beehiveAlways = new BeehiveDecorator(1.0F);
         SimpleWeightedRandomList.Builder<BlockState> leavesBuilder = SimpleWeightedRandomList.builder();
 
         for (int i = 1; i <= 4; i++) {
@@ -155,10 +162,10 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.AVOCADO_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new GentleForkingTrunkPlacer(3, 3, 1),
                         BlockStateProvider.simple(MtaBlocks.AVOCADO_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
-                        new TwoLayersFeatureSize(1, 0, 2)).build()
+                        new CherryFoliagePlacer(ConstantInt.of(5), ConstantInt.of(0), ConstantInt.of(4), 0.65F, 0.3F, 0.05F, 0.2F),
+                        new TwoLayersFeatureSize(3, 0, 4)).decorators(List.of(beehiveRare)).build()
         );
         register(
                 context,
@@ -221,10 +228,10 @@ public class MtaConfigFeatures {
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(MtaBlocks.MANGO_LOG.get()),
-                        new PalmTrunkPlacer(4, 5, 3),
+                        new FancyTrunkPlacer(7, 5, 0),
                         BlockStateProvider.simple(MtaBlocks.MANGO_LEAVES.get()),
-                        new PalmFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1)),
-                        new TwoLayersFeatureSize(1, 0, 2)).build()
+                        new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                        new TwoLayersFeatureSize(0, 0, 0,OptionalInt.of(4))).build()
         );
         register(
                 context,
