@@ -1,20 +1,19 @@
 package com.fuyuaki.morethanadventure.world.event;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
-import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MTALootTables;
+import com.fuyuaki.morethanadventure.core.mod.MTAReloadListeners;
+import com.fuyuaki.morethanadventure.game.species.SpeciesManager;
+import com.fuyuaki.morethanadventure.game.species.trait.TraitManager;
 import com.fuyuaki.morethanadventure.world.entity.SoulOrb;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
-import com.fuyuaki.morethanadventure.world.item.accessories.TalismanItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -29,7 +28,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -102,4 +101,9 @@ public class MTACommonEvents {
     }
 
 
+    @SubscribeEvent
+    public static void reloadListenerServerEvent(AddServerReloadListenersEvent event) {
+        event.addListener(MTAReloadListeners.SPECIES_LISTENER_LOCATION,new SpeciesManager(event.getRegistryAccess()));
+        event.addListener(MTAReloadListeners.TRAITS_LISTENER_LOCATION,new TraitManager(event.getRegistryAccess()));
+    }
 }

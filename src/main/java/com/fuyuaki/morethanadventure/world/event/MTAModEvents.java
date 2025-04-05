@@ -3,6 +3,9 @@ package com.fuyuaki.morethanadventure.world.event;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAMenuTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
+import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
+import com.fuyuaki.morethanadventure.game.species.Species;
+import com.fuyuaki.morethanadventure.game.species.trait.Trait;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import com.fuyuaki.morethanadventure.world.inventory.screens.StoveScreen;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,6 +21,8 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.registries.DataPackRegistryEvent;
+import net.neoforged.neoforge.registries.NewRegistryEvent;
 
 import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
@@ -289,6 +294,18 @@ public class MTAModEvents {
     @SubscribeEvent
     private static void registerScreens(RegisterMenuScreensEvent event) {
         event.register(MTAMenuTypes.STOVE.get(), StoveScreen::new);
+    }
+
+    @SubscribeEvent
+    private static void registryInit(NewRegistryEvent event) {
+    }
+
+    @SubscribeEvent
+    private static void dataRegistryInit(DataPackRegistryEvent.NewRegistry event) {
+        event.dataPackRegistry(MTARegistries.Keys.TRAITS, Trait.CODEC);
+
+        event.dataPackRegistry(MTARegistries.Keys.SPECIES, Species.CODEC);
+
     }
 
 }
