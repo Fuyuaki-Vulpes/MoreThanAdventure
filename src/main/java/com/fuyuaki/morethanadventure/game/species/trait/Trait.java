@@ -1,22 +1,18 @@
 package com.fuyuaki.morethanadventure.game.species.trait;
 
-import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
-import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.game.species.trait.type.TraitType;
 import com.fuyuaki.morethanadventure.game.species.trait.type.TraitTypes;
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import io.netty.buffer.ByteBuf;
-import net.minecraft.advancements.*;
+import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.CriterionTrigger;
+import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
-import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -56,9 +52,6 @@ public record Trait(ResourceLocation id, ResourceLocation icon, TraitType type, 
         );
     }
 
-    private static <T extends CriterionTriggerInstance> Codec<Criterion<T>> criterionCodec(CriterionTrigger<T> trigger) {
-        return trigger.codec().xmap(p_312166_ -> new Criterion<>(trigger, (T)p_312166_), Criterion::triggerInstance);
-    }
 
     public void tick(Player player, Level level){
 

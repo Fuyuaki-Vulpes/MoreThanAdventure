@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.core.mod;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.*;
+import com.fuyuaki.morethanadventure.game.species.trait.type.TraitTypes;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaTerrablender;
 import com.fuyuaki.morethanadventure.game.worldgen.biomes.surface.MtaSurfaceRules;
@@ -55,6 +56,7 @@ public class MTAMod
         MTAEnchantmentEffectsComponents.register(modEventBus);
 
         MtaTabs.register(modEventBus);
+        TraitTypes.register(modEventBus);
 
 
 

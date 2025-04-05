@@ -298,6 +298,7 @@ public class MTAModEvents {
 
     @SubscribeEvent
     private static void registryInit(NewRegistryEvent event) {
+        event.register(MTARegistries.Registries.TRAIT_TYPE);
     }
 
     @SubscribeEvent

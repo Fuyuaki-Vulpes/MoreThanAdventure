@@ -10,19 +10,19 @@ import net.minecraft.world.item.Items;
 
 public class TraitType {
 
-    private final Holder.Reference<TraitType> builtInRegistryHolder = MTARegistries.Registries.TRAIT_TYPE.createIntrusiveHolder(this);
+    private final Holder<TraitType> builtInRegistryHolder = MTARegistries.Registries.TRAIT_TYPE.wrapAsHolder(this);
 
 
 
     public static final Codec<Holder<TraitType>> CODEC = MTARegistries.Registries.TRAIT_TYPE
             .holderByNameCodec()
             .validate(
-                    p_381630_ -> p_381630_.is(TraitTypes.EMPTY.get().builtInRegistryHolder().key())
+                    p_381630_ -> p_381630_.is(TraitTypes.EMPTY.get().builtInRegistryHolder().getKey())
                             ? DataResult.error(() -> "Item must not be morethanadventure:empty")
                             : DataResult.success(p_381630_)
             );
 
-    public Holder.Reference<TraitType> builtInRegistryHolder() {
+    public Holder<TraitType> builtInRegistryHolder() {
         return this.builtInRegistryHolder;
     }
 
