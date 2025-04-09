@@ -1,8 +1,6 @@
 package com.fuyuaki.morethanadventure.game.species;
 
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
-import com.fuyuaki.morethanadventure.game.species.trait.TraitHolder;
-import com.fuyuaki.morethanadventure.game.species.trait.TraitsTree;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.HolderLookup;
@@ -21,8 +19,6 @@ public class SpeciesManager extends SimpleJsonResourceReloadListener<Species> {
     private static final Logger LOGGER = LogUtils.getLogger();
     private Map<ResourceLocation, SpeciesHolder> species = Map.of();
     private SpeciesTree tree = new SpeciesTree();
-    private Map<ResourceLocation, TraitHolder> trait = Map.of();
-    private TraitsTree traitsTree = new TraitsTree();
     private final HolderLookup.Provider registries;
 
 
@@ -37,7 +33,6 @@ public class SpeciesManager extends SimpleJsonResourceReloadListener<Species> {
         ImmutableMap.Builder<ResourceLocation, SpeciesHolder> builder = ImmutableMap.builder();
 
         object.forEach((location, species1) -> {
-            this.validate(location, species1);
             builder.put(location, new SpeciesHolder(species1,location));
 
         });
@@ -49,11 +44,6 @@ public class SpeciesManager extends SimpleJsonResourceReloadListener<Species> {
 
     }
 
-    private void validate(ResourceLocation location, Species advancement) {
-        ProblemReporter.Collector problemreporter$collector = new ProblemReporter.Collector();
-        advancement.validate(problemreporter$collector, this.registries);
-        problemreporter$collector.getReport().ifPresent(p_344260_ -> LOGGER.warn("Found validation problems in species {}: \n{}", location, p_344260_));
-    }
 
     @Nullable
     public SpeciesHolder get(ResourceLocation location) {

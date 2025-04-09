@@ -5,6 +5,7 @@ import com.fuyuaki.morethanadventure.core.datagen.lang.EN_US_LangProvider;
 import com.fuyuaki.morethanadventure.core.datagen.loot.GlobalLootModifiers;
 import com.fuyuaki.morethanadventure.core.datagen.model.MTAModelProvider;
 import com.fuyuaki.morethanadventure.core.datagen.other.*;
+import com.fuyuaki.morethanadventure.core.datagen.species.GenSpecies;
 import com.fuyuaki.morethanadventure.core.datagen.tags.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -60,9 +61,14 @@ public class DataGen {
         generator.addProvider(true,
                 new GlobalLootModifiers(packOutput,datapackRegistries.getRegistryProvider()));
 
+        generator.addProvider(true,new GenSpecies(packOutput,datapackRegistries.getRegistryProvider()
+                )
+        );
         generator.addProvider(true,new GenAdvancements(packOutput,datapackRegistries.getRegistryProvider()
                 )
         );
+
+
 
 
     }

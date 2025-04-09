@@ -4,7 +4,6 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MTALootTables;
 import com.fuyuaki.morethanadventure.core.mod.MTAReloadListeners;
 import com.fuyuaki.morethanadventure.game.species.SpeciesManager;
-import com.fuyuaki.morethanadventure.game.species.trait.TraitManager;
 import com.fuyuaki.morethanadventure.world.entity.SoulOrb;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
 import net.minecraft.core.BlockPos;
@@ -104,6 +103,8 @@ public class MTACommonEvents {
     @SubscribeEvent
     public static void reloadListenerServerEvent(AddServerReloadListenersEvent event) {
         event.addListener(MTAReloadListeners.SPECIES_LISTENER_LOCATION,new SpeciesManager(event.getRegistryAccess()));
-        event.addListener(MTAReloadListeners.TRAITS_LISTENER_LOCATION,new TraitManager(event.getRegistryAccess()));
+
+        System.out.println("PotatoGuys");
+        event.getServerResources().listeners().forEach(preparableReloadListener -> System.out.println(preparableReloadListener.getName()));
     }
 }

@@ -24,7 +24,7 @@ public class MTAArrowRenderer extends ArrowRenderer<MTAArrowEntity, MTAArrowRend
     }
 
     /**
-     * Returns the location of an entity's texture.
+     * Returns the id of an entity's texture.
      */
     @Override
     protected ResourceLocation getTextureLocation(MTAArrowRenderState renderState) {

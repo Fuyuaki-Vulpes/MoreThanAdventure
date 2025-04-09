@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
+import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.world.item.component.CraftableDrink;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;

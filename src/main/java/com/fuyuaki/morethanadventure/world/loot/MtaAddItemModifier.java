@@ -21,7 +21,7 @@ public class MtaAddItemModifier extends LootModifier {
                     instance.group(
                                     LOOT_CONDITIONS_CODEC.fieldOf("conditions").forGetter(lm -> lm.conditions),
                                     BuiltInRegistries.ITEM.byNameCodec().fieldOf("item").forGetter(lm -> lm.addedItem),
-                                    Codec.intRange(0, Integer.MAX_VALUE).fieldOf("count").forGetter((lm) -> lm.count)
+                                    Codec.intRange(0, Integer.MAX_VALUE).fieldOf("time").forGetter((lm) -> lm.count)
                             )
 
                             .apply(instance, MtaAddItemModifier::new)));

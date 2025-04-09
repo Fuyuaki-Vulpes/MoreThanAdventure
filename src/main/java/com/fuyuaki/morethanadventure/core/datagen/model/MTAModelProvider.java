@@ -85,7 +85,7 @@ public class MTAModelProvider implements DataProvider,IModelProviderExtension {
             Block block = p_388748_.getBlock();
             BlockStateGenerator blockstategenerator = this.generators.put(block, p_388748_);
             if (blockstategenerator != null) {
-                throw new IllegalStateException("Duplicate blockstate definition for " + block);
+                throw new IllegalStateException("Duplicate blockstate value for " + block);
             }
         }
 
@@ -106,7 +106,7 @@ public class MTAModelProvider implements DataProvider,IModelProviderExtension {
         public void register(Item p_388205_, ClientItem p_388233_) {
             ClientItem clientitem = this.itemInfos.put(p_388205_, p_388233_);
             if (clientitem != null) {
-                throw new IllegalStateException("Duplicate item model definition for " + p_388205_);
+                throw new IllegalStateException("Duplicate item model value for " + p_388205_);
             }
         }
 
@@ -149,7 +149,7 @@ public class MTAModelProvider implements DataProvider,IModelProviderExtension {
         public void accept(ResourceLocation location, ModelInstance instance) {
             Supplier<JsonElement> supplier = this.models.put(location, instance);
             if (supplier != null) {
-                throw new IllegalStateException("Duplicate model definition for " + location);
+                throw new IllegalStateException("Duplicate model value for " + location);
             }
         }
 

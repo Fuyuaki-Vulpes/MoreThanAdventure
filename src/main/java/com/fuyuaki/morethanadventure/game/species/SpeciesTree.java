@@ -26,10 +26,10 @@ public class SpeciesTree {
 
     private void remove(SpeciesHolder node) {
 
-        LOGGER.info("Forgot about species {}", node.definition());
-        this.nodes.remove(node.definition().id());
+        LOGGER.info("Forgot about species {}", node.value());
+        this.nodes.remove(node.value().id());
         if (nodes.containsValue(node)) {
-            this.nodes.remove(node.definition().id());
+            this.nodes.remove(node.value().id());
         }
     }
 
@@ -58,10 +58,10 @@ public class SpeciesTree {
     }
 
     private boolean tryInsert(SpeciesHolder speciesHolder) {
-        if (this.nodes.containsValue(speciesHolder) || this.nodes.containsKey(speciesHolder.definition().id())){
+        if (this.nodes.containsValue(speciesHolder) || this.nodes.containsKey(speciesHolder.value().id())){
             return false;
         }
-        this.nodes.put(speciesHolder.definition().id(), speciesHolder);
+        this.nodes.put(speciesHolder.value().id(), speciesHolder);
         return true;
     }
 

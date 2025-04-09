@@ -1,5 +1,7 @@
 package com.fuyuaki.morethanadventure.core.deferred_registries;
 
+import com.fuyuaki.morethanadventure.game.species.Species;
+import com.fuyuaki.morethanadventure.game.species.SpeciesHolder;
 import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
 import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
 import net.neoforged.bus.api.IEventBus;
@@ -20,13 +22,14 @@ public class MTAAttachments {
             .register("pets_to_respawn",
             () -> AttachmentType.serializable( ()  -> new RespawnablePetsAttachment(new ArrayList<>()))
                     .copyOnDeath().build()
-    );
+            );
 
     public static final DeferredHolder<AttachmentType<?>, AttachmentType<SoulCharge>> SOUL_CHARGE = ATTACHMENTS
             .register("soul_charge",
                     () -> AttachmentType.serializable(() -> new SoulCharge(200)).copyOnDeath().build()
 
             );
+
 
 
     public static void register(IEventBus eventBus){

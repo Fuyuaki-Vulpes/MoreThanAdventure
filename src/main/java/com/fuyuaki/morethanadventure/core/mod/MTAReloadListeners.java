@@ -6,5 +6,4 @@ import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class MTAReloadListeners {
     public static final ResourceLocation SPECIES_LISTENER_LOCATION = ResourceLocation.fromNamespaceAndPath(MODID,"species/species");
-    public static final ResourceLocation TRAITS_LISTENER_LOCATION = ResourceLocation.fromNamespaceAndPath(MODID,"species/traits");
 }

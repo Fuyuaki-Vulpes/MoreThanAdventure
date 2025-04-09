@@ -5,7 +5,6 @@ import com.fuyuaki.morethanadventure.core.deferred_registries.MTAMenuTypes;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaEntityTypes;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.game.species.Species;
-import com.fuyuaki.morethanadventure.game.species.trait.Trait;
 import com.fuyuaki.morethanadventure.world.entity.*;
 import com.fuyuaki.morethanadventure.world.inventory.screens.StoveScreen;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -298,12 +297,11 @@ public class MTAModEvents {
 
     @SubscribeEvent
     private static void registryInit(NewRegistryEvent event) {
-        event.register(MTARegistries.Registries.TRAIT_TYPE);
+        event.register(MTARegistries.Registries.TRAITS);
     }
 
     @SubscribeEvent
     private static void dataRegistryInit(DataPackRegistryEvent.NewRegistry event) {
-        event.dataPackRegistry(MTARegistries.Keys.TRAITS, Trait.CODEC);
 
         event.dataPackRegistry(MTARegistries.Keys.SPECIES, Species.CODEC);
 
