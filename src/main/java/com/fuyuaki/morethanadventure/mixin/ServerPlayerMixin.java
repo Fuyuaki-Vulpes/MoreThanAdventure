@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 
+import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
 import com.google.common.collect.ImmutableList;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.core.BlockPos;
@@ -39,6 +40,7 @@ public abstract class ServerPlayerMixin extends Player {
 
     @Inject(method = "restoreFrom(Lnet/minecraft/server/level/ServerPlayer;Z)V", at = @At("HEAD"))
     private void restoreFromHead(ServerPlayer that, boolean keepEverything, CallbackInfo ci) {
+        SpeciesAttachment.sync(that,this);
         Inventory thatInventory = that.getInventory();
         if (!(keepEverything && this.serverLevel().getGameRules().getBoolean(GameRules.RULE_KEEPINVENTORY) || that.isSpectator())) {
             for (List<ItemStack> list : ImmutableList.of(thatInventory.items, thatInventory.armor, thatInventory.offhand)) {

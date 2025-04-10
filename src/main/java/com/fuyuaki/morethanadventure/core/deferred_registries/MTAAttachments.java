@@ -32,7 +32,7 @@ public class MTAAttachments {
             );
     public static final DeferredHolder<AttachmentType<?>, AttachmentType<SpeciesAttachment>> SPECIES = ATTACHMENTS
             .register("species",
-                    () -> AttachmentType.serializable(SpeciesAttachment::new).copyOnDeath().build()
+                    () -> AttachmentType.serializable(() -> new SpeciesAttachment()).copyOnDeath().build()
 
             );
 

@@ -17,7 +17,14 @@ public class MTAAttributes {
             () -> new RangedAttribute("mta.soul_gathering",
                     1.0D, 1.0D, 10.0)
                     .setSyncable(true)
-                    .setSentiment(Attribute.Sentiment.POSITIVE));
+                    .setSentiment(Attribute.Sentiment.NEUTRAL));
+
+
+    public static final Holder<Attribute> MAGIC_STORAGE_SCALE = ATTRIBUTES.register("magic_storage",
+            () -> new RangedAttribute("mta.magic_storage",
+                    1.0D, 0.1D, 100.0)
+                    .setSyncable(true)
+                    .setSentiment(Attribute.Sentiment.NEUTRAL));
 
 
     public static void register(IEventBus eventBus){

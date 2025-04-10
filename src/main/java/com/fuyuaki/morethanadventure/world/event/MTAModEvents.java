@@ -102,6 +102,7 @@ public class MTAModEvents {
 
 
         event.add(EntityType.PLAYER, MTAAttributes.SOUL_GATHERING, 1.0F);
+        event.add(EntityType.PLAYER, MTAAttributes.MAGIC_STORAGE_SCALE, 1.0F);
     }
 
 
@@ -298,7 +299,6 @@ public class MTAModEvents {
     @SubscribeEvent
     private static void registryInit(NewRegistryEvent event) {
         event.register(MTARegistries.Registries.TRAITS);
-        event.register(MTARegistries.Registries.SPECIES);
     }
 
     @SubscribeEvent

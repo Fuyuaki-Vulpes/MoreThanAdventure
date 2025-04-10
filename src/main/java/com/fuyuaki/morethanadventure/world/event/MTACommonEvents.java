@@ -105,4 +105,5 @@ public class MTACommonEvents {
     public static void registerCommands(RegisterCommandsEvent event) {
         SpeciesCommands.register(event.getDispatcher());
     }
+
 }

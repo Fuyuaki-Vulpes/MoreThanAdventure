@@ -33,7 +33,7 @@ public class SoulCharge implements INBTSerializable<CompoundTag> {
 
     public SoulCharge(int c) {
         this.maxCharge = c;
-        lowMaxLimit = c;
+        lowMaxLimit = (int) (c * 0.1);
     }
 
 
@@ -96,6 +96,10 @@ public class SoulCharge implements INBTSerializable<CompoundTag> {
         this.incomingCharge += toAdd ;
         ticks = 0;
 
+    }
+
+    public void clampCharge(float limit, Player player){
+        this.charge = Math.min(limit,this.charge);
     }
 
     public void setMaxCharge(int maxCharge) {

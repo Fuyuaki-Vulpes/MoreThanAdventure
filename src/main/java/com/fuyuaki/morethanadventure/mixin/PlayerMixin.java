@@ -1,8 +1,10 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
+import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
 import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
+import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
 import com.fuyuaki.morethanadventure.world.item.weaponry.WeaponItem;
 import net.minecraft.core.component.DataComponentType;
@@ -55,6 +57,9 @@ public abstract class PlayerMixin extends LivingEntity{
     @Shadow public abstract void resetAttackStrengthTicker();
 
     @Shadow @Final private Inventory inventory;
+
+    @Shadow public abstract void tick();
+
     @Unique
     private final Player thisPlayer = (Player)(Object)this;
 
@@ -80,11 +85,17 @@ public abstract class PlayerMixin extends LivingEntity{
             this.setData(MTAAttachments.PETS_TO_RESPAWN, attachment);
         }
         if (!this.level().isClientSide()) {
+            if (thisPlayer.hasData(MTAAttachments.SPECIES.get())) {
+                SpeciesAttachment speciesAttachment = thisPlayer.getData(MTAAttachments.SPECIES.get());
+                speciesAttachment.tick(thisPlayer);
+                thisPlayer.setData(MTAAttachments.SPECIES.get(),speciesAttachment);
+            }else{
 
+                thisPlayer.setData(MTAAttachments.SPECIES.get(), new SpeciesAttachment(Species.getAllSpeciesKeys(thisPlayer.level()).findFirst().get()));
+            }
             MTASoulHelper.playerTickSoul(thisPlayer);
 
         }
     }
-
 
 }

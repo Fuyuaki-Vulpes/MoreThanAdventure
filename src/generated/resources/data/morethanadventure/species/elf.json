@@ -1,0 +1,35 @@
+{
+  "type": [],
+  "icon": "morethanadventure:textures/gui/species/icon/elf",
+  "id": "morethanadventure:elf",
+  "key": "morethanadventure.species.description.elf",
+  "magic_affinity": 3.0,
+  "modifiers": [
+    {
+      "type": "minecraft:max_health",
+      "amount": -4.0,
+      "operation": "add_value"
+    },
+    {
+      "type": "minecraft:jump_strength",
+      "amount": 0.30000001192092896,
+      "operation": "add_value"
+    },
+    {
+      "type": "minecraft:fall_damage_multiplier",
+      "amount": -0.6000000238418579,
+      "operation": "add_multiplied_total"
+    },
+    {
+      "type": "minecraft:safe_fall_distance",
+      "amount": 6.0,
+      "operation": "add_multiplied_total"
+    },
+    {
+      "type": "minecraft:block_break_speed",
+      "amount": -0.10000000149011612,
+      "operation": "add_multiplied_total"
+    }
+  ],
+  "player_scale": 1.0
+}

@@ -1,0 +1,15 @@
+{
+  "type": [],
+  "icon": "morethanadventure:textures/gui/species/icon/giant",
+  "id": "morethanadventure:giant",
+  "key": "morethanadventure.species.description.giant",
+  "magic_affinity": 0.5,
+  "modifiers": [
+    {
+      "type": "minecraft:max_health",
+      "amount": 24.0,
+      "operation": "add_value"
+    }
+  ],
+  "player_scale": 2.0
+}

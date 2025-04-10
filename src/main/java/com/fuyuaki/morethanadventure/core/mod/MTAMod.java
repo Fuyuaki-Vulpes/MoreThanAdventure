@@ -148,9 +148,10 @@ public class MTAMod
         );
     }
 
-    public static void saveResourceKey(String name,ResourceKey<?> key, CompoundTag tag){
+    public static CompoundTag saveResourceKey(String name,ResourceKey<?> key, CompoundTag tag){
         tag.putString(name + "_namespace",key.location().getNamespace());
         tag.putString(name + "_path",key.location().getPath());
+        return tag;
     }
 
 

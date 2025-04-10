@@ -25,9 +25,6 @@ public class MTARegistries {
                 .defaultKey(ResourceLocation.withDefaultNamespace("trait"))
                 .create();
 
-        public static final Registry<Species> SPECIES = new RegistryBuilder<>(Keys.SPECIES)
-                .defaultKey(ResourceLocation.withDefaultNamespace("species"))
-                .create();
 
 
     }

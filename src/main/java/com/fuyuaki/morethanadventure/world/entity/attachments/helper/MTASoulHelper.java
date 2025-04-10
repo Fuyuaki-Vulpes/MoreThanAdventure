@@ -35,6 +35,8 @@ public class MTASoulHelper {
         player.setData(MTAAttachments.SOUL_CHARGE.get(), attachment);
         sync(player);
     }
+
+
     public static boolean playerDrainSoul(float count, Player player){
         SoulCharge attachment = getPlayerSoulCharge(player);
         if (!attachment.drainCharge(count)) return false;
@@ -52,6 +54,14 @@ public class MTASoulHelper {
     public static void playerRemoveMaxSoul(int count, Player player){
         SoulCharge attachment = getPlayerSoulCharge(player);
         attachment.removeFromMaxCharge(count);
+        player.setData(MTAAttachments.SOUL_CHARGE.get(), attachment);
+        sync(player);
+    }
+
+    public static void playerSetMaxSoul(int count, Player player){
+        SoulCharge attachment = getPlayerSoulCharge(player);
+        attachment.setMaxCharge(count);
+        attachment.clampCharge(count,player);
         player.setData(MTAAttachments.SOUL_CHARGE.get(), attachment);
         sync(player);
     }

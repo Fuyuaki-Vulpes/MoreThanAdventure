@@ -1,6 +1,6 @@
 {
   "type": [],
-  "icon": "morethanadventure:textures/gui/species/human",
+  "icon": "morethanadventure:textures/gui/species/icon/human",
   "id": "morethanadventure:human",
   "key": "morethanadventure.species.description.human",
   "magic_affinity": 1.0,

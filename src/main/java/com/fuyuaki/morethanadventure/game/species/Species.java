@@ -1,24 +1,27 @@
 package com.fuyuaki.morethanadventure.game.species;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.game.species.traits.Trait;
 
 
 import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.advancements.AdvancementNode;
-import net.minecraft.advancements.AdvancementTree;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -61,7 +64,6 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
             Species::new
     );
 
-    public static final ResourceLocation human = ResourceLocation.fromNamespaceAndPath(MODID,"species/human");
 
 
     @Override
@@ -92,19 +94,18 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
     }
 
     public static Species getSpeciesFromKey(ResourceKey<Species> ID, Level level){
+        return level.registryAccess().lookup(MTARegistries.Keys.SPECIES).get().getValue(ID);
+    }
+    public static Optional<Holder.Reference<Species>> getSpeciesFromKeyOptional(ResourceKey<Species> ID, Level level){
+        return level.registryAccess().lookup(MTARegistries.Keys.SPECIES).get().get(ID);
+    }
 
-        return  level.registryAccess().get(ID).get().value();
+    public static Stream<ResourceKey<Species>> getAllSpeciesKeys(Level level){
+        return level.registryAccess().lookup(MTARegistries.Keys.SPECIES).orElseThrow().listElementIds();
     }
-    public static Optional<Holder.Reference<Species>> getSpeciesFromKeyOptional(ResourceKey<Species> ID){
-        return MTARegistries.Registries.SPECIES.get(ID);
-    }
-
-    public static Stream<ResourceKey<Species>> getAllSpeciesKeys(){
-        return MTARegistries.Registries.SPECIES.listElementIds();
-    }
-    public static Stream<Species> getAllSpecies(){
-        return MTARegistries.Registries.SPECIES.listElementIds()
-                .map(Species::getSpeciesFromKey);
+    public static Stream<Species> getAllSpecies(Level level){
+        return  level.registryAccess().lookup(MTARegistries.Keys.SPECIES).orElseThrow().listElementIds()
+                .map(key -> getSpeciesFromKey(key,level));
     }
 
 
@@ -118,26 +119,106 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
         player.setData(MTAAttachments.SPECIES.get(),attachment);
     }
 
+    public Multimap<Holder<Attribute>, AttributeModifier> getScaleModifiers(){
+        ImmutableMultimap.Builder<Holder<Attribute>, AttributeModifier> map = new ImmutableMultimap.Builder<>();
+        map.put(Attributes.SCALE,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_modifier"),
+                        this.playerSize - 1.0F,
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        map.put(Attributes.BLOCK_INTERACTION_RANGE,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_reach_block"),
+                        Math.max(0.0F,this.playerSize - 1.0F),
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        map.put(Attributes.ENTITY_INTERACTION_RANGE,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_reach_entity"),
+                        Math.max(0.0F,this.playerSize - 1.0F),
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        map.put(Attributes.STEP_HEIGHT,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_step"),
+                        Math.max(0.0F,this.playerSize - 1.0F),
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        map.put(Attributes.SAFE_FALL_DISTANCE,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_fall"),
+                        Math.max(-0.5F,this.playerSize - 1.0F),
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        map.put(Attributes.JUMP_STRENGTH,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_jump"),
+                        Math.max(0.0F,this.playerSize - 1.0F),
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        map.put(Attributes.MOVEMENT_SPEED,
+                new AttributeModifier(
+                        ResourceLocation.withDefaultNamespace("species_scale_movement"),
+                        Math.clamp(this.playerSize - 1.0F,-0.4F, 1.5F),
+                        AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+        return map.build();
+    }
+    public AttributeModifier getMagicModifier(){
+        return new AttributeModifier(ResourceLocation.withDefaultNamespace("species_magic_modifier"),this.magicAffinity - 1.0F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+    }
+
+    public Multimap<Holder<Attribute>, AttributeModifier> modifierMap(){
+        ImmutableMultimap.Builder<Holder<Attribute>, AttributeModifier> map = new ImmutableMultimap.Builder<>();
+        this.modifiers.forEach(modifierType -> {
+            map.put(modifierType.attribute, modifierType.getModifier(modifierType));
+        });
+        this.getScaleModifiers().asMap().forEach((attribute,modifiers) -> {
+            modifiers.forEach(attributeModifier -> {
+                map.put(attribute, attributeModifier);
+            });
+
+        });
+         map.put(MTAAttributes.MAGIC_STORAGE_SCALE, this.getMagicModifier());
+
+        return map.build();
+
+    }
 
 
-    public record AttributeModifierType(Holder<Attribute> attribute, AttributeModifier modifier) {
+    public record AttributeModifierType(Holder<Attribute> attribute, double amount, AttributeModifier.Operation operation) {
         public static final Codec<AttributeModifierType> CODEC = RecordCodecBuilder.create(
                 p_348388_ -> p_348388_.group(
                                 Attribute.CODEC.fieldOf("type").forGetter(AttributeModifierType::attribute),
-                                AttributeModifier.MAP_CODEC.forGetter(AttributeModifierType::modifier)
-                        )
+                                Codec.DOUBLE.fieldOf("amount").forGetter(AttributeModifierType::amount),
+                                AttributeModifier.Operation.CODEC.fieldOf("operation").forGetter(AttributeModifierType::operation)                        )
                         .apply(p_348388_, AttributeModifierType::new)
         );
         public static final StreamCodec<RegistryFriendlyByteBuf, AttributeModifierType> STREAM_CODEC = StreamCodec.composite(
                 Attribute.STREAM_CODEC,
                 AttributeModifierType::attribute,
-                AttributeModifier.STREAM_CODEC,
-                AttributeModifierType::modifier,
+                ByteBufCodecs.DOUBLE,
+                AttributeModifierType::amount,
+                AttributeModifier.Operation.STREAM_CODEC,
+                AttributeModifierType::operation,
                 AttributeModifierType::new
         );
 
+
         public boolean matches(Holder<Attribute> attribute, ResourceLocation id) {
-            return attribute.equals(this.attribute) && this.modifier.is(id);
+            return attribute.equals(this.attribute) && getModifier(this.attribute,this.amount,this.operation).is(id);
+        }
+
+        private AttributeModifier getModifier(Holder<Attribute> attribute, double amount, AttributeModifier.Operation operation) {
+            return new AttributeModifier(ResourceLocation.withDefaultNamespace(attribute.getKey().location().getPath() + "_species_modifier_" + operation.getSerializedName()), amount,operation);
+        }
+        private AttributeModifier getModifier(AttributeModifierType type) {
+            Holder<Attribute> attribute = type.attribute;
+            double amount = type.amount;
+            AttributeModifier.Operation operation = type.operation;
+
+            return new AttributeModifier(ResourceLocation.withDefaultNamespace(attribute.getKey().location().getPath() + "_species_modifier_" + operation.getSerializedName()), amount,operation);
         }
     }
 
@@ -165,7 +246,7 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
             return this;
         }
         public Species.Builder withIcon(String modid, String iconName){
-            this.icon = ResourceLocation.fromNamespaceAndPath(modid,"textures/gui/species/" + iconName);
+            this.icon = ResourceLocation.fromNamespaceAndPath(modid,"textures/gui/species/icon/" + iconName);
             return this;
         }
 
