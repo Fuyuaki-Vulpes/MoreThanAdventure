@@ -2,8 +2,7 @@ package com.fuyuaki.morethanadventure.world.event;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MtaBlocks;
 import com.fuyuaki.morethanadventure.core.registry.MTALootTables;
-import com.fuyuaki.morethanadventure.core.mod.MTAReloadListeners;
-import com.fuyuaki.morethanadventure.game.species.SpeciesManager;
+import com.fuyuaki.morethanadventure.game.server.commands.SpeciesCommands;
 import com.fuyuaki.morethanadventure.world.entity.SoulOrb;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
 import net.minecraft.core.BlockPos;
@@ -27,7 +26,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -61,6 +60,10 @@ public class MTACommonEvents {
                     player.swing(event.getHand());
                 }
             }
+
+        }
+        if (!level.isClientSide()){
+            event.getEntity().level().getServer().getServerResources().managers().listeners().forEach(preparableReloadListener -> System.out.println(preparableReloadListener.getName()));
 
         }
     }
@@ -98,13 +101,8 @@ public class MTACommonEvents {
 
         }
     }
-
-
     @SubscribeEvent
-    public static void reloadListenerServerEvent(AddServerReloadListenersEvent event) {
-        event.addListener(MTAReloadListeners.SPECIES_LISTENER_LOCATION,new SpeciesManager(event.getRegistryAccess()));
-
-        System.out.println("PotatoGuys");
-        event.getServerResources().listeners().forEach(preparableReloadListener -> System.out.println(preparableReloadListener.getName()));
+    public static void registerCommands(RegisterCommandsEvent event) {
+        SpeciesCommands.register(event.getDispatcher());
     }
 }

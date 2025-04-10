@@ -10,6 +10,10 @@ import com.fuyuaki.morethanadventure.world.block.MTADispenseItemBehavior;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.Registry;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -135,6 +139,19 @@ public class MTAMod
 
     }
 
+    public static <T> ResourceKey<T> loadResourceKey(ResourceKey<? extends Registry<T>> registry,String name, CompoundTag tag){
+        return ResourceKey.create(registry,
+                ResourceLocation.fromNamespaceAndPath(
+                        tag.getString(name + "_namespace"),
+                        tag.getString(name + "_path")
+                )
+        );
+    }
+
+    public static void saveResourceKey(String name,ResourceKey<?> key, CompoundTag tag){
+        tag.putString(name + "_namespace",key.location().getNamespace());
+        tag.putString(name + "_path",key.location().getPath());
+    }
 
 
     @SubscribeEvent

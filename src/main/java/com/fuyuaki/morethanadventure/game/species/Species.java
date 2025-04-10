@@ -1,11 +1,15 @@
 package com.fuyuaki.morethanadventure.game.species;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.game.species.traits.Trait;
 
 
+import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.advancements.AdvancementNode;
+import net.minecraft.advancements.AdvancementTree;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -15,6 +19,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -84,19 +91,33 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
         return this.id.getNamespace() + ".species." + this.id.getPath();
     }
 
-    public static Species getSpeciesFromKey(ResourceKey<Species> ID, HolderLookup.Provider lookupProvider){
-        return lookupProvider.lookupOrThrow(MTARegistries.Keys.SPECIES).getOrThrow(ID).value();
+    public static Species getSpeciesFromKey(ResourceKey<Species> ID, Level level){
+
+        return  level.registryAccess().get(ID).get().value();
+    }
+    public static Optional<Holder.Reference<Species>> getSpeciesFromKeyOptional(ResourceKey<Species> ID){
+        return MTARegistries.Registries.SPECIES.get(ID);
     }
 
-    public static Stream<ResourceKey<Species>> getAllSpeciesKeys(HolderLookup.Provider provider){
-        return provider.lookupOrThrow(MTARegistries.Keys.SPECIES).listElementIds();
+    public static Stream<ResourceKey<Species>> getAllSpeciesKeys(){
+        return MTARegistries.Registries.SPECIES.listElementIds();
     }
-    public static Stream<Species> getAllSpecies(HolderLookup.Provider provider){
-        return provider
-                .lookupOrThrow(MTARegistries.Keys.SPECIES)
-                .listElementIds()
-                .map(speciesResourceKey -> Species.getSpeciesFromKey(speciesResourceKey,provider));
+    public static Stream<Species> getAllSpecies(){
+        return MTARegistries.Registries.SPECIES.listElementIds()
+                .map(Species::getSpeciesFromKey);
     }
+
+
+
+
+    public static @Nullable SpeciesAttachment get(Player player){
+        return player.hasData(MTAAttachments.SPECIES.get()) ? player.getData(MTAAttachments.SPECIES.get()) : null;
+    }
+
+    public static void set(Player player, SpeciesAttachment attachment){
+        player.setData(MTAAttachments.SPECIES.get(),attachment);
+    }
+
 
 
     public record AttributeModifierType(Holder<Attribute> attribute, AttributeModifier modifier) {

@@ -2,6 +2,8 @@
   "type": [],
   "icon": "morethanadventure:textures/gui/species/human",
   "id": "morethanadventure:human",
+  "key": "morethanadventure.species.description.human",
+  "magic_affinity": 1.0,
   "modifiers": [],
   "player_scale": 1.0
 }

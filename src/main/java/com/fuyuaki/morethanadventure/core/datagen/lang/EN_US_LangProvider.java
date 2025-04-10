@@ -1123,6 +1123,33 @@ public class EN_US_LangProvider extends LanguageProvider {
     }
 
 
+    private void commands() {
+        //%1$s
+        //%2$s
+        //%3$s
+
+
+        add("mta.commands.species.error.level_too_high", "Level of player %1$s is too high to increase it by %3$s. Would become: %2$s, Max: 5");
+        add("mta.commands.species.error.data", "Could not find Species data for %1$s");
+
+        add("mta.commands.species.set.species", "Changed Species of %1$s to %2$s");
+        add("mta.commands.species.set.level", "Changed Level of %1$s to %2$s");
+
+        add("mta.commands.species.add.level", "Added %2$s to %1$s's Levels");
+        add("mta.commands.species.add.experience", "Added %2$s to %1$s's Experience");
+
+        add("mta.commands.species.get.species", "%1$s is of species %2$s");
+        add("mta.commands.species.get.level", "%1$s is at level %2$s");
+        add("mta.commands.species.get.experience", "%1$s has a total of %2$s experience");
+
+        //add("", "");
+
+
+
+
+    }
+
+
     private String getTalismanDescriptionID(DeferredItem<? extends Item> item){
         return "mta.talisman.description." + BuiltInRegistries.ITEM.getKey(item.get()).getPath();
     }

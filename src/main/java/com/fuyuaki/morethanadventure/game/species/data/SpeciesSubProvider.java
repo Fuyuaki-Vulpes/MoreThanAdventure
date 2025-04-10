@@ -10,8 +10,4 @@ import java.util.function.Consumer;
 
 public interface SpeciesSubProvider {
     void generate(HolderLookup.Provider registries, Consumer<SpeciesHolder> writer);
-
-    static AdvancementHolder createPlaceholder(String location) {
-        return Advancement.Builder.advancement().build(ResourceLocation.parse(location));
-    }
 }
