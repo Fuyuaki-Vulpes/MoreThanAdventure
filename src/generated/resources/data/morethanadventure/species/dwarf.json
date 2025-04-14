@@ -1,15 +1,12 @@
 {
-  "type": [],
+  "type": [
+    "morethanadventure:flame_trait"
+  ],
   "icon": "morethanadventure:textures/gui/species/icon/dwarf",
   "id": "morethanadventure:dwarf",
   "key": "morethanadventure.species.description.dwarf",
   "magic_affinity": 1.2,
   "modifiers": [
-    {
-      "type": "minecraft:max_health",
-      "amount": 24.0,
-      "operation": "add_value"
-    },
     {
       "type": "minecraft:block_break_speed",
       "amount": 0.20000000298023224,

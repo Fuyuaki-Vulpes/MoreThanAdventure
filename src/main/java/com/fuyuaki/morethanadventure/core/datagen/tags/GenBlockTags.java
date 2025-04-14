@@ -805,20 +805,18 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 .addTag(BlockTags.NETHER_CARVER_REPLACEABLES
                 );
 
-        this.tag(BlockTags.FLOWERS).add(
-                MtaBlocks.PITCHER_PLANT.get(),
-                MtaBlocks.CORPSE_FLOWER.get()
-        );
+//        this.tag(BlockTags.FLOWERS).add(
+//                MtaBlocks.PITCHER_PLANT.get(),
+//                MtaBlocks.CORPSE_FLOWER.get()
+//        );
         this.tag(BlockTags.SNOW).add(
                 MtaBlocks.POLAR_SAND.get(),
                 MtaBlocks.GRASSY_SAND.get()
         );
 
-        this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
-                MtaBlocks.CATTAIL.get(),
-                MtaBlocks.CORPSE_FLOWER.get(),
-                MtaBlocks.PITCHER_PLANT.get()
-        );
+//        this.tag(BlockTags.REPLACEABLE_BY_TREES).add(
+//
+//        );
 
 
         this.tag(MtaTags.Blocks.FLOWER_PLACEABLE)

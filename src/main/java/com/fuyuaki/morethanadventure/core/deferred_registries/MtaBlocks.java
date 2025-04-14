@@ -911,18 +911,6 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
     public static final DeferredBlock<Block> CATTAIL = registerBlock("cattail",
              WaterloggableDoublePlant::new, plantProperties());
 
-    public static final DeferredBlock<Block> CORPSE_FLOWER = registerBlock("corpse_flower",
-             properties -> new FlowerBlock(MobEffects.POISON,5.0F,properties), plantProperties());
-
-    public static final DeferredBlock<Block> PITCHER_PLANT = registerBlock("pitcher_plant",
-            properties -> new FlowerBlock(MtaEffects.VENOM,5.0F,properties), plantProperties());
-
-    public static final DeferredBlock<Block> POTTED_PITCHER_PLANT = registerBlock("potted_pitcher_plant",(properties) ->
-            new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), PITCHER_PLANT,properties),flowerPotProperties());
-
-    public static final DeferredBlock<Block> VENUS_FLYTRAP = registerBlock("venus_flytrap",
-             Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK));
-
     public static final DeferredBlock<Block> PRICKLY_PEAR = registerBlock("prickly_pear",
              CactusShrubBlock::new,
             BlockBehaviour.Properties.of()

@@ -3,11 +3,10 @@ package com.fuyuaki.morethanadventure.game.species;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
-import com.fuyuaki.morethanadventure.game.species.traits.Trait;
+import com.fuyuaki.morethanadventure.game.species.traits.core.Trait;
 
 
 import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.mojang.serialization.Codec;
@@ -18,7 +17,6 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -148,19 +146,19 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
         map.put(Attributes.SAFE_FALL_DISTANCE,
                 new AttributeModifier(
                         ResourceLocation.withDefaultNamespace("species_scale_fall"),
-                        Math.max(-0.5F,this.playerSize - 1.0F),
+                        Math.max(-0.1F,this.playerSize - 1.0F),
                         AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
         map.put(Attributes.JUMP_STRENGTH,
                 new AttributeModifier(
                         ResourceLocation.withDefaultNamespace("species_scale_jump"),
-                        Math.max(0.0F,this.playerSize - 1.0F),
+                        Math.max(0.0F,this.playerSize - 1.0F) / 3.0F,
                         AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
         map.put(Attributes.MOVEMENT_SPEED,
                 new AttributeModifier(
                         ResourceLocation.withDefaultNamespace("species_scale_movement"),
-                        Math.clamp(this.playerSize - 1.0F,-0.4F, 1.5F),
+                        Math.clamp(this.playerSize - 1.0F,-0.6F, 1.5F) / 2.0F,
                         AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
         return map.build();

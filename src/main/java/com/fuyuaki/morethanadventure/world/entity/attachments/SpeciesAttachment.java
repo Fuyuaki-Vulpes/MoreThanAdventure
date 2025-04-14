@@ -6,8 +6,8 @@ import com.fuyuaki.morethanadventure.core.mod.MTAMod;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.core.registry.MTASpecies;
 import com.fuyuaki.morethanadventure.game.species.Species;
-import com.fuyuaki.morethanadventure.game.species.traits.AbilityTrait;
-import com.fuyuaki.morethanadventure.game.species.traits.TickingTrait;
+import com.fuyuaki.morethanadventure.game.species.traits.core.AbilityTrait;
+import com.fuyuaki.morethanadventure.game.species.traits.core.TraitListener;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.AbilityTraitCooldown;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
 import com.google.common.collect.Multimap;
@@ -15,19 +15,14 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import net.neoforged.neoforge.common.util.INBTSerializable;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.UnknownNullability;
 
 import java.util.*;
-
-import static com.fuyuaki.morethanadventure.core.mod.MTAMod.MODID;
 
 public class SpeciesAttachment implements INBTSerializable<CompoundTag> {
 
@@ -123,12 +118,9 @@ public class SpeciesAttachment implements INBTSerializable<CompoundTag> {
     public void tick(Player player){
         this.updatePlayer(player);
 
-        Species species = Species.getSpeciesFromKey(speciesKey, player.level());
-        species.traits().forEach(trait -> {
-            if (trait instanceof TickingTrait tickingTrait && tickingTrait.shouldTick(player)){
-                tickingTrait.tick();
-            }
-        });
+
+        TraitListener.runTraitTicks(player);
+
         List<AbilityTraitCooldown> cooldownList = new ArrayList<>();
         this.cooldowns.forEach(cooldown -> {
             if (cooldown.time() -1 > 0){

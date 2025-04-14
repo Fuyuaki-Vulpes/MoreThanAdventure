@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.datagen.species;
 
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTATraits;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.game.species.SpeciesHolder;
@@ -52,7 +53,6 @@ public class GenSpecies extends SpeciesProvider {
                     .magicAffinity(1.2F)
                     .setSize(0.4F)
                     .addModifier(
-                            new Species.AttributeModifierType(Attributes.MAX_HEALTH,24.0F, AttributeModifier.Operation.ADD_VALUE),
                             new Species.AttributeModifierType(Attributes.BLOCK_BREAK_SPEED,0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
                     )
                     .save(

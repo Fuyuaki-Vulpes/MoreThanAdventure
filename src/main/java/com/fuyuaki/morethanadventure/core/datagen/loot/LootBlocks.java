@@ -49,9 +49,9 @@ public class LootBlocks extends BlockLootSubProvider {
 
         add(MtaBlocks.SCATTERED_LEAVES.get(), this.createPetalsDrops(MtaBlocks.SCATTERED_LEAVES.get()));
         add(MtaBlocks.CATTAIL.get(), block ->   this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
-        dropSelf(MtaBlocks.CORPSE_FLOWER.get());
-        dropSelf(MtaBlocks.PITCHER_PLANT.get());
-        this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
+//        dropSelf(MtaBlocks.CORPSE_FLOWER.get());
+//        dropSelf(MtaBlocks.PITCHER_PLANT.get());
+//        this.add(MtaBlocks.POTTED_PITCHER_PLANT.get(), createPotFlowerItemTable(MtaBlocks.PITCHER_PLANT));
         this.add(MtaBlocks.PRICKLY_PEAR.get(), block -> LootTable.lootTable()
                 .withPool(
                         this.applyExplosionCondition(
@@ -71,7 +71,7 @@ public class LootBlocks extends BlockLootSubProvider {
         );
 
         this.add(MtaBlocks.POTTED_PRICKLY_PEAR.get(), createPotFlowerItemTable(MtaBlocks.PRICKLY_PEAR));
-        dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
+//        dropSelf(MtaBlocks.VENUS_FLYTRAP.get());
         dropSelf(MtaBlocks.STOVE.get());
 
         dropSelf(MtaBlocks.DEATH_CAP.get());

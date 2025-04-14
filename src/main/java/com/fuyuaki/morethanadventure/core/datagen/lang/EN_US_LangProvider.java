@@ -243,10 +243,10 @@ public class EN_US_LangProvider extends LanguageProvider {
 
         add(MtaBlocks.SCATTERED_LEAVES.get(),"Scattered Leaves");
         add(MtaBlocks.CATTAIL.get(),"Cattail");
-        add(MtaBlocks.CORPSE_FLOWER.get(),"Corpse Lily");
-        add(MtaBlocks.PITCHER_PLANT.get(),"Pitcher Plant");
-        add(MtaBlocks.POTTED_PITCHER_PLANT.get(),"Potted Pitcher Plant");
-        add(MtaBlocks.VENUS_FLYTRAP.get(),"Venus Flytrap");
+//        add(MtaBlocks.CORPSE_FLOWER.get(),"Corpse Lily");
+//        add(MtaBlocks.PITCHER_PLANT.get(),"Pitcher Plant");
+//        add(MtaBlocks.POTTED_PITCHER_PLANT.get(),"Potted Pitcher Plant");
+//        add(MtaBlocks.VENUS_FLYTRAP.get(),"Venus Flytrap");
 
         add(MtaBlocks.TERRACOTTA_TILES.get(),"Terracotta Tiles");
         add(MtaBlocks.TERRACOTTA_SLAB.get(),"Terracotta Slab");

@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.game.species.traits;
+package com.fuyuaki.morethanadventure.game.species.traits.core;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTATraits;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
@@ -10,7 +10,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.entity.player.Player;
-import org.openjdk.nashorn.internal.ir.annotations.Ignore;
 
 public class Trait {
     public static final Codec<Trait> CODEC = MTARegistries.Registries.TRAITS.byNameCodec();

@@ -1,6 +1,7 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
+import com.fuyuaki.morethanadventure.core.registry.MTASpecies;
 import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
 import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
@@ -91,7 +92,7 @@ public abstract class PlayerMixin extends LivingEntity{
                 thisPlayer.setData(MTAAttachments.SPECIES.get(),speciesAttachment);
             }else{
 
-                thisPlayer.setData(MTAAttachments.SPECIES.get(), new SpeciesAttachment(Species.getAllSpeciesKeys(thisPlayer.level()).findFirst().get()));
+                thisPlayer.setData(MTAAttachments.SPECIES.get(), new SpeciesAttachment(MTASpecies.HUMAN));
             }
             MTASoulHelper.playerTickSoul(thisPlayer);
 

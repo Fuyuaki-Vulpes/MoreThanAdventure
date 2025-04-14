@@ -1,7 +1,7 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
 import com.fuyuaki.morethanadventure.game.species.Species;
-import com.fuyuaki.morethanadventure.game.species.traits.Trait;
+import com.fuyuaki.morethanadventure.game.species.traits.core.Trait;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

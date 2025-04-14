@@ -1,4 +1,4 @@
-package com.fuyuaki.morethanadventure.game.species.traits;
+package com.fuyuaki.morethanadventure.game.species.traits.core;
 
 import net.minecraft.network.chat.Component;
 
