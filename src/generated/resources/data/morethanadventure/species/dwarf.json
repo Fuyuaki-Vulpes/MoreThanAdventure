@@ -1,7 +1,5 @@
 {
-  "type": [
-    "morethanadventure:flame_trait"
-  ],
+  "type": [],
   "icon": "morethanadventure:textures/gui/species/icon/dwarf",
   "id": "morethanadventure:dwarf",
   "key": "morethanadventure.species.description.dwarf",
