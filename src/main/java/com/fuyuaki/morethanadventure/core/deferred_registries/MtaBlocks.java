@@ -722,6 +722,20 @@ public static final DeferredBlock<Block> MAPLE_LOG = registerBlock("maple_log", 
     public static final DeferredBlock<Block> DEEPSLATE_MOONSTONE_ORE = oreBlock("deepslate_moonstone_ore",
             2,16,deepslateOreProperties());
 
+
+
+    public static final DeferredBlock<Block> WISESTONE = oreBlock("wisestone",
+            16, 128,stoneOreProperties().noLootTable());
+
+
+    public static final DeferredBlock<Block> END_WISESTONE = oreBlock("end_wisestone",
+            16, 128,deepslateOreProperties().noLootTable());
+
+    public static final DeferredBlock<Block> DEEPSLATE_WISESTONE = oreBlock("deepslate_wisestone",
+            16,128,deepslateOreProperties().noLootTable());
+
+
+
     //Terracotta
 
     public static final DeferredBlock<Block> TERRACOTTA_SLAB = registerSlab("terracotta_slab", Blocks.TERRACOTTA);

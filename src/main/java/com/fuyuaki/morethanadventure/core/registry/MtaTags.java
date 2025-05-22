@@ -1,5 +1,6 @@
 package com.fuyuaki.morethanadventure.core.registry;
 
+import com.fuyuaki.morethanadventure.game.species.Species;
 import io.wispforest.accessories.Accessories;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -179,6 +180,8 @@ public class MtaTags {
         }
     }
 
+
+
     public static class Biomes {
         public static final TagKey<Biome> OVERWORLD_GEYSERS = tag("overworld_geysers");
         public static final TagKey<Biome> NETHER_GEYSERS = tag("nether_geysers");
@@ -239,6 +242,7 @@ public class MtaTags {
         public static final TagKey<Biome> GRASSY_DIRT_SHOULD_GENERATE = tag("grassy_dirt_should_generate");
 
         public static final TagKey<Biome> HAS_CATTAIL = tag("has_cattail");
+        public static final TagKey<Biome> WISESTONE = tag("wisestone_is_common_in");
 
 
         private static TagKey<Biome> tag(String name) {

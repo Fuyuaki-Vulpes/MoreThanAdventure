@@ -3,8 +3,8 @@ package com.fuyuaki.morethanadventure.world.entity.attachments;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
 import com.fuyuaki.morethanadventure.core.mod.MTAMod;
+import com.fuyuaki.morethanadventure.core.mod.MTAUtils;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
-import com.fuyuaki.morethanadventure.core.registry.MTASpecies;
 import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.game.species.traits.core.AbilityTrait;
 import com.fuyuaki.morethanadventure.game.species.traits.core.TraitListener;
@@ -42,7 +42,7 @@ public class SpeciesAttachment implements INBTSerializable<CompoundTag> {
 
 
     public SpeciesAttachment(){
-        this.speciesKey = MTASpecies.HUMAN;
+        this.speciesKey = MTAUtils.HUMAN_SPECIES;
         this.speciesO = Optional.of(this.speciesKey);
         this.cooldowns = new ArrayList<>();
     }
@@ -93,7 +93,7 @@ public class SpeciesAttachment implements INBTSerializable<CompoundTag> {
 
             modifiers.stream()
                     .filter(modifier -> !instance.hasModifier(modifier.id()))
-                    .forEach(instance::addTransientModifier);
+                    .forEach(instance::addPermanentModifier);
         });
     }
 

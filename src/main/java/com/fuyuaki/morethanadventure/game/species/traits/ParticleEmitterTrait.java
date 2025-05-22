@@ -13,8 +13,8 @@ public class ParticleEmitterTrait extends TickingTrait {
     private final Vec3 offsetMax;
     private final Vec3 offsetMin;
 
-    public ParticleEmitterTrait(ParticleOptions particleOptions, Vec3 offsetMin,Vec3 offsetMax, Component description, boolean hidden) {
-        super(1, description, hidden);
+    public ParticleEmitterTrait(ParticleOptions particleOptions, Vec3 offsetMin,Vec3 offsetMax,boolean hidden) {
+        super(1, hidden);
         this.particle = particleOptions;
         this.offsetMin = offsetMin;
         this.offsetMax = offsetMax;

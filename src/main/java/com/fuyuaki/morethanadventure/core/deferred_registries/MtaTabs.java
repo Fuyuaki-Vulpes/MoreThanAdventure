@@ -96,6 +96,9 @@ public class MtaTabs {
                 output.accept(MtaBlocks.DEEPSLATE_GARNET_ORE.get());
                 output.accept(MtaBlocks.MOONSTONE_ORE.get());
                 output.accept(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get());
+                output.accept(MtaBlocks.WISESTONE.get());
+                output.accept(MtaBlocks.DEEPSLATE_WISESTONE.get());
+                output.accept(MtaBlocks.END_WISESTONE.get());
 
 
                 output.accept(MtaBlocks.GRASSY_DIRT.get());

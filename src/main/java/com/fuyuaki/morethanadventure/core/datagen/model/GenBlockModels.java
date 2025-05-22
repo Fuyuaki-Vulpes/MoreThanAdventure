@@ -156,6 +156,9 @@ public class GenBlockModels extends BlockModelGenerators {
         this.createTrivialCube(MtaBlocks.DEEPSLATE_GARNET_ORE.get());
         this.createTrivialCube(MtaBlocks.MOONSTONE_ORE.get());
         this.createTrivialCube(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get());
+        this.createTrivialCube(MtaBlocks.WISESTONE.get());
+        this.createTrivialCube(MtaBlocks.DEEPSLATE_WISESTONE.get());
+        this.createTrivialCube(MtaBlocks.END_WISESTONE.get());
         this.createTrivialCube(MtaBlocks.COBBLED_DIRT.get());
 
         this.registerSimpleItemModel(MtaBlocks.COARSE_DIRT_PATH.asItem(),ModelLocationUtils.getModelLocation(MtaBlocks.COARSE_DIRT_PATH.get()));

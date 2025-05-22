@@ -51,6 +51,9 @@ public class MtaBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<BiomeModifier> ADD_GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<BiomeModifier> ADD_MOONSTONE_ORE = registerKey("moonstone_ore");
+    public static final ResourceKey<BiomeModifier> ADD_WISESTONE = registerKey("wisestone");
+    public static final ResourceKey<BiomeModifier> ADD_WISESTONE_END = registerKey("wisestone_end");
+    public static final ResourceKey<BiomeModifier> ADD_WISESTONE_COMMON = registerKey("wisestone_common");
     public static final ResourceKey<BiomeModifier> ADD_GRASSY_DIRT_PATCHES = registerKey("grassy_dirt_patches");
     public static final ResourceKey<BiomeModifier> ADD_SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<BiomeModifier> ADD_SHALLOW_GRASS = registerKey("shallow_grass");
@@ -261,6 +264,21 @@ public class MtaBiomeModifiers {
         context.register(ADD_MOONSTONE_ORE,new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(MtaTags.Biomes.MOONSTONE),
                 HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.MOONSTONE_ORE)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_WISESTONE,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.WISESTONE)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_WISESTONE_END,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(Tags.Biomes.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.WISESTONE_END)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+        context.register(ADD_WISESTONE_COMMON,new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(MtaTags.Biomes.WISESTONE),
+                HolderSet.direct(placedFeatures.getOrThrow(MtaPlacedFeatures.WISESTONE_COMMON)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 

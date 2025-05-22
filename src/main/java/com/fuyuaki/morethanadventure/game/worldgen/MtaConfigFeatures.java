@@ -70,6 +70,7 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> SPRUCE_BUSH = registerKey("spruce_bush");
     public static final ResourceKey<ConfiguredFeature<?,?>> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<ConfiguredFeature<?,?>> FREQUENT_CLAY = registerKey("frequent_clay");
+    public static final ResourceKey<ConfiguredFeature<?,?>> CALCITE_BLOBS = registerKey("calcite_blob");
     public static final ResourceKey<ConfiguredFeature<?,?>> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<ConfiguredFeature<?,?>> DIAMOND_CLUSTER = registerKey("diamond_cluster");
     public static final ResourceKey<ConfiguredFeature<?,?>> DEBRIS_CLUSTER = registerKey("debris_cluster");
@@ -95,6 +96,9 @@ public class MtaConfigFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<ConfiguredFeature<?,?>> MOONSTONE_ORE = registerKey("moonstone_ore");
+    public static final ResourceKey<ConfiguredFeature<?,?>> WISESTONE = registerKey("wisestone");
+    public static final ResourceKey<ConfiguredFeature<?,?>> WISESTONE_COMMON = registerKey("wisestone_common");
+    public static final ResourceKey<ConfiguredFeature<?,?>> WISESTONE_END = registerKey("wisestone_end");
     public static final ResourceKey<ConfiguredFeature<?,?>> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
     public static final ResourceKey<ConfiguredFeature<?,?>> SCATTERED_LEAVES = registerKey("scattered_leaves");
     public static final ResourceKey<ConfiguredFeature<?,?>> PATCH_TUNDRA_GRASS = registerKey("patch_tundra_grass");
@@ -135,6 +139,7 @@ public class MtaConfigFeatures {
 
         RuleTest clusterOresOverworld = new TagMatchTest(MtaTags.Blocks.ORE_CLUSTER_REPLACEABLE);
         RuleTest clusterOresNether = new TagMatchTest(MtaTags.Blocks.NETHER_CLUSTER_CLUSTER_REPLACEABLE);
+        RuleTest baseStones = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
         RuleTest oresStone = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest oresDeepslate = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest oresNetherrack = new TagMatchTest(Tags.Blocks.NETHERRACKS);
@@ -348,6 +353,13 @@ public class MtaConfigFeatures {
                         RuleBasedBlockStateProvider.simple(Blocks.CLAY), BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.CLAY)), UniformInt.of(4, 8), 2
                 )
         );
+        register(
+                context,
+                CALCITE_BLOBS,
+                Feature.ORE, new OreConfiguration(baseStones, Blocks.CALCITE.defaultBlockState(), 48)
+        )
+        ;
+
 
         register(
                 context,
@@ -554,6 +566,32 @@ public class MtaConfigFeatures {
                 Feature.ORE,
                 new OreConfiguration(blockTest(oresStone, MtaBlocks.MOONSTONE_ORE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()),
                         6,
+                        0.2F
+                )
+        );
+
+        register(context,
+                WISESTONE,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.WISESTONE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_WISESTONE.get()),
+                        4,
+                        0.4F
+                )
+        );
+
+        register(context,
+                WISESTONE_COMMON,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresStone, MtaBlocks.WISESTONE.get(), oresDeepslate, MtaBlocks.DEEPSLATE_WISESTONE.get()),
+                        5,
+                        0.2F
+                )
+        );
+        register(context,
+                WISESTONE_END,
+                Feature.ORE,
+                new OreConfiguration(blockTest(oresEndstone, MtaBlocks.END_WISESTONE.get()),
+                        4,
                         0.2F
                 )
         );

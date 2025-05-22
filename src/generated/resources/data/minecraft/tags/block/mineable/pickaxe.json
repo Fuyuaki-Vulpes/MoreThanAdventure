@@ -223,6 +223,9 @@
     "morethanadventure:garnet_ore",
     "morethanadventure:deepslate_garnet_ore",
     "morethanadventure:moonstone_ore",
-    "morethanadventure:deepslate_moonstone_ore"
+    "morethanadventure:deepslate_moonstone_ore",
+    "morethanadventure:wisestone",
+    "morethanadventure:end_wisestone",
+    "morethanadventure:deepslate_wisestone"
   ]
 }

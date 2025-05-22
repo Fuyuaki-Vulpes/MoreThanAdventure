@@ -477,6 +477,9 @@ public class EN_US_LangProvider extends LanguageProvider {
         add(MtaBlocks.DEEPSLATE_GARNET_ORE.get(),"Deepslate Garnet Ore");
         add(MtaBlocks.MOONSTONE_ORE.get(),"Moonstone Ore");
         add(MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get(),"Deepslate Moonstone Ore");
+        add(MtaBlocks.WISESTONE.get(),"Wisestone");
+        add(MtaBlocks.END_WISESTONE.get(),"End Wisestone");
+        add(MtaBlocks.DEEPSLATE_WISESTONE.get(),"Deepslate Wisestone");
 
         //CROPS
         add(MtaBlocks.ONION_CROP.get(), "Onion Crop");

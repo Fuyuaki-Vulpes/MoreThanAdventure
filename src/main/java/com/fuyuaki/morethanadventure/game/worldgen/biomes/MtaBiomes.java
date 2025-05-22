@@ -669,7 +669,6 @@ private static Biome caatinga(HolderGetter<PlacedFeature> placedFeatures, Holder
 
 
         BiomeDefaultFeatures.caveSpawns(spawnBuilder);
-        int i = 95;
         BiomeDefaultFeatures.monsters(spawnBuilder, 40, 6, 40, false);
 
         spawnBuilder.addSpawn(MobCategory.MONSTER,
@@ -679,6 +678,7 @@ private static Biome caatinga(HolderGetter<PlacedFeature> placedFeatures, Holder
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(placedFeatures,worldCarvers);
 
+        biomeBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MtaPlacedFeatures.CALCITE_BLOBS);
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(biomeBuilder);

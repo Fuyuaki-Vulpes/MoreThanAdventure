@@ -380,17 +380,17 @@ public class MtaRareOverworldBiomeBuilder {
                 Biomes.DEEP_DARK
         );
 
+
         this.addUndergroundBiome(
                 mapper,
                 temperatures[2],
-                this.FULL_RANGE,
+                span(humidities[1],humidities[3]),
                 span(coastContinentalness,farInlandContinentalness),
                 span(erosions[1],erosions[4]),
                 this.FULL_RANGE,
                 0.0F,
                 MtaBiomes.CRYSTALLINE_GROTTO
-
-                );
+        );
 
     }
 

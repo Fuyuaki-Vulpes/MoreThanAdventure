@@ -48,6 +48,7 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PALM_TREE_RARE = registerKey("palm_tree_rare");
     public static final ResourceKey<PlacedFeature> SEAWOOD_TREE = registerKey("seawood_tree");
     public static final ResourceKey<PlacedFeature> FREQUENT_CLAY = registerKey("frequent_clay");
+    public static final ResourceKey<PlacedFeature> CALCITE_BLOBS = registerKey("calcite_blob");
     public static final ResourceKey<PlacedFeature> DISK_MOSS = registerKey("disk_moss");
     public static final ResourceKey<PlacedFeature> DISK_MOSS_RARE = registerKey("disk_moss_rare");
     public static final ResourceKey<PlacedFeature> LUSH_VEGETATION = registerKey("lush_vegetation");
@@ -79,6 +80,9 @@ public class MtaPlacedFeatures {
     public static final ResourceKey<PlacedFeature> CRYOLITE_ORE = registerKey("cryolite_ore");
     public static final ResourceKey<PlacedFeature> GARNET_ORE = registerKey("garnet_ore");
     public static final ResourceKey<PlacedFeature> MOONSTONE_ORE = registerKey("moonstone_ore");
+    public static final ResourceKey<PlacedFeature> WISESTONE = registerKey("wisestone");
+    public static final ResourceKey<PlacedFeature> WISESTONE_COMMON = registerKey("wisestone_common");
+    public static final ResourceKey<PlacedFeature> WISESTONE_END = registerKey("wisestone_end");
     public static final ResourceKey<PlacedFeature> GRASSY_DIRT_PATCH = registerKey("grassy_dirt_patch");
     public static final ResourceKey<PlacedFeature> SCATTERED_LEAVES = registerKey("scattered_leaves");
 
@@ -262,6 +266,17 @@ public class MtaPlacedFeatures {
         );
         register(
                 context,
+                CALCITE_BLOBS,
+                holder(context,MtaConfigFeatures.CALCITE_BLOBS),
+                MTAOreUtils.commonOrePlacement(40,
+                        HeightRangePlacement.uniform(VerticalAnchor.bottom(),
+                                VerticalAnchor.top()
+                        )
+                )
+        );
+
+        register(
+                context,
                 DISK_MOSS,
                 holder(context,MtaConfigFeatures.DISK_MOSS),
                 InSquarePlacement.spread(),
@@ -439,7 +454,7 @@ public class MtaPlacedFeatures {
                 context,
                 LARGE_CLEAR_QUARTZ_VEIN,
                 holder(context,MtaConfigFeatures.LARGE_CLEAR_QUARTZ_VEIN),
-                MTAOreUtils.commonOrePlacement(62, PlacementUtils.FULL_RANGE)
+                MTAOreUtils.commonOrePlacement(128, PlacementUtils.FULL_RANGE)
         );
         register(
                 context,
@@ -511,7 +526,27 @@ public class MtaPlacedFeatures {
                 holder(context,MtaConfigFeatures.MOONSTONE_ORE),
                 MTAOreUtils.commonOrePlacement(28,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(12), VerticalAnchor.top()))
-
+        );
+        register(
+                context,
+                WISESTONE,
+                holder(context,MtaConfigFeatures.WISESTONE),
+                MTAOreUtils.commonOrePlacement(16,
+                        HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top()))
+        );
+        register(
+                context,
+                WISESTONE_COMMON,
+                holder(context,MtaConfigFeatures.WISESTONE_COMMON),
+                MTAOreUtils.commonOrePlacement(45,
+                        HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top()))
+        );
+        register(
+                context,
+                WISESTONE_END,
+                holder(context,MtaConfigFeatures.WISESTONE_END),
+                MTAOreUtils.commonOrePlacement(24,
+                        HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top()))
         );
 
         register(

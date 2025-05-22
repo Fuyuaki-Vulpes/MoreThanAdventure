@@ -292,7 +292,11 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
                 MtaBlocks.NETHER_DIAMOND_ORE.get(),
                 MtaBlocks.END_EMERALD_ORE.get(),
-                MtaBlocks.END_LAPIS_ORE.get()
+                MtaBlocks.END_LAPIS_ORE.get(),
+                MtaBlocks.WISESTONE.get(),
+                MtaBlocks.END_WISESTONE.get(),
+                MtaBlocks.DEEPSLATE_WISESTONE.get()
+
         ).remove(MtaTags.Blocks.NEEDS_NETHERSTEEL_TOOL).remove(MtaTags.Blocks.NEEDS_COPPER_TOOL);
 
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
@@ -594,8 +598,11 @@ public class GenBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 MtaBlocks.GARNET_ORE.get(),
                 MtaBlocks.DEEPSLATE_GARNET_ORE.get(),
                 MtaBlocks.MOONSTONE_ORE.get(),
-                MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get()
-        );
+                MtaBlocks.DEEPSLATE_MOONSTONE_ORE.get(),
+                MtaBlocks.WISESTONE.get(),
+                MtaBlocks.END_WISESTONE.get(),
+                MtaBlocks.DEEPSLATE_WISESTONE.get()
+                );
         this.tag(BlockTags.SLABS).add(
                 MtaBlocks.STONE_TILES_SLAB.get(),
                 MtaBlocks.SLIGHTLY_DIRTY_STONE_TILES_SLAB.get(),

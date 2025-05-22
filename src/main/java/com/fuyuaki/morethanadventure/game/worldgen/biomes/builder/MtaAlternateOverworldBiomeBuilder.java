@@ -381,14 +381,13 @@ public class MtaAlternateOverworldBiomeBuilder {
 
         this.addUndergroundBiome(
                 mapper,
-                temperatures[2],
-                this.FULL_RANGE,
-                span(coastContinentalness,farInlandContinentalness),
-                span(erosions[1],erosions[4]),
+                temperatures[3],
+                span(humidities[1],humidities[2]),
+                span(midInlandContinentalness,farInlandContinentalness),
+                span(erosions[1],erosions[2]),
                 this.FULL_RANGE,
                 0.0F,
                 MtaBiomes.CRYSTALLINE_GROTTO
-
         );
 
     }

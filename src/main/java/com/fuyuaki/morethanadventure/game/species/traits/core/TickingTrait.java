@@ -6,8 +6,8 @@ import net.minecraft.world.entity.player.Player;
 public abstract class TickingTrait extends Trait{
     public final int tickRate;
 
-    public TickingTrait(int rate, Component description, boolean hidden){
-        super(description,hidden);
+    public TickingTrait(int rate, boolean hidden){
+        super(hidden);
         this.tickRate = Math.max(1, rate);
     }
 

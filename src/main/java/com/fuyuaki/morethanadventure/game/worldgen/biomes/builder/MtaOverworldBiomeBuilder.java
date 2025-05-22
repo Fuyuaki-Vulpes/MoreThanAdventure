@@ -379,17 +379,6 @@ public class MtaOverworldBiomeBuilder {
                 Biomes.DEEP_DARK
         );
 
-        this.addUndergroundBiome(
-                mapper,
-                temperatures[2],
-                this.FULL_RANGE,
-                span(coastContinentalness,farInlandContinentalness),
-                span(erosions[1],erosions[4]),
-                this.FULL_RANGE,
-                0.0F,
-                MtaBiomes.CRYSTALLINE_GROTTO
-
-                );
 
     }
 

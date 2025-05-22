@@ -1,15 +1,15 @@
 package com.fuyuaki.morethanadventure.mixin;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
-import com.fuyuaki.morethanadventure.core.registry.MTASpecies;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
+import com.fuyuaki.morethanadventure.core.mod.MTAUtils;
 import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.world.entity.attachments.RespawnablePetsAttachment;
-import com.fuyuaki.morethanadventure.world.entity.attachments.SoulCharge;
 import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
 import com.fuyuaki.morethanadventure.world.entity.attachments.helper.MTASoulHelper;
+import com.fuyuaki.morethanadventure.world.entity.util.MTAPlayer;
 import com.fuyuaki.morethanadventure.world.item.weaponry.WeaponItem;
-import net.minecraft.core.component.DataComponentType;
-import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
@@ -19,8 +19,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ProjectileWeaponItem;
-import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -29,12 +27,9 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.function.Predicate;
 
 @Mixin(Player.class)
-public abstract class PlayerMixin extends LivingEntity{
+public abstract class PlayerMixin extends LivingEntity implements MTAPlayer {
 
 
     @Shadow public abstract boolean shouldBeSaved();
@@ -92,11 +87,28 @@ public abstract class PlayerMixin extends LivingEntity{
                 thisPlayer.setData(MTAAttachments.SPECIES.get(),speciesAttachment);
             }else{
 
-                thisPlayer.setData(MTAAttachments.SPECIES.get(), new SpeciesAttachment(MTASpecies.HUMAN));
+                thisPlayer.setData(MTAAttachments.SPECIES.get(), new SpeciesAttachment(MTAUtils.HUMAN_SPECIES));
             }
             MTASoulHelper.playerTickSoul(thisPlayer);
 
         }
     }
 
+
+
+    @Override
+    public ResourceKey<Species> getSpeciesKey() {
+        return this.getData(MTAAttachments.SPECIES).getSpeciesKey();
+    }
+
+    @Override
+    public Species getSpecies() {
+        return Species.getSpeciesFromKey(this.getData(MTAAttachments.SPECIES).getSpeciesKey(),this.level());
+
+    }
+
+    @Override
+    public void setSpeciesKey(ResourceKey<Species> key) {
+        this.setData(MTAAttachments.SPECIES,this.getData(MTAAttachments.SPECIES).withSpeciesKey(key));
+    }
 }

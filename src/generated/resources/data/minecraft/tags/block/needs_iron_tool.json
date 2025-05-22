@@ -6,6 +6,9 @@
   "values": [
     "morethanadventure:nether_diamond_ore",
     "morethanadventure:end_emerald_ore",
-    "morethanadventure:end_lapis_ore"
+    "morethanadventure:end_lapis_ore",
+    "morethanadventure:wisestone",
+    "morethanadventure:end_wisestone",
+    "morethanadventure:deepslate_wisestone"
   ]
 }

@@ -12,9 +12,9 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.entity.player.Player;
 
 public class Trait {
+
     public static final Codec<Trait> CODEC = MTARegistries.Registries.TRAITS.byNameCodec();
     public static final StreamCodec<RegistryFriendlyByteBuf, Trait> STREAM_CODEC = ByteBufCodecs.fromCodecWithRegistriesTrusted(CODEC);
-    public final Component description;
 
     private final Holder<Trait> builtInRegistryHolder = MTARegistries.Registries.TRAITS.wrapAsHolder(this);
 
@@ -30,15 +30,11 @@ public class Trait {
     private final boolean hidden;
 
 
-    public Trait(Component description, boolean hidden) {
-        this.description = description;
+    public Trait( boolean hidden) {
         this.hidden = hidden;
     }
 
 
-    public Component getDescription() {
-        return description;
-    }
 
     public boolean active(Player player){
         return true;

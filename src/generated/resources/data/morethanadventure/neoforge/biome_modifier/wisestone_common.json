@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#morethanadventure:wisestone_is_common_in",
+  "features": "morethanadventure:wisestone_common",
+  "step": "underground_ores"
+}

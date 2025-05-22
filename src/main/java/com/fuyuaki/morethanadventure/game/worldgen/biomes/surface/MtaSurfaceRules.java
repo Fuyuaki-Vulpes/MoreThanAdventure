@@ -182,43 +182,8 @@ public class MtaSurfaceRules {
                         ),
 
                         //BELLOW SURFACE
-
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.CRYSTALLINE_GROTTO),
-                                SurfaceRules.sequence(
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (MTANoises.CALCITE_3D, -0.04D, 0.0D),
-                                                        CALCITE
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (MTANoises.CALCITE_3D, -0.3D, -0.2D),
-                                                        CALCITE
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (MTANoises.CALCITE_3D, 0.24D, 0.3D),
-                                                        CALCITE
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (MTANoises.CALCITE_3D, 0.5D, 0.58D),
-                                                        CALCITE
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (MTANoises.CALCITE_3D, 0.01D, 0.04D),
-                                                        CALCITE
-                                        ),
-                                        SurfaceRules.ifTrue(
-                                                SurfaceRules.noiseCondition
-                                                        (MTANoises.CALCITE_3D, -0.92D, -0.85D),
-                                                        CALCITE
-                                        )
-                                )
-
-                        ),
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),permafrostDeepSurface
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(MtaBiomes.POLAR_DESERT),
+                                permafrostDeepSurface
                                 )
 
 

@@ -281,6 +281,21 @@ public class GenBiomeTags  extends IntrinsicHolderTagsProvider<Biome> {
         ;
 
 
+
+        this.tag(MtaTags.Biomes.MOONSTONE)
+                .addTag(Tags.Biomes.IS_MOUNTAIN)
+                .addTag(Tags.Biomes.IS_SWAMP)
+        ;
+
+
+
+        this.tag(MtaTags.Biomes.WISESTONE)
+                .addTag(Tags.Biomes.IS_SNOWY)
+                .addTag(Tags.Biomes.IS_DARK_FOREST)
+                .add(Biomes.LUKEWARM_OCEAN,MtaBiomes.BOG,MtaBiomes.CRYSTALLINE_GROTTO)
+        ;
+
+
         addWolfTags();
     }
 

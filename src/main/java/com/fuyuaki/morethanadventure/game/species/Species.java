@@ -2,10 +2,12 @@ package com.fuyuaki.morethanadventure.game.species;
 
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttachments;
 import com.fuyuaki.morethanadventure.core.deferred_registries.MTAAttributes;
+import com.fuyuaki.morethanadventure.core.deferred_registries.MtaItems;
 import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.game.species.traits.core.Trait;
 
 
+import com.fuyuaki.morethanadventure.game.worldgen.biomes.MtaBiomes;
 import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -17,11 +19,13 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -185,6 +189,10 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
     }
 
 
+
+
+
+
     public record AttributeModifierType(Holder<Attribute> attribute, double amount, AttributeModifier.Operation operation) {
         public static final Codec<AttributeModifierType> CODEC = RecordCodecBuilder.create(
                 p_348388_ -> p_348388_.group(
@@ -219,7 +227,6 @@ public record Species(ResourceLocation icon, ResourceLocation id, String descrip
             return new AttributeModifier(ResourceLocation.withDefaultNamespace(attribute.getKey().location().getPath() + "_species_modifier_" + operation.getSerializedName()), amount,operation);
         }
     }
-
 
     public static class Builder{
 

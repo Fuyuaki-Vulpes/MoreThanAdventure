@@ -6,6 +6,7 @@ import com.fuyuaki.morethanadventure.core.registry.MTARegistries;
 import com.fuyuaki.morethanadventure.game.server.commands.arguments.MTAResourceKeyArgument;
 import com.fuyuaki.morethanadventure.game.species.Species;
 import com.fuyuaki.morethanadventure.world.entity.attachments.SpeciesAttachment;
+import com.fuyuaki.morethanadventure.world.entity.util.MTAPlayer;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.arguments.BoolArgumentType;
@@ -91,7 +92,7 @@ public class SpeciesCommands {
     private static int getSpecies(CommandSourceStack source, Collection<ServerPlayer> players) throws CommandSyntaxException {
         players.forEach(player -> {
                     if (player.hasData(MTAAttachments.SPECIES.get())) {
-                        source.sendSuccess(() -> Component.translatable("mta.commands.species.get", player.getDisplayName(), Component.translatable(Species.getSpeciesFromKey(Species.get(player).getSpeciesKey(), source.getLevel()).getNameKey())), true);
+                        source.sendSuccess(() -> Component.translatable("mta.commands.species.get", player.getDisplayName(), Component.translatable(((MTAPlayer)player).getSpecies().getNameKey())), true);
                     } else {
                         try {
                             throw ERROR_PLAYER_HAS_NO_DATA.create(player.getDisplayName());
@@ -110,10 +111,10 @@ public class SpeciesCommands {
             players.forEach(player -> {
                         if (player.hasData(MTAAttachments.SPECIES.get())) {
 
-                            Species.set(player, Species.get(player).withSpeciesKey(key));
+                            ((MTAPlayer)player).setSpeciesKey(key);
 
 
-                            source.sendSuccess(() -> Component.translatable("mta.commands.species.set", player.getDisplayName(), Component.translatable(Species.getSpeciesFromKey(Species.get(player).getSpeciesKey(), source.getLevel()).getNameKey())), true);
+                            source.sendSuccess(() -> Component.translatable("mta.commands.species.set", player.getDisplayName(), Component.translatable(((MTAPlayer)player).getSpecies().getNameKey())), true);
                         } else {
                             try {
                                 throw ERROR_PLAYER_HAS_NO_DATA.create(player.getDisplayName());

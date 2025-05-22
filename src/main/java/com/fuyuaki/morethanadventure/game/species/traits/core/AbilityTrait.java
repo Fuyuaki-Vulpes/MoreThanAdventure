@@ -6,8 +6,8 @@ public class AbilityTrait extends Trait{
     private final AbilitySlot abilitySlot;
     private final int cooldown;
 
-    public AbilityTrait(AbilitySlot abilitySlot, int cooldown, Component description, boolean hidden) {
-        super(description, hidden);
+    public AbilityTrait(AbilitySlot abilitySlot, int cooldown, boolean hidden) {
+        super(hidden);
         this.abilitySlot = abilitySlot;
         this.cooldown = cooldown;
     }

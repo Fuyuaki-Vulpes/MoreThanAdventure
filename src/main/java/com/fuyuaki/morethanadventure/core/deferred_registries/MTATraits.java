@@ -16,12 +16,18 @@ public class MTATraits {
     public static final DeferredRegister<Trait> TRAIT_REGISTRY =
             DeferredRegister.create(MTARegistries.Registries.TRAITS,MODID);
 
-    public static final DeferredHolder<Trait, Trait> EMPTY = TRAIT_REGISTRY.register("empty", () -> new Trait(Component.empty(), true));
+    public static final DeferredHolder<Trait, Trait> EMPTY = TRAIT_REGISTRY.register("empty", () -> new Trait(true));
 
 
     public static final DeferredHolder<Trait, Trait> FLAME_TRAIT = TRAIT_REGISTRY.register("flame_trait",
-            () -> new ParticleEmitterTrait(ParticleTypes.FLAME, new Vec3(1.0F,0.0F,1.0F), new Vec3(2.0F,0.5F,2.0F),
-                    Component.empty(), false));
+            () -> new ParticleEmitterTrait(ParticleTypes.FLAME, new Vec3(1.0F,0.0F,1.0F), new Vec3(2.0F,0.5F,2.0F), false)
+    );
+
+
+    public static final DeferredHolder<Trait, Trait> FISH_TAIL = TRAIT_REGISTRY.register("fish_tail",
+            () -> new Trait(false));
+
+
 
     public static void register(IEventBus eventBus){
         TRAIT_REGISTRY.register(eventBus);
